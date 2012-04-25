@@ -1,0 +1,441 @@
+https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768
+
+GET https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768 HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+If-Modified-Since: Wed, 04 Apr 2012 20:49:16 GMT
+If-None-Match: "3126d392f8825df5be089e35528ffd13"
+
+HTTP/1.0 304 Not Modified
+Date: Fri, 06 Apr 2012 03:49:53 GMT
+Etag: "3126d392f8825df5be089e35528ffd13"
+Last-Modified: Wed, 04 Apr 2012 20:49:16 GMT
+Age: 28677
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: lJ3VbOTGHqdlppAmfyzrwuPmKKz1NM_7n00uI1GGDnuzDi2tlylBtg==
+Via: 1.0 ea337f205e3a78d1953a5d5af7bd8bfd.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/member.php?mod=logging&action=login&loginsubmit=yes&infloat=yes&lssubmit=yes&inajax=1
+
+POST http://www.guoyang.cc/member.php?mod=logging&action=login&loginsubmit=yes&infloat=yes&lssubmit=yes&inajax=1 HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=0TmLrE; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684168%09connect.php%09check; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 91
+fastloginfield=username&username=testtest123&password=test123&quickforward=yes&handlekey=ls
+HTTP/1.0 200 OK
+Cache-Control: no-store, private, post-check=0, pre-check=0, max-age=0
+Pragma: no-cache
+Content-Type: text/xml; charset=gbk
+Expires: -1
+Server: Microsoft-IIS/7.5
+X-Powered-By: PHP/5.3.6, ASP.NET
+Set-Cookie: z38h_267c_lastact=1333684187%09member.php%09logging; expires=Sat, 07-Apr-2012 03:49:47 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_auth=ca387m%2BrBuOTZ%2FTQ2lUT0QCU5Gxe8yWB9S4bkD8qfO%2FCAzuJzo%2BU9mzwsqAU9Rf%2BYVO1MZEibYT1otVRfRo59kSkrQ; path=/; domain=.guoyang.cc; httponly
+Set-Cookie: z38h_267c_loginuser=deleted; expires=Thu, 07-Apr-2011 03:49:46 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_activationauth=deleted; expires=Thu, 07-Apr-2011 03:49:46 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_pmnum=deleted; expires=Thu, 07-Apr-2011 03:49:46 GMT; path=/; domain=.guoyang.cc
+Date: Fri, 06 Apr 2012 03:49:46 GMT
+Content-Length: 1160
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/comiis_jddz/info.gif
+
+GET http://www.guoyang.cc/comiis_jddz/info.gif HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/data/cache/style_10_common.css?Z33
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=0TmLrE; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684187%09member.php%09logging; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=ca387m%2BrBuOTZ%2FTQ2lUT0QCU5Gxe8yWB9S4bkD8qfO%2FCAzuJzo%2BU9mzwsqAU9Rf%2BYVO1MZEibYT1otVRfRo59kSkrQ
+
+HTTP/1.0 200 OK
+Content-Type: image/gif
+Last-Modified: Mon, 23 May 2011 01:32:06 GMT
+Accept-Ranges: bytes
+Etag: "0ef9d39e918cc1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:47 GMT
+Content-Length: 1763
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/comiis_jddz/cls.gif
+
+GET http://www.guoyang.cc/comiis_jddz/cls.gif HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/data/cache/style_10_common.css?Z33
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=0TmLrE; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684187%09member.php%09logging; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=ca387m%2BrBuOTZ%2FTQ2lUT0QCU5Gxe8yWB9S4bkD8qfO%2FCAzuJzo%2BU9mzwsqAU9Rf%2BYVO1MZEibYT1otVRfRo59kSkrQ
+
+HTTP/1.0 200 OK
+Content-Type: image/gif
+Last-Modified: Mon, 23 May 2011 01:32:06 GMT
+Accept-Ranges: bytes
+Etag: "0ef9d39e918cc1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:47 GMT
+Content-Length: 526
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/api/uc.php?time=1333684187&code=ad41Wh%2FnRn1o%2BxGulKTdQT9%2BFulqs7B2jBUT8TzFhtzu7jCL%2FzAqq5lwF60Y2DHkW%2FnI5LE2Yrl%2BmdMgyyWYhlpXHRwdrjFev5qwuahVGZHrB%2F18r6fU8RnBofpYoIfTCRndK7hq2sckVRVlVS3FysJZnmdWAaHaBdg%2BGKO4LSv4BjVF%2FQ
+
+GET http://www.guoyang.cc/api/uc.php?time=1333684187&code=ad41Wh%2FnRn1o%2BxGulKTdQT9%2BFulqs7B2jBUT8TzFhtzu7jCL%2FzAqq5lwF60Y2DHkW%2FnI5LE2Yrl%2BmdMgyyWYhlpXHRwdrjFev5qwuahVGZHrB%2F18r6fU8RnBofpYoIfTCRndK7hq2sckVRVlVS3FysJZnmdWAaHaBdg%2BGKO4LSv4BjVF%2FQ HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=0TmLrE; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684187%09member.php%09logging; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=ca387m%2BrBuOTZ%2FTQ2lUT0QCU5Gxe8yWB9S4bkD8qfO%2FCAzuJzo%2BU9mzwsqAU9Rf%2BYVO1MZEibYT1otVRfRo59kSkrQ
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=gbk
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Server: Microsoft-IIS/7.5
+X-Powered-By: PHP/5.3.6, ASP.NET
+Set-Cookie: z38h_267c_sid=Q4K7q0; expires=Sat, 07-Apr-2012 03:49:48 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_lastact=1333684188%09uc.php%09; expires=Sat, 07-Apr-2012 03:49:48 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; expires=Sat, 06-Apr-2013 03:49:48 GMT; path=/; domain=.guoyang.cc
+P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"
+Date: Fri, 06 Apr 2012 03:49:47 GMT
+Content-Length: 26
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/
+
+GET http://www.guoyang.cc/ HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=Q4K7q0; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684188%09uc.php%09; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=gbk
+Content-Encoding: gzip
+Vary: Accept-Encoding,Accept-Encoding
+Server: Microsoft-IIS/7.5
+X-Powered-By: PHP/5.3.6, ASP.NET
+Set-Cookie: z38h_267c_sid=1YaJah; expires=Sat, 07-Apr-2012 03:49:48 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_lastact=1333684188%09index.php%09; expires=Sat, 07-Apr-2012 03:49:48 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_connect_is_bind=0; expires=Sat, 06-Apr-2013 03:49:48 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA; expires=Sat, 06-Apr-2013 03:49:48 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_sid=1YaJah; expires=Sat, 07-Apr-2012 03:49:48 GMT; path=/; domain=.guoyang.cc
+Date: Fri, 06 Apr 2012 03:49:48 GMT
+Content-Length: 14051
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/static/js/portal.js?Z33
+
+GET http://www.guoyang.cc/static/js/portal.js?Z33 HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=1YaJah; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684188%09index.php%09; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; z38h_267c_connect_is_bind=0; z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA
+If-Modified-Since: Wed, 29 Jun 2011 04:35:34 GMT
+If-None-Match: "02f2efc1536cc1:0"
+
+HTTP/1.0 304 Not Modified
+Last-Modified: Wed, 29 Jun 2011 04:35:34 GMT
+Accept-Ranges: bytes
+Etag: "02f2efc1536cc1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:49 GMT
+X-Cache: MISS from localhost, HIT from localhost
+X-Cache-Lookup: MISS from localhost:3128, HIT from localhost:3128
+Age: 1
+Warning: 110 squid/3.1.14 "Response is stale", 111 squid/3.1.14 "Revalidation failed"
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/static/js/common.js?Z33
+
+GET http://www.guoyang.cc/static/js/common.js?Z33 HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=1YaJah; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684188%09index.php%09; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; z38h_267c_connect_is_bind=0; z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA
+If-Modified-Since: Mon, 10 Oct 2011 06:13:38 GMT
+If-None-Match: "095ddbf1387cc1:0"
+
+HTTP/1.0 304 Not Modified
+Last-Modified: Mon, 10 Oct 2011 06:13:38 GMT
+Accept-Ranges: bytes
+Etag: "095ddbf1387cc1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:49 GMT
+X-Cache: MISS from localhost, HIT from localhost
+X-Cache-Lookup: MISS from localhost:3128, HIT from localhost:3128
+Age: 1
+Warning: 110 squid/3.1.14 "Response is stale", 111 squid/3.1.14 "Revalidation failed"
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/ucuc/data/avatar/000/01/95/37_avatar_small.jpg
+
+GET http://www.guoyang.cc/ucuc/data/avatar/000/01/95/37_avatar_small.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=1YaJah; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684188%09index.php%09; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; z38h_267c_connect_is_bind=0; z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA
+
+HTTP/1.0 404 Not Found
+Content-Type: text/html
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:49 GMT
+Content-Length: 1163
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/home.php?mod=spacecp&ac=pm&op=checknewpm&rand=1333684188
+
+GET http://www.guoyang.cc/home.php?mod=spacecp&ac=pm&op=checknewpm&rand=1333684188 HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=1YaJah; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684188%09index.php%09; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; z38h_267c_connect_is_bind=0; z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=gbk
+Content-Encoding: gzip
+Vary: Accept-Encoding,Accept-Encoding
+Server: Microsoft-IIS/7.5
+X-Powered-By: PHP/5.3.6, ASP.NET
+Set-Cookie: z38h_267c_lastact=1333684190%09home.php%09spacecp; expires=Sat, 07-Apr-2012 03:49:50 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_connect_is_bind=0; expires=Sat, 06-Apr-2013 03:49:50 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: z38h_267c_sid=1YaJah; expires=Sat, 07-Apr-2012 03:49:50 GMT; path=/; domain=.guoyang.cc
+Date: Fri, 06 Apr 2012 03:49:50 GMT
+Content-Length: 4930
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/data/cache/style_10_common.css?Z33
+
+GET http://www.guoyang.cc/data/cache/style_10_common.css?Z33 HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=1YaJah; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684188%09index.php%09; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; z38h_267c_connect_is_bind=0; z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA
+If-Modified-Since: Fri, 06 Apr 2012 02:20:23 GMT
+If-None-Match: "6e27cd29b13cd1:0"
+
+HTTP/1.0 304 Not Modified
+Last-Modified: Fri, 06 Apr 2012 02:20:23 GMT
+Accept-Ranges: bytes
+Etag: "6e27cd29b13cd1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:50 GMT
+X-Cache: MISS from localhost, HIT from localhost
+X-Cache-Lookup: MISS from localhost:3128, HIT from localhost:3128
+Age: 2
+Warning: 110 squid/3.1.14 "Response is stale", 111 squid/3.1.14 "Revalidation failed"
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/ucuc/data/avatar/000/01/95/37_avatar_small.jpg
+
+GET http://www.guoyang.cc/ucuc/data/avatar/000/01/95/37_avatar_small.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=1YaJah; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684190%09home.php%09spacecp; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; z38h_267c_connect_is_bind=0; z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA
+
+HTTP/1.0 404 Not Found
+Content-Type: text/html
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:51 GMT
+Content-Length: 1163
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://hzs6.cnzz.com/stat.htm?id=3850662&r=http%3A%2F%2Fwww.guoyang.cc%2F&lg=en-us&ntime=0.88041000%201333679907&repeatip=4&rtime=0&cnzz_eid=55121650-1333679907-&showp=1440x900&st=25&sin=none&res=0&rnd=1788715619
+
+GET http://hzs6.cnzz.com/stat.htm?id=3850662&r=http%3A%2F%2Fwww.guoyang.cc%2F&lg=en-us&ntime=0.88041000%201333679907&repeatip=4&rtime=0&cnzz_eid=55121650-1333679907-&showp=1440x900&st=25&sin=none&res=0&rnd=1788715619 HTTP/1.1
+Host: hzs6.cnzz.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: CNZZ_USER=2461603086-3850662-1333679907-0.88107300-9720
+
+HTTP/1.0 200 OK
+Server: nginx/1.0.4
+Date: Fri, 06 Apr 2012 03:50:03 GMT
+Content-Type: image/gif
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: close
+----------------------------------------------------------
+http://www.guoyang.cc/static/js/common_extra.js?Z33
+
+GET http://www.guoyang.cc/static/js/common_extra.js?Z33 HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=1YaJah; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684190%09home.php%09spacecp; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; z38h_267c_connect_is_bind=0; z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA
+If-Modified-Since: Mon, 10 Oct 2011 06:13:38 GMT
+If-None-Match: "095ddbf1387cc1:0"
+
+HTTP/1.0 304 Not Modified
+Last-Modified: Mon, 10 Oct 2011 06:13:38 GMT
+Accept-Ranges: bytes
+Etag: "095ddbf1387cc1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:53 GMT
+X-Cache: MISS from localhost, HIT from localhost
+X-Cache-Lookup: MISS from localhost:3128, HIT from localhost:3128
+Age: 3
+Warning: 110 squid/3.1.14 "Response is stale", 111 squid/3.1.14 "Revalidation failed"
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/image/nav_bottom.png
+
+GET http://www.guoyang.cc/image/nav_bottom.png HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cnzz_a3990314=9; sin3990314=; rtime=0; ltime=1333683935893; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=77Amse; pqrF_267c_lastact=1333683965%09poll.php%09; pqrF_267c_voted_1=1333683965; CNZZDATA3850662=cnzz_eid=55121650-1333679907-&cnzz_a=3&retime=1333684173743&sin=none&ltime=1333684173743&rtime=0; pqrF_267c_repeat_cookie_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_username_0_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_ip_146.185.21.14_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; pqrF_267c_repeat_so_xfIlKuOF_1=a%3A6%3A%7Bi%3A1333680209%3Bi%3A15%3Bi%3A1333680244%3Bi%3A4%3Bi%3A1333681006%3Bi%3A2%3Bi%3A1333683184%3Bi%3A3%3Bi%3A1333683603%3Bi%3A17%3Bi%3A1333683965%3Bi%3A7%3B%7D; z38h_267c_sid=1YaJah; z38h_267c_saltkey=SSGb9hRz; z38h_267c_lastvisit=1333680562; z38h_267c_lastact=1333684190%09home.php%09spacecp; z38h_267c_noticeTitle=1; z38h_267c_connect_last_report_time=2012-04-06; z38h_267c_connect_report_times=5; z38h_267c_sendmail=1; z38h_267c_connect_check_token=1; z38h_267c_auth=a758UEk6TB%2Fy1d4sZQ4ShxQj2iO6nYmtiu5abX9DSIjrbGVzF7QLYC17a9Hgf3VoxMLvsEjkrjuCjeZefTnpCRiHmw; z38h_267c_connect_is_bind=0; z38h_267c_ulastactivity=d0ffoh3F52vopcv%2FqgbDAt8zhh0Ppm%2BiADSRJ1KIleezghw4rGlA
+
+HTTP/1.0 404 Not Found
+Content-Type: text/html
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 03:49:53 GMT
+Content-Length: 1163
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768
+
+GET https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768 HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.guoyang.cc/
+If-Modified-Since: Wed, 04 Apr 2012 20:49:16 GMT
+If-None-Match: "3126d392f8825df5be089e35528ffd13"
+
+HTTP/1.0 304 Not Modified
+Date: Fri, 06 Apr 2012 03:50:05 GMT
+Etag: "3126d392f8825df5be089e35528ffd13"
+Last-Modified: Wed, 04 Apr 2012 20:49:16 GMT
+Age: 28689
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: 8vEc5xbBfHZIo5dj02NCJGcK988o4arj7-XInsps1iYmIAdY-8-pCA==
+Via: 1.0 ea337f205e3a78d1953a5d5af7bd8bfd.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.textsrv.com/cc.php?c=R0I6bnVsbDpudWxsOnd3dy5ndW95YW5nLmNjOjEwMzY6dW5kZWZpbmVkOjEyNzY4OjE0Ni4xODUuMjEuMTQ6dW5kZWZpbmVk&cb=1333684202853
+
+GET http://www.textsrv.com/cc.php?c=R0I6bnVsbDpudWxsOnd3dy5ndW95YW5nLmNjOjEwMzY6dW5kZWZpbmVkOjEyNzY4OjE0Ni4xODUuMjEuMTQ6dW5kZWZpbmVk&cb=1333684202853 HTTP/1.1
+Host: www.textsrv.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/
+Cookie: cct4=1333676252; AWSELB=A5895F1D147E3FCEC113981896CE9B91E1AE1AB5EE3E3CFE305699EC8F9626CFEDF8D140153A16606F492CCB781732D51249629BEB8EE6BE29D0BB8AF279DA54B005C31754
+
+HTTP/1.0 200 OK
+Content-Type: text/javascript
+Date: Fri, 06 Apr 2012 03:53:18 GMT
+Server: nginx
+Content-Length: 66
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------

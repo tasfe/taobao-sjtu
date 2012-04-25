@@ -1,0 +1,118 @@
+https://login.taobao.com/member/request_nick_check.do?_input_charset=utf-8&username=10210240089%40fudan.edu.cn&_ksTS=1332828840685_29
+
+GET /member/request_nick_check.do?_input_charset=utf-8&username=10210240089%40fudan.edu.cn&_ksTS=1332828840685_29 HTTP/1.1
+Host: login.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Referer: https://login.taobao.com/member/login.jhtml?f=top&redirectURL=http%3A%2F%2Fwww.taobao.com%2F
+Cookie: _umdata=F71D3CC9A0CBAC25C56F30B278212559C720DFC78E1A78D9D863C4EC2FF0884D277CBB4742ADD2B0A482322D8118098ECAEDCEACF887A1CD93603238261471E839CB6075F6DCEA1B; t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UtASsssmfA%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=; ssllogin=1; l=::1332828484120::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; lc=UINN0kqtHcq8MAllIwO2qBeCAAM8RaB20KHTKdE%3D; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=cookie14=UoLfckGorKdbVA%3D%3D
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 06:14:02 GMT
+Content-Type: application/x-www-form-urlencoded;charset=ISO-8859-1
+Connection: keep-alive
+Content-Length: 17
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+----------------------------------------------------------
+https://regcheckcode.taobao.com/auction/checkcode?sessionID=af023a515cec00336126934cd135ecc5&r=1332828841329
+
+GET /auction/checkcode?sessionID=af023a515cec00336126934cd135ecc5&r=1332828841329 HTTP/1.1
+Host: regcheckcode.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml?f=top&redirectURL=http%3A%2F%2Fwww.taobao.com%2F
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UtASsssmfA%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=; ssllogin=1; l=::1332828484120::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=cookie14=UoLfckGorKdbVA%3D%3D
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 06:14:02 GMT
+Server: Apache/2.2.15 (Unix)
+Expires: Sat, 16 Jan 1980 12:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+usetime: T:424,34
+Content-Length: 1405
+Connection: close
+Content-Type: image/jpeg
+----------------------------------------------------------
+https://aus3.mozilla.org/update/3/Firefox/12.0/20120314195616/WINNT_x86-msvc/en-US/beta/Windows_NT%206.1.1.0%20(x86)/default/default/update.xml
+
+GET /update/3/Firefox/12.0/20120314195616/WINNT_x86-msvc/en-US/beta/Windows_NT%206.1.1.0%20(x86)/default/default/update.xml HTTP/1.1
+Host: aus3.mozilla.org
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: no-cache
+Cookie: WT_FPC=id=124.160.106.12-983754112.30205253:lv=1328555079375:ss=1328555079375
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 06:15:36 GMT
+Server: Apache
+X-Backend-Server: pm-app-dist06
+X-Powered-By: PHP/5.1.6
+Set-Cookie: aus2a=58.246.164.70.1332828936.8278; expires=Mon, 27-Mar-2017 11:19:26 GMT; path=/; domain=aus2.mozilla.org
+Cache-Control: no-store, must-revalidate, post-check=0, pre-check=0, private
+Content-Length: 878
+Keep-Alive: timeout=5, max=939
+Connection: Keep-Alive
+Content-Type: text/xml;
+----------------------------------------------------------
+http://download.mozilla.org/?product=firefox-12.0b2-partial-12.0b1&os=win&lang=en-US
+
+GET /?product=firefox-12.0b2-partial-12.0b1&os=win&lang=en-US HTTP/1.1
+Host: download.mozilla.org
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Connection: keep-alive
+Range: bytes=0-299999
+Cookie: dmo=10.2.84.102.1324889875401483; WT_FPC=id=124.160.106.12-983754112.30205253:lv=1328555079375:ss=1328555079375
+
+HTTP/1.1 302 Found
+Date: Tue, 27 Mar 2012 06:15:37 GMT
+Server: Apache
+X-Backend-Server: pm-app-dist01
+X-Powered-By: PHP/5.1.6
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private
+Pragma: no-cache
+Location: http://dm-download02.mozilla.org/pub/mozilla.org/firefox/releases/12.0b2/update/win32/en-US/firefox-12.0b1-12.0b2.partial.mar
+Content-Length: 0
+Keep-Alive: timeout=5, max=245
+Connection: Keep-Alive
+Content-Type: text/html; charset=UTF-8
+----------------------------------------------------------
+http://dm-download02.mozilla.org/pub/mozilla.org/firefox/releases/12.0b2/update/win32/en-US/firefox-12.0b1-12.0b2.partial.mar
+
+GET /pub/mozilla.org/firefox/releases/12.0b2/update/win32/en-US/firefox-12.0b1-12.0b2.partial.mar HTTP/1.1
+Host: dm-download02.mozilla.org
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Connection: keep-alive
+Range: bytes=0-299999
+Cookie: WT_FPC=id=124.160.106.12-983754112.30205253:lv=1328555079375:ss=1328555079375
+
+HTTP/1.1 206 Partial Content
+Date: Tue, 27 Mar 2012 06:15:39 GMT
+Server: Apache
+X-Backend-Server: dm-download02
+Last-Modified: Wed, 21 Mar 2012 14:16:52 GMT
+Etag: "19b3120-1db04a-715f5d00"
+Accept-Ranges: bytes
+Content-Length: 300000
+Content-Range: bytes 0-299999/1945674
+Connection: close
+Content-Type: application/octet-stream
+----------------------------------------------------------

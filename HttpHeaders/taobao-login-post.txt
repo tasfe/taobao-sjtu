@@ -1,0 +1,897 @@
+https://login.taobao.com/member/login.jhtml
+
+POST /member/login.jhtml HTTP/1.1
+Host: login.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+Cookie: _umdata=F71D3CC9A0CBAC25C56F30B278212559C720DFC78E1A78D9D863C4EC2FF0884D277CBB4742ADD2B0A482322D8118098ECAEDCEACF887A1CD93603238261471E839CB6075F6DCEA1B; t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=U%2BGCWk%2F7og%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; lc=UINN0kqtHcq8MAllIwO2qBeCAAM8RaB20KHTKdE%3D; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=cookie14=UoLfckGoojcBJg%3D%3D
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 594
+TPL_username=10210240089%40fudan.edu.cn&TPL_password=3DES_2_000000000000000000000000000000_D1CE4894D9F2334C&TPL_checkcode=d7b4&need_check_code=true&action=Authenticator&event_submit_do_login=anything&TPL_redirect_url=http%3A%2F%2Fwww.taobao.com%2F&from=tbTop&fc=default&style=default&css_style=&tid=XOR_1_000000000000000000000000000000_6358475734787B700E760B70&support=000001&CtrlVersion=1%2C0%2C0%2C7&loginType=4&minititle=&minipara=&umto=&pstrong=&llnick=&sign=&need_sign=&isIgnore=&full_redirect=&popid=&callback=&guf=&not_duplite_str=&need_user_id=&poy=&gvfdcname=10&gvfdcre=&from_encoding=
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:50 GMT
+Content-Type: text/html;charset=gbk
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
+Content-Language: zh-CN
+Set-Cookie: uc1=lltime=1332831164&cookie14=UoLfckGp7lr70w%3D%3D&existShop=true&cookie16=VFC%2FuZ9az08KUQ56dCrZDlbNdA%3D%3D&sg=025&cookie21=UtASsssmfaNq04quL1IVbQ%3D%3D&tag=1&cookie15=Vq8l%2BKCLz3%2F65A%3D%3D; Domain=.taobao.com; Path=/
+Set-Cookie: ck1=; Domain=.taobao.com; Expires=Tue, 10-Apr-2012 07:39:50 GMT; Path=/
+Set-Cookie: lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; Domain=.taobao.com; Path=/
+Set-Cookie: _sv_=0; Domain=.taobao.com; Path=/
+Set-Cookie: lc=UINN0kqtHcq8MAllIwO2qBeCAAM8RaB20KHTKdE%3D;Domain=login.taobao.com;Path=/;Expires=Thu, 26-Apr-2012 07:39:50 GMT;HttpOnly
+Set-Cookie: tg=0; Domain=.taobao.com; Expires=Thu, 12-Dec-2013 07:39:50 GMT; Path=/
+Set-Cookie: _cc_=UIHiLt3xSw%3D%3D; Domain=.taobao.com; Expires=Wed, 27-Mar-2013 07:39:50 GMT; Path=/
+Set-Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; Domain=.taobao.com; Expires=Mon, 25-Jun-2012 07:39:50 GMT; Path=/
+Set-Cookie: unb=521760712;Domain=.taobao.com;Path=/;HttpOnly
+Set-Cookie: _nk_=gongsuochen2010; Domain=.taobao.com; Path=/
+Set-Cookie: _l_g_=Ug%3D%3D; Domain=.taobao.com; Path=/
+Set-Cookie: cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D;Domain=.taobao.com;Path=/;HttpOnly
+Set-Cookie: cookie2=af023a515cec00336126934cd135ecc5;Domain=.taobao.com;Path=/;HttpOnly
+Set-Cookie: cookie17=VvzyEs5Dlu8F;Domain=.taobao.com;Path=/;HttpOnly
+Set-Cookie: tracknick=gongsuochen2010; Domain=.taobao.com; Expires=Wed, 27-Mar-2013 07:39:50 GMT; Path=/
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Encoding: gzip
+----------------------------------------------------------
+https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768
+
+GET /items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768 HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+If-Modified-Since: Thu, 22 Mar 2012 15:29:46 GMT
+If-None-Match: "6d63aae38282fc1434676b359b084edc"
+
+HTTP/1.0 304 Not Modified
+Date: Tue, 27 Mar 2012 07:39:50 GMT
+Etag: "6d63aae38282fc1434676b359b084edc"
+Last-Modified: Thu, 22 Mar 2012 15:29:46 GMT
+Age: 72447
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: VtkzsmBhwxQL3k6feT5SivIOK1mjNewNiP--VY4gmUUTXQR8BqxbFA==
+Via: 1.0 305f0d1bfa6f1b4f729abce64dd6e776.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.taobao.com/
+
+GET / HTTP/1.1
+Host: www.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70w%3D%3D&existShop=true&cookie16=VFC%2FuZ9az08KUQ56dCrZDlbNdA%3D%3D&sg=025&cookie21=UtASsssmfaNq04quL1IVbQ%3D%3D&tag=1&cookie15=Vq8l%2BKCLz3%2F65A%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:50 GMT
+Content-Type: text/html; charset=GB2312
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Tue, 27 Mar 2012 08:39:50 GMT
+Cache-Control: max-age=3600
+Content-Encoding: gzip
+----------------------------------------------------------
+http://img02.taobaocdn.com/tps/i2/T13k14XaFjXXXXXXXX-180-70.png
+
+GET /tps/i2/T13k14XaFjXXXXXXXX-180-70.png HTTP/1.1
+Host: img02.taobaocdn.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 05:48:23 GMT
+Server: Apache
+Last-Modified: Tue, 27 Mar 2012 05:46:35 GMT
+Content-Length: 6224
+Cache-Control: max-age=315360000
+Expires: Fri, 25 Mar 2022 05:48:23 GMT
+Content-Type: image/png
+Age: 6688
+Via: 1.1 9b715c50
+----------------------------------------------------------
+http://img04.taobaocdn.com/tps/i4/T1_Pu4Xn0mXXXXXXXX-100-100.gif
+
+GET /tps/i4/T1_Pu4Xn0mXXXXXXXX-100-100.gif HTTP/1.1
+Host: img04.taobaocdn.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 06:39:22 GMT
+Server: Apache
+Last-Modified: Tue, 27 Mar 2012 06:38:08 GMT
+Content-Length: 9425
+Cache-Control: max-age=315360000
+Expires: Fri, 25 Mar 2022 06:39:22 GMT
+Content-Type: image/gif
+Age: 3377
+Via: 1.1 40c6113c
+Connection: keep-alive
+H-Cache: Hit
+----------------------------------------------------------
+http://a.tbcdn.cn/s/ac.js
+
+GET /s/ac.js HTTP/1.1
+Host: a.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+If-Modified-Since: Fri, 23 Sep 2011 07:14:34 GMT
+
+HTTP/1.1 304 Not Modified
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:51 GMT
+Last-Modified: Fri, 23 Sep 2011 07:14:34 GMT
+Connection: keep-alive
+Expires: Tue, 27 Mar 2012 09:39:51 GMT
+Cache-Control: max-age=7200
+----------------------------------------------------------
+http://a.tbcdn.cn/s/atp.js
+
+GET /s/atp.js HTTP/1.1
+Host: a.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+If-Modified-Since: Tue, 13 Mar 2012 07:20:31 GMT
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:51 GMT
+Content-Type: application/x-javascript
+Last-Modified: Tue, 27 Mar 2012 06:38:33 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Tue, 27 Mar 2012 09:39:51 GMT
+Cache-Control: max-age=7200
+Content-Encoding: gzip
+----------------------------------------------------------
+http://cart.taobao.com/top_cart_quantity.htm?callback=TB.Global.setCartNum&t=1332833990107&appid=6
+
+GET /top_cart_quantity.htm?callback=TB.Global.setCartNum&t=1332833990107&appid=6 HTTP/1.1
+Host: cart.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70w%3D%3D&existShop=true&cookie16=VFC%2FuZ9az08KUQ56dCrZDlbNdA%3D%3D&sg=025&cookie21=UtASsssmfaNq04quL1IVbQ%3D%3D&tag=1&cookie15=Vq8l%2BKCLz3%2F65A%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:51 GMT
+Server: Apache
+X-Powered-By: Servlet 2.4; JBoss-4.2.2.GA (build: SVNTag=JBoss_4_2_2_GA date=200710221139)/Tomcat-5.5
+P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
+Set-Cookie: mt=ci=0_1; Domain=.taobao.com; Expires=Tue, 03-Apr-2012 07:39:51 GMT; Path=/
+Set-Cookie: tlut=UoLfckGp7lr70g%3D%3D; Domain=.taobao.com; Path=/
+Set-Cookie: uc1=lltime=1332831164&cookie14=UoLfckGp7lr70g%3D%3D&existShop=true&cookie16=VT5L2FSpNgq6fDudInPRgavC%2BQ%3D%3D&sg=025&cookie21=W5iHLLyFfXb%2BYu1IRpZ1RQ%3D%3D&tag=1&cookie15=V32FPkk%2Fw0dUvg%3D%3D; Domain=.taobao.com; Path=/
+Content-Language: zh-CN
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Pragma: no-cache
+Content-Length: 47
+Keep-Alive: timeout=15, max=100
+Connection: Keep-Alive
+Content-Type: text/html;charset=GBK
+----------------------------------------------------------
+http://tcc.taobao.com/cc/mobile_charge.htm?css=fp_2011
+
+GET /cc/mobile_charge.htm?css=fp_2011 HTTP/1.1
+Host: tcc.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70w%3D%3D&existShop=true&cookie16=VFC%2FuZ9az08KUQ56dCrZDlbNdA%3D%3D&sg=025&cookie21=UtASsssmfaNq04quL1IVbQ%3D%3D&tag=1&cookie15=Vq8l%2BKCLz3%2F65A%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:51 GMT
+Content-Type: text/html;charset=GBK
+Transfer-Encoding: chunked
+Connection: close
+Vary: Accept-Encoding
+Content-Language: zh-CN
+Content-Encoding: gzip
+----------------------------------------------------------
+http://www.atpanel.com/1.gif?cache=8040849&pre=http%3A//www.taobao.com/&scr=1440x900&ul_chk=47700902&acookie_cna=PRtSB6ZTj2cCAcZV4HowlySQ&tracknick=gongsuochen2010&isbetanew=1&category=&userid=521760712&tid=9cf2bdeb2bb7a33907f3ba30040bc8a7&channel=109&&rpi_bi=22153937.299769&upi_bi=22153950.8416148
+
+GET /1.gif?cache=8040849&pre=http%3A//www.taobao.com/&scr=1440x900&ul_chk=47700902&acookie_cna=PRtSB6ZTj2cCAcZV4HowlySQ&tracknick=gongsuochen2010&isbetanew=1&category=&userid=521760712&tid=9cf2bdeb2bb7a33907f3ba30040bc8a7&channel=109&&rpi_bi=22153937.299769&upi_bi=22153950.8416148 HTTP/1.1
+Host: www.atpanel.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: TAOBAOSIDA=5724478348448762144_20120327153938; TAOBAOMIDA=5688742663616010541; TAOBAOUIDA=521760712; TAOBAOAIDA=5724441811647400468; TAOBAOCHIDA=112_20120327153938
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 27 Mar 2012 07:39:52 GMT
+Content-Type: image/gif
+Content-Length: 49
+Connection: close
+P3P: CP="NOI DSP COR CURa ADMa DEVa PSAa PSDa OUR IND UNI PUR NAV"
+Set-Cookie: TAOBAOSIDA=5724478348448762144_20120327153952; expires=Fri, 25-Mar-2022 07:39:52 GMT; path=/;domain=.atpanel.com
+Set-Cookie: TAOBAOCHIDA=109_20120327153952; expires=Tue, 27-Mar-2012 08:39:52 GMT; path=/;domain=.atpanel.com
+Expires: Sat, 16 Jan 1980 12:00:00 GMT
+Pragma: no-cache
+----------------------------------------------------------
+http://delta.taobao.com/home/delivery/AllContentByPage.do?resourceIds=300,48,49,53,68,73,74,127,128,129,225,226,227,228,229,230,231,232,236,274,278,279,280,281,282,283,284,295,296,297,298,343,344,345,346,347,348,349,350,351,352&t=1332833990777
+
+GET /home/delivery/AllContentByPage.do?resourceIds=300,48,49,53,68,73,74,127,128,129,225,226,227,228,229,230,231,232,236,274,278,279,280,281,282,283,284,295,296,297,298,343,344,345,346,347,348,349,350,351,352&t=1332833990777 HTTP/1.1
+Host: delta.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; did=521760712; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70w%3D%3D&existShop=true&cookie16=VFC%2FuZ9az08KUQ56dCrZDlbNdA%3D%3D&sg=025&cookie21=UtASsssmfaNq04quL1IVbQ%3D%3D&tag=1&cookie15=Vq8l%2BKCLz3%2F65A%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:52 GMT
+Server: Apache
+P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR', CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
+Set-Cookie: did=521760712;Domain=delta.taobao.com;Path=/;Expires=Wed, 27-Mar-2013 07:39:52 GMT;HttpOnly
+Set-Cookie: uc1=lltime=1332831164&cookie14=UoLfckGp7lr70Q%3D%3D&existShop=true&cookie16=VFC%2FuZ9az08KUQ56dCrZDlbNdA%3D%3D&sg=025&cookie21=U%2BGCWk%2F7owVBK2HgbSjp2A%3D%3D&tag=1&cookie15=V32FPkk%2Fw0dUvg%3D%3D; Domain=.taobao.com; Path=/
+Content-Language: zh-CN
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 2894
+Connection: close
+Content-Type: application/javascript;charset=GBK
+----------------------------------------------------------
+http://acookie.taobao.com/1.gif?acookie_load_id=92950422967306242581&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%uFF01%u6211%u559C%u6B22&pre=&isbetanew=1&category=&userid=521760712&channel=109&
+
+GET /1.gif?acookie_load_id=92950422967306242581&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%uFF01%u6211%u559C%u6B22&pre=&isbetanew=1&category=&userid=521760712&channel=109& HTTP/1.1
+Host: acookie.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; cnaex=521760712; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_1; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; sc=dcc2504e; linezing_session=a6b19ea88fd8e428a7eded92_1332833979_1; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70g%3D%3D&existShop=true&cookie16=VT5L2FSpNgq6fDudInPRgavC%2BQ%3D%3D&sg=025&cookie21=W5iHLLyFfXb%2BYu1IRpZ1RQ%3D%3D&tag=1&cookie15=V32FPkk%2Fw0dUvg%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F; tlut=UoLfckGp7lr70g%3D%3D
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 27 Mar 2012 07:39:52 GMT
+Content-Type: image/gif
+Transfer-Encoding: chunked
+Connection: close
+P3P: CP="CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+Set-Cookie: linezing_session=a6b19ea88fd8e428a7eded92_1332833992_2; path=/; domain=.acookie.taobao.com
+----------------------------------------------------------
+http://t.alimama.com/alimama.php?callback=g_ecpm_callback&i=mm_12852562_1778064_8430810,mm_12852562_1778064_8430819&t=k&cg=52c6ab29c3e3b95a0a8229cfadac408f&ac=9237&prp=93281836&cas=prp&cbh=3733&cbw=1423&sx=0&sy=0&re=1440x900&cah=860&caw=1440&ccd=24&ctz=8&chl=12&cja=1&cpl=18&cmm=60&cf=-1&u=http%3A%2F%2Fwww.taobao.com%2F&r=
+
+GET /alimama.php?callback=g_ecpm_callback&i=mm_12852562_1778064_8430810,mm_12852562_1778064_8430819&t=k&cg=52c6ab29c3e3b95a0a8229cfadac408f&ac=9237&prp=93281836&cas=prp&cbh=3733&cbw=1423&sx=0&sy=0&re=1440x900&cah=860&caw=1440&ccd=24&ctz=8&chl=12&cja=1&cpl=18&cmm=60&cf=-1&u=http%3A%2F%2Fwww.taobao.com%2F&r= HTTP/1.1
+Host: t.alimama.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ; p_d=r:1
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:52 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Set-Cookie: p_d=r:1; expires=Wed, 28-Mar-2012 07:39:52 GMT; path=/; domain=.alimama.com
+Cache-Control: no-cache
+Expires: Tue, 27 Mar 2012 07:49:52 GMT
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Pragma: no-cache
+Content-Length: 1105
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://i.taobao.com/json/my_taobao_remind_data.htm?callback=g_fp_profile_callback
+
+GET /json/my_taobao_remind_data.htm?callback=g_fp_profile_callback HTTP/1.1
+Host: i.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70w%3D%3D&existShop=true&cookie16=VFC%2FuZ9az08KUQ56dCrZDlbNdA%3D%3D&sg=025&cookie21=UtASsssmfaNq04quL1IVbQ%3D%3D&tag=1&cookie15=Vq8l%2BKCLz3%2F65A%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:52 GMT
+Server: Apache
+Set-Cookie: uc1=lltime=1332831164&cookie14=UoLfckGp7lr70Q%3D%3D&existShop=true&cookie16=W5iHLLyFPlMGbLDwA%2BdvAGZqLg%3D%3D&sg=025&cookie21=URm48syIZJTgtchfymLFZw%3D%3D&tag=1&cookie15=V32FPkk%2Fw0dUvg%3D%3D; Domain=.taobao.com; Path=/
+Content-Language: zh-CN
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Pragma: no-cache
+Content-Length: 131
+Connection: close
+Content-Type: text/html;charset=GBK
+----------------------------------------------------------
+http://a.tbcdn.cn/apps/tbskip/public/flashStorage.swf
+
+GET /apps/tbskip/public/flashStorage.swf HTTP/1.1
+Host: a.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://tcc.taobao.com/cc/mobile_charge.htm?css=fp_2011
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:52 GMT
+Content-Type: application/x-shockwave-flash
+Content-Length: 2879
+Last-Modified: Mon, 28 Feb 2011 01:25:13 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 07:39:52 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+http://ald.taobao.com/special/recommendStrValueLogo.htm?appID=94&num=3&varName=aldata&key=gongsuochen2010
+
+GET /special/recommendStrValueLogo.htm?appID=94&num=3&varName=aldata&key=gongsuochen2010 HTTP/1.1
+Host: ald.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_1; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70Q%3D%3D&existShop=true&cookie16=W5iHLLyFPlMGbLDwA%2BdvAGZqLg%3D%3D&sg=025&cookie21=URm48syIZJTgtchfymLFZw%3D%3D&tag=1&cookie15=V32FPkk%2Fw0dUvg%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F; tlut=UoLfckGp7lr70g%3D%3D
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:53 GMT
+Server: Apache
+Content-Language: zh-CN
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 712
+Connection: close
+Content-Type: text/html;charset=gbk
+----------------------------------------------------------
+http://ald.taobao.com/special/recommendIndexBanner.htm?appID=94&num=4&varName=slideDate&nick=gongsuochen2010&areas=190522_1&t=6972055
+
+GET /special/recommendIndexBanner.htm?appID=94&num=4&varName=slideDate&nick=gongsuochen2010&areas=190522_1&t=6972055 HTTP/1.1
+Host: ald.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_1; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70Q%3D%3D&existShop=true&cookie16=W5iHLLyFPlMGbLDwA%2BdvAGZqLg%3D%3D&sg=025&cookie21=URm48syIZJTgtchfymLFZw%3D%3D&tag=1&cookie15=V32FPkk%2Fw0dUvg%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F; tlut=UoLfckGp7lr70g%3D%3D
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:53 GMT
+Server: Apache
+Content-Language: zh-CN
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 431
+Connection: close
+Content-Type: text/html;charset=gbk
+----------------------------------------------------------
+http://ac.atpanel.com/1.gif?cache=0287566&com=02&apply=fixed&cod=1.1.2&uid=&ver=&ip=&other=
+
+GET /1.gif?cache=0287566&com=02&apply=fixed&cod=1.1.2&uid=&ver=&ip=&other= HTTP/1.1
+Host: ac.atpanel.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: TAOBAOSIDA=5724478348448762144_20120327153952; TAOBAOMIDA=5688742663616010541; TAOBAOUIDA=521760712; TAOBAOAIDA=5724441811647400468; TAOBAOCHIDA=109_20120327153952
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 27 Mar 2012 07:39:52 GMT
+Content-Type: image/gif
+Content-Length: 49
+Connection: close
+P3P: CP="NOI DSP COR CURa ADMa DEVa PSAa PSDa OUR IND UNI PUR NAV"
+Expires: Sat, 16 Jan 1980 12:00:00 GMT
+Pragma: no-cache
+----------------------------------------------------------
+http://ac.atpanel.com/1.gif?cache=4958175&com=02&apply=fixed&cod=1.2.1&uid=&ver=&ip=&other=
+
+GET /1.gif?cache=4958175&com=02&apply=fixed&cod=1.2.1&uid=&ver=&ip=&other= HTTP/1.1
+Host: ac.atpanel.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: TAOBAOSIDA=5724478348448762144_20120327153952; TAOBAOMIDA=5688742663616010541; TAOBAOUIDA=521760712; TAOBAOAIDA=5724441811647400468; TAOBAOCHIDA=109_20120327153952
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 27 Mar 2012 07:39:53 GMT
+Content-Type: image/gif
+Content-Length: 49
+Connection: close
+P3P: CP="NOI DSP COR CURa ADMa DEVa PSAa PSDa OUR IND UNI PUR NAV"
+Set-Cookie: TAOBAOSIDA=5724478348448762144_20120327153953; expires=Fri, 25-Mar-22 07:39:53 GMT; path=/; domain=.atpanel.com
+Set-Cookie: TAOBAOCHIDA=109_20120327153953; expires=Tue, 27-Mar-12 08:39:53 GMT; path=/; domain=.atpanel.com
+Expires: Sat, 16 Jan 1980 12:00:00 GMT
+Pragma: no-cache
+----------------------------------------------------------
+http://p.tanx.com/ex?i=mm_12852562_1778064_9118777
+
+GET /ex?i=mm_12852562_1778064_9118777 HTTP/1.1
+Host: p.tanx.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 1290
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://p.tanx.com/ex?i=mm_12852562_1778064_9118778
+
+GET /ex?i=mm_12852562_1778064_9118778 HTTP/1.1
+Host: p.tanx.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 1243
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://p.tanx.com/ex?i=mm_12852562_1778064_9118779
+
+GET /ex?i=mm_12852562_1778064_9118779 HTTP/1.1
+Host: p.tanx.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 1214
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://p.tanx.com/ex?i=mm_12852562_1778064_9087825
+
+GET /ex?i=mm_12852562_1778064_9087825 HTTP/1.1
+Host: p.tanx.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 580
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://p.tanx.com/ex?i=mm_17903917_2449660_9450867
+
+GET /ex?i=mm_17903917_2449660_9450867 HTTP/1.1
+Host: p.tanx.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 1201
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://cb.alimama.cn/js/search8/newinf-min.js
+
+GET /js/search8/newinf-min.js HTTP/1.1
+Host: cb.alimama.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+If-Modified-Since: Thu, 03 Mar 2011 03:14:12 GMT
+
+HTTP/1.1 304 Not Modified
+Date: Tue, 27 Mar 2012 06:16:13 GMT
+Content-Type: application/x-javascript; charset=GBK
+Expires: Tue, 27 Mar 2012 08:16:13 GMT
+Last-Modified: Thu, 03 Mar 2011 03:14:12 GMT
+Cache-Control: max-age=7200
+Age: 5020
+Via: 1.1 a5b0f10e
+----------------------------------------------------------
+http://i.mmcdn.cn/simba/img/T15k94XchaXXXXXXXX.jpg?noq=y
+
+GET /simba/img/T15k94XchaXXXXXXXX.jpg?noq=y HTTP/1.1
+Host: i.mmcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Last-Modified: Mon, 26 Mar 2012 09:02:38 GMT
+Content-Length: 28461
+Content-Type: image/jpeg
+Date: Mon, 26 Mar 2012 16:00:03 GMT
+Server: Apache
+Expires: Thu, 24 Mar 2022 16:00:03 GMT
+Cache-Control: max-age=315360000
+Age: 85584
+Via: 1.1 f983cbc3
+----------------------------------------------------------
+http://i.mmcdn.cn/simba/img/T1JZ53XgFtXXXXXXXX.jpg?noq=y
+
+GET /simba/img/T1JZ53XgFtXXXXXXXX.jpg?noq=y HTTP/1.1
+Host: i.mmcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Date: Mon, 26 Mar 2012 16:00:02 GMT
+Server: Apache
+Last-Modified: Fri, 23 Mar 2012 07:45:06 GMT
+Content-Length: 33092
+Cache-Control: max-age=315360000
+Expires: Thu, 24 Mar 2022 16:00:02 GMT
+Content-Type: image/jpeg
+Age: 56392
+Via: 1.1 d60d57f8
+----------------------------------------------------------
+http://i.mmcdn.cn/simba/img/T1s4C4Xk8dXXXXXXXX.gif?noq=y
+
+GET /simba/img/T1s4C4Xk8dXXXXXXXX.gif?noq=y HTTP/1.1
+Host: i.mmcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Date: Mon, 26 Mar 2012 16:00:01 GMT
+Server: Apache
+Last-Modified: Mon, 26 Mar 2012 02:23:29 GMT
+Content-Length: 37121
+Cache-Control: max-age=315360000
+Expires: Thu, 24 Mar 2022 16:00:01 GMT
+Content-Type: image/gif
+Age: 56393
+Via: 1.1 c4b068e4
+----------------------------------------------------------
+http://www.taobao.com/go/rgn/fp2011_v1/subpromotion_activity_new.php
+
+GET /go/rgn/fp2011_v1/subpromotion_activity_new.php HTTP/1.1
+Host: www.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_1; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70Q%3D%3D&existShop=true&cookie16=W5iHLLyFPlMGbLDwA%2BdvAGZqLg%3D%3D&sg=025&cookie21=URm48syIZJTgtchfymLFZw%3D%3D&tag=1&cookie15=V32FPkk%2Fw0dUvg%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F; tlut=UoLfckGp7lr70g%3D%3D
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Content-Type: text/html; charset=GB2312
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Tue, 27 Mar 2012 08:39:54 GMT
+Cache-Control: max-age=3600
+Content-Encoding: gzip
+----------------------------------------------------------
+http://p.tanx.com/ex?i=mm_12852562_1778064_9087844
+
+GET /ex?i=mm_12852562_1778064_9087844 HTTP/1.1
+Host: p.tanx.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 570
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://t.alimama.com/alimama.php?t=i&w=300&h=100&i=mm_12852562_1778064_9086741&cg=333e04c1a723daf141efd92c09996612&ac=7607&pro=93287935&cas=pro&cbh=3733&cbw=1423&sx=0&sy=0&re=1440x900&cah=860&caw=1440&ccd=24&ctz=8&chl=12&cja=1&cpl=18&cmm=60&cf=-1&u=http%3A%2F%2Fwww.taobao.com%2F&r=
+
+GET /alimama.php?t=i&w=300&h=100&i=mm_12852562_1778064_9086741&cg=333e04c1a723daf141efd92c09996612&ac=7607&pro=93287935&cas=pro&cbh=3733&cbw=1423&sx=0&sy=0&re=1440x900&cah=860&caw=1440&ccd=24&ctz=8&chl=12&cja=1&cpl=18&cmm=60&cf=-1&u=http%3A%2F%2Fwww.taobao.com%2F&r= HTTP/1.1
+Host: t.alimama.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ; p_d=r:1
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Set-Cookie: p_d=r:1; expires=Wed, 28-Mar-2012 07:39:54 GMT; path=/; domain=.alimama.com
+Cache-Control: no-cache
+Expires: Tue, 27 Mar 2012 07:49:54 GMT
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Pragma: no-cache
+Content-Length: 1238
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://p.tanx.com/ex?i=mm_12852562_1778064_9118787
+
+GET /ex?i=mm_12852562_1778064_9118787 HTTP/1.1
+Host: p.tanx.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:54 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 362
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://img.alimama.cn/adbrand/adboard/picture/2012-03-24/133443170001120324110412.jpg
+
+GET /adbrand/adboard/picture/2012-03-24/133443170001120324110412.jpg HTTP/1.1
+Host: img.alimama.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 26 Mar 2012 07:02:42 GMT
+Content-Type: image/jpeg
+Content-Length: 14473
+Last-Modified: Sat, 24 Mar 2012 03:10:10 GMT
+Expires: Thu, 24 Mar 2022 07:02:42 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+Age: 88620
+Via: 1.1 8c0f53c4
+Connection: keep-alive
+H-Cache: Hit
+----------------------------------------------------------
+http://t.alimama.com/alimama.php?t=i&w=190&h=90&i=mm_12852562_1778064_8320215&cg=e32563f14e103975f86c2bb33d30edd0&ac=5353&prk=93289298&cas=prk&cbh=3733&cbw=1423&sx=0&sy=0&re=1440x900&cah=860&caw=1440&ccd=24&ctz=8&chl=12&cja=1&cpl=18&cmm=60&cf=-1&u=http%3A%2F%2Fwww.taobao.com%2F&r=
+
+GET /alimama.php?t=i&w=190&h=90&i=mm_12852562_1778064_8320215&cg=e32563f14e103975f86c2bb33d30edd0&ac=5353&prk=93289298&cas=prk&cbh=3733&cbw=1423&sx=0&sy=0&re=1440x900&cah=860&caw=1440&ccd=24&ctz=8&chl=12&cja=1&cpl=18&cmm=60&cf=-1&u=http%3A%2F%2Fwww.taobao.com%2F&r= HTTP/1.1
+Host: t.alimama.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: cna=PRtSB6ZTj2cCAcZV4HowlySQ; p_d=r:1
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:55 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Set-Cookie: p_d=r:1; expires=Wed, 28-Mar-2012 07:39:55 GMT; path=/; domain=.alimama.com
+Cache-Control: no-cache
+Expires: Tue, 27 Mar 2012 07:49:55 GMT
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Pragma: no-cache
+Content-Length: 1193
+Connection: close
+Content-Type: application/x-javascript; charset=GB2312
+----------------------------------------------------------
+http://a.tbcdn.cn/apps/tbskip/public/flashStorage.swf?t=20110224
+
+GET /apps/tbskip/public/flashStorage.swf?t=20110224 HTTP/1.1
+Host: a.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:55 GMT
+Content-Type: application/x-shockwave-flash
+Content-Length: 2879
+Last-Modified: Mon, 28 Feb 2011 01:25:13 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 07:39:55 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+http://strip.taobaocdn.com/tps/i1/T1dQSIXXXnXXXXXXXX-440-135.png?t=1332833993954
+
+GET /tps/i1/T1dQSIXXXnXXXXXXXX-440-135.png?t=1332833993954 HTTP/1.1
+Host: strip.taobaocdn.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Date: Mon, 26 Mar 2012 09:37:40 GMT
+Server: Apache
+Last-Modified: Thu, 22 Dec 2011 06:09:21 GMT
+Content-Length: 24216
+Cache-Control: max-age=315360000
+Expires: Thu, 24 Mar 2022 09:37:40 GMT
+Content-Type: image/png
+Age: 79335
+Via: 1.1 ecacf79f
+----------------------------------------------------------
+http://textlink.simba.taobao.com/lk?pid=619362_1007&catids=&count=10&maxlength=10&callback=callback_link_71783
+
+GET /lk?pid=619362_1007&catids=&count=10&maxlength=10&callback=callback_link_71783 HTTP/1.1
+Host: textlink.simba.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UIHiLt3xSw%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=gongsuochen2010; ssllogin=1; l=gongsuochen2010::1332829617329::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_1; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=lltime=1332831164&cookie14=UoLfckGp7lr70Q%3D%3D&existShop=true&cookie16=W5iHLLyFPlMGbLDwA%2BdvAGZqLg%3D%3D&sg=025&cookie21=URm48syIZJTgtchfymLFZw%3D%3D&tag=1&cookie15=V32FPkk%2Fw0dUvg%3D%3D; lastgetwwmsg=MTMzMjgzMzk5MA%3D%3D; _sv_=0; unb=521760712; _nk_=gongsuochen2010; _l_g_=Ug%3D%3D; cookie1=UNbV%2BSLyLhixeGQiKzlKPmlJf5MJzNxr0l%2BExnx9J5M%3D; cookie17=VvzyEs5Dlu8F; tlut=UoLfckGp7lr70g%3D%3D
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 07:39:55 GMT
+Server: Apache/2.2.11 (Taobao-AD)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 634
+Connection: close
+Content-Type: application/javascript
+----------------------------------------------------------
+http://a.tbcdn.cn/cdnstatus.js?t=1332833994180
+
+GET /cdnstatus.js?t=1332833994180 HTTP/1.1
+Host: a.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 07:39:55 GMT
+Content-Type: application/x-javascript
+Content-Length: 27
+Last-Modified: Wed, 14 Dec 2011 07:00:01 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 07:39:55 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------

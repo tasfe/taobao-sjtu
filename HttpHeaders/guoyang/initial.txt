@@ -1,0 +1,1246 @@
+http://www.guoyang.cc/2012/
+
+GET http://www.guoyang.cc/2012/ HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+
+HTTP/1.0 200 OK
+Content-Type: text/html
+Last-Modified: Thu, 05 Apr 2012 12:09:43 GMT
+Content-Length: 6695
+Accept-Ranges: bytes
+Etag: "515b58fc2413cd1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 00:53:33 GMT
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2619
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/2012/index_files/111.jpg
+
+GET http://www.guoyang.cc/2012/index_files/111.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Tue, 03 Apr 2012 14:29:30 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 241836
+Date: Fri, 06 Apr 2012 00:53:36 GMT
+Etag: "67e34e2ea611cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2618
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/2012/index_files/5.jpg
+
+GET http://www.guoyang.cc/2012/index_files/5.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Mon, 19 Mar 2012 07:06:44 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 29207
+Date: Fri, 06 Apr 2012 00:53:34 GMT
+Etag: "e9dccdd79e5cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2618
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/2012/index_files/xwrw.jpg
+
+GET http://www.guoyang.cc/2012/index_files/xwrw.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Fri, 23 Mar 2012 02:55:24 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 56562
+Date: Fri, 06 Apr 2012 00:53:34 GMT
+Etag: "77d6df64a08cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2617
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/2012/index_files/6.jpg
+
+GET http://www.guoyang.cc/2012/index_files/6.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Tue, 20 Mar 2012 04:21:07 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 18170
+Date: Fri, 06 Apr 2012 00:53:35 GMT
+Etag: "909f62df506cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2619
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://s20.cnzz.com/stat.php?id=3990314&web_id=3990314
+
+GET http://s20.cnzz.com/stat.php?id=3990314&web_id=3990314 HTTP/1.1
+Host: s20.cnzz.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Date: Fri, 06 Apr 2012 00:12:29 GMT
+Server: Apache/2.2.19 (Unix)
+Last-Modified: Fri, 06 Apr 2012 00:12:29 GMT
+Expires: Fri, 06 Apr 2012 01:42:29 GMT
+Content-Length: 2394
+Content-Type: text/html
+X-Cache: MISS from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 5084
+Via: http/1.1 cn77 (ApacheTrafficServer/3.0.2 [cHs f ]), 1.1 2989d8b, 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+
+GET http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=gbk
+Server: Microsoft-IIS/7.5
+X-Powered-By: PHP/5.3.6, ASP.NET
+Set-Cookie: pqrF_267c_lastvisit=1333672623; expires=Sun, 06-May-2012 01:37:03 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_sid=nWNrgg; expires=Sat, 07-Apr-2012 01:37:03 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_lastact=1333676223%09poll.php%09; expires=Sat, 07-Apr-2012 01:37:03 GMT; path=/; domain=.guoyang.cc
+Date: Fri, 06 Apr 2012 01:37:03 GMT
+Content-Length: 16193
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/template/common/common.css
+
+GET http://www.guoyang.cc/polls/template/common/common.css HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: text/css
+Content-Encoding: gzip
+Last-Modified: Tue, 19 Oct 2010 08:19:06 GMT
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 2074
+Date: Fri, 06 Apr 2012 00:53:35 GMT
+Etag: "039d84b666fcb1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2619
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/template/poll/default/poll.css
+
+GET http://www.guoyang.cc/polls/template/poll/default/poll.css HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: text/css
+Content-Encoding: gzip
+Last-Modified: Wed, 27 Oct 2010 07:58:30 GMT
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 1235
+Date: Fri, 06 Apr 2012 00:53:35 GMT
+Etag: "0976fbeac75cb1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2619
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/static/js/common.js
+
+GET http://www.guoyang.cc/polls/static/js/common.js HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: application/x-javascript
+Last-Modified: Tue, 19 Oct 2010 01:45:38 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 108808
+Date: Fri, 06 Apr 2012 00:53:36 GMT
+Etag: "04d61542f6fcb1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/static/js/poll.js
+
+GET http://www.guoyang.cc/polls/static/js/poll.js HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: application/x-javascript
+Last-Modified: Fri, 05 Nov 2010 09:13:26 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 9081
+Date: Fri, 06 Apr 2012 00:53:36 GMT
+Etag: "07ffab3c97ccb1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2617
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/2012/images/qybj.jpg
+
+GET http://www.guoyang.cc/2012/images/qybj.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 404 Not Found
+Content-Type: text/html
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 01:37:03 GMT
+Content-Length: 1163
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/2012/images/pxbf.jpg
+
+GET http://www.guoyang.cc/2012/images/pxbf.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 404 Not Found
+Content-Type: text/html
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 01:37:03 GMT
+Content-Length: 1163
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223311svlanpt4wtnia1mv.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223311svlanpt4wtnia1mv.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:33:11 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 4980
+Date: Fri, 06 Apr 2012 00:53:40 GMT
+Etag: "ee599eb145cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/23/095306am8qfr43sd808mrz.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/23/095306am8qfr43sd808mrz.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Fri, 23 Mar 2012 01:53:06 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6020
+Date: Fri, 06 Apr 2012 00:53:38 GMT
+Etag: "60afdfb0978cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/2232429bs6px60sxb0eye9.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/2232429bs6px60sxb0eye9.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:43 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 5551
+Date: Fri, 06 Apr 2012 00:53:38 GMT
+Etag: "7969ffa135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/23/092735ogz45xe3co4ed5i4.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/23/092735ogz45xe3co4ed5i4.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Fri, 23 Mar 2012 01:27:35 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 5827
+Date: Fri, 06 Apr 2012 00:53:38 GMT
+Etag: "b06d2820948cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223240daeex7y8a7szy9xa.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223240daeex7y8a7szy9xa.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:40 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6014
+Date: Fri, 06 Apr 2012 00:53:38 GMT
+Etag: "8646e4f8135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2617
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223319p446qcs75z5afwwd.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223319p446qcs75z5afwwd.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:33:19 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6077
+Date: Fri, 06 Apr 2012 00:53:38 GMT
+Etag: "73f92710145cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2617
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/template/poll/default/images/pic.png
+
+GET http://www.guoyang.cc/polls/template/poll/default/images/pic.png HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/template/poll/default/poll.css
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/png
+Last-Modified: Thu, 26 Aug 2010 01:03:56 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 1560
+Date: Fri, 06 Apr 2012 00:53:40 GMT
+Etag: "0e6c38eba44cb1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2614
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/template/poll/default/images/btn_poll.gif
+
+GET http://www.guoyang.cc/polls/template/poll/default/images/btn_poll.gif HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/template/poll/default/poll.css
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/gif
+Last-Modified: Thu, 26 Aug 2010 01:03:56 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 1004
+Date: Fri, 06 Apr 2012 00:53:41 GMT
+Etag: "0e6c38eba44cb1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2615
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/static/image/common/soflash.swf?site=http://www.guoyang.cc/polls/misc.php%3fmod=so%26&module=poll&pollid=1&operation=config&random=0x8Z
+
+GET http://www.guoyang.cc/polls/static/image/common/soflash.swf?site=http://www.guoyang.cc/polls/misc.php%3fmod=so%26&module=poll&pollid=1&operation=config&random=0x8Z HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: application/x-shockwave-flash
+Last-Modified: Sun, 26 Sep 2010 02:49:16 GMT
+Accept-Ranges: bytes
+Etag: "09e9568255dcb1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 01:37:04 GMT
+Content-Length: 5108
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223239ramleoeaxmmm2rnl.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223239ramleoeaxmmm2rnl.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:39 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 4428
+Date: Fri, 06 Apr 2012 00:53:39 GMT
+Etag: "35b150f8135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/2232507kse8ep9wm23k787.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/2232507kse8ep9wm23k787.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:50 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 7042
+Date: Fri, 06 Apr 2012 00:53:39 GMT
+Etag: "1b13bff135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/2232365mc7pm1blbtev11c.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/2232365mc7pm1blbtev11c.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:37 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6513
+Date: Fri, 06 Apr 2012 00:53:39 GMT
+Etag: "efd15f7135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223242t7oo9o3jwzhkoyjt.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223242t7oo9o3jwzhkoyjt.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:42 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 4996
+Date: Fri, 06 Apr 2012 00:53:39 GMT
+Etag: "e83310fa135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223249olyrucbeb51clylb.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223249olyrucbeb51clylb.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:49 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6488
+Date: Fri, 06 Apr 2012 00:53:39 GMT
+Etag: "6abd73fe135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2617
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223255tvibdxyxtxbzbo9t.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223255tvibdxyxtxbzbo9t.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:55 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 4547
+Date: Fri, 06 Apr 2012 00:53:39 GMT
+Etag: "98a6302145cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2617
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/23/095305n7hkg6mio7e7nhib.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/23/095305n7hkg6mio7e7nhib.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Fri, 23 Mar 2012 01:53:05 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 7393
+Date: Fri, 06 Apr 2012 00:53:39 GMT
+Etag: "739174b0978cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2617
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223311qj29avpfj28jpeg2.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223311qj29avpfj28jpeg2.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:33:11 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6198
+Date: Fri, 06 Apr 2012 00:53:39 GMT
+Etag: "54dcd9b145cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2617
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223245io33ofk3sigi3iko.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223245io33ofk3sigi3iko.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:45 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6304
+Date: Fri, 06 Apr 2012 00:53:40 GMT
+Etag: "e41f17fc135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2615
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/23/095307l5hq6rlcbb9f2ec6.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/23/095307l5hq6rlcbb9f2ec6.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Fri, 23 Mar 2012 01:53:08 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 5207
+Date: Fri, 06 Apr 2012 00:53:41 GMT
+Etag: "7c3ed7b1978cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223236uue8zlie05u59sz8.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223236uue8zlie05u59sz8.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:36 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 5384
+Date: Fri, 06 Apr 2012 00:53:40 GMT
+Etag: "7f237ef6135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2616
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223314litq1gsh1my7szm1.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223314litq1gsh1my7szm1.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:33:14 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6423
+Date: Fri, 06 Apr 2012 00:53:40 GMT
+Etag: "629f62d145cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2615
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223246yxihatf6cz32dei2.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/18/223246yxihatf6cz32dei2.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Sun, 18 Mar 2012 14:32:46 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 6483
+Date: Fri, 06 Apr 2012 00:53:41 GMT
+Etag: "d75ebbfc135cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2614
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/data/attachment/poll/201203/23/095307gh2raxvz8zay40h2.jpg.thumb.jpg
+
+GET http://www.guoyang.cc/polls/data/attachment/poll/201203/23/095307gh2raxvz8zay40h2.jpg.thumb.jpg HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Content-Type: image/jpeg
+Last-Modified: Fri, 23 Mar 2012 01:53:07 GMT
+Accept-Ranges: bytes
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Content-Length: 5661
+Date: Fri, 06 Apr 2012 00:53:41 GMT
+Etag: "cd5254b1978cd1:0"
+Warning: 110 squid/3.1.11 "Response is stale", 111 squid/3.1.11 "Revalidation failed"
+X-Cache: HIT from localhost, HIT from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 2614
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/misc.php?mod=so&&module=poll&pollid=1
+
+GET http://www.guoyang.cc/polls/misc.php?mod=so&&module=poll&pollid=1 HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=nWNrgg; pqrF_267c_lastact=1333676223%09poll.php%09
+
+HTTP/1.0 200 OK
+Cache-Control: no-store, private, post-check=0, pre-check=0, max-age=0
+Pragma: no-cache
+Content-Type: application/xml; charset=UTF-8
+Expires: -1
+Server: Microsoft-IIS/7.5
+X-Powered-By: PHP/5.3.6, ASP.NET
+Set-Cookie: pqrF_267c_sid=avltLT; expires=Sat, 07-Apr-2012 01:37:06 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_lastact=1333676226%09misc.php%09so; expires=Sat, 07-Apr-2012 01:37:06 GMT; path=/; domain=.guoyang.cc
+Date: Fri, 06 Apr 2012 01:37:05 GMT
+Content-Length: 336
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://hzs20.cnzz.com/stat.htm?id=3990314&r=&lg=undefined&ntime=0.80299600%201333671149&repeatip=0&rtime=0&cnzz_eid=54969145-1333671149-&showp=1440x900&st=1333676230&sin=&res=0
+
+GET http://hzs20.cnzz.com/stat.htm?id=3990314&r=&lg=undefined&ntime=0.80299600%201333671149&repeatip=0&rtime=0&cnzz_eid=54969145-1333671149-&showp=1440x900&st=1333676230&sin=&res=0 HTTP/1.1
+Host: hzs20.cnzz.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Server: nginx/1.0.4
+Date: Fri, 06 Apr 2012 01:37:16 GMT
+Content-Type: image/gif
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: close
+----------------------------------------------------------
+http://www.guoyang.cc/favicon.ico
+
+GET http://www.guoyang.cc/favicon.ico HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Cookie: cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333676230082; cnzz_eid=54969145-1333671149-; pqrF_267c_lastvisit=1333672623; pqrF_267c_sid=avltLT; pqrF_267c_lastact=1333676226%09misc.php%09so
+
+HTTP/1.0 200 OK
+Content-Type: image/x-icon
+Last-Modified: Fri, 24 Dec 2010 05:19:56 GMT
+Accept-Ranges: bytes
+Etag: "eda3332aa3cb1:0"
+Server: Microsoft-IIS/7.5
+X-Powered-By: ASP.NET
+Date: Fri, 06 Apr 2012 00:06:31 GMT
+Content-Length: 1150
+X-Cache: MISS from localhost, HIT from localhost
+X-Cache-Lookup: MISS from localhost:3128, HIT from localhost:3128
+Age: 5434
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768
+
+GET https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768 HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+x-amz-id-2: HB+CnZsDTn/Zv2NI7JJFcV5HHBjha07E22zYGwdbv8AgzdNTV1FeAx3AoWDDADC5
+x-amz-request-id: 5013388E221F51F3
+Date: Wed, 04 Apr 2012 20:52:25 GMT
+Last-Modified: Wed, 04 Apr 2012 20:49:16 GMT
+Etag: "3126d392f8825df5be089e35528ffd13"
+Accept-Ranges: bytes
+Content-Type: application/x-javascript
+Content-Length: 14912
+Server: AmazonS3
+Age: 20742
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: _BJivWvFd9Yp8PVTBeb690zqzpX4MTKNYyoPeAA7a-e3kolI41vTTg==
+Via: 1.0 1fcad26913988e10fd175698baa6f474.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------
+http://d3lvr7yuk4uaui.cloudfront.net/items/e6a00/storage.swf
+
+GET http://d3lvr7yuk4uaui.cloudfront.net/items/e6a00/storage.swf HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+x-amz-id-2: ApusuPXnjumyWrU8vT43rjssGDv9JGSo15jDQFGcMy+4KEaKKVCVeb+RyNc6L1Oj
+x-amz-request-id: 6F79DBAFFA4DA5E5
+Date: Fri, 14 Oct 2011 00:00:15 GMT
+x-amz-meta-cb-modifiedtime: Wed, 06 Apr 2011 00:03:56 GMT
+Last-Modified: Wed, 01 Jun 2011 16:00:38 GMT
+Etag: "1fe75368a25314fdaa939b380c29dd19"
+Accept-Ranges: bytes
+Content-Type: application/x-shockwave-flash
+Content-Length: 1924
+Server: AmazonS3
+Age: 67477
+X-Cache: Hit from cloudfront, MISS from localhost, MISS from localhost
+X-Amz-Cf-Id: -Ss-NluRvmwL8QOhQ7mcuzpKY6QypzSDLZD1y6ZD_3Pchd9ZUHSZdA==
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 48e3cf3ee71856983cda4c8805113c56.cloudfront.net:11180 (CloudFront), 1.0 1fcad26913988e10fd175698baa6f474.cloudfront.net (CloudFront), 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://ads2srv.com/tb/gc.php?json&cb=_GPL.setGeoAndGo
+
+GET http://ads2srv.com/tb/gc.php?json&cb=_GPL.setGeoAndGo HTTP/1.1
+Host: ads2srv.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Server: nginx/1.1.15
+Date: Fri, 06 Apr 2012 01:37:25 GMT
+Content-Type: application/javascript
+Content-Length: 75
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://d15gt9gwxw5wu0.cloudfront.net/js/guoyang.cc/r.js
+
+GET http://d15gt9gwxw5wu0.cloudfront.net/js/guoyang.cc/r.js HTTP/1.1
+Host: d15gt9gwxw5wu0.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Content-Type: application/javascript
+Etag: "16157348-76-1327980117000"
+Last-Modified: Tue, 31 Jan 2012 03:21:57 GMT
+Expires: Fri, 06 Apr 2012 06:41:37 EDT
+X-Cacheable: YES
+Cache-Control: max-age = 3600
+Content-Length: 76
+Date: Thu, 05 Apr 2012 10:41:37 GMT
+X-Varnish: 1603703201
+Age: 53757
+X-Cache: Hit from cloudfront, MISS from localhost, MISS from localhost
+X-Amz-Cf-Id: ojjQB-8-a_wFhwRFNKm_fSiLl8X4l3Ng_JQWRfEddbAjSZBRw3GIew==,JmX-SYuOzoGaclzW5bwaDhCNPW6BUMbAipLEdG6Gg0rI9WrqA4OHZg==
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.1 varnish, 1.0 0729c5c77c4e3623b55d87798dfa4efe.cloudfront.net (CloudFront), 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.textsrv.com/cc.php?c=R0I6bnVsbDpudWxsOnd3dy5ndW95YW5nLmNjOjEwMzY6dW5kZWZpbmVkOjEyNzY4OjE0Ni4xODUuMjEuMTQ6dW5kZWZpbmVk&cb=1333676242396
+
+GET http://www.textsrv.com/cc.php?c=R0I6bnVsbDpudWxsOnd3dy5ndW95YW5nLmNjOjEwMzY6dW5kZWZpbmVkOjEyNzY4OjE0Ni4xODUuMjEuMTQ6dW5kZWZpbmVk&cb=1333676242396 HTTP/1.1
+Host: www.textsrv.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/2012/
+
+HTTP/1.0 200 OK
+Cache-Control: no-cache="set-cookie"
+Content-Type: text/javascript
+Date: Fri, 06 Apr 2012 01:37:32 GMT
+P3P: CP="CUR ADM OUR NOR STA NID"
+Server: nginx
+Set-Cookie: cct4=1333676252; path=/; domain=.textsrv.com; Expires=Fri, 06 Apr 2012 05:00:00 GMT
+Set-Cookie: AWSELB=A5895F1D147E3FCEC113981896CE9B91E1AE1AB5EE3E3CFE305699EC8F9626CFEDF8D140153A4D34CE40812C562296A8D3036AA6FC86AE8172129EBA2EB862AD7869FAEA24;PATH=/;MAX-AGE=3600
+Content-Length: 66
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://fxfeeds.mozilla.com/zh-CN/firefox/headlines.xml
+
+GET http://fxfeeds.mozilla.com/zh-CN/firefox/headlines.xml HTTP/1.1
+Host: fxfeeds.mozilla.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+X-Moz: livebookmarks
+
+HTTP/1.0 302 Moved Temporarily
+Content-Encoding: gzip
+Cache-Control: max-age=604800
+Content-Type: text/html; charset=iso-8859-1
+Date: Fri, 06 Apr 2012 01:23:29 GMT
+Expires: Fri, 13 Apr 2012 01:23:29 GMT
+Last-Modified: Thu, 05 Apr 2012 17:28:43 GMT
+Location: http://rss.sina.com.cn/news/marquee/ddt.xml
+Server: ECS (lhr/4B87)
+Vary: Accept-Encoding
+X-Backend-Server: pm-web01
+X-Cache: 302-HIT, MISS from localhost, HIT from localhost
+X-Cache-Info: cached
+Content-Length: 200
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Age: 899
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://rss.sina.com.cn/news/marquee/ddt.xml
+
+GET http://rss.sina.com.cn/news/marquee/ddt.xml HTTP/1.1
+Host: rss.sina.com.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+
+HTTP/1.0 200 OK
+Last-Modified: Fri, 06 Apr 2012 01:32:14 GMT
+Accept-Ranges: bytes
+Content-Encoding: gzip
+X-UA-Compatible: IE=EmulateIE7
+Content-Length: 6414
+Content-Type: application/xml
+Date: Fri, 06 Apr 2012 01:38:29 GMT
+Server: Apache
+Expires: Fri, 06 Apr 2012 01:40:29 GMT
+Cache-Control: max-age=120
+Vary: Accept-Encoding
+Age: 1
+X-Cache: HIT from 236-35.D07072018.sina.com.cn, MISS from localhost, MISS from localhost
+X-Cache-Lookup: HIT from localhost:3128, HIT from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
