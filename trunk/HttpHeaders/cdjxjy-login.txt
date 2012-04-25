@@ -1,0 +1,962 @@
+http://www.cdjxjy.com/Portal/index.aspx
+
+POST /Portal/index.aspx HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Portal/index.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 3986
+__VIEWSTATE=%2FwEPDwUKLTU1MjYwODQ5Mw9kFgICAQ9kFgYCAw8WAh4LXyFJdGVtQ291bnQCChYUZg9kFgJmDxUCBjMyNzgzNSvmiJDpg73luILmlZnluIjlj5HlsZXln7rlnLDlrabmoKHoj5zljZUgLi4uZAIBD2QWAmYPFQIGMzI3ODM0GTIwMTEtMjAxMuWtpuW5tOW6pu%2B8iCAuLi5kAgIPZBYCZg8VAgYzMjc4MzMfMjAxMeW5tDEx5pyI5pWZ56CU5rS75Yqo6YCaIC4uLmQCAw9kFgJmDxUCBjMyNzgzMhkyMDEwLTIwMTHlubTluqbvvIjmmKUgLi4uZAIED2QWAmYPFQIGMzI3ODMxK%2BaIkOmDveW4guaVmeiCsuWxgOWFs%2BS6juS4vuWKnuKAnOaWh%2Be%2FgSAuLi5kAgUPZBYCZg8VAgYzMjc4MzAe5YWz5LqO6K%2B75Lmm5rS75Yqo5pu05paw6YCa55%2BlZAIGD2QWAmYPFQIGMzI3ODI5GeWFs%2BS6jjIwMTAtMjAxMeWtpuW5tCAuLi5kAgcPZBYCZg8VAgYzMjc4Mjgb5a2m5pe26KGl5YWF55m76K6w55qE6YCa55%2BlZAIID2QWAmYPFQIGMzI3ODI3HDIwMTHlubTkupTlubTluqblrabml7booaXlhYVkAgkPZBYCZg8VAgYzMjc4MjUV5a2m5pe255m76K6w5byA5pS%2B5LqGZAIEDxYCHwACBhYMZg9kFgJmDxUEAzI0M0DmiJDpg73luILpppblsYrmlZnluIjln7norq3ogIXln7norq3lipvmj5DljYfnoJTkv67pobnnm67kuJMgLi4uAzI0MwoyMDEyLzAzLzIzZAIBD2QWAmYPFQQDMjQyM%2BaehOW7uuWbm%2BacieivreaWh%2BaooeW8j%2B%2B8jOaOoue0ouivreaWh%2BmrmOaViOivvuWgggMyNDIKMjAxMi8wMy8yMmQCAg9kFgJmDxUEAzI0MUDmiJDpg73luILmlZnluIjnu6fnu63mlZnogrLor77nqIvotoXluILpq5jkuK3mlrDmlZnluIjpgIHmlZkgLi4uAzI0MQoyMDEyLzAzLzIyZAIDD2QWAmYPFQQDMjQwMuKAnOWbveWfueiuoeWIkuKAnSAoMjAxMSnigJTlhpzmnZHlubzlhL%2FpqqjlubIgLi4uAzI0MAoyMDEyLzAzLzIxZAIED2QWAmYPFQQDMjM5MuKAnOWbveWfueiuoeWIkuKAnSAoMjAxMSnigJTlhpzmnZHlubzlhL%2FpqqjlubIgLi4uAzIzOQoyMDEyLzAzLzIxZAIFD2QWAmYPFQQDMjM4MuKAnOWbveWfueiuoeWIkuKAnSAoMjAxMSnigJTlhpzmnZHlubzlhL%2FpqqjlubIgLi4uAzIzOAoyMDEyLzAzLzIxZAIFDzwrAAkBAA8WBB4IRGF0YUtleXMWAB8AAgZkFgxmD2QWAmYPFQokNmMxOGI5MjAtZGQ0YS00OGFkLTg3MDYtNjM3ZWNkODBmYjc2EueZvuWIhuaVsOeahOiupOivhi0uLi9Db3Vyc2UvQ291cnNlSW1hZ2VzL%2BeZvuWIhuaVsOeahOiupOivhi5wbmckNmMxOGI5MjAtZGQ0YS00OGFkLTg3MDYtNjM3ZWNkODBmYjc2EueZvuWIhuaVsOeahOiupOivhhLnmb7liIbmlbDnmoTorqTor4YJMjAxMS03LTI1CTIwMTEtNy0yNRLnmb7liIbmlbDnmoTorqTor4YQ55m%2B5YiG5pWw55qEIC4uLmQCAQ9kFgJmDxUKJGVhYmE3NWUzLWE0YTgtNGM5MC1iMjQ2LWNlODI4NDMwZWI2YwzmlpHnvprpo57muKEnLi4vQ291cnNlL0NvdXJzZUltYWdlcy%2FmlpHnvprpo57muKEucG5nJGVhYmE3NWUzLWE0YTgtNGM5MC1iMjQ2LWNlODI4NDMwZWI2YwzmlpHnvprpo57muKEM5paR576a6aOe5rihCTIwMTEtNy0yNQkyMDExLTctMjUM5paR576a6aOe5rihDOaWkee%2Bmumjnua4oWQCAg9kFgJmDxUKJDRkMTJkMTlkLTA2ZmMtNDA5My1hMTg5LTYxMGQ3MmI4OWZhNxExOOS4reWImOmcnueUn%2BeJqSwuLi9Db3Vyc2UvQ291cnNlSW1hZ2VzLzE45Lit5YiY6Zye55Sf54mpLnBuZyQ0ZDEyZDE5ZC0wNmZjLTQwOTMtYTE4OS02MTBkNzJiODlmYTcRMTjkuK3liJjpnJ7nlJ%2FniakRMTjkuK3liJjpnJ7nlJ%2FniakJMjAxMS03LTI1CTIwMTEtNy0yNRExOOS4reWImOmcnueUn%2BeJqQwxOOS4reWImCAuLi5kAgMPZBYCZg8VCiQzNTY3NzAwZS1mMTg2LTRjNjItODU4Zi1lZTUyYTc4YjMxNzIYT3VlIEJvZHkgYW5kIEhlYWxlaHkgLi4uNi4uL0NvdXJzZS9Db3Vyc2VJbWFnZXMvT3VlIEJvZHkgYW5kIEhlYWxlaHkgSGFiaXRzLnBuZyQzNTY3NzAwZS1mMTg2LTRjNjItODU4Zi1lZTUyYTc4YjMxNzIYT3VlIEJvZHkgYW5kIEhlYWxlaHkgLi4uC091ZSBCb2QgLi4uCTIwMTEtNy0yNQkyMDExLTctMjUbT3VlIEJvZHkgYW5kIEhlYWxlaHkgSGFiaXRzCE91ZSAgLi4uZAIED2QWAmYPFQokMGMwZTlmZjQtYWIxOC00MjVkLTk5OGYtMWRiZjE0NjlmYWE5GOaxieatpuW4neeahOaWh%2Bayu%2BatpuWKnzMuLi9Db3Vyc2UvQ291cnNlSW1hZ2VzL%2BaxieatpuW4neeahOaWh%2Ba0u%2BatpuWKny5wbmckMGMwZTlmZjQtYWIxOC00MjVkLTk5OGYtMWRiZjE0NjlmYWE5GOaxieatpuW4neeahOaWh%2Bayu%2BatpuWKnxnmsYnmrabluJ3nmoTmlofmsrvmraYgLi4uCTIwMTEtNy0yNQkyMDExLTctMjUY5rGJ5q2m5bid55qE5paH5rK75q2m5YqfEOaxieatpuW4neeahCAuLi5kAgUPZBYCZg8VCiRmMGM0MjY1MC04OTAxLTRjY2UtYmZiOS04MWM2ZmM3YWQxOGQS5YyW5a2m6IO95LiO54Ot6IO9LS4uL0NvdXJzZS9Db3Vyc2VJbWFnZXMv5YyW5a2m6IO95LiO54Ot6IO9LnBuZyRmMGM0MjY1MC04OTAxLTRjY2UtYmZiOS04MWM2ZmM3YWQxOGQS5YyW5a2m6IO95LiO54Ot6IO9EuWMluWtpuiDveS4jueDreiDvQkyMDExLTctMjUJMjAxMS03LTI1EuWMluWtpuiDveS4jueDreiDvRDljJblrabog73kuI4gLi4uZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBAUFY2ticGwFBmJ0bmxvZwUHSW1nR3JragUHSW1nUXVpdMq21RD8IFBmLD1jU3sM%2BXWQx0e1&__EVENTVALIDATION=%2FwEWCAKG7KDRDgL5gp%2FVAgL9grudDgKPuKDPBQKBk%2BG6BAKi%2F7zxBgLbrvScBALS38zqAxJQ0RmpSIWp%2Fgx%2F%2FNVcVn7LCy%2B8&TxtUsr=+a06020014+&TxtPwd=xip13zqg&btnlog.x=23&btnlog.y=6&hidetxt=&select=http%3A%2F%2Fwww.ciw.com.cn&select2=%23&select3=%23&select4=%E5%90%84%E5%9C%B0%E6%95%99%E5%B8%88%E7%BB%A7%E7%BB%AD%E6%95%99%E8%82%B2%E7%BD%91%E7%BB%9C%E9%93%BE%E6%8E%A5
+HTTP/1.1 302 Found
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Location: /Navigation.aspx
+Set-Cookie: sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=; path=/
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 135
+----------------------------------------------------------
+http://www.cdjxjy.com/Navigation.aspx
+
+GET /Navigation.aspx HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Portal/index.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 42785
+----------------------------------------------------------
+http://www.cdjxjy.com/css/sNavtyle.css
+
+GET /css/sNavtyle.css HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 10422
+Content-Type: text/css
+Last-Modified: Thu, 09 Dec 2010 08:38:48 GMT
+Accept-Ranges: bytes
+Etag: "05c707f7c97cb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:17 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/Manage/js/jquery.min.js
+
+GET /Manage/js/jquery.min.js HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 57254
+Content-Type: application/x-javascript
+Last-Modified: Wed, 30 Nov 2011 10:15:18 GMT
+Accept-Ranges: bytes
+Etag: "c37b1ef648afcc1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:17 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regg_5.jpg
+
+GET /images/regg_5.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 752
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx4.jpg
+
+GET /images/regzx4.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 2378
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx5.jpg
+
+GET /images/regzx5.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 3621
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regg2_1.jpg
+
+GET /images/regg2_1.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 9055
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:17 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_1.jpg
+
+GET /images/zass_1.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 1993
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_2-3.jpg
+
+GET /images/zass_2-3.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 9706
+Content-Type: image/jpeg
+Last-Modified: Fri, 05 Nov 2010 02:34:18 GMT
+Accept-Ranges: bytes
+Etag: "0b1dbf1917ccb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/book-icon.jpg
+
+GET /images/book-icon.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 51631
+Content-Type: image/jpeg
+Last-Modified: Fri, 05 Nov 2010 03:00:56 GMT
+Accept-Ranges: bytes
+Etag: "02457aa957ccb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/mes-btn.jpg
+
+GET /images/mes-btn.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 1746
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_5.jpg
+
+GET /images/zass_5.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 2076
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_2.jpg
+
+GET /images/zass_2.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 9306
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx1-1.jpg
+
+GET /images/regzx1-1.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 6793
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx1.jpg
+
+GET /images/regzx1.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 3420
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_2-1.jpg
+
+GET /images/zass_2-1.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 2832
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/newPic.jpg
+
+GET /images/newPic.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 4725
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx2.jpg
+
+GET /images/regzx2.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 3622
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_2-2.jpg
+
+GET /images/zass_2-2.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 2834
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx3.jpg
+
+GET /images/regzx3.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 3574
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx3-1.jpg
+
+GET /images/regzx3-1.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 6344
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_2-1a.jpg
+
+GET /images/zass_2-1a.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 2561
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx3-1-2.jpg
+
+GET /images/regzx3-1-2.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 4749
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx2-1.jpg
+
+GET /images/regzx2-1.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 3560
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_2-1b.jpg
+
+GET /images/zass_2-1b.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 2609
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx3-1-1.jpg
+
+GET /images/regzx3-1-1.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 5990
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx2-2.jpg
+
+GET /images/regzx2-2.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 3575
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_2-1c.jpg
+
+GET /images/zass_2-1c.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 2648
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx2-3.jpg
+
+GET /images/regzx2-3.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 3586
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regzx3-1-3.jpg
+
+GET /images/regzx3-1-3.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 5033
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/menuback.jpg
+
+GET /images/menuback.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 47614
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/topbg.jpg
+
+GET /images/topbg.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/css/sNavtyle.css
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 397
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/banner2.jpg
+
+GET /images/banner2.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/css/sNavtyle.css
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 58011
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/Portal/buttom.aspx
+
+GET /Portal/buttom.aspx HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Date: Mon, 26 Mar 2012 07:53:19 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Cache-Control: private
+Content-Type: text/html; charset=utf-8
+Content-Length: 1761
+----------------------------------------------------------
+http://www.cdjxjy.com/bbs/aspx/1/webbbsservice.asmx/LoginOther?userlogins=a06020014,xip13zqg
+
+GET /bbs/aspx/1/webbbsservice.asmx/LoginOther?userlogins=a06020014,xip13zqg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Date: Mon, 26 Mar 2012 07:53:19 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Set-Cookie: dnt=userid=70983&password=K67ltXjlfUj6z2TLY%2bJQGDeOZz5PXputgNbIjDlge41ZEszc801FEg%3d%3d&tpp=0&ppp=0&pmsound=0&invisible=0&referer=index.aspx&sigstatus=1&expires=-1; path=/
+Cache-Control: private, max-age=0
+Content-Length: 0
+----------------------------------------------------------
+http://www.cdjxjy.com/images/regg_3.jpg
+
+GET /images/regg_3.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 429
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:32 GMT
+Accept-Ranges: bytes
+Etag: "018a42759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://www.cdjxjy.com/images/zass_3.jpg
+
+GET /images/zass_3.jpg HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=864000
+Content-Length: 479
+Content-Type: image/jpeg
+Last-Modified: Mon, 13 Dec 2010 03:24:34 GMT
+Accept-Ranges: bytes
+Etag: "0453b43759acb1:146c"
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+Date: Mon, 26 Mar 2012 07:53:18 GMT
+----------------------------------------------------------
+http://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-3286181909652355&output=html&h=240&slotname=9721460776&w=120&lmt=1332748397&flash=0&url=http%3A%2F%2Fwww.cdjxjy.com%2FNavigation.aspx&dt=1332748399006&bpp=2&shv=r20120314&jsv=r20110914&correlator=1332748399051&frm=20&adk=3447085242&ga_vid=2013760375.1332748399&ga_sid=1332748399&ga_hid=1437285446&ga_fc=0&u_tz=480&u_his=2&u_java=1&u_h=900&u_w=1440&u_ah=860&u_aw=1440&u_cd=24&u_nplug=18&u_nmime=60&dff=sans-serif&dfs=12&adx=0&ady=0&biw=1440&bih=737&oid=3&ref=http%3A%2F%2Fwww.cdjxjy.com%2FPortal%2Findex.aspx&fu=0&ifi=1&dtd=64&xpc=dczhYnT7CC&p=http%3A//www.cdjxjy.com
+
+GET /pagead/ads?client=ca-pub-3286181909652355&output=html&h=240&slotname=9721460776&w=120&lmt=1332748397&flash=0&url=http%3A%2F%2Fwww.cdjxjy.com%2FNavigation.aspx&dt=1332748399006&bpp=2&shv=r20120314&jsv=r20110914&correlator=1332748399051&frm=20&adk=3447085242&ga_vid=2013760375.1332748399&ga_sid=1332748399&ga_hid=1437285446&ga_fc=0&u_tz=480&u_his=2&u_java=1&u_h=900&u_w=1440&u_ah=860&u_aw=1440&u_cd=24&u_nplug=18&u_nmime=60&dff=sans-serif&dfs=12&adx=0&ady=0&biw=1440&bih=737&oid=3&ref=http%3A%2F%2Fwww.cdjxjy.com%2FPortal%2Findex.aspx&fu=0&ifi=1&dtd=64&xpc=dczhYnT7CC&p=http%3A//www.cdjxjy.com HTTP/1.1
+Host: googleads.g.doubleclick.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Cookie: id=225a3cc14f010001||t=1324513475|et=730|cs=002213fd480e13613bceab0614; _drt_=NO_DATA
+
+HTTP/1.1 200 OK
+P3P: policyref="http://googleads.g.doubleclick.net/pagead/gcn_p3p_.xml", CP="CURa ADMa DEVa TAIo PSAo PSDo OUR IND UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"
+Content-Type: text/html; charset=UTF-8
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Date: Mon, 26 Mar 2012 07:53:20 GMT
+Server: cafe
+Cache-Control: private
+Content-Length: 2469
+X-XSS-Protection: 1; mode=block
+----------------------------------------------------------
+http://www.cdjxjy.com/getMessageData.aspx
+
+POST /getMessageData.aspx HTTP/1.1
+Host: www.cdjxjy.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: application/json, text/javascript, */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Referer: http://www.cdjxjy.com/Navigation.aspx
+Content-Length: 6
+Cookie: looyu_id=4322e3086fe8d9eada68e78469f454915b_10005964%3A2; rtime=1; ltime=1332748357838; cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx; ASP.NET_SessionId=0edxyynnwyt3mc55uza0lw55; looyu_10005964=v%3A09ab54c560d5381b316c333a13c4a94ca5%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m3.talk99.cn/monitor%2Cp0%3Ahttp%253A//www.cdjxjy.com/Portal/index.aspx; cnzz_a1779201=0; sin1779201=none; sysUserID=/wkH07oA1TivgetA+aHx1Z5I9ejBPlf2/FUActOkMRUYVFs3q9ccU/2VnIhJpRg9EsJliJaleGt5DP8h9EMPOtDOahs9mv4GTw8N/MFeiBx9eAGV97/fgO8nigyHoUH2WT850fvl3nHdv1AlO9Vvrcgay9iFiDqTyyc5S1HlVjE=
+Pragma: no-cache
+Cache-Control: no-cache
+Type=1
+HTTP/1.1 200 OK
+Date: Mon, 26 Mar 2012 07:53:19 GMT
+Server: Microsoft-IIS/6.0
+X-Powered-By: ASP.NET
+X-AspNet-Version: 2.0.50727
+Pragma: No-Cache, no-cache
+Cache-Control: no-cache
+Expires: -1
+Content-Type: text/html; charset=utf-8
+Content-Length: 16
+----------------------------------------------------------
+http://hzs3.cnzz.com/stat.htm?id=1779201&r=http%3A//www.cdjxjy.com/Navigation.aspx&lg=undefined&ntime=0.05635000%201332745523&repeatip=1&rtime=1&cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx&showp=1440x900&st=41&sin=none&res=0
+
+GET /stat.htm?id=1779201&r=http%3A//www.cdjxjy.com/Navigation.aspx&lg=undefined&ntime=0.05635000%201332745523&repeatip=1&rtime=1&cnzz_eid=11647400-1324524348-http%3A//www.cdjxjy.com/Portal/index.aspx&showp=1440x900&st=41&sin=none&res=0 HTTP/1.1
+Host: hzs3.cnzz.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Portal/buttom.aspx
+
+HTTP/1.1 200 OK
+Server: nginx/1.0.4
+Date: Mon, 26 Mar 2012 07:53:29 GMT
+Content-Type: image/gif
+Transfer-Encoding: chunked
+Connection: close
+----------------------------------------------------------
+https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768
+
+GET /items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768 HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.cdjxjy.com/Navigation.aspx
+If-Modified-Since: Thu, 22 Mar 2012 15:29:46 GMT
+If-None-Match: "6d63aae38282fc1434676b359b084edc"
+
+HTTP/1.0 304 Not Modified
+Date: Mon, 26 Mar 2012 07:53:29 GMT
+Etag: "6d63aae38282fc1434676b359b084edc"
+Last-Modified: Thu, 22 Mar 2012 15:29:46 GMT
+Age: 69633
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: BeLKC9cqi0Lb_u4xXo7__bIqPIV_Dat1fD-kP8ZAzkZ3tch-H2L_3g==
+Via: 1.0 7ea12ff3e42beb689e5a1f88e0770153.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------

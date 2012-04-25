@@ -1,0 +1,117 @@
+https://login.taobao.com/member/login.jhtml?f=top&redirectURL=http%3A%2F%2Fwww.taobao.com%2F
+
+GET /member/login.jhtml?f=top&redirectURL=http%3A%2F%2Fwww.taobao.com%2F HTTP/1.1
+Host: login.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.taobao.com/
+Cookie: _umdata=F71D3CC9A0CBAC25C56F30B278212559C720DFC78E1A78D9D863C4EC2FF0884D277CBB4742ADD2B0A482322D8118098ECAEDCEACF887A1CD93603238261471E839CB6075F6DCEA1B; t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UtASsssmfA%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=; ssllogin=1; l=::1332828484120::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; lc=UINN0kqtHcq8MAllIwO2qBeCAAM8RaB20KHTKdE%3D; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; _tb_token_=58f39ee5e3977; v=0; uc1=cookie14=UoLfckGorKdbVA%3D%3D
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 05:59:05 GMT
+Content-Type: text/html;charset=GBK
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Content-Language: zh-CN
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Encoding: gzip
+----------------------------------------------------------
+https://acookie.taobao.com/1.gif?acookie_load_id=79708541306270003735&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%u6211%u559C%u6B22%21&pre=http%3A//www.taobao.com/&isbetanew=1&category=&userid=&channel=112&
+
+GET /1.gif?acookie_load_id=79708541306270003735&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%u6211%u559C%u6B22%21&pre=http%3A//www.taobao.com/&isbetanew=1&category=&userid=&channel=112& HTTP/1.1
+Host: acookie.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml?f=top&redirectURL=http%3A%2F%2Fwww.taobao.com%2F
+Cookie: t=9cf2bdeb2bb7a33907f3ba30040bc8a7; cna=PRtSB6ZTj2cCAcZV4HowlySQ; x=e%3D1%26p%3D*%26s%3D0%26c%3D0%26f%3D0%26g%3D0%26t%3D0%26__ll%3D-1%26_ato%3D0; tg=0; _cc_=UtASsssmfA%3D%3D; nt=W5iHLLyFf8GEx8D%2Btui3Qn1Jx3Up4rLsRTx6sVv9WS32o2H3HKejLQ%3D%3D; tracknick=; ssllogin=1; cnaex=521760712; l=::1332828484120::11; ck1=; publishItemObj=NQ%3D%3D; mt=ci=0_0; cookie2=af023a515cec00336126934cd135ecc5; mpp=t%3D0%26m%3D%26h%3D0%26l%3D0; sc=dcc2504e; linezing_session=2c9a534ddba9891da7088d93_1332827883_4; _tb_token_=58f39ee5e3977; v=0; uc1=cookie14=UoLfckGorKdbVA%3D%3D
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 27 Mar 2012 05:59:05 GMT
+Content-Type: image/gif
+Transfer-Encoding: chunked
+Connection: close
+P3P: CP="CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+Set-Cookie: linezing_session=2c9a534ddba9891da7088d93_1332827945_5; path=/; domain=.acookie.taobao.com
+Set-Cookie: cnaex=521760712; expires=Thu, 31-Dec-2037 16:00:00 GMT; path=/; domain=.acookie.taobao.com
+----------------------------------------------------------
+https://img.atpanel.com/1.gif?cache=896193&pre=http%3A//www.taobao.com/&scr=1440x900&ul_chk=54165635&acookie_cna=PRtSB6ZTj2cCAcZV4HowlySQ&isbetanew=1&category=&userid=&tid=9cf2bdeb2bb7a33907f3ba30040bc8a7&channel=112&&rpi_bi=2213581.9607100&upi_bi=2213594.7008220
+
+GET /1.gif?cache=896193&pre=http%3A//www.taobao.com/&scr=1440x900&ul_chk=54165635&acookie_cna=PRtSB6ZTj2cCAcZV4HowlySQ&isbetanew=1&category=&userid=&tid=9cf2bdeb2bb7a33907f3ba30040bc8a7&channel=112&&rpi_bi=2213581.9607100&upi_bi=2213594.7008220 HTTP/1.1
+Host: img.atpanel.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml?f=top&redirectURL=http%3A%2F%2Fwww.taobao.com%2F
+Cookie: TAOBAOSIDA=5724449877498923540_20120327135803; TAOBAOMIDA=5688742663616010541; TAOBAOUIDA=521760712; TAOBAOCHIDA=109_20120327135803; TAOBAOAIDA=5724441811647400468
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 27 Mar 2012 05:59:06 GMT
+Content-Type: image/gif
+Content-Length: 49
+Connection: close
+P3P: CP="NOI DSP COR CURa ADMa DEVa PSAa PSDa OUR IND UNI PUR NAV"
+Set-Cookie: TAOBAOSIDA=5724449877498923540_20120327135906; expires=Fri, 25-Mar-2022 05:59:05 GMT; path=/;domain=.atpanel.com
+Set-Cookie: TAOBAOCHIDA=109_20120327135906; expires=Tue, 27-Mar-2012 06:59:05 GMT; path=/;domain=.atpanel.com
+Expires: Sat, 16 Jan 1980 12:00:00 GMT
+Pragma: no-cache
+----------------------------------------------------------
+https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768
+
+GET /items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768 HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml?f=top&redirectURL=http%3A%2F%2Fwww.taobao.com%2F
+If-Modified-Since: Thu, 22 Mar 2012 15:29:46 GMT
+If-None-Match: "6d63aae38282fc1434676b359b084edc"
+
+HTTP/1.0 304 Not Modified
+Date: Tue, 27 Mar 2012 05:59:06 GMT
+Etag: "6d63aae38282fc1434676b359b084edc"
+Last-Modified: Thu, 22 Mar 2012 15:29:46 GMT
+Age: 66381
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: S2oZDjZeIKfRGXFYlIG6ZxDGSsSISTQrgshQY49U1n7QuqN1UeZ2Kw==
+Via: 1.0 1fffd422eff93bdf8823311a60e00499.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------
+https://d15gt9gwxw5wu0.cloudfront.net/js/login.taobao.com/r.js
+
+GET /js/login.taobao.com/r.js HTTP/1.1
+Host: d15gt9gwxw5wu0.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml?f=top&redirectURL=http%3A%2F%2Fwww.taobao.com%2F
+If-Modified-Since: Wed, 08 Feb 2012 21:18:08 EST
+
+HTTP/1.0 304 Not Modified
+Date: Tue, 27 Mar 2012 05:59:16 GMT
+Cache-Control: max-age = 3600
+Expires: Thu, 09 Feb 2012 21:18:08 EST
+Last-Modified: Wed, 08 Feb 2012 21:18:08 EST
+Age: 28632
+X-Cache: RefreshHit from cloudfront
+X-Amz-Cf-Id: 3bHFxI1_nM0ZHIy98hzkb2KZuHlNFZWv7DPSRJVy5uF4BslZiBjsuw==,ksVDQ4F5gdWaqJdGumhMNF1ztTUgXwZAsa2v6TEmUFrrmHZyVoF0qw==
+Via: 1.0 9273a85c094ef0b32fc94f0d6abc4c7f.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------

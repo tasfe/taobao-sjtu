@@ -1,0 +1,217 @@
+https://passport.yihaodian.com/publicPassport/login2.do?credentials.username=10210240089@fudan.edu.cn&credentials.password=fudan123&outSiteType=1&validCode=&isNoCartPage=1&bridgeMall=&returnUrl=http%3A%2F%2Fwww.yihaodian.com%2F1%2F&callback=jsonp1331623997381
+
+GET /publicPassport/login2.do?credentials.username=10210240089@fudan.edu.cn&credentials.password=fudan123&outSiteType=1&validCode=&isNoCartPage=1&bridgeMall=&returnUrl=http%3A%2F%2Fwww.yihaodian.com%2F1%2F&callback=jsonp1331623997381 HTTP/1.1
+Host: passport.yihaodian.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: text/javascript, application/javascript, */*
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+X-Requested-With: XMLHttpRequest
+Referer: https://passport.yihaodian.com/passport/login_input.do?returnUrl=http%3A%2F%2Fwww.yihaodian.com%2F1%2F
+Cookie: cityId=52; provinceId=6; oldProvinceId=null; grouponAreaId=23; __utma=167210815.1686893208.1329796963.1329796963.1331623998.2; __utmz=167210815.1329796963.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); yihaodian_uid=6305644; ac=10210240089%40fudan.edu.cn; msessionid=YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT; client_province_id=6; client_province_id_allowed=1; tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; rURL="http://www.yihaodian.com/1/"; __utmb=167210815.2.9.1331623998; __utmc=167210815
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: ut=XF95E5DGB7W7MC3YH358P7QT2PPQV444; Domain=.yihaodian.com; Path=/
+Set-Cookie: uname=10210240089%40fudan.edu.cn; Domain=.yihaodian.com; Expires=Mon, 11-Jun-2012 07:33:28 GMT; Path=/
+Set-Cookie: yihaodian_uid=6305644; Domain=.yihaodian.com; Expires=Mon, 11-Jun-2012 07:33:28 GMT; Path=/
+Set-Cookie: udate="2012-03-13 15:32:25"; Version=1; Domain=.yihaodian.com; Path=/
+Set-Cookie: ac=10210240089%40fudan.edu.cn; Domain=.yihaodian.com; Expires=Thu, 12-Apr-2012 07:33:28 GMT; Path=/
+Set-Cookie: ucocode=" "; Version=1; Domain=.yihaodian.com; Path=/
+Set-Cookie: isCookieSynchronous=""; Domain=.yihaodian.com; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+P3P: CP="NOI DEVa TAIa OUR BUS UNI"
+Cache-Control: no-cache
+Expires: 0
+Pragma: No-cache
+Content-Type: text/json;charset=UTF-8
+Cteonnt-Length: 111
+Date: Tue, 13 Mar 2012 07:33:28 GMT
+Content-Encoding: gzip
+Content-Length: 125
+----------------------------------------------------------
+http://www.yihaodian.com/1/
+
+GET /1/ HTTP/1.1
+Host: www.yihaodian.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cookie: test_cookie=1; cityId=52; provinceId=6; oldProvinceId=null; grouponAreaId=23; yihaodian_uid=6305644; ac=10210240089%40fudan.edu.cn; msessionid=YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT; client_province_id=6; client_province_id_allowed=1; tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; rURL="http://www.yihaodian.com/1/"; ut=XF95E5DGB7W7MC3YH358P7QT2PPQV444; uname=10210240089%40fudan.edu.cn; udate="2012-03-13 15:32:25"; ucocode=" "
+
+HTTP/1.0 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP="NOI DEVa TAIa OUR BUS UNI"
+Content-Type: text/html;charset=UTF-8
+Content-Language: zh-CN
+Date: Tue, 13 Mar 2012 07:27:51 GMT
+Age: 336
+X-Cache: HIT from squid_cache_164
+X-Cache-Lookup: HIT from squid_cache_164:80
+Via: 1.0 squid_cache_164 (squid/3.1.10)
+Connection: close
+Cache-Control: private
+Content-Encoding: gzip
+----------------------------------------------------------
+http://www.googleadservices.com/pagead/conversion/1025835260/?label=JmZXCMCt1gEQ_IGU6QM&guid=ON&script=0&random=1331624007888
+
+GET /pagead/conversion/1025835260/?label=JmZXCMCt1gEQ_IGU6QM&guid=ON&script=0&random=1331624007888 HTTP/1.1
+Host: www.googleadservices.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.yihaodian.com/1/
+
+HTTP/1.1 302 Found
+P3P: policyref="http://www.googleadservices.com/pagead/p3p.xml", CP="NOI DEV PSA PSD IVA PVD OTP OUR OTR IND OTC"
+Date: Tue, 13 Mar 2012 07:33:28 GMT
+Pragma: no-cache
+Expires: Fri, 01 Jan 1990 00:00:00 GMT
+Cache-Control: no-cache, must-revalidate
+Content-Type: image/gif
+Location: http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1025835260/?label=JmZXCMCt1gEQ_IGU6QM&guid=ON&script=0&random=1331624007888&ctc_id=CAIVAgAAAB0CAAAA&ct_cookie_present=false
+X-Content-Type-Options: nosniff
+Server: cafe
+Content-Length: 42
+X-XSS-Protection: 1; mode=block
+----------------------------------------------------------
+http://tracker.yihaodian.com/tracker/info.do?1=1&ieVersion=5.0%20(Windows)&platform=Win32&adgroupKeywordID=&tracker_src=&infoPreviousUrl=&infoTrackerSrc=&endUserId=6305644&cookie=msessionid:YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT,uname:10210240089@fudan.edu.cn&fee=&provinceId=6&cityId=52&jsoncallback=jsonp1331624007981
+
+GET /tracker/info.do?1=1&ieVersion=5.0%20(Windows)&platform=Win32&adgroupKeywordID=&tracker_src=&infoPreviousUrl=&infoTrackerSrc=&endUserId=6305644&cookie=msessionid:YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT,uname:10210240089@fudan.edu.cn&fee=&provinceId=6&cityId=52&jsoncallback=jsonp1331624007981 HTTP/1.1
+Host: tracker.yihaodian.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: */*
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.yihaodian.com/1/
+Cookie: cityId=52; global_user_sign=385HNDKZ53MJTE7P51MVG18JGX484HBFCUFM; provinceId=6; oldProvinceId=null; grouponAreaId=23; yihaodian_uid=6305644; ac=10210240089%40fudan.edu.cn; msessionid=YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT; client_province_id=6; client_province_id_allowed=1; tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; rURL="http://www.yihaodian.com/1/"; ut=XF95E5DGB7W7MC3YH358P7QT2PPQV444; uname=10210240089%40fudan.edu.cn; udate="2012-03-13 15:32:25"; ucocode=" "
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Cache-Control: no-cache; no-store; private
+Pragma: no-cache
+P3P: CP="NOI DEVa TAIa OUR BUS UNI"
+Set-Cookie: tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; Domain=yihaodian.com; Expires=Tue, 13-Mar-2012 08:03:28 GMT; Path=/
+Set-Cookie: tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; Domain=yihaodian.com; Expires=Tue, 13-Mar-2012 08:03:28 GMT; Path=/
+Content-Language: zh-CN
+Content-Length: 0
+Date: Tue, 13 Mar 2012 07:33:28 GMT
+----------------------------------------------------------
+http://www.yihaodian.com/product/ajaxGetCurrentGrouponV3.do?proviceId=6&merchant=1&rd=0.9254449732093744
+
+GET /product/ajaxGetCurrentGrouponV3.do?proviceId=6&merchant=1&rd=0.9254449732093744 HTTP/1.1
+Host: www.yihaodian.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: */*
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+X-Requested-With: XMLHttpRequest
+Referer: http://www.yihaodian.com/1/
+Cookie: cityId=52; provinceId=6; oldProvinceId=null; grouponAreaId=23; yihaodian_uid=6305644; ac=10210240089%40fudan.edu.cn; msessionid=YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT; client_province_id=6; client_province_id_allowed=1; tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; rURL="http://www.yihaodian.com/1/"; ut=XF95E5DGB7W7MC3YH358P7QT2PPQV444; uname=10210240089%40fudan.edu.cn; udate="2012-03-13 15:32:25"; ucocode=" "
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP="NOI DEVa TAIa OUR BUS UNI"
+Content-Type: text/html;charset=UTF-8
+Content-Language: zh-CN
+Date: Tue, 13 Mar 2012 07:33:27 GMT
+Cache-Control: private
+Content-Encoding: gzip
+Transfer-Encoding: chunked
+----------------------------------------------------------
+http://www.yihaodian.com/product/ajax/ajaxAnnouncement.do?provinceId=6&timestamp=1331624008002
+
+GET /product/ajax/ajaxAnnouncement.do?provinceId=6&timestamp=1331624008002 HTTP/1.1
+Host: www.yihaodian.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: */*
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+X-Requested-With: XMLHttpRequest
+Referer: http://www.yihaodian.com/1/
+Cookie: cityId=52; provinceId=6; oldProvinceId=null; grouponAreaId=23; yihaodian_uid=6305644; ac=10210240089%40fudan.edu.cn; msessionid=YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT; client_province_id=6; client_province_id_allowed=1; tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; rURL="http://www.yihaodian.com/1/"; ut=XF95E5DGB7W7MC3YH358P7QT2PPQV444; uname=10210240089%40fudan.edu.cn; udate="2012-03-13 15:32:25"; ucocode=" "
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP="NOI DEVa TAIa OUR BUS UNI"
+Content-Type: text/html;charset=UTF-8
+Content-Language: zh-CN
+Date: Tue, 13 Mar 2012 07:33:28 GMT
+Cache-Control: private
+Content-Encoding: gzip
+Transfer-Encoding: chunked
+----------------------------------------------------------
+http://busystock.i.yihaodian.com/busystock/restful/truestock?mcsite=1&provinceId=6&productIds=28349&productIds=1996231&productIds=2063352&productIds=2008252&productIds=1976623&productIds=9018&productIds=1004346&productIds=3761&productIds=1845235&productIds=1100667&productIds=1978071&productIds=1971355&productIds=2042435&productIds=1715144&productIds=1992109&productIds=2060134&productIds=2064597&productIds=1980739&productIds=2063688&productIds=2057524&callback=jsonp1331624007982
+
+GET /busystock/restful/truestock?mcsite=1&provinceId=6&productIds=28349&productIds=1996231&productIds=2063352&productIds=2008252&productIds=1976623&productIds=9018&productIds=1004346&productIds=3761&productIds=1845235&productIds=1100667&productIds=1978071&productIds=1971355&productIds=2042435&productIds=1715144&productIds=1992109&productIds=2060134&productIds=2064597&productIds=1980739&productIds=2063688&productIds=2057524&callback=jsonp1331624007982 HTTP/1.1
+Host: busystock.i.yihaodian.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: */*
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.yihaodian.com/1/
+Cookie: cityId=52; provinceId=6; oldProvinceId=null; grouponAreaId=23; yihaodian_uid=6305644; ac=10210240089%40fudan.edu.cn; msessionid=YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT; client_province_id=6; client_province_id_allowed=1; tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; rURL="http://www.yihaodian.com/1/"; ut=XF95E5DGB7W7MC3YH358P7QT2PPQV444; uname=10210240089%40fudan.edu.cn; udate="2012-03-13 15:32:25"; ucocode=" "
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Expires: 0
+Pragma: No-cache
+Content-Type: text/json;charset=utf-8
+Content-Length: 3603
+Date: Tue, 13 Mar 2012 07:33:28 GMT
+----------------------------------------------------------
+http://www.yihaodian.com/product/ajaxPromotion.do?merchant=1&proviceId=6
+
+GET /product/ajaxPromotion.do?merchant=1&proviceId=6 HTTP/1.1
+Host: www.yihaodian.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: */*
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+X-Requested-With: XMLHttpRequest
+Referer: http://www.yihaodian.com/1/
+Cookie: cityId=52; provinceId=6; oldProvinceId=null; grouponAreaId=23; yihaodian_uid=6305644; ac=10210240089%40fudan.edu.cn; msessionid=YS3RZCK87Y7BBS8BPMKYJV22KSTB4MGT; client_province_id=6; client_province_id_allowed=1; tracker_msessionid=AQRGC4S2DF287CN3HFT3TSVDN6137CMP; rURL="http://www.yihaodian.com/1/"; ut=XF95E5DGB7W7MC3YH358P7QT2PPQV444; uname=10210240089%40fudan.edu.cn; udate="2012-03-13 15:32:25"; ucocode=" "
+
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+P3P: CP="NOI DEVa TAIa OUR BUS UNI"
+Content-Type: text/html;charset=UTF-8
+Content-Language: zh-CN
+Date: Tue, 13 Mar 2012 07:33:28 GMT
+Cache-Control: private
+Content-Encoding: gzip
+Transfer-Encoding: chunked
+----------------------------------------------------------
+http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1025835260/?label=JmZXCMCt1gEQ_IGU6QM&guid=ON&script=0&random=1331624007888&ctc_id=CAIVAgAAAB0CAAAA&ct_cookie_present=false
+
+GET /pagead/viewthroughconversion/1025835260/?label=JmZXCMCt1gEQ_IGU6QM&guid=ON&script=0&random=1331624007888&ctc_id=CAIVAgAAAB0CAAAA&ct_cookie_present=false HTTP/1.1
+Host: googleads.g.doubleclick.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://www.yihaodian.com/1/
+Cookie: id=225a3cc14f010001||t=1324513475|et=730|cs=002213fd480e13613bceab0614
+
+HTTP/1.1 200 OK
+P3P: policyref="http://googleads.g.doubleclick.net/pagead/gcn_p3p_.xml", CP="CURa ADMa DEVa TAIo PSAo PSDo OUR IND UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"
+Date: Tue, 13 Mar 2012 07:33:28 GMT
+Pragma: no-cache
+Expires: Fri, 01 Jan 1990 00:00:00 GMT
+Cache-Control: no-cache, must-revalidate
+Content-Type: image/gif
+X-Content-Type-Options: nosniff
+Server: cafe
+Content-Length: 42
+X-XSS-Protection: 1; mode=block
+----------------------------------------------------------

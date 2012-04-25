@@ -1,0 +1,713 @@
+https://login.taobao.com/member/login.jhtml
+
+POST https://login.taobao.com/member/login.jhtml HTTP/1.1
+Host: login.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 723
+TPL_username=10210240089%40fudan.edu.cn&TPL_password=3DES_2_000000000000000000000000000000_D1CE4894D9F2334C&TPL_checkcode=&need_check_code=&action=Authenticator&event_submit_do_login=anything&TPL_redirect_url=&from=tb&fc=default&style=default&css_style=&tid=XOR_1_000000000000000000000000000000_6358475734787B700E760B70&support=000001&CtrlVersion=1%2C0%2C0%2C7&loginType=4&minititle=&minipara=&umto=Tfaf98e40f55f703fea8b034ab0f32623Tfaf98e40f55f703fea8b034ab0f32623%2C200&pstrong=&llnick=&sign=&need_sign=&isIgnore=&full_redirect=&popid=&callback=&guf=&not_duplite_str=&need_user_id=&poy=&gvfdcname=10&gvfdcre=687474703A2F2F6C6F67696E2E74616F62616F2E636F6D2F6D656D6265722F6C6F676F75742E6A68746D6C3F663D746F70&from_encoding=
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:27 GMT
+Content-Type: text/html;charset=gbk
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Content-Language: zh-CN
+Set-Cookie: cookie2=18829c40d6db0e64f9de07f3342bea1f;Domain=.taobao.com;Path=/;HttpOnly
+Set-Cookie: t=3a9110ee49f3059079f6cc560c49dd2a; Domain=.taobao.com; Expires=Mon, 25-Jun-2012 09:07:27 GMT; Path=/
+Set-Cookie: v=0; Domain=.taobao.com; Path=/
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Encoding: gzip
+----------------------------------------------------------
+http://ocsp.verisign.com/
+
+POST http://ocsp.verisign.com/ HTTP/1.1
+Host: ocsp.verisign.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Content-Length: 115
+Content-Type: application/ocsp-request
+0q0o0M0K0I0	+
+HTTP/1.0 200 OK
+Last-Modified: Mon, 26 Mar 2012 11:31:16 GMT
+Expires: Mon, 02 Apr 2012 11:31:16 GMT
+Content-Type: application/ocsp-response
+content-transfer-encoding: binary
+Content-Length: 1617
+Cache-Control: max-age=527024, public, no-transform, must-revalidate
+Date: Tue, 27 Mar 2012 09:07:32 GMT
+nncoection: close
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://ocsp.verisign.com/
+
+POST http://ocsp.verisign.com/ HTTP/1.1
+Host: ocsp.verisign.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Content-Length: 115
+Content-Type: application/ocsp-request
+0q0o0M0K0I0	+
+HTTP/1.0 200 OK
+Last-Modified: Mon, 26 Mar 2012 11:31:16 GMT
+Expires: Mon, 02 Apr 2012 11:31:16 GMT
+Content-Type: application/ocsp-response
+content-transfer-encoding: binary
+Content-Length: 1617
+Cache-Control: max-age=527024, public, no-transform, must-revalidate
+Date: Tue, 27 Mar 2012 09:07:32 GMT
+nncoection: close
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://ocsp.verisign.com/
+
+POST http://ocsp.verisign.com/ HTTP/1.1
+Host: ocsp.verisign.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Content-Length: 115
+Content-Type: application/ocsp-request
+0q0o0M0K0I0	+
+HTTP/1.0 200 OK
+Last-Modified: Mon, 26 Mar 2012 11:31:16 GMT
+Expires: Mon, 02 Apr 2012 11:31:16 GMT
+Content-Type: application/ocsp-response
+content-transfer-encoding: binary
+Content-Length: 1617
+Cache-Control: max-age=527024, public, no-transform, must-revalidate
+Date: Tue, 27 Mar 2012 09:07:32 GMT
+nncoection: close
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://ocsp.verisign.com/
+
+POST http://ocsp.verisign.com/ HTTP/1.1
+Host: ocsp.verisign.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Content-Length: 115
+Content-Type: application/ocsp-request
+0q0o0M0K0I0	+
+HTTP/1.0 200 OK
+Last-Modified: Mon, 26 Mar 2012 11:31:16 GMT
+Expires: Mon, 02 Apr 2012 11:31:16 GMT
+Content-Type: application/ocsp-response
+content-transfer-encoding: binary
+Content-Length: 1617
+Cache-Control: max-age=527024, public, no-transform, must-revalidate
+Date: Tue, 27 Mar 2012 09:07:32 GMT
+nncoection: close
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+http://ocsp.verisign.com/
+
+POST http://ocsp.verisign.com/ HTTP/1.1
+Host: ocsp.verisign.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Content-Length: 115
+Content-Type: application/ocsp-request
+0q0o0M0K0I0	+
+HTTP/1.0 200 OK
+Last-Modified: Mon, 26 Mar 2012 11:31:16 GMT
+Expires: Mon, 02 Apr 2012 11:31:16 GMT
+Content-Type: application/ocsp-response
+content-transfer-encoding: binary
+Content-Length: 1617
+Cache-Control: max-age=527024, public, no-transform, must-revalidate
+Date: Tue, 27 Mar 2012 09:07:32 GMT
+nncoection: close
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/T1TPhsXoRlXXXXXXXX-18-18.png
+
+GET https://s.tbcdn.cn/apps/login/static/T1TPhsXoRlXXXXXXXX-18-18.png HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:33 GMT
+Content-Type: image/png
+Content-Length: 449
+Last-Modified: Wed, 16 Nov 2011 05:13:18 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:33 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/css/full-pkg-min.css?t=20120320
+
+GET https://s.tbcdn.cn/apps/login/static/css/full-pkg-min.css?t=20120320 HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:33 GMT
+Content-Type: text/css
+Last-Modified: Tue, 20 Mar 2012 02:27:00 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Fri, 25 Mar 2022 09:07:33 GMT
+Cache-Control: max-age=315360000
+Content-Encoding: gzip
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/img/loading.gif
+
+GET https://s.tbcdn.cn/apps/login/static/img/loading.gif HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://s.tbcdn.cn/apps/login/static/css/full-pkg-min.css?t=20120320
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:33 GMT
+Content-Type: image/gif
+Content-Length: 673
+Last-Modified: Wed, 16 Nov 2011 05:13:17 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:33 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/js/alieditcontrol-update.js?t=20120320
+
+GET https://s.tbcdn.cn/apps/login/static/js/alieditcontrol-update.js?t=20120320 HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:33 GMT
+Content-Type: application/x-javascript
+Last-Modified: Wed, 16 Nov 2011 05:13:18 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Fri, 25 Mar 2022 09:07:33 GMT
+Cache-Control: max-age=315360000
+Content-Encoding: gzip
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/logo.png
+
+GET https://s.tbcdn.cn/apps/login/static/logo.png HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:33 GMT
+Content-Type: image/png
+Content-Length: 2347
+Last-Modified: Wed, 16 Nov 2011 05:13:16 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:33 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/js/pwdintensity.js?t=20100428
+
+GET https://s.tbcdn.cn/apps/login/static/js/pwdintensity.js?t=20100428 HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:33 GMT
+Content-Type: application/x-javascript
+Last-Modified: Wed, 16 Nov 2011 05:13:18 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Fri, 25 Mar 2022 09:07:33 GMT
+Cache-Control: max-age=315360000
+Content-Encoding: gzip
+----------------------------------------------------------
+https://s.tbcdn.cn/s/kissy/1.2.0/kissy-min.js
+
+GET https://s.tbcdn.cn/s/kissy/1.2.0/kissy-min.js HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:33 GMT
+Content-Type: application/x-javascript
+Last-Modified: Wed, 07 Mar 2012 07:21:18 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Fri, 25 Mar 2022 09:07:33 GMT
+Cache-Control: max-age=315360000
+Content-Encoding: gzip
+----------------------------------------------------------
+https://regcheckcode.taobao.com/auction/checkcode?sessionID=18829c40d6db0e64f9de07f3342bea1f
+
+GET https://regcheckcode.taobao.com/auction/checkcode?sessionID=18829c40d6db0e64f9de07f3342bea1f HTTP/1.1
+Host: regcheckcode.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+Cookie: cookie2=18829c40d6db0e64f9de07f3342bea1f; t=3a9110ee49f3059079f6cc560c49dd2a; v=0
+
+HTTP/1.1 200 OK
+Date: Tue, 27 Mar 2012 09:07:34 GMT
+Server: Apache/2.2.15 (Unix)
+Expires: Sat, 16 Jan 1980 12:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+usetime: T:365,41
+Content-Length: 1310
+Connection: close
+Content-Type: image/jpeg
+----------------------------------------------------------
+https://s.tbcdn.cn/s/ac.js
+
+GET https://s.tbcdn.cn/s/ac.js HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:35 GMT
+Content-Type: application/x-javascript
+Content-Length: 944
+Last-Modified: Wed, 16 Nov 2011 04:58:21 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:35 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/img/arrow_box_bg.png
+
+GET https://s.tbcdn.cn/apps/login/static/img/arrow_box_bg.png HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://s.tbcdn.cn/apps/login/static/css/full-pkg-min.css?t=20120320
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:35 GMT
+Content-Type: image/png
+Content-Length: 799
+Last-Modified: Wed, 16 Nov 2011 05:13:17 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:35 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/img/visitor_bg.png
+
+GET https://s.tbcdn.cn/apps/login/static/img/visitor_bg.png HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://s.tbcdn.cn/apps/login/static/css/full-pkg-min.css?t=20120320
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:35 GMT
+Content-Type: image/png
+Content-Length: 842
+Last-Modified: Wed, 16 Nov 2011 05:13:17 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:35 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://s.tbcdn.cn/s/atp.js
+
+GET https://s.tbcdn.cn/s/atp.js HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:35 GMT
+Content-Type: application/x-javascript
+Last-Modified: Tue, 27 Mar 2012 06:38:33 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Tue, 27 Mar 2012 11:07:35 GMT
+Cache-Control: max-age=7200
+Content-Encoding: gzip
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/js/login/page-pkg-min.js?t=20120320
+
+GET https://s.tbcdn.cn/apps/login/static/js/login/page-pkg-min.js?t=20120320 HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:35 GMT
+Content-Type: application/x-javascript
+Last-Modified: Wed, 14 Mar 2012 07:07:57 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Fri, 25 Mar 2022 09:07:35 GMT
+Cache-Control: max-age=315360000
+Content-Encoding: gzip
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/img/box_bg.png
+
+GET https://s.tbcdn.cn/apps/login/static/img/box_bg.png HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://s.tbcdn.cn/apps/login/static/css/full-pkg-min.css?t=20120320
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:35 GMT
+Content-Type: image/png
+Content-Length: 4561
+Last-Modified: Wed, 16 Nov 2011 05:13:17 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:35 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/img/stuff.png
+
+GET https://s.tbcdn.cn/apps/login/static/img/stuff.png HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://s.tbcdn.cn/apps/login/static/css/full-pkg-min.css?t=20120320
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:35 GMT
+Content-Type: image/png
+Content-Length: 4524
+Last-Modified: Wed, 16 Nov 2011 05:13:17 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:35 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://s.tbcdn.cn/apps/login/static/img/favicon.ico
+
+GET https://s.tbcdn.cn/apps/login/static/img/favicon.ico HTTP/1.1
+Host: s.tbcdn.cn
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:36 GMT
+Content-Type: image/x-icon
+Content-Length: 1150
+Last-Modified: Wed, 16 Nov 2011 05:13:17 GMT
+Connection: keep-alive
+Expires: Fri, 25 Mar 2022 09:07:36 GMT
+Cache-Control: max-age=315360000
+Accept-Ranges: bytes
+----------------------------------------------------------
+https://login.taobao.com/member/request_nick_check.do?_input_charset=utf-8&username=10210240089%40fudan.edu.cn&_ksTS=1332839255392_28
+
+GET https://login.taobao.com/member/request_nick_check.do?_input_charset=utf-8&username=10210240089%40fudan.edu.cn&_ksTS=1332839255392_28 HTTP/1.1
+Host: login.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Referer: https://login.taobao.com/member/login.jhtml
+Cookie: cookie2=18829c40d6db0e64f9de07f3342bea1f; t=3a9110ee49f3059079f6cc560c49dd2a; v=0
+
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Tue, 27 Mar 2012 09:07:36 GMT
+Content-Type: application/x-www-form-urlencoded;charset=ISO-8859-1
+Connection: keep-alive
+Content-Length: 17
+Expires: Thu, 01 Jan 1970 00:00:01 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+----------------------------------------------------------
+https://acookie.taobao.com/1.gif?acookie_load_id=33107085876320854528&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%u6211%u559C%u6B22%21&pre=https%3A//login.taobao.com/member/login.jhtml&isbetanew=1&category=&userid=&channel=112&
+
+GET https://acookie.taobao.com/1.gif?acookie_load_id=33107085876320854528&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%u6211%u559C%u6B22%21&pre=https%3A//login.taobao.com/member/login.jhtml&isbetanew=1&category=&userid=&channel=112& HTTP/1.1
+Host: acookie.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+Cookie: cookie2=18829c40d6db0e64f9de07f3342bea1f; t=3a9110ee49f3059079f6cc560c49dd2a; v=0
+
+HTTP/1.1 302 Moved Temporarily
+Server: nginx
+Date: Tue, 27 Mar 2012 09:07:39 GMT
+Content-Type: image/gif
+Transfer-Encoding: chunked
+Connection: close
+P3P: CP="CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+Location: https://hz.mmstat.com/a?XzOzGe85AA=1149448909&K9g5CWjDh9=mnahxykXb0WToaUn3H-FLhYdSdN94f3l1BzT8XtQ7vof.Dnk4YsJdluvFc72pZPnckwJ9IBp-ZMuN3ww5bY5Ci41RdE3ETVNlT2VuxHkESdml2vF0YeJkzYMYgz9RJzL38FMS0vHWiurbkI-gzJ9yREOGbXIHHbgVuL6CKZYZQ8f1gNW6uvELcgP.7R.oeZx08v0rwDT7mCFFSlc2g9necVuNrfaKwMA0j4KOkv98miRzEyopXyGPmNYy3ofPQSLsT8VKLjTOIQdj3BuH376QYjyVb1ZoTmimdNvWd2AeBWYyC4C.UkBbA__
+----------------------------------------------------------
+https://img.atpanel.com/1.gif?cache=5604602&pre=https%3A//login.taobao.com/member/login.jhtml&scr=1440x900&ul_chk=1536906741&isbetanew=1&category=&userid=&tid=&channel=112&&rpi_bi=2217556.3222947&upi_bi=2217735.57162
+
+GET https://img.atpanel.com/1.gif?cache=5604602&pre=https%3A//login.taobao.com/member/login.jhtml&scr=1440x900&ul_chk=1536906741&isbetanew=1&category=&userid=&tid=&channel=112&&rpi_bi=2217556.3222947&upi_bi=2217735.57162 HTTP/1.1
+Host: img.atpanel.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 27 Mar 2012 09:07:40 GMT
+Content-Type: image/gif
+Content-Length: 49
+Connection: close
+P3P: CP="NOI DSP COR CURa ADMa DEVa PSAa PSDa OUR IND UNI PUR NAV"
+Set-Cookie: TAOBAOSIDA=5724501034084664109_20120327170740; expires=Fri, 25-Mar-2022 09:07:38 GMT; path=/;domain=.atpanel.com
+Set-Cookie: TAOBAOCHIDA=112_20120327170740; expires=Tue, 27-Mar-2012 10:07:38 GMT; path=/;domain=.atpanel.com
+Set-Cookie: TAOBAOMIDA=5724501034084729645; expires=Fri, 25-Mar-2022 09:07:38 GMT; path=/;domain=.atpanel.com
+Set-Cookie: TAOBAOAIDA=5724501034084795181; path=/;domain=.atpanel.com
+Expires: Sat, 16 Jan 1980 12:00:00 GMT
+Pragma: no-cache
+----------------------------------------------------------
+http://ocsp.verisign.com/
+
+POST http://ocsp.verisign.com/ HTTP/1.1
+Host: ocsp.verisign.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Content-Length: 115
+Content-Type: application/ocsp-request
+0q0o0M0K0I0	+
+HTTP/1.0 200 OK
+Last-Modified: Sun, 25 Mar 2012 16:16:26 GMT
+Expires: Sun, 01 Apr 2012 16:16:26 GMT
+Content-Type: application/ocsp-response
+content-transfer-encoding: binary
+Content-Length: 1617
+Cache-Control: max-age=457722, public, no-transform, must-revalidate
+Date: Tue, 27 Mar 2012 09:07:44 GMT
+nncoection: close
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
+https://hz.mmstat.com/a?XzOzGe85AA=1149448909&K9g5CWjDh9=mnahxykXb0WToaUn3H-FLhYdSdN94f3l1BzT8XtQ7vof.Dnk4YsJdluvFc72pZPnckwJ9IBp-ZMuN3ww5bY5Ci41RdE3ETVNlT2VuxHkESdml2vF0YeJkzYMYgz9RJzL38FMS0vHWiurbkI-gzJ9yREOGbXIHHbgVuL6CKZYZQ8f1gNW6uvELcgP.7R.oeZx08v0rwDT7mCFFSlc2g9necVuNrfaKwMA0j4KOkv98miRzEyopXyGPmNYy3ofPQSLsT8VKLjTOIQdj3BuH376QYjyVb1ZoTmimdNvWd2AeBWYyC4C.UkBbA__
+
+GET https://hz.mmstat.com/a?XzOzGe85AA=1149448909&K9g5CWjDh9=mnahxykXb0WToaUn3H-FLhYdSdN94f3l1BzT8XtQ7vof.Dnk4YsJdluvFc72pZPnckwJ9IBp-ZMuN3ww5bY5Ci41RdE3ETVNlT2VuxHkESdml2vF0YeJkzYMYgz9RJzL38FMS0vHWiurbkI-gzJ9yREOGbXIHHbgVuL6CKZYZQ8f1gNW6uvELcgP.7R.oeZx08v0rwDT7mCFFSlc2g9necVuNrfaKwMA0j4KOkv98miRzEyopXyGPmNYy3ofPQSLsT8VKLjTOIQdj3BuH376QYjyVb1ZoTmimdNvWd2AeBWYyC4C.UkBbA__ HTTP/1.1
+Host: hz.mmstat.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.1 302 Moved Temporarily
+Server: nginx
+Date: Tue, 27 Mar 2012 09:07:44 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: close
+Set-Cookie: cna=YHH4B0Usb0kCAQ4VuZKHJXlc; expires=Thu, 31-Dec-2037 16:00:00 GMT; path=/; domain=.mmstat.com
+Set-Cookie: ac_session=YHH4B0Usb0kCAQ4VuZKHJXlc_1332839264_1; path=/; domain=.mmstat.com
+P3P: policyref="http://p3p.mmstat.com/w3c/p3p.xml", CP="CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+Location: https://acookie.taobao.com/1.gif?acookie_load_id=33107085876320854528&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%u6211%u559C%u6B22%21&pre=https%3A//login.taobao.com/member/login.jhtml&isbetanew=1&category=&userid=&channel=112&&XzOzGe85AA=55427636&a3G4ApKGeL=nzB83LrG8mTQDwXR6W-Ub7N6cropeKKNjGdPywRYRHs_
+----------------------------------------------------------
+https://acookie.taobao.com/1.gif?acookie_load_id=33107085876320854528&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%u6211%u559C%u6B22%21&pre=https%3A//login.taobao.com/member/login.jhtml&isbetanew=1&category=&userid=&channel=112&&XzOzGe85AA=55427636&a3G4ApKGeL=nzB83LrG8mTQDwXR6W-Ub7N6cropeKKNjGdPywRYRHs_
+
+GET https://acookie.taobao.com/1.gif?acookie_load_id=33107085876320854528&title=%u6DD8%u5B9D%u7F51%20-%20%u6DD8%u6211%u559C%u6B22%21&pre=https%3A//login.taobao.com/member/login.jhtml&isbetanew=1&category=&userid=&channel=112&&XzOzGe85AA=55427636&a3G4ApKGeL=nzB83LrG8mTQDwXR6W-Ub7N6cropeKKNjGdPywRYRHs_ HTTP/1.1
+Host: acookie.taobao.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+Cookie: cookie2=18829c40d6db0e64f9de07f3342bea1f; t=3a9110ee49f3059079f6cc560c49dd2a; v=0
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 27 Mar 2012 09:07:48 GMT
+Content-Type: image/gif
+Transfer-Encoding: chunked
+Connection: close
+P3P: CP="CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+Set-Cookie: cna=YHH4B0Usb0kCAQ4VuZKHJXlc; expires=Thu, 31-Dec-2037 16:00:00 GMT; path=/; domain=.taobao.com
+Set-Cookie: sc=27a94fff; path=/; domain=.acookie.taobao.com
+Set-Cookie: linezing_session=10a82ed8ea3d0d602b77663d_1332839268_1; path=/; domain=.acookie.taobao.com
+Set-Cookie: cnaex=deleted; expires=Mon, 28-Mar-2011 09:07:47 GMT; path=/; domain=.acookie.taobao.com
+----------------------------------------------------------
+https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768
+
+GET https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768 HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.0 200 OK
+x-amz-id-2: YKnn+b3OOtOu+K01KYrwtXRcYPKG1HD61jYgE+ZgeFP8hcLaztvcIwpardn3Z3+r
+x-amz-request-id: 2C4685E9B964FD5C
+Date: Thu, 22 Mar 2012 15:32:36 GMT
+Last-Modified: Thu, 22 Mar 2012 15:29:46 GMT
+Etag: "6d63aae38282fc1434676b359b084edc"
+Accept-Ranges: bytes
+Content-Type: application/x-javascript
+Content-Length: 16951
+Server: AmazonS3
+Age: 77720
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: PITudEQHNKZuSXi2cb8Apr5oF1EFeajtDzpuDKntKU05-T_qzbDIyA==
+Via: 1.0 6ada75adb5f081b638ff31e7091f8412.cloudfront.net:1182 (CloudFront), 1.0 2b88d714c00e6637f0f5cec5b5865d12.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------
+https://d15gt9gwxw5wu0.cloudfront.net/js/login.taobao.com/r.js
+
+GET https://d15gt9gwxw5wu0.cloudfront.net/js/login.taobao.com/r.js HTTP/1.1
+Host: d15gt9gwxw5wu0.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: https://login.taobao.com/member/login.jhtml
+
+HTTP/1.0 200 OK
+Content-Type: application/javascript
+Etag: "16157348-76-1327980117000"
+Last-Modified: Tue, 31 Jan 2012 03:21:57 GMT
+Expires: Mon, 05 Mar 2012 10:29:45 EST
+X-Cacheable: YES
+Cache-Control: max-age = 3600
+Content-Length: 76
+Date: Sun, 04 Mar 2012 15:29:45 GMT
+X-Varnish: 1056692803
+Age: 2591
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: ws28gss6I1JTMBlHgckEq7lOotCUZd-6gi0q2saoyuoRaXdYT3IpUQ==
+Via: 1.1 varnish, 1.0 3dee24f419c49cc32df542a9410fda87.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------

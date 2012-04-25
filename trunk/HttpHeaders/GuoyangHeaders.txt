@@ -1,0 +1,57 @@
+https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768
+
+GET https://d3lvr7yuk4uaui.cloudfront.net/items/loaders/loader_1036.js?aoi=1311798366&pid=1036&zoneid=12768 HTTP/1.1
+Host: d3lvr7yuk4uaui.cloudfront.net
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+If-Modified-Since: Wed, 04 Apr 2012 20:49:16 GMT
+If-None-Match: "3126d392f8825df5be089e35528ffd13"
+
+HTTP/1.0 304 Not Modified
+Date: Thu, 05 Apr 2012 10:41:34 GMT
+Etag: "3126d392f8825df5be089e35528ffd13"
+Last-Modified: Wed, 04 Apr 2012 20:49:16 GMT
+Age: 49732
+X-Cache: Hit from cloudfront
+X-Amz-Cf-Id: TJMAtc_NhHXPJ-EwIajooGzRW-Ubs_Qk-ciC4bZkfBwJloF7q_nOsg==
+Via: 1.0 35131741620e0ff6a1f299f1c4868a81.cloudfront.net (CloudFront)
+Connection: keep-alive
+----------------------------------------------------------
+http://www.guoyang.cc/polls/poll.php?action=choose&inajax=1
+
+POST http://www.guoyang.cc/polls/poll.php?action=choose&inajax=1 HTTP/1.1
+Host: www.guoyang.cc
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20100101 Firefox/12.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=FFF
+Cookie: pqrF_267c_sodateline=1333621648; pqrF_267c_sohash=ef6facd0554898eb1f0d085c6f55acd4; pqrF_267c_soid=uOGjle4d; cnzz_a3990314=0; sin3990314=; rtime=0; ltime=1333622472917; cnzz_eid=59761637-1333621766-; pqrF_267c_lastvisit=1333618865; pqrF_267c_sid=v8jnxY; pqrF_267c_lastact=1333622472%09misc.php%09so
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 80
+handlekey=pollresult&id=1&formhash=20ed0d14&iframe=1&bgcolor=FFF&choose_value=14
+HTTP/1.0 200 OK
+Cache-Control: no-store, private, post-check=0, pre-check=0, max-age=0
+Pragma: no-cache
+Content-Type: application/xml; charset=gbk
+Expires: -1
+Server: Microsoft-IIS/7.5
+X-Powered-By: PHP/5.3.6, ASP.NET
+Set-Cookie: pqrF_267c_sid=oVqAqH; expires=Fri, 06-Apr-2012 10:41:27 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_lastact=1333622487%09poll.php%09; expires=Fri, 06-Apr-2012 10:41:27 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_repeat_cookie_1=a%3A1%3A%7Bi%3A1333622487%3Bi%3A14%3B%7D; expires=Thu, 05-Apr-2012 11:41:27 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_repeat_username_0_1=a%3A1%3A%7Bi%3A1333622487%3Bi%3A14%3B%7D; expires=Thu, 05-Apr-2012 11:41:27 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_repeat_ip_146.185.21.14_1=a%3A1%3A%7Bi%3A1333622487%3Bi%3A14%3B%7D; expires=Thu, 05-Apr-2012 11:41:27 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_repeat_so_uOGjle4d_1=a%3A1%3A%7Bi%3A1333622487%3Bi%3A14%3B%7D; expires=Thu, 05-Apr-2012 11:41:27 GMT; path=/; domain=.guoyang.cc
+Set-Cookie: pqrF_267c_voted_1=1333622487; expires=Fri, 06-Apr-2012 10:41:27 GMT; path=/; domain=.guoyang.cc
+Date: Thu, 05 Apr 2012 10:41:27 GMT
+Content-Length: 336
+X-Cache: MISS from localhost, MISS from localhost
+X-Cache-Lookup: MISS from localhost:3128, MISS from localhost:3128
+Via: 1.0 localhost (squid/3.1.11), 1.0 localhost (squid/3.1.14)
+Connection: keep-alive
+----------------------------------------------------------
