@@ -1,0 +1,37 @@
+opt:
+catid:50011977
+ic:1
+id:10425980787
+il:(unable to decode value)
+ap:true
+ss:false
+free:false
+tg:false
+tid:2866818
+sid:70492495
+iv:98.00
+up:5.00
+exp:5.00
+ems:0.00
+iw:0
+is:
+callback:TShop.mods.SKU.DefaultShippingInfo.render
+
+opt:
+catid:1512
+ic:1
+id:16016896217
+il:(unable to decode value)
+ap:false
+ss:false
+free:true
+tg:false
+tid:0
+sid:41289893
+iv:958.00
+up:0.00
+exp:0.00
+ems:0.00
+iw:0
+is:
+callback:TShop.mods.SKU.DefaultShippingInfo.render
