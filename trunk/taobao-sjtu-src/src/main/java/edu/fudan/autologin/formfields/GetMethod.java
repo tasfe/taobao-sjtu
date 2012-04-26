@@ -12,6 +12,9 @@ import org.apache.http.util.EntityUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
+import org.apache.log4j.Logger;
+
+import edu.fudan.autologin.main.impl.TaobaoAutoLogin;
 
 /**
  * 
@@ -21,7 +24,7 @@ import org.apache.http.ParseException;
  * 
  */
 public class GetMethod {
-
+	private static final Logger log = Logger.getLogger(GetMethod.class);
 	private HttpClient httpclient = null;
 	private String getUrl = null;
 	private HttpResponse response = null;
@@ -71,18 +74,35 @@ public class GetMethod {
 
 	}
 
-	//java不支持函数参数默认值这种做法，所以我们只有通过函数重载来解决这个问题
-	public void printResponse(){
+	// java不支持函数参数默认值这种做法，所以我们只有通过函数重载来解决这个问题
+	public void printResponse() {
 		printResponse("utf-8");
 	}
-	public void printResponse(String charset) {
+
+	public String getResponseAsString(){
+		String rtnStr = null;
 		try {
-			System.out.println(EntityUtils.toString(this.response.getEntity(),
-					charset));
+			rtnStr = EntityUtils.toString(this.response.getEntity(), "utf-8");
 		} catch (ParseException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+		return rtnStr;
+	}
+	public void printResponse(String charset) {
+
+		if (this.getResponse().getEntity() == null) {
+			log.error("The entity of the response is null.");
+		} else {
+			try {
+				System.out.println(EntityUtils.toString(
+						this.response.getEntity(), charset));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
