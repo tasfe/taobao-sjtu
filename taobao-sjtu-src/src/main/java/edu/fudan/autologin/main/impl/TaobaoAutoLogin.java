@@ -108,10 +108,11 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 	public void execute() {
 		ExcelUtil.prepare();
-		//autoLogin();
+		autoLogin();
+		testGet();
 		//isLoginSuccess();
 		// searchResultPageParser();
-		 doMyWork();
+//		 doMyWork();
 		shutDown();
 	}
 
