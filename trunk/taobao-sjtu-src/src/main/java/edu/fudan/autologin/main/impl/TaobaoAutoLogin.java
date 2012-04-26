@@ -41,7 +41,10 @@ public class TaobaoAutoLogin implements AutoLogin {
 		ExcelUtil.createSheets();
 	}
 
-	public void isLoginSuccess() {
+	/**
+	 * test get request
+	 */
+	public void testGet() {
 		String getUrl = "http://detailskip.taobao.com/json/show_buyer_list.htm?page_size=15&is_start=false&item_type=b&ends=1335361433000&starts=1334756633000&item_id=10821226356&user_tag=471101458&old_quantity=2255&sold_total_num=16&closed=false&seller_num_id=23280614&zhichong=true&title=%D5%FD%C6%B7Cetaphil%CB%BF%CB%FE%DC%BD%CF%B4%C3%E6%C4%CC591ml+%CA%E6%CC%D8%B7%F4%BD%E0%C3%E6%C8%E9+%B1%A3%CA%AA%D0%B6%D7%B1+%C3%F4%B8%D0%BC%A1%B7%F4&bidPage=3&callback=TShop.mods.DealRecord.reload&t=1335326971619";
 		GetMethod getMethod = new GetMethod(httpClient, getUrl);
 		List<NameValuePair> headers = new ArrayList<NameValuePair>();
