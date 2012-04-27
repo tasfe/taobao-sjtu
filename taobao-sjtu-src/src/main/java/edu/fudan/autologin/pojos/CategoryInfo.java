@@ -8,7 +8,22 @@ package edu.fudan.autologin.pojos;
  */
 public class CategoryInfo {
 
-	private String categoryName;
+	@Override
+	public boolean equals(Object obj) {
+		if(this == obj){
+			return true;
+		}
+		if(obj instanceof CategoryInfo){
+			CategoryInfo c = (CategoryInfo)obj;
+			return (c.getCategoryName().equals(this.getCategoryName()))&&(c.getCategoryHref().equals(this.getCategoryHref()));
+		}else{
+			return false;
+		}
+	}
+	private String categoryName = "";
+	private String categoryHref = "";
+	
+	
 	public String getCategoryName() {
 		return categoryName;
 	}
@@ -21,5 +36,5 @@ public class CategoryInfo {
 	public void setCategoryHref(String categoryHref) {
 		this.categoryHref = categoryHref;
 	}
-	private String categoryHref;
+	
 }

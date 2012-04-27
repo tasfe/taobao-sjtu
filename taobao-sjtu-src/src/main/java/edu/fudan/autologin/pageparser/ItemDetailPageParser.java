@@ -5,17 +5,22 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import net.sf.json.JSONObject;
+import net.sf.json.JSONSerializer;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.log4j.Logger;
 
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
+import edu.fudan.autologin.main.impl.TaobaoAutoLogin;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.Postage;
 
 public class ItemDetailPageParser extends BasePageParser {
-
+	private static final Logger log = Logger.getLogger(ItemDetailPageParser.class);
 	private ItemInfo itemInfo;
 	
 	
@@ -79,30 +84,32 @@ public class ItemDetailPageParser extends BasePageParser {
 		return null;
 	}
 
-	
-	public Postage getPostageFromJson(String rtnStr){
+	/**
+	 * 
+	 * parse json string in order to get location,carriage and other info
+	 * @param rtnStr
+	 * @return
+	 */
+	public Postage getPostageFromJson(String jsonStr){
 		Postage postage = new Postage();
-		System.out.println(rtnStr);
-		Pattern pattern = Pattern.compile("location:'(.+?)'");
-		Matcher matcher = pattern.matcher(rtnStr);
-		if (matcher.find()) {
-			System.out.println(matcher.group(1));
-			postage.setLocation(matcher.group(1));
-			
-		} else {
-			System.out.println("no match");
-			return null;
-		}
 		
-		Pattern pattern1 = Pattern.compile("carriage:'(.+?)'");
-		Matcher matcher1 = pattern1.matcher(rtnStr);
-		if (matcher1.find()) {
-			System.out.println(matcher1.group(1));
-			postage.setCarriage(matcher1.group(1));
-		} else {
-			System.out.println("no match");
-			return null;
-		}
+		log.debug("The json string of postage from server is: "+jsonStr);
+		
+		String delimeters = "[()]+";
+		String[] tokens = jsonStr.split(delimeters);//split the string to get json data
+		
+		/**
+		 	{
+				type:'buyerPayPostfee',
+				location:'浙江宁波',
+				carriage:'快递:22.00元 EMS:25.00元 平邮:100.00元 '
+			}
+		 */
+		
+		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tokens[1]);
+		
+		postage.setCarriage(jsonObj.getString("carriage"));
+		postage.setLocation(jsonObj.getString("location"));
 		return postage;
 	}
 	

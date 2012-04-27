@@ -8,6 +8,9 @@ import java.util.regex.Pattern;
 
 import javax.crypto.spec.PSource;
 
+import net.sf.json.JSONObject;
+import net.sf.json.JSONSerializer;
+
 import org.apache.http.HttpHost;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
@@ -130,29 +133,24 @@ public class TaobaoAutoLogin implements AutoLogin {
 	}
 
 	
-	public Postage getPostageFromJson(String rtnStr){
+	public Postage getPostageFromJson(String json){
+		System.out.println(json);
 		Postage postage = new Postage();
-		System.out.println(rtnStr);
-		Pattern pattern = Pattern.compile("location:'(.+?)'");
-		Matcher matcher = pattern.matcher(rtnStr);
-		if (matcher.find()) {
-			System.out.println(matcher.group(1));
-			postage.setLocation(matcher.group(1));
-			
-		} else {
-			System.out.println("no match");
-			return null;
-		}
+		System.out.println(json);
 		
-		Pattern pattern1 = Pattern.compile("carriage:'(.+?)'");
-		Matcher matcher1 = pattern1.matcher(rtnStr);
-		if (matcher1.find()) {
-			System.out.println(matcher1.group(1));
-			postage.setCarriage(matcher1.group(1));
-		} else {
-			System.out.println("no match");
-			return null;
-		}
+		String delimeters = "[()]+";
+		String[] tokens = json.split(delimeters);
+		
+		System.out.println(tokens.length);
+		for (int i = 0; i < tokens.length; i++)
+		    System.out.println(tokens[i]);
+		
+		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tokens[1]);
+		
+		System.out.println(jsonObj.getString("type"));
+		System.out.println(jsonObj.getString("location"));
+		System.out.println(jsonObj.getString("carriage"));
+		
 		return postage;
 	}
 	public void autoLogin() {
