@@ -28,7 +28,29 @@ import edu.fudan.autologin.pojos.Postage;
 public class ItemDetailPageParser extends BasePageParser {
 	private static final Logger log = Logger.getLogger(ItemDetailPageParser.class);
 	private ItemInfo itemInfo;
+	private String postageUrl;
+	private String saleNumUrl;
+	private String reviewUrl;
 	
+	
+	public String getPostageUrl() {
+		return postageUrl;
+	}
+	public void setPostageUrl(String postageUrl) {
+		this.postageUrl = postageUrl;
+	}
+	public String getSaleNumUrl() {
+		return saleNumUrl;
+	}
+	public void setSaleNumUrl(String saleNumUrl) {
+		this.saleNumUrl = saleNumUrl;
+	}
+	public String getReviewUrl() {
+		return reviewUrl;
+	}
+	public void setReviewUrl(String reviewUrl) {
+		this.reviewUrl = reviewUrl;
+	}
 	
 	//constructor
 	public ItemDetailPageParser(HttpClient httpClient, String pageUrl) {
@@ -43,9 +65,99 @@ public class ItemDetailPageParser extends BasePageParser {
 
 	@Override
 	public void parsePage() {
-//do parse page here		
+		log.info("Start to parse page " + ItemDetailPageParser.class);
+		this.getPage(this.getPageUrl());
+		Document doc = this.getDoc();
+		preprocessDoc();
+		Element itemPro = doc.select("div.tb-property").get(0);
+		
+		String sellerId = "inherited from parent call";
+		log.info("sellerId: " + sellerId);
+		String priceRange = itemPro.getElementById("J_StrPrice").ownText();
+		log.info("priceRange: " + priceRange);
+		String freightPrice = "";
+		String location = "";
+		String freight = "";
+		
+		Postage postage = getPostage();
+		location = postage.getLocation();
+		freight = postage.getCarriage();
+		freightPrice = location + " : " + freight;
+		log.info("freightPrice: " + freightPrice);
+		
+		int saleNumIn30Days = getSaleNum();
+		log.info("saleNumIn30Days: " + saleNumIn30Days);
+		
+		int reviews = getReviewsNum();
+		log.info("reviews: " + reviews);
+
+		String itemType = "";
+		Element element = itemPro.select("li.tb-item-type em").get(0);
+		itemType = element.ownText();
+		log.info("itemType: " + itemType);
+		
+		String payType = "";
+		Elements links = itemPro.select("dl.tb-paymethods a");
+		for(Element link : links){
+			if(!"#".equals(link.attr("href"))){
+				payType += link.ownText() + ", ";
+			}
+		}
+		payType = payType.substring(0, payType.lastIndexOf(","));
+		log.info("payType: " + payType);
+		String serviceType = "";
+		links = itemPro.select("dl.tb-featured-services a");
+		for(Element link : links){
+			serviceType += link.ownText();
+		}
+		log.info("serviceType: " + serviceType);
+		
+		String spec = "";
+		String capacity = "";
+		Elements elements = doc.select("div#attributes ul.attributes-list li");
+		spec = elements.get(1).ownText();
+		capacity = elements.get(2).ownText();
 	}
 
+	/*对页面进行预处理，获取动态请求的url*/
+	public void preprocessDoc(){
+		GetMethod getMethod = new GetMethod(this.getHttpClient(), this.getPageUrl());
+		getMethod.doGet();
+		String docString = getMethod.getResponseAsString();
+		int base, begin, end;
+		if(docString.contains("getShippingInfo")){
+			base = docString.indexOf("getShippingInfo");
+			begin = docString.indexOf("\"", base);
+			end = docString.indexOf("\"", begin + 1);
+			String postageUrl = docString.substring(begin + 1, end).trim();
+			log.info("postageUrl: " + postageUrl);
+			setPostageUrl(postageUrl);
+		}else{
+			log.info("get postage url error, not found");
+		}
+		if(docString.contains("getDealQuantity")){
+			base = docString.indexOf("getDealQuantity");
+			begin = docString.indexOf("\"", base);
+			end = docString.indexOf("\"", begin + 1);
+			String saleNumUrl = docString.substring(begin + 1, end).trim();
+			log.info("saleNumUrl: " + saleNumUrl);
+			setSaleNumUrl(saleNumUrl);
+		}else{
+			log.info("get saleNum url error, not found");
+		}
+		
+		if(docString.contains("counterApi")){
+			base = docString.indexOf("counterApi");
+			begin = docString.indexOf("\"", base);
+			end = docString.indexOf("\"", begin + 1);
+			String reviewsUrl = docString.substring(begin + 1, end).trim();
+			log.info("reviewsUrl: " + reviewsUrl);
+			setReviewUrl(reviewsUrl);
+		}else{
+			log.info("get reviews url error, not found");
+		}
+	}
+	
 	@Override
 	public void doNext() {
 		
@@ -148,7 +260,43 @@ public class ItemDetailPageParser extends BasePageParser {
 		return postage;
 	}
 	
+	/*从服务器端获取json数据，并解析成jsonObject，由于服务器端返回的是js，需要先获取纯json String*/
+	public JSONObject getJsonFromServer(String referer, String requestUrl){
+		
+		JSONObject jsonObj = null;
+		List<NameValuePair> headers = new ArrayList<NameValuePair>();
+		NameValuePair nvp = new BasicNameValuePair("referer", referer);
+		headers.add(nvp);
+		GetMethod getRequest = new GetMethod(this.getHttpClient(), requestUrl);
+		getRequest.doGet(headers);
+		String responseStr = getRequest.getResponseAsString();
+		responseStr = responseStr.substring(responseStr.indexOf("{"), responseStr.lastIndexOf("}") + 1);  //get the plain json string
+		jsonObj = JSONObject.fromObject(responseStr);
+		getRequest.shutDown();
+		return jsonObj;
+	}
 	
+	public int getSaleNum(){
+		int saleNum = 0;
+		String referer = getPageUrl();
+		String requestUrl = getSaleNumUrl();
+		JSONObject saleNumObj = getJsonFromServer(referer, requestUrl);
+		saleNum = saleNumObj.getInt("quanity");
+		return saleNum;
+	}
+	
+	public int getReviewsNum(){
+		int reviewsNum = 0;
+		String referer = getPageUrl();
+		String requestUrl = getReviewUrl();
+		GetMethod getRequest = new GetMethod(this.getHttpClient(), requestUrl);
+		getRequest.doGet();
+		String responseStr = getRequest.getResponseAsString();
+		System.out.println("reviews:");
+		System.out.println(responseStr);
+		
+		return reviewsNum;
+	}
 	/**
 	 * 1. get ItemDetailPage;
 	 * 2. get showBuyerListUrl from ItemDetailPage; 
