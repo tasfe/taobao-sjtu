@@ -21,6 +21,10 @@ import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
@@ -82,7 +86,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 		// String getUrl =
 		// "http://item.taobao.com/item.htm?id=14312891950#deal-record";
 		GetMethod getMethod = new GetMethod(httpClient, getUrl);
-		
+
 		getMethod.doGet();// 给get请求添加httpheader
 		// getMethod.printResponse("utf-8");
 		String postageUrl = null;
@@ -91,17 +95,18 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
 		NameValuePair nvp1 = new BasicNameValuePair("referer",
-				"http://item.taobao.com/item.htm?id="+getIdFromPostageUrl(postageUrl));
+				"http://item.taobao.com/item.htm?id="
+						+ getIdFromPostageUrl(postageUrl));
 		headers1.add(nvp1);
 		GetMethod postage = new GetMethod(httpClient, postageUrl);
 		postage.doGet(headers1);
-		//postage.printResponse();
+		// postage.printResponse();
 		getPostageFromJson(postage.getResponseAsString());
-		
+
 		postage.shutDown();
 	}
 
-	public String getPostageUrl(String str) {//获得邮费get请求的url地址
+	public String getPostageUrl(String str) {// 获得邮费get请求的url地址
 		Pattern pattern = Pattern.compile("getShippingInfo:\"(.+?)\"");
 		Matcher matcher = pattern.matcher(str);
 		if (matcher.find()) {
@@ -112,14 +117,15 @@ public class TaobaoAutoLogin implements AutoLogin {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * 
 	 * 根据postage url地址，获得id
+	 * 
 	 * @param str
 	 * @return
 	 */
-	public String getIdFromPostageUrl(String str){
+	public String getIdFromPostageUrl(String str) {
 		Pattern pattern = Pattern.compile("&id=(.+?)&");
 		Matcher matcher = pattern.matcher(str);
 		if (matcher.find()) {
@@ -128,31 +134,31 @@ public class TaobaoAutoLogin implements AutoLogin {
 		} else {
 			System.out.println("no match");
 		}
-		
+
 		return null;
 	}
 
-	
-	public Postage getPostageFromJson(String json){
+	public Postage getPostageFromJson(String json) {
 		System.out.println(json);
 		Postage postage = new Postage();
 		System.out.println(json);
-		
+
 		String delimeters = "[()]+";
 		String[] tokens = json.split(delimeters);
-		
+
 		System.out.println(tokens.length);
 		for (int i = 0; i < tokens.length; i++)
-		    System.out.println(tokens[i]);
-		
+			System.out.println(tokens[i]);
+
 		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tokens[1]);
-		
+
 		System.out.println(jsonObj.getString("type"));
 		System.out.println(jsonObj.getString("location"));
 		System.out.println(jsonObj.getString("carriage"));
-		
+
 		return postage;
 	}
+
 	public void autoLogin() {
 
 		// 设置基本的post信息
@@ -175,6 +181,40 @@ public class TaobaoAutoLogin implements AutoLogin {
 		PostUtils.doPost(httpClient, basePostInfo, formFieldsNvps);
 	}
 
+	/**
+	 * 1. get ItemDetailPage;
+	 * 2. get showBuyerListUrl from ItemDetailPage; 
+	 * 3.according to taobao rules, construct our showBuyerListUrl list;
+	 * 4.according to construted showBuyerListUrl, get json data from server; 
+	 * 5.parsing json data from server and get our desired data;
+	 * 
+	 */
+	public void parseShowBuyerListDoc() {
+		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=12962369261";
+		String showBuyerListUrl = getShowBuyerListUrl(itemDetailPageUrl);
+		log.debug("ShowBuyerList url is: ");
+		log.debug( showBuyerListUrl);
+		int pageNum = 1;
+		while (true) {
+			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+					showBuyerListUrl, pageNum++);
+			
+			if(parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false){
+				break;//最后一个页面，跳出循环
+			}
+		}
+	}
+
+	/**
+	 * 
+	 * 当解析到最后一个页面时返回false，其余页面返回true
+	 * @param doc
+	 * @return
+	 */
+	public boolean parseConstructedShowBuyerListDoc(Document doc){
+		
+		return false;
+	}
 	public void doMyWork() {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
@@ -202,10 +242,88 @@ public class TaobaoAutoLogin implements AutoLogin {
 		}
 	}
 
+	public Document getShowBuyerListDoc(String getUrl) {
+		GetMethod get = new GetMethod(httpClient, getUrl);
+
+		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
+		NameValuePair nvp1 = new BasicNameValuePair("referer",
+				"http://item.taobao.com/item.htm?id=13048366752");
+		headers1.add(nvp1);
+		get.doGet(headers1);
+		Document doc = getHtmlDocFromJson(get.getResponseAsString());
+		get.shutDown();
+		return doc;
+	}
+
+	public String getShowBuyerListUrl(String itemDetailPageUrl) {
+		String showBuyerListUrl = "";
+		Document doc;
+
+		GetMethod getMethod = new GetMethod(httpClient, itemDetailPageUrl);
+		getMethod.doGet();
+		try {
+			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
+					.getEntity()));
+			Elements eles = doc.select("button#J_listBuyerOnView");
+
+			log.debug("Find elements's size is: "+eles.size());
+			for (Element e : eles) {
+				String tmp = e.attr("detail:params").trim();
+				showBuyerListUrl = tmp.substring(0, tmp.length()
+						- ",showBuyerList".length());
+			}
+		} catch (IllegalStateException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		return showBuyerListUrl;
+	}
+
+	public String constructShowBuyerListUrl(String showBuyerListUrl, int pageNum) {
+		String delims = "[?&]+";
+		String[] tokens = showBuyerListUrl.split(delims);
+		System.out.println(tokens.length);
+		for (int i = 0; i < tokens.length; i++)
+			System.out.println(tokens[i]);
+
+		StringBuffer sb = new StringBuffer();
+		sb.append(tokens[0] + "?");
+		for (int i = 2; i <= 12; ++i) {
+			sb.append(tokens[i] + "&");
+		}
+		sb.append(tokens[14]);
+
+		String append = "&bidPage="
+				+ pageNum
+				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t=1335495514388";
+
+		sb.append(append);
+		System.out.println(sb);
+
+		return sb.toString();
+	}
+
+	public Document getHtmlDocFromJson(String jsonStr) {
+		String tmp = new String((jsonStr.trim()));
+		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tmp.substring(
+				"TShop.mods.DealRecord.reload(".length(), tmp.length() - 1));
+		System.out.println(jsonObj.getString("html"));
+		Document doc = Jsoup.parse(jsonObj.getString("html"));
+		return doc;
+	}
+
+	public List<Document> getBuyerDocList() {
+		List<Document> buyerDocList = new ArrayList<Document>();
+		return buyerDocList;
+	}
+
 	public void execute() {
 		ExcelUtil.prepare();
+		parseShowBuyerListDoc();
 		// autoLogin();
-		testGet();
+		// testDealRecord(getShowBuyerListUrl());
+		// testGet();
 		// isLoginSuccess();
 		// searchResultPageParser();
 		// doMyWork();
@@ -235,7 +353,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 	public static void main(String[] args) {
 		PropertyConfigurator.configure("log4j.properties");
-		log.setLevel(Level.INFO);
+		log.setLevel(Level.DEBUG);
 
 		TaobaoAutoLogin taobaoAutoLogin = new TaobaoAutoLogin();
 		taobaoAutoLogin.execute();
