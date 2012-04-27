@@ -46,7 +46,7 @@ public class SearchResultPageParser extends BasePageParser {
 					this.getHttpClient(), sellerInSearchResult.getHref());
 			log.info("Seller name is: " + sellerInSearchResult.getSellerName());
 			log.info("Item href is: " + sellerInSearchResult.getHref());
-			// itemDetailPageParser.execute();
+			itemDetailPageParser.execute();
 		}
 	}
 
