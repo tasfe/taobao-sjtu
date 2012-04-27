@@ -30,14 +30,17 @@ public class TestMain {
 ////		assert(c1.equals(c2));
 //		System.out.println(c2.equals(c1));
 		
+//		
+//		String str = "$callback({type:'buyerPayPostfee',location:'浙江宁波',carriage:'快递:22.00元 EMS:25.00元 平邮:100.00元 '});";
+//		String delims = "[{}]+";
+//		String[] tokens = str.split(delims);
+//		
+//		System.out.println(tokens.length);
+//		for (int i = 0; i < tokens.length; i++)
+//		    System.out.println(tokens[i]);
 		
-		String str = "$callback({type:'buyerPayPostfee',location:'浙江宁波',carriage:'快递:22.00元 EMS:25.00元 平邮:100.00元 '});";
-		String delims = "[{}]+";
-		String[] tokens = str.split(delims);
-		
-		System.out.println(tokens.length);
-		for (int i = 0; i < tokens.length; i++)
-		    System.out.println(tokens[i]);
+		String str = "$..callback({type:'buyerPayPostfee',location:'浙江宁波',carriage:'快递:22.00元 EMS:25.00元 平邮:100.00元 '});";
+		System.out.println(str.substring("$..callback(".length(),str.length()-2));
 	}
 
 }
