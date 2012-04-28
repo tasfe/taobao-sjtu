@@ -6,7 +6,7 @@ public class BuyerInfo {
 
 	
 	private String sellerId;
-	private int price;
+	private float price;
 	private int num;
 	private String payTime;
 	private String size;
@@ -27,10 +27,10 @@ public class BuyerInfo {
 	public void setSellerId(String sellerId) {
 		this.sellerId = sellerId;
 	}
-	public int getPrice() {
+	public float getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(float price) {
 		this.price = price;
 	}
 	public int getNum() {

@@ -98,7 +98,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 		Pattern pattern = Pattern.compile("getShippingInfo:\"(.+?)\"");
 		Matcher matcher = pattern.matcher(str);
 		if (matcher.find()) {
-			System.out.println(matcher.group(1));
+			//System.out.println(matcher.group(1));
 			return matcher.group(1);
 		} else {
 			System.out.println("no match");
@@ -117,7 +117,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 		Pattern pattern = Pattern.compile("&id=(.+?)&");
 		Matcher matcher = pattern.matcher(str);
 		if (matcher.find()) {
-			System.out.println(matcher.group(1));
+			//System.out.println(matcher.group(1));
 			return matcher.group(1);
 		} else {
 			System.out.println("no match");
@@ -127,22 +127,23 @@ public class TaobaoAutoLogin implements AutoLogin {
 	}
 
 	public Postage getPostageFromJson(String json) {
-		System.out.println(json);
+		//System.out.println(json);
 		Postage postage = new Postage();
-		System.out.println(json);
+		//System.out.println(json);
 
 		String delimeters = "[()]+";
 		String[] tokens = json.split(delimeters);
 
-		System.out.println(tokens.length);
-		for (int i = 0; i < tokens.length; i++)
-			System.out.println(tokens[i]);
+		//System.out.println(tokens.length);
+//		for (int i = 0; i < tokens.length; i++)
+//			System.out.println(tokens[i]);
 
 		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tokens[1]);
 
-		System.out.println(jsonObj.getString("type"));
-		System.out.println(jsonObj.getString("location"));
-		System.out.println(jsonObj.getString("carriage"));
+		
+		log.info("Type: "+jsonObj.getString("type"));
+		log.info("Location: "+jsonObj.getString("location"));
+		log.info("Carriage: "+jsonObj.getString("carriage"));
 
 		return postage;
 	}
@@ -212,7 +213,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 				continue;
 			}
 			String priceStr = buyerEl.select("td.tb-price").get(0).ownText();
-			int price = Integer.valueOf(priceStr);
+			float price = Float.valueOf(priceStr);
 			String numStr = buyerEl.select("td.tb-amount").get(0).ownText();
 			int num = Integer.valueOf(numStr);
 			String payTime = buyerEl.select("td.tb-time").get(0).ownText();
@@ -234,29 +235,28 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 */
 	public boolean parseConstructedShowBuyerListDoc(Document doc) {
 
-//		if (doc.toString().contains("暂时还没有买家购买此宝贝")) {
-//			log.info("There is no buyers.");
-//			return false;
-//		} else {
+		if (doc.toString().contains("暂时还没有买家购买此宝贝")) {
+			log.info("There is no buyers.");
+			return false;
+		} else {
 			parseBuyerListTable(doc);
-//			return true;
-//		}
-		return false;
+			return true;
+		}
 	}
 
 	public void doMyWork() {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
 
-		CategoryInfo ci1 = new CategoryInfo();
-		ci1.setCategoryName("洁面");
-		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
-		categoryInfos.add(ci1);
-
-		CategoryInfo ci2 = new CategoryInfo();
-		ci2.setCategoryName("热门手机");
-		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
-		categoryInfos.add(ci2);
+//		CategoryInfo ci1 = new CategoryInfo();
+//		ci1.setCategoryName("洁面");
+//		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
+//		categoryInfos.add(ci1);
+//
+//		CategoryInfo ci2 = new CategoryInfo();
+//		ci2.setCategoryName("热门手机");
+//		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
+//		categoryInfos.add(ci2);
 
 		CategoryInfo ci3 = new CategoryInfo();
 		ci3.setCategoryName("笔记本");
@@ -330,7 +330,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 		String tmp = new String((jsonStr.trim()));
 		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tmp.substring(
 				"TShop.mods.DealRecord.reload(".length(), tmp.length() - 1));
-		System.out.println(jsonObj.getString("html"));
+		//System.out.println(jsonObj.getString("html"));
 		Document doc = Jsoup.parse(jsonObj.getString("html"));
 		return doc;
 	}
@@ -341,16 +341,17 @@ public class TaobaoAutoLogin implements AutoLogin {
 	}
 
 	public void execute() {
+		beforeWriteExcel();
 		// testDealRecord(getShowBuyerListUrl());
 		// testGet();
 		// isLoginSuccess();
 		// searchResultPageParser();
 		// parseReviews();
-		// doMyWork();
+		 doMyWork();
 		// itemDetailPageParser();
-		// shutDown();
+		 shutDown();
 		// autoLogin();
-		parseShowBuyerListDoc();
+		//parseShowBuyerListDoc();
 	}
 
 	public void topTenPageParser() {
