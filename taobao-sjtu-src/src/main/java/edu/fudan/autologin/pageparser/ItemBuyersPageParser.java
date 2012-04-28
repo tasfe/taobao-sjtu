@@ -25,7 +25,17 @@ import edu.fudan.autologin.pojos.BuyerInfo;
  */
 public class ItemBuyersPageParser extends BasePageParser {
 
-	private List<BuyerInfo> buyerInfos;
+	private BuyerInfo buyInfo;
+	
+
+	public BuyerInfo getBuyInfo() {
+		return buyInfo;
+	}
+
+	public void setBuyInfo(BuyerInfo buyInfo) {
+		this.buyInfo = buyInfo;
+	}
+
 	private static final Logger log = Logger.getLogger(ItemBuyersPageParser.class);
 	
 	@Override
@@ -64,7 +74,7 @@ public class ItemBuyersPageParser extends BasePageParser {
 			buyer.setRateScore(rateScore);
 			buyer.setBuyerAddress(buyerAddress);
 			
-			buyerInfos.add(buyer);
+			//buyerInfos.add(buyer);
 		}
 	}
 
@@ -88,12 +98,12 @@ public class ItemBuyersPageParser extends BasePageParser {
 
 	@Override
 	public void writeExcel() {
-		ExcelUtil.writeItemBuyerSheet(buyerInfos);
+	//	ExcelUtil.writeItemBuyerSheet(buyerInfos);
 	}
 
 	public ItemBuyersPageParser(HttpClient httpClient, String pageUrl) {
 		super(httpClient, pageUrl);
-		buyerInfos = new ArrayList<BuyerInfo>();
+//		buyerInfos = new ArrayList<BuyerInfo>();
 	}
 
 }

@@ -29,6 +29,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.main.AutoLogin;
@@ -37,6 +38,7 @@ import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
+import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
 import edu.fudan.autologin.pojos.FeedRate;
 import edu.fudan.autologin.pojos.FeedRateComment;
@@ -173,22 +175,32 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 * 
 	 */
 	public void parseShowBuyerListDoc() {
-		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=10425980787";
+		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=15580740187";
 		String showBuyerListUrl = getShowBuyerListUrl(itemDetailPageUrl);
 		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
 		int pageNum = 1;
-		// while (true) {
-		String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-				showBuyerListUrl, pageNum++);
+		while (true) {
+			log.info("This is buyers of Page NO: "+pageNum);
+			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+					showBuyerListUrl, pageNum++);
 
-		if (parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false) {
-			// break;//最后一个页面，跳出循环
+			if (parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false) {
+				break;// 最后一个页面，跳出循环
+			}
 		}
-		// }
 	}
 
-	
-	
+	/**
+	 * 没有买家时返回的是这个 <div class="msg msg-attention-shortcut"
+	 * server-num="detailskip185108.cm4">
+	 * <p class="attention naked">
+	 * 暂时还没有买家购买此宝贝，最近30天成交0件。
+	 * </p>
+	 * </div>
+	 */
+	public void parseBuyerListTable(Document doc){
+		
+	}
 	/**
 	 * 
 	 * 当解析到最后一个页面时返回false，其余页面返回true
@@ -196,10 +208,15 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 * @param doc
 	 * @return
 	 */
-
 	public boolean parseConstructedShowBuyerListDoc(Document doc) {
-		ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(httpClient, pageUrl)doc;
-		return true;
+
+		if (doc.toString().contains("暂时还没有买家购买此宝贝")) {
+			log.info("There is no buyers.");
+			return false;
+		} else {
+			parseBuyerListTable(doc);
+			return true;
+		}
 	}
 
 	public void doMyWork() {
@@ -303,11 +320,11 @@ public class TaobaoAutoLogin implements AutoLogin {
 		// testGet();
 		// isLoginSuccess();
 		// searchResultPageParser();
-//		parseReviews();
+		// parseReviews();
 		// doMyWork();
-//		itemDetailPageParser();
-//		shutDown();
-		autoLogin();
+		// itemDetailPageParser();
+		// shutDown();
+		// autoLogin();
 		parseShowBuyerListDoc();
 	}
 
@@ -325,12 +342,13 @@ public class TaobaoAutoLogin implements AutoLogin {
 		searchResultPageParser.parsePage();
 	}
 
-	public void itemDetailPageParser(){
+	public void itemDetailPageParser() {
 		String pageUrl = "http://item.taobao.com/item.htm?id=10425980787";
-		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, pageUrl);
+		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
+				httpClient, pageUrl);
 		itemDetailPageParser.parsePage();
 	}
-	
+
 	public void shutDown() {
 		log.info("--------------------------------------------------------------------------------------------------------------");
 		log.info("COMPLETE ALL TASKS!");
@@ -425,7 +443,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 				JSONObject j = JSONObject.fromObject(o);
 				log.info("Date is: " + j.getString("date"));
 				log.info("Content is: " + j.getString("content"));
-				log.info("Comment NO is: "+i++);
+				log.info("Comment NO is: " + i++);
 			}
 			return true;
 		}

@@ -13,6 +13,14 @@ public class BuyerInfo {
 	private int rateScore;
 	private String buyerAddress;
 	
+	private String href;//买家个人信息页面地址
+	
+	public String getHref() {
+		return href;
+	}
+	public void setHref(String href) {
+		this.href = href;
+	}
 	public String getSellerId() {
 		return sellerId;
 	}

@@ -25,6 +25,7 @@ import org.jsoup.select.Elements;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.main.impl.TaobaoAutoLogin;
+import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.Postage;
@@ -36,6 +37,8 @@ public class ItemDetailPageParser extends BasePageParser {
 	private String postageUrl;
 	private String saleNumUrl;
 	private String reviewUrl;
+	
+	private List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
 	
 	private List<String> dateList = new ArrayList<String>();
 
@@ -173,9 +176,15 @@ public class ItemDetailPageParser extends BasePageParser {
 	public void doNext() {
 
 		assert (itemInfo.getItemBuyersHref() != null);
-		ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(
-				this.getHttpClient(), itemInfo.getItemBuyersHref());
-		itemBuyersPageParser.execute();
+		
+		for(BuyerInfo buyerInfo: buyerInfos){
+			ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(this.getHttpClient(), buyerInfo.getHref());
+			itemBuyersPageParser.setBuyInfo(buyerInfo);
+			itemBuyersPageParser.execute();
+		}
+//		ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(
+//				this.getHttpClient(), itemInfo.getItemBuyersHref());
+//		itemBuyersPageParser.execute();
 
 		assert (itemInfo.getUserRateHref() != null);
 		UserRatePageParser userRatePageParser = new UserRatePageParser(
