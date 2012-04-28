@@ -312,10 +312,44 @@ public class ItemDetailPageParser extends BasePageParser {
 		String referer = getPageUrl();
 		String requestUrl = getSaleNumUrl();
 		JSONObject saleNumObj = getJsonFromServer(referer, requestUrl);
-		saleNum = saleNumObj.getInt("quanity");
+		log.info("Sale json string from server is: "+saleNumObj.toString());
+		/**
+		 * 
+		 * 
+		 * 
+		 * {"quantity":{"quanity":0,"interval":30}}
+		 */
+		if(saleNumObj.toString().trim().length() == "{\"quantity\":{\"quanity\":0,\"interval\":30}}".length()){
+//			Quantity quantity = (Quantity) JSONObject.toBean(saleNumObj,Quantity.class);
+//			log.info("SaleNum is: "+quantity.quanity);
+//			saleNum = quantity.quanity;
+			
+			JSONObject quantityObj = saleNumObj.getJSONObject("quantity");
+			int quanity = quantityObj.getInt("quanity");
+			int interval = quantityObj.getInt("interval");
+		
+			log.debug("Sale num string  is: "+quanity);
+			saleNum = quanity;
+			
+//			String tmpStr = saleNumObj.toString().trim();
+//			
+//			int base = tmpStr.indexOf("quanity\"");
+//			int begin = tmpStr.indexOf(":",base);
+//			int end = tmpStr.indexOf(",\"interval",begin+1);
+//			
+//			String s1 = tmpStr.substring(begin+1,end);
+//			
+//			log.debug("Sale num string  is: "+s1);
+//			saleNum = Integer.parseInt(s1);
+		}else{
+			saleNum = saleNumObj.getInt("quanity");
+		}
 		return saleNum;
 	}
-
+public class Quantity{
+	public int quanity;
+	public int interval;
+}
 	public int getReviewsNum() {
 		int reviewsNum = 0;
 		String referer = getPageUrl();
@@ -562,6 +596,7 @@ public class ItemDetailPageParser extends BasePageParser {
 			int i = 1;
 			for (Object o : list) {
 				JSONObject j = JSONObject.fromObject(o);
+				log.info("Auction title is: "+j.getJSONObject("auction").getString("title"));
 				log.info("Date is: " + j.getString("date"));
 				dateList.add(j.getString("date"));
 				log.info("Content is: " + j.getString("content"));
@@ -570,7 +605,41 @@ public class ItemDetailPageParser extends BasePageParser {
 			return true;
 		}
 	}
-	
+	/**
+	 * 
+	 * 返回的评论的格式如下:
+	 * {
+"watershed":100,
+"maxPage":167,
+"currentPageNum":166,
+"comments":[
+	{"auction":
+		{"title":"Apple/苹果 iPhone 4S 无锁版/港版 16G 32G 64G可装软件有未激活",
+		"aucNumId":13599064573,
+		"link":"",
+		"sku":"机身颜色:港版16G白色现货  手机套餐:官方标配"},
+	"content":"hao",
+	"append":null,
+	"rate":"好评！",
+	"tag":"",
+	"rateId":16249892723,
+	"award":"",
+	"reply":null,
+	"useful":0,
+	"date":"2012.03.08",
+	"user":{
+					"vip":"",
+					"rank":136,
+					"nick":"771665176_44",
+					"userId":410769781,
+					"displayRatePic":"b_red_4.gif",
+					"nickUrl":"http://wow.taobao.com/u/NDEwNzY5Nzgx/view/ta_taoshare_list.htm?redirect=fa",
+					"vipLevel":2,
+					"avatar":"http://img.taobaocdn.com/sns_logo/i1/T1VxqHXa4rXXb1upjX.jpg_40x40.jpg",
+					"anony":false,
+					"rankUrl":"http://rate.taobao.com/rate.htm?user_id=410769781&rater=1"}
+	},
+	 */
 	public String getFirstReviewDate(){
 		if(dateList.size() == 0){
 			return null;

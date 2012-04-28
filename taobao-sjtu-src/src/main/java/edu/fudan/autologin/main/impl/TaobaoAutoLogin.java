@@ -347,10 +347,12 @@ public class TaobaoAutoLogin implements AutoLogin {
 		// isLoginSuccess();
 		// searchResultPageParser();
 		// parseReviews();
-		 doMyWork();
+		//parseReviews();
 		// itemDetailPageParser();
-		 shutDown();
-		// autoLogin();
+//		autoLogin();
+		doMyWork();
+		shutDown();
+		// 
 		//parseShowBuyerListDoc();
 	}
 
@@ -469,9 +471,46 @@ public class TaobaoAutoLogin implements AutoLogin {
 				JSONObject j = JSONObject.fromObject(o);
 				log.info("Date is: " + j.getString("date"));
 				log.info("Content is: " + j.getString("content"));
+				log.info("Auction title is: "+j.getJSONObject("auction").getString("title"));
 				log.info("Comment NO is: " + i++);
 			}
 			return true;
 		}
 	}
+	
+	/**
+	 * 
+	 * 评论的格式如下:
+	 * {
+"watershed":100,
+"maxPage":167,
+"currentPageNum":166,
+"comments":[
+	{"auction":
+		{"title":"Apple/苹果 iPhone 4S 无锁版/港版 16G 32G 64G可装软件有未激活",
+		"aucNumId":13599064573,
+		"link":"",
+		"sku":"机身颜色:港版16G白色现货  手机套餐:官方标配"},
+	"content":"hao",
+	"append":null,
+	"rate":"好评！",
+	"tag":"",
+	"rateId":16249892723,
+	"award":"",
+	"reply":null,
+	"useful":0,
+	"date":"2012.03.08",
+	"user":{
+					"vip":"",
+					"rank":136,
+					"nick":"771665176_44",
+					"userId":410769781,
+					"displayRatePic":"b_red_4.gif",
+					"nickUrl":"http://wow.taobao.com/u/NDEwNzY5Nzgx/view/ta_taoshare_list.htm?redirect=fa",
+					"vipLevel":2,
+					"avatar":"http://img.taobaocdn.com/sns_logo/i1/T1VxqHXa4rXXb1upjX.jpg_40x40.jpg",
+					"anony":false,
+					"rankUrl":"http://rate.taobao.com/rate.htm?user_id=410769781&rater=1"}
+	},
+	 */
 }
