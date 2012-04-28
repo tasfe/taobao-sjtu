@@ -376,7 +376,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 	}
 
 	public String getFeedRateListUrl() {
-		String itemDetailUrl = "http://item.taobao.com/item.htm?id=14799383754";
+		String itemDetailUrl = "http://item.taobao.com/item.htm?id=13117536191";
 
 		String baseFeedRateListUrl = "";
 
