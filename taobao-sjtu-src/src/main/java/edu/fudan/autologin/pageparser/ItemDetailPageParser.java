@@ -81,7 +81,6 @@ public class ItemDetailPageParser extends BasePageParser {
 		Document doc = this.getDoc();
 		preprocessDoc();
 		Element itemPro = doc.select("div.tb-property").get(0);
-
 		String sellerId = "inherited from parent call";
 		log.info("sellerId: " + sellerId);
 		String priceRange = itemPro.getElementById("J_StrPrice").ownText();

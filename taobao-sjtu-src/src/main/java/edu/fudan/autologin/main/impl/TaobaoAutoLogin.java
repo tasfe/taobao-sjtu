@@ -1,5 +1,7 @@
 package edu.fudan.autologin.main.impl;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,8 @@ import org.jsoup.select.Elements;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.main.AutoLogin;
+import edu.fudan.autologin.pageparser.ItemBuyersPageParser;
+import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
@@ -65,30 +69,6 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 */
 	public void testGet() {
 		String getUrl = "http://item.taobao.com/item.htm?id=13921701227";
-		// String getUrl
-		// ="http://detailskip.taobao.com/json/postage_fee.htm?opt=&catid=50012938&ic=1&id=13871713569&il=%BA%DA%C1%FA%BD%AD%B9%FE%B6%FB%B1%F5&ap=false&ss=false&free=true&tg=false&tid=0&sid=278373237&iv=119.50&up=0.00&exp=0.00&ems=0.00&iw=0&is=";
-		// String getUrl =
-		// "http://delivery.taobao.com/detail/detail.do?itemCount=1&amp;itemId=10425980787&amp;itemValue=98.00&amp;isSellerPay=false&amp;templateId=2866818&amp;userId=70492495&amp;unifiedPost=5.00&amp;unifiedExpress=5.00&amp;unifiedEms=0.00&amp;weight=0&amp;size=0";
-		// String getUrl =
-		// "http://detailskip.taobao.com/json/postage_fee.htm?opt=&catid=1512&ic=1&id=160168996217&il=%B9%E3%B6%AB%C9%EE%DB%DA&ap=false&ss=false&free=true&tg=false&tid=0&sid=412899893&iv=958.00&up=0.00&exp=0.00&ems=0.00&iw=0&is=&callback=TShop.mods.SKU.DefaultShippingInfo.render";
-		// String getUrl = "http://detailskip.taobao.com/json/postage_fee.htm?"
-		// +
-		// "opt=&catid=50012938&ic=1&" +
-		// "id=13871713569&" +//商品编号id
-		// "il=%B9%E3%B6%AB%B9%E3%D6%DD&" +//location的一种中文编码方式
-		// "ap=false&ss=false&" +
-		// "free=true&" +//如果买家承担费用，则free为ture
-		// "tg=false&tid=2866818&" +
-		// "sid=278373237&" +// user id
-		// "iv=98.00&" +//价格
-		// "up=5.00&exp=5.00&ems=0.00&iw=0&is=&" +
-		// "callback=TShop.mods.SKU.DefaultShippingInfo.render";//回调
-		// String getUrl =
-		// "http://detailskip.taobao.com/json/show_buyer_list.htm?page_size=15&is_start=false&item_type=b&ends=1335361433000&starts=1334756633000&item_id=10821226356&user_tag=471101458&old_quantity=2255&sold_total_num=16&closed=false&seller_num_id=23280614&zhichong=true&title=%D5%FD%C6%B7Cetaphil%CB%BF%CB%FE%DC%BD%CF%B4%C3%E6%C4%CC591ml+%CA%E6%CC%D8%B7%F4%BD%E0%C3%E6%C8%E9+%B1%A3%CA%AA%D0%B6%D7%B1+%C3%F4%B8%D0%BC%A1%B7%F4&bidPage=3&callback=TShop.mods.DealRecord.reload&t=1335326971619";
-		// String getUrl =
-		// "http://detailskip.taobao.com/json/show_buyer_list.htm?page_size=15&is_start=false&item_type=b&ends=1335454211000&starts=1334849411000&item_id=13599064573&user_tag=475887632&old_quantity=6482&sold_total_num=16&closed=false&seller_num_id=14744854&zhichong=true&title=Apple%2F%C6%BB%B9%FB+iPhone+4S+%CE%DE%CB%F8%B0%E6%2F%B8%DB%B0%E6%2F%B5%E7%D0%C5%B0%E6%2F%D3%D0%B8%DB%B0%E65.01%BF%C9%D4%BD%D3%FC%B0%E6&bidPage=2&callback=TShop.mods.DealRecord.reload&t=1335414993258";
-		// String getUrl =
-		// "http://item.taobao.com/item.htm?id=14312891950#deal-record";
 		GetMethod getMethod = new GetMethod(httpClient, getUrl);
 
 		getMethod.doGet();// 给get请求添加httpheader
@@ -193,7 +173,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 * 
 	 */
 	public void parseShowBuyerListDoc() {
-		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=16817112297";
+		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=10425980787";
 		String showBuyerListUrl = getShowBuyerListUrl(itemDetailPageUrl);
 		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
 		int pageNum = 1;
@@ -216,8 +196,9 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 * @param doc
 	 * @return
 	 */
-	public boolean parseConstructedShowBuyerListDoc(Document doc) {
 
+	public boolean parseConstructedShowBuyerListDoc(Document doc) {
+		ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(httpClient, pageUrl)doc;
 		return true;
 	}
 
@@ -318,16 +299,16 @@ public class TaobaoAutoLogin implements AutoLogin {
 	}
 
 	public void execute() {
-		ExcelUtil.prepare();
-		// parseShowBuyerListDoc();
-		// autoLogin();
 		// testDealRecord(getShowBuyerListUrl());
 		// testGet();
 		// isLoginSuccess();
 		// searchResultPageParser();
-		parseReviews();
+//		parseReviews();
 		// doMyWork();
-		shutDown();
+//		itemDetailPageParser();
+//		shutDown();
+		autoLogin();
+		parseShowBuyerListDoc();
 	}
 
 	public void topTenPageParser() {
@@ -344,6 +325,12 @@ public class TaobaoAutoLogin implements AutoLogin {
 		searchResultPageParser.parsePage();
 	}
 
+	public void itemDetailPageParser(){
+		String pageUrl = "http://item.taobao.com/item.htm?id=10425980787";
+		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, pageUrl);
+		itemDetailPageParser.parsePage();
+	}
+	
 	public void shutDown() {
 		log.info("--------------------------------------------------------------------------------------------------------------");
 		log.info("COMPLETE ALL TASKS!");

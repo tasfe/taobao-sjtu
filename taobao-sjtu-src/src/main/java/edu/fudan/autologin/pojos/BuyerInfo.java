@@ -12,6 +12,7 @@ public class BuyerInfo {
 	private String size;
 	private int rateScore;
 	private String buyerAddress;
+	
 	public String getSellerId() {
 		return sellerId;
 	}
@@ -54,11 +55,11 @@ public class BuyerInfo {
 	public void setBuyerAddress(String buyerAddress) {
 		this.buyerAddress = buyerAddress;
 	}
-	public SexEnum getSex() {
+	public String getSex() {
 		return sex;
 	}
-	public void setSex(SexEnum sex) {
+	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	private SexEnum sex;
+	private String sex;
 }
