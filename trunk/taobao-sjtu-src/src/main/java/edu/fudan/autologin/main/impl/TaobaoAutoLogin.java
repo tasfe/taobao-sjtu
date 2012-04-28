@@ -177,18 +177,21 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 * 
 	 */
 	public void parseShowBuyerListDoc() {
-		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=15580740187";
+		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=10203414733";
 		String showBuyerListUrl = getShowBuyerListUrl(itemDetailPageUrl);
 		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
 		int pageNum = 1;
 		while (true) {
 			log.info("This is buyers of Page NO: "+pageNum);
 			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-					showBuyerListUrl, pageNum++);
+					showBuyerListUrl, pageNum);
 
 			if (parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false) {
+				log.info("Total page NO is: "+(pageNum-1));
 				break;// 最后一个页面，跳出循环
 			}
+			
+			++pageNum;
 		}
 	}
 
@@ -231,13 +234,14 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 */
 	public boolean parseConstructedShowBuyerListDoc(Document doc) {
 
-		if (doc.toString().contains("暂时还没有买家购买此宝贝")) {
-			log.info("There is no buyers.");
-			return false;
-		} else {
+//		if (doc.toString().contains("暂时还没有买家购买此宝贝")) {
+//			log.info("There is no buyers.");
+//			return false;
+//		} else {
 			parseBuyerListTable(doc);
-			return true;
-		}
+//			return true;
+//		}
+		return false;
 	}
 
 	public void doMyWork() {
@@ -301,9 +305,9 @@ public class TaobaoAutoLogin implements AutoLogin {
 	public String constructShowBuyerListUrl(String showBuyerListUrl, int pageNum) {
 		String delims = "[?&]+";
 		String[] tokens = showBuyerListUrl.split(delims);
-		System.out.println(tokens.length);
-		for (int i = 0; i < tokens.length; i++)
-			System.out.println(tokens[i]);
+//		System.out.println(tokens.length);
+//		for (int i = 0; i < tokens.length; i++)
+//			System.out.println(tokens[i]);
 
 		StringBuffer sb = new StringBuffer();
 		sb.append(tokens[0] + "?");
@@ -317,7 +321,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t=1335495514388";
 
 		sb.append(append);
-		System.out.println(sb);
+//		System.out.println(sb);
 
 		return sb.toString();
 	}
