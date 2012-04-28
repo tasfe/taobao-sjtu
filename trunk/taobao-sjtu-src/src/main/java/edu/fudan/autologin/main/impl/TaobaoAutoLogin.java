@@ -1,8 +1,10 @@
 package edu.fudan.autologin.main.impl;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -199,7 +201,26 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 * </div>
 	 */
 	public void parseBuyerListTable(Document doc){
-		
+		Elements buyerListEls = doc.select("table.tb-list > tbody > tr");
+		for(int i = 0; i < buyerListEls.size(); i ++){
+			Element buyerEl = buyerListEls.get(i);
+			Elements buyerInfo = buyerEl.select("td.tb-buyer");
+			if(0 == buyerInfo.size()){
+				continue;
+			}
+			String priceStr = buyerEl.select("td.tb-price").get(0).ownText();
+			int price = Integer.valueOf(priceStr);
+			String numStr = buyerEl.select("td.tb-amount").get(0).ownText();
+			int num = Integer.valueOf(numStr);
+			String payTime = buyerEl.select("td.tb-time").get(0).ownText();
+			String size = buyerEl.select("td.tb-sku").text();
+			String sex = SexEnum.unknown;
+			
+			log.info("price: " + price);
+			log.info("num: " + num);
+			log.info("payTime: " + payTime);
+			log.info("size: " + size);
+		}
 	}
 	/**
 	 * 
