@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="gbk" /> 
+  <meta name="description" content="欢迎前来淘宝网手机类实力旺铺，选购Apple/苹果 iPhone 4S 大陆行 未拆封未激活 预装软件 包邮,想了解更多Apple/苹果 iPhone 4S 大陆行 未拆封未激活 预装软件 包邮，请进入新太数码通讯的★新太数码通讯★实力旺铺，更多手机商品任你选购" /> 
+  <meta name="keywords" content="淘宝,掏宝,网上购物,店铺, Apple/苹果 iPhone 4S 大陆行 未拆封未激活 预装软件 包邮 手机." /> 
+  <meta name="spm-id" content="1102dyC7.2-4rYmC" /> 
+  <meta name="microscope-data" content="pageId=74433958;prototypeId=2;siteId=7; shopId=37104007; userid=183262695;" /> 
+  <title>Apple/苹果 iPhone 4S 大陆行 未拆封未激活 预装软件 包邮-淘宝网</title> 
+  <script>g_config={startTime:+new Date,prefetch:[],t:20120428, appId:1,itemId:"13199871937",shopId:"37104007",pageId:"13199871937",assetsHost:"http://a.tbcdn.cn",enable:true,p:1.0,type:"cex",counterApi:"http://count.tbcdn.cn/counter3?inc=ICVT_7_13199871937&sign=41700bfd2abcd3f9e6bec7e7b86fd7212f85f&keys=DFX_200_1_13199871937,ICVT_7_13199871937,ICCP_1_13199871937,ICE_3_feedcount-13199871937,ZAN_27_2_13199871937,SCCP_2_37104007",toolbar:{delay:10}};</script> 
+  <script>
+(function(){
+    window._detail_config={};
+window._detail_config.DyBase={iurl:"http://item.taobao.com",purl:"http://paimai.taobao.com",spurl:"http://support.taobao.com",durl:"http://design.taobao.com",lgurl:"https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D13199871937",
+surl:"http://upload.taobao.com", murl:"http://meal.taobao.com" };window._detail_config.idata={
+ item:{
+ id:13199871937, rcid:'1512', cid:'1512', edit:true, status:0, bnow:true, prepay:true, dbst:1333169724000, chong:false, ju:false, iju:false, fcat:false, auto:"false", jbid:"",  jmark:""},seller:{id:183262695,status:0},shop:{id:"37104007",pid:"74433958",sid:"7"} }})();
+</script>
+ </head>
+ <body class="tb-new">
+  <esi:include src="/j/vdata.htm?skil=false" />
+  <script>(function(){if(!window._detail_config.vdata){var i_r=function(data){window._detail_config.vdata=data;};window.i_r=i_r;var d=document;var s=d.createElement('script');s.src="http://item.taobao.com/j/vdata.htm?skil=false&cb=i_r";d.getElementsByTagName('head')[0].appendChild(s);} })();</script>
+  <link rel="shortcut icon" href="http://www.taobao.com/favicon.ico" type="image/x-icon" /> 
+  <script>window._ClickCatcher=function(){function c(h,e,i){if(h.addEventListener){h.addEventListener(e,i,false)}else{h.attachEvent(("on"+e),i)}}function g(i,e,h){if(i.removeEventListener){i.removeEventListener(e,h,false)}else{i.detachEvent(("on"+e),h)}}function a(h,i){var e;if(document.createEvent){e=document.createEvent("HTMLEvents");e.initEvent(i,true,true);return !h.dispatchEvent(e)}else{e=document.createEventObject();return h.fireEvent("on"+i,e)}}var b="click";var d=function(){var e=[],h=function(l){var m=/J_ClickCatcher/,k=/body/i,n=(l.target)?l.target:l.srcElement;while(n&&!m.test(n.className)&&!k.test(n.nodeName)){n=n.parentNode}if(!n){return}if(m.test(n.className)){e.push(n);if(l.preventDefault){l.preventDefault()}l.returnValue=false;return false}},i=function(){g(document,b,h);for(var k=0,l=e.length;k<l;k++){a(e[k],b)}},j=function(){c(document,b,h)};return{init:j,callClicks:i}}();try{d.init()}catch(f){}return d}();
+var spmId = "1102dyC7.2-4rYmC";</script> 
+  <script src="http://a.tbcdn.cn/libs/seajs/1.0.1/sea.js"></script> 
+  <script>seajs.config({ base: 'http://a.tbcdn.cn/libs/', charset: 'gbk' });seajs.use('http://dsc.taobaocdn.com/i7/130/991/13199871937/T1dJ_aXi8nXXcWeqbX.desc%7Cvar%5Edesc%3Bsign%5Edc127d5e1126b6bf9a6cd8d74116b0c4%3Blang%5Egbk%3Bt%5E1335584008');</script>
+  <!-- start vmc js 3.1 --> 
+  <script>if(this.g_config)g_config.globeJsUrl='http://a.tbcdn.cn/??s/kissy/1.1.6/kissy-min.js,p/global/1.0/global-min.js,p/shop/1.0/shop-min.js,p/shop/1.0/detail-min.js?t=2012011120120427.js';</script>
+  <!-- end vmc js 3.1 --> 
+  <script>
+(function(){
+var loginConfig, called, tsArgs = [], desc;TB = { Global: {writeLoginInfo: function(o) { loginConfig = o; },init: function() { called = true; }}};
+TShop = {use: function(n, f) { tsArgs.push([n, f]); }, renderDesc: function(d) { desc = d; }};
+seajs.use(g_config.globeJsUrl, function(){
+ if(loginConfig){TB.Global.writeLoginInfo(loginConfig, true)};if(called){TB.Global.init();}if(desc){TShop.renderDesc(desc);}
+ TShop.use('tshop-core,static-mods'); 
+ for(var i = 0, len = tsArgs.length; i < len; i++) {TShop.use(tsArgs[i][0], tsArgs[i][1]);}
+});
+})();
+</script> 
+  <!-- start vmc css 3.1--> 
+  <link rel="stylesheet" href="http://a.tbcdn.cn/??p/global/1.0/global-min.css,p/shop/1.0/base-min.css,p/shop/1.0/mods/s/shop-mods-min.css,p/shop/1.0/mods/c/tabbar/tabbar-min.css,p/shop/1.0/mods/c/head/head-min.css,p/shop/1.0/mods/c/foot/foot-min.css,p/shop/1.0/mods/c/sku/sku-min.css,p/shop/1.0/mods/c/other/other-min.css,p/shop/1.0/mods/c/skin-min.css?t=2012042620120427.css" />
+  <!-- end vmc css 3.1--> 
+  <link rel="stylesheet" href="http://a.tbcdn.cn/app/shop/skin/blue.css?1.1.css" />
+  <style>html {
+background-repeat:repeat-x;
+background-image:url(http://img07.taobaocdn.com/bao/uploaded/i7/T1n1X0XjlHXXartXjX);
+}
+#hd {
+background-image:url(http://img07.taobaocdn.com/bao/uploaded/i7/T1Lcl0Xi0LXXartXjX);
+background-repeat:repeat-x;
+}</style> 
+  <style>#decSaleTopBanner,textarea.bigrender-data{display:none} html,#description,#J_Detail,#detail,#content,#footer{background:#fff;} #hd{max-height:150px;}
+{max-width:150px !important;display:none}
+</style>  
+  <script type="text/javascript">
+(function (d) {
+var ta=d.createElement("script");ta.type="text/javascript";ta.async=true;ta.id="tb-beacon-ac";
+ta.setAttribute("exparams","category=item%5f1512&userid=&channel=112&at_isb=0&at_isb=0&at_autype=5%5f37104007&");
+ta.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/ac.js";
+d.getElementsByTagName("head")[0].appendChild(ta);
+})(document);
+</script> 
+  <script type="text/javascript">
+(function (d) {
+var ta=d.createElement("script");ta.type="text/javascript";ta.async=true;ta.id="tb-beacon";
+ta.setAttribute("exparams","category=item%5f1512&userid=&tid=&channel=112&at_isb=0&at_autype=5%5f37104007&");
+ta.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/atp.js";
+d.getElementsByTagName("head")[0].appendChild(ta);
+})(document);
+</script> 
+  <!-- start vmc 3.1 --> 
+  <div id="site-nav">
+   <div id="site-nav-bd"> 
+    <div class="sitenav-mobile">
+     <a href=" http://www.taobao.com/m?spm=1.1000386.176505.4.TBG=146112.176505.4">手机版</a>
+    </div> 
+    <p class="login-info"> <script>TB.Global.writeLoginInfo({"memberServer": "http://member1.taobao.com", "outmemServer" : "", "loginServer": "https://login.taobao.com", redirectUrl : "", logoutUrl : ""});</script> </p> 
+    <ul class="quick-menu"> 
+     <li class="home"><a href="http://www.taobao.com/">淘宝网首页</a></li> 
+     <li class="menu-item"> 
+      <div class="menu"> 
+       <a class="menu-hd" style="width:36px;" href="http://love.taobao.com/?taobao_from=1" target="_top" rel="nofollow">我要买<b></b></a> 
+       <div class="menu-bd" style="width:68px;height:94px;line-height:1.7;"> 
+        <div class="menu-bd-panel" style="padding:8px 10px;"> 
+         <div> 
+          <a href="http://ju.atpanel.com/?url=http://love.taobao.com/guang/index.htm?ad_id=&amp;am_id=&amp;cm_id=&amp;pm_id=15010025892ce7573ced" target="_top" rel="nofollow">发现宝贝</a> 
+          <a href="http://ju.atpanel.com/?url=http://love.taobao.com/album/index.htm?&amp;ad_id=&amp;am_id=&amp;cm_id=&amp;pm_id=15010025931eaba012f9" target="_top" rel="nofollow">专辑</a>
+          <br /> 
+          <a href="http://ju.atpanel.com/?url=http://love.taobao.com/toukui/index.htm?&amp;ad_id=&amp;am_id=&amp;cm_id=&amp;pm_id=1501002595386b1aba4d" target="_top" rel="nofollow">寻找同好</a> 
+          <a href="http://ju.atpanel.com/?url=http://list.taobao.com/browse/cat-0.htm?&amp;ad_id=&amp;am_id=&amp;cm_id=&amp;pm_id=1501002597f98c9896d5" target="_top" rel="nofollow">商品分类</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> </li> 
+     <li class="mytaobao menu-item"> 
+      <div class="menu"> 
+       <a class="menu-hd" href="http://i.taobao.com/my_taobao.htm" target="_top" rel="nofollow">我的淘宝<b></b></a> 
+       <div class="menu-bd" style="height: 94px;"> 
+        <div class="menu-bd-panel" id="myTaobaoPanel"> 
+         <div> 
+          <a href="http://trade.taobao.com/trade/itemlist/list_bought_items.htm" target="_top" rel="nofollow">已买到的宝贝</a> 
+         </div> 
+         <div> 
+          <a href="http://jianghu.taobao.com/admin/invite/invite_friend.htm" target="_top" rel="nofollow">我的好友</a> 
+         </div> 
+         <div> 
+          <a href="http://i.taobao.com/my_taobao.htm" target="_top" rel="nofollow">最新动态</a> 
+         </div> 
+         <div> 
+          <a href="http://yingyong.taobao.com" target="_top" rel="nofollow">买家应用中心</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> </li> 
+     <style>
+ #site-nav .seller-center .menu-hd{ width:48px;}
+ #site-nav .seller-center .menu-bd{ width: 94px; line-height:1.7;}
+ #site-nav .seller-center .menu-bd-panel{padding: 8px 10px;}
+</style> 
+     <li class="seller-center menu-item"> 
+      <div class="menu"> 
+       <a class="menu-hd" href="http://mai.taobao.com/seller_admin.htm" target="_top" rel="nofollow">卖家中心<b></b></a> 
+       <div class="menu-bd"> 
+        <div class="menu-bd-panel"> 
+         <div> 
+          <a href="http://trade.taobao.com/trade/itemlist/list_sold_items.htm" target="_top" rel="nofollow">已卖出的宝贝</a> 
+          <a href="http://sell.taobao.com/auction/goods/goods_on_sale.htm" target="_top" rel="nofollow">出售中的宝贝</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> </li> 
+     <li class="service"> <a href="http://service.taobao.com/support/main/service_center.htm" target="_top" rel="nofollow">服务中心</a> </li> 
+     <li class="cart"> <a href="http://cart.taobao.com/my_cart.htm" target="_top" rel="nofollow"> 
+       <s> 
+       </s>购物车 </a> <b class="leftline"></b> <b class="rightline"></b> </li> 
+     <li class="favorite menu-item"> 
+      <div class="menu"> 
+       <a class="menu-hd" style="width:36px;" href="http://favorite.taobao.com/collect_list-1-.htm?scjjc=c1" target="_top" rel="nofollow">收藏夹<b></b></a> 
+       <div class="menu-bd" style="width:82px;height:73px;line-height:1.7;"> 
+        <div class="menu-bd-panel" style="padding:8px 10px;"> 
+         <div> 
+          <a href="http://favorite.taobao.com/collect_list.htm?itemtype=1" target="_top" rel="nofollow">收藏的宝贝</a> 
+          <a href="http://favorite.taobao.com/collect_list.htm?itemtype=0" target="_top" rel="nofollow">收藏的店铺</a> 
+          <a href="http://favorite.taobao.com/hot_collect_list.htm?entrance=home" target="_top" rel="nofollow">热门收藏</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> </li> 
+     <li class="services menu-item last"> 
+      <div id="J_Service" class="menu"> 
+       <a class="menu-hd" href="http://www.taobao.com/sitemap.php?id=sitemap2" target="_top">网站导航<b></b></a> 
+       <div id="J_ServicesContainer" class="menu-bd" style="width:202px;width:210px\9;_width:202px;height:337px;"></div> 
+      </div> </li> 
+    </ul> 
+   </div>
+  </div> 
+  <!-- system-announce --> 
+  <!-- end vmc 3.1 --> 
+  <script>TB.Global.init();</script> 
+  <div align="center" id="dingtong" style="display:none;"></div> 
+  <div id="header"> 
+   <div id="shop-head" class="custom-logo"> 
+    <h1 id="shop-logo"> <p> <img src="http://a.tbcdn.cn/tbsp/img/header/logo.png" class="logo-img" /> <a href="http://www.taobao.com" class="tshop"></a> </p> </h1> 
+    <div class="clear"> 
+     <div class="shop-wrap"> 
+      <div id="shop-search"> 
+       <form id="J_TBSearchForm" action="http://s.taobao.com/search"> 
+        <label for="shop-q">想找什么宝贝?</label> 
+        <input type="text" id="shop-q" name="q" autocomplete="off" class="shop-text" /> 
+        <input type="hidden" name="searcy_type" value="item" /> 
+        <input type="hidden" value="newHeader" name="s_from" /> 
+        <input type="hidden" name="source" /> 
+        <input type="hidden" name="ssid" value="s5-e" /> 
+        <input type="hidden" name="search" value="y" /> 
+        <span class="instore"> <button class="searchmy" data-action="http://xintaishuma.taobao.com" hidefocus="true" type="button">搜本店</button> </span> 
+        <span class="global"> <button class="searchtb" type="submit">搜淘宝</button> </span> 
+        <b class="shop-radius-l"></b> 
+       </form> 
+      </div> 
+     </div> 
+     <div id="shop-head-cat-nav"> 
+      <ul class="tb-head-cat tb-clearfix"> 
+       <li class="tb-cats tb-clearfix"> 
+        <ul> 
+         <li class="tb-cat tb-main"><a href="http://nvzhuang.taobao.com/market/nvzhuang/indextest.php?spm=2013.1.1.1" target="_blank">服饰</a></li> 
+         <li class="tb-cat"><a href="http://nvzhuang.taobao.com/market/nvzhuang/indextest.php?spm=2013.1.1.2" target="_blank">女装</a></li> 
+         <li class="tb-cat"><a href="http://www.taobao.com/go/market/man/index1.php?spm=2013.1.1.3" target="_blank">男装</a></li> 
+         <li class="tb-cat"><a href="http://sport.taobao.com/?spm=2013.1.1.4" target="_blank">运动</a></li> 
+         <li class="tb-cat"><a href="http://www.taobao.com/market/ladyshoes/lady_shoes.php?spm=2013.1.1.5" target="_blank">女鞋</a></li> 
+         <li class="tb-cat tb-cat-last"><a href="http://www.taobao.com/go/chn/in/bao1.php?spm=2013.1.1.6" target="_blank">箱包</a></li> 
+        </ul> </li> 
+       <li class="tb-cats"> 
+        <ul> 
+         <li class="tb-cat tb-main"><a href="http://www.taobao.com/market/3c/3c_index.php?spm=2013.1.2.1" target="_blank">数码</a></li> 
+         <li class="tb-cat"><a href="http://www.taobao.com/market/mobile/index.php?spm=2013.1.2.2" target="_blank">手机</a></li> 
+         <li class="tb-cat"><a href="http://www.taobao.com/market/3c/dc/index.php?spm=2013.1.2.4" target="_blank">相机 </a></li> 
+         <li class="tb-cat"><a href="http://www.taobao.com/go/act/shopping/xiaojiadian1.php?spm=2013.1.2.5" target="_blank">家电</a></li> 
+         <li class="tb-cat"><a href="http://www.taobao.com/market/3c/peijian_index.php?spm=2013.1.2.6" target="_blank">配件</a></li> 
+         <li class="tb-cat tb-cat-last"><a href="http://www.taobao.com/market/3c/pc_index.php?spm=2013.1.2.3&amp;ad_id=&amp;am_id=1301008745d6d2479e1d&amp;cm_id=&amp;pm_id=" target="_blank">笔记本</a></li> 
+        </ul> </li> 
+       <li class="tb-cats"> 
+        <ul> 
+         <li class="tb-cat tb-main"><a href="http://hui.taobao.com/?spm=2013.1.3.1" target="_blank">生活</a></li> 
+         <li class="tb-cat"><a href="http://home.taobao.com/?spm=2013.1.3.2" target="_blank">家居</a></li> 
+         <li class="tb-cat"><a href="http://baobao.taobao.com/?spm=2013.1.3.4" target="_blank">母婴</a></li> 
+         <li class="tb-cat"><a href="http://chi.taobao.com/market/foodindex.php?spm=2013.1.3.5" target="_blank">食品</a></li> 
+         <li class="tb-cat"><a href="http://car.taobao.com/?spm=2013.1.4.6" target="_blank">汽车</a></li> 
+         <li class="tb-cat tb-cat-last"><a href="http://jiehun.taobao.com/?spm=2013.1.3.6" target="_blank">婚庆</a></li> 
+        </ul> </li> 
+       <li class="tb-cats"> 
+        <ul> 
+         <li class="tb-cat tb-main"><a href="http://mei.taobao.com/?spm=2013.1.4.1" target="_blank">护肤</a></li> 
+         <li class="tb-cat"><a href="http://www.taobao.com/market/watch/index.php?spm=2013.1.4.2" target="_blank">手表</a></li> 
+         <li class="tb-cat"><a href="http://bling.taobao.com/?spm=2013.1.4.3" target="_blank">饰品</a></li> 
+         <li class="tb-cat"><a href="http://see.taobao.com/?spm=2013.1.4.4" target="_blank">眼镜</a></li> 
+         <li class="tb-cat"><a href="http://dog.taobao.com/?spm=2013.1.4.5" target="_blank">花鸟</a></li> 
+         <li class="tb-cat tb-cat-last"><a href="http://baihuo.taobao.com/?spm=2013.1.3.3" target="_blank">百货</a></li> 
+        </ul> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script>TShop.use('mod~c2c-head', function() { TShop.mods.C2CHead.init(); });</script> 
+  <div id="content" class="eshop tb-shop " data-cat="J_Cat"> 
+   <p id="J_dcpg" class="design-page"></p> 
+   <div id="hd" class="tb-shop"> 
+    <div class="layout grid-m"> 
+     <div class="col-main"> 
+      <div class="main-wrap J_TRegion" data-modules="main" data-width="h950"> 
+       <!-- module-cache-info: module: shop.selfDefining:1.0-common key: module-5543598658-prototype-3-15 cacheArea: 49 cachedTime: 2012-04-27 13:42:09 aliveTime: 25920000 AppIP:172.24.168.131 --> 
+       <div class="box J_TBox tshop-pbsm tshop-pbsm-ssd10c" data-spm="1102dyC7.2-4rYmC.3-5ar9F2"> 
+        <div class="shop-custom   no-border "> 
+         <div class="bd"> 
+          <div class="custom-area"> 
+           <table class="" border="0" cellspacing="0" cellpadding="0" width="950" align="center" height="250">
+            <tbody>
+             <tr>
+              <td><img style="margin:0px;width:950px;float:none;height:102px;" alt="" src="http://img04.taobaocdn.com/imgextra/i4/183262695/T2EjdCXlpMXXXXXXXX_!!183262695.gif" width="950" height="102" /></td>
+             </tr>
+             <tr>
+              <td height="38" background="http://img03.taobaocdn.com/imgextra/i3/183262695/T2DtJOXjxbXXXXXXXX_!!183262695.jpg">
+               <table class="" border="0" cellspacing="0" cellpadding="0" width="950" height="38">
+                <tbody>
+                 <tr>
+                  <td height="38" width="11"></td>
+                  <td style="color:#FFFF00;font-size:14px;" height="38" width="100" align="middle"><a href="http://xintaishuma.taobao.com" target="_blank">首页</a></td>
+                  <td height="38" width="2"></td>
+                  <td style="color:#FFFFFF;" height="38" width="100" align="middle"><a title="" href="http://xintaishuma.taobao.com/?spm=1102dyC7.1-4rYmy.3796303938" target="_blank">关于我们</a></td>
+                  <td height="38" width="2"></td>
+                  <td style="color:#FFFFFF;" height="38" width="100" align="middle"><a title="" href="http://rate.taobao.com/user-rate-2bb3e28102acc73e9f923401f88275a5.htm?spm=1102dyC7.1-4rYmy.3796303938" target="_blank">信用评价</a></td>
+                  <td height="38" width="2"></td>
+                  <td style="color:#FFFFFF;" height="38" width="100" align="middle"><a title="" href="http://shop37104007.taobao.com/view_post-882051-134695.htm?spm=1102dyC7.1-4rYmy.3796303938" target="_blank">买家须知</a></td>
+                  <td height="38" width="2"></td>
+                  <td style="color:#FFFFFF;" height="38" width="100" align="middle"><a title="" href="http://shop37104007.taobao.com/view_post-882051-136161.htm?spm=1102dyC7.1-4rYmy.3796303938" target="_blank">快递说明</a></td>
+                  <td height="38" width="2"></td>
+                  <td style="color:#FFFFFF;" height="38" width="100" align="middle">店铺活动</td>
+                  <td height="38" width="2"></td>
+                  <td style="color:#FFFFFF;" height="38" width="100" align="middle">合作代理</td>
+                  <td height="38" width="2"></td>
+                  <td style="color:#FFFFFF;" height="38" width="100" align="middle"><a title="" href="http://favorite.taobao.com/popup/add_collection.htm?id=37104007.itemid=37104007.itemtype=0.ownerid=2bb3e28102acc73e9f923401f88275a5.scjjc=2._tb_token_=scI3QbDRg0l" target="_blank">收藏店铺</a></td>
+                  <td height="38" width="125"></td>
+                 </tr>
+                </tbody>
+               </table></td>
+             </tr>
+             <tr>
+              <td><img alt="" src="http://img04.taobaocdn.com/imgextra/i4/183262695/T2p1tOXXBXXXXXXXXX_!!183262695.jpg" width="950" height="36" /></td>
+             </tr>
+             <tr>
+              <td height="26" background="http://img01.taobaocdn.com/imgextra/i1/183262695/T2YJFOXlxbXXXXXXXX_!!183262695.jpg">
+               <table class="" border="0" cellspacing="0" cellpadding="0" width="950" height="26">
+                <tbody>
+                 <tr>
+                  <td height="26" width="18"></td>
+                  <td style="color:#3366CC;" height="26" width="283">诺基亚全国保修手机</td>
+                  <td height="26" width="92"></td>
+                  <td style="color:#FFFFFF;" height="26" width="541">热门搜索：诺基亚 索尼爱立信 摩托罗拉 三星 LG 多普达</td>
+                  <td height="26" width="16"></td>
+                 </tr>
+                </tbody>
+               </table></td>
+             </tr>
+             <tr>
+              <td><img alt="" src="http://img02.taobaocdn.com/imgextra/i2/183262695/T2L0xOXbhcXXXXXXXX_!!183262695.jpg" width="950" height="19" /></td>
+             </tr>
+             <tr>
+              <td height="17" background="http://img04.taobaocdn.com/imgextra/i4/183262695/T27dJOXidbXXXXXXXX_!!183262695.jpg">
+               <table class="" border="0" cellspacing="0" cellpadding="0" width="950" height="17">
+                <tbody>
+                 <tr>
+                  <td height="17" width="146"></td>
+                  <td height="17" width="779"></td>
+                  <td height="17" width="25"></td>
+                 </tr>
+                </tbody>
+               </table></td>
+             </tr>
+             <tr>
+              <td><img alt="" src="http://img01.taobaocdn.com/imgextra/i1/183262695/T2Kt0OXk8aXXXXXXXX_!!183262695.jpg" width="950" height="12" /></td>
+             </tr>
+            </tbody>
+           </table>
+           <p><img src="http://img04.taobaocdn.com/imgextra/i4/183262695/T2jiyGXeRaXXXXXXXX_!!183262695.jpg" /></p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <!-- module-cache-info: module: shop.selfDefining:1.0-common key: module-4845267113-prototype-3-15 cacheArea: 49 cachedTime: 2012-04-27 13:42:09 aliveTime: 25920000 AppIP:172.24.168.131 --> 
+       <div class="box J_TBox tshop-pbsm tshop-pbsm-ssd10c" data-spm="1102dyC7.2-4rYmC.3-4wPeyF"> 
+        <div class="shop-custom   no-border "> 
+         <div class="bd"> 
+          <div class="custom-area"> 
+           <p><a href="http://item.taobao.com/item.htm?id=10154657853" target="_blank"></a><img style="margin:0px;width:950px;float:none;height:568px;" src="http://img03.taobaocdn.com/imgextra/i3/183262695/T2hLOGXa0aXXXXXXXX_!!183262695.jpg" /></p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div>
+   <div id="bd">
+    <div id="detail" class="mod-sku"> 
+     <input type="hidden" value="" name="tb_token" id="J_TokenField" /> 
+     <div class="tb-detail-hd"> 
+      <h3>Apple/苹果 iPhone 4S 大陆行 未拆封未激活 预装软件 包邮</h3> 
+      <p id="J_TEditItem"> </p> 
+     </div> 
+     <div class="tb-detail-bd tb-clear"> 
+      <div class="tb-summary tb-clear"> 
+       <div class="tb-gallery"> 
+        <div class="tb-booth tb-pic tb-s310"> 
+         <a href="http://www.taobao.com/view_image.php?pic=Wx0GGlFDXA1VUwMAWx0SCwkNGRFcVxxQW1UcCxMFRBkDCFdVV1cRRhpWRDhHNH1cZ2tbUEIxKghTG0MWWmsDC0ZdR1BFBgYV&amp;title=QXBwbGUvxru5%2ByBpUGhvbmUgNFMgtPPCvdDQIM60svC34s60vKS77iDUpNewyO28%2FiCw%2FNPK&amp;version=2&amp;c=MmJiM2UyODEwMmFjYzczZTlmOTIzNDAxZjg4Mjc1YTU%3D&amp;itemId=13199871937&amp;shopId=37104007&amp;sellerRate=20477&amp;dbId=&amp;fv=9" target="_blank"><img id="J_ImgBooth" src="http://img02.taobaocdn.com/bao/uploaded/i2/T1FEeUXohqXXb8w0rb_093444.jpg_310x310.jpg" data-haszoom="700" /> </a> 
+        </div> 
+        <ul id="J_UlThumb" class="tb-thumb tb-clearfix"> 
+         <li class="tb-selected"> 
+          <div class="tb-pic tb-s40"> 
+           <a href="#"><img src="http://img02.taobaocdn.com/bao/uploaded/i2/T1FEeUXohqXXb8w0rb_093444.jpg_40x40.jpg" /></a> 
+          </div> </li> 
+        </ul> 
+        <div class="tb-share-action tb-clear"> 
+         <div class="tb-share-opt"> 
+          <div class="J_TBDig" data-cfg="{&quot;favor_type&quot;:&quot;2&quot;,&quot;comment&quot;:&quot;我蛮喜欢这个哦～&quot;,&quot;favor_target_key&quot;:&quot;13199871937&quot;,&quot;url&quot;:&quot;&quot;,&quot;defaultBtnType&quot;:&quot;dig&quot;}" data-shareparam="{&quot;client_id&quot;:&quot;002&quot;}"></div> 
+         </div> 
+         <div class="collection-btn"> 
+          <a class="collection-item J_TDialogTrigger J_PopupTrigger" hidefocus="true" data-closebtn="true" data-height="260" data-width="440" href="http://favorite.taobao.com/popup/add_collection.htm?id=13199871937&amp;itemtype=1&amp;scjjc=1"> <span class="collection-title">
+            <s class="ico-item"></s>收藏宝贝</span> <span class="collect-count">(<em id="J_CollectCount">0</em>)</span> </a> 
+          <b class="J_CollectArrow"></b> 
+          <div class="collection-shop"> 
+           <a class="J_TDialogTrigger J_TokenSign J_newCollect shop-collect" hidefocus="true" data-height="260" data-width="440" data-closebtn="true" mercury:params="id=37104007&amp;itemid=37104007&amp;itemtype=0&amp;ownerid=2bb3e28102acc73e9f923401f88275a5&amp;scjjc=5" href="http://favorite.taobao.com/popup/add_collection.htm?id=37104007&amp;itemid=37104007&amp;itemtype=0&amp;ownerid=2bb3e28102acc73e9f923401f88275a5&amp;scjjc=2"> <span>
+             <s class="ico-shop"></s>收藏店铺</span> </a> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="tb-property"> 
+        <div class="tb-wrap tb-wrap-newshop"> 
+         <ul class="tb-meta"> 
+          <!-- 商城促销与集市一致化 --> 
+          <style>
+ #detail .tb-property .tb-meta .tb-detail-price .tb-unvalid {
+ text-decoration: line-through;
+ font-size: 12px;
+ color: #404040;
+ background: none;
+ }
+ #detail .tb-property .tb-promo-list {
+ color: #666;
+ }
+ #detail .tb-property .tb-promo-list li {
+ margin-right: 10px;
+ font-family: '宋体';
+ }
+ #detail .tb-promo-list .tb-label {
+ color: #666;
+ border-bottom: 1px dashed #a5a5a4;
+ outline: none;
+ }
+ #detail .tb-promo-list .tb-label:hover {
+ text-decoration: none;
+ color: #f60;
+ border-bottom: 1px dashed #f60;
+ }
+ #detail .tb-promo-list .tb-price {
+ margin: 0 1px;
+ }
+ #detail .tb-promo-list .tb-lowest {
+ *position: relative;
+ *top: -4px;
+ }
+ #detail .tb-promo-list .tb-lowest .tb-label,
+ #detail .tb-promo-list .tb-lowest .tb-price {
+ vertical-align: top;
+ vertical-align: middle\9;
+ }
+ #detail .tb-promo-list .tb-lowest .tb-price {
+ margin: 0 4px;
+ font-family: tahoma,arial,"宋体";
+ font-size: 24px;
+ color: #f50;
+ }
+ #detail .tb-coupons .tb-icon {
+ margin-top: 4px;
+ }
+ #detail .tb-property .tb-promo-list, #detail .tb-property .tb-promo-list li {
+ line-height: 24px;
+ }
+</style> 
+          <li id="J_StrPriceModBox" class="tb-detail-price tb-clearfix "> <span>价　　格：</span> <strong id="J_StrPrice">5275.00 - 6725.00</strong>元 </li> 
+          <li id="J_PromoPrice" class="tb-detail-price tb-clearfix tb-promo-price tb-hidden"><span>参加促销：</span> 
+           <div> 
+            <em class="tb-promo-price-type"></em> 
+            <strong></strong> 元 
+            <span class="add"></span> 
+            <a id="J_MorePromoOptions" class="tb-more-promo-options" href="#">更多<span class="tb-arrow"></span></a> 
+           </div> </li> 
+          <li class="tb-sold-out tb-clearfix"> <span><em class="J_TDealCountPeriod">30</em>天售出：</span><em class="J_TDealCount">-</em>件 </li> 
+          <li class="tb-evaluate tb-clearfix"> <span>评　　价：</span> <em class="tb-star" id="J_RateStar" data-commonapi="http://rate.taobao.com/detailCommon.htm?userNumId=183262695&amp;auctionNumId=13199871937&amp;siteID=">-</em> <i class="sep">|</i> <em><a href="#" id="J_ReviewTabTrigger"><font id="J_ReviewCount">-</font>条评价</a></em> </li> 
+          <li class="tb-item-type tb-clearfix"><span>宝贝类型：</span><em>全新</em> <i class="sep"></i> <em id="J_EmItemViews">-</em>次浏览</li> 
+          <li id="J_MorePromoSlider" class="tb-more-promo-slider tb-clearfix" style="display: none"> 
+           <ul id="J_MorePromoList"> 
+           </ul> 
+           <div class="post-script">
+            以上价格可在付款时选择享用
+           </div> </li> 
+         </ul> 
+         <div class="sep-line"></div> 
+         <div id="J_isku" class="tb-key tb-key-sku"> 
+          <div class="tb-skin tb-naked"> 
+           <dl class="tb-prop tb-clearfix"> 
+            <dt>
+             机身颜色：
+            </dt> 
+            <dd> 
+             <ul data-property="机身颜色" class="tb-clearfix J_TSaleProp tb-img  "> 
+              <li data-value="1627207:28335" title="★特价港版16G黑色未拆封未激活 5.1" class="tb-txt"> <a href="#"> <span>★特价港版16G黑色未拆封未激活 5.1</span> </a> </li> 
+              <li data-value="1627207:28326" title="★特价港版16G白色未拆封未激活 5.1" class="tb-txt"> <a href="#"> <span>★特价港版16G白色未拆封未激活 5.1</span> </a> </li> 
+              <li data-value="1627207:80882" title="★特价港版16G白色 5.01 可完美越狱" class="tb-txt"> <a href="#"> <span>★特价港版16G白色 5.01 可完美越狱</span> </a> </li> 
+              <li data-value="1627207:28329" title="★特价港版16G黑色 5.01 可完美越狱" class="tb-txt"> <a href="#"> <span>★特价港版16G黑色 5.01 可完美越狱</span> </a> </li> 
+              <li data-value="1627207:3232480" title="☆特价港版32G黑色未拆封未激活" class="tb-txt"> <a href="#"> <span>☆特价港版32G黑色未拆封未激活</span> </a> </li> 
+              <li data-value="1627207:3232479" title="☆特价港版32G白色未拆封未激活" class="tb-txt"> <a href="#"> <span>☆特价港版32G白色未拆封未激活</span> </a> </li> 
+              <li data-value="1627207:30156" title="电信版【原封未激活】正品大陆行16G 白色 4670￥" class="tb-txt"> <a href="#"> <span>电信版【原封未激活】正品大陆行16G 白色 4670￥</span> </a> </li> 
+              <li data-value="1627207:28332" title="电信版【原封未激活】正品大陆行16G 黑色 4640￥" class="tb-txt"> <a href="#"> <span>电信版【原封未激活】正品大陆行16G 黑色 4640￥</span> </a> </li> 
+              <li data-value="1627207:90554" title="大陆行货32G白【原封未激活】全国联保 5380￥" class="tb-txt"> <a href="#"> <span>大陆行货32G白【原封未激活】全国联保 5380￥</span> </a> </li> 
+              <li data-value="1627207:3232481" title="大陆行货32G黑【原封未激活】全国联保 5380￥" class="tb-txt"> <a href="#"> <span>大陆行货32G黑【原封未激活】全国联保 5380￥</span> </a> </li> 
+              <li data-value="1627207:3232484" title="大陆行货16G白【原封未激活】全国联保 4670￥" class="tb-txt"> <a href="#"> <span>大陆行货16G白【原封未激活】全国联保 4670￥</span> </a> </li> 
+              <li data-value="1627207:3232483" title="大陆行货16G黑【原封未激活】全国联保 4670￥" class="tb-txt"> <a href="#"> <span>大陆行货16G黑【原封未激活】全国联保 4670￥</span> </a> </li> 
+             </ul>
+            </dd>
+           </dl> 
+           <dl class="tb-prop tb-clearfix"> 
+            <dt>
+             手机套餐：
+            </dt> 
+            <dd> 
+             <ul data-property="手机套餐" class="tb-clearfix J_TSaleProp  "> 
+              <li data-value="1630696:6536025"><a href="#"><span>官方标配</span></a></li> 
+             </ul>
+            </dd>
+           </dl>
+           <dl class="tb-amount tb-clearfix"> 
+            <dt>
+             购买数量：
+            </dt> 
+            <dd> 
+             <span class="tb-stock" id="J_Stock"><a href="#" class="tb-reduce J_Reduce">-</a><input id="J_IptAmount" type="text" class="tb-text" value="1" maxlength="8" title="请输入购买量" /><a href="#" class="tb-increase J_Increase">﹢</a>件</span> 
+             <em>(库存<span id="J_SpanStock" class="tb-count">1366</span>件)</em> 
+            </dd> 
+           </dl>
+           <dl id="J_DlChoice" class="tb-choice tb-clearfix"> 
+            <dt>
+             请选择：
+            </dt> 
+            <dd> 
+             <em>&quot;机身颜色&quot;</em>
+             <em>&quot;手机套餐&quot;</em>
+            </dd> 
+           </dl> 
+           <div class="tb-sure" id="J_SureSKU">
+            <p class="tb-choice">请勾选您要的商品信息</p> 
+            <p class="tb-sure-continue"><a href="#" id="J_SureContinue">确定</a></p> 
+            <span class="close J_Close">关闭</span> 
+           </div> 
+           <div id="J_juValid" class="tb-action tb-clearfix "> 
+            <div class="tb-btn-buy">
+             <a href="#" data-addfastbuy="true" title="点击此按钮，到下一步确认购买信息。" class="J_ClickCatcher J_LinkBuy">立即购买<b></b></a>
+            </div> 
+            <div class="tb-btn-add">
+             <a href="#" title="加入购物车" class="J_ClickCatcher J_LinkAdd">加入购物车<b></b></a>
+            </div> 
+           </div>
+          </div>
+         </div> 
+         <div class="tb-extrainfo"> 
+          <div class="sep-line"></div> 
+          <dl class="tb-paymethods J_ToggleContainer"> 
+           <dt>
+            支付:
+           </dt> 
+           <dd> 
+            <p><a class="tb-service-credit" href="http://help.alipay.com/lab/210220-210249/0-210249.htm?spm=2013.1.1000371.1" target="_blank" title="目前分期付款支持：中国银行、平安银行"><i></i>信用卡分期</a> <a target="_blank" href="http://home.alipay.com/bank/paymentKJ.htm?spm=2013.1.1000371.3" title="支持用绑定了支付宝的银行卡付款">快捷支付</a> </p>
+            <p> <a target="_blank" href="http://home.alipay.com/bank/paymentOnlineBank.htm?spm=2013.1.1000371.4" title="支持用开通了网上银行的银行卡付款">网银支付</a> <a target="_blank" href="http://home.alipay.com/bank/paymentPayOther.htm?spm=2013.1.1000371.5" title="拍下宝贝后，让其他人帮您付款">找人代付</a> <a target="_blank" href="http://home.alipay.com/bank/paymentVoucher.htm?spm=2013.1.1000371.6" title="支持手机话费卡充值付款">消费卡</a> <a target="_blank" href="http://home.alipay.com/bank/paymentStore.htm?spm=2013.1.1000371.7" title="到支付宝合作的线下网点（如便利店、邮局、药店等），用现金或刷卡即可完成网上订单付款">网点支付</a> <a target="_blank" href="http://home.alipay.com/bank/paymentAccount.htm?spm=2013.1.1000371.8" title="支持使用支付宝账户余额的钱付款">支付宝余额</a> </p> 
+            <a class="tb-toggler J_Toggle" title="查看所有付款方式" href="#">展开</a> 
+           </dd> 
+          </dl> 
+          <i class="sep">|</i> 
+          <dl class="tb-featured-services tb-featured-services-icon J_ToggleContainer"> 
+           <dt>
+            服务:
+           </dt> 
+           <dd> 
+            <p> <a href="https://jf.alipay.com/prod/rule.htm?src=jfb-tbDetail1&amp;spm=2013.1.1000372.19#help1" target="_blank" title="支持集分宝购物抵现"><i class="tb-service-jfb"></i></a> </p> 
+           </dd> 
+          </dl> 
+         </div> 
+         <ul class="tb-other tb-clear"> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="tb-shopinfo"> 
+        <div class="inner protect-seller"> 
+         <div class="intro" title="淘宝网将保障您的购物资金和运费安全">
+           查看
+          <a target="_blank" href="http://meal.taobao.com/cu_pr.htm?item_num_id=13199871937&amp;spm=2013.1.1000126.1">购物须知</a>明确售后权益 
+         </div> 
+         <div class="shop-card"> 
+          <p> <a class="hCard fn" title="新太数码通讯" href="http://xintaishuma.taobao.com/?spm=2013.1.1000126.3">新太数码通讯</a> <span class="J_WangWang" data-nick="%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF" data-tnick="%%E6%96%B0%E5%A4%AA%E6%95%B8%E7%A2%BC%E9%80%9A%E8%A8%8A" data-encode="true" data-display="inline"></span> </p> 
+          <p> <span tb:virtual="0%" tb:real="100%" class="shop-rank"> <a href="http://rate.taobao.com/user-rate-2bb3e28102acc73e9f923401f88275a5.htm?spm=2013.1.1000126.5" target="_blank" class="rank-icon" id="shop-rank"><img src="http://pics.taobaocdn.com/newrank/s_cap_2.gif" border="0" align="absmiddle" class="rank" /></a> </span> </p> 
+         </div> 
+         <div class="shop-rate"> 
+          <h4>动态评分 <span class="compare">与同行比</span> </h4> 
+          <ul> 
+           <li> 描述相符:<a target="_blank" href="http://rate.taobao.com/user-rate-2bb3e28102acc73e9f923401f88275a5.htm?spm=2013.1.1000126.6"><em class="count" title="4.75993分">4.7</em> <span class="rateinfo" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)"> <b class="lower">低于</b><em class="lower">0.98%</em> </span> </a> </li> 
+           <li> 服务态度:<a target="_blank" href="http://rate.taobao.com/user-rate-2bb3e28102acc73e9f923401f88275a5.htm?spm=2013.1.1000126.7"><em class="count" title="4.71306分">4.7</em> <span class="rateinfo" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)"> <b class="lower">低于</b><em class="lower">2.64%</em> </span> </a> </li> 
+           <li> 发货速度:<a target="_blank" href="http://rate.taobao.com/user-rate-2bb3e28102acc73e9f923401f88275a5.htm?spm=2013.1.1000126.8"><em class="count" title="4.62935分">4.6</em> <span class="rateinfo" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)"> <b class="lower">低于</b><em class="lower">4.23%</em> </span> </a> </li> 
+          </ul> 
+         </div> 
+         <div class="shop-details"> 
+          <ul class="shop-attach"> 
+           <li class="goodrate"><span>好评率:99.45%</span> <span class="item-num">宝贝数:16</span></li> 
+           <li class="setuptime"><span>创店时间:</span>2009-02-11</li> 
+           <li class="honours"> <a href="http://www.taobao.com/go/act/sale/kadepay.php?ad_id=&amp;am_id=&amp;cm_id=14001249574b437a411d&amp;pm_id=&amp;spm=2013.1.1000126.9" target="_blank"> <img src="http://img01.taobaocdn.com/tps/i1/T1NddsXfFoXXXXXXXX-24-20.png" align="absmiddle" border="0" title="本店支持信用卡直接付款" alt="本店支持信用卡直接付款" /> </a> <a href="http://service.taobao.com/support/5-27-357/help-1035.htm?spm=2013.1.1000126.12" target="_blank"> <img src="http://img.taobaocdn.com/zfb_person_small.gif" border="0" align="absmiddle" alt="支付宝实名认证" title="支付宝实名认证" /> </a> </li> 
+          </ul> 
+         </div> 
+         <div class="shop-other"> 
+          <span class="tb-enter J_Hover"> <a class="tb-enter-shop" href="http://xintaishuma.taobao.com/?spm=2013.1.1000126.21" target="_blank">进入店铺</a> </span> 
+          <i class="sep"></i> 
+          <span class="tb-operate J_Hover"> <a data-info="param=SCCP_2_37104007&amp;countUrl=http://count.tbcdn.cn/counter3&amp;mecuryUrl=http://favorite.taobao.com/collect_item_relation---37104007-0-.htm" class="tb-fav J_PopupTrigger collection xshop_sc J_TDialogTrigger J_TokenSign" href="http://favorite.taobao.com/popup/add_collection.htm?id=37104007&amp;itemid=37104007&amp;itemtype=0&amp;ownerid=2bb3e28102acc73e9f923401f88275a5&amp;scjjc=2&amp;spm=2013.1.1000126.22" mercury:params="id=37104007&amp;itemid=37104007&amp;itemtype=0&amp;ownerid=2bb3e28102acc73e9f923401f88275a5&amp;scjjc=5" data-closebtn="true" data-width="440" data-height="260">收藏店铺<em class="arrow"></em></a> <a class="tb-shared share-jianghu" href="http://share.jianghu.taobao.com/share/addShare.htm?id=37104007.type=10.url=http://xintaishuma.taobao.com&amp;spm=2013.1.1000126.23" target="_blank">分享店铺</a> </span> 
+         </div> 
+         <div class="shop-rank-popup" id="shop-rank-popup" style="display: none; position: absolute; "> 
+          <b></b> 
+          <p class="shop-date">从 2008/01/01 起至今</p> 
+          <p>虚拟宝贝交易: <em>0%</em></p> 
+          <p>实物宝贝交易: <em>100%</em></p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="J_PPayGuide"></div> 
+     <div id="promote" class="tb-hidden" data-default="http://detailskip.taobao.com/json/promotion.htm?user_id=183262695&amp;item_id=13199871937&amp;mjs=1&amp;meal=" data-combo="http://detailskip.taobao.com/json/mealDetail.htm?item_id=13199871937" data-mjs="http://detailskip.taobao.com/json/mjsDetail.htm?user_id=183262695"></div> 
+     <form id="J_FrmBid" name="bidForm" action="http://buy.taobao.com/auction/buy_now.jhtml" method="post"> 
+      <input type="hidden" value="" name="tb_token" id="J_frmTokenField" /> 
+      <input id="J_ireferer" type="hidden" name="item_url_refer" value="" /> 
+      <input type="hidden" name="item_id" value="13199871937" /> 
+      <input type="hidden" name="item_id_num" value="13199871937" /> 
+      <input type="hidden" name="auction_type" value="b" /> 
+      <input type="hidden" name="from" value="item_detail" /> 
+      <input type="hidden" name="current_price" value="5275.00" /> 
+      <input type="hidden" name="activity" value="" /> 
+      <input type="hidden" name="auto_post1" value="" /> 
+      <input type="hidden" id="quantity" name="quantity" value="1" /> 
+      <input type="hidden" id="skuId" name="skuId" value="" /> 
+      <input type="hidden" id="skuInfo" name="skuInfo" value="" /> 
+      <input type="hidden" id="J_TBuyerFrom" name="buyer_from" value="" /> 
+      <input type="hidden" id="J_ChargeTypeId" name="chargeTypeId" value="" /> 
+     </form> 
+     <div id="J_cookieDomain" data-value=".taobao.com"></div>
+     <div id="J_flashLink" data-value="http://a.tbcdn.cn/app/tbskip/lsoSaver.swf?t=_1.swf"></div> 
+     <div id="J_itemViewed" catid="1512" data-value="{&quot;itemId&quot;:&quot;13199871937&quot;,&quot;xid&quot;:&quot;&quot;,&quot;pic&quot;:&quot;i2/T1FEeUXohqXXb8w0rb_093444.jpg&quot;,&quot;price&quot;:&quot;527500&quot;,&quot;itemIdStr&quot;:&quot;13199871937&quot;,&quot;title&quot;:&quot;Apple/苹果 iPhone 4S 大陆行 未拆封未激活 预装软件 包邮&quot;}"></div>
+     <div id="J_showContract" data-value="{&quot;1&quot;:&quot;true&quot;,&quot;3&quot;:&quot;false&quot;,&quot;2&quot;:&quot;false&quot;,&quot;8&quot;:&quot;false&quot;,&quot;7&quot;:&quot;false&quot;,&quot;4&quot;:&quot;false&quot;,&quot;5&quot;:&quot;false&quot;,&quot;9&quot;:&quot;false&quot;,&quot;J_TokenCatePathUrl&quot;:&quot;http://detailskip.taobao.com/json/show_indemnification.htm?catpath=1512&quot;,&quot;J_TokenInvoice&quot;:&quot;false&quot;,&quot;open_security_btn&quot;:&quot;true&quot;}"></div> 
+     <textarea class="bigrender-data" data-priority="0"> &lt;script&gt; function page_viewcount(view){ document.getElementById('J_EmItemViews').innerHTML = view['ICVT_7_13199871937'] ; } (function () { TShop.use('mod~sku', function(T) { TShop.mods.SKU.Setup.init({ &quot;apiMonitorBuy&quot;: &quot;http://asyncwebserver.monitor.taobao.com/item?&quot;,kaixinShare:{rpara:'38912b0a83b427ec7fb2b304e943a080_100002_13199871937_新太数码通讯'}, taojianghuShare:{itemId:'13199871937',type:'9',dbNum:''}, promoteUrl:&quot;http://marketing.taobao.com/home/promotion/item_promotion_list.do?itemId=13199871937&quot;,promoteReservePrice:&quot;5275.00&quot;,rstUrl:&quot;http://detailskip.taobao.com/recommended_same_type_items.htm&quot;, rstShopId:37104007,rstItemId:13199871937, rstdk: 0 , rstShopcatlist:&quot;,373137403,&quot;, valLoginIndicator: &quot;http://buy.taobao.com/auction/buy.htm?from=itemDetail&amp;x_id=&amp;id=13199871937&quot;, valFastBuyUrl: &quot;http://buy.taobao.com/auction/fastbuy/fast_buy.htm&quot;,valItemId: &quot;13199871937&quot;, valImageInfo:{}, &quot;valCartInfo&quot;:{&quot;hotItemsUrl&quot;:&quot;http://detailskip.taobao.com/json/cart_recommend_items.htm?shop_id=37104007&amp;seller_id_num=183262695&quot;,&quot;itemId&quot; : &quot;13199871937&quot;,&quot;dbNum&quot; : &quot;&quot;,&quot;cartUrl&quot;: &quot;http://cart.taobao.com/my_cart.htm&quot;},&quot;apiRelateMarket&quot;: &quot;http://tui.taobao.com/api/item?p=i&amp;csk=shopping_cart&amp;from=shopping_cart_detailπd=13199871937&amp;count=4&amp;f=jsonp&quot;, &quot;apiTaoCoin&quot;: &quot;http://taojinbi.taobao.com/trade/tradeDetailHook.htm?itemid=13199871937&quot;, &quot;apiBidCount&quot;: &quot;http://detailskip.taobao.com/json/show_bid_count.htm?itemNumId=13199871937&amp;old_quantity=2683&amp;date=1334984124000&quot;, &quot;apiAddCart&quot; : &quot;http://cart.taobao.com/add_cart_item.htm?item_id=13199871937&amp;bankfrom=&quot;, &quot;valVipRate&quot;:0, &quot;valPointRate&quot; : &quot;0&quot;, &quot;apiPromoData&quot;: &quot;http://detailskip.taobao.com/json/promotionList.htm?tbviponly=false&amp;chnl=≺ice=527500&amp;skuPvPairs=;1627207:3232483;1630696:6536025;$583750-;1627207:3232484;1630696:6536025;$583750-;1627207:3232481;1630696:6536025;$672500-;1627207:90554;1630696:6536025;$672500-;1627207:28332;1630696:6536025;$580000-;1627207:30156;1630696:6536025;$583750-;1627207:3232479;1630696:6536025;$615000-;1627207:3232480;1630696:6536025;$622500-;1627207:28329;1630696:6536025;$550000-;1627207:80882;1630696:6536025;$550000-;1627207:28326;1630696:6536025;$530000-;1627207:28335;1630696:6536025;$527500⁢emId=13199871937&amp;sellerId=183262695&amp;shopId=&amp;ump=true&quot;, &quot;apiItemViews&quot;: &quot;http://count.tbcdn.cn/counter3?keys=ICVT_7_13199871937∈c=ICVT_7_13199871937&amp;callback=page_viewcount&amp;sign=69338bfd2abcd3f9e6bec7e7b86fd7212f85f&quot;, &quot;apiItemReviews&quot;: &quot;http://count.tbcdn.cn/counter3?keys=ICE_3_feedcount-13199871937&quot;, &quot;apiItemCollects&quot;: &quot;http://count.tbcdn.cn/counter3?keys=ICCP_1_13199871937&quot;, &quot;valTimeLeft&quot;: &quot;2015&quot;, &quot;apiItemDesc&quot;:&quot;http://dsc.taobaocdn.com/i7/130/991/13199871937/T1dJ_aXi8nXXcWeqbX.desc%7Cvar%5Edesc%3Bsign%5Edc127d5e1126b6bf9a6cd8d74116b0c4%3Blang%5Egbk%3Bt%5E1335584008&quot;,&quot;valItemIdStr&quot;:&quot;13199871937&quot;, &quot;valReviewsApi&quot;:&quot;http://rate.taobao.com/detail_rate.htm?userNumId=183262695&amp;auctionNumId=13199871937&amp;showContent=1&curren;tPage=1&amp;ismore=0&amp;siteID=7&quot;, &quot;reportApi&quot;: &quot;http://item.taobao.com/json/report_api.htm&quot;, &quot;redirectUrl&quot;: &quot;http://item.taobao.com/report_redirect_url.htm&quot; , &quot;valShowReviews&quot;: false , &quot;valPostFee&quot;:{currCityDest:''}, getShippingInfo:&quot;http://detailskip.taobao.com/json/postage_fee.htm?opt=&amp;catid=1512⁣=1&amp;id=13199871937&amp;il=%B9%E3%B6%AB%C9%EE%DB%DA≈=false&amp;ss=false&amp;free=true&amp;tg=false&amp;tid=0&amp;sid=183262695&amp;iv=5275.00&amp;up=0.00&amp;exp=0.00&amp;ems=0.00&amp;iw=0&amp;is=&quot;,getDealQuantity: &quot;http://detailskip.taobao.com/json/deal_quantity.htm?isStart=false&amp;external=false&amp;exterShop=false&amp;sellerId=183262695&amp;id=13199871937&amp;shopId=&amp;aucType=b&amp;isarchive=&amp;cartBut=true&quot; , ifq:&quot;http://detailskip.taobao.com/json/ifq.htm?id=13199871937&amp;sid=183262695&amp;p=1⁣=1&amp;il=%B9%E3%B6%AB%C9%EE%DB%DA≈=0&amp;ss=0&amp;free=1&amp;tg=0&amp;tid=0&amp;iv=5275.00&amp;up=0.00&amp;exp=0.00&amp;ems=0.00&amp;iw=0&amp;is=&amp;q=1☆t=0&amp;ex=0&amp;exs=0&amp;shid=&amp;at=b&amp;arc=&amp;ct=1&quot; , &quot;valItemInfo&quot;:{&quot;defSelected&quot;:[],&quot;skuMap&quot;:{&quot;;1627207:3232483;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;18926529802&quot;,&quot;price&quot; : &quot;5837.50&quot;,&quot;stock&quot; : &quot;196&quot;},&quot;;1627207:3232484;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;18926529803&quot;,&quot;price&quot; : &quot;5837.50&quot;,&quot;stock&quot; : &quot;195&quot;},&quot;;1627207:3232481;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;19246521201&quot;,&quot;price&quot; : &quot;6725.00&quot;,&quot;stock&quot; : &quot;96&quot;},&quot;;1627207:90554;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;19246521202&quot;,&quot;price&quot; : &quot;6725.00&quot;,&quot;stock&quot; : &quot;102&quot;},&quot;;1627207:28332;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;19340046245&quot;,&quot;price&quot; : &quot;5800.00&quot;,&quot;stock&quot; : &quot;49&quot;},&quot;;1627207:30156;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;19340046246&quot;,&quot;price&quot; : &quot;5837.50&quot;,&quot;stock&quot; : &quot;50&quot;},&quot;;1627207:3232479;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;21990624816&quot;,&quot;price&quot; : &quot;6150.00&quot;,&quot;stock&quot; : &quot;166&quot;},&quot;;1627207:3232480;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;21990624818&quot;,&quot;price&quot; : &quot;6225.00&quot;,&quot;stock&quot; : &quot;45&quot;},&quot;;1627207:28329;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;22228212743&quot;,&quot;price&quot; : &quot;5500.00&quot;,&quot;stock&quot; : &quot;161&quot;},&quot;;1627207:80882;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;22228212744&quot;,&quot;price&quot; : &quot;5500.00&quot;,&quot;stock&quot; : &quot;166&quot;},&quot;;1627207:28326;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;23173092647&quot;,&quot;price&quot; : &quot;5300.00&quot;,&quot;stock&quot; : &quot;65&quot;},&quot;;1627207:28335;1630696:6536025;&quot;:{&quot;skuId&quot; : &quot;23173092648&quot;,&quot;price&quot; : &quot;5275.00&quot;,&quot;stock&quot; : &quot;75&quot;}} } }); });})();&lt;/script </textarea> 
+    </div> 
+    <div class="layout grid-s5m0 "> 
+     <div class="col-main clearfix"> 
+      <div class="main-wrap J_TRegion"> 
+       <div id="attributes" class="attributes"> 
+        <!-- uri: avgPrice.vm cacheTime: 2012-04-27 19:38:25 key: ca502ab407767f13a93e499a2b504ff5 cacheArea: 1 aliveTime: 86400 cacheType: PAGE_CACHE_CONTROL_TYPE}  --> 
+        <span id="J_avgPriceEmpty"></span>
+        <br />
+        <ul class="attributes-list"> 
+         <li title="Apple/苹果 iPhone 4S">产品名称：Apple/苹果 iPhone 4S</li> 
+         <li title="iPhone">品牌:iPhone</li>
+         <li title="iPhone 4S(无锁)">Apple型号:iPhone 4S(无锁)</li>
+         <li title="4000元以上">手机价格区间:4000元以上</li>
+         <li title="2011年">上市时间:2011年</li>
+         <li title="1月">11年上市月份:1月</li>
+         <li title="GSM/WCDMA/CDMA/CDMA2000">网络类型:GSM/WCDMA/CDMA/CDMA2000</li>
+         <li title="直板">外观样式:直板</li>
+         <li title="3.5英寸">主屏尺寸:3.5英寸</li>
+         <li title="大陆行货16G白【原封未激活】全国联保 4670￥大陆行货16G黑【原封未激活】全国联保 4670￥大陆行货32G黑【原封未激活】全国联保 5380￥☆特价港版32G黑色未拆封未激活☆特价港版32G白色未拆封未激活大陆行货32G白【原封未激活】全国联保 5380￥★特价港版16G白色 5.01 可完美越狱电信版【原封未激活】正品大陆行16G 白色 4670￥★特价港版16G黑色未拆封未激活 5.1电信版【原封未激活】正品大陆行16G 黑色 4640￥★特价港版16G黑色 5.01 可完美越狱★特价港版16G白色未拆封未激活 5.1">机身颜色:大陆行货16G白【原封未激活】全国联保 4670￥大陆行货16G黑【原封未激活】全国联保 4670￥大陆行货32G黑【原封未激活】全国联保 5380￥☆特价港版32G黑色未拆封未激活☆特价港版32G白色未拆封未激活大陆行货32G白【原封未激活】全国联保 5380￥★特价港版16G白色 5.01 可完美越狱电信版【原封未激活】正品大陆行16G 白色 4670￥★特价港版16G黑色未拆封未激活 5.1电信版【原封未激活】正品大陆行16G 黑色 4640￥★特价港版16G黑色 5.01 可完美越狱★特价港版16G白色未拆封未激活 5.1</li>
+         <li title="官方标配">手机套餐:官方标配</li>
+         <li title="800万">摄像头:800万</li>
+         <li title="智能手机">是否智能手机:智能手机</li>
+         <li title="iPhone">操作系统:iPhone</li>
+         <li title="WIFI上网GPS导航高清视频">高级功能:WIFI上网GPS导航高清视频</li>
+         <li title="全新">宝贝成色:全新</li>
+         <li title="店铺三包">售后服务:店铺三包</li>
+         <li title="电容式触摸屏">触摸屏:电容式触摸屏</li>
+         <li title="双核1G">手机CPU:双核1G</li>
+         <li title="512M">运行内存RAM:512M</li>
+         <li title="16g">机身内存ROM:16g</li>
+         <li title="虚拟触屏键盘">键盘类型:虚拟触屏键盘</li>
+         <li title="超薄(小于9mm)">厚度:超薄(小于9mm)</li>
+         <li title="960&times;640像素">主屏分辨率:960&times;640像素</li> 
+        </ul> 
+       </div> 
+       <textarea class="bigrender-data" data-priority="1"> &lt;div id=&quot;description&quot; class=&quot;tshop-psm ke-post J_DetailSection&quot;&gt;&lt;h4 class=&quot;hd&quot;&gt;宝贝详情&lt;/h&gt; &lt;div class=&quot;content&quot; id=&quot;J_DivItemDesc&quot;&gt;描述加载中&lt;/div&lt;script&gt;(function() {if (typeof desc === 'undefined') {setTimeout(arguments.callee, 100);return;} TShop.renderDesc(desc);})();&lt;/script&lt;/div &lt;div class=&quot;tshop-psm tb-box&quot; id=&quot;J_Detail&quot;&gt; &lt;div id=&quot;reviews&quot; class=&quot;J_DetailSection&quot; data-reviewApi=&quot;http://rate.taobao.com/detail_rate.htm?userNumId=183262695&amp;auctionNumId=13199871937&amp;showContent=1&curren;tPage=1&amp;ismore=0&amp;siteID=7&quot; data-reviewCountApi=&quot;&quot; data-listApi=&quot;http://rate.taobao.com/feedRateList.htm?userNumId=183262695&amp;auctionNumId=13199871937&amp;siteID=7&quot; data-commonApi=&quot;http://rate.taobao.com/detailCommon.htm?userNumId=183262695&amp;auctionNumId=13199871937&amp;siteID=7&quot; data-usefulApi=&quot;http://rate.taobao.com/vote_useful.htm?userNumId=183262695&amp;auctionNumId=13199871937&quot;&gt; &lt;h4 class=&quot;hd&quot;&gt;评价详情(&lt;em class=&quot;J_ReviewsCount&quot;&gt;0&lt;/em)&lt;/h&gt; &lt;/div &lt;script&gt;TShop.use('mod~reviews', function(T) { T.mods.Reviews.init(); });&lt;/script &lt;div id=&quot;deal-record&quot; class=&quot;J_DetailSection&quot;&gt; &lt;h4 class=&quot;hd&quot;&gt; 成交记录 (&lt;em class=&quot;J_TDealCount&quot;&gt;-&lt;/em件)&lt;/h&gt; &lt;div id=&quot;J_PublicInfo&quot; class=&quot;tb-public&quot;&gt; &lt;div class=&quot;tb-public-wrap&quot;&gt; &lt;p class=&quot;tb-public-price&quot;&gt;原价：&lt;em&gt; 5275.00 - 6725.00 &lt;/em元&lt;span&gt;拍下价格的不同可能会由促销和打折引起的，详情可以咨询卖家。&lt;/span&lt;/p &lt;/div &lt;/div &lt;div id=&quot;J_showBuyerList&quot; class=&quot;J_TAjaxContainer&quot;&gt; &lt;div class=&quot;tb-clearfix msg msg-attention-shortcut tb-hidden J_TNoDealRecords&quot;&gt;&lt;p class=&quot;attention naked&quot;&gt;暂时还没有买家购买此宝贝。&lt;/p&lt;/div &lt;div id=&quot;J_showListIndicator&quot; class=&quot;J_TAjaxIndicator&quot;&gt;&lt;/div &lt;button id=&quot;J_listBuyerOnView&quot; type=&quot;button&quot; class=&quot;J_TAjaxTrigger hidden J_TAjaxTriggerButton&quot; detail:params=&quot;http://detailskip.taobao.com/json/show_buyer_list.htm?bid_page=1&amp;page_size=15&amp;is_start=false⁢em_type=b&amp;ends=1335588924000☆ts=1334984124000⁢em_id=13199871937&amp;user_tag=475100160&amp;old_quantity=2683&amp;zhichong=true/d_total_num=16&amp;seller_num_id=183262695&amp;dk=0&amp;title=Apple%2F%C6%BB%B9%FB+iPhone+4S+%B4%F3%C2%BD%D0%D0+%CE%B4%B2%F0%B7%E2%CE%B4%BC%A4%BB%EE+%D4%A4%D7%B0%C8%ED%BC%FE+%B0%FC%D3%CA,showBuyerList&quot; &gt;c&lt;/button &lt;/div&lt;/div &lt;script&gt;TShop.use('mod~deal-record', function(T) { T.mods.DealRecord.init(); });&lt;/script &lt;div class=&quot;correlative-items J_TAjaxContainer&quot; id=&quot;rr-detail-recommend&quot; data-sellerid=&quot;183262695&quot; data-catid =&quot;1512&quot; data-itemid=&quot;13199871937&quot;&gt;&lt;/div &lt;script&gt;TShop.use('mod~relative', function(T) { T.mods.Relative.init(); });&lt;/script &lt;div id=&quot;official-remind&quot;&gt; &lt;dl class=&quot;tb-security&quot;&gt; &lt;dt&gt;安全提示：&lt;/dt &lt;dd&gt; &lt;p&gt;交易过程中请勿随意接收卖家发送的可疑文件，请勿点击不明来源的链接，付款前请务必详细核对支付信息。&lt;/p &lt;p&gt;推荐安全软件： &lt;span&gt;&lt;img src=&quot;http://img01.taobaocdn.com/tps/i1/T1hTaeXn8XXXXXXXXX-16-16.png&quot; alt=&quot;搜狗浏览器&quot; /&gt;&lt;a href=&quot;http://123.taobao.com/sogou/?spm=1.69598.235062.1&quot;&gt;搜狗浏览器&lt;/a &lt;/span &lt;span&gt;&lt;img src=&quot;http://img04.taobaocdn.com/tps/i4/T1BYCyXj8xXXXXXXXX-16-16.png&quot; alt=&quot;手机密令&quot; /&gt;&lt;a href=&quot;http://110.taobao.com/product/dkey_detail.htm?spm=1.69598.235062.&quot;&gt;手机密令&lt;/a &lt;/span &lt;span&gt;&lt;img src=&quot;http://img01.taobaocdn.com/tps/i1/T1DF6XXa8qXXaSQP_X-16-16.png&quot; alt=&quot;淘宝浏览器&quot; /&gt;&lt;a href=&quot;http://browser.taobao.com?spm=1.69598.235062.3&amp;tracelogww=friendreceive_hdtp30&quot;&gt;淘宝浏览器&lt;/a &lt;/span &lt;span&gt;&lt;img src=&quot;http://img04.taobaocdn.com/tps/i4/T1rPavXgldXXXXXXXX-16-16.png&quot; alt=&quot;QQ电脑管家&quot; /&gt;&lt;a href=&quot;http://www.taobao.com/go/chn/safe/911.php?spm=1.69598.235062.4&quot;&gt;QQ电脑管家&lt;/a &lt;/span &lt;a href=&quot;http://www.taobao.com/go/chn/safe/911.php?spm=1.69598.235062.5&quot; target=&quot;_blank&quot;&gt;安全软件中心&gt;&gt;&lt;/a &lt;/p &lt;/dd &lt;/dl &lt;dl class=&quot;tb-exemption&quot;&gt; &lt;dt&gt;免责声明：&lt;/dt &lt;dd&gt;淘宝网所展示的宝贝供求信息由买卖双方自行提供，其真实性、准确性和合法性由信息发布人负责。淘宝网不提供任何保证，并不承担任何法律责任。淘宝网友情提醒：为保障您的利益，请网上成交，贵重宝贝，请使用&lt;a href=&quot;http://www.taobao.com/strade/strade.php?spm=1.69598.147873.6&quot; target=&quot;_blank&quot;&gt;支付宝&lt;/a交易。&lt;/dd &lt;/dl &lt;/div &lt;/div </textarea>
+      </div> 
+     </div>
+     <div class="col-sub J_TRegion">
+      <textarea class="bigrender-data" data-priority="2">&lt;!-- module-cache-info: module: shop.selfDefining:1.0-common key: module-3962413047-prototype-3-15 cacheArea: 49 cachedTime: 2012-04-27 13:42:09 aliveTime: 25920000 AppIP:172.24.168.131 --&gt; &lt;div class=&quot;box J_TBox tshop-pbsm tshop-pbsm-ssd10c&quot; data-spm='1102dyC7.2-4rYmC.3-3Ibp*T' &gt; &lt;div class=&quot;shop-custom no-border &quot;&gt; &lt;div class=&quot;bd&quot;&gt; &lt;div class=&quot;custom-area&quot;&gt; &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;190&quot; background=&quot;http://img01.taobaocdn.com/imgextra/i1/183262695/T2LJNOXfBbXXXXXXXX_!!183262695.jpg&quot; border=&quot;0&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&lt;a href=&quot;http://favorite.taobao.com/popup/add_collection.htm?id=37104007.itemid=37104007.itemtype=0.ownerid=2bb3e28102acc73e9f923401f88275a5.scjjc=2._tb_token_=WqAamzYg8k/u1t6r6029k/w1tMp7029k/Pha7omVR9k.t=1311323646484&quot; target=&quot;_blank&quot;&gt;&lt;img height=&quot;60&quot; alt=&quot;&quot; src=&quot;http://img01.taobaocdn.com/imgextra/i1/183262695/T2repOXchXXXXXXXXX_!!183262695.jpg&quot; width=&quot;190&quot; border=&quot;0&quot;&gt;&lt;/a&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;&lt;img height=&quot;79&quot; alt=&quot;&quot; src=&quot;http://img04.taobaocdn.com/imgextra/i4/183262695/T2eJxOXcBcXXXXXXXX_!!183262695.jpg&quot; width=&quot;190&quot;&gt;&lt;/td&lt;/tr &lt;tr&gt; &lt;td style=&quot;padding-right:6px;padding-left:6px;padding-bottom:0px;padding-top:0px;&quot; valign=&quot;top&quot; align=&quot;middle&quot; width=&quot;190&quot; height=&quot;60&quot;&gt; &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;100%&quot; border=&quot;0&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td align=&quot;middle&quot;&gt;新太数码：&lt;/td &lt;td&gt;&lt;a href=&quot;http://tbamos.alicdn.com/msg.ww?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF.s=1&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;点击这里给我发消息&quot; src=&quot;http://tbamos.alicdn.com/online.ww?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF.s=1&quot; border=&quot;0&quot;&gt;&lt;/a&lt;/td&lt;/tr &lt;tr&gt; &lt;td align=&quot;middle&quot;&gt;　&lt;/td &lt;td&gt;　&lt;/td&lt;/tr &lt;tr&gt; &lt;td align=&quot;middle&quot;&gt;导购NO.1：&lt;/td &lt;td&gt;&lt;a href=&quot;http://www.taobao.com/webww/ww.php?ver=3.touid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E5%AF%BC%E8%B4%ADno.1.siteid=cntaobao.status=1.charset=utf-8&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;点这里给我发消息&quot; src=&quot;http://amos.alicdn.com/online.aw?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E5%AF%BC%E8%B4%ADno.1.site=cntaobao.s=1.charset=utf-8&quot; border=&quot;0&quot;&gt;&lt;/a&lt;/td&lt;/tr &lt;tr&gt; &lt;td align=&quot;middle&quot;&gt;　&lt;/td &lt;td&gt;　&lt;/td&lt;/tr &lt;tr&gt; &lt;td align=&quot;middle&quot;&gt;导购二号：&lt;/td &lt;td&gt;&lt;a href=&quot;http://www.taobao.com/webww/ww.php?ver=3.touid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E5%AF%BC%E8%B4%AD%E4%BA%8C%E5%8F%B7.siteid=cntaobao.status=1.charset=utf-8&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;点这里给我发消息&quot; src=&quot;http://amos.alicdn.com/online.aw?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E5%AF%BC%E8%B4%AD%E4%BA%8C%E5%8F%B7.site=cntaobao.s=1.charset=utf-8&quot; border=&quot;0&quot;&gt;&lt;/a&lt;/td&lt;/tr &lt;tr&gt; &lt;td align=&quot;middle&quot;&gt;　&lt;/td &lt;td&gt;　&lt;/td&lt;/tr &lt;tr&gt; &lt;td align=&quot;middle&quot;&gt;导购三号：&lt;/td &lt;td&gt;&lt;a href=&quot;http://www.taobao.com/webww/ww.php?ver=3.touid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E5%AF%BC%E8%B4%AD%E4%B8%89%E5%8F%B7.siteid=cntaobao.status=1.charset=utf-8&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;点这里给我发消息&quot; src=&quot;http://amos.alicdn.com/online.aw?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E5%AF%BC%E8%B4%AD%E4%B8%89%E5%8F%B7.site=cntaobao.s=1.charset=utf-8&quot; border=&quot;0&quot;&gt;&lt;/a&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;　&lt;/td &lt;td&gt;　&lt;/td&lt;/tr&lt;/tbody&lt;/table&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;&lt;img height=&quot;45&quot; alt=&quot;&quot; src=&quot;http://img02.taobaocdn.com/imgextra/i2/183262695/T2fdxOXcpcXXXXXXXX_!!183262695.jpg&quot; width=&quot;190&quot;&gt;&lt;/td&lt;/tr &lt;tr&gt; &lt;td style=&quot;padding-right:6px;padding-left:6px;padding-bottom:0px;padding-top:0px;&quot; valign=&quot;top&quot; align=&quot;middle&quot; width=&quot;190&quot; height=&quot;60&quot;&gt; &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;100%&quot; border=&quot;0&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;技术售后：&lt;/td &lt;td&gt;&lt;a href=&quot;http://www.taobao.com/webww/ww.php?ver=3.touid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E6%8A%80%E6%9C%AF%E5%94%AE%E5%90%8E.siteid=cntaobao.status=1.charset=utf-8&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;点这里给我发消息&quot; src=&quot;http://amos.alicdn.com/online.aw?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E6%8A%80%E6%9C%AF%E5%94%AE%E5%90%8E.site=cntaobao.s=1.charset=utf-8&quot; border=&quot;0&quot;&gt;&lt;/a&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;　&lt;/td &lt;td&gt;　&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;技术售后：&lt;/td &lt;td&gt;&lt;a href=&quot;http://www.taobao.com/webww/ww.php?ver=3.touid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E6%8A%80%E6%9C%AF%E5%94%AE%E5%90%8E.siteid=cntaobao.status=1.charset=utf-8&quot; target=&quot;_blank&quot;&gt;&lt;img alt=&quot;点这里给我发消息&quot; src=&quot;http://amos.alicdn.com/online.aw?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF%3A%E6%8A%80%E6%9C%AF%E5%94%AE%E5%90%8E.site=cntaobao.s=1.charset=utf-8&quot; border=&quot;0&quot;&gt;&lt;/a&lt;/td&lt;/tr&lt;/tbody&lt;/table&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;&lt;img height=&quot;45&quot; alt=&quot;&quot; src=&quot;http://img03.taobaocdn.com/imgextra/i3/183262695/T2LudOXk4XXXXXXXXX_!!183262695.jpg&quot; width=&quot;190&quot;&gt;&lt;/td&lt;/tr &lt;tr&gt; &lt;td style=&quot;padding-right:6px;padding-left:6px;padding-bottom:0px;padding-top:0px;&quot; valign=&quot;top&quot; align=&quot;middle&quot; width=&quot;190&quot; height=&quot;40&quot;&gt; &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;84%&quot; border=&quot;0&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td colspan=&quot;2&quot;&gt;联系方式：&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;　&lt;/td &lt;td width=&quot;88&quot;&gt;　&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;手 机：&lt;/td &lt;td width=&quot;88&quot;&gt;15899877758&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;　&lt;/td &lt;td width=&quot;88&quot;&gt;　&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;手 机：&lt;/td &lt;td width=&quot;88&quot;&gt;15920072678&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;　&lt;/td &lt;td width=&quot;88&quot;&gt;　&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;QQ：&lt;/td &lt;td width=&quot;88&quot;&gt;1445322291&lt;/td&lt;/tr&lt;/tbody&lt;/table&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;&lt;img height=&quot;8&quot; alt=&quot;&quot; src=&quot;http://img03.taobaocdn.com/imgextra/i3/183262695/T2u1hOXilXXXXXXXXX_!!183262695.jpg&quot; width=&quot;190&quot;&gt;&lt;/td&lt;/tr&lt;/tbody&lt;/table &lt;/div &lt;/div &lt;/div &lt;/div &lt;!-- .#27169;.#22359;.#34987;.#23631;.#34109;.#65306;273 --&gt;&lt;!-- module-cache-info: module: shop.topList:1.0-common key: module-5886494926-prototype-31-20120418 cacheArea: 49 cachedTime: 2012-04-28 07:13:38 aliveTime: 28800 AppIP:172.24.186.160 --&gt; &lt;!--销售排行searchURL: http://inshop-search-hz.vip.tbsite.net:2088/bin/search?auction?user_id=183262695.price=[-1,1000000].n=40.sort=biz30day.src=dcclient-172.24.186.160 --&gt; &lt;!--收藏排行searchURL: http://inshop-search-hz.vip.tbsite.net:2088/bin/search?auction?user_id=183262695.price=[-1,1000000].n=40.sort=ordercost.src=dcclient-172.24.186.160 --&gt; &lt;div class=&quot;box J_TBox tshop-pbsm tshop-pbsm-stl10c&quot; data-spm='1102dyC7.2-4rYmC.v-5uTcze' &gt; &lt;div class=&quot;shop-rank&quot;&gt; &lt;div class=&quot;hd&quot;&gt; &lt;h3&gt;&lt;span&gt;宝贝排行榜&lt;/span&lt;/h&gt; &lt;/div &lt;div class=&quot;bd&quot;&gt; &lt;div id=&quot;J_ranktab&quot; class=&quot;rank-tab&quot; data-widget-type=&quot;Tabs&quot; data-widget-config=&quot;{'navCls': 'tab-nav', 'contentCls': 'rank-panels', 'activeTriggerCls': 'selected','switchTo': 0 }&quot;&gt; &lt;ul class=&quot;tab-nav&quot;&gt; &lt;li class=&quot;selected&quot; &gt;&lt;span&gt;本月热销排行&lt;/span &lt;/li &lt;li class=&quot;&quot; &gt;&lt;span&gt;热门收藏排行&lt;/span&lt;/li &lt;/ul &lt;div class=&quot;rank-panels&quot;&gt; &lt;div class=&quot;rank-panel&quot; &gt;&lt;ul&gt; &lt;li&gt; &lt;div class=&quot;pic&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=13199871937&quot; target=&quot;_blank&quot;&gt;&lt;img bigpicurl=&quot;http://img02.taobaocdn.com/bao/uploaded/i2/T1FEeUXohqXXb8w0rb_093444.jpg_120x120.jpg&quot; data-ks-lazyload=&quot;http://img02.taobaocdn.com/bao/uploaded/i2/T1FEeUXohqXXb8w0rb_093444.jpg_40x40.jpg&quot; /&gt;&lt;/a&lt;/div &lt;div class=&quot;desc&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=13199871937&quot; title=&quot;Apple/苹果 iPhone 4S 大陆行 未拆封未激活 预装软件 包邮&quot; target=&quot;_blank&quot;&gt;Apple/苹果 iPhone 4S 大陆行 未拆封未激活 预装软件 包邮&lt;/a &lt;/div &lt;div class=&quot;price&quot;&gt;&lt;i&gt;&lt;/i5312.50元 i2/T1FEeUXohqXXb8w0rb_093444.jpg&lt;/div &lt;div class=&quot;sale&quot;&gt;&lt;i&gt;&lt;/i已售出 &lt;strong&gt;1052&lt;/strong 笔 &lt;/div &lt;/li &lt;li&gt; &lt;div class=&quot;pic&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=10154657853&quot; target=&quot;_blank&quot;&gt;&lt;img bigpicurl=&quot;http://img03.taobaocdn.com/bao/uploaded/i3/T1URWqXXxLXXcU7HHb_122932.jpg_120x120.jpg&quot; data-ks-lazyload=&quot;http://img03.taobaocdn.com/bao/uploaded/i3/T1URWqXXxLXXcU7HHb_122932.jpg_40x40.jpg&quot; /&gt;&lt;/a&lt;/div &lt;div class=&quot;desc&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=10154657853&quot; title=&quot;Apple/苹果 iPhone 4代 8G 大陆行 未拆封未激活 预装软件&quot; target=&quot;_blank&quot;&gt;Apple/苹果 iPhone 4代 8G 大陆行 未拆封未激活 预装软件&lt;/a &lt;/div &lt;div class=&quot;price&quot;&gt;&lt;i&gt;&lt;/i3725.00元 i3/T1URWqXXxLXXcU7HHb_122932.jpg&lt;/div &lt;div class=&quot;sale&quot;&gt;&lt;i&gt;&lt;/i已售出 &lt;strong&gt;332&lt;/strong 笔 &lt;/div &lt;/li &lt;li&gt; &lt;div class=&quot;pic&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=13267927988&quot; target=&quot;_blank&quot;&gt;&lt;img bigpicurl=&quot;http://img04.taobaocdn.com/bao/uploaded/i4/T1cDSuXkdzXXXHhO3V_020901.jpg_120x120.jpg&quot; data-ks-lazyload=&quot;http://img04.taobaocdn.com/bao/uploaded/i4/T1cDSuXkdzXXXHhO3V_020901.jpg_40x40.jpg&quot; /&gt;&lt;/a&lt;/div &lt;div class=&quot;desc&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=13267927988&quot; title=&quot;yoobao羽博 YB602 移动电源 4800毫安 随手机发货可免邮费&quot; target=&quot;_blank&quot;&gt;yoobao羽博 YB602 移动电源 4800毫安 随手机发货可免邮费&lt;/a &lt;/div &lt;div class=&quot;price&quot;&gt;&lt;i&gt;&lt;/i209.00元 i4/T1cDSuXkdzXXXHhO3V_020901.jpg&lt;/div &lt;div class=&quot;sale&quot;&gt;&lt;i&gt;&lt;/i已售出 &lt;strong&gt;39&lt;/strong 笔 &lt;/div &lt;/li &lt;li&gt; &lt;div class=&quot;pic&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=13867932509&quot; target=&quot;_blank&quot;&gt;&lt;img bigpicurl=&quot;http://img01.taobaocdn.com/bao/uploaded/i1/T1WYyvXa4CXXbfLk3._112909.jpg_120x120.jpg&quot; data-ks-lazyload=&quot;http://img01.taobaocdn.com/bao/uploaded/i1/T1WYyvXa4CXXbfLk3._112909.jpg_40x40.jpg&quot; /&gt;&lt;/a&lt;/div &lt;div class=&quot;desc&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=13867932509&quot; title=&quot;韩国 Rabito iphone 4 4G 兔子套 手机套 随手机发货可免邮费&quot; target=&quot;_blank&quot;&gt;韩国 Rabito iphone 4 4G 兔子套 手机套 随手机发货可免邮费&lt;/a &lt;/div &lt;div class=&quot;price&quot;&gt;&lt;i&gt;&lt;/i50.00元 i1/T1WYyvXa4CXXbfLk3._112909.jpg&lt;/div &lt;div class=&quot;sale&quot;&gt;&lt;i&gt;&lt;/i已售出 &lt;strong&gt;14&lt;/strong 笔 &lt;/div &lt;/li &lt;li&gt; &lt;div class=&quot;pic&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=13009593482&quot; target=&quot;_blank&quot;&gt;&lt;img bigpicurl=&quot;http://img02.taobaocdn.com/bao/uploaded/i2/T1iYuvXcBPXXbAjkA._082841.jpg_120x120.jpg&quot; data-ks-lazyload=&quot;http://img02.taobaocdn.com/bao/uploaded/i2/T1iYuvXcBPXXbAjkA._082841.jpg_40x40.jpg&quot; /&gt;&lt;/a&lt;/div &lt;div class=&quot;desc&quot;&gt;&lt;a href=&quot;http://item.taobao.com/item.htm?id=13009593482&quot; title=&quot;iphone 4 Bumper 信号圈 边框 保护套 随手机发货可免邮费&quot; target=&quot;_blank&quot;&gt;iphone 4 Bumper 信号圈 边框 保护套 随手机发货可免邮费&lt;/a &lt;/div &lt;div class=&quot;price&quot;&gt;&lt;i&gt;&lt;/i130.00元 i2/T1iYuvXcBPXXbAjkA._082841.jpg&lt;/div &lt;div class=&quot;sale&quot;&gt;&lt;i&gt;&lt;/i已售出 &lt;strong&gt;11&lt;/strong 笔 &lt;/div &lt;/li &lt;/ul &lt;span class=&quot;no-traded&quot;&gt; &lt;a id=&quot;xshop_selling_href&quot; href='http://xintaishuma.taobao.com//search.htm?orderType=_hotsell'&gt;查看本店其他宝贝&lt;/a &lt;/span &lt;/div &lt;div class=&quot;rank-panel hidden J_TopColl&quot; data-url=&quot;http://favorite.taobao.com/json/shop_hot_items.htm?ownerId=183262695.limit=5&quot;&gt;&lt;ul&gt; &lt;/ul &lt;span class=&quot;no-collect&quot;&gt; &lt;a id=&quot;xshop_collection_href&quot; href=&quot;http://favorite.taobao.com/popup/add_collection.htm?itemid=37104007.itemtype=0.ownerid=2bb3e28102acc73e9f923401f88275a5.scjjc=2._tb_token_=&quot; mercury:params=&quot;itemid=37104007.itemtype=0.ownerid=2bb3e28102acc73e9f923401f88275a5._tb_token_=&quot; class=&quot;J_PopupTrigger J_TDialogTrigger collection xshop_sc J_TokenSign&quot; data-width=&quot;440&quot; data-height=&quot;260&quot; data-closebtn=&quot;true&quot;&gt;收藏本店铺&lt;/a &lt;/span &lt;/div &lt;/div &lt;/div &lt;/div &lt;/div &lt;input type=&quot;hidden&quot; id=&quot;J_dcTopListData&quot; data-value='{&quot;siteId&quot;:&quot;7&quot;,&quot;list&quot;:&quot;topSelling&quot;}'/&gt; &lt;/div &lt;div class=&quot;box J_TBox tshop-pbsm tshop-pbsm-ssis10c&quot; data-spm='1102dyC7.2-4rYmC.7-3Ibp*W' &gt; &lt;div class=&quot;shop-search&quot;&gt; &lt;div class=&quot;hd&quot;&gt; &lt;h3&gt;&lt;span&gt;搜索店内宝贝&lt;/span&lt;/h&gt; &lt;/div &lt;div class=&quot;bd&quot;&gt; &lt;div class=&quot;search-form&quot;&gt; &lt;form name=&quot;SearchForm&quot; action=&quot;http://xintaishuma.taobao.com//search.htm&quot; method=&quot;get&quot;&gt; &lt;ul&gt; &lt;input type=&quot;hidden&quot; name=&quot;userId&quot; value=&quot;&quot;/&gt; &lt;input type=&quot;hidden&quot; name=&quot;shopId&quot; value=&quot;37104007&quot;/&gt; &lt;input type=&quot;hidden&quot; name=&quot;view_type&quot; value=&quot;&quot;/&gt; &lt;input type=&quot;hidden&quot; name=&quot;order_type&quot; value=&quot;&quot;/&gt; &lt;input type=&quot;hidden&quot; name=&quot;spm&quot; value=&quot;0&quot;/&gt; &lt;input type=&quot;hidden&quot; name=&quot;search&quot; value=&quot;y&quot; /&gt; &lt;li class=&quot;keyword&quot;&gt; &lt;label for=&quot;keyword&quot;&gt;关键字：&lt;/label &lt;input type=&quot;text&quot; size=&quot;18&quot; class=&quot;J_SEKeyword&quot; name=&quot;keyword&quot; id=&quot;KeywordBox&quot; value=&quot;&quot; onfocus=&quot;this.select();&quot;/&gt; &lt;/li &lt;li class=&quot;price&quot;&gt; &lt;label for=&quot;price&quot;&gt;价格：&lt;/label &lt;span&gt; &lt;input id=&quot;price1&quot; type=&quot;text&quot; name=&quot;price1&quot; class=&quot;price J_CheckInput J_SEprice1&quot; size=&quot;4&quot; value=&quot;&quot;/&gt; 到 &lt;input id=&quot;price2&quot; name=&quot;price2&quot; class=&quot;price J_CheckInput J_SEprice2&quot; type=&quot;text&quot; size=&quot;4&quot; value=&quot;&quot;/&gt; &lt;/span &lt;/li &lt;li class=&quot;submit&quot;&gt; &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;搜索&lt;/button &lt;/li &lt;/ul &lt;/form &lt;/div &lt;/div &lt;/div &lt;/div &lt;!-- module-cache-info: module: shop.itemCategory:1.0-common key: sid-37104007-prototype-6-20120418 cacheArea: 49 cachedTime: 2012-04-28 07:13:38 aliveTime: 28800 AppIP:172.24.186.160 --&gt; &lt;div class=&quot;box J_TBox tshop-pbsm tshop-pbsm-sic10c&quot; data-spm='1102dyC7.2-4rYmC.6-3Ibp*X' &gt; &lt;div class=&quot;shop-category&quot;&gt; &lt;div class=&quot;hd&quot;&gt; &lt;h3&gt;&lt;span&gt;宝贝分类&lt;/span&lt;/h&gt; &lt;/div &lt;div class=&quot;bd&quot;&gt; &lt;ul id=&quot;J_Cats&quot; class=&quot;cats J_TWidget&quot; data-widget-type=&quot;Accordion&quot; data-widget-config=&quot;{'triggerCls': 'cat-hd', 'panelCls': 'cat-bd','multiple': 'true', 'activeTriggerCls': 'collapse'}&quot;&gt; &lt;li class=&quot;cat J_CatHeader&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i&lt;a rel=&quot;shopCategoryList&quot; href='http://xintaishuma.taobao.com/search.htm'&gt;查看所有宝贝&gt;&gt;&lt;/a&lt;/h&gt; &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?orderType=_hotsell&quot;&gt;按销量&lt;/a.nbsp; &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?orderType=_newOn&quot;&gt;按新品&lt;/a.nbsp; &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?orderType=price&quot;&gt;按价格&lt;/a.nbsp; &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?orderType=_hotkeep&quot;&gt;按收藏&lt;/a &lt;/li &lt;li id=&quot;J_Cat373137395&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137395.scname=xbW7%2BdHH.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;诺基亚&quot; src=&quot;http://img03.taobaocdn.com/imgextra/i3/183262695/T2ZtpOXhtcXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137417&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137417.scname=tuDG1bTv.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;多普达&quot; src=&quot;http://img01.taobaocdn.com/imgextra/i1/183262695/T2LKtOXahXXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137403&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137403.scname=xru5%2Bw%3D%3D.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;苹果&quot; src=&quot;http://img04.taobaocdn.com/imgextra/i4/183262695/T2F0pOXidcXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137405&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137405.scname=xeS8%2Fg%3D%3D.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;配件&quot; src=&quot;http://img03.taobaocdn.com/imgextra/i3/183262695/T2itpOXi8cXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137408&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137408.scname=tNnP%2Bg%3D%3D.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;促销&quot; src=&quot;http://img01.taobaocdn.com/imgextra/i1/183262695/T2UdlOXkXcXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137410&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137410.scname=yP3Qxw%3D%3D.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;三星&quot; src=&quot;http://img04.taobaocdn.com/imgextra/i4/183262695/T2sJlOXlpcXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137411&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137411.scname=uuq07w%3D%3D.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;宏达&quot; src=&quot;http://img01.taobaocdn.com/imgextra/i1/183262695/T2A0hOXntcXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137414&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137414.scname=y%2Fewrg%3D%3D.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;索爱&quot; src=&quot;http://img02.taobaocdn.com/imgextra/i2/183262695/T291tOXXpXXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137415&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137415.scname=warP6w%3D%3D.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;联想&quot; src=&quot;http://img04.taobaocdn.com/imgextra/i4/183262695/T2n1tOXbdXXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;li id=&quot;J_Cat373137418&quot; class=&quot;cat&quot;&gt; &lt;h4&gt;&lt;i&gt;&lt;/i &lt;a rel=&quot;shopCategoryList&quot; href=&quot;http://xintaishuma.taobao.com/search.htm?scid=373137418.scname=xKbN0MLewK0%3D.checkedRange=true.queryType=cat&quot;&gt;&lt;img alt=&quot;摩托罗拉&quot; src=&quot;http://img01.taobaocdn.com/imgextra/i1/183262695/T2_upOXbNXXXXXXXXX_!!183262695.gif&quot; /&gt;&lt;/a &lt;/h&gt; &lt;/li &lt;/ul &lt;/div &lt;/div &lt;/div &lt;!-- module-cache-info: module: shop.friendLink:1.0-common key: user-183262695-prototype-15-20120418 cacheArea: 49 cachedTime: 2012-04-28 07:13:38 aliveTime: 28800 AppIP:172.24.186.160 --&gt; &lt;div class=&quot;box J_TBox tshop-pbsm tshop-pbsm-sfl10c&quot; data-spm='1102dyC7.2-4rYmC.f-3Ibp*Y' &gt; &lt;div class=&quot;shop-links&quot;&gt; &lt;div class=&quot;hd&quot;&gt; &lt;h3&gt;&lt;span&gt;友情链接&lt;/span&lt;/h&gt; &lt;/div &lt;div class=&quot;bd&quot;&gt; &lt;ul&gt; &lt;li&gt; &lt;a href=&quot;http://shop71246551.taobao.com&quot; target=&quot;_blank&quot;&gt;苛可儿&lt;/a &lt;/li &lt;/ul &lt;/div &lt;/div &lt;/div </textarea>
+     </div> 
+    </div>
+    <textarea class="bigrender-data" data-priority="3">&lt;div id=&quot;ft&quot;&gt; &lt;div class=&quot;layout grid-m&quot; data-spm='1102dyC7.2-4rYmC.7-3Ibp*W' &gt; &lt;div class=&quot;col-main&quot;&gt; &lt;div class=&quot;main-wrap J_TRegion&quot; data-modules=&quot;main&quot; data-width=&quot;f950&quot;&gt; &lt;!-- module-cache-info: module: shop.shopFoot:1.0-common,moduleId=2441540832, key: module-2441540832-prototype-36-20120307 cacheArea: 49 cachedTime: 2012-04-28 06:05:52 aliveTime: 28800 AppIP:172.24.171.184 --&gt; &lt;div class=&quot;box J_TBox&quot; data-spm='1102dyC7.3-4rYmD.A-2hxLjw' &gt; &lt;div class=&quot;shop-custom no-border&quot;&gt; &lt;div class=&quot;bd&quot;&gt; &lt;div class=&quot;custom-area&quot;&gt; &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;950&quot; height=&quot;130&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td colspan=&quot;2&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://img03.taobaocdn.com/imgextra/i3/183262695/T2i1lOXfBXXXXXXXXX_!!183262695.jpg&quot; width=&quot;950&quot; height=&quot;96&quot;&gt;&lt;/td&lt;/tr &lt;tr&gt; &lt;td&gt;&lt;img alt=&quot;&quot; src=&quot;http://img04.taobaocdn.com/imgextra/i4/183262695/T2r1hOXiFXXXXXXXXX_!!183262695.jpg&quot; width=&quot;172&quot; height=&quot;34&quot;&gt;&lt;/td &lt;td bgcolor=&quot;#b8e1f6&quot; height=&quot;34&quot; width=&quot;778&quot;&gt;&lt;span style=&quot;padding-bottom:0px;padding-left:6px;padding-right:6px;padding-top:0px;&quot;&gt;旺旺:&lt;a href=&quot;http://amos1.taobao.com/msg.ww?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF.s=1&quot; target=&quot;_blank&quot;&gt;&lt;img border=&quot;0&quot; alt=&quot;点击这里给我.#10;.#13;发消息&quot; src=&quot;http://img04.taobaocdn.com/imgextra/i4/183262695/T2oJVOXaJbXXXXXXXX_!!183262695.jpg&quot;&gt;&lt;/a旺旺:&lt;a href=&quot;http://amos1.taobao.com/msg.ww?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF.s=1&quot; target=&quot;_blank&quot;&gt;&lt;img border=&quot;0&quot; alt=&quot;点击这里给我.#10;.#13;发消息&quot; src=&quot;http://img04.taobaocdn.com/imgextra/i4/183262695/T2oJVOXaJbXXXXXXXX_!!183262695.jpg&quot;&gt;&lt;/a旺旺:&lt;a href=&quot;http://amos1.taobao.com/msg.ww?v=2.uid=%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF.s=1&quot; target=&quot;_blank&quot;&gt;&lt;img border=&quot;0&quot; alt=&quot;点击这里给我.#10;.#13;发消息&quot; src=&quot;http://img04.taobaocdn.com/imgextra/i4/183262695/T2oJVOXaJbXXXXXXXX_!!183262695.jpg&quot;&gt;&lt;/a&lt;/span&lt;/td&lt;/tr&lt;/tbody&lt;/table &lt;/div &lt;/div &lt;/div &lt;/div &lt;/div &lt;/div &lt;/div &lt;/div &lt;div id=&quot;wangpu-copyright&quot; class=&quot;grid-c&quot;&gt; &lt;p&gt;&lt;a href=&quot;http://wangpu.taobao.com?spm=2013.1.1000376.1&quot;&gt;本店所使用旺铺版本:旗舰版&lt;/a&lt;/p &lt;/div&lt;div class=&quot;grid-c&quot; id=&quot;feedback&quot;&gt;&lt;img src=&quot;http://img01.taobaocdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png&quot; alt=&quot;反馈&quot; width=&quot;18&quot; height=&quot;18&quot; style=&quot;vertical-align:middle;&quot; /&gt;新版宝贝详情页需要您对改版的意见和建议，&lt;a href=&quot;http://ur.taobao.com/survey/view.htm?id=1130&quot; target=&quot;_blank&quot;&gt;点击这里告诉我们&lt;/a&lt;/div</textarea> 
+   </div>
+   <textarea class="bigrender-data" data-priority="4"> &lt;!-- from vmcommon --&gt; &lt;div id=&quot;footer&quot;&gt; &lt;!-- c2c_column start --&gt; &lt;div class=&quot;c2c_column clearfix&quot;&gt; &lt;a href=&quot;http://www.taobao.com/go/act/315/xb_20100707.php?spm=1.41461.135395.1&amp;ad_id=&amp;am_id=1300268931aef04f0cdc&amp;cm_id=&plusmn;_id=#rushi&quot; target=&quot;_blank&quot; class=&quot;cp_logo&quot; &gt;&lt;img src=&quot;http://img04.taobaocdn.com/tps/i4/T1FqRVXo4JXXXXXXXX.png&quot; alt=&quot;消费者保障&quot; /&gt;&lt;/a &lt;dl class=&quot;ensure&quot;&gt; &lt;dt&gt;&lt;em&gt;消费者保障&lt;/em&lt;/dt &lt;dd&gt;&lt;ul&gt; &lt;li&gt;&lt;a href=&quot;http://www.taobao.com/go/act/315/xb_20100707.php?spm=1.41461.135395.2&amp;ad_id=&amp;am_id=1300268931aef04f0cdc&amp;cm_id=&plusmn;_id=#rushi&quot; target=&quot;_blank&quot;&gt;保障范围&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://service.taobao.com/support/knowledge-1119776.htm?spm=1.41461.135395.3&quot; target=&quot;_blank&quot;&gt;退货退款流程&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://315.taobao.com/?spm=1.41461.135395.4&quot; target=&quot;_blank&quot;&gt;消费警示&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://support.taobao.com/myservice/rights/right_main.htm?spm=1.41461.135395.5&quot; target=&quot;_blank&quot;&gt;我要发起维权&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://www.taobao.com/go/act/315/xb_20100707.php?spm=1.41461.135395.6&amp;ad_id=&amp;am_id=1300268931aef04f0cdc&amp;cm_id=&plusmn;_id=#rushi&quot; target=&quot;_blank&quot;&gt;更多特色服务&lt;/a&lt;/li &lt;/ul&lt;/dd &lt;/dl &lt;dl class=&quot;newbie&quot;&gt; &lt;dt&gt;&lt;em&gt;新手上路&lt;/em&lt;/dt &lt;dd&gt;&lt;ul&gt; &lt;li&gt;&lt;a href=&quot;http://www.taobao.com/help/buy_step1_01.html?spm=1.41461.135395.7&quot; target=&quot;_blank&quot;&gt;新手学堂&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://member1.taobao.com/member/new_register.jhtml?spm=1.41461.135395.8&amp;from=&amp;ex_info=&amp;ex_sign=&quot; target=&quot;_blank&quot;&gt;新手注册&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://www.taobao.com/go/chn/rookie/index.php?spm=1.41461.135395.9&quot; target=&quot;_blank&quot;&gt;新手体验专区&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://trust.taobao.com/?spm=1.41461.135395.10&quot; target=&quot;_blank&quot;&gt;交易安全&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://service.taobao.com/support/minerva/robot_main.htm?spm=1.41461.135395.11&amp;sourceId=113&amp;businessId=100&amp;moduleGroupId=taobaocrm&quot; target=&quot;_blank&quot;&gt;24小时在线帮助&lt;/a&lt;/li &lt;/ul&lt;/dd &lt;/dl &lt;dl class=&quot;payment&quot;&gt; &lt;dt&gt;&lt;em&gt;付款方式&lt;/em&lt;/dt &lt;dd&gt;&lt;ul&gt; &lt;li&gt;&lt;a href=&quot;http://ju.atpanel.com/?url=http://www.taobao.com/go/chn/zhifu1.php?spm=1.41461.135395.12&amp;ad_id=&amp;am_id=&amp;cm_id=1400452911dc010e8641&plusmn;_id=150045291257ef7412b9&quot; target=&quot;_blank&quot;&gt;信用卡快捷支付&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://ju.atpanel.com/?url=http://www.taobao.com/go/chn/zhifu1.php?spm=1.41461.135395.13&amp;ad_id=&amp;am_id=&amp;cm_id=1400452911dc010e8641&plusmn;_id=150045291257ef7412b9&quot; target=&quot;_blank&quot;&gt;储蓄卡快捷支付&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://ju.atpanel.com/?url=http://www.taobao.com/go/chn/zhifu_newbie.php?spm=1.41461.135395.14&amp;ad_id=&amp;am_id=&amp;cm_id=&plusmn;_id=1500485988297afb7627&quot; target=&quot;_blank&quot;&gt;支付宝余额&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://www.taobao.com/go/act/sale/syzxfw_090602_qcz.php?spm=1.41461.135395.15&amp;TBG=14172.64.10&quot; target=&quot;_blank&quot;&gt;货到付款&lt;/a&lt;/li &lt;li&gt;&lt;a href=&quot;http://ju.atpanel.com/?url=http://www.taobao.com/go/chn/zhifu_newbie.php?spm=1.41461.135395.16&amp;ad_id=&amp;am_id=&amp;cm_id=&plusmn;_id=1500485988297afb7627&quot; target=&quot;_blank&quot;&gt;新人支付&lt;/a&lt;/li &lt;/ul&lt;/dd &lt;/dl &lt;dl class=&quot;recommend&quot;&gt; &lt;dt&gt;&lt;em&gt;特色市场推荐&lt;/em&lt;/dt &lt;dd&gt;&lt;ul&gt; &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://love.taobao.com/?spm=1.41461.135395.17&quot;&gt;我要买&lt;/a&lt;span&gt;发现 分享 购物&lt;/span&lt;/li &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://jie.taobao.com/?spm=1.41461.135395.18&quot;&gt;店铺街&lt;/a&lt;span&gt;轻轻松松找好店&lt;/span&lt;/li &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://global.taobao.com/?spm=1.41461.135395.19&quot;&gt;全球购&lt;/a&lt;span&gt;100%海外精品&lt;/span&lt;/li &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://nvzhuang.taobao.com/market/nvzhuang/indextest.php?spm=1.41461.135395.20&quot;&gt;女装市场&lt;/a&lt;span&gt;各色女装集散地&lt;/span&lt;/li &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;http://ju.atpanel.com/?url=http://list.taobao.com/browse/cat-0.htm?spm=1.41461.135395.21&amp;id=woyaomai&amp;ad_id=&amp;am_id=&amp;cm_id=&plusmn;_id=15004366061cf57b9b72&quot;&gt;更多特色市场&lt;/a&lt;span&gt;&lt;/span&lt;/li &lt;/ul&lt;/dd &lt;/dl &lt;/div &lt;!-- c2c_column end --&gt; &lt;div class=&quot;g_foot&quot;&gt; &lt;div class=&quot;g_foot-ali&quot;&gt; &lt;a href=&quot;javascript:void(0)&quot; target=&quot;_self&quot; class=&quot;g_foot-nohover&quot;&gt;阿里巴巴集团&lt;/a &lt;b&gt;|&lt;/b &lt;a href=&quot;javascript:void(0)&quot; target=&quot;_self&quot; class=&quot;g_foot-nohover&quot;&gt;阿里巴巴网络：&lt;/a &lt;a href=&quot;http://www.alibaba.com/&quot;&gt;国际站&lt;/a &lt;a href=&quot;http://china.alibaba.com/&quot;&gt;中文站&lt;/a &lt;a href=&quot;http://seller.aliexpress.com/&quot;&gt;全球速卖通&lt;/a &lt;b&gt;|&lt;/b &lt;a href=&quot;http://www.taobao.com/?id=shouye_taobao&quot;&gt;淘宝网&lt;/a &lt;b&gt;|&lt;/b &lt;a href=&quot;http://www.tmall.com/&quot;&gt;天猫&lt;/a &lt;b&gt;|&lt;/b &lt;a href=&quot;http://www.etao.com/&quot;&gt;一淘&lt;/a &lt;b&gt;|&lt;/b &lt;a href=&quot;http://ju.taobao.com/&quot;&gt;聚划算&lt;/a &lt;b&gt;|&lt;/b &lt;a href=&quot;http://www.aliyun.com/&quot;&gt;阿里云&lt;/a &lt;b&gt;|&lt;/b &lt;a href=&quot;http://www.yahoo.com.cn/&quot;&gt;中国雅虎&lt;/a &lt;b&gt;|&lt;/b &lt;a href=&quot;http://www.alipay.com/&quot;&gt;支付宝&lt;/a &lt;/div &lt;div class=&quot;g_foot-nav&quot;&gt; &lt;a href=&quot;http://www.taobao.com/about/&quot;&gt;关于淘宝&lt;/a &lt;a href=&quot;http://www.taobao.com/about/partners.php&quot;&gt;合作伙伴&lt;/a &lt;a href=&quot;http://pro.taobao.com/&quot;&gt;营销中心&lt;/a &lt;a href=&quot;http://service.taobao.com/support/main/service_center.htm&quot;&gt;服务中心&lt;/a &lt;a href=&quot;http://open.taobao.com/&quot;&gt;开放平台&lt;/a &lt;a href=&quot;http://www.taobao.com/about/join.php&quot;&gt;诚征英才&lt;/a &lt;a href=&quot;http://www.taobao.com/about/contact.php&quot;&gt;联系我们&lt;/a &lt;a href=&quot;http://www.taobao.com/sitemap.php&quot;&gt;网站地图&lt;/a &lt;a href=&quot;http://www.taobao.com/about/copyright.php&quot;&gt;版权说明&lt;/a &lt;span&gt;&copy; 2012 淘宝(中国)软件有限公司 版权所有&lt;/span &lt;/div &lt;span class=&quot;g_foot-toy&quot;&gt;&lt;/span &lt;span class=&quot;g_foot-line&quot;&gt;&lt;/span &lt;/div &lt;style&gt; .g_foot{ width: 960px; margin: 0 auto; font: 12px/1.5 tahoma,arial,宋体b8b\4f53; padding: 7px 0 9px; color: #b0b0b0; text-align: left !important; position: relative; clear:both; } .g_foot a{ margin: 0 4px; color: #3e3e3e; text-decoration:none; } .g_foot a:hover{ color: #F60; text-decoration: underline; } .g_foot-ali{ margin-right: 100px; padding-left: 0; border-bottom: 1px solid #D3D3D3; padding-bottom: 8px; } .g_foot-nohover{ cursor: default; } .g_foot-nohover:hover{ color:#3e3e3e !important; text-decoration:none !important; } .g_foot-ali b { margin: 0 4px; color:#d3d3d3; font-weight: normal; } .g_foot-nav{ margin-top: 8px; line-height: 20px; } .g_foot-nav span{ margin-left: 50px; } .g_foot-toy{ position: absolute; background: url(http://img01.taobaocdn.com/tps/i1/T1MMPaXkNjXXaXezbh-48-70.png) no-repeat; _background: url(http://img01.taobaocdn.com/tps/i1/T1XgzaXX0kXXaXezbh-48-70.png) no-repeat; width: 69px; height: 100px; display: block; right: 0px; top:0px; } /* IE9 only */ :root .g_foot-toy { right:-20px\9; } .g_foot-line{ display: none; position: absolute; background: url(http://img01.taobaocdn.com/tps/i1/T1I_56Xl0wXXXXXXXX-104-1.png) no-repeat; width: 104px; height: 1px; right: 45px; top:33px; } &lt;/style &lt;div id=&quot;server-num&quot;&gt;detail168128.cm4&lt;/div &lt;/div &lt;!-- end vmcommon --&gt; &lt;div class=&quot;popup-tips&quot; id=&quot;J_TipsL&quot; style=&quot;display:none&quot;&gt; &lt;h5&gt;从&lt;span class=&quot;date&quot;&gt;2008/01/01&lt;/span起至今&lt;/h&gt; &lt;p&gt;虚拟宝贝交易：&lt;em&gt;0%&lt;/em&lt;/p &lt;p&gt;实物宝贝交易：&lt;em&gt;0%&lt;/em&lt;/p &lt;/div&lt;div class=&quot;popup-tips&quot; id=&quot;J_TipsR&quot; style=&quot;display:none&quot;&gt; &lt;h5&gt;从&lt;span class=&quot;date&quot;&gt;2008/01/01&lt;/span起至今&lt;/h&gt; &lt;p&gt;虚拟宝贝交易：&lt;em&gt;0%&lt;/em&lt;/p &lt;p&gt;实物宝贝交易：&lt;em&gt;0%&lt;/em&lt;/p &lt;/div&lt;script&gt; TShop.use('init', function() { TShop.init({ loader: ['#content', { pipeHost: 'http://detailskip.taobao.com', assetsHost: 'http://a.tbcdn.cn', htmlSuffix: '', preloadColumnCls: ['.col-sub'] }] }); }); &lt;/script&lt;script&gt; TShop.use('mod~rank', function(T) {T.mods.Rank.init();}); TShop.use('mod~SupportDropdown', function(T) { T.mods.SupportDropdown.init({ url:'http://dsc.taobaocdn.com/designsystem/T1hMXZXiBCXXb9F47H.groupmember|var^groupMember;sign^c9faa301e299ede9c6e484ca26d9b46b;lang^gbk;t^1334573601000' }); }); &lt;/script &lt;script&gt; TShop.use('isv', function(T) { T.ISV.Stat.init({ nickName: '%E6%96%B0%E5%A4%AA%E6%95%B0%E7%A0%81%E9%80%9A%E8%AE%AF', userId: '183262695', shopId: '37104007', itemId: '', itemNumId: 13199871937, shopStats: '0', validatorUrl: 'http://store.taobao.com/tadget/shop_stats.htm', templateName: '', templateId: '' }); }); &lt;/script &lt;script&gt;function loadAtBrowse(){var cImg = document.createElement('img');cImg.src = &quot;http://ju.atpanel.com/?url=http://www.atpanel.com?ad_id=&amp;am_id=&amp;cm_id=&plusmn;_id=1500072688f691927a1e&quot;;return true;}&lt;/script &lt;script&gt;TShop.use('hubble');&lt;/script&lt;script&gt; function __content_results(result){ var dingtong = document.getElementById(&quot;dingtong&quot;) ; if (dingtong &amp;&amp; null != result &amp;&amp; null != result[0].content &amp;&amp; &quot;null&quot; != result[0].content) { dingtong.innerHTML = '&lt;a href=&quot;'+(result[0].link == &quot;null&quot; ? '#':result[0].link)+'&quot;&gt;&lt;img src=&quot;'+result[0].content+'&quot; border=0&gt;&lt;/a'; dingtong.style.display = &quot;block&quot; ; } } &lt;/script &lt;div id=&quot;LineZing&quot; pagetype=&quot;2&quot; shopid=&quot;37104007&quot; tmplid=&quot;&quot; itemid=&quot;13199871937&quot;&gt;&lt;/div</textarea> 
+   <!-- pk: P_page-74433958-pagecache-d -->
+   <script>
+seajs.use('http://a.tbcdn.cn/p/shop/1.0/bigrender.js?t=20110915.js', function(BigRender) {
+ BigRender.init({cookieExpries:24.0});});
+</script> 
+   <script src="http://a.tbcdn.cn/cps/trace.js?t=20120329.js"></script>
+   <script>TShop.use('mod~main', function(T) {
+try{
+var subtype = 4;if(window._detail_config.vdata){subtype=TShop.mods.main.getJuType();}
+CPS.trace({type:1,subtype:subtype,itemid:"13199871937",sellerid:"183262695"});
+}catch(e){}
+});</script> 
+   <script>g_config.endTime=+new Date;</script>  
+  </div>
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="description" class="tshop-psm ke-post J_DetailSection">
+<h4 class="hd">宝贝详情</h> 
+<div class="content" id="J_DivItemDesc">描述加载中</div
+<script>(function() {if (typeof desc === 'undefined') {setTimeout(arguments.callee, 100);return;} TShop.renderDesc(desc);})();</script</div 
+<div class="tshop-psm tb-box" id="J_Detail">
+ <div id="reviews" class="J_DetailSection" data-reviewApi="http://rate.taobao.com/detail_rate.htm?userNumId=183262695.auctionNumId=13199871937.showContent=1&curren;tPage=1.ismore=0.siteID=7" data-reviewCountApi="" data-listApi="http://rate.taobao.com/feedRateList.htm?userNumId=183262695.auctionNumId=13199871937.siteID=7" data-commonApi="http://rate.taobao.com/detailCommon.htm?userNumId=183262695.auctionNumId=13199871937.siteID=7" data-usefulApi="http://rate.taobao.com/vote_useful.htm?userNumId=183262695.auctionNumId=13199871937"> <h4 class="hd">评价详情(<em class="J_ReviewsCount">0</em)</h> </div <script>TShop.use('mod~reviews', function(T) { T.mods.Reviews.init(); });</script <div id="deal-record" class="J_DetailSection"> <h4 class="hd"> 成交记录 (<em class="J_TDealCount">-</em件)</h> <div id="J_PublicInfo" class="tb-public"> <div class="tb-public-wrap"> <p class="tb-public-price">原价：<em> 5275.00 - 6725.00 </em元<span>拍下价格的不同可能会由促销和打折引起的，详情可以咨询卖家。</span</p </div </div 
+ <div id="J_showBuyerList" class="J_TAjaxContainer"> <div class="tb-clearfix msg msg-attention-shortcut tb-hidden J_TNoDealRecords"><p class="attention naked">暂时还没有买家购买此宝贝。</p</div <div id="J_showListIndicator" class="J_TAjaxIndicator"></div <button id="J_listBuyerOnView" type="button" class="J_TAjaxTrigger hidden J_TAjaxTriggerButton" detail:params="http://detailskip.taobao.com/json/show_buyer_list.htm?bid_page=1.page_size=15.is_start=false⁢em_type=b.ends=1335588924000☆ts=1334984124000⁢em_id=13199871937.user_tag=475100160.old_quantity=2683.zhichong=true/d_total_num=16.seller_num_id=183262695.dk=0.title=Apple%2F%C6%BB%B9%FB+iPhone+4S+%B4%F3%C2%BD%D0%D0+%CE%B4%B2%F0%B7%E2%CE%B4%BC%A4%BB%EE+%D4%A4%D7%B0%C8%ED%BC%FE+%B0%FC%D3%CA,showBuyerList" >c</button </div</div <script>TShop.use('mod~deal-record', function(T) { T.mods.DealRecord.init(); });</script
+  <div class="correlative-items J_TAjaxContainer" id="rr-detail-recommend" data-sellerid="183262695" data-catid ="1512" data-itemid="13199871937">
+  </div <script>TShop.use('mod~relative', function(T) { T.mods.Relative.init(); });</script <div id="official-remind"> <dl class="tb-security"> <dt>安全提示：</dt <dd> <p>交易过程中请勿随意接收卖家发送的可疑文件，请勿点击不明来源的链接，付款前请务必详细核对支付信息。</p <p>推荐安全软件： <span><img src="http://img01.taobaocdn.com/tps/i1/T1hTaeXn8XXXXXXXXX-16-16.png" alt="搜狗浏览器" /><a href="http://123.taobao.com/sogou/?spm=1.69598.235062.1">搜狗浏览器</a </span <span><img src="http://img04.taobaocdn.com/tps/i4/T1BYCyXj8xXXXXXXXX-16-16.png" alt="手机密令" /><a href="http://110.taobao.com/product/dkey_detail.htm?spm=1.69598.235062.">手机密令</a </span <span><img src="http://img01.taobaocdn.com/tps/i1/T1DF6XXa8qXXaSQP_X-16-16.png" alt="淘宝浏览器" /><a href="http://browser.taobao.com?spm=1.69598.235062.3.tracelogww=friendreceive_hdtp30">淘宝浏览器</a </span <span><img src="http://img04.taobaocdn.com/tps/i4/T1rPavXgldXXXXXXXX-16-16.png" alt="QQ电脑管家" /><a href="http://www.taobao.com/go/chn/safe/911.php?spm=1.69598.235062.4">QQ电脑管家</a </span <a href="http://www.taobao.com/go/chn/safe/911.php?spm=1.69598.235062.5" target="_blank">安全软件中心>></a </p </dd </dl <dl class="tb-exemption"> <dt>免责声明：</dt <dd>淘宝网所展示的宝贝供求信息由买卖双方自行提供，其真实性、准确性和合法性由信息发布人负责。淘宝网不提供任何保证，并不承担任何法律责任。淘宝网友情提醒：为保障您的利益，请网上成交，贵重宝贝，请使用<a href="http://www.taobao.com/strade/strade.php?spm=1.69598.147873.6" target="_blank">支付宝</a交易。</dd </dl </div </div
+2012-04-28 12:35:27,711 [DEBUG] - ShowBuyerList url is: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://detailskip.taobao.com/json/show_buyer_list.htm?
+bid_page=1&
+page_size=15&
+is_start=false&
+item_type=b&
+ends=1335588924000&
+starts=1334984124000&
+item_id=13199871937&
+user_tag=475100160&
+old_quantity=2602&
+zhichong=true&
+sold_total_num=16&
+seller_num_id=183262695&
+dk=0&
+title=Apple%2F%C6%BB%B9%FB+iPhone+4S+%B4%F3%C2%BD%D0%D0+%CE%B4%B2%F0%B7%E2%CE%B4%BC%A4%BB%EE+%D4%A4%D7%B0%C8%ED%BC%FE+%B0%FC%D3%CA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="description" class="tshop-psm ke-post J_DetailSection"><h4 class="hd">宝贝详情</h> <div class="content" id="J_DivItemDesc">描述加载中</div<script>(function() {if (typeof desc === 'undefined') {setTimeout(arguments.callee, 100);return;} TShop.renderDesc(desc);})();</script</div <div class="tshop-psm tb-box" id="J_Detail"> <div id="reviews" class="J_DetailSection" data-reviewApi="http://rate.taobao.com/detail_rate.htm?userNumId=183262695.auctionNumId=13199871937.showContent=1&curren;tPage=1.ismore=0.siteID=7" data-reviewCountApi="" data-listApi="http://rate.taobao.com/feedRateList.htm?userNumId=183262695.auctionNumId=13199871937.siteID=7" data-commonApi="http://rate.taobao.com/detailCommon.htm?userNumId=183262695.auctionNumId=13199871937.siteID=7" data-usefulApi="http://rate.taobao.com/vote_useful.htm?userNumId=183262695.auctionNumId=13199871937"> <h4 class="hd">评价详情(<em class="J_ReviewsCount">0</em)</h> </div <script>TShop.use('mod~reviews', function(T) { T.mods.Reviews.init(); });</script <div id="deal-record" class="J_DetailSection"> <h4 class="hd"> 成交记录 (<em class="J_TDealCount">-</em件)</h> <div id="J_PublicInfo" class="tb-public"> <div class="tb-public-wrap"> <p class="tb-public-price">原价：<em> 5275.00 - 6725.00 </em元<span>拍下价格的不同可能会由促销和打折引起的，详情可以咨询卖家。</span</p </div </div <div id="J_showBuyerList" class="J_TAjaxContainer"> <div class="tb-clearfix msg msg-attention-shortcut tb-hidden J_TNoDealRecords"><p class="attention naked">暂时还没有买家购买此宝贝。</p</div
+
+ <div id="J_showListIndicator" class="J_TAjaxIndicator"></div
+ 
+ 
+  <button id="J_listBuyerOnView" type="button" class="J_TAjaxTrigger hidden J_TAjaxTriggerButton"
+   detail:params="http://detailskip.taobao.com/json/show_buyer_list.htm?bid_page=1.page_size=15.is_start=false⁢em_type=b.ends=1336193724000☆ts=1335588924000⁢em_id=13199871937.user_tag=475100160.old_quantity=2683.zhichong=true/d_total_num=16.seller_num_id=183262695.dk=0.title=Apple%2F%C6%BB%B9%FB+iPhone+4S+%B4%F3%C2%BD%D0%D0+%CE%B4%B2%F0%B7%E2%CE%B4%BC%A4%BB%EE+%D4%A4%D7%B0%C8%ED%BC%FE+%B0%FC%D3%CA,showBuyerList" >c</button </div</div <script>TShop.use('mod~deal-record', function(T) { T.mods.DealRecord.init(); });</script <div class="correlative-items J_TAjaxContainer" id="rr-detail-recommend" data-sellerid="183262695" data-catid ="1512" data-itemid="13199871937"></div <script>TShop.use('mod~relative', function(T) { T.mods.Relative.init(); });</script <div id="official-remind"> <dl class="tb-security"> <dt>安全提示：</dt <dd> <p>交易过程中请勿随意接收卖家发送的可疑文件，请勿点击不明来源的链接，付款前请务必详细核对支付信息。</p <p>推荐安全软件： <span><img src="http://img01.taobaocdn.com/tps/i1/T1hTaeXn8XXXXXXXXX-16-16.png" alt="搜狗浏览器" /><a href="http://123.taobao.com/sogou/?spm=1.69598.235062.1">搜狗浏览器</a </span <span><img src="http://img04.taobaocdn.com/tps/i4/T1BYCyXj8xXXXXXXXX-16-16.png" alt="手机密令" /><a href="http://110.taobao.com/product/dkey_detail.htm?spm=1.69598.235062.">手机密令</a </span <span><img src="http://img01.taobaocdn.com/tps/i1/T1DF6XXa8qXXaSQP_X-16-16.png" alt="淘宝浏览器" /><a href="http://browser.taobao.com?spm=1.69598.235062.3.tracelogww=friendreceive_hdtp30">淘宝浏览器</a </span <span><img src="http://img04.taobaocdn.com/tps/i4/T1rPavXgldXXXXXXXX-16-16.png" alt="QQ电脑管家" /><a href="http://www.taobao.com/go/chn/safe/911.php?spm=1.69598.235062.4">QQ电脑管家</a </span <a href="http://www.taobao.com/go/chn/safe/911.php?spm=1.69598.235062.5" target="_blank">安全软件中心>></a </p </dd </dl <dl class="tb-exemption"> <dt>免责声明：</dt <dd>淘宝网所展示的宝贝供求信息由买卖双方自行提供，其真实性、准确性和合法性由信息发布人负责。淘宝网不提供任何保证，并不承担任何法律责任。淘宝网友情提醒：为保障您的利益，请网上成交，贵重宝贝，请使用<a href="http://www.taobao.com/strade/strade.php?spm=1.69598.147873.6" target="_blank">支付宝</a交易。</dd </dl </div </div
+
+2

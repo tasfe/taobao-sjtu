@@ -358,27 +358,19 @@ public class ItemDetailPageParser extends BasePageParser {
 
 	public String getShowBuyerListUrl(String itemDetailPageUrl) {
 		String showBuyerListUrl = "";
-		Document doc;
 
-		GetMethod getMethod = new GetMethod(this.getHttpClient(),
-				itemDetailPageUrl);
+		GetMethod getMethod = new GetMethod(this.getHttpClient(), itemDetailPageUrl);
 		getMethod.doGet();
-		try {
-			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
-					.getEntity()));
-			Elements eles = doc.select("button#J_listBuyerOnView");
+		String tmpStr = getMethod.getResponseAsString();
+		getMethod.shutDown();
 
-			log.debug("Find elements's size is: " + eles.size());
-			for (Element e : eles) {
-				String tmp = e.attr("detail:params").trim();
-				showBuyerListUrl = tmp.substring(0, tmp.length()
-						- ",showBuyerList".length());
-			}
-		} catch (IllegalStateException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+		int base = tmpStr.indexOf("detail:params=\"");
+		int begin = tmpStr.indexOf("\"", base);
+		int end = tmpStr.indexOf(",showBuyerList");
+
+		String myStr = tmpStr.substring(begin + 1, end);
+
+		showBuyerListUrl = myStr;
 		return showBuyerListUrl;
 	}
 

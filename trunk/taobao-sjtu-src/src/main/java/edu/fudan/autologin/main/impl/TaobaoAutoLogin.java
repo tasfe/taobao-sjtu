@@ -37,6 +37,7 @@ import edu.fudan.autologin.pojos.CategoryInfo;
 import edu.fudan.autologin.pojos.FeedRate;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.Postage;
+import edu.fudan.autologin.utils.FileUtil;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 
@@ -185,39 +186,39 @@ public class TaobaoAutoLogin implements AutoLogin {
 	}
 
 	/**
-	 * 1. get ItemDetailPage;
-	 * 2. get showBuyerListUrl from ItemDetailPage; 
+	 * 1. get ItemDetailPage; 2. get showBuyerListUrl from ItemDetailPage;
 	 * 3.according to taobao rules, construct our showBuyerListUrl list;
-	 * 4.according to construted showBuyerListUrl, get json data from server; 
+	 * 4.according to construted showBuyerListUrl, get json data from server;
 	 * 5.parsing json data from server and get our desired data;
 	 * 
 	 */
 	public void parseShowBuyerListDoc() {
-		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=12962369261";
+		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=13599064573";
 		String showBuyerListUrl = getShowBuyerListUrl(itemDetailPageUrl);
-		log.debug("ShowBuyerList url is: ");
-		log.debug( showBuyerListUrl);
+		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
 		int pageNum = 1;
-		while (true) {
-			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-					showBuyerListUrl, pageNum++);
-			
-			if(parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false){
-				break;//最后一个页面，跳出循环
-			}
+		// while (true) {
+		String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+				showBuyerListUrl, pageNum++);
+
+		if (parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false) {
+			// break;//最后一个页面，跳出循环
 		}
+		// }
 	}
 
 	/**
 	 * 
 	 * 当解析到最后一个页面时返回false，其余页面返回true
+	 * 
 	 * @param doc
 	 * @return
 	 */
-	public boolean parseConstructedShowBuyerListDoc(Document doc){
-		
+	public boolean parseConstructedShowBuyerListDoc(Document doc) {
+
 		return true;
 	}
+
 	public void doMyWork() {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
@@ -260,26 +261,19 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 	public String getShowBuyerListUrl(String itemDetailPageUrl) {
 		String showBuyerListUrl = "";
-		Document doc;
 
 		GetMethod getMethod = new GetMethod(httpClient, itemDetailPageUrl);
 		getMethod.doGet();
-		try {
-			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
-					.getEntity()));
-			Elements eles = doc.select("button#J_listBuyerOnView");
+		String tmpStr = getMethod.getResponseAsString();
+		getMethod.shutDown();
 
-			log.debug("Find elements's size is: "+eles.size());
-			for (Element e : eles) {
-				String tmp = e.attr("detail:params").trim();
-				showBuyerListUrl = tmp.substring(0, tmp.length()
-						- ",showBuyerList".length());
-			}
-		} catch (IllegalStateException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+		int base = tmpStr.indexOf("detail:params=\"");
+		int begin = tmpStr.indexOf("\"", base);
+		int end = tmpStr.indexOf(",showBuyerList");
+
+		String myStr = tmpStr.substring(begin + 1, end);
+
+		showBuyerListUrl = myStr;
 		return showBuyerListUrl;
 	}
 
@@ -323,14 +317,14 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 	public void execute() {
 		ExcelUtil.prepare();
-		//parseShowBuyerListDoc();
+		parseShowBuyerListDoc();
 		// autoLogin();
 		// testDealRecord(getShowBuyerListUrl());
 		// testGet();
 		// isLoginSuccess();
 		// searchResultPageParser();
-		parseReviews();
-//		 doMyWork();
+		// parseReviews();
+		// doMyWork();
 		shutDown();
 	}
 
@@ -362,23 +356,30 @@ public class TaobaoAutoLogin implements AutoLogin {
 		TaobaoAutoLogin taobaoAutoLogin = new TaobaoAutoLogin();
 		taobaoAutoLogin.execute();
 	}
-	
-	
-	public void parseReviews(){
-	//	for(int i = 1; i < 2; ++i){
-			GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(getFeedRateListUrl(),1));
+
+	public void parseReviews() {
+		int pageNum = 0;
+		// while(true){
+		for (int i = 1; i < 2; ++i) {
+			log.info("--------------------------------------------------------------------------------------");
+			log.info("This is page num of review:" + pageNum);
+			GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
+					getFeedRateListUrl(), ++pageNum));
 			get.doGet();
-			String jsonStr = getFeedRateListJsonString(get.getResponseAsString().trim());
+			String jsonStr = getFeedRateListJsonString(get
+					.getResponseAsString().trim());
 			parseFeedRateListJson(jsonStr);
-			
+
 			get.shutDown();
-		//}
+			// }
+		}
 	}
-	public String getFeedRateListUrl(){
+
+	public String getFeedRateListUrl() {
 		String itemDetailUrl = "http://item.taobao.com/item.htm?id=13599064573";
-		
+
 		String baseFeedRateListUrl = "";
-		
+
 		Document doc;
 		GetMethod getMethod = new GetMethod(httpClient, itemDetailUrl);
 		getMethod.doGet();
@@ -387,48 +388,74 @@ public class TaobaoAutoLogin implements AutoLogin {
 					.getEntity()));
 			Elements eles = doc.select("div#reviews");
 
-			log.debug("Find elements's size is: "+eles.size());
+			log.debug("Find elements's size is: " + eles.size());
 			for (Element e : eles) {
 				baseFeedRateListUrl = e.attr("data-listApi").trim();
-				log.info("Reviews base url is: "+baseFeedRateListUrl);
+				log.info("Reviews base url is: " + baseFeedRateListUrl);
 			}
 		} catch (IllegalStateException e1) {
 			e1.printStackTrace();
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
+
 		return baseFeedRateListUrl;
-		
+
 	}
-	
-	public String constructFeedRateListUrl(String baseFeedRateListUrl, int currentPageNum){
-		String append = "&currentPageNum="+currentPageNum+"&rateType=&orderType=sort_weight&showContent=1&attribute=&callback=jsonp_reviews_list";
+
+	public String constructFeedRateListUrl(String baseFeedRateListUrl,
+			int currentPageNum) {
+		String append = "&currentPageNum="
+				+ currentPageNum
+				+ "&rateType=&orderType=feedbackdate&showContent=1&attribute=&callback=jsonp_reviews_list";
 		StringBuffer sb = new StringBuffer();
 		sb.append(baseFeedRateListUrl);
 		sb.append(append);
-		
+
 		return sb.toString();
 	}
-	
-	
+
 	/**
 	 * 将从服务器端返回的字符串转化为json字符串
+	 * 
 	 * @return
 	 */
-	public String getFeedRateListJsonString(String str){
-		return str.substring("jsonp_reviews_list(".length(),str.length() -1 );
+	public String getFeedRateListJsonString(String str) {
+		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);
 	}
-	
-	public void parseFeedRateListJson(String str){
+
+	public void parseFeedRateListJson(String str) {
 		log.info(str);
-		
+
 		JSONObject jsonObj = JSONObject.fromObject(str);
 		log.info(jsonObj.getString("maxPage"));
-		
-		//FeedRate feedRateJson = (FeedRate) JSONArray.toBean(jsonObj, FeedRate.class);
-		//log.info("content: "+feedRateJson.getComments().get(0).getContent());
-		
-		
+
+		JSONArray comments = jsonObj.getJSONArray("comments");
+
+		List list = (List) JSONSerializer.toJava(comments);
+
+		List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
+		for (Object o : list) {
+			JSONObject j = JSONObject.fromObject(o);
+			log.info("Date is:" + j.getString("date"));
+			log.info("Content is:" + j.getString("content"));
+		}
+		// JSONArray comments = jsonObj.getJSONArray("comments");
+		// List<FeedRateComment> feedRateComments =
+		// JSONArray.toList(comments,FeedRateComment.class);
+		//
+		// log.info("Array size is: " + feedRateComments.size());
+		//
+		// for(FeedRateComment cmt : feedRateComments){
+		// log.info("Content is: " + cmt.getContent());
+		// log.info("Date is: " + cmt.getDate());
+		// log.info("------------------------------");
+		// }
+		//
+		// FeedRate feedRateJson = (FeedRate) JSONObject.toBean(jsonObj,
+		// FeedRate.class);
+		// log.info("content: "+feedRateJson.getComments().get(0).getContent());
+		//
+
 	}
 }
