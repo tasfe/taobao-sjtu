@@ -70,12 +70,12 @@ public class FeedRateComment {
 	public void setAward(String award) {
 		this.award = award;
 	}
-	public String getReply() {
-		return reply;
-	}
-	public void setReply(String reply) {
-		this.reply = reply;
-	}
+//	public String getReply() {
+//		return reply;
+//	}
+//	public void setReply(String reply) {
+//		this.reply = reply;
+//	}
 	public int getUserful() {
 		return userful;
 	}
@@ -101,7 +101,7 @@ public class FeedRateComment {
 	private String tag;
 	private String rateId;
 	private String award;
-	private String reply;
+//	private String reply = null;
 	private int userful;
 	private String date;
 	private FeedRateUserAttr user;
