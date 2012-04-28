@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.sound.sampled.DataLine;
+
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
@@ -22,6 +25,7 @@ import org.jsoup.select.Elements;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.main.impl.TaobaoAutoLogin;
+import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.Postage;
 
@@ -32,6 +36,8 @@ public class ItemDetailPageParser extends BasePageParser {
 	private String postageUrl;
 	private String saleNumUrl;
 	private String reviewUrl;
+	
+	private List<String> dateList = new ArrayList<String>();
 
 	public String getPostageUrl() {
 		return postageUrl;
@@ -408,14 +414,18 @@ public class ItemDetailPageParser extends BasePageParser {
 	}
 
 	public void parseReviews() {
-		int pageNum = 1;
+		int pageNum = 0;
 		while (true) {
-			GetMethod get = new GetMethod(this.getHttpClient(),
-					constructFeedRateListUrl(getFeedRateListUrl(), pageNum++));
+			log.info("--------------------------------------------------------------------------------------");
+			log.info("This review of page num is: " + (++pageNum));
+			GetMethod get = new GetMethod(this.getHttpClient(), constructFeedRateListUrl(
+					getFeedRateListUrl(), pageNum));
 			get.doGet();
 			String jsonStr = getFeedRateListJsonString(get
 					.getResponseAsString().trim());
-			parseFeedRateListJson(jsonStr);
+			if (parseFeedRateListJson(jsonStr) == false) {
+				break;
+			}
 
 			get.shutDown();
 		}
@@ -426,24 +436,17 @@ public class ItemDetailPageParser extends BasePageParser {
 
 		String baseFeedRateListUrl = "";
 
-		Document doc;
+		String tmpStr = "";
 		GetMethod getMethod = new GetMethod(this.getHttpClient(), itemDetailUrl);
 		getMethod.doGet();
-		try {
-			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
-					.getEntity()));
-			Elements eles = doc.select("div#reviews");
+		tmpStr = getMethod.getResponseAsString();
+		getMethod.shutDown();
 
-			log.debug("Find elements's size is: " + eles.size());
-			for (Element e : eles) {
-				baseFeedRateListUrl = e.attr("data-listApi").trim();
-				log.info("Reviews base url is: " + baseFeedRateListUrl);
-			}
-		} catch (IllegalStateException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+		int base = tmpStr.indexOf("data-listApi=");
+		int begin = tmpStr.indexOf("\"", base);
+		int end = tmpStr.indexOf("\"", begin + 1);
+		baseFeedRateListUrl = tmpStr.substring(begin + 1, end);
+		log.info("Base feed url is: " + baseFeedRateListUrl);
 
 		return baseFeedRateListUrl;
 
@@ -453,7 +456,7 @@ public class ItemDetailPageParser extends BasePageParser {
 			int currentPageNum) {
 		String append = "&currentPageNum="
 				+ currentPageNum
-				+ "&rateType=&orderType=sort_weight&showContent=1&attribute=&callback=jsonp_reviews_list";
+				+ "&rateType=&orderType=feedbackdate&showContent=1&attribute=&callback=jsonp_reviews_list";
 		StringBuffer sb = new StringBuffer();
 		sb.append(baseFeedRateListUrl);
 		sb.append(append);
@@ -470,24 +473,38 @@ public class ItemDetailPageParser extends BasePageParser {
 		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);
 	}
 
-	/**
-	 * 
-	 * 当解析到最后一个页面时返回false，其余页面返回true
-	 * 
-	 * @param doc
-	 * @return
-	 */
 	public boolean parseFeedRateListJson(String str) {
-		log.info(str);
 
 		JSONObject jsonObj = JSONObject.fromObject(str);
-		log.info(jsonObj.getString("maxPage"));
 
-		// FeedRate feedRateJson = (FeedRate) JSONArray.toBean(jsonObj,
-		// FeedRate.class);
-		// log.info("content: "+feedRateJson.getComments().get(0).getContent());
-		return false;
+		if (jsonObj.get("comments").equals(null)) {
+			log.info("There is no comment.");
+			return false;
+		} else {
 
+			JSONArray comments = jsonObj.getJSONArray("comments");
+
+			List list = (List) JSONSerializer.toJava(comments);
+
+			List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
+			int i = 1;
+			for (Object o : list) {
+				JSONObject j = JSONObject.fromObject(o);
+				log.info("Date is: " + j.getString("date"));
+				dateList.add(j.getString("date"));
+				log.info("Content is: " + j.getString("content"));
+				log.info("Comment NO is: "+i++);
+			}
+			return true;
+		}
+	}
+	
+	public String getFirstReviewDate(){
+		return dateList.get(0);
+	}
+	
+	public String getLastReviewDate(){
+		return dateList.get(dateList.size()-1);	
 	}
 
 }

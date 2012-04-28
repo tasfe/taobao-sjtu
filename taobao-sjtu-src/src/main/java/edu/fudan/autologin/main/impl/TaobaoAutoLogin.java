@@ -193,7 +193,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 	 * 
 	 */
 	public void parseShowBuyerListDoc() {
-		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=13599064573";
+		String itemDetailPageUrl = "http://item.taobao.com/item.htm?id=16817112297";
 		String showBuyerListUrl = getShowBuyerListUrl(itemDetailPageUrl);
 		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
 		int pageNum = 1;
@@ -317,13 +317,13 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 	public void execute() {
 		ExcelUtil.prepare();
-		parseShowBuyerListDoc();
+		// parseShowBuyerListDoc();
 		// autoLogin();
 		// testDealRecord(getShowBuyerListUrl());
 		// testGet();
 		// isLoginSuccess();
 		// searchResultPageParser();
-		// parseReviews();
+		parseReviews();
 		// doMyWork();
 		shutDown();
 	}
@@ -359,45 +359,38 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 	public void parseReviews() {
 		int pageNum = 0;
-		// while(true){
-		for (int i = 1; i < 2; ++i) {
+		while (true) {
 			log.info("--------------------------------------------------------------------------------------");
-			log.info("This is page num of review:" + pageNum);
+			log.info("This review of page num is: " + (++pageNum));
 			GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
-					getFeedRateListUrl(), ++pageNum));
+					getFeedRateListUrl(), pageNum));
 			get.doGet();
 			String jsonStr = getFeedRateListJsonString(get
 					.getResponseAsString().trim());
-			parseFeedRateListJson(jsonStr);
+			if (parseFeedRateListJson(jsonStr) == false) {
+				break;
+			}
 
 			get.shutDown();
-			// }
 		}
 	}
 
 	public String getFeedRateListUrl() {
-		String itemDetailUrl = "http://item.taobao.com/item.htm?id=13599064573";
+		String itemDetailUrl = "http://item.taobao.com/item.htm?id=14799383754";
 
 		String baseFeedRateListUrl = "";
 
-		Document doc;
+		String tmpStr = "";
 		GetMethod getMethod = new GetMethod(httpClient, itemDetailUrl);
 		getMethod.doGet();
-		try {
-			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
-					.getEntity()));
-			Elements eles = doc.select("div#reviews");
+		tmpStr = getMethod.getResponseAsString();
+		getMethod.shutDown();
 
-			log.debug("Find elements's size is: " + eles.size());
-			for (Element e : eles) {
-				baseFeedRateListUrl = e.attr("data-listApi").trim();
-				log.info("Reviews base url is: " + baseFeedRateListUrl);
-			}
-		} catch (IllegalStateException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+		int base = tmpStr.indexOf("data-listApi=");
+		int begin = tmpStr.indexOf("\"", base);
+		int end = tmpStr.indexOf("\"", begin + 1);
+		baseFeedRateListUrl = tmpStr.substring(begin + 1, end);
+		log.info("Base feed url is: " + baseFeedRateListUrl);
 
 		return baseFeedRateListUrl;
 
@@ -424,38 +417,28 @@ public class TaobaoAutoLogin implements AutoLogin {
 		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);
 	}
 
-	public void parseFeedRateListJson(String str) {
-		log.info(str);
+	public boolean parseFeedRateListJson(String str) {
 
 		JSONObject jsonObj = JSONObject.fromObject(str);
-		log.info(jsonObj.getString("maxPage"));
 
-		JSONArray comments = jsonObj.getJSONArray("comments");
+		if (jsonObj.get("comments").equals(null)) {
+			log.info("There is no comment.");
+			return false;
+		} else {
 
-		List list = (List) JSONSerializer.toJava(comments);
+			JSONArray comments = jsonObj.getJSONArray("comments");
 
-		List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
-		for (Object o : list) {
-			JSONObject j = JSONObject.fromObject(o);
-			log.info("Date is:" + j.getString("date"));
-			log.info("Content is:" + j.getString("content"));
+			List list = (List) JSONSerializer.toJava(comments);
+
+			List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
+			int i = 1;
+			for (Object o : list) {
+				JSONObject j = JSONObject.fromObject(o);
+				log.info("Date is: " + j.getString("date"));
+				log.info("Content is: " + j.getString("content"));
+				log.info("Comment NO is: "+i++);
+			}
+			return true;
 		}
-		// JSONArray comments = jsonObj.getJSONArray("comments");
-		// List<FeedRateComment> feedRateComments =
-		// JSONArray.toList(comments,FeedRateComment.class);
-		//
-		// log.info("Array size is: " + feedRateComments.size());
-		//
-		// for(FeedRateComment cmt : feedRateComments){
-		// log.info("Content is: " + cmt.getContent());
-		// log.info("Date is: " + cmt.getDate());
-		// log.info("------------------------------");
-		// }
-		//
-		// FeedRate feedRateJson = (FeedRate) JSONObject.toBean(jsonObj,
-		// FeedRate.class);
-		// log.info("content: "+feedRateJson.getComments().get(0).getContent());
-		//
-
 	}
 }
