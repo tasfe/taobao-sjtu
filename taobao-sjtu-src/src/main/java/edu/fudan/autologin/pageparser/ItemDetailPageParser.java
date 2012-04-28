@@ -473,6 +473,13 @@ public class ItemDetailPageParser extends BasePageParser {
 		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);
 	}
 
+	
+	/***
+	 * 
+	 * 解析从服务器端返回的json数据
+	 * @param str
+	 * @return
+	 */
 	public boolean parseFeedRateListJson(String str) {
 
 		JSONObject jsonObj = JSONObject.fromObject(str);
