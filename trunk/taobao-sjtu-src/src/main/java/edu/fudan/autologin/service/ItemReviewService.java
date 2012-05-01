@@ -207,10 +207,12 @@ public class ItemReviewService {
 				FeedRateComment cmt = new FeedRateComment();
 				cmt.setDate(j.getString("date"));
 				cmt.setContent(j.getString("content"));
-				log.info("Date is: " + j.getString("date"));
-				log.info("Content is: " + j.getString("content"));
-				log.info("Auction title is: "+j.getJSONObject("auction").getString("title"));
 				log.info("Comment NO is: " + i++);
+				log.info("Date is: " + j.getString("date"));
+				log.info("Auction title is: "+j.getJSONObject("auction").getString("title"));
+				log.info("Content is: " + j.getString("content"));
+				
+				
 			}
 			return true;
 		}

@@ -55,85 +55,8 @@ public class TaobaoAutoLogin implements AutoLogin {
 		ExcelUtil.createSheets();
 	}
 
-	/**
-	 * test get request
-	 */
-	public void testGet() {
-		String getUrl = "http://item.taobao.com/item.htm?id=13921701227";
-		GetMethod getMethod = new GetMethod(httpClient, getUrl);
 
-		getMethod.doGet();// 给get请求添加httpheader
-		// getMethod.printResponse("utf-8");
-		String postageUrl = null;
-		postageUrl = getPostageUrl(getMethod.getResponseAsString());
-		getMethod.shutDown();
-
-		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
-		NameValuePair nvp1 = new BasicNameValuePair("referer",
-				"http://item.taobao.com/item.htm?id="
-						+ getIdFromPostageUrl(postageUrl));
-		headers1.add(nvp1);
-		GetMethod postage = new GetMethod(httpClient, postageUrl);
-		postage.doGet(headers1);
-		// postage.printResponse();
-		getPostageFromJson(postage.getResponseAsString());
-
-		postage.shutDown();
-	}
-
-	public String getPostageUrl(String str) {// 获得邮费get请求的url地址
-		Pattern pattern = Pattern.compile("getShippingInfo:\"(.+?)\"");
-		Matcher matcher = pattern.matcher(str);
-		if (matcher.find()) {
-			//System.out.println(matcher.group(1));
-			return matcher.group(1);
-		} else {
-			System.out.println("no match");
-		}
-		return null;
-	}
-
-	/**
-	 * 
-	 * 根据postage url地址，获得id
-	 * 
-	 * @param str
-	 * @return
-	 */
-	public String getIdFromPostageUrl(String str) {
-		Pattern pattern = Pattern.compile("&id=(.+?)&");
-		Matcher matcher = pattern.matcher(str);
-		if (matcher.find()) {
-			//System.out.println(matcher.group(1));
-			return matcher.group(1);
-		} else {
-			System.out.println("no match");
-		}
-
-		return null;
-	}
-
-	public Postage getPostageFromJson(String json) {
-		//System.out.println(json);
-		Postage postage = new Postage();
-		//System.out.println(json);
-
-		String delimeters = "[()]+";
-		String[] tokens = json.split(delimeters);
-
-		//System.out.println(tokens.length);
-//		for (int i = 0; i < tokens.length; i++)
-//			System.out.println(tokens[i]);
-
-		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tokens[1]);
-
-		
-		log.info("Type: "+jsonObj.getString("type"));
-		log.info("Location: "+jsonObj.getString("location"));
-		log.info("Carriage: "+jsonObj.getString("carriage"));
-
-		return postage;
-	}
+	
 
 	public void autoLogin() {
 
@@ -235,15 +158,15 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
 
-//		CategoryInfo ci1 = new CategoryInfo();
-//		ci1.setCategoryName("洁面");
-//		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
-//		categoryInfos.add(ci1);
-//
-//		CategoryInfo ci2 = new CategoryInfo();
-//		ci2.setCategoryName("热门手机");
-//		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
-//		categoryInfos.add(ci2);
+		CategoryInfo ci1 = new CategoryInfo();
+		ci1.setCategoryName("洁面");
+		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
+		categoryInfos.add(ci1);
+
+		CategoryInfo ci2 = new CategoryInfo();
+		ci2.setCategoryName("热门手机");
+		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
+		categoryInfos.add(ci2);
 
 		CategoryInfo ci3 = new CategoryInfo();
 		ci3.setCategoryName("笔记本");
@@ -326,9 +249,9 @@ public class TaobaoAutoLogin implements AutoLogin {
 		List<Document> buyerDocList = new ArrayList<Document>();
 		return buyerDocList;
 	}
-
+	
 	public void execute() {
-//		beforeWriteExcel();
+		beforeWriteExcel();
 		// testDealRecord(getShowBuyerListUrl());
 		// testGet();
 		// isLoginSuccess();
@@ -337,11 +260,11 @@ public class TaobaoAutoLogin implements AutoLogin {
 //		parseReviews();
 		// itemDetailPageParser();
 //		autoLogin();
-//		doMyWork();
-//		shutDown();
+		doMyWork();
+		shutDown();
 		// 
 		//parseShowBuyerListDoc();
-		userRatePageParser();
+//		userRatePageParser();
 	}
 
 	public void topTenPageParser() {

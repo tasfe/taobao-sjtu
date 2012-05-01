@@ -30,6 +30,7 @@ import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.Postage;
+import edu.fudan.autologin.service.PostageService;
 
 public class ItemDetailPageParser extends BasePageParser {
 	private static final Logger log = Logger
@@ -38,6 +39,8 @@ public class ItemDetailPageParser extends BasePageParser {
 	private String postageUrl;
 	private String saleNumUrl;
 	private String reviewUrl;
+	
+	private int buyerSum = 0;
 	
 	private List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
 	
@@ -93,13 +96,20 @@ public class ItemDetailPageParser extends BasePageParser {
 		String location = "";
 		String freight = "";
 
-		Postage postage = getPostage();
-		location = postage.getLocation();
-		freight = postage.getCarriage();
+		PostageService postageService = new PostageService();
+		postageService.setHttpClient(this.getHttpClient());
+		postageService.setItemPageUrl(this.getPageUrl());
+		
+		postageService.parsePostage();
+		
+//		Postage postage = postageService.getPostage();
+		location = postageService.getPostage().getLocation();
+		freight = postageService.getPostage().getCarriage();
 		freightPrice = location + " : " + freight;
 		log.info("freightPrice: " + freightPrice);
 
 		int saleNumIn30Days = getSaleNum();
+		buyerSum = saleNumIn30Days;
 		log.info("saleNumIn30Days: " + saleNumIn30Days);
 
 		int reviews = getReviewsNum();
@@ -184,108 +194,20 @@ public class ItemDetailPageParser extends BasePageParser {
 
 		//assert (itemInfo.getItemBuyersHref() != null);
 		
-		for(BuyerInfo buyerInfo: buyerInfos){
-			ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(this.getHttpClient(), buyerInfo.getHref());
-			itemBuyersPageParser.setBuyInfo(buyerInfo);
-			itemBuyersPageParser.execute();
-		}
-
-		assert (itemInfo.getUserRateHref() != null);
-		UserRatePageParser userRatePageParser = new UserRatePageParser(
-				this.getHttpClient(), itemInfo.getUserRateHref());
-		userRatePageParser.execute();
+		log.info("do next------------------------------------------------");
+//		for(BuyerInfo buyerInfo: buyerInfos){
+//			ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(this.getHttpClient(), buyerInfo.getHref());
+//			itemBuyersPageParser.setBuyInfo(buyerInfo);
+//			itemBuyersPageParser.execute();
+//		}
+//
+//		assert (itemInfo.getUserRateHref() != null);
+//		UserRatePageParser userRatePageParser = new UserRatePageParser(
+//				this.getHttpClient(), itemInfo.getUserRateHref());
+//		userRatePageParser.execute();
 	}
 
-	public String getPostageUrl(String str) {// 获得邮费get请求的url地址
-		Pattern pattern = Pattern.compile("getShippingInfo:\"(.+?)\"");
-		Matcher matcher = pattern.matcher(str);
-		if (matcher.find()) {
-//			System.out.println(matcher.group(1));
-			return matcher.group(1);
-		} else {
-			System.out.println("no match");
-		}
-		return null;
-	}
-
-	/**
-	 * 
-	 * 根据postage url地址，获得id
-	 * 
-	 * @param str
-	 * @return
-	 */
-	public String getIdFromPostageUrl(String str) {
-		Pattern pattern = Pattern.compile("&id=(.+?)&");
-		Matcher matcher = pattern.matcher(str);
-		if (matcher.find()) {
-//			System.out.println(matcher.group(1));
-			return matcher.group(1);
-		} else {
-			System.out.println("no match");
-		}
-
-		return null;
-	}
-
-	/**
-	 * 
-	 * parse json string in order to get location,carriage and other info
-	 * 
-	 * @param rtnStr
-	 * @return
-	 */
-	public Postage getPostageFromJson(String jsonStr) {
-		Postage postage = new Postage();
-
-		log.debug("The json string of postage from server is: " + jsonStr);
-
-		String delimeters = "[()]+";
-		String[] tokens = jsonStr.split(delimeters);// split the string to get
-													// json data
-
-		/**
-		 * { type:'buyerPayPostfee', location:'浙江宁波', carriage:'快递:22.00元
-		 * EMS:25.00元 平邮:100.00元 ' }
-		 */
-
-		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tokens[1]);
-
-		postage.setCarriage(jsonObj.getString("carriage"));
-		postage.setLocation(jsonObj.getString("location"));
-		return postage;
-	}
-
-	/**
-	 * 
-	 * 调用此函数后可以得到邮费的起始地址和邮费
-	 * 
-	 * @param getUrl
-	 * @return
-	 */
-	public Postage getPostage() {
-
-		Postage postage = new Postage();
-
-		GetMethod getMethod = new GetMethod(this.getHttpClient(),
-				this.getPageUrl());
-		getMethod.doGet();// 给get请求添加httpheader
-		String postageUrl = null;
-		postageUrl = getPostageUrl(getMethod.getResponseAsString());
-		getMethod.shutDown();
-
-		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
-		NameValuePair nvp1 = new BasicNameValuePair("referer",
-				"http://item.taobao.com/item.htm?id="
-						+ getIdFromPostageUrl(postageUrl));
-		headers1.add(nvp1);
-		GetMethod postageGet = new GetMethod(this.getHttpClient(), postageUrl);
-		postageGet.doGet(headers1);
-		postage = getPostageFromJson(postageGet.getResponseAsString());
-
-		postageGet.shutDown();
-		return postage;
-	}
+	
 
 	/* 从服务器端获取json数据，并解析成jsonObject，由于服务器端返回的是js，需要先获取纯json String */
 	public JSONObject getJsonFromServer(String referer, String requestUrl) {
@@ -311,16 +233,9 @@ public class ItemDetailPageParser extends BasePageParser {
 		JSONObject saleNumObj = getJsonFromServer(referer, requestUrl);
 		log.info("Sale json string from server is: "+saleNumObj.toString());
 		/**
-		 * 
-		 * 
-		 * 
 		 * {"quantity":{"quanity":0,"interval":30}}
 		 */
 		if(saleNumObj.toString().trim().length() == "{\"quantity\":{\"quanity\":0,\"interval\":30}}".length()){
-//			Quantity quantity = (Quantity) JSONObject.toBean(saleNumObj,Quantity.class);
-//			log.info("SaleNum is: "+quantity.quanity);
-//			saleNum = quantity.quanity;
-			
 			JSONObject quantityObj = saleNumObj.getJSONObject("quantity");
 			int quanity = quantityObj.getInt("quanity");
 			int interval = quantityObj.getInt("interval");
@@ -328,25 +243,12 @@ public class ItemDetailPageParser extends BasePageParser {
 			log.debug("Sale num string  is: "+quanity);
 			saleNum = quanity;
 			
-//			String tmpStr = saleNumObj.toString().trim();
-//			
-//			int base = tmpStr.indexOf("quanity\"");
-//			int begin = tmpStr.indexOf(":",base);
-//			int end = tmpStr.indexOf(",\"interval",begin+1);
-//			
-//			String s1 = tmpStr.substring(begin+1,end);
-//			
-//			log.debug("Sale num string  is: "+s1);
-//			saleNum = Integer.parseInt(s1);
 		}else{
 			saleNum = saleNumObj.getInt("quanity");
 		}
 		return saleNum;
 	}
-public class Quantity{
-	public int quanity;
-	public int interval;
-}
+
 	public int getReviewsNum() {
 		int reviewsNum = 0;
 		String referer = getPageUrl();
@@ -371,16 +273,21 @@ public class Quantity{
 		String itemDetailPageUrl = this.getPageUrl();
 		String showBuyerListUrl = getShowBuyerListUrl(itemDetailPageUrl);
 		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
-		int pageNum = 1;
-		while (true) {
+//		int pageNum = 1;
+		int pageSize = 15;
+		int pageSum = (buyerSum%pageSize == 0) ? buyerSum/pageSize : (buyerSum/pageSize + 1);
+		
+		for(int pageNum = 1; pageNum <= pageSum; ++pageNum){
+//		while (true) {
 			log.info("This is buyers of Page NO: "+pageNum);
 			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
 					showBuyerListUrl, pageNum);
 
-			if (parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false) {
-				log.info("Total page NO is: "+(pageNum-1));
-				break;// 最后一个页面，跳出循环
-			}
+			parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl));
+//			if (parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false) {
+//				log.info("Total page NO is: "+(pageNum-1));
+//				break;// 最后一个页面，跳出循环
+//			}
 			
 			++pageNum;
 		}
@@ -434,18 +341,20 @@ public class Quantity{
 	 * @param doc
 	 * @return
 	 */
-	public boolean parseConstructedShowBuyerListDoc(Document doc) {
+	public void parseConstructedShowBuyerListDoc(Document doc) {
 
-		if (doc.toString().contains("暂时还没有买家购买此宝贝")) {
-			log.info("There is no buyers.");
-			return false;
-		} else {
-			parseBuyerListTable(doc);
-			return true;
-		}
+		parseBuyerListTable(doc);
+//		if (doc.toString().contains("暂时还没有买家购买此宝贝")) {
+//			log.info("There is no buyers.");
+//			return false;
+//		} else {
+//			parseBuyerListTable(doc);
+//			return true;
+//		}
 	}
 
 	public Document getShowBuyerListDoc(String getUrl) {
+		assert(getUrl != null);
 		GetMethod get = new GetMethod(this.getHttpClient(), getUrl);
 
 		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
