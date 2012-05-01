@@ -7,11 +7,11 @@ public class SellerRateInfo {
 	private String mainSale;
 	private String location;
 	private String createShopDate;
-//	private String sellerRate;
+	private String sellerRate;
 	private String buyerRate;
 	private String chargeNum;//卖家当前保证金金额
-	private String consumerPromise;
-	private String sevenDayReturn;
+	private boolean isConsumerPromise;
+	private boolean isSevenDayReturn;
 	private String matchScore;
 	private String serviceScore;
 	private String consignmentScore;
@@ -19,6 +19,7 @@ public class SellerRateInfo {
 	private String refundmentRateScore;
 	private String complaintScore;
 	private String punishmentScore;
+	
 	private String weekSumRateOk;
 	private String weekMainRateOk;
 	private String weekNotmainRateOk;
@@ -50,18 +51,12 @@ public class SellerRateInfo {
 	private String halfYearNotmainRateBad;
 	
 	private String beforeHalfYearSumRateOk;
-	private String beforeHalfYearMainRateOk;
-	private String beforeHalfYearNotmainRateOk;
 	private String beforeHalfYearSumRateNormal;
-	private String beforeHalfYearMainRateNormal;
-	private String beforeHalfYearNotmainRateNormal;
 	private String beforeHalfYearSumRateBad;
-	private String beforeHalfYearMainRateBad;
-	private String beforeHalfYearNotmainRateBad;
 	
-	private String sellerRate;
 	private String mainBusiness;
 	private String mainBusinessPercentage;
+	
 	public String getSellerId() {
 		return sellerId;
 	}
@@ -104,17 +99,17 @@ public class SellerRateInfo {
 	public void setChargeNum(String chargeNum) {
 		this.chargeNum = chargeNum;
 	}
-	public String getConsumerPromise() {
-		return consumerPromise;
+	public boolean isSevenDayReturn() {
+		return isSevenDayReturn;
 	}
-	public void setConsumerPromise(String consumerPromise) {
-		this.consumerPromise = consumerPromise;
+	public void setSevenDayReturn(boolean isSevenDayReturn) {
+		this.isSevenDayReturn = isSevenDayReturn;
 	}
-	public String getSevenDayReturn() {
-		return sevenDayReturn;
+	public boolean isConsumerPromise() {
+		return isConsumerPromise;
 	}
-	public void setSevenDayReturn(String sevenDayReturn) {
-		this.sevenDayReturn = sevenDayReturn;
+	public void setConsumerPromise(boolean isConsumerPromise) {
+		this.isConsumerPromise = isConsumerPromise;
 	}
 	public String getMatchScore() {
 		return matchScore;
@@ -326,54 +321,17 @@ public class SellerRateInfo {
 	public void setBeforeHalfYearSumRateOk(String beforeHalfYearSumRateOk) {
 		this.beforeHalfYearSumRateOk = beforeHalfYearSumRateOk;
 	}
-	public String getBeforeHalfYearMainRateOk() {
-		return beforeHalfYearMainRateOk;
-	}
-	public void setBeforeHalfYearMainRateOk(String beforeHalfYearMainRateOk) {
-		this.beforeHalfYearMainRateOk = beforeHalfYearMainRateOk;
-	}
-	public String getBeforeHalfYearNotmainRateOk() {
-		return beforeHalfYearNotmainRateOk;
-	}
-	public void setBeforeHalfYearNotmainRateOk(String beforeHalfYearNotmainRateOk) {
-		this.beforeHalfYearNotmainRateOk = beforeHalfYearNotmainRateOk;
-	}
 	public String getBeforeHalfYearSumRateNormal() {
 		return beforeHalfYearSumRateNormal;
 	}
 	public void setBeforeHalfYearSumRateNormal(String beforeHalfYearSumRateNormal) {
 		this.beforeHalfYearSumRateNormal = beforeHalfYearSumRateNormal;
 	}
-	public String getBeforeHalfYearMainRateNormal() {
-		return beforeHalfYearMainRateNormal;
-	}
-	public void setBeforeHalfYearMainRateNormal(String beforeHalfYearMainRateNormal) {
-		this.beforeHalfYearMainRateNormal = beforeHalfYearMainRateNormal;
-	}
-	public String getBeforeHalfYearNotmainRateNormal() {
-		return beforeHalfYearNotmainRateNormal;
-	}
-	public void setBeforeHalfYearNotmainRateNormal(
-			String beforeHalfYearNotmainRateNormal) {
-		this.beforeHalfYearNotmainRateNormal = beforeHalfYearNotmainRateNormal;
-	}
 	public String getBeforeHalfYearSumRateBad() {
 		return beforeHalfYearSumRateBad;
 	}
 	public void setBeforeHalfYearSumRateBad(String beforeHalfYearSumRateBad) {
 		this.beforeHalfYearSumRateBad = beforeHalfYearSumRateBad;
-	}
-	public String getBeforeHalfYearMainRateBad() {
-		return beforeHalfYearMainRateBad;
-	}
-	public void setBeforeHalfYearMainRateBad(String beforeHalfYearMainRateBad) {
-		this.beforeHalfYearMainRateBad = beforeHalfYearMainRateBad;
-	}
-	public String getBeforeHalfYearNotmainRateBad() {
-		return beforeHalfYearNotmainRateBad;
-	}
-	public void setBeforeHalfYearNotmainRateBad(String beforeHalfYearNotmainRateBad) {
-		this.beforeHalfYearNotmainRateBad = beforeHalfYearNotmainRateBad;
 	}
 	public String getSellerRate() {
 		return sellerRate;
