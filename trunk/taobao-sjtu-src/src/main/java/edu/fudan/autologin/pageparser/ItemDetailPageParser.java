@@ -182,21 +182,18 @@ public class ItemDetailPageParser extends BasePageParser {
 	@Override
 	public void doNext() {
 
-//		//assert (itemInfo.getItemBuyersHref() != null);
-//		
-//		for(BuyerInfo buyerInfo: buyerInfos){
-//			ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(this.getHttpClient(), buyerInfo.getHref());
-//			itemBuyersPageParser.setBuyInfo(buyerInfo);
-//			itemBuyersPageParser.execute();
-//		}
-////		ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(
-////				this.getHttpClient(), itemInfo.getItemBuyersHref());
-////		itemBuyersPageParser.execute();
-//
-//		assert (itemInfo.getUserRateHref() != null);
-//		UserRatePageParser userRatePageParser = new UserRatePageParser(
-//				this.getHttpClient(), itemInfo.getUserRateHref());
-//		userRatePageParser.execute();
+		//assert (itemInfo.getItemBuyersHref() != null);
+		
+		for(BuyerInfo buyerInfo: buyerInfos){
+			ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(this.getHttpClient(), buyerInfo.getHref());
+			itemBuyersPageParser.setBuyInfo(buyerInfo);
+			itemBuyersPageParser.execute();
+		}
+
+		assert (itemInfo.getUserRateHref() != null);
+		UserRatePageParser userRatePageParser = new UserRatePageParser(
+				this.getHttpClient(), itemInfo.getUserRateHref());
+		userRatePageParser.execute();
 	}
 
 	public String getPostageUrl(String str) {// 获得邮费get请求的url地址
