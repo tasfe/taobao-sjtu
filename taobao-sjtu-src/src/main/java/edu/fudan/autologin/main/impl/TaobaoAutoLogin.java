@@ -1,28 +1,18 @@
 package edu.fudan.autologin.main.impl;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.crypto.spec.PSource;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
-import org.apache.http.HttpHost;
 import org.apache.http.NameValuePair;
-import org.apache.http.ParseException;
-import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -35,17 +25,13 @@ import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.main.AutoLogin;
-import edu.fudan.autologin.pageparser.ItemBuyersPageParser;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
-import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
-import edu.fudan.autologin.pojos.FeedRate;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.Postage;
-import edu.fudan.autologin.utils.FileUtil;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 
@@ -347,10 +333,10 @@ public class TaobaoAutoLogin implements AutoLogin {
 		// isLoginSuccess();
 		// searchResultPageParser();
 		// parseReviews();
-		//parseReviews();
+		parseReviews();
 		// itemDetailPageParser();
 //		autoLogin();
-		doMyWork();
+//		doMyWork();
 		shutDown();
 		// 
 		//parseShowBuyerListDoc();

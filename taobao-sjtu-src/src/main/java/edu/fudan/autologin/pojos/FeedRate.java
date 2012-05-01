@@ -39,7 +39,6 @@ public class FeedRate {
 	public FeedRate(){
 		comments = new ArrayList<FeedRateComment>();
 	}
-	private int watershed;
 	public int getWatershed() {
 		return watershed;
 	}
@@ -64,6 +63,7 @@ public class FeedRate {
 	public void setComments(List<FeedRateComment> comments) {
 		this.comments = comments;
 	}
+	private int watershed;
 	private int maxPage;
 	private int currentPageNum;
 	private List<FeedRateComment>	comments;
