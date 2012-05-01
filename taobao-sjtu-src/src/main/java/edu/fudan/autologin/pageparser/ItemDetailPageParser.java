@@ -30,6 +30,7 @@ import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.Postage;
+import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.PostageService;
 
 public class ItemDetailPageParser extends BasePageParser {
@@ -39,10 +40,8 @@ public class ItemDetailPageParser extends BasePageParser {
 	private String postageUrl;
 	private String saleNumUrl;
 	private String reviewUrl;
-	
-	private int buyerSum = 0;
-	
 	private List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
+	
 	
 	private List<String> dateList = new ArrayList<String>();
 
@@ -109,7 +108,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("freightPrice: " + freightPrice);
 
 		int saleNumIn30Days = getSaleNum();
-		buyerSum = saleNumIn30Days;
+		//buyerSum = saleNumIn30Days;
 		log.info("saleNumIn30Days: " + saleNumIn30Days);
 
 		int reviews = getReviewsNum();
@@ -142,7 +141,13 @@ public class ItemDetailPageParser extends BasePageParser {
 		spec = elements.get(1).ownText();
 		capacity = elements.get(2).ownText();
 		
-		parseShowBuyerListDoc();//解析买家列表
+		//parseShowBuyerListDoc();//解析买家列表
+		BuyerListService buyerListService = new BuyerListService();
+		buyerListService.setHttpClient(this.getHttpClient());
+		buyerListService.setItemPageUrl(this.getPageUrl());
+		buyerListService.parseShowBuyerListDoc();
+		buyerInfos = buyerListService.getBuyerInfos();
+		
 		parseReviews();
 		log.info("First feed date is: "+this.getFirstReviewDate());
 		log.info("Last feed date is: " + this.getLastReviewDate());
@@ -262,161 +267,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		return reviewsNum;
 	}
 
-	/**
-	 * 1. get ItemDetailPage; 2. get showBuyerListUrl from ItemDetailPage;
-	 * 3.according to taobao rules, construct our showBuyerListUrl list;
-	 * 4.according to construted showBuyerListUrl, get json data from server;
-	 * 5.parsing json data from server and get our desired data;
-	 * 
-	 */
-	public void parseShowBuyerListDoc() {
-		String itemDetailPageUrl = this.getPageUrl();
-		String showBuyerListUrl = getShowBuyerListUrl(itemDetailPageUrl);
-		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
-//		int pageNum = 1;
-		int pageSize = 15;
-		int pageSum = (buyerSum%pageSize == 0) ? buyerSum/pageSize : (buyerSum/pageSize + 1);
-		
-		for(int pageNum = 1; pageNum <= pageSum; ++pageNum){
-//		while (true) {
-			log.info("This is buyers of Page NO: "+pageNum);
-			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-					showBuyerListUrl, pageNum);
-
-			parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl));
-//			if (parseConstructedShowBuyerListDoc(getShowBuyerListDoc(constructedShowBuyerListUrl)) == false) {
-//				log.info("Total page NO is: "+(pageNum-1));
-//				break;// 最后一个页面，跳出循环
-//			}
-			
-			++pageNum;
-		}
-	}
-
-	/**
-	 * 没有买家时返回的是这个 <div class="msg msg-attention-shortcut"
-	 * server-num="detailskip185108.cm4">
-	 * <p class="attention naked">
-	 * 暂时还没有买家购买此宝贝，最近30天成交0件。
-	 * </p>
-	 * </div>
-	 */
-	public void parseBuyerListTable(Document doc){
-		Elements buyerListEls = doc.select("table.tb-list > tbody > tr");
-		for(int i = 0; i < buyerListEls.size(); i ++){
-			Element buyerEl = buyerListEls.get(i);
-			Elements buyerInfo = buyerEl.select("td.tb-buyer");
-			if(0 == buyerInfo.size()){
-				continue;
-			}
-			String priceStr = buyerEl.select("td.tb-price").get(0).ownText();
-			float price = Float.valueOf(priceStr);
-			String numStr = buyerEl.select("td.tb-amount").get(0).ownText();
-			int num = Integer.valueOf(numStr);
-			String payTime = buyerEl.select("td.tb-time").get(0).ownText();
-			String size = buyerEl.select("td.tb-sku").text();
-			String sex = SexEnum.unknown;
-			
-			
-			
-			BuyerInfo bi = new BuyerInfo();
-			bi.setPayTime(payTime);
-			bi.setNum(num);
-			bi.setPrice(price);
-			bi.setSize(size);
-			
-			buyerInfos.add(bi);
-			
-			
-			log.info("price: " + price);
-			log.info("num: " + num);
-			log.info("payTime: " + payTime);
-			log.info("size: " + size);
-		}
-	}
-	/**
-	 * 
-	 * 当解析到最后一个页面时返回false，其余页面返回true
-	 * 
-	 * @param doc
-	 * @return
-	 */
-	public void parseConstructedShowBuyerListDoc(Document doc) {
-
-		parseBuyerListTable(doc);
-//		if (doc.toString().contains("暂时还没有买家购买此宝贝")) {
-//			log.info("There is no buyers.");
-//			return false;
-//		} else {
-//			parseBuyerListTable(doc);
-//			return true;
-//		}
-	}
-
-	public Document getShowBuyerListDoc(String getUrl) {
-		assert(getUrl != null);
-		GetMethod get = new GetMethod(this.getHttpClient(), getUrl);
-
-		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
-		NameValuePair nvp1 = new BasicNameValuePair("referer",
-				"http://item.taobao.com/item.htm?id=13048366752");
-		headers1.add(nvp1);
-		get.doGet(headers1);
-		Document doc = getHtmlDocFromJson(get.getResponseAsString());
-		get.shutDown();
-		return doc;
-	}
-
-	public String getShowBuyerListUrl(String itemDetailPageUrl) {
-		String showBuyerListUrl = "";
-
-		GetMethod getMethod = new GetMethod(this.getHttpClient(), itemDetailPageUrl);
-		getMethod.doGet();
-		String tmpStr = getMethod.getResponseAsString();
-		getMethod.shutDown();
-
-		int base = tmpStr.indexOf("detail:params=\"http");
-//		int begin = tmpStr.indexOf("\"", base);
-		int end = tmpStr.indexOf(",showBuyerList",base);
-
-		String myStr = tmpStr.substring(base+"detail:params=\"".length(), end);
-
-		showBuyerListUrl = myStr;
-		return showBuyerListUrl;
-	}
-
-	public String constructShowBuyerListUrl(String showBuyerListUrl, int pageNum) {
-		String delims = "[?&]+";
-		String[] tokens = showBuyerListUrl.split(delims);
-//		System.out.println(tokens.length);
-//		for (int i = 0; i < tokens.length; i++)
-//			System.out.println(tokens[i]);
-
-		StringBuffer sb = new StringBuffer();
-		sb.append(tokens[0] + "?");
-		for (int i = 2; i <= 12; ++i) {
-			sb.append(tokens[i] + "&");
-		}
-		sb.append(tokens[14]);
-
-		String append = "&bidPage="
-				+ pageNum
-				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t=1335495514388";
-
-		sb.append(append);
-//		System.out.println(sb);
-
-		return sb.toString();
-	}
-
-	public Document getHtmlDocFromJson(String jsonStr) {
-		String tmp = new String((jsonStr.trim()));
-		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tmp.substring(
-				"TShop.mods.DealRecord.reload(".length(), tmp.length() - 1));
-//		System.out.println(jsonObj.getString("html"));
-		Document doc = Jsoup.parse(jsonObj.getString("html"));
-		return doc;
-	}
+	
 
 	public void parseReviews() {
 		int pageNum = 0;
