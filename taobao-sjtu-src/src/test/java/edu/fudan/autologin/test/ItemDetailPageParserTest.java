@@ -20,6 +20,7 @@ import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.service.ItemReviewService;
+import edu.fudan.autologin.service.PostageService;
 
 public class ItemDetailPageParserTest {
 
@@ -51,9 +52,6 @@ public class ItemDetailPageParserTest {
 		ExcelUtil.createSheets();
 	}
 	
-	
-	
-	@Test
 	public void testReview(){
 		ItemReviewService itemReviewService = new ItemReviewService();
 		itemReviewService.setItemPageUrl("http://item.taobao.com/item.htm?id=13619790834");
@@ -61,91 +59,12 @@ public class ItemDetailPageParserTest {
 		itemReviewService.parseReviews();
 		
 	}
-	public void parseReviews() {
-		int pageNum = 0;
-		while (true) {
-			log.info("--------------------------------------------------------------------------------------");
-			log.info("This review of page num is: " + (++pageNum));
-			GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
-					getFeedRateListUrl(), pageNum));
-			get.doGet();
-			String jsonStr = getFeedRateListJsonString(get
-					.getResponseAsString().trim());
-			if (parseFeedRateListJson(jsonStr) == false) {
-				break;
-			}
-
-			get.shutDown();
-		}
-	}
-
-	public String getFeedRateListUrl() {
-		String itemDetailUrl = "http://item.taobao.com/item.htm?id=13619790834";
-
-		String baseFeedRateListUrl = "";
-
-		String tmpStr = "";
-		GetMethod getMethod = new GetMethod(httpClient, itemDetailUrl);
-		getMethod.doGet();
-		tmpStr = getMethod.getResponseAsString();
-		getMethod.shutDown();
-
-		int base = tmpStr.indexOf("data-listApi=");
-		int begin = tmpStr.indexOf("\"", base);
-		int end = tmpStr.indexOf("\"", begin + 1);
-		baseFeedRateListUrl = tmpStr.substring(begin + 1, end);
-		log.info("Base feed url is: " + baseFeedRateListUrl);
-
-		return baseFeedRateListUrl;
-
-	}
-
-	public String constructFeedRateListUrl(String baseFeedRateListUrl,
-			int currentPageNum) {
-		String append = "&currentPageNum="
-				+ currentPageNum
-				+ "&rateType=&orderType=feedbackdate&showContent=1&attribute=&callback=jsonp_reviews_list";
-		StringBuffer sb = new StringBuffer();
-		sb.append(baseFeedRateListUrl);
-		sb.append(append);
-
-		return sb.toString();
-	}
-
-	/**
-	 * 将从服务器端返回的字符串转化为json字符串
-	 * 
-	 * @return
-	 */
-	public String getFeedRateListJsonString(String str) {
-		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);
-	}
-
-	public boolean parseFeedRateListJson(String str) {
-
-		JSONObject jsonObj = JSONObject.fromObject(str);
-
-		if (jsonObj.get("comments").equals(null)) {
-			log.info("There is no comment.");
-			return false;
-		} else {
-
-			JSONArray comments = jsonObj.getJSONArray("comments");
-
-			List list = (List) JSONSerializer.toJava(comments);
-
-			List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
-			int i = 1;
-			for (Object o : list) {
-				JSONObject j = JSONObject.fromObject(o);
-				log.info("Date is: " + j.getString("date"));
-				log.info("Content is: " + j.getString("content"));
-				log.info("Auction title is: "+j.getJSONObject("auction").getString("title"));
-				log.info("Comment NO is: " + i++);
-			}
-			return true;
-		}
-	}
 	
-	
+	@Test
+	public void testPostageService(){
+		PostageService postageService = new PostageService();
+		postageService.setHttpClient(httpClient);
+		postageService.setItemPageUrl("http://wt.taobao.com/detail.htm?id=14010379194");
+		postageService.parsePostage();
+	}
 }
