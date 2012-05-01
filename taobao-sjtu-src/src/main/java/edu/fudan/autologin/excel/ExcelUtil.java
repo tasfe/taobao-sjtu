@@ -156,15 +156,9 @@ public class ExcelUtil {
 		sellerRateHeaders.add("最经半年-主营业务-差评");
 		sellerRateHeaders.add("最经半年-非主营业务-差评");
 
-		sellerRateHeaders.add("半年以前-主营业务-好评");
-		sellerRateHeaders.add("半年以前-非主营业务-好评");
+		sellerRateHeaders.add("半年以前-总数-好评");
 		sellerRateHeaders.add("半年以前-总数-中评");
-		sellerRateHeaders.add("半年以前-主营业务-中评");
-		sellerRateHeaders.add("半年以前-非主营业务-中评");
 		sellerRateHeaders.add("半年以前-总数-差评");
-		sellerRateHeaders.add("半年以前-主营业务-差评");
-		sellerRateHeaders.add("半年以前-非主营业务-差评");
-		
 		
 		sellerRateHeaders.add("卖家信用");
 		sellerRateHeaders.add("主营行业");
@@ -434,8 +428,8 @@ public class ExcelUtil {
 		Label l6 = new Label(6 ,sheet.getRows(), sellerRateInfo.getBuyerRate());
 		Label l7 = new Label(7 ,sheet.getRows(), sellerRateInfo.getChargeNum());
 
-		Label l8 = new Label(8 ,sheet.getRows(), sellerRateInfo.getConsumerPromise());
-		Label l9 = new Label(9 ,sheet.getRows(), sellerRateInfo.getSevenDayReturn());
+		Label l8 = new Label(8 ,sheet.getRows(), sellerRateInfo.isConsumerPromise() ? "是" : "否");
+		Label l9 = new Label(9 ,sheet.getRows(), sellerRateInfo.isSevenDayReturn() ? "是" : "否");
 		Label l10 = new Label(10 ,sheet.getRows(), sellerRateInfo.getMatchScore());
 		Label l11 = new Label(11 ,sheet.getRows(), sellerRateInfo.getServiceScore());
 		Label l12 = new Label(12 ,sheet.getRows(), sellerRateInfo.getConsignmentScore());
@@ -474,18 +468,12 @@ public class ExcelUtil {
 		Label l42 = new Label(42 , sheet.getRows(), sellerRateInfo.getHalfYearNotmainRateBad());
 		
 		Label l43 = new Label(43 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearSumRateOk());
-		Label l44 = new Label(44 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearMainRateOk());
-		Label l45 = new Label(45 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearNotmainRateOk());
-		Label l46 = new Label(46 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearSumRateNormal());
-		Label l47 = new Label(47 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearMainRateNormal());
-		Label l48 = new Label(48 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearNotmainRateNormal());
-		Label l49 = new Label(49 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearSumRateBad());
-		Label l50 = new Label(50 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearMainRateBad());
-		Label l52 = new Label(52 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearNotmainRateBad());
+		Label l44 = new Label(44 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearSumRateNormal());
+		Label l45 = new Label(45 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearSumRateBad());
 		
-		Label l53 = new Label(53 , sheet.getRows(), sellerRateInfo.getSellerRate());
-		Label l54 = new Label(54 , sheet.getRows(), sellerRateInfo.getMainBusiness());
-		Label l55 = new Label(55 , sheet.getRows(), sellerRateInfo.getMainBusinessPercentage());
+		Label l46 = new Label(46 , sheet.getRows(), sellerRateInfo.getSellerRate());
+		Label l47 = new Label(47 , sheet.getRows(), sellerRateInfo.getMainBusiness());
+		Label l48 = new Label(48 , sheet.getRows(), sellerRateInfo.getMainBusinessPercentage());
 		
 		
 		try {
@@ -538,13 +526,6 @@ public class ExcelUtil {
 			sheet.addCell(l46);
 			sheet.addCell(l47);
 			sheet.addCell(l48);
-			sheet.addCell(l49);
-			sheet.addCell(l50);
-//			sheet.addCell(l51);
-			sheet.addCell(l52);
-			sheet.addCell(l53);
-			sheet.addCell(l54);
-			sheet.addCell(l55);
 		} catch (RowsExceededException e) {
 			e.printStackTrace();
 		} catch (WriteException e) {

@@ -28,6 +28,7 @@ import edu.fudan.autologin.main.AutoLogin;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
+import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
 import edu.fudan.autologin.pojos.FeedRateComment;
@@ -327,19 +328,20 @@ public class TaobaoAutoLogin implements AutoLogin {
 	}
 
 	public void execute() {
-		beforeWriteExcel();
+//		beforeWriteExcel();
 		// testDealRecord(getShowBuyerListUrl());
 		// testGet();
 		// isLoginSuccess();
 		// searchResultPageParser();
 		// parseReviews();
-		parseReviews();
+//		parseReviews();
 		// itemDetailPageParser();
 //		autoLogin();
 //		doMyWork();
-		shutDown();
+//		shutDown();
 		// 
 		//parseShowBuyerListDoc();
+		userRatePageParser();
 	}
 
 	public void topTenPageParser() {
@@ -363,6 +365,11 @@ public class TaobaoAutoLogin implements AutoLogin {
 		itemDetailPageParser.parsePage();
 	}
 
+	public void userRatePageParser(){
+		String pageUrl = "http://rate.taobao.com/user-rate-1fb32e41d7bc59591c5e4de73f3a6f6a.htm";
+		UserRatePageParser userRatePageParser = new UserRatePageParser(httpClient, pageUrl);
+		userRatePageParser.parsePage();
+	}
 	public void shutDown() {
 		log.info("--------------------------------------------------------------------------------------------------------------");
 		log.info("COMPLETE ALL TASKS!");
