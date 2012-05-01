@@ -55,6 +55,16 @@ public class ItemReviewService {
 	private static final Logger log = Logger.getLogger(ItemReviewService.class);
 	private String itemPageUrl;
 	private FeedRate feedRate = new FeedRate();
+	
+	private int reviewSum = 0;
+	public int getReviewSum() {
+		return reviewSum;
+	}
+
+	public void setReviewSum(int reviewSum) {
+		this.reviewSum = reviewSum;
+	}
+
 	public String getItemPageUrl() {
 		return itemPageUrl;
 	}
@@ -102,6 +112,8 @@ public class ItemReviewService {
 
 			get.shutDown();
 		}
+		log.info("---------------------------------------");
+		log.info("The sum of the reviews is: "+reviewSum);
 	}
 
 	public String getFeedRateListUrl() {
@@ -199,6 +211,8 @@ public class ItemReviewService {
 
 			List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
 			int i = 1;
+			
+			reviewSum += list.size();
 			for (Object o : list) {
 				//feedRate.getComments().add((FeedRateComment) o);
 				

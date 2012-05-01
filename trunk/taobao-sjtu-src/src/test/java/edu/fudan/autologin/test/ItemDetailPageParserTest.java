@@ -19,6 +19,7 @@ import org.junit.After;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.FeedRateComment;
+import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.PostageService;
 
@@ -61,6 +62,13 @@ public class ItemDetailPageParserTest {
 	}
 	
 	@Test
+	public void testBuyerListService(){
+		BuyerListService buyerListService = new BuyerListService();
+		buyerListService.setHttpClient(httpClient);
+		buyerListService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733");
+		buyerListService.setBuyerSum(1902);
+		buyerListService.parseShowBuyerListDoc();
+	}
 	public void testPostageService(){
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(httpClient);
