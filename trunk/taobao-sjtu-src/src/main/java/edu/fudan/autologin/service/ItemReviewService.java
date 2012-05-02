@@ -189,7 +189,17 @@ public class ItemReviewService {
 							},
 	 */
 	public String getFeedRateListJsonString(String str) {
-		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);
+		log.info("Plain json string of feed rate review from server is: "+str);
+		int begin = str.indexOf("(");
+		int end = str.lastIndexOf(")");
+		log.info("Json string of feed rate review is: "+str.substring(begin+1,end));
+//		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);//if the str has no jsonp_reviews_list, what should we can do?
+		return str.substring(begin+1,end);
+		
+		/*
+		 * The substring begins at the specified beginIndex and extends to the character at the index endIndex - 1
+		 * 
+		 */
 	}
 
 	public boolean parseFeedRateListJson(String str) {
