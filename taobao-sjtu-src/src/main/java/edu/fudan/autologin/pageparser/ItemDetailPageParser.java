@@ -34,6 +34,7 @@ import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.PostageService;
 import edu.fudan.autologin.service.ReviewSumService;
+import edu.fudan.autologin.service.SaleSumService;
 
 public class ItemDetailPageParser extends BasePageParser {
 	private static final Logger log = Logger
@@ -124,8 +125,12 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setFreightPrice(freightPrice);
 		log.info("freightPrice: " + freightPrice);
 
-		int saleNumIn30Days = getSaleNum();
-		// buyerSum = saleNumIn30Days;
+		
+		SaleSumService saleSumService = new SaleSumService();
+		saleSumService.setHttpClient(this.getHttpClient());
+		saleSumService.setItemPageUrl(this.getPageUrl());
+		saleSumService.execute();
+		int saleNumIn30Days = saleSumService.getSaleSum();
 		log.info("saleNumIn30Days: " + saleNumIn30Days);
 		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
@@ -169,7 +174,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		ItemReviewService itemReviewService = new ItemReviewService();
 		itemReviewService.setHttpClient(this.getHttpClient());
 		itemReviewService.setItemPageUrl(this.getPageUrl());
-		itemReviewService.parseReviews();
+		itemReviewService.execute();
 		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
 		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
 		
