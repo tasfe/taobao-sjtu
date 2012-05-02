@@ -27,6 +27,7 @@ import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.MonthService;
 import edu.fudan.autologin.service.PostageService;
 import edu.fudan.autologin.service.ReviewSumService;
+import edu.fudan.autologin.service.SaleSumService;
 
 public class ItemDetailPageParserTest {
 
@@ -84,7 +85,7 @@ public class ItemDetailPageParserTest {
 	public void testReviewSum(){
 		ReviewSumService reviewSumService = new ReviewSumService();
 		reviewSumService.setHttpClient(httpClient);
-		reviewSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733");
+		reviewSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733&_u=2fhiru823e4");
 		reviewSumService.execute();
 	}
 	public void testReview() {
@@ -94,14 +95,33 @@ public class ItemDetailPageParserTest {
 		itemReviewService.setHttpClient(httpClient);
 		itemReviewService.parseReviews();
 	}
-
+	
+	public void testSaleSumService(){
+		SaleSumService saleSumService = new SaleSumService();
+		saleSumService.setHttpClient(httpClient);
+		saleSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733");
+		saleSumService.execute();
+		log.info("Sale sum is: "+saleSumService.getSaleSum());	
+	}
+	
+	
+	
 	public void testBuyerListService() {
+		String itemPageUrl = "http://item.taobao.com/item.htm?id=10203414733&_u=2fhiru823e4";
 		BuyerListService buyerListService = new BuyerListService();
 		buyerListService.setHttpClient(httpClient);
 		buyerListService
-				.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733");
-		buyerListService.setBuyerSum(1902);
-		buyerListService.parseShowBuyerListDoc();
+				.setItemPageUrl(itemPageUrl);
+		
+		SaleSumService saleSumService = new SaleSumService();
+		saleSumService.setHttpClient(httpClient);
+		saleSumService.setItemPageUrl(itemPageUrl);
+		saleSumService.execute();
+		log.info("Sale sum is: "+saleSumService.getSaleSum());	
+		
+		
+		buyerListService.setBuyerSum(saleSumService.getSaleSum());
+		buyerListService.execute();
 	}
 
 	public void testPostageService() {

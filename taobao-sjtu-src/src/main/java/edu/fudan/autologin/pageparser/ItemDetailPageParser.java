@@ -162,7 +162,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		buyerListService.setHttpClient(this.getHttpClient());
 		buyerListService.setItemPageUrl(this.getPageUrl());
 		buyerListService.setBuyerSum(saleNumIn30Days);
-		buyerListService.parseShowBuyerListDoc();
+		buyerListService.execute();
 		buyerInfos = buyerListService.getBuyerInfos();
 
 		//解析評論
@@ -278,16 +278,5 @@ public class ItemDetailPageParser extends BasePageParser {
 		return saleNum;
 	}
 
-	public int getReviewsNum() {
-		int reviewsNum = 0;
-		String referer = getPageUrl();
-		String requestUrl = getReviewUrl();
-		GetMethod getRequest = new GetMethod(this.getHttpClient(), requestUrl);
-		getRequest.doGet();
-		String responseStr = getRequest.getResponseAsString();
-		// System.out.println("reviews:");
-		// System.out.println(responseStr);
-
-		return reviewsNum;
-	}
+	
 }

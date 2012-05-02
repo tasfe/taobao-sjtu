@@ -47,8 +47,6 @@ public class MainTest {
 		httpClient.getConnectionManager().shutdown();
 	}
 	
-	
-	
 	@Test
 	public void execute(){
 		doMyWork();

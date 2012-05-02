@@ -26,15 +26,33 @@ public class BuyerListService {
 	private HttpClient httpClient;
 	private List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
 	private int buyerSum = 0;
+	
+	public class BuyerListThread implements Runnable{
+
+		private String showBuyerListUrl;
+		private int pageNum;
+		
+		public BuyerListThread(String url, int page){
+			this.pageNum = page;
+			this.showBuyerListUrl = url;
+		}
+		public void run() {
+			log.info("This is buyers of Page NO: " + pageNum);
+			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+					showBuyerListUrl, pageNum);
+			parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
+		}
+	}
 
 	/**
-	 * 1. get ItemDetailPage; 2. get showBuyerListUrl from ItemDetailPage;
+	 * 1.get ItemDetailPage; <br/>
+	 * 2.get showBuyerListUrl from ItemDetailPage;
 	 * 3.according to taobao rules, construct our showBuyerListUrl list;
 	 * 4.according to construted showBuyerListUrl, get json data from server;
 	 * 5.parsing json data from server and get our desired data;
 	 * 
 	 */
-	public void parseShowBuyerListDoc() {
+	public void execute() {
 		String showBuyerListUrl = getShowBuyerListUrl(itemPageUrl);
 		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
 		int pageSize = 15;
@@ -42,12 +60,14 @@ public class BuyerListService {
 				: (buyerSum / pageSize + 1);
 
 		for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
-			log.info("This is buyers of Page NO: " + pageNum);
-			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-					showBuyerListUrl, pageNum);
-			parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
+			log.info("-----------------------------------------------------");
+			new Thread(new BuyerListThread(showBuyerListUrl,pageNum)).run();
+//			log.info("This is buyers of Page NO: " + pageNum);
+//			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+//					showBuyerListUrl, pageNum);
+//			parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
 		}
-		log.info("Total buyer count is: "+buyerCounter);
+		log.info("Total buyer count is: " + buyerCounter);
 	}
 
 	public String getItemPageUrl() {
@@ -84,9 +104,9 @@ public class BuyerListService {
 	 */
 	public void parseBuyerListTable(Document doc) {
 		Elements buyerListEls = doc.select("table.tb-list > tbody > tr");
-		buyerCounter += buyerListEls.size();
+//		buyerCounter += buyerListEls.size();
 		for (int i = 0; i < buyerListEls.size(); i++) {
-			
+
 			Element buyerEl = buyerListEls.get(i);
 			Elements buyerInfo = buyerEl.select("td.tb-buyer");
 			if (0 == buyerInfo.size()) {
@@ -105,6 +125,9 @@ public class BuyerListService {
 			bi.setNum(num);
 			bi.setPrice(price);
 			bi.setSize(size);
+			
+			++buyerCounter;
+			log.info("buyer counter is: "+buyerCounter);
 
 			buyerInfos.add(bi);
 
@@ -114,7 +137,6 @@ public class BuyerListService {
 			log.info("size: " + size);
 		}
 	}
-
 
 	public Document getShowBuyerListDoc(String getUrl) {
 		assert (getUrl != null);
