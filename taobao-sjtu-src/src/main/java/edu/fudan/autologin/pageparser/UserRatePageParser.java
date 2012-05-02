@@ -13,6 +13,7 @@ import org.jsoup.select.Elements;
 
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.pojos.SellerRateInfo;
+import edu.fudan.autologin.service.MonthService;
 /**
  * 
  * 商家信用页面解析
@@ -105,6 +106,16 @@ public class UserRatePageParser extends BasePageParser {
 //		Elements punishmentScoreEls = serviceInfoEls.get(1).select("span");
 //		String punishmentScore = punishmentScoreEls.get(1).ownText() + punishmentScoreEls.get(2).ownText() + punishmentScoreEls.get(3).ownText();
 //		log.info("punishmentScore: " + punishmentScore);
+		MonthService monthService = new MonthService();
+		monthService.setHttpClient(this.getHttpClient());
+		monthService.setUserRatePageUrl(this.getPageUrl());
+		monthService.execute();
+		sellerRateInfo.setRefundmentScore(monthService.getMonthServieEntities().get(0).getLineString());
+		sellerRateInfo.setRefundmentRateScore(monthService.getMonthServieEntities().get(1).getLineString());
+		sellerRateInfo.setComplaintScore(monthService.getMonthServieEntities().get(2).getLineString());
+		sellerRateInfo.setPunishmentScore(monthService.getMonthServieEntities().get(3).getLineString());
+		
+		
 		
 		Elements sellerRateList = doc.select("div.show-list#J_show_list ul li");
 		Elements weekRateEls = sellerRateList.get(0).select("table tbody tr");

@@ -48,20 +48,20 @@ public class TaobaoAutoLogin implements AutoLogin {
 		if (this.httpClient == null) {
 			// 设置动态代理机制
 			httpClient = new DefaultHttpClient();
-			// 设置代理对象 ip/代理名称,端口
-			HttpHost proxy = new HttpHost("10.141.251.173", 3128);
-			// HttpHost proxy = new HttpHost("proxy.fudan.edu.cn", 8080);
-			// // 实例化验证
-			CredentialsProvider credsProvider = new BasicCredentialsProvider();
-			// // 设定验证内容
-			// UsernamePasswordCredentials creds = new UsernamePasswordCredentials(
-			// "10210240089", "fudan123");
-			// // 创建验证
-			// credsProvider.setCredentials(new AuthScope(AuthScope.ANY_HOST,
-			// AuthScope.ANY_PORT), creds);
-			httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY,
-					proxy);
-			((DefaultHttpClient) httpClient).setCredentialsProvider(credsProvider);
+//			// 设置代理对象 ip/代理名称,端口
+//			HttpHost proxy = new HttpHost("10.141.251.173", 3128);
+//			// HttpHost proxy = new HttpHost("proxy.fudan.edu.cn", 8080);
+//			// // 实例化验证
+//			CredentialsProvider credsProvider = new BasicCredentialsProvider();
+//			// // 设定验证内容
+//			// UsernamePasswordCredentials creds = new UsernamePasswordCredentials(
+//			// "10210240089", "fudan123");
+//			// // 创建验证
+//			// credsProvider.setCredentials(new AuthScope(AuthScope.ANY_HOST,
+//			// AuthScope.ANY_PORT), creds);
+//			httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY,
+//					proxy);
+//			((DefaultHttpClient) httpClient).setCredentialsProvider(credsProvider);
 		}
 
 	}
@@ -174,10 +174,10 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
 
-//		CategoryInfo ci1 = new CategoryInfo();
-//		ci1.setCategoryName("洁面");
-//		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
-//		categoryInfos.add(ci1);
+		CategoryInfo ci1 = new CategoryInfo();
+		ci1.setCategoryName("洁面");
+		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
+		categoryInfos.add(ci1);
 
 		CategoryInfo ci2 = new CategoryInfo();
 		ci2.setCategoryName("热门手机");
@@ -280,7 +280,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 		shutDown();
 		// 
 		//parseShowBuyerListDoc();
-//		userRatePageParser();
+		userRatePageParser();
 	}
 
 	public void topTenPageParser() {
