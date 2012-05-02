@@ -31,7 +31,9 @@ import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.Postage;
 import edu.fudan.autologin.service.BuyerListService;
+import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.PostageService;
+import edu.fudan.autologin.service.ReviewSumService;
 
 public class ItemDetailPageParser extends BasePageParser {
 	private static final Logger log = Logger
@@ -104,25 +106,29 @@ public class ItemDetailPageParser extends BasePageParser {
 		String location = "";
 		String freight = "";
 
+		//get review sum
+		ReviewSumService reviewSumService = new ReviewSumService();
+		reviewSumService.setHttpClient(this.getHttpClient());
+		reviewSumService.setItemPageUrl(this.getPageUrl());
+		reviewSumService.execute();
+		itemInfo.setReviews(reviewSumService.getReviewSum());
+		
 		itemInfo.setUserRateHref(getShopRankHref(doc));
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(this.getHttpClient());
 		postageService.setItemPageUrl(this.getPageUrl());
-
 		postageService.parsePostage();
-
-		// Postage postage = postageService.getPostage();
 		location = postageService.getPostage().getLocation();
 		freight = postageService.getPostage().getCarriage();
 		freightPrice = location + " : " + freight;
+		itemInfo.setFreightPrice(freightPrice);
 		log.info("freightPrice: " + freightPrice);
 
 		int saleNumIn30Days = getSaleNum();
 		// buyerSum = saleNumIn30Days;
 		log.info("saleNumIn30Days: " + saleNumIn30Days);
+		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
-		int reviews = getReviewsNum();
-		log.info("reviews: " + reviews);
 
 		String itemType = "";
 		Element element = itemPro.select("li.tb-item-type em").get(0);
@@ -151,17 +157,22 @@ public class ItemDetailPageParser extends BasePageParser {
 		spec = elements.get(1).ownText();
 		capacity = elements.get(2).ownText();
 
-		// parseShowBuyerListDoc();//解析买家列表
+		//解析买家列表
 		BuyerListService buyerListService = new BuyerListService();
 		buyerListService.setHttpClient(this.getHttpClient());
 		buyerListService.setItemPageUrl(this.getPageUrl());
+		buyerListService.setBuyerSum(saleNumIn30Days);
 		buyerListService.parseShowBuyerListDoc();
 		buyerInfos = buyerListService.getBuyerInfos();
 
-		parseReviews();
-		log.info("First feed date is: " + this.getFirstReviewDate());
-		log.info("Last feed date is: " + this.getLastReviewDate());
-
+		//解析評論
+		ItemReviewService itemReviewService = new ItemReviewService();
+		itemReviewService.setHttpClient(this.getHttpClient());
+		itemReviewService.setItemPageUrl(this.getPageUrl());
+		itemReviewService.parseReviews();
+		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
+		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
+		
 	}
 
 	/* 对页面进行预处理，获取动态请求的url */
@@ -279,131 +290,4 @@ public class ItemDetailPageParser extends BasePageParser {
 
 		return reviewsNum;
 	}
-
-	public void parseReviews() {
-		int pageNum = 0;
-		while (true) {
-			log.info("--------------------------------------------------------------------------------------");
-			log.info("This review of page num is: " + (++pageNum));
-			GetMethod get = new GetMethod(this.getHttpClient(),
-					constructFeedRateListUrl(getFeedRateListUrl(), pageNum));
-			get.doGet();
-			String jsonStr = getFeedRateListJsonString(get
-					.getResponseAsString().trim());
-			if (parseFeedRateListJson(jsonStr) == false) {
-				break;
-			}
-
-			get.shutDown();
-		}
-	}
-
-	public String getFeedRateListUrl() {
-		String itemDetailUrl = this.getPageUrl();
-
-		String baseFeedRateListUrl = "";
-
-		String tmpStr = "";
-		GetMethod getMethod = new GetMethod(this.getHttpClient(), itemDetailUrl);
-		getMethod.doGet();
-		tmpStr = getMethod.getResponseAsString();
-		getMethod.shutDown();
-
-		int base = tmpStr.indexOf("data-listApi=");
-		int begin = tmpStr.indexOf("\"", base);
-		int end = tmpStr.indexOf("\"", begin + 1);
-		baseFeedRateListUrl = tmpStr.substring(begin + 1, end);
-		log.info("Base feed url is: " + baseFeedRateListUrl);
-
-		return baseFeedRateListUrl;
-
-	}
-
-	public String constructFeedRateListUrl(String baseFeedRateListUrl,
-			int currentPageNum) {
-		String append = "&currentPageNum="
-				+ currentPageNum
-				+ "&rateType=&orderType=feedbackdate&showContent=1&attribute=&callback=jsonp_reviews_list";
-		StringBuffer sb = new StringBuffer();
-		sb.append(baseFeedRateListUrl);
-		sb.append(append);
-
-		return sb.toString();
-	}
-
-	/**
-	 * 将从服务器端返回的字符串转化为json字符串
-	 * 
-	 * @return
-	 */
-	public String getFeedRateListJsonString(String str) {
-		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);
-	}
-
-	/***
-	 * 
-	 * 解析从服务器端返回的json数据
-	 * 
-	 * @param str
-	 * @return
-	 */
-	public boolean parseFeedRateListJson(String str) {
-
-		JSONObject jsonObj = JSONObject.fromObject(str);
-
-		if (jsonObj.get("comments").equals(null)) {
-			log.info("There is no comment.");
-			return false;
-		} else {
-
-			JSONArray comments = jsonObj.getJSONArray("comments");
-
-			List list = (List) JSONSerializer.toJava(comments);
-
-			List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
-			int i = 1;
-			for (Object o : list) {
-				JSONObject j = JSONObject.fromObject(o);
-				log.info("Auction title is: "
-						+ j.getJSONObject("auction").getString("title"));
-				log.info("Date is: " + j.getString("date"));
-				dateList.add(j.getString("date"));
-				log.info("Content is: " + j.getString("content"));
-				log.info("Comment NO is: " + i++);
-			}
-			return true;
-		}
-	}
-
-	/**
-	 * 
-	 * 返回的评论的格式如下: { "watershed":100, "maxPage":167, "currentPageNum":166,
-	 * "comments":[ {"auction":
-	 * {"title":"Apple/苹果 iPhone 4S 无锁版/港版 16G 32G 64G可装软件有未激活",
-	 * "aucNumId":13599064573, "link":"", "sku":"机身颜色:港版16G白色现货  手机套餐:官方标配"},
-	 * "content":"hao", "append":null, "rate":"好评！", "tag":"",
-	 * "rateId":16249892723, "award":"", "reply":null, "useful":0,
-	 * "date":"2012.03.08", "user":{ "vip":"", "rank":136,
-	 * "nick":"771665176_44", "userId":410769781,
-	 * "displayRatePic":"b_red_4.gif", "nickUrl":
-	 * "http://wow.taobao.com/u/NDEwNzY5Nzgx/view/ta_taoshare_list.htm?redirect=fa"
-	 * , "vipLevel":2, "avatar":
-	 * "http://img.taobaocdn.com/sns_logo/i1/T1VxqHXa4rXXb1upjX.jpg_40x40.jpg",
-	 * "anony":false,
-	 * "rankUrl":"http://rate.taobao.com/rate.htm?user_id=410769781&rater=1"} },
-	 */
-	public String getFirstReviewDate() {
-		if (dateList.size() == 0) {
-			return null;
-		}
-		return dateList.get(0);
-	}
-
-	public String getLastReviewDate() {
-		if (dateList.size() == 0) {
-			return null;
-		}
-		return dateList.get(dateList.size() - 1);
-	}
-
 }
