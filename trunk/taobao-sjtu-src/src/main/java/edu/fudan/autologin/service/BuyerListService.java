@@ -21,7 +21,6 @@ import edu.fudan.autologin.pojos.BuyerInfo;
 
 public class BuyerListService {
 	private static final Logger log = Logger.getLogger(BuyerListService.class);
-	private int buyerCounter = 0;
 	private String itemPageUrl;
 	private HttpClient httpClient;
 	private List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
@@ -59,6 +58,7 @@ public class BuyerListService {
 		int pageSum = (buyerSum % pageSize == 0) ? buyerSum / pageSize
 				: (buyerSum / pageSize + 1);
 
+		log.info("Total page num is: "+pageSum);
 		for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
 			log.info("-----------------------------------------------------");
 			new Thread(new BuyerListThread(showBuyerListUrl,pageNum)).run();
@@ -67,7 +67,6 @@ public class BuyerListService {
 //					showBuyerListUrl, pageNum);
 //			parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
 		}
-		log.info("Total buyer count is: " + buyerCounter);
 	}
 
 	public String getItemPageUrl() {
@@ -126,8 +125,6 @@ public class BuyerListService {
 			bi.setPrice(price);
 			bi.setSize(size);
 			
-			++buyerCounter;
-			log.info("buyer counter is: "+buyerCounter);
 
 			buyerInfos.add(bi);
 

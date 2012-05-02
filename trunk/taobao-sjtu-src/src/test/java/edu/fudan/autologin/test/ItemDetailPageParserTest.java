@@ -74,6 +74,8 @@ public class ItemDetailPageParserTest {
 		ExcelUtil.createSheets();
 	}
 
+	
+	
 	public void testMonthServie() {
 		MonthService monthService = new MonthService();
 		monthService.setHttpClient(httpClient);
@@ -81,19 +83,30 @@ public class ItemDetailPageParserTest {
 				.setUserRatePageUrl("http://rate.taobao.com/user-rate-2cd40cbdf1fbaa2fbdc9bb2fff2aaa4d.htm");
 		monthService.execute();
 	}
-	@Test
+
 	public void testReviewSum(){
 		ReviewSumService reviewSumService = new ReviewSumService();
 		reviewSumService.setHttpClient(httpClient);
-		reviewSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733&_u=2fhiru823e4");
+		reviewSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733");
 		reviewSumService.execute();
 	}
+	
+	@Test
 	public void testReview() {
+		
+		String url = "http://item.taobao.com/item.htm?id=12222776919";
+		ReviewSumService reviewSumService = new ReviewSumService();
+		reviewSumService.setHttpClient(httpClient);
+		reviewSumService.setItemPageUrl(url);
+		reviewSumService.execute();
+		
+		
 		ItemReviewService itemReviewService = new ItemReviewService();
 		itemReviewService
-				.setItemPageUrl("http://item.taobao.com/item.htm?id=13619790834");
+				.setItemPageUrl(url);
 		itemReviewService.setHttpClient(httpClient);
-		itemReviewService.parseReviews();
+		itemReviewService.setReviewSum(reviewSumService.getReviewSum());
+		itemReviewService.execute();
 	}
 	
 	public void testSaleSumService(){

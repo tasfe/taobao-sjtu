@@ -2,7 +2,10 @@ package edu.fudan.autologin.excel;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +47,7 @@ public class ExcelUtil {
 			.getName());
 
 	private static WritableWorkbook workbook;
-	private static String path = "D:\\taobao-sjtu.xls";
+//	private static String path = "D:\\taobao-sjtu.xls";
 	private static Map<String, WritableSheet> sheets;
 
 	public static void prepare() {
@@ -159,11 +162,11 @@ public class ExcelUtil {
 		sellerRateHeaders.add("半年以前-总数-好评");
 		sellerRateHeaders.add("半年以前-总数-中评");
 		sellerRateHeaders.add("半年以前-总数-差评");
-		
+
 		sellerRateHeaders.add("卖家信用");
 		sellerRateHeaders.add("主营行业");
 		sellerRateHeaders.add("主营占比");
-		
+
 		writeHeader(SheetNames.USER_RATE_SHEET, sellerRateHeaders);
 	}
 
@@ -226,8 +229,22 @@ public class ExcelUtil {
 	}
 
 	public static void createWorkbook() {
+		
+		String basePath = "D:\\taobao-sjtu-";
+		String fileExtendName = ".xls";
+		
+		Date date=new Date();
+
+		SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+
+		StringBuffer path = new StringBuffer();
+		path.append(basePath);
+		path.append(df.format(date).toString());
+		path.append(fileExtendName);
+		
+		log.info("Path is: "+path.toString());
 		try {
-			workbook = Workbook.createWorkbook(new File(path));
+			workbook = Workbook.createWorkbook(new File(path.toString()));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -418,64 +435,105 @@ public class ExcelUtil {
 	public static void writeUserRateSheet(SellerRateInfo sellerRateInfo) {
 		WritableSheet sheet = sheets.get(SheetNames.USER_RATE_SHEET);// 根据名称获取具体的sheet对象
 		assert (sheet != null);
-		
-		Label l0 = new Label(0 ,sheet.getRows(), sellerRateInfo.getSellerId());
-		Label l1 = new Label(1 ,sheet.getRows(), sellerRateInfo.getSellerName());
-		Label l2 = new Label(2 ,sheet.getRows(), sellerRateInfo.getMainSale());
-		Label l3 = new Label(3 ,sheet.getRows(), sellerRateInfo.getLocation());
-		Label l4 = new Label(4 ,sheet.getRows(), sellerRateInfo.getCreateShopDate());
-		Label l5 = new Label(5 ,sheet.getRows(), sellerRateInfo.getSellerRate());
-		Label l6 = new Label(6 ,sheet.getRows(), sellerRateInfo.getBuyerRate());
-		Label l7 = new Label(7 ,sheet.getRows(), sellerRateInfo.getChargeNum());
 
-		Label l8 = new Label(8 ,sheet.getRows(), sellerRateInfo.isConsumerPromise() ? "是" : "否");
-		Label l9 = new Label(9 ,sheet.getRows(), sellerRateInfo.isSevenDayReturn() ? "是" : "否");
-		Label l10 = new Label(10 ,sheet.getRows(), sellerRateInfo.getMatchScore());
-		Label l11 = new Label(11 ,sheet.getRows(), sellerRateInfo.getServiceScore());
-		Label l12 = new Label(12 ,sheet.getRows(), sellerRateInfo.getConsignmentScore());
-		Label l13 = new Label(13 ,sheet.getRows(), sellerRateInfo.getRefundmentRateScore());
-		Label l14 = new Label(14 ,sheet.getRows(), sellerRateInfo.getComplaintScore());
-		Label l15 = new Label(15 ,sheet.getRows(), sellerRateInfo.getPunishmentScore());
+		Label l0 = new Label(0, sheet.getRows(), sellerRateInfo.getSellerId());
+		Label l1 = new Label(1, sheet.getRows(), sellerRateInfo.getSellerName());
+		Label l2 = new Label(2, sheet.getRows(), sellerRateInfo.getMainSale());
+		Label l3 = new Label(3, sheet.getRows(), sellerRateInfo.getLocation());
+		Label l4 = new Label(4, sheet.getRows(),
+				sellerRateInfo.getCreateShopDate());
+		Label l5 = new Label(5, sheet.getRows(), sellerRateInfo.getSellerRate());
+		Label l6 = new Label(6, sheet.getRows(), sellerRateInfo.getBuyerRate());
+		Label l7 = new Label(7, sheet.getRows(), sellerRateInfo.getChargeNum());
 
-		Label l16 = new Label(16 ,sheet.getRows(), sellerRateInfo.getWeekSumRateOk());
-		Label l17 = new Label(17 ,sheet.getRows(), sellerRateInfo.getWeekMainRateOk());
-		Label l18 = new Label(18 ,sheet.getRows(), sellerRateInfo.getWeekNotmainRateOk());
-		Label l19 = new Label(19 ,sheet.getRows(), sellerRateInfo.getWeekSumRateNormal());
-		Label l20 = new Label(20 ,sheet.getRows(), sellerRateInfo.getWeekMainRateNormal());
-		Label l21 = new Label(21 ,sheet.getRows(), sellerRateInfo.getWeekNotmainRateNormal());
-		Label l22 = new Label(22 ,sheet.getRows(), sellerRateInfo.getWeekSumRateBad());
-		Label l23 = new Label(23 ,sheet.getRows(), sellerRateInfo.getWeekMainRateBad());
-		Label l24 = new Label(24 ,sheet.getRows(), sellerRateInfo.getWeekNotmainRateBad());
-		
-		Label l25 = new Label(25 ,sheet.getRows(), sellerRateInfo.getMonthSumRateOk());
-		Label l26 = new Label(26 ,sheet.getRows(), sellerRateInfo.getMonthMainRateOk());
-		Label l27 = new Label(27 ,sheet.getRows(), sellerRateInfo.getMonthNotmainRateOk());
-		Label l28 = new Label(28 ,sheet.getRows(), sellerRateInfo.getMonthSumRateNormal());
-		Label l29 = new Label(29 ,sheet.getRows(), sellerRateInfo.getMonthMainRateNormal());
-		Label l30 = new Label(30 ,sheet.getRows(), sellerRateInfo.getMonthNotmainRateNormal());
-		Label l31 = new Label(31 ,sheet.getRows(), sellerRateInfo.getMonthSumRateBad());
-		Label l32 = new Label(32 ,sheet.getRows(), sellerRateInfo.getMonthMainRateBad());
-		Label l33 = new Label(33 ,sheet.getRows(), sellerRateInfo.getMonthNotmainRateBad());
-		
-		Label l34 = new Label(34 ,sheet.getRows(), sellerRateInfo.getHalfYearSumRateOk() );
-		Label l35 = new Label(35 ,sheet.getRows(), sellerRateInfo.getHalfYearMainRateOk());
-		Label l36 = new Label(36 ,sheet.getRows(), sellerRateInfo.getHalfYearNotmainRateOk());
-		Label l37 = new Label(37 ,sheet.getRows(), sellerRateInfo.getHalfYearSumRateNormal());
-		Label l38 = new Label(38 ,sheet.getRows(), sellerRateInfo.getHalfYearMainRateNormal());
-		Label l39 = new Label(39 ,sheet.getRows(), sellerRateInfo.getHalfYearNotmainRateNormal());
-		Label l40 = new Label(40 , sheet.getRows(), sellerRateInfo.getHalfYearSumRateBad());
-		Label l41 = new Label(41 , sheet.getRows(), sellerRateInfo.getHalfYearMainRateBad());
-		Label l42 = new Label(42 , sheet.getRows(), sellerRateInfo.getHalfYearNotmainRateBad());
-		
-		Label l43 = new Label(43 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearSumRateOk());
-		Label l44 = new Label(44 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearSumRateNormal());
-		Label l45 = new Label(45 , sheet.getRows(), sellerRateInfo.getBeforeHalfYearSumRateBad());
-		
-		Label l46 = new Label(46 , sheet.getRows(), sellerRateInfo.getSellerRate());
-		Label l47 = new Label(47 , sheet.getRows(), sellerRateInfo.getMainBusiness());
-		Label l48 = new Label(48 , sheet.getRows(), sellerRateInfo.getMainBusinessPercentage());
-		
-		
+		Label l8 = new Label(8, sheet.getRows(),
+				sellerRateInfo.isConsumerPromise() ? "是" : "否");
+		Label l9 = new Label(9, sheet.getRows(),
+				sellerRateInfo.isSevenDayReturn() ? "是" : "否");
+		Label l10 = new Label(10, sheet.getRows(),
+				sellerRateInfo.getMatchScore());
+		Label l11 = new Label(11, sheet.getRows(),
+				sellerRateInfo.getServiceScore());
+		Label l12 = new Label(12, sheet.getRows(),
+				sellerRateInfo.getConsignmentScore());
+		Label l13 = new Label(13, sheet.getRows(),
+				sellerRateInfo.getRefundmentRateScore());
+		Label l14 = new Label(14, sheet.getRows(),
+				sellerRateInfo.getComplaintScore());
+		Label l15 = new Label(15, sheet.getRows(),
+				sellerRateInfo.getPunishmentScore());
+
+		Label l16 = new Label(16, sheet.getRows(),
+				sellerRateInfo.getWeekSumRateOk());
+		Label l17 = new Label(17, sheet.getRows(),
+				sellerRateInfo.getWeekMainRateOk());
+		Label l18 = new Label(18, sheet.getRows(),
+				sellerRateInfo.getWeekNotmainRateOk());
+		Label l19 = new Label(19, sheet.getRows(),
+				sellerRateInfo.getWeekSumRateNormal());
+		Label l20 = new Label(20, sheet.getRows(),
+				sellerRateInfo.getWeekMainRateNormal());
+		Label l21 = new Label(21, sheet.getRows(),
+				sellerRateInfo.getWeekNotmainRateNormal());
+		Label l22 = new Label(22, sheet.getRows(),
+				sellerRateInfo.getWeekSumRateBad());
+		Label l23 = new Label(23, sheet.getRows(),
+				sellerRateInfo.getWeekMainRateBad());
+		Label l24 = new Label(24, sheet.getRows(),
+				sellerRateInfo.getWeekNotmainRateBad());
+
+		Label l25 = new Label(25, sheet.getRows(),
+				sellerRateInfo.getMonthSumRateOk());
+		Label l26 = new Label(26, sheet.getRows(),
+				sellerRateInfo.getMonthMainRateOk());
+		Label l27 = new Label(27, sheet.getRows(),
+				sellerRateInfo.getMonthNotmainRateOk());
+		Label l28 = new Label(28, sheet.getRows(),
+				sellerRateInfo.getMonthSumRateNormal());
+		Label l29 = new Label(29, sheet.getRows(),
+				sellerRateInfo.getMonthMainRateNormal());
+		Label l30 = new Label(30, sheet.getRows(),
+				sellerRateInfo.getMonthNotmainRateNormal());
+		Label l31 = new Label(31, sheet.getRows(),
+				sellerRateInfo.getMonthSumRateBad());
+		Label l32 = new Label(32, sheet.getRows(),
+				sellerRateInfo.getMonthMainRateBad());
+		Label l33 = new Label(33, sheet.getRows(),
+				sellerRateInfo.getMonthNotmainRateBad());
+
+		Label l34 = new Label(34, sheet.getRows(),
+				sellerRateInfo.getHalfYearSumRateOk());
+		Label l35 = new Label(35, sheet.getRows(),
+				sellerRateInfo.getHalfYearMainRateOk());
+		Label l36 = new Label(36, sheet.getRows(),
+				sellerRateInfo.getHalfYearNotmainRateOk());
+		Label l37 = new Label(37, sheet.getRows(),
+				sellerRateInfo.getHalfYearSumRateNormal());
+		Label l38 = new Label(38, sheet.getRows(),
+				sellerRateInfo.getHalfYearMainRateNormal());
+		Label l39 = new Label(39, sheet.getRows(),
+				sellerRateInfo.getHalfYearNotmainRateNormal());
+		Label l40 = new Label(40, sheet.getRows(),
+				sellerRateInfo.getHalfYearSumRateBad());
+		Label l41 = new Label(41, sheet.getRows(),
+				sellerRateInfo.getHalfYearMainRateBad());
+		Label l42 = new Label(42, sheet.getRows(),
+				sellerRateInfo.getHalfYearNotmainRateBad());
+
+		Label l43 = new Label(43, sheet.getRows(),
+				sellerRateInfo.getBeforeHalfYearSumRateOk());
+		Label l44 = new Label(44, sheet.getRows(),
+				sellerRateInfo.getBeforeHalfYearSumRateNormal());
+		Label l45 = new Label(45, sheet.getRows(),
+				sellerRateInfo.getBeforeHalfYearSumRateBad());
+
+		Label l46 = new Label(46, sheet.getRows(),
+				sellerRateInfo.getSellerRate());
+		Label l47 = new Label(47, sheet.getRows(),
+				sellerRateInfo.getMainBusiness());
+		Label l48 = new Label(48, sheet.getRows(),
+				sellerRateInfo.getMainBusinessPercentage());
+
 		try {
 			sheet.addCell(l0);
 			sheet.addCell(l1);

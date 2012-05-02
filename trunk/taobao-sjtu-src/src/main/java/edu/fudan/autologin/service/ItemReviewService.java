@@ -15,54 +15,38 @@ import edu.fudan.autologin.pojos.FeedRateComment;
 
 /**
  * Giving you a item page url, and you can get the reviews of the item.
+ * 
  * @author JustinChen
- *
- * 评论的格式如下:
- * {
-		"watershed":100,
-		"maxPage":167,
-		"currentPageNum":166,
-		"comments":[
-			{			"auction":{
-										"title":"Apple/苹果 iPhone 4S 无锁版/港版 16G 32G 64G可装软件有未激活",
-										"aucNumId":13599064573,
-										"link":"",
-										"sku":"机身颜色:港版16G白色现货  手机套餐:官方标配"
-										},
-						"content":"hao",
-						"append":null,
-						"rate":"好评！",
-						"tag":"",
-						"rateId":16249892723,
-						"award":"",
-						"reply":null,
-						"useful":0,
-						"date":"2012.03.08",
-						"user":{
-										"vip":"",
-										"rank":136,
-										"nick":"771665176_44",
-										"userId":410769781,
-										"displayRatePic":"b_red_4.gif",
-										"nickUrl":"http://wow.taobao.com/u/NDEwNzY5Nzgx/view/ta_taoshare_list.htm?redirect=fa",
-										"vipLevel":2,
-										"avatar":"http://img.taobaocdn.com/sns_logo/i1/T1VxqHXa4rXXb1upjX.jpg_40x40.jpg",
-										"anony":false,
-										"rankUrl":"http://rate.taobao.com/rate.htm?user_id=410769781&rater=1"}
-						},
+ * 
+ *         评论的格式如下: { "watershed":100, "maxPage":167, "currentPageNum":166,
+ *         "comments":[ { "auction":{
+ *         "title":"Apple/苹果 iPhone 4S 无锁版/港版 16G 32G 64G可装软件有未激活",
+ *         "aucNumId":13599064573, "link":"", "sku":"机身颜色:港版16G白色现货  手机套餐:官方标配"
+ *         }, "content":"hao", "append":null, "rate":"好评！", "tag":"",
+ *         "rateId":16249892723, "award":"", "reply":null, "useful":0,
+ *         "date":"2012.03.08", "user":{ "vip":"", "rank":136,
+ *         "nick":"771665176_44", "userId":410769781,
+ *         "displayRatePic":"b_red_4.gif", "nickUrl":
+ *         "http://wow.taobao.com/u/NDEwNzY5Nzgx/view/ta_taoshare_list.htm?redirect=fa"
+ *         , "vipLevel":2, "avatar":
+ *         "http://img.taobaocdn.com/sns_logo/i1/T1VxqHXa4rXXb1upjX.jpg_40x40.jpg"
+ *         , "anony":false,
+ *         "rankUrl":"http://rate.taobao.com/rate.htm?user_id=410769781&rater=1"
+ *         } },
  */
 public class ItemReviewService {
 	private static final Logger log = Logger.getLogger(ItemReviewService.class);
 	private String itemPageUrl;
 	private FeedRate feedRate = new FeedRate();
-	
+
 	private int reviewSum = 0;
-	
+
 	public List<String> getDateList() {
 		return dateList;
 	}
 
 	private List<String> dateList = new ArrayList<String>();
+
 	public int getReviewSum() {
 		return reviewSum;
 	}
@@ -96,34 +80,55 @@ public class ItemReviewService {
 	}
 
 	private HttpClient httpClient;
-	
-	
-	public ItemReviewService(){
-		
+
+	public ItemReviewService() {
+
 	}
-	
-	public void parseReviews() {
-		int pageNum = 0;
-		while (true) {
-			log.info("--------------------------------------------------------------------------------------");
-			log.info("This review of page num is: " + (++pageNum));
+
+	public class ItemReviewThread implements Runnable {
+
+		private int pageNum;
+		
+		public ItemReviewThread(int page){
+			this.pageNum = page;
+		}
+		public void run() {
 			GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
 					getFeedRateListUrl(), pageNum));
 			get.doGet();
 			String jsonStr = getFeedRateListJsonString(get
 					.getResponseAsString().trim());
-			if (parseFeedRateListJson(jsonStr) == false) {
-				break;
-			}
-
+			parseFeedRateListJson(jsonStr);
 			get.shutDown();
 		}
-		log.info("---------------------------------------");
-		log.info("The sum of the reviews is: "+reviewSum);
-		log.info("First feed rate date is: "+getFirstReviewDate());
-		log.info("Last feed rate date is: "+getLastReviewDate());
+
 	}
 
+	public void execute() {
+		int pageSize = 20;
+		int pageSum = (reviewSum % pageSize == 0) ? reviewSum / pageSize
+				: (reviewSum / pageSize + 1);
+		log.info("Total page num is: " + pageSum);
+		for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
+			log.info("--------------------------------------------------------------------------------------");
+			log.info("The review of Page NO is: " + pageNum);
+			parseReview(pageNum);
+		}
+		log.info("---------------------------------------");
+		log.info("The sum of the reviews is: " + reviewSum);
+		log.info("First feed rate date is: " + getFirstReviewDate());
+		log.info("Last feed rate date is: " + getLastReviewDate());
+	}
+
+	public void parseReview(int pageNum){
+		GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
+				getFeedRateListUrl(), pageNum));
+		get.doGet();
+		String jsonStr = getFeedRateListJsonString(get
+				.getResponseAsString().trim());
+		parseFeedRateListJson(jsonStr);
+		get.shutDown();
+	}
 	public String getFeedRateListUrl() {
 		String baseFeedRateListUrl = "";
 
@@ -161,52 +166,35 @@ public class ItemReviewService {
 	 * @return
 	 */
 	/*
-	 *
-	 * 评论的格式如下:
-	 * {
-			"watershed":100,
-			"maxPage":167,
-			"currentPageNum":166,
-			"comments":[
-				{			"auction":{
-											"title":"Apple/苹果 iPhone 4S 无锁版/港版 16G 32G 64G可装软件有未激活",
-											"aucNumId":13599064573,
-											"link":"",
-											"sku":"机身颜色:港版16G白色现货  手机套餐:官方标配"
-											},
-							"content":"hao",
-							"append":null,
-							"rate":"好评！",
-							"tag":"",
-							"rateId":16249892723,
-							"award":"",
-							"reply":null,
-							"useful":0,
-							"date":"2012.03.08",
-							"user":{
-											"vip":"",
-											"rank":136,
-											"nick":"771665176_44",
-											"userId":410769781,
-											"displayRatePic":"b_red_4.gif",
-											"nickUrl":"http://wow.taobao.com/u/NDEwNzY5Nzgx/view/ta_taoshare_list.htm?redirect=fa",
-											"vipLevel":2,
-											"avatar":"http://img.taobaocdn.com/sns_logo/i1/T1VxqHXa4rXXb1upjX.jpg_40x40.jpg",
-											"anony":false,
-											"rankUrl":"http://rate.taobao.com/rate.htm?user_id=410769781&rater=1"}
-							},
+	 * 
+	 * 评论的格式如下: { "watershed":100, "maxPage":167, "currentPageNum":166,
+	 * "comments":[ { "auction":{
+	 * "title":"Apple/苹果 iPhone 4S 无锁版/港版 16G 32G 64G可装软件有未激活",
+	 * "aucNumId":13599064573, "link":"", "sku":"机身颜色:港版16G白色现货  手机套餐:官方标配" },
+	 * "content":"hao", "append":null, "rate":"好评！", "tag":"",
+	 * "rateId":16249892723, "award":"", "reply":null, "useful":0,
+	 * "date":"2012.03.08", "user":{ "vip":"", "rank":136,
+	 * "nick":"771665176_44", "userId":410769781,
+	 * "displayRatePic":"b_red_4.gif", "nickUrl":
+	 * "http://wow.taobao.com/u/NDEwNzY5Nzgx/view/ta_taoshare_list.htm?redirect=fa"
+	 * , "vipLevel":2, "avatar":
+	 * "http://img.taobaocdn.com/sns_logo/i1/T1VxqHXa4rXXb1upjX.jpg_40x40.jpg",
+	 * "anony":false,
+	 * "rankUrl":"http://rate.taobao.com/rate.htm?user_id=410769781&rater=1"} },
 	 */
 	public String getFeedRateListJsonString(String str) {
-		log.info("Plain json string of feed rate review from server is: "+str);
+		log.info("Plain json string of feed rate review from server is: " + str);
 		int begin = str.indexOf("(");
 		int end = str.lastIndexOf(")");
-		log.info("Json string of feed rate review is: "+str.substring(begin+1,end));
-//		return str.substring("jsonp_reviews_list(".length(), str.length() - 1);//if the str has no jsonp_reviews_list, what should we can do?
-		return str.substring(begin+1,end);
-		
+		log.info("Json string of feed rate review is: "
+				+ str.substring(begin + 1, end));
+		// return str.substring("jsonp_reviews_list(".length(), str.length() -
+		// 1);//if the str has no jsonp_reviews_list, what should we can do?
+		return str.substring(begin + 1, end);
+
 		/*
-		 * The substring begins at the specified beginIndex and extends to the character at the index endIndex - 1
-		 * 
+		 * The substring begins at the specified beginIndex and extends to the
+		 * character at the index endIndex - 1
 		 */
 	}
 
@@ -217,7 +205,7 @@ public class ItemReviewService {
 		feedRate.setWatershed(jsonObj.getInt("watershed"));
 		feedRate.setMaxPage(jsonObj.getInt("maxPage"));
 		feedRate.setCurrentPageNum(jsonObj.getInt("currentPageNum"));
-		
+
 		if (jsonObj.get("comments").equals(null)) {
 			log.info("There is no comment.");
 			return false;
@@ -229,12 +217,10 @@ public class ItemReviewService {
 
 			List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
 			int i = 1;
-			
-			reviewSum += list.size();
+
 			for (Object o : list) {
-				//feedRate.getComments().add((FeedRateComment) o);
-				
-				
+				// feedRate.getComments().add((FeedRateComment) o);
+
 				JSONObject j = JSONObject.fromObject(o);
 				FeedRateComment cmt = new FeedRateComment();
 				cmt.setDate(j.getString("date"));
@@ -242,15 +228,15 @@ public class ItemReviewService {
 				log.info("Comment NO is: " + i++);
 				log.info("Date is: " + j.getString("date"));
 				dateList.add(j.getString("date"));
-				log.info("Auction title is: "+j.getJSONObject("auction").getString("title"));
+				log.info("Auction title is: "
+						+ j.getJSONObject("auction").getString("title"));
 				log.info("Content is: " + j.getString("content"));
-				
-				
+
 			}
 			return true;
 		}
 	}
-	
+
 	public String getFirstReviewDate() {
 		if (dateList.size() == 0) {
 			return null;
@@ -264,7 +250,5 @@ public class ItemReviewService {
 		}
 		return dateList.get(dateList.size() - 1);
 	}
-	
-	
-	
+
 }
