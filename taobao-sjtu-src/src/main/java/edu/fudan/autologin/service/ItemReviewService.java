@@ -57,6 +57,12 @@ public class ItemReviewService {
 	private FeedRate feedRate = new FeedRate();
 	
 	private int reviewSum = 0;
+	
+	public List<String> getDateList() {
+		return dateList;
+	}
+
+	private List<String> dateList = new ArrayList<String>();
 	public int getReviewSum() {
 		return reviewSum;
 	}
@@ -114,6 +120,8 @@ public class ItemReviewService {
 		}
 		log.info("---------------------------------------");
 		log.info("The sum of the reviews is: "+reviewSum);
+		log.info("First feed rate date is: "+getFirstReviewDate());
+		log.info("Last feed rate date is: "+getLastReviewDate());
 	}
 
 	public String getFeedRateListUrl() {
@@ -233,6 +241,7 @@ public class ItemReviewService {
 				cmt.setContent(j.getString("content"));
 				log.info("Comment NO is: " + i++);
 				log.info("Date is: " + j.getString("date"));
+				dateList.add(j.getString("date"));
 				log.info("Auction title is: "+j.getJSONObject("auction").getString("title"));
 				log.info("Content is: " + j.getString("content"));
 				
@@ -241,5 +250,21 @@ public class ItemReviewService {
 			return true;
 		}
 	}
+	
+	public String getFirstReviewDate() {
+		if (dateList.size() == 0) {
+			return null;
+		}
+		return dateList.get(0);
+	}
+
+	public String getLastReviewDate() {
+		if (dateList.size() == 0) {
+			return null;
+		}
+		return dateList.get(dateList.size() - 1);
+	}
+	
+	
 	
 }

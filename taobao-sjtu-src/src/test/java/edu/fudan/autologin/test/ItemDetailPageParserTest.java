@@ -26,6 +26,7 @@ import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.MonthService;
 import edu.fudan.autologin.service.PostageService;
+import edu.fudan.autologin.service.ReviewSumService;
 
 public class ItemDetailPageParserTest {
 
@@ -53,7 +54,7 @@ public class ItemDetailPageParserTest {
 		httpClient.getConnectionManager().shutdown();
 	}
 
-	@Test
+	
 	public void testDoc() {
 		String url = "http://item.taobao.com/item.htm?id=14568205276";
 		GetMethod get = new GetMethod(httpClient, url);
@@ -79,7 +80,13 @@ public class ItemDetailPageParserTest {
 				.setUserRatePageUrl("http://rate.taobao.com/user-rate-2cd40cbdf1fbaa2fbdc9bb2fff2aaa4d.htm");
 		monthService.execute();
 	}
-
+	@Test
+	public void testReviewSum(){
+		ReviewSumService reviewSumService = new ReviewSumService();
+		reviewSumService.setHttpClient(httpClient);
+		reviewSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733");
+		reviewSumService.execute();
+	}
 	public void testReview() {
 		ItemReviewService itemReviewService = new ItemReviewService();
 		itemReviewService

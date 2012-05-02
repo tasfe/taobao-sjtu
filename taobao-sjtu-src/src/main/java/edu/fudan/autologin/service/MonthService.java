@@ -82,12 +82,16 @@ public class MonthService {
 		
 		Document doc = Jsoup.parse(get.getResponseAsString());
 		
-		Elements monthuseridEles = doc.select("input#monthuserid");
-
-		for(Element e : monthuseridEles){
-			monthuserid = e.attr("value");
-			log.info("Monthuserid is: "+monthuserid);
-		}
+		Element monthuseridEle = doc.select("input#monthuserid").get(0);
+		monthuserid = monthuseridEle.attr("value");
+		log.info("Monthuserid is: "+monthuserid);
+		
+//		Elements monthuseridEles = doc.select("input#monthuserid");
+//
+//		for(Element e : monthuseridEles){
+//			monthuserid = e.attr("value");
+//			log.info("Monthuserid is: "+monthuserid);
+//		}
 		
 		Elements userTagEles = doc.select("input#userTag");
 
