@@ -112,11 +112,8 @@ public class BasePageParser implements PageParser {
  * 先解析页面获得List，再将这个list写入到excel中，再执行下一步工作
  */
 	public void execute() {
-		log.info("--------------------start to parse page------------------");
 		parsePage();
-		log.info("--------------------start to write excel------------------");
 		writeExcel();
-		log.info("--------------------start to do next------------------");
 		doNext();
 	}
 }

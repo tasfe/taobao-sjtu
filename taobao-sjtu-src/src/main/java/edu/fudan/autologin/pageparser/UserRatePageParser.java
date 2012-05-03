@@ -25,6 +25,13 @@ public class UserRatePageParser extends BasePageParser {
 	private SellerRateInfo sellerRateInfo;
 	private static final Logger log = Logger.getLogger(UserRatePageParser.class);
 
+	
+	private String sellerId;
+	
+	public void setSellerId(String sellerId) {
+		this.sellerId = sellerId;
+	}
+
 	@Override
 	public void doNext() {
 		super.doNext();
@@ -45,12 +52,12 @@ public class UserRatePageParser extends BasePageParser {
 		log.info("Start to parse page " + UserRatePageParser.class);
 		this.getPage(this.getPageUrl());
 		Document doc = this.getDoc();
-		String sellerId = "Get From Parent";
 		log.info("sellerId: " + sellerId);
 		sellerRateInfo.setSellerId(sellerId);
 		
 		Element sellerInfoEl = doc.select("div.personal-info div.left-box").get(0);
 		Element sellerServiceEl = doc.select("div.personal-info div.left-box").get(1);
+		assert(sellerServiceEl != null);
 		
 		//seller name
 		String sellerName = sellerInfoEl.select("div.bd div.title > a").get(0).ownText();
@@ -102,20 +109,50 @@ public class UserRatePageParser extends BasePageParser {
 		sellerRateInfo.setSevenDayReturn(isSevenDayReturn);
 		
 		//charge num
-		String chargeNum = sellerServiceEl.select("div.bd div.charge span").text();
+		String chargeNum;
+		if(sellerServiceEl.select("div.bd div.charge span").size() == 0){
+			chargeNum = "卖家尚未提交保证金";
+			
+		}else{
+			chargeNum = sellerServiceEl.select("div.bd div.charge span").text();
+		}
 		log.info("chargeNum: " + chargeNum);
 		sellerRateInfo.setChargeNum(chargeNum);
 		
-		Elements dynamicRateEls = doc.select("div#dynamic-rate div#sixmonth ul li");
-		String matchScore = dynamicRateEls.get(0).select("div.item-scrib em.count").text();
-		String serviceScore = dynamicRateEls.get(1).select("div.item-scrib em.count").text();
-		String consignmentScore = dynamicRateEls.get(2).select("div.item-scrib em.count").text();
+		
+		String matchScore;
+		String serviceScore;
+		String consignmentScore;
+		if(doc.select("div#dynamic-rate div#sixmonth ul li").size() == 0){
+			matchScore = "null";
+			serviceScore = "null";
+			consignmentScore = "null";
+		}else{
+			Elements dynamicRateEls = doc.select("div#dynamic-rate div#sixmonth ul li");
+			
+			if(dynamicRateEls.get(0).select("div.item-scrib em.count").size() == 0){
+				matchScore = "null";
+			}else{
+				matchScore = dynamicRateEls.get(0).select("div.item-scrib em.count").text();
+			}
+			if(dynamicRateEls.get(1).select("div.item-scrib em.count").size() == 0){
+				serviceScore = "null";
+			}else{
+				serviceScore = dynamicRateEls.get(1).select("div.item-scrib em.count").text();
+			}
+			if(dynamicRateEls.get(2).select("div.item-scrib em.count").size() == 0){
+				consignmentScore = "null";
+			}else{
+				 consignmentScore = dynamicRateEls.get(2).select("div.item-scrib em.count").text();
+			}
+		}
 		log.info("matchScore: " + matchScore);
 		log.info("serviceScore: " + serviceScore);
 		log.info("consignmentScore: " + consignmentScore);
 		sellerRateInfo.setMatchScore(matchScore);
 		sellerRateInfo.setServiceScore(serviceScore);
 		sellerRateInfo.setConsignmentScore(consignmentScore);
+		
 		
 		
 		/*店铺30天内服务情况需要自己构造url请求*/

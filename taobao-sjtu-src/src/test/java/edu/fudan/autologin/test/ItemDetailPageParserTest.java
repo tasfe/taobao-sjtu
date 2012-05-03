@@ -21,6 +21,7 @@ import org.junit.After;
 
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
+import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
@@ -91,7 +92,14 @@ public class ItemDetailPageParserTest {
 		reviewSumService.execute();
 	}
 	
-	@Test
+	
+	public void testUserRate(){
+		
+		String pageUrl = "http://rate.taobao.com/user-rate-20c69a05f4c7b64896614a8b08d83fee.htm";
+		UserRatePageParser userRatePageParser = new UserRatePageParser(httpClient, pageUrl);
+		userRatePageParser.setSellerId("55600035");
+		userRatePageParser.execute();
+	}
 	public void testReview() {
 		
 		String url = "http://item.taobao.com/item.htm?id=10203414733";
