@@ -76,7 +76,16 @@ public class ItemDetailPageParserTest {
 	}
 
 	
-	
+	@Test
+	public void testNoItem(){
+		
+		String pageUrl = "http://item.taobao.com/item.htm?id=14614561158";
+		
+		GetMethod get =new GetMethod(httpClient, pageUrl);
+		get.doGet();
+		get.printResponse();
+		get.shutDown();
+	}
 	public void testMonthServie() {
 		MonthService monthService = new MonthService();
 		monthService.setHttpClient(httpClient);
@@ -150,6 +159,6 @@ public class ItemDetailPageParserTest {
 		postageService.setHttpClient(httpClient);
 		postageService
 				.setItemPageUrl("http://wt.taobao.com/detail.htm?id=14010379194");
-		postageService.parsePostage();
+		postageService.execute();
 	}
 }

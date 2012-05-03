@@ -106,14 +106,20 @@ public class ItemReviewService {
 
 	public void execute() {
 		int pageSize = 20;
-		int pageSum = (reviewSum % pageSize == 0) ? reviewSum / pageSize
-				: (reviewSum / pageSize + 1);
-		log.info("Total page num is: " + pageSum);
-		for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
-			log.info("--------------------------------------------------------------------------------------");
-			log.info("The review of Page NO is: " + pageNum);
-			parseReview(pageNum);
+		
+		if(reviewSum == 0){
+			
+		}else{
+			int pageSum = (reviewSum % pageSize == 0) ? reviewSum / pageSize
+					: (reviewSum / pageSize + 1);
+			log.info("Total page num is: " + pageSum);
+			for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
+				log.info("--------------------------------------------------------------------------------------");
+				log.info("The review of Page NO is: " + pageNum);
+				parseReview(pageNum);
+			}
 		}
+		
 		log.info("---------------------------------------");
 		log.info("The sum of the reviews is: " + reviewSum);
 		log.info("First feed rate date is: " + getFirstReviewDate());
