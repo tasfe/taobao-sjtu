@@ -43,6 +43,12 @@ public class ItemDetailPageParser extends BasePageParser {
 	private String postageUrl;
 	private String saleNumUrl;
 	private String reviewUrl;
+	
+	private String sellerId;
+	public void setSellerId(String sellerId) {
+		this.sellerId = sellerId;
+	}
+
 	private List<BuyerInfo> buyerInfos;
 
 	private List<String> dateList = new ArrayList<String>();
@@ -100,7 +106,6 @@ public class ItemDetailPageParser extends BasePageParser {
 		Document doc = this.getDoc();
 		preprocessDoc();
 		Element itemPro = doc.select("div.tb-property").get(0);
-		String sellerId = "inherited from parent call";
 
 		// seller id
 		log.info("sellerId: " + sellerId);
@@ -245,6 +250,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("Start to parse buyer info page.");
 		log.info("The size of buyer info list is: "+buyerInfos.size());
 		for (BuyerInfo buyerInfo : buyerInfos) {
+			buyerInfo.setSellerId(sellerId);
 			ExcelUtil.writeItemBuyerSheet(buyerInfo);
 //			ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(
 //					this.getHttpClient(), buyerInfo.getHref());
@@ -260,6 +266,8 @@ public class ItemDetailPageParser extends BasePageParser {
 		} else {
 			UserRatePageParser userRatePageParser = new UserRatePageParser(
 					this.getHttpClient(), itemInfo.getUserRateHref());
+			
+			userRatePageParser.setSellerId(sellerId);
 			userRatePageParser.execute();
 		}
 	}
