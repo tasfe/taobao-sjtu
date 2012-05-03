@@ -124,7 +124,6 @@ public class BuyerListService {
 			bi.setNum(num);
 			bi.setPrice(price);
 			bi.setSize(size);
-			
 
 			buyerInfos.add(bi);
 

@@ -43,7 +43,7 @@ public class ItemDetailPageParser extends BasePageParser {
 	private String postageUrl;
 	private String saleNumUrl;
 	private String reviewUrl;
-	private List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
+	private List<BuyerInfo> buyerInfos;
 
 	private List<String> dateList = new ArrayList<String>();
 
@@ -84,8 +84,9 @@ public class ItemDetailPageParser extends BasePageParser {
 
 	public String getShopRankHref(Document doc) {
 		if (doc.select("a#shop-rank").size() == 0) {
-				log.info("There is no shop rank href in the page and page url is: "+this.getPageUrl());
-				return null;
+			log.info("There is no shop rank href in the page and page url is: "
+					+ this.getPageUrl());
+			return null;
 		} else {
 			Element shopRankEle = doc.select("a#shop-rank").get(0);
 			return shopRankEle.attr("href");
@@ -100,20 +101,20 @@ public class ItemDetailPageParser extends BasePageParser {
 		preprocessDoc();
 		Element itemPro = doc.select("div.tb-property").get(0);
 		String sellerId = "inherited from parent call";
+
+		// seller id
 		log.info("sellerId: " + sellerId);
+		itemInfo.setSellerId(sellerId);
+
+		// price range
 		String priceRange = itemPro.getElementById("J_StrPrice").ownText();
 		log.info("priceRange: " + priceRange);
+		itemInfo.setPriceRange(priceRange);
+
 		String freightPrice = "";
 		String location = "";
 		String freight = "";
 
-		//get review sum
-		ReviewSumService reviewSumService = new ReviewSumService();
-		reviewSumService.setHttpClient(this.getHttpClient());
-		reviewSumService.setItemPageUrl(this.getPageUrl());
-		reviewSumService.execute();
-		itemInfo.setReviews(reviewSumService.getReviewSum());
-		
 		itemInfo.setUserRateHref(getShopRankHref(doc));
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(this.getHttpClient());
@@ -125,7 +126,6 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setFreightPrice(freightPrice);
 		log.info("freightPrice: " + freightPrice);
 
-		
 		SaleSumService saleSumService = new SaleSumService();
 		saleSumService.setHttpClient(this.getHttpClient());
 		saleSumService.setItemPageUrl(this.getPageUrl());
@@ -134,12 +134,14 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("saleNumIn30Days: " + saleNumIn30Days);
 		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
-
+		// item type
 		String itemType = "";
 		Element element = itemPro.select("li.tb-item-type em").get(0);
 		itemType = element.ownText();
 		log.info("itemType: " + itemType);
+		itemInfo.setItemType(itemType);
 
+		// pay type
 		String payType = "";
 		Elements links = itemPro.select("dl.tb-paymethods a");
 		for (Element link : links) {
@@ -149,35 +151,50 @@ public class ItemDetailPageParser extends BasePageParser {
 		}
 		payType = payType.substring(0, payType.lastIndexOf(","));
 		log.info("payType: " + payType);
+		itemInfo.setPayType(payType);
+
+		// service type
 		String serviceType = "";
 		links = itemPro.select("dl.tb-featured-services a");
 		for (Element link : links) {
 			serviceType += link.ownText();
 		}
 		log.info("serviceType: " + serviceType);
+		itemInfo.setServiceType(serviceType);
 
 		String spec = "";
 		String capacity = "";
 		Elements elements = doc.select("div#attributes ul.attributes-list li");
 		spec = elements.get(1).ownText();
 		capacity = elements.get(2).ownText();
+		itemInfo.setCapacity(capacity);
+		itemInfo.setSpec(spec);
 
-		//解析买家列表
+		// 解析买家列表
 		BuyerListService buyerListService = new BuyerListService();
 		buyerListService.setHttpClient(this.getHttpClient());
 		buyerListService.setItemPageUrl(this.getPageUrl());
 		buyerListService.setBuyerSum(saleNumIn30Days);
 		buyerListService.execute();
 		buyerInfos = buyerListService.getBuyerInfos();
+		log.info("buyerinfo list size is: "+buyerInfos.size());
 
-		//解析評論
+		// 获得评论总数
+		ReviewSumService reviewSumService = new ReviewSumService();
+		reviewSumService.setHttpClient(this.getHttpClient());
+		reviewSumService.setItemPageUrl(this.getPageUrl());
+		reviewSumService.execute();
+		itemInfo.setReviews(reviewSumService.getReviewSum());
+
+		// 解析評論
 		ItemReviewService itemReviewService = new ItemReviewService();
 		itemReviewService.setHttpClient(this.getHttpClient());
 		itemReviewService.setItemPageUrl(this.getPageUrl());
+		itemReviewService.setReviewSum(reviewSumService.getReviewSum());
 		itemReviewService.execute();
 		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
 		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
-		
+
 	}
 
 	/* 对页面进行预处理，获取动态请求的url */
@@ -225,20 +242,25 @@ public class ItemDetailPageParser extends BasePageParser {
 
 		// assert (itemInfo.getItemBuyersHref() != null);
 
-		log.info("do next------------------------------------------------");
-		// for(BuyerInfo buyerInfo: buyerInfos){
-		// ItemBuyersPageParser itemBuyersPageParser = new
-		// ItemBuyersPageParser(this.getHttpClient(), buyerInfo.getHref());
-		// itemBuyersPageParser.setBuyInfo(buyerInfo);
-		// itemBuyersPageParser.execute();
-		// }
-		//
-		if(itemInfo.getUserRateHref() == null){
-			//如果商家頁面沒有信用頁面
-		}else{
-				UserRatePageParser userRatePageParser = new UserRatePageParser(
-				this.getHttpClient(), itemInfo.getUserRateHref());
-				userRatePageParser.execute();
+		log.info("Start to parse buyer info page.");
+		log.info("The size of buyer info list is: "+buyerInfos.size());
+		for (BuyerInfo buyerInfo : buyerInfos) {
+			ExcelUtil.writeItemBuyerSheet(buyerInfo);
+//			ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(
+//					this.getHttpClient(), buyerInfo.getHref());
+//			itemBuyersPageParser.setBuyInfo(buyerInfo);
+////			itemBuyersPageParser.execute();
+//			itemBuyersPageParser.writeExcel();
+		}
+
+		
+		log.info("Start to parse user rate page.");
+		if (itemInfo.getUserRateHref() == null) {
+			// 如果商家頁面沒有信用頁面
+		} else {
+			UserRatePageParser userRatePageParser = new UserRatePageParser(
+					this.getHttpClient(), itemInfo.getUserRateHref());
+			userRatePageParser.execute();
 		}
 	}
 
@@ -283,5 +305,4 @@ public class ItemDetailPageParser extends BasePageParser {
 		return saleNum;
 	}
 
-	
 }

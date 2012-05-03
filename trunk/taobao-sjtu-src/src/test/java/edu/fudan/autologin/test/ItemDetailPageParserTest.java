@@ -94,7 +94,7 @@ public class ItemDetailPageParserTest {
 	@Test
 	public void testReview() {
 		
-		String url = "http://item.taobao.com/item.htm?id=12222776919";
+		String url = "http://item.taobao.com/item.htm?id=10203414733";
 		ReviewSumService reviewSumService = new ReviewSumService();
 		reviewSumService.setHttpClient(httpClient);
 		reviewSumService.setItemPageUrl(url);

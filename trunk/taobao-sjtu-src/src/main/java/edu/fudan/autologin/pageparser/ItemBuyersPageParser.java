@@ -40,42 +40,42 @@ public class ItemBuyersPageParser extends BasePageParser {
 	
 	@Override
 	public void parsePage() {
-		log.info("Start to parse page " + ItemDetailPageParser.class);
-		this.getPage(this.getPageUrl());
-		Document doc = this.getDoc();
-
-		Elements buyerListEls = doc.select("table.tb-list > tbody > tr");
-		for(int i = 0; i < buyerListEls.size(); i ++){
-			Element buyerEl = buyerListEls.get(i);
-			Element buyerInfo = buyerEl.select("td.tb-buyer").get(0);
-			String buyerHref = buyerInfo.select("a:has(img.rank)").get(0).attr("href");
-			Document buyInfoDoc = getBuyerInfo(buyerHref);
-			String buyerAddress = buyInfoDoc.select("div.personal-info div.bd dl dd").get(1).text();
-			if(0 == buyerAddress.length()){
-				buyerAddress = "0";   //标0处理
-			}
-			String rateInfo = buyInfoDoc.select("div.personal-info div.bd ul a#J_BuyerRate").text();
-			int rateScore = Integer.valueOf(rateInfo);
-			String priceStr = buyerEl.select("td.tb-price").get(0).ownText();
-			int price = Integer.valueOf(priceStr);
-			String numStr = buyerEl.select("td.tb-amount").get(0).ownText();
-			int num = Integer.valueOf(numStr);
-			String payTime = buyerEl.select("td.tb-time").get(0).ownText();
-			String size = buyerEl.select("td.tb-sku").text();
-			String sex = SexEnum.unknown;
-			
-			BuyerInfo buyer = new BuyerInfo();
-			buyer.setSellerId("inherate from parent");
-			buyer.setNum(num);
-			buyer.setPayTime(payTime);
-			buyer.setPrice(price);
-			buyer.setSize(size);
-			buyer.setSex(sex);
-			buyer.setRateScore(rateScore);
-			buyer.setBuyerAddress(buyerAddress);
-			
-			//buyerInfos.add(buyer);
-		}
+//		log.info("Start to parse page " + ItemDetailPageParser.class);
+//		this.getPage(this.getPageUrl());
+//		Document doc = this.getDoc();
+//
+//		Elements buyerListEls = doc.select("table.tb-list > tbody > tr");
+//		for(int i = 0; i < buyerListEls.size(); i ++){
+//			Element buyerEl = buyerListEls.get(i);
+//			Element buyerInfo = buyerEl.select("td.tb-buyer").get(0);
+//			String buyerHref = buyerInfo.select("a:has(img.rank)").get(0).attr("href");
+//			Document buyInfoDoc = getBuyerInfo(buyerHref);
+//			String buyerAddress = buyInfoDoc.select("div.personal-info div.bd dl dd").get(1).text();
+//			if(0 == buyerAddress.length()){
+//				buyerAddress = "0";   //标0处理
+//			}
+//			String rateInfo = buyInfoDoc.select("div.personal-info div.bd ul a#J_BuyerRate").text();
+//			int rateScore = Integer.valueOf(rateInfo);
+//			String priceStr = buyerEl.select("td.tb-price").get(0).ownText();
+//			int price = Integer.valueOf(priceStr);
+//			String numStr = buyerEl.select("td.tb-amount").get(0).ownText();
+//			int num = Integer.valueOf(numStr);
+//			String payTime = buyerEl.select("td.tb-time").get(0).ownText();
+//			String size = buyerEl.select("td.tb-sku").text();
+//			String sex = SexEnum.unknown;
+//			
+//			BuyerInfo buyer = new BuyerInfo();
+//			buyer.setSellerId("inherate from parent");
+//			buyer.setNum(num);
+//			buyer.setPayTime(payTime);
+//			buyer.setPrice(price);
+//			buyer.setSize(size);
+//			buyer.setSex(sex);
+//			buyer.setRateScore(rateScore);
+//			buyer.setBuyerAddress(buyerAddress);
+//			
+//			//buyerInfos.add(buyer);
+//		}
 	}
 
 	public Document getBuyerInfo(String href){
@@ -98,7 +98,7 @@ public class ItemBuyersPageParser extends BasePageParser {
 
 	@Override
 	public void writeExcel() {
-	//	ExcelUtil.writeItemBuyerSheet(buyerInfos);
+		ExcelUtil.writeItemBuyerSheet(buyInfo);
 	}
 
 	public ItemBuyersPageParser(HttpClient httpClient, String pageUrl) {

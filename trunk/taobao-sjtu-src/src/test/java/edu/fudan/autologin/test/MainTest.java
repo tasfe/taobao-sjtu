@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.fudan.autologin.excel.ExcelUtil;
+import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
 import edu.fudan.autologin.pojos.CategoryInfo;
 
@@ -23,8 +24,7 @@ public class MainTest {
 	
 	
 	public void initialize(){
-		ExcelUtil.createWorkbook();
-		ExcelUtil.createSheets();
+		ExcelUtil.prepare();
 	}
 	
 	@Before
@@ -47,11 +47,15 @@ public class MainTest {
 		httpClient.getConnectionManager().shutdown();
 	}
 	
-	@Test
+	public void testSellerInSearchResult(){
+		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, "http://item.taobao.com/item.htm?id=6042143146");
+		itemDetailPageParser.execute();
+	}
 	public void execute(){
 		doMyWork();
 	}
 	
+	@Test
 	public void doMyWork() {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();

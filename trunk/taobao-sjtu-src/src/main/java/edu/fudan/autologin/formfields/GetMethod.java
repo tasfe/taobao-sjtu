@@ -67,6 +67,7 @@ public class GetMethod {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}finally{
 		}
 	}
 
