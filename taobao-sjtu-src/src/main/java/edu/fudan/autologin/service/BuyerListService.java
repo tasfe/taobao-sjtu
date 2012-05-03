@@ -54,19 +54,25 @@ public class BuyerListService {
 	public void execute() {
 		String showBuyerListUrl = getShowBuyerListUrl(itemPageUrl);
 		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
-		int pageSize = 15;
-		int pageSum = (buyerSum % pageSize == 0) ? buyerSum / pageSize
-				: (buyerSum / pageSize + 1);
+		if(showBuyerListUrl == null){
+			log.info("There is no showBuyerList url in the page.");
+			assert(buyerInfos.size() == 0);
+		}else{
+			int pageSize = 15;
+			int pageSum = (buyerSum % pageSize == 0) ? buyerSum / pageSize
+					: (buyerSum / pageSize + 1);
 
-		log.info("Total page num is: "+pageSum);
-		for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
-			log.info("-----------------------------------------------------");
-			new Thread(new BuyerListThread(showBuyerListUrl,pageNum)).run();
-//			log.info("This is buyers of Page NO: " + pageNum);
-//			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-//					showBuyerListUrl, pageNum);
-//			parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
+			log.info("Total page num is: "+pageSum);
+			for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
+				log.info("-----------------------------------------------------");
+				new Thread(new BuyerListThread(showBuyerListUrl,pageNum)).run();
+//				log.info("This is buyers of Page NO: " + pageNum);
+//				String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+//						showBuyerListUrl, pageNum);
+//				parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
+			}
 		}
+		
 	}
 
 	public String getItemPageUrl() {
@@ -149,7 +155,7 @@ public class BuyerListService {
 	}
 
 	public String getShowBuyerListUrl(String itemDetailPageUrl) {
-		String showBuyerListUrl = "";
+		String showBuyerListUrl = null;
 
 		GetMethod getMethod = new GetMethod(this.getHttpClient(),
 				itemDetailPageUrl);
@@ -157,13 +163,19 @@ public class BuyerListService {
 		String tmpStr = getMethod.getResponseAsString();
 		getMethod.shutDown();
 
-		int base = tmpStr.indexOf("detail:params=\"http");
-		int end = tmpStr.indexOf(",showBuyerList", base);
+		
+		if(tmpStr.contains("showBuyerList") == false){
+			showBuyerListUrl = null;
+		}else{
+			int base = tmpStr.indexOf("detail:params=\"http");
+			int end = tmpStr.indexOf(",showBuyerList", base);
 
-		String myStr = tmpStr
-				.substring(base + "detail:params=\"".length(), end);
+			String myStr = tmpStr
+					.substring(base + "detail:params=\"".length(), end);
 
-		showBuyerListUrl = myStr;
+			showBuyerListUrl = myStr;
+		}
+		
 		return showBuyerListUrl;
 	}
 

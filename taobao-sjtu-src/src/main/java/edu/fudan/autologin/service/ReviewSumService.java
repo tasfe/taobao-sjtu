@@ -18,7 +18,15 @@ public class ReviewSumService {
 	private int reviewSum = 0;
 	
 	public void execute(){
-		parseJson(getJsonStr(getPlainJson(getAjaxUrl())));
+		String ajaxUrl;
+		ajaxUrl = getAjaxUrl();
+		if(ajaxUrl == null){
+			log.info("There is no review sum url.");
+			reviewSum = 0;
+		}else{
+			parseJson(getJsonStr(getPlainJson(getAjaxUrl())));
+		}
+		
 	}
 	
 	public String getAjaxUrl(){
@@ -33,11 +41,12 @@ public class ReviewSumService {
 		
 		if(doc.select("em#J_RateStar").size() == 0){
 			log.error("There is no review sum url in the page.");
+			ajaxUrl = null;
 		}else{
 			Element rateStar = doc.select("em#J_RateStar").get(0);
 			baseUrl = rateStar.attr("data-commonApi");
+			ajaxUrl = baseUrl + appendStr;
 		}
-		ajaxUrl = baseUrl + appendStr;
 		
 		get.shutDown();
 		return ajaxUrl;

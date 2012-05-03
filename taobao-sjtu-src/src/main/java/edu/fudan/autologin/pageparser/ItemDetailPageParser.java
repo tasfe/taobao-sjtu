@@ -104,17 +104,52 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("Start to parse page " + ItemDetailPageParser.class);
 		this.getPage(this.getPageUrl());
 		Document doc = this.getDoc();
-		preprocessDoc();
-		Element itemPro = doc.select("div.tb-property").get(0);
+		
+		if(doc.select("div.tb-property").size() == 0){
+			
+		}else{
+			Element itemPro = doc.select("div.tb-property").get(0);
+			// price range
+			String priceRange = itemPro.getElementById("J_StrPrice").ownText();
+			log.info("priceRange: " + priceRange);
+			itemInfo.setPriceRange(priceRange);
+			
+			// item type
+			String itemType = "";
+			Element element = itemPro.select("li.tb-item-type em").get(0);
+			itemType = element.ownText();
+			log.info("itemType: " + itemType);
+			itemInfo.setItemType(itemType);
+
+			// pay type
+			String payType = "";
+			Elements links = itemPro.select("dl.tb-paymethods a");
+			for (Element link : links) {
+				if (!"#".equals(link.attr("href"))) {
+					payType += link.ownText() + ", ";
+				}
+			}
+			payType = payType.substring(0, payType.lastIndexOf(","));
+			log.info("payType: " + payType);
+			itemInfo.setPayType(payType);
+
+			// service type
+			String serviceType = "";
+			links = itemPro.select("dl.tb-featured-services a");
+			for (Element link : links) {
+				serviceType += link.ownText();
+			}
+			log.info("serviceType: " + serviceType);
+			itemInfo.setServiceType(serviceType);
+		}
+		
 
 		// seller id
 		log.info("sellerId: " + sellerId);
 		itemInfo.setSellerId(sellerId);
 
-		// price range
-		String priceRange = itemPro.getElementById("J_StrPrice").ownText();
-		log.info("priceRange: " + priceRange);
-		itemInfo.setPriceRange(priceRange);
+		
+		
 
 		String freightPrice = "";
 		String location = "";
@@ -124,7 +159,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(this.getHttpClient());
 		postageService.setItemPageUrl(this.getPageUrl());
-		postageService.parsePostage();
+		postageService.execute();
 		location = postageService.getPostage().getLocation();
 		freight = postageService.getPostage().getCarriage();
 		freightPrice = location + " : " + freight;
@@ -139,41 +174,21 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("saleNumIn30Days: " + saleNumIn30Days);
 		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
-		// item type
-		String itemType = "";
-		Element element = itemPro.select("li.tb-item-type em").get(0);
-		itemType = element.ownText();
-		log.info("itemType: " + itemType);
-		itemInfo.setItemType(itemType);
-
-		// pay type
-		String payType = "";
-		Elements links = itemPro.select("dl.tb-paymethods a");
-		for (Element link : links) {
-			if (!"#".equals(link.attr("href"))) {
-				payType += link.ownText() + ", ";
-			}
+		
+		
+		if(doc.select("div#attributes ul.attributes-list li").size() ==0 ){
+			
+		}else{
+			String spec = "";
+			String capacity = "";
+			Elements elements = doc.select("div#attributes ul.attributes-list li");
+			spec = elements.get(1).ownText();
+			capacity = elements.get(2).ownText();
+			itemInfo.setCapacity(capacity);
+			itemInfo.setSpec(spec);
 		}
-		payType = payType.substring(0, payType.lastIndexOf(","));
-		log.info("payType: " + payType);
-		itemInfo.setPayType(payType);
 
-		// service type
-		String serviceType = "";
-		links = itemPro.select("dl.tb-featured-services a");
-		for (Element link : links) {
-			serviceType += link.ownText();
-		}
-		log.info("serviceType: " + serviceType);
-		itemInfo.setServiceType(serviceType);
-
-		String spec = "";
-		String capacity = "";
-		Elements elements = doc.select("div#attributes ul.attributes-list li");
-		spec = elements.get(1).ownText();
-		capacity = elements.get(2).ownText();
-		itemInfo.setCapacity(capacity);
-		itemInfo.setSpec(spec);
+		
 
 		// 解析买家列表
 		BuyerListService buyerListService = new BuyerListService();
@@ -217,6 +232,7 @@ public class ItemDetailPageParser extends BasePageParser {
 			log.info("postageUrl: " + postageUrl);
 			setPostageUrl(postageUrl);
 		} else {
+			
 			log.info("get postage url error, not found");
 		}
 		if (docString.contains("getDealQuantity")) {
@@ -260,7 +276,6 @@ public class ItemDetailPageParser extends BasePageParser {
 		}
 
 		
-		log.info("Start to parse user rate page.");
 		if (itemInfo.getUserRateHref() == null) {
 			// 如果商家頁面沒有信用頁面
 		} else {

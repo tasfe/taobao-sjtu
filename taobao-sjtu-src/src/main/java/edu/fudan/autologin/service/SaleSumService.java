@@ -16,62 +16,63 @@ public class SaleSumService {
 	private static final Logger log = Logger.getLogger(SaleSumService.class);
 	private String itemPageUrl;
 	private HttpClient httpClient;
+
 	public String getItemPageUrl() {
 		return itemPageUrl;
 	}
-
 
 	public void setItemPageUrl(String itemPageUrl) {
 		this.itemPageUrl = itemPageUrl;
 	}
 
-
 	public HttpClient getHttpClient() {
 		return httpClient;
 	}
-
 
 	public void setHttpClient(HttpClient httpClient) {
 		this.httpClient = httpClient;
 	}
 
-
 	public int getSaleSum() {
 		return saleSum;
 	}
-
 
 	public void setSaleSum(int saleSum) {
 		this.saleSum = saleSum;
 	}
 
 	private int saleSum = 0;
-	
-	
-	
+
 	public void execute() {
-		String referer =itemPageUrl;
+		String referer = itemPageUrl;
 		String requestUrl = getSaleSumUrl();
-		JSONObject saleNumObj = getJsonFromServer(referer, requestUrl);
-		log.info("Sale json string from server is: " + saleNumObj.toString());
-		/**
-		 * {"quantity":{"quanity":0,"interval":30}}
-		 */
-		if (saleNumObj.toString().trim().length() == "{\"quantity\":{\"quanity\":0,\"interval\":30}}"
-				.length()) {
-			JSONObject quantityObj = saleNumObj.getJSONObject("quantity");
-			int quanity = quantityObj.getInt("quanity");
-			// int interval = quantityObj.getInt("interval");
 
-			log.debug("Sale num string  is: " + quanity);
-			saleSum = quanity;
+		if (requestUrl == null) {
 
+			log.info("There is no sale sum url in the page.");
+			saleSum = 0;
 		} else {
-			saleSum = saleNumObj.getInt("quanity");
+			JSONObject saleNumObj = getJsonFromServer(referer, requestUrl);
+			log.info("Sale json string from server is: "
+					+ saleNumObj.toString());
+			/**
+			 * {"quantity":{"quanity":0,"interval":30}}
+			 */
+			if (saleNumObj.toString().trim().length() == "{\"quantity\":{\"quanity\":0,\"interval\":30}}"
+					.length()) {
+				JSONObject quantityObj = saleNumObj.getJSONObject("quantity");
+				int quanity = quantityObj.getInt("quanity");
+				// int interval = quantityObj.getInt("interval");
+
+				log.debug("Sale num string  is: " + quanity);
+				saleSum = quanity;
+
+			} else {
+				saleSum = saleNumObj.getInt("quanity");
+			}
 		}
 	}
-	
-	
+
 	/* 从服务器端获取json数据，并解析成jsonObject，由于服务器端返回的是js，需要先获取纯json String */
 	public JSONObject getJsonFromServer(String referer, String requestUrl) {
 
@@ -88,16 +89,15 @@ public class SaleSumService {
 		getRequest.shutDown();
 		return jsonObj;
 	}
-	
-	public String getSaleSumUrl(){
+
+	public String getSaleSumUrl() {
 		String docString;
-		
+
 		GetMethod get = new GetMethod(httpClient, itemPageUrl);
 		get.doGet();
 		docString = get.getResponseAsString();
 		get.shutDown();
-		
-		
+
 		int base = 0;
 		int begin = 0;
 		int end = 0;
@@ -111,7 +111,7 @@ public class SaleSumService {
 		} else {
 			log.info("get saleNum url error, not found");
 		}
-		
+
 		return null;
 	}
 }
