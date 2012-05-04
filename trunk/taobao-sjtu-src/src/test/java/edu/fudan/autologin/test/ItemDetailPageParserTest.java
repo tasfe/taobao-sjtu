@@ -42,10 +42,15 @@ public class ItemDetailPageParserTest {
 			httpClient = new DefaultHttpClient();
 		}
 
-		beforeWriteExcel();
+		initialize();
+		
+
+	}
+
+	private void initialize() {
+		ExcelUtil.prepare();
 		PropertyConfigurator.configure("log4j.properties");
 		log.setLevel(Level.DEBUG);
-
 	}
 
 	@After
@@ -68,11 +73,6 @@ public class ItemDetailPageParserTest {
 		} else {
 			Element shopRankEle = doc.select("a#shop-rank").get(0);
 		}
-	}
-
-	public void beforeWriteExcel() {
-		ExcelUtil.createWorkbook();
-		ExcelUtil.createSheets();
 	}
 
 	

@@ -50,11 +50,12 @@ public class MainTest {
 	
 	
 	public void testSearchResult(){
-		
 		String url = "http://s.taobao.com/search?source=top_search&q=Lenovo%2F%C1%AA%CF%EB+A750&pspuid=142771461&v=product&p=detail&stp=top.toplist.tr_rxsjb.sellhot.image.1.0&ad_id=&am_id=&cm_id=&pm_id=";
 		SearchResultPageParser searchResultPageParser = new SearchResultPageParser(httpClient, url);
 		searchResultPageParser.execute();
 	}
+	
+	
 	public void testSellerInSearchResult(){
 		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, "http://item.taobao.com/item.htm?id=6042143146");
 		itemDetailPageParser.execute();

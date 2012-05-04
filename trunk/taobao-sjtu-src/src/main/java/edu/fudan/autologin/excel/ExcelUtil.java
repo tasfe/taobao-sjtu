@@ -141,6 +141,7 @@ public class ExcelUtil {
 		sellerRateHeaders.add("最近一周-主营业务-差评");
 		sellerRateHeaders.add("最近一周-非主营业务-差评");
 
+		sellerRateHeaders.add("最近一月-总数-好评");
 		sellerRateHeaders.add("最近一月-主营业务-好评");
 		sellerRateHeaders.add("最近一月-非主营业务-好评");
 		sellerRateHeaders.add("最近一月-总数-中评");
@@ -150,6 +151,7 @@ public class ExcelUtil {
 		sellerRateHeaders.add("最近一月-主营业务-差评");
 		sellerRateHeaders.add("最近一月-非主营业务-差评");
 
+		sellerRateHeaders.add("最近半年-总数-好评");
 		sellerRateHeaders.add("最经半年-主营业务-好评");
 		sellerRateHeaders.add("最经半年-非主营业务-好评");
 		sellerRateHeaders.add("最经半年-总数-中评");
