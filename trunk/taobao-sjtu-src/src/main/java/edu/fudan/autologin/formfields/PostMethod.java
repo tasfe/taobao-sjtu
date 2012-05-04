@@ -7,6 +7,7 @@ import java.util.Random;
 import org.apache.http.HttpResponse;
 import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -21,7 +22,7 @@ import org.apache.http.util.EntityUtils;
  */
 public class PostMethod {
 
-	private DefaultHttpClient httpClient;
+	private HttpClient httpClient;
 	private String postUrl;
 	private HttpResponse response;
 	private HttpPost httpPost;
@@ -46,7 +47,7 @@ public class PostMethod {
 			e.printStackTrace();
 		}  
 	}
-	public PostMethod(DefaultHttpClient httpClient, String postUrl) {
+	public PostMethod(HttpClient httpClient, String postUrl) {
 		if (httpClient == null || postUrl.equals(null)) {
 			System.out.println("ERROR: httpclient is null." + PostMethod.class);
 		}
