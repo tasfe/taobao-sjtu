@@ -37,7 +37,7 @@ public class PostUtils {
 	 * @param basePostInfo
 	 * @param formFieldsNvps
 	 */
-	public static final void doPost(DefaultHttpClient httpClient, BasePostInfo basePostInfo, List<NameValuePair> formFieldsNvps){
+	public static final void doPost(HttpClient httpClient, BasePostInfo basePostInfo, List<NameValuePair> formFieldsNvps){
 		//构建post表单
 		BaseFormFields fromFields = new BaseFormFields();
 		fromFields.setBasePostInfo(basePostInfo);

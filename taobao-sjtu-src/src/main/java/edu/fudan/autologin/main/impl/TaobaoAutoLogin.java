@@ -29,6 +29,7 @@ import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.main.AutoLogin;
+import edu.fudan.autologin.pageparser.ItaobaoPageParser;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
@@ -95,7 +96,12 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 		PostUtils.doPost(httpClient, basePostInfo, formFieldsNvps);
 	}
-
+	public void testItaobaoPageParser(){
+		
+		String pageUrl =  "http://i.taobao.com/u/NjAwNjgzNDQ=/front.htm";
+		ItaobaoPageParser itaobaoPageParser = new ItaobaoPageParser(httpClient, pageUrl);
+		itaobaoPageParser.execute();
+	}
 	/**
 	 * 1. get ItemDetailPage; 2. get showBuyerListUrl from ItemDetailPage;
 	 * 3.according to taobao rules, construct our showBuyerListUrl list;
@@ -275,13 +281,17 @@ public class TaobaoAutoLogin implements AutoLogin {
 		// parseReviews();
 //		parseReviews();
 		// itemDetailPageParser();
-//		autoLogin();
-		doMyWork();
+		autoLogin();
+		
+//	testItaobaoPageParser();
+//		doMyWork();
 		shutDown();
 		// 
 		//parseShowBuyerListDoc();
-		userRatePageParser();
+//		userRatePageParser();
 	}
+	
+	
 
 	public void topTenPageParser() {
 		String pageUrl = "http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB";

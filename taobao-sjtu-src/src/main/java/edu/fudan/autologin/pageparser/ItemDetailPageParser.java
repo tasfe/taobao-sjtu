@@ -43,8 +43,9 @@ public class ItemDetailPageParser extends BasePageParser {
 	private String postageUrl;
 	private String saleNumUrl;
 	private String reviewUrl;
-	
+
 	private String sellerId;
+
 	public void setSellerId(String sellerId) {
 		this.sellerId = sellerId;
 	}
@@ -104,16 +105,16 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("Start to parse page " + ItemDetailPageParser.class);
 		this.getPage(this.getPageUrl());
 		Document doc = this.getDoc();
-		
-		if(doc.select("div.tb-property").size() == 0){
-			
-		}else{
+
+		if (doc.select("div.tb-property").size() == 0) {
+
+		} else {
 			Element itemPro = doc.select("div.tb-property").get(0);
 			// price range
 			String priceRange = itemPro.getElementById("J_StrPrice").ownText();
 			log.info("priceRange: " + priceRange);
 			itemInfo.setPriceRange(priceRange);
-			
+
 			// item type
 			String itemType = "";
 			Element element = itemPro.select("li.tb-item-type em").get(0);
@@ -142,14 +143,10 @@ public class ItemDetailPageParser extends BasePageParser {
 			log.info("serviceType: " + serviceType);
 			itemInfo.setServiceType(serviceType);
 		}
-		
 
 		// seller id
 		log.info("sellerId: " + sellerId);
 		itemInfo.setSellerId(sellerId);
-
-		
-		
 
 		String freightPrice = "";
 		String location = "";
@@ -174,21 +171,18 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("saleNumIn30Days: " + saleNumIn30Days);
 		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
-		
-		
-		if(doc.select("div#attributes ul.attributes-list li").size() ==0 ){
-			
-		}else{
+		if (doc.select("div#attributes ul.attributes-list li").size() == 0) {
+
+		} else {
 			String spec = "";
 			String capacity = "";
-			Elements elements = doc.select("div#attributes ul.attributes-list li");
+			Elements elements = doc
+					.select("div#attributes ul.attributes-list li");
 			spec = elements.get(1).ownText();
 			capacity = elements.get(2).ownText();
 			itemInfo.setCapacity(capacity);
 			itemInfo.setSpec(spec);
 		}
-
-		
 
 		// 解析买家列表
 		BuyerListService buyerListService = new BuyerListService();
@@ -197,7 +191,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		buyerListService.setBuyerSum(saleNumIn30Days);
 		buyerListService.execute();
 		buyerInfos = buyerListService.getBuyerInfos();
-		log.info("buyerinfo list size is: "+buyerInfos.size());
+		log.info("buyerinfo list size is: " + buyerInfos.size());
 
 		// 获得评论总数
 		ReviewSumService reviewSumService = new ReviewSumService();
@@ -232,7 +226,7 @@ public class ItemDetailPageParser extends BasePageParser {
 			log.info("postageUrl: " + postageUrl);
 			setPostageUrl(postageUrl);
 		} else {
-			
+
 			log.info("get postage url error, not found");
 		}
 		if (docString.contains("getDealQuantity")) {
@@ -261,27 +255,30 @@ public class ItemDetailPageParser extends BasePageParser {
 	@Override
 	public void doNext() {
 
-		// assert (itemInfo.getItemBuyersHref() != null);
-
 		log.info("Start to parse buyer info page.");
-		log.info("The size of buyer info list is: "+buyerInfos.size());
+		log.info("The size of buyer info list is: " + buyerInfos.size());
 		for (BuyerInfo buyerInfo : buyerInfos) {
 			buyerInfo.setSellerId(sellerId);
-			ExcelUtil.writeItemBuyerSheet(buyerInfo);
-//			ItemBuyersPageParser itemBuyersPageParser = new ItemBuyersPageParser(
-//					this.getHttpClient(), buyerInfo.getHref());
-//			itemBuyersPageParser.setBuyInfo(buyerInfo);
-////			itemBuyersPageParser.execute();
-//			itemBuyersPageParser.writeExcel();
+			log.info("Buyer href is: "+buyerInfo.getHref());
+			// 当用户匿名购买时
+			if (buyerInfo.getHref() == null) {
+				buyerInfo.setSex("0");
+				buyerInfo.setRateScore(0);
+				buyerInfo.setBuyerAddress("0");
+				ExcelUtil.writeItemBuyerSheet(buyerInfo);
+			} else {
+				ItaobaoPageParser itaobaoPageParser = new ItaobaoPageParser(
+						this.getHttpClient(), buyerInfo.getHref());
+				itaobaoPageParser.setBuyerInfo(buyerInfo);
+				itaobaoPageParser.execute();
+			}
 		}
 
-		
 		if (itemInfo.getUserRateHref() == null) {
 			// 如果商家頁面沒有信用頁面
 		} else {
 			UserRatePageParser userRatePageParser = new UserRatePageParser(
 					this.getHttpClient(), itemInfo.getUserRateHref());
-			
 			userRatePageParser.setSellerId(sellerId);
 			userRatePageParser.execute();
 		}

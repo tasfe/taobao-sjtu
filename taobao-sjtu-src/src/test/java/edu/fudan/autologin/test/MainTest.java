@@ -3,8 +3,10 @@ package edu.fudan.autologin.test;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -16,7 +18,10 @@ import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
+import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
+import edu.fudan.autologin.utils.PostUtils;
+import edu.fudan.autologin.utils.TaobaoUtils;
 
 public class MainTest {
 	private static final Logger log = Logger
@@ -60,11 +65,36 @@ public class MainTest {
 		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, "http://item.taobao.com/item.htm?id=6042143146");
 		itemDetailPageParser.execute();
 	}
+	
+	@Test
 	public void execute(){
+		autoLogin();
 		doMyWork();
 	}
 	
-	@Test
+	
+	public void autoLogin() {
+
+		// 设置基本的post信息
+		BasePostInfo basePostInfo = new BasePostInfo();
+		basePostInfo
+				.setPostPageUrl("https://login.taobao.com/member/login.jhtml");
+		basePostInfo.setPostFormId("J_StaticForm");
+		basePostInfo
+				.setPostFormUrl("https://login.taobao.com/member/login.jhtml");
+
+		// 设置提交表单相关信息
+		List<NameValuePair> formFieldsNvps = new ArrayList<NameValuePair>();
+		formFieldsNvps.add(new BasicNameValuePair("TPL_username", "gschen163"));
+		formFieldsNvps.add(new BasicNameValuePair("TPL_password",
+				"3DES_2_000000000000000000000000000000_D1CE4894D9F2334C"));
+		formFieldsNvps.add(new BasicNameValuePair("TPL_checkcode", TaobaoUtils
+				.getCheckCode(httpClient)));
+		formFieldsNvps.add(new BasicNameValuePair("need_check_code", "true"));
+
+		PostUtils.doPost(httpClient, basePostInfo, formFieldsNvps);
+	}
+	
 	public void doMyWork() {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();

@@ -45,34 +45,38 @@ public class BuyerListService {
 
 	/**
 	 * 1.get ItemDetailPage; <br/>
-	 * 2.get showBuyerListUrl from ItemDetailPage;
-	 * 3.according to taobao rules, construct our showBuyerListUrl list;
-	 * 4.according to construted showBuyerListUrl, get json data from server;
-	 * 5.parsing json data from server and get our desired data;
+	 * 2.get showBuyerListUrl from ItemDetailPage; 3.according to taobao rules,
+	 * construct our showBuyerListUrl list; 4.according to construted
+	 * showBuyerListUrl, get json data from server; 5.parsing json data from
+	 * server and get our desired data;
 	 * 
 	 */
 	public void execute() {
 		String showBuyerListUrl = getShowBuyerListUrl(itemPageUrl);
 		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
-		if(showBuyerListUrl == null){
+		if (showBuyerListUrl == null) {
 			log.info("There is no showBuyerList url in the page.");
-			assert(buyerInfos.size() == 0);
-		}else{
+			assert (buyerInfos.size() == 0);
+		} else {
 			int pageSize = 15;
 			int pageSum = (buyerSum % pageSize == 0) ? buyerSum / pageSize
 					: (buyerSum / pageSize + 1);
 
-			log.info("Total page num is: "+pageSum);
+			log.info("Total page num is: " + pageSum);
 			for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
 				log.info("-----------------------------------------------------");
-				new Thread(new BuyerListThread(showBuyerListUrl,pageNum)).run();
-//				log.info("This is buyers of Page NO: " + pageNum);
-//				String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-//						showBuyerListUrl, pageNum);
-//				parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
+				log.info("This is buyers of Page NO: " + pageNum);
+				String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+						showBuyerListUrl, pageNum);
+				log.info("Showbuyer ajax url is: "+constructedShowBuyerListUrl);
+				parseBuyerListTable(getShowBuyerListDoc(constructShowBuyerListUrl(
+						showBuyerListUrl, pageNum)));
+//				while (parseBuyerListTable(getShowBuyerListDoc(constructShowBuyerListUrl(
+//						showBuyerListUrl, pageNum))) == false) ;
+
 			}
 		}
-		
+
 	}
 
 	public String getItemPageUrl() {
@@ -107,21 +111,43 @@ public class BuyerListService {
 	 * </p>
 	 * </div>
 	 */
-	public void parseBuyerListTable(Document doc) {
+	public boolean parseBuyerListTable(Document doc) {
 		Elements buyerListEls = doc.select("table.tb-list > tbody > tr");
-//		buyerCounter += buyerListEls.size();
+		log.info("Element list size is: "+buyerListEls.size());
+		
+		if(buyerListEls.size() == 0){
+			return false;
+		}
 		for (int i = 0; i < buyerListEls.size(); i++) {
-
+			//获得第i行
 			Element buyerEl = buyerListEls.get(i);
+
+			//tb-buyer 
 			Elements buyerInfo = buyerEl.select("td.tb-buyer");
+			String buyerHref = null;
 			if (0 == buyerInfo.size()) {
 				continue;
+			}else{
+				if(buyerInfo.get(0).select("a.tb-sellnick").size() == 0){
+					
+				}else{
+					Element href = buyerInfo.get(0).select("a.tb-sellnick").get(0);
+					buyerHref = constructBuyerHref(href.attr("href"));
+				}
 			}
+			
+			//tb-price
 			String priceStr = buyerEl.select("td.tb-price").get(0).ownText();
 			float price = Float.valueOf(priceStr);
+			
+			//tb-amount
 			String numStr = buyerEl.select("td.tb-amount").get(0).ownText();
 			int num = Integer.valueOf(numStr);
+			
+			//tb-time
 			String payTime = buyerEl.select("td.tb-time").get(0).ownText();
+			
+			//tb-sku
 			String size = buyerEl.select("td.tb-sku").text();
 			String sex = SexEnum.unknown;
 
@@ -130,14 +156,31 @@ public class BuyerListService {
 			bi.setNum(num);
 			bi.setPrice(price);
 			bi.setSize(size);
+			bi.setHref(buyerHref);
 
 			buyerInfos.add(bi);
 
+			log.info("buyer href is: "+buyerHref);
 			log.info("price: " + price);
 			log.info("num: " + num);
 			log.info("payTime: " + payTime);
 			log.info("size: " + size);
 		}
+		return true;
+	}
+	
+//	href="http://fx.taobao.com/u/Nzg1MDIxNjky/view/ta_taoshare_list.htm?redirect=fa"
+	public String constructBuyerHref(String initUrl){
+		String buyerId = initUrl.split("/")[4];
+		StringBuffer sb = new StringBuffer();
+		String baseUrl = "http://i.taobao.com/u/";
+		String appendStr = "/front.htm";
+		
+		sb.append(baseUrl);
+		sb.append(buyerId);
+		sb.append(appendStr);
+		
+		return sb.toString();
 	}
 
 	public Document getShowBuyerListDoc(String getUrl) {
@@ -146,7 +189,7 @@ public class BuyerListService {
 
 		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
 		NameValuePair nvp1 = new BasicNameValuePair("referer",
-				"http://item.taobao.com/item.htm?id=13048366752");
+				"http://item.taobao.com/item.htm?id=16016896217");
 		headers1.add(nvp1);
 		get.doGet(headers1);
 		Document doc = getHtmlDocFromJson(get.getResponseAsString());
