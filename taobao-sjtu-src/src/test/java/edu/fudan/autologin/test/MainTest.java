@@ -22,6 +22,7 @@ import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
+import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class MainTest {
 	private static final Logger log = Logger
@@ -31,6 +32,7 @@ public class MainTest {
 	
 	public void initialize(){
 		ExcelUtil.prepare();
+		XmlConfUtil.openXml();
 	}
 	
 	@Before
@@ -99,15 +101,15 @@ public class MainTest {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
 
-//		CategoryInfo ci1 = new CategoryInfo();
-//		ci1.setCategoryName("洁面");
-//		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
-//		categoryInfos.add(ci1);
-//
-//		CategoryInfo ci2 = new CategoryInfo();
-//		ci2.setCategoryName("热门手机");
-//		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
-//		categoryInfos.add(ci2);
+		CategoryInfo ci1 = new CategoryInfo();
+		ci1.setCategoryName("洁面");
+		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
+		categoryInfos.add(ci1);
+
+		CategoryInfo ci2 = new CategoryInfo();
+		ci2.setCategoryName("热门手机");
+		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
+		categoryInfos.add(ci2);
 
 		CategoryInfo ci3 = new CategoryInfo();
 		ci3.setCategoryName("笔记本");

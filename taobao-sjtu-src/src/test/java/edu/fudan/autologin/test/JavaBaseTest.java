@@ -10,6 +10,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.fudan.autologin.utils.XmlConfUtil;
+
 public class JavaBaseTest {
 	private static final Logger log = Logger.getLogger(JavaBaseTest.class);
 	@Before
@@ -22,6 +24,11 @@ public class JavaBaseTest {
 	 * The substring begins at specified beginIndex and extends to the character at index endIndex - 1
 	 */
 	@Test
+	public void testXmlConf(){
+		
+		XmlConfUtil.openXml();
+		log.info(XmlConfUtil.getValueByName("browserPath"));
+	}
 	public void testConstructUrl(){
 		String initUrl = "http://fx.taobao.com/u/Nzg1MDIxNjky/view/ta_taoshare_list.htm?redirect=fa";
 		log.info(constructBuyerHref(initUrl));
