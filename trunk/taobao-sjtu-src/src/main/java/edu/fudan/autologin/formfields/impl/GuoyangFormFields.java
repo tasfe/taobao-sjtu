@@ -20,9 +20,9 @@ import edu.fudan.autologin.formfields.GetMethod;
 
 public class GuoyangFormFields implements FormFields {
 
-	public String getFormHash(HttpClient httpClient){
-Document doc;
-		
+	public String getFormHash(HttpClient httpClient) {
+		Document doc;
+
 		String getUrl = "http://www.guoyang.cc/polls/poll.php?id=1&iframe=1&bgcolor=fff";
 		String formId = "pollform";
 		String formhash = null;
@@ -33,9 +33,9 @@ Document doc;
 					.getEntity()));
 			Elements eles = doc.select("form#" + formId + " input");
 			for (Element e : eles) {
-				if(e.attr("name").equals("formhash")){
+				if (e.attr("name").equals("formhash")) {
 					formhash = e.attr("value");
-					System.out.println("INFO: formhash is :"+formhash);
+					System.out.println("INFO: formhash is :" + formhash);
 				}
 			}
 		} catch (IllegalStateException e1) {
@@ -43,16 +43,16 @@ Document doc;
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
+
 		return formhash;
 	}
-	
+
 	public List<NameValuePair> getFormFields(HttpClient httpClient) {
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-		
-		//handlekey=pollresult&id=1&formhash=20ed0d14&iframe=1&bgcolor=FFF&choose_value=14
-		//handlekey=pollresult&id=1&formhash=20ed0d14&iframe=1&bgcolor=FFF&choose_value=37
-		//handlekey=pollresult&id=1&formhash=20ed0d14&iframe=1&bgcolor=FFF&choose_value=15
+
+		// handlekey=pollresult&id=1&formhash=20ed0d14&iframe=1&bgcolor=FFF&choose_value=14
+		// handlekey=pollresult&id=1&formhash=20ed0d14&iframe=1&bgcolor=FFF&choose_value=37
+		// handlekey=pollresult&id=1&formhash=20ed0d14&iframe=1&bgcolor=FFF&choose_value=15
 		nvps.add(new BasicNameValuePair("handlekey", "pollresult"));
 		nvps.add(new BasicNameValuePair("id", "1"));
 		nvps.add(new BasicNameValuePair("formhash", getFormHash(httpClient)));
