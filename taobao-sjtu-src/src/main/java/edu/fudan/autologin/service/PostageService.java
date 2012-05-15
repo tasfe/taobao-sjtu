@@ -10,6 +10,7 @@ import net.sf.json.JSONSerializer;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Logger;
 
@@ -42,7 +43,8 @@ public class PostageService {
 	}
 
 	public void setHttpClient(HttpClient httpClient) {
-		this.httpClient = httpClient;
+//		this.httpClient = httpClient;
+		this.httpClient = new DefaultHttpClient();
 	}
 
 	private HttpClient httpClient;
@@ -99,6 +101,7 @@ public class PostageService {
 	public void execute() {
 
 		dispose();
+		this.httpClient.getConnectionManager().shutdown();
 
 	}
 

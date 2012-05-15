@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Logger;
 
@@ -30,7 +31,8 @@ public class SaleSumService {
 	}
 
 	public void setHttpClient(HttpClient httpClient) {
-		this.httpClient = httpClient;
+//		this.httpClient = httpClient;
+		this.httpClient = new DefaultHttpClient();
 	}
 
 	public int getSaleSum() {
@@ -71,6 +73,9 @@ public class SaleSumService {
 				saleSum = saleNumObj.getInt("quanity");
 			}
 		}
+		
+
+		this.httpClient.getConnectionManager().shutdown();
 	}
 
 	/* 从服务器端获取json数据，并解析成jsonObject，由于服务器端返回的是js，需要先获取纯json String */

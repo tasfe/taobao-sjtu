@@ -45,6 +45,7 @@ public class UserRatePageParser extends BasePageParser {
 	public UserRatePageParser(HttpClient httpClient, String pageUrl) {
 		super(httpClient, pageUrl);
 		sellerRateInfo = new SellerRateInfo();
+		sellerRateInfo.setSellerRateHref(pageUrl);
 	}
 	
 	@Override

@@ -55,7 +55,7 @@ public class SearchResultPageParser extends BasePageParser {
 
 	@Override
 	public void writeExcel() {
-//		ExcelUtil.writeSearchResultSheet(sellerResultList);
+		ExcelUtil.writeSearchResultSheet(sellerResultList);
 	}
 
 	public void parsePage() {

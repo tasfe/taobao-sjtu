@@ -2,6 +2,14 @@ package edu.fudan.autologin.pojos;
 
 public class SellerRateInfo {
 
+	
+	private String sellerRateHref;
+	public String getSellerRateHref() {
+		return sellerRateHref;
+	}
+	public void setSellerRateHref(String sellerRateHref) {
+		this.sellerRateHref = sellerRateHref;
+	}
 	private String sellerId;
 	private String sellerName;
 	private String mainSale;

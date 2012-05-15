@@ -111,6 +111,7 @@ public class ExcelUtil {
 		itemDetailHeaders.add("容量");
 		itemDetailHeaders.add("第一条评价时间");
 		itemDetailHeaders.add("最后一条评价时间");
+		itemDetailHeaders.add("href");
 		writeHeader(SheetNames.ITEM_DETAIL_SHEET, itemDetailHeaders);
 
 		List<String> sellerRateHeaders = new ArrayList<String>();
@@ -169,6 +170,8 @@ public class ExcelUtil {
 		sellerRateHeaders.add("卖家信用");
 		sellerRateHeaders.add("主营行业");
 		sellerRateHeaders.add("主营占比");
+		
+		sellerRateHeaders.add("href");
 
 		writeHeader(SheetNames.USER_RATE_SHEET, sellerRateHeaders);
 	}
@@ -414,6 +417,7 @@ public class ExcelUtil {
 		Label l9 = new Label(9, sheet.getRows(), itemInfo.getCapacity());
 		Label l10 = new Label(10, sheet.getRows(), itemInfo.getFirstReviewDate());
 		Label l11 = new Label(11, sheet.getRows(), itemInfo.getLastReviewDate());
+		Label l12 = new Label(12,sheet.getRows(), itemInfo.getItemDetailHref());
 
 		try {
 
@@ -429,6 +433,7 @@ public class ExcelUtil {
 			sheet.addCell(l11);
 			sheet.addCell(saleNumIn30Days);
 			sheet.addCell(reviews);
+			sheet.addCell(l12);
 
 		} catch (RowsExceededException e) {
 			e.printStackTrace();
@@ -542,6 +547,7 @@ public class ExcelUtil {
 				sellerRateInfo.getMainBusiness());
 		Label l48 = new Label(48+1, sheet.getRows(),
 				sellerRateInfo.getMainBusinessPercentage());
+		Label l50 = new Label(50,sheet.getRows(),sellerRateInfo.getSellerRateHref());
 
 		try {
 			sheet.addCell(l0);
@@ -593,6 +599,7 @@ public class ExcelUtil {
 			sheet.addCell(l46);
 			sheet.addCell(l47);
 			sheet.addCell(l48);
+			sheet.addCell(l50);
 			sheet.addCell(l90);
 		} catch (RowsExceededException e) {
 			e.printStackTrace();

@@ -9,6 +9,7 @@ import net.sf.json.JSONSerializer;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
@@ -44,7 +45,8 @@ public class MonthService {
 	}
 
 	public void setHttpClient(HttpClient httpClient) {
-		this.httpClient = httpClient;
+//		this.httpClient = httpClient;
+		this.httpClient = new DefaultHttpClient();
 	}
 
 	private HttpClient httpClient;
@@ -58,6 +60,9 @@ public class MonthService {
 		getFieldsFromPage();
 		String json = getJsonString(getPlainJson());
 		parseJson(json);
+		
+
+		this.httpClient.getConnectionManager().shutdown();
 	}
 
 	public String getPlainJson() {
