@@ -88,11 +88,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		}
 	}
 
-	@Override
-	public void parsePage() {
-		log.info("Start to parse page " + ItemDetailPageParser.class);
-		this.getPage(this.getPageUrl());
-		Document doc = this.getDoc();
+	public void normalPageParser(Document doc){
 
 		if (doc.select("div.tb-property").size() == 0) {
 
@@ -199,6 +195,32 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
 		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
 
+	}
+	@Override
+	public void parsePage() {
+		log.info("Start to parse page " + ItemDetailPageParser.class);
+		this.getPage(this.getPageUrl());
+		Document doc = this.getDoc();
+		
+		/* 针对各种不同的页面进行不同的处理
+		 * 1. 正常页面；
+		 * 2. 宝贝下架页面；
+		 * 3. 增价拍页面如：http://item.taobao.com/item.htm?id=15577727894
+		 * 
+		 * 如何区分不同的页面类型？
+		**/
+		if(doc.toString().contains("增价拍")){
+			log.info("Start to parse 增价拍 page.");
+			bidTypePageParser();
+		}else{
+			normalPageParser(doc);
+		}
+		
+	}
+
+	//增价拍页面处理模块
+	public void bidTypePageParser() {
+		
 	}
 
 	/* 对页面进行预处理，获取动态请求的url */
