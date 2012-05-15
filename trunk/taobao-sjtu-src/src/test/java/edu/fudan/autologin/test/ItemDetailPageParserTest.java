@@ -10,6 +10,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -33,6 +34,7 @@ import edu.fudan.autologin.service.SaleSumService;
 import edu.fudan.autologin.service.TaobaoDsDataService;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
+import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class ItemDetailPageParserTest {
 
@@ -44,14 +46,20 @@ public class ItemDetailPageParserTest {
 	public void setUp() {
 		if (httpClient == null) {
 			httpClient = new DefaultHttpClient();
+			httpClient.getParams().setIntParameter("http.socket.timeout",300000);//毫秒 
 		}
+
 		initialize();
+//		PropertyConfigurator.configure("log4j.xml");
+		DOMConfigurator.configure("log4j.xml");
+//		log.setLevel(Level.DEBUG);
+
 	}
 
-	private void initialize() {
+	public void initialize(){
+		XmlConfUtil.openXml();
 		ExcelUtil.prepare();
-		PropertyConfigurator.configure("log4j.properties");
-		log.setLevel(Level.DEBUG);
+		
 	}
 
 	@After
@@ -131,9 +139,11 @@ public class ItemDetailPageParserTest {
 	}
 	
 	
+	
+	@Test
 	public void testUserRate(){
 		
-		String pageUrl = "http://rate.taobao.com/user-rate-20c69a05f4c7b64896614a8b08d83fee.htm";
+		String pageUrl = "http://rate.taobao.com/user-rate-2f3f19c1769caf0be727f0d5d3825bb1.htm?spm=2013.1.1000126.5";
 		UserRatePageParser userRatePageParser = new UserRatePageParser(httpClient, pageUrl);
 		userRatePageParser.setSellerId("55600035");
 		userRatePageParser.execute();
@@ -166,7 +176,7 @@ public class ItemDetailPageParserTest {
 	
 	
 	
-	@Test
+
 	public void testBuyerListService() {
 		autoLogin();
 		String itemPageUrl = "http://item.taobao.com/item.htm?id=16016896217";
