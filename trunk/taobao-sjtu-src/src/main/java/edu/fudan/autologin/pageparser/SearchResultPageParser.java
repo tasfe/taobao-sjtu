@@ -12,6 +12,7 @@ import org.jsoup.select.Elements;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.main.impl.TaobaoAutoLogin;
 import edu.fudan.autologin.pojos.SellerInSearchResult;
+import edu.fudan.autologin.pojos.TaobaoDataSet;
 import edu.fudan.autologin.pojos.TopTenItemInfo;
 
 public class SearchResultPageParser extends BasePageParser {
@@ -54,7 +55,7 @@ public class SearchResultPageParser extends BasePageParser {
 
 	@Override
 	public void writeExcel() {
-		ExcelUtil.writeSearchResultSheet(sellerResultList);
+//		ExcelUtil.writeSearchResultSheet(sellerResultList);
 	}
 
 	public void parsePage() {
@@ -172,6 +173,7 @@ public class SearchResultPageParser extends BasePageParser {
 				sellerItemInfo.setRank(rank);
 
 				sellerResultList.add(sellerItemInfo);
+				TaobaoDataSet.sellerInSearchResults.add(sellerItemInfo);
 
 			}
 			Elements pageUrl = doc.select("div.page-bottom > a.page-next");

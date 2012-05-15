@@ -1,35 +1,22 @@
 package edu.fudan.autologin.pageparser;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import javax.sound.sampled.DataLine;
-
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import net.sf.json.JSONSerializer;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
-import edu.fudan.autologin.main.impl.TaobaoAutoLogin;
 import edu.fudan.autologin.pojos.BuyerInfo;
-import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.ItemInfo;
-import edu.fudan.autologin.pojos.Postage;
 import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.PostageService;
@@ -256,23 +243,31 @@ public class ItemDetailPageParser extends BasePageParser {
 	public void doNext() {
 
 		log.info("Start to parse buyer info page.");
-		log.info("The size of buyer info list is: " + buyerInfos.size());
-		for (BuyerInfo buyerInfo : buyerInfos) {
-			buyerInfo.setSellerId(sellerId);
-			log.info("Buyer href is: "+buyerInfo.getHref());
-			// 当用户匿名购买时
-			if (buyerInfo.getHref() == null) {
-				buyerInfo.setSex("0");
-				buyerInfo.setRateScore(0);
-				buyerInfo.setBuyerAddress("0");
-				ExcelUtil.writeItemBuyerSheet(buyerInfo);
-			} else {
-				ItaobaoPageParser itaobaoPageParser = new ItaobaoPageParser(
-						this.getHttpClient(), buyerInfo.getHref());
-				itaobaoPageParser.setBuyerInfo(buyerInfo);
-				itaobaoPageParser.execute();
+	
+		//when there is no buyers.
+		if(buyerInfos == null){
+			log.info("The list of BuyerInfo is null. There is no buyers.");
+		}else{
+			log.info("The size of buyer info list is: " + buyerInfos.size());
+
+			for (BuyerInfo buyerInfo : buyerInfos) {
+				buyerInfo.setSellerId(sellerId);
+				log.info("Buyer href is: "+buyerInfo.getHref());
+				// 当用户匿名购买时
+				if (buyerInfo.getHref() == null) {
+					buyerInfo.setSex("0");
+					buyerInfo.setRateScore(0);
+					buyerInfo.setBuyerAddress("0");
+					ExcelUtil.writeItemBuyerSheet(buyerInfo);
+				} else {
+					ItaobaoPageParser itaobaoPageParser = new ItaobaoPageParser(
+							this.getHttpClient(), buyerInfo.getHref());
+					itaobaoPageParser.setBuyerInfo(buyerInfo);
+					itaobaoPageParser.execute();
+				}
 			}
 		}
+		
 
 		if (itemInfo.getUserRateHref() == null) {
 			// 如果商家頁面沒有信用頁面

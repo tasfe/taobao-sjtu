@@ -12,6 +12,7 @@ import net.sf.json.JSONSerializer;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.FeedRate;
 import edu.fudan.autologin.pojos.FeedRateComment;
+import edu.fudan.autologin.utils.XmlConfUtil;
 
 /**
  * Giving you a item page url, and you can get the reviews of the item.
@@ -117,6 +118,13 @@ public class ItemReviewService {
 				log.info("--------------------------------------------------------------------------------------");
 				log.info("The review of Page NO is: " + pageNum);
 				parseReview(pageNum);
+				try {
+					//每隔1s请求一次
+					Thread.sleep(Integer.parseInt(XmlConfUtil.getValueByName("requestInterval")));
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					log.error(e.getMessage());
+				}
 			}
 		}
 		

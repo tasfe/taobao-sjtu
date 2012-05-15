@@ -91,7 +91,10 @@ public class PostMethod {
 	public void shutDown(){
 		try {
 			System.out.println("INFO: shutdown httppost stream.");
+			//Ensures that the entity content is fully consumed, and the content stream, if exists, is closed.
 			EntityUtils.consume(this.response.getEntity());
+			//release connection
+			httpPost.releaseConnection();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

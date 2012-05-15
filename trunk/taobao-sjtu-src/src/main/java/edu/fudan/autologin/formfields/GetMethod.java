@@ -28,6 +28,7 @@ public class GetMethod {
 	private HttpClient httpclient = null;
 	private String getUrl = null;
 	private HttpResponse response = null;
+	private HttpGet httpget = null;
 
 	public HttpResponse getResponse() {
 		return response;
@@ -47,7 +48,6 @@ public class GetMethod {
 	}
 
 	public void doGet(List<NameValuePair> headers) {
-		HttpGet httpget = null;
 		httpget = new HttpGet(this.getUrl);
 
 		if (headers == null) {
@@ -65,8 +65,10 @@ public class GetMethod {
 			response = httpclient.execute(httpget);
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
+			log.error(e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
+			log.error(e.getMessage());
 		}finally{
 		}
 	}
@@ -109,9 +111,14 @@ public class GetMethod {
 
 	public void shutDown() {
 		try {
+			//Ensures that the entity content is fully consumed and the content  stream, if exists, is closed.
 			EntityUtils.consume(this.response.getEntity());
+			
+			//release connection
+			httpget.releaseConnection();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+	}//RAII resource acquisition is initializasion
 }

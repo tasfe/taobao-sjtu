@@ -10,6 +10,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,6 +21,8 @@ import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
+import edu.fudan.autologin.pojos.TaobaoDataSet;
+import edu.fudan.autologin.pojos.TopTenItemInfo;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
@@ -31,19 +34,22 @@ public class MainTest {
 	
 	
 	public void initialize(){
-		ExcelUtil.prepare();
 		XmlConfUtil.openXml();
+		ExcelUtil.prepare();
+		
 	}
 	
 	@Before
 	public void setUp() {
 		if (httpClient == null) {
 			httpClient = new DefaultHttpClient();
+			httpClient.getParams().setIntParameter("http.socket.timeout",300000);//毫秒 
 		}
 
 		initialize();
-		PropertyConfigurator.configure("log4j.properties");
-		log.setLevel(Level.DEBUG);
+//		PropertyConfigurator.configure("log4j.xml");
+		DOMConfigurator.configure("log4j.xml");
+//		log.setLevel(Level.DEBUG);
 
 	}
 
@@ -116,11 +122,33 @@ public class MainTest {
 		ci3.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_DNJXGPJ&level3=1101&up=false");
 		categoryInfos.add(ci3);
 
+		//get top ten item info
 		for (CategoryInfo c : categoryInfos) {
 			TopTenPageParser topTenPageParser = new TopTenPageParser(
 					httpClient, c.getCategoryHref());
 			topTenPageParser.setCategoryInfo(c);
 			topTenPageParser.execute();
 		}
+
+//		//get search result infoe 
+//		for(TopTenItemInfo ttii : TaobaoDataSet.topTenItemInfos){
+//			SearchResultPageParser searchResultPageParser = new SearchResultPageParser(httpClient, ttii.getHref());
+//			searchResultPageParser.setTopTenItemInfo(ttii);
+//			log.info("--------------------------------------------------------------------------------------------------------------");
+//			log.info("Start to process (TopTenItem, Rank) : " + "("+ttii.getItemName() + ", "+ttii.getTopRank()+")");
+//			searchResultPageParser.execute();
+//		}
+//		
+//		//get item detail info
+//		
+//		//get seller rate 
+//		
+//		//get buyer info
+//		TaobaoDataSet.printList();
+	}
+	
+	
+	public void testMyWork(){
+		
 	}
 }
