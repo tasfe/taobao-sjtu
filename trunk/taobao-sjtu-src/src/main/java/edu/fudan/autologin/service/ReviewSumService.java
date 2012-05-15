@@ -3,6 +3,7 @@ package edu.fudan.autologin.service;
 import net.sf.json.JSONObject;
 
 import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -27,6 +28,7 @@ public class ReviewSumService {
 			parseJson(getJsonStr(getPlainJson(getAjaxUrl())));
 		}
 		
+		this.httpClient.getConnectionManager().shutdown();
 	}
 	
 	public String getAjaxUrl(){
@@ -118,7 +120,8 @@ public class ReviewSumService {
 	}
 
 	public void setHttpClient(HttpClient httpClient) {
-		this.httpClient = httpClient;
+//		this.httpClient = httpClient;
+		this.httpClient = new DefaultHttpClient();
 	}
 
 	public int getReviewSum() {

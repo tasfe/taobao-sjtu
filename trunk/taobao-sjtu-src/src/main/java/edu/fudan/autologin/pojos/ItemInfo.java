@@ -9,12 +9,19 @@ public class ItemInfo {
 	private int reviews;
 	private String itemType;
 	private String payType;
+	public String getItemDetailHref() {
+		return itemDetailHref;
+	}
+	public void setItemDetailHref(String itemDetailHref) {
+		this.itemDetailHref = itemDetailHref;
+	}
 	private String serviceType;
 	private String spec;
 	private String capacity;
 	private String firstReviewDate;
 	private String lastReviewDate;
 	private String userRateHref;
+	private String itemDetailHref;
 	public String getUserRateHref() {
 		return userRateHref;
 	}

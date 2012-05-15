@@ -69,6 +69,7 @@ public class ItemDetailPageParser extends BasePageParser {
 	public ItemDetailPageParser(HttpClient httpClient, String pageUrl) {
 		super(httpClient, pageUrl);
 		itemInfo = new ItemInfo();
+		itemInfo.setItemDetailHref(pageUrl);
 	}
 
 	@Override
@@ -165,8 +166,10 @@ public class ItemDetailPageParser extends BasePageParser {
 			String capacity = "";
 			Elements elements = doc
 					.select("div#attributes ul.attributes-list li");
-			spec = elements.get(1).ownText();
-			capacity = elements.get(2).ownText();
+			//化妆品规格: 正常规格
+			spec = elements.get(1).ownText().split(":")[1].trim();
+			//化妆品容量: 其它容量
+			capacity = elements.get(2).ownText().split(":")[1].trim();
 			itemInfo.setCapacity(capacity);
 			itemInfo.setSpec(spec);
 		}

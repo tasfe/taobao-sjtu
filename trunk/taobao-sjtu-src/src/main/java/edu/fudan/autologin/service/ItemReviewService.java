@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.Logger;
 
 import net.sf.json.JSONArray;
@@ -77,7 +78,8 @@ public class ItemReviewService {
 	}
 
 	public void setHttpClient(HttpClient httpClient) {
-		this.httpClient = httpClient;
+		//this.httpClient = httpClient;
+		this.httpClient = new DefaultHttpClient();
 	}
 
 	private HttpClient httpClient;
@@ -119,7 +121,7 @@ public class ItemReviewService {
 				log.info("The review of Page NO is: " + pageNum);
 				parseReview(pageNum);
 				try {
-					//每隔1s请求一次
+					//每隔xs请求一次
 					Thread.sleep(Integer.parseInt(XmlConfUtil.getValueByName("requestInterval")));
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -132,6 +134,8 @@ public class ItemReviewService {
 		log.info("The sum of the reviews is: " + reviewSum);
 		log.info("First feed rate date is: " + getFirstReviewDate());
 		log.info("Last feed rate date is: " + getLastReviewDate());
+
+		this.httpClient.getConnectionManager().shutdown();
 	}
 
 	public void parseReview(int pageNum){
