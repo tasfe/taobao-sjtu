@@ -18,6 +18,7 @@ import org.jsoup.select.Elements;
 import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
+import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class BuyerListService {
 	private static final Logger log = Logger.getLogger(BuyerListService.class);
@@ -73,6 +74,13 @@ public class BuyerListService {
 						showBuyerListUrl, pageNum)));
 //				while (parseBuyerListTable(getShowBuyerListDoc(constructShowBuyerListUrl(
 //						showBuyerListUrl, pageNum))) == false) ;
+				
+				try {
+					Thread.sleep(Integer.parseInt(XmlConfUtil.getValueByName("requestInterval")));
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					log.error(e.getMessage());
+				}
 
 			}
 		}

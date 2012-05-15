@@ -15,6 +15,7 @@ import edu.fudan.autologin.constants.SheetNames;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.excel.TopTenPageExcel;
 import edu.fudan.autologin.pojos.CategoryInfo;
+import edu.fudan.autologin.pojos.TaobaoDataSet;
 import edu.fudan.autologin.pojos.TopTenItemInfo;
 
 public class TopTenPageParser extends BasePageParser {
@@ -80,6 +81,8 @@ public class TopTenPageParser extends BasePageParser {
 				itemInfo.setCategoryName(this.categoryInfo.getCategoryName());
 				
 				this.topTenItemInfos.add(itemInfo);
+				TaobaoDataSet.topTenItemInfos.add(itemInfo);
+				
 				this.getLog().info("Top 10 page - add item:");
 				this.getLog().info("Top 10 page - rank: "+itemInfo.getTopRank());
 				this.getLog().info("Top 10 page - href:" + itemInfo.getHref());

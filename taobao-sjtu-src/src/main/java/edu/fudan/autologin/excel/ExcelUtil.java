@@ -19,6 +19,7 @@ import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.SellerInSearchResult;
 import edu.fudan.autologin.pojos.SellerRateInfo;
 import edu.fudan.autologin.pojos.TopTenItemInfo;
+import edu.fudan.autologin.utils.XmlConfUtil;
 
 import jxl.CellType;
 import jxl.Workbook;
@@ -232,7 +233,9 @@ public class ExcelUtil {
 
 	public static void createWorkbook() {
 		
-		String basePath = "D:\\taobao-sjtu_";
+		String excelFilePath = XmlConfUtil.getValueByName("excelFilePath");
+		log.debug("Excel file path from xml file is: "+excelFilePath);
+		String basePath = excelFilePath;
 		String fileExtendName = ".xls";
 		
 		Date date=new Date();
