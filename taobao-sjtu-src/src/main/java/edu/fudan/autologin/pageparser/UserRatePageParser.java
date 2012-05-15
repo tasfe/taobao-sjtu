@@ -1,10 +1,5 @@
 package edu.fudan.autologin.pageparser;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
 import org.apache.http.client.HttpClient;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Document;
@@ -100,19 +95,23 @@ public class UserRatePageParser extends BasePageParser {
 			
 			boolean isConsumerPromise = false;
 			boolean isSevenDayReturn = false;
-			Element rateEl = sellerServiceEl.select("div.bd div.desc ul").get(0);
-			if(rateEl.select("li span.xiaofei").size() > 0){
-				isConsumerPromise = true;
+			
+			if(sellerServiceEl.select("div.bd div.desc ul").size() == 0){
+				
+			}else{
+				Element rateEl = sellerServiceEl.select("div.bd div.desc ul").get(0);
+				if(rateEl.select("li span.xiaofei").size() > 0){
+					isConsumerPromise = true;
+				}
+				
+				if(rateEl.select("li span.seven").size() > 0){
+					isSevenDayReturn = true;
+				}
 			}
 			log.info("isConsumerPromise: " + isConsumerPromise);
-			sellerRateInfo.setConsumerPromise(isConsumerPromise);
-			
-			if(rateEl.select("li span.seven").size() > 0){
-				isSevenDayReturn = true;
-			}
 			log.info("isSevenDayReturn: " + isSevenDayReturn);
+			sellerRateInfo.setConsumerPromise(isConsumerPromise);
 			sellerRateInfo.setSevenDayReturn(isSevenDayReturn);
-			
 			//charge num
 			String chargeNum;
 			if(sellerServiceEl.select("div.bd div.charge span").size() == 0){
