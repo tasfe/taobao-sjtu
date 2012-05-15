@@ -9,7 +9,7 @@ public class DosCmdUtils {
 		String browserPath = XmlConfUtil.getValueByName("browserPath");
 		Runtime rt = Runtime.getRuntime();
 		try {
-			rt.exec(browserPath + url);
+			rt.exec(browserPath + "		"+url);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
