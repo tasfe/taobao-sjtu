@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<browserPath>
+		/opt/google/chrome/google-chrome %U
+	</browserPath>
+	<excelFilePath>
+
+	</excelFilePath>
+
+<!-- http get请求时间间隔，单位为毫秒 -->
+	<requestInterval>
+		0
+	</requestInterval>
+</settings>
