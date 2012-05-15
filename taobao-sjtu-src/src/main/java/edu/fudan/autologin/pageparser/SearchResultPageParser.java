@@ -47,7 +47,7 @@ public class SearchResultPageParser extends BasePageParser {
 					this.getHttpClient(), sellerInSearchResult.getHref());
 			itemDetailPageParser.setSellerId(sellerInSearchResult.getSellerId());
 			log.info("--------------------------------------------------------------------------------------------------------------");
-			log.info("Start to parse the specified item detail page (ItemName,Page,Rank): "+"("+sellerInSearchResult.getSellerName()+", "+sellerInSearchResult.getPage()+", "+sellerInSearchResult.getRank()+")");
+			log.info("Start to parse the specified item detail page (TopTenRank, ItemName, Page, PageRank): "+"("+topTenItemInfo.getTopRank()+", "+sellerInSearchResult.getSellerName()+", "+sellerInSearchResult.getPage()+", "+sellerInSearchResult.getRank()+")");
 			log.info("Item href is: " + sellerInSearchResult.getHref());
 			itemDetailPageParser.execute();
 		}

@@ -288,14 +288,14 @@ public class ExcelUtil {
 		sheets = new HashMap<String, WritableSheet>();
 
 		WritableSheet sheet = workbook.createSheet(SheetNames.TOP_TEN_SHEET, 0);
-		sheet.setColumnView(0, 20);
-		sheet.setColumnView(1, 30);
-		sheet.setColumnView(3, 90);
+//		sheet.setColumnView(0, 20);
+//		sheet.setColumnView(1, 30);
+//		sheet.setColumnView(3, 90);
 		sheets.put(SheetNames.TOP_TEN_SHEET, sheet);
 
 		WritableSheet sheet1 = workbook.createSheet(
 				SheetNames.SEARCH_RESULT_SHEET, 1);
-		initialSheetSetting(sheet1);
+//		initialSheetSetting(sheet1);
 		sheets.put(SheetNames.SEARCH_RESULT_SHEET, sheet1);
 
 		WritableSheet sheet2 = workbook.createSheet(
@@ -348,22 +348,22 @@ public class ExcelUtil {
 			Label l1 = new Label(0, sheet.getRows(), s.getSellerId());
 			Label l2 = new Label(1, sheet.getRows(), s.getCategoryName());
 			Label l3 = new Label(2, sheet.getRows(), s.getSellerName());
-			Label l4 = new Label(3, sheet.getRows(), s.isGlobalBuy() + "");
-			Label l5 = new Label(4, sheet.getRows(), s.isGoldSeller() + "");
+			Label l4 = new Label(3, sheet.getRows(), s.isGlobalBuy()?"全球购":"0" + "");
+			Label l5 = new Label(4, sheet.getRows(), s.isGoldSeller()?"金牌卖家":"0" + "");
 			Label l6 = new Label(5, sheet.getRows(), s.getPrice() + "");
 			Label l7 = new Label(6, sheet.getRows(), s.getFreightPrice() + "");
-			Label l8 = new Label(7, sheet.getRows(), s.isCreditCardPay() + "");
+			Label l8 = new Label(7, sheet.getRows(), s.isCreditCardPay()?"信用卡支付":"0" + "");
 			Label l9 = new Label(8, sheet.getRows(), s.getSellerAddress());
 			Label l10 = new Label(9, sheet.getRows(), s.getSaleNum() + "");
 			Label l11 = new Label(10, sheet.getRows(), s.getReviews() + "");
-			Label l12 = new Label(11, sheet.getRows(), s.isConsumerPromise()
+			Label l12 = new Label(11, sheet.getRows(), s.isConsumerPromise()?"消费保障":"0"
 					+ "");
 			Label l13 = new Label(12, sheet.getRows(),
-					s.isLeaveACompensableThree + "");
-			Label l14 = new Label(13, sheet.getRows(), s.isSevenDayReturn()
+					s.isLeaveACompensableThree ? "假一赔三":"0"+ "");
+			Label l14 = new Label(13, sheet.getRows(), s.isSevenDayReturn()?"七天退换":"0"
 					+ "");
-			Label l15 = new Label(14, sheet.getRows(), s.isQualityItem() + "");
-			Label l16 = new Label(15, sheet.getRows(), s.is30DaysMaintain()
+			Label l15 = new Label(14, sheet.getRows(), s.isQualityItem()?"正品保障":"0" + "");
+			Label l16 = new Label(15, sheet.getRows(), s.is30DaysMaintain()?"30天维修":"0"
 					+ "");
 			Label l17 = new Label(16, sheet.getRows(), s.getPage() + "");
 			Label l18 = new Label(17, sheet.getRows(), s.getRank() + "");
