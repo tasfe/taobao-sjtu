@@ -124,11 +124,14 @@ public class ItemDetailPageParserTest {
 		get.printResponse();
 		get.shutDown();
 	}
-	public void testMonthServie() {
+	
+	
+	@Test
+	public void testMonthService() {
 		MonthService monthService = new MonthService();
 		monthService.setHttpClient(httpClient);
 		monthService
-				.setUserRatePageUrl("http://rate.taobao.com/user-rate-2cd40cbdf1fbaa2fbdc9bb2fff2aaa4d.htm");
+				.setUserRatePageUrl("http://rate.taobao.com/user-rate-47ee874a0427f2bc729bb869d78ff8c6.htm?spm=2013.1.1000126.5");
 		monthService.execute();
 	}
 
@@ -141,7 +144,7 @@ public class ItemDetailPageParserTest {
 	
 	
 	
-	@Test
+
 	public void testSearchResutlPageParser(){
 		String pageUrl = "http://s.taobao.com/search?source=top_search&q=Samsung%2F%C8%FD%D0%C7+Galaxy+Note&pspuid=139682134&v=product&p=detail&stp=top.toplist.tr_rxsjb.sellhot.image.2.0&ad_id=&am_id=&cm_id=&pm_id=";
 		SearchResultPageParser searchResultPageParser = new SearchResultPageParser(httpClient, pageUrl);
@@ -154,6 +157,9 @@ public class ItemDetailPageParserTest {
 		userRatePageParser.setSellerId("55600035");
 		userRatePageParser.execute();
 	}
+	
+	
+
 	public void testReview() {
 		
 		String url = "http://item.taobao.com/item.htm?id=10203414733";
@@ -183,6 +189,9 @@ public class ItemDetailPageParserTest {
 	
 	
 
+	
+	
+	
 	public void testBuyerListService() {
 		autoLogin();
 		String itemPageUrl = "http://item.taobao.com/item.htm?id=16016896217";
@@ -202,6 +211,7 @@ public class ItemDetailPageParserTest {
 		buyerListService.execute();
 	}
 
+	
 	public void testPostageService() {
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(httpClient);
