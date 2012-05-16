@@ -43,6 +43,8 @@ public class ItemReviewService {
 
 	private int reviewSum = 0;
 
+	
+	private String reviewUrl;
 	public List<String> getDateList() {
 		return dateList;
 	}
@@ -107,7 +109,17 @@ public class ItemReviewService {
 
 	}
 
+	/**
+	 * 
+	 * 
+	 * 1. get review url from page;
+	 * 2. construct specified review url;
+	 * 3. get specified review page;
+	 * 4. parse json data;
+	 */
 	public void execute() {
+		
+		reviewUrl = getFeedRateListUrl();
 		int pageSize = 20;
 		
 		if(reviewSum == 0){
@@ -120,6 +132,9 @@ public class ItemReviewService {
 				log.info("--------------------------------------------------------------------------------------");
 				log.info("The review of Page NO is: " + pageNum);
 				parseReview(pageNum);
+				
+				
+				
 				try {
 					//每隔xs请求一次
 					Thread.sleep(Integer.parseInt(XmlConfUtil.getValueByName("requestInterval")));
@@ -140,7 +155,7 @@ public class ItemReviewService {
 
 	public void parseReview(int pageNum){
 		GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
-				getFeedRateListUrl(), pageNum));
+				reviewUrl, pageNum));
 		get.doGet();
 		String jsonStr = getFeedRateListJsonString(get
 				.getResponseAsString().trim());

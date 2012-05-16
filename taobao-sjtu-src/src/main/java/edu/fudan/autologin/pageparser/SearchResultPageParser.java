@@ -129,23 +129,24 @@ public class SearchResultPageParser extends BasePageParser {
 
 				Element legend2 = itemAttr.select("li.legend2").get(0);
 				boolean isConsumerPromise = false;
-				boolean isReBackPay = false;
+				boolean isLeaveACompensableThree = false;//假一赔三
+//				boolean isReBackPay = false;
 				boolean isSevenDayReturn = false;
 				boolean isQualityItem = false;
 				boolean is30DaysMaintain = false;
 				if (legend2.select("a.xb-as-fact").size() > 0) {
 					isConsumerPromise = true;
 				}
-				if (legend2.select("xb-sevenday-return").size() > 0) {
+				if (legend2.select("a.xb-sevenday-return").size() > 0) {
 					isSevenDayReturn = true;
 				}
-				if (legend2.select("xb-quality_item").size() > 0) {
+				if (legend2.select("a.xb-quality_item").size() > 0) {
 					isQualityItem = true;
 				}
-				if (legend2.select("xb-jia1-pei3").size() > 0) {
-					isReBackPay = true;
+				if (legend2.select("a.xb-jia1-pei3").size() > 0) {
+					isLeaveACompensableThree = true;
 				}
-				if (legend2.select("xb-thirtyday-repair").size() > 0) {
+				if (legend2.select("a.xb-thirtyday-repair").size() > 0) {
 					is30DaysMaintain = true;
 				}
 
@@ -165,12 +166,22 @@ public class SearchResultPageParser extends BasePageParser {
 				sellerItemInfo.setSaleNum(saleNum);
 				sellerItemInfo.setReviews(reviewsNum);
 				sellerItemInfo.setConsumerPromise(isConsumerPromise);
-				sellerItemInfo.setReBackPay(isReBackPay);
+//				sellerItemInfo.setReBackPay(isReBackPay);
 				sellerItemInfo.setSevenDayReturn(isSevenDayReturn);
 				sellerItemInfo.setQualityItem(isQualityItem);
 				sellerItemInfo.setIs30DaysMaintain(is30DaysMaintain);
 				sellerItemInfo.setPage(pageNum + 1);
 				sellerItemInfo.setRank(rank);
+				sellerItemInfo.setIsLeaveACompensableThree(isLeaveACompensableThree);
+				
+				log.info("----------------------------------------");
+				log.info("seller name is: "+sellerName);
+				log.info("isConsumerPromise "+isConsumerPromise);
+				log.info("is30DaysMaintain "+is30DaysMaintain);
+				log.info("isCreditcard "+isCreditcard);
+				log.info("isQualityItem "+isQualityItem);
+				log.info("isLeaveACompensableThree "+isLeaveACompensableThree);
+				log.info("isSevenDayReturn "+isSevenDayReturn);
 
 				sellerResultList.add(sellerItemInfo);
 				TaobaoDataSet.sellerInSearchResults.add(sellerItemInfo);

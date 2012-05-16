@@ -76,7 +76,7 @@ public class BuyerListService {
 //						showBuyerListUrl, pageNum))) == false) ;
 				
 				try {
-					Thread.sleep(Integer.parseInt(XmlConfUtil.getValueByName("requestInterval")));
+					Thread.sleep(10);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 					log.error(e.getMessage());
