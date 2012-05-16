@@ -356,7 +356,7 @@ public class ExcelUtil {
 			Label l9 = new Label(8, sheet.getRows(), s.getSellerAddress());
 			Label l10 = new Label(9, sheet.getRows(), s.getSaleNum() + "");
 			Label l11 = new Label(10, sheet.getRows(), s.getReviews() + "");
-			Label l12 = new Label(11, sheet.getRows(), s.isConsumerPromise()?"消费保障":"0"
+			Label l12 = new Label(11, sheet.getRows(), s.isConsumerPromise()?"消费者保障":"0"
 					+ "");
 			Label l13 = new Label(12, sheet.getRows(),
 					s.isLeaveACompensableThree ? "假一赔三":"0"+ "");
