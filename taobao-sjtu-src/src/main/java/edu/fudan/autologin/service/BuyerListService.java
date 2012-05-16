@@ -2,6 +2,7 @@ package edu.fudan.autologin.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
@@ -18,6 +19,7 @@ import org.jsoup.select.Elements;
 import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
+import edu.fudan.autologin.utils.RandomUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class BuyerListService {
@@ -70,8 +72,7 @@ public class BuyerListService {
 				String constructedShowBuyerListUrl = constructShowBuyerListUrl(
 						showBuyerListUrl, pageNum);
 				log.info("Showbuyer ajax url is: "+constructedShowBuyerListUrl);
-				parseBuyerListTable(getShowBuyerListDoc(constructShowBuyerListUrl(
-						showBuyerListUrl, pageNum)));
+				parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
 //				while (parseBuyerListTable(getShowBuyerListDoc(constructShowBuyerListUrl(
 //						showBuyerListUrl, pageNum))) == false) ;
 				
@@ -101,6 +102,7 @@ public class BuyerListService {
 
 	public void setHttpClient(HttpClient httpClient) {
 		this.httpClient = httpClient;
+//		httpClient = new DefaultHttpClient();
 	}
 
 	public List<BuyerInfo> getBuyerInfos() {
@@ -197,7 +199,7 @@ public class BuyerListService {
 
 		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
 		NameValuePair nvp1 = new BasicNameValuePair("referer",
-				"http://item.taobao.com/item.htm?id=16016896217");
+				"http://item.taobao.com/item.htm?id="+getSellerIdFromItemDetailPageUrl());
 		headers1.add(nvp1);
 		get.doGet(headers1);
 		Document doc = getHtmlDocFromJson(get.getResponseAsString());
@@ -205,6 +207,10 @@ public class BuyerListService {
 		return doc;
 	}
 
+	//get seller id from item detail page url
+	public String getSellerIdFromItemDetailPageUrl(){
+		return itemPageUrl.split("=")[1];
+	}
 	public String getShowBuyerListUrl(String itemDetailPageUrl) {
 		String showBuyerListUrl = null;
 
@@ -246,7 +252,7 @@ public class BuyerListService {
 
 		String append = "&bidPage="
 				+ pageNum
-				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t=1335495514388";
+				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t=133715"+RandomUtils.getRandomNum(7);
 
 		sb.append(append);
 		// System.out.println(sb);

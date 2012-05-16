@@ -135,13 +135,13 @@ public class ItemReviewService {
 				
 				
 				
-				try {
-					//每隔xs请求一次
-					Thread.sleep(Integer.parseInt(XmlConfUtil.getValueByName("requestInterval")));
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-					log.error(e.getMessage());
-				}
+//				try {
+//					//每隔xs请求一次
+//					Thread.sleep(Integer.parseInt(XmlConfUtil.getValueByName("requestInterval")));
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//					log.error(e.getMessage());
+//				}
 			}
 		}
 		

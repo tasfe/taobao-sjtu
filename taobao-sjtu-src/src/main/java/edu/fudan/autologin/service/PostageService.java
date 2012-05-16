@@ -26,6 +26,10 @@ public class PostageService {
 		return postage;
 	}
 
+	
+	public PostageService(){
+		this.postage = new Postage();
+	}
 	public void setPostage(Postage postage) {
 		this.postage = postage;
 	}
@@ -86,8 +90,8 @@ public class PostageService {
 	}
 
 	public void wtDomainPostageParser() {
-		this.postage.setCarriage("none");
-		this.postage.setLocation("none");
+		this.postage.setCarriage("0");
+		this.postage.setLocation("0");
 		log.info("This is wt.taobao.com domain process.");
 	}
 
@@ -158,7 +162,7 @@ public class PostageService {
 		log.info("Location: " + jsonObj.getString("location"));
 		log.info("Carriage: " + jsonObj.getString("carriage"));
 
-		this.postage = new Postage();
+		
 		postage.setCarriage(jsonObj.getString("carriage"));
 		postage.setLocation(jsonObj.getString("location"));
 
