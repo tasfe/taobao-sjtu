@@ -76,7 +76,7 @@ public class MainTest {
 	
 	@Test
 	public void execute(){
-		autoLogin();
+//		autoLogin();
 		doMyWork();
 	}
 	
