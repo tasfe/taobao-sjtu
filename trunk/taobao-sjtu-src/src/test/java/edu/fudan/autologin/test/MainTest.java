@@ -107,20 +107,20 @@ public class MainTest {
 
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
 
-		CategoryInfo ci1 = new CategoryInfo();
-		ci1.setCategoryName("洁面");
-		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
-		categoryInfos.add(ci1);
+//		CategoryInfo ci1 = new CategoryInfo();
+//		ci1.setCategoryName("洁面");
+//		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
+//		categoryInfos.add(ci1);
+////
+////		CategoryInfo ci2 = new CategoryInfo();
+////		ci2.setCategoryName("热门手机");
+////		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
+////		categoryInfos.add(ci2);
 //
-//		CategoryInfo ci2 = new CategoryInfo();
-//		ci2.setCategoryName("热门手机");
-//		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
-//		categoryInfos.add(ci2);
-//
-//		CategoryInfo ci3 = new CategoryInfo();
-//		ci3.setCategoryName("笔记本");
-//		ci3.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_DNJXGPJ&level3=1101&up=false");
-//		categoryInfos.add(ci3);
+		CategoryInfo ci3 = new CategoryInfo();
+		ci3.setCategoryName("笔记本");
+		ci3.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_DNJXGPJ&level3=1101&up=false");
+		categoryInfos.add(ci3);
 
 		//get top ten item info
 		for (CategoryInfo c : categoryInfos) {
