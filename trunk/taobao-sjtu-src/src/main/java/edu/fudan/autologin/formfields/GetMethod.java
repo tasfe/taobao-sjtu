@@ -70,6 +70,8 @@ public class GetMethod {
 			e.printStackTrace();
 			log.error(e.getMessage());
 		}finally{
+			//当get请求出现错误时(一般为超时情况)，处理
+			
 		}
 	}
 

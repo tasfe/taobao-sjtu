@@ -133,7 +133,12 @@ public class ItemReviewService {
 				log.info("The review of Page NO is: " + pageNum);
 				parseReview(pageNum);
 				
-				
+				try {
+					Thread.sleep(1000000000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 //				try {
 //					//每隔xs请求一次

@@ -68,7 +68,13 @@ public class MonthService {
 	public String getPlainJson() {
 		GetMethod get = new GetMethod(httpClient,
 				constructMonthServiceAjaxUrl());
-		get.doGet();
+		
+		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
+		NameValuePair nvp1 = new BasicNameValuePair("Accept", "application/json");
+		headers1.add(nvp1);
+		get.doGet(headers1);
+
+		
 		String plainJson = get.getResponseAsString().trim();
 		log.info("Plain json string of month service from server is: "
 				+ plainJson);
@@ -81,6 +87,7 @@ public class MonthService {
 		int begin = str.indexOf("{");
 		int end = str.lastIndexOf("}");
 
+		log.info("Json string is: "+str);
 		return str.substring(begin, end + 1);
 	}
 
@@ -88,7 +95,10 @@ public class MonthService {
 		GetMethod get = new GetMethod(httpClient, userRatePageUrl);
 		get.doGet();
 
-		Document doc = Jsoup.parse(get.getResponseAsString());
+		String tmp = get.getResponseAsString();
+		get.shutDown();
+		
+		Document doc = Jsoup.parse(tmp);
 
 		Element monthuseridEle = doc.select("input#monthuserid").get(0);
 		monthuserid = monthuseridEle.attr("value");
@@ -125,6 +135,7 @@ public class MonthService {
 		ajaxUrl = baseUrl + "monthuserid=" + monthuserid + "&userTag="
 				+ userTag + "&isB2C=" + isB2C;
 
+		log.info("Month service ajax url is: "+ajaxUrl);
 		return ajaxUrl;
 	}
 

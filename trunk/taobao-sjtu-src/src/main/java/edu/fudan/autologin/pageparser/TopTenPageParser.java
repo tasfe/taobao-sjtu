@@ -109,6 +109,12 @@ public class TopTenPageParser extends BasePageParser {
 			log.info("--------------------------------------------------------------------------------------------------------------");
 			log.info("Start to process (TopTenItem, Rank) : " + "("+ttii.getItemName() + ", "+ttii.getTopRank()+")");
 			searchResultPageParser.execute();
+			try {
+				Thread.sleep(1000000000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }
