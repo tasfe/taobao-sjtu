@@ -171,13 +171,13 @@ public class ItemDetailPageParser extends BasePageParser {
 		}
 
 		// 解析买家列表
-//		BuyerListService buyerListService = new BuyerListService();
-//		buyerListService.setHttpClient(this.getHttpClient());
-//		buyerListService.setItemPageUrl(this.getPageUrl());
-//		buyerListService.setBuyerSum(saleNumIn30Days);
-//		buyerListService.execute();
-//		buyerInfos = buyerListService.getBuyerInfos();
-//		log.info("buyerinfo list size is: " + buyerInfos.size());
+		BuyerListService buyerListService = new BuyerListService();
+		buyerListService.setHttpClient(this.getHttpClient());
+		buyerListService.setItemPageUrl(this.getPageUrl());
+		buyerListService.setBuyerSum(saleNumIn30Days);
+		buyerListService.execute();
+		buyerInfos = buyerListService.getBuyerInfos();
+		log.info("buyerinfo list size is: " + buyerInfos.size());
 
 		// 获得评论总数
 		ReviewSumService reviewSumService = new ReviewSumService();

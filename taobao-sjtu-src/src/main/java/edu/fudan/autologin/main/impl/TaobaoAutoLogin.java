@@ -39,7 +39,9 @@ import edu.fudan.autologin.pojos.CategoryInfo;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.pojos.Postage;
 import edu.fudan.autologin.utils.PostUtils;
+import edu.fudan.autologin.utils.PrintUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
+import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class TaobaoAutoLogin implements AutoLogin {
 	private static final Logger log = Logger.getLogger(TaobaoAutoLogin.class);
@@ -77,6 +79,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 
 	public void autoLogin() {
 
+		XmlConfUtil.openXml();
 		// 设置基本的post信息
 		BasePostInfo basePostInfo = new BasePostInfo();
 		basePostInfo
@@ -95,6 +98,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 		formFieldsNvps.add(new BasicNameValuePair("need_check_code", "true"));
 
 		PostUtils.doPost(httpClient, basePostInfo, formFieldsNvps);
+		PrintUtils.printCookies(httpClient.getCookieStore().getCookies());
 	}
 	public void testItaobaoPageParser(){
 		
@@ -273,7 +277,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 	}
 	
 	public void execute() {
-		beforeWriteExcel();
+//		beforeWriteExcel();
 		// testDealRecord(getShowBuyerListUrl());
 		// testGet();
 		// isLoginSuccess();
@@ -285,7 +289,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 		
 //	testItaobaoPageParser();
 //		doMyWork();
-		shutDown();
+//		shutDown();
 		// 
 		//parseShowBuyerListDoc();
 //		userRatePageParser();
