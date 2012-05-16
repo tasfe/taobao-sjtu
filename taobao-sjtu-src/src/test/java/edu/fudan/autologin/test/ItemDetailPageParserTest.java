@@ -23,6 +23,7 @@ import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.main.AutoLogin;
 import edu.fudan.autologin.pageparser.ItaobaoPageParser;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
+import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.service.BuyerListService;
@@ -141,6 +142,11 @@ public class ItemDetailPageParserTest {
 	
 	
 	@Test
+	public void testSearchResutlPageParser(){
+		String pageUrl = "http://s.taobao.com/search?source=top_search&q=Samsung%2F%C8%FD%D0%C7+Galaxy+Note&pspuid=139682134&v=product&p=detail&stp=top.toplist.tr_rxsjb.sellhot.image.2.0&ad_id=&am_id=&cm_id=&pm_id=";
+		SearchResultPageParser searchResultPageParser = new SearchResultPageParser(httpClient, pageUrl);
+		searchResultPageParser.parsePage();
+	}
 	public void testUserRate(){
 		
 		String pageUrl = "http://rate.taobao.com/user-rate-2f3f19c1769caf0be727f0d5d3825bb1.htm?spm=2013.1.1000126.5";
