@@ -79,9 +79,15 @@ public class ItemDetailPageParser extends BasePageParser {
 
 	public String getShopRankHref(Document doc) {
 		if (doc.select("a#shop-rank").size() == 0) {
-			log.info("There is no shop rank href in the page and page url is: "
-					+ this.getPageUrl());
-			return null;
+			
+			if(doc.select("div.shop-rate ul li a").size() == 0){
+				log.info("There is no shop rank href in the page and page url is: "
+						+ this.getPageUrl());
+				return null;
+			}else{
+				return doc.select("div.shop-rate ul li a").get(0).attr("href");
+			}
+			
 		} else {
 			Element shopRankEle = doc.select("a#shop-rank").get(0);
 			return shopRankEle.attr("href");
