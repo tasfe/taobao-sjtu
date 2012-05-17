@@ -77,7 +77,7 @@ public class BuyerListService {
 //						showBuyerListUrl, pageNum))) == false) ;
 				
 				try {
-					Thread.sleep(1000000000);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
