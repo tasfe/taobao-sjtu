@@ -13,7 +13,9 @@ import net.sf.json.JSONSerializer;
 import org.apache.http.HttpHost;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.HttpClient;
 import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -45,7 +47,7 @@ import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class TaobaoAutoLogin implements AutoLogin {
 	private static final Logger log = Logger.getLogger(TaobaoAutoLogin.class);
-	private DefaultHttpClient httpClient;
+	private HttpClient httpClient;
 
 	public TaobaoAutoLogin() {
 		if (this.httpClient == null) {
@@ -98,7 +100,7 @@ public class TaobaoAutoLogin implements AutoLogin {
 		formFieldsNvps.add(new BasicNameValuePair("need_check_code", "true"));
 
 		PostUtils.doPost(httpClient, basePostInfo, formFieldsNvps);
-		PrintUtils.printCookies(httpClient.getCookieStore().getCookies());
+		PrintUtils.printCookies(((AbstractHttpClient) httpClient).getCookieStore().getCookies());
 	}
 	public void testItaobaoPageParser(){
 		

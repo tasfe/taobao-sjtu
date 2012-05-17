@@ -9,6 +9,7 @@ import net.sf.json.JSONSerializer;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -19,6 +20,7 @@ import org.jsoup.select.Elements;
 import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
+import edu.fudan.autologin.utils.PrintUtils;
 import edu.fudan.autologin.utils.RandomUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
@@ -26,8 +28,10 @@ public class BuyerListService {
 	private static final Logger log = Logger.getLogger(BuyerListService.class);
 	private String itemPageUrl;
 	private HttpClient httpClient;
-	private List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
+	private List<BuyerInfo> buyerInfos;
 	private int buyerSum = 0;
+	private String pageStr;
+
 	
 	public class BuyerListThread implements Runnable{
 
@@ -56,7 +60,7 @@ public class BuyerListService {
 	 */
 	public void execute() {
 		String showBuyerListUrl = getShowBuyerListUrl(itemPageUrl);
-		log.debug("ShowBuyerList url is: " + showBuyerListUrl);
+		log.info("ShowBuyerList url is: " + showBuyerListUrl);
 		if (showBuyerListUrl == null) {
 			log.info("There is no showBuyerList url in the page.");
 			assert (buyerInfos.size() == 0);
@@ -73,15 +77,16 @@ public class BuyerListService {
 						showBuyerListUrl, pageNum);
 				log.info("Showbuyer ajax url is: "+constructedShowBuyerListUrl);
 				parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
+
 //				while (parseBuyerListTable(getShowBuyerListDoc(constructShowBuyerListUrl(
 //						showBuyerListUrl, pageNum))) == false) ;
 				
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+//				try {
+//					Thread.sleep(Integer.parseInt(RandomUtils.getRandomNum(3)));
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 
 			}
 		}
@@ -219,7 +224,7 @@ public class BuyerListService {
 		getMethod.doGet();
 		String tmpStr = getMethod.getResponseAsString();
 		getMethod.shutDown();
-
+		pageStr = tmpStr;
 		
 		if(tmpStr.contains("showBuyerList") == false){
 			showBuyerListUrl = null;
@@ -250,14 +255,29 @@ public class BuyerListService {
 		}
 		sb.append(tokens[14]);
 
+		String token = getToken();
+		log.info("Token is: "+token);
 		String append = "&bidPage="
 				+ pageNum
-				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t=133715"+RandomUtils.getRandomNum(7);
+//				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+token.substring(0,6)+RandomUtils.getRandomNum(token.length()-6);
+				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+token;
 
 		sb.append(append);
-		// System.out.println(sb);
+		System.out.println(sb);
 
 		return sb.toString();
+	}
+	
+	public String getToken(){
+		String token = null;
+		
+		int base = pageStr.indexOf("sys\":{\"now\":");
+		int end = pageStr.indexOf(",\"tkn\":", base);
+
+		token = pageStr
+				.substring(base + "sys\":{\"now\":".length(), end);
+		log.info(token);
+		return token;
 	}
 
 	public Document getHtmlDocFromJson(String jsonStr) {

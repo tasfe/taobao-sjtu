@@ -126,7 +126,7 @@ public class ItaobaoPageParser extends BasePageParser {
 
 	@Override
 	public void writeExcel() {
-		ExcelUtil.writeItemBuyerSheet(buyerInfo);
+		///ExcelUtil.writeItemBuyerSheet(buyerInfo);
 	}
 
 	public ItaobaoPageParser(HttpClient httpClient, String pageUrl) {
