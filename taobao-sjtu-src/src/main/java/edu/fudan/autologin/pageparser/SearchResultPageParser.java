@@ -50,12 +50,7 @@ public class SearchResultPageParser extends BasePageParser {
 			log.info("Start to parse the specified item detail page (TopTenRank, ItemName, Page, PageRank): "+"("+topTenItemInfo.getTopRank()+", "+sellerInSearchResult.getSellerName()+", "+sellerInSearchResult.getPage()+", "+sellerInSearchResult.getRank()+")");
 			log.info("Item href is: " + sellerInSearchResult.getHref());
 			itemDetailPageParser.execute();
-			try {
-				Thread.sleep(1000000000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 		}
 	}
 
