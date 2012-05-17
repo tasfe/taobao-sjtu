@@ -187,13 +187,13 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setReviews(reviewSumService.getReviewSum());
 
 		// 解析評論
-		ItemReviewService itemReviewService = new ItemReviewService();
-		itemReviewService.setHttpClient(this.getHttpClient());
-		itemReviewService.setItemPageUrl(this.getPageUrl());
-		itemReviewService.setReviewSum(reviewSumService.getReviewSum());
-		itemReviewService.execute();
-		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
-		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
+//		ItemReviewService itemReviewService = new ItemReviewService();
+//		itemReviewService.setHttpClient(this.getHttpClient());
+//		itemReviewService.setItemPageUrl(this.getPageUrl());
+//		itemReviewService.setReviewSum(reviewSumService.getReviewSum());
+//		itemReviewService.execute();
+//		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
+//		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
 
 	}
 	@Override
