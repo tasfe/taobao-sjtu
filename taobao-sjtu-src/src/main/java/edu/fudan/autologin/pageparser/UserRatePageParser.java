@@ -54,62 +54,71 @@ public class UserRatePageParser extends BasePageParser {
 		log.info("sellerId: " + sellerId);
 		sellerRateInfo.setSellerId(sellerId);
 
-		if (doc.select("div.personal-info div.left-box").size() == 0) {
+		String mainSale = null;
+		String location = null;
+		String sellerName = null;
+		boolean isConsumerPromise = false;
+		boolean isSevenDayReturn = false;
+		String chargeNum = null;
+		String buyerRate = null;
+		String sellerRate = null;
+		String createShopDate = null;
 
-		} else {
+		log.info("size is: "
+				+ doc.select("div.personal-info div.left-box").size());
+		if (doc.select("div.personal-info div.left-box").size() >= 1) {
 			Element sellerInfoEl = doc.select("div.personal-info div.left-box")
 					.get(0);
-			Element sellerServiceEl = doc.select(
-					"div.personal-info div.left-box").get(1);
 
-			// seller name
-			String sellerName = null;
 			if (sellerInfoEl.select("div.bd div.title > a").size() == 0) {
 				sellerName = "0";
 			} else {
 				sellerName = sellerInfoEl.select("div.bd div.title > a").get(0)
 						.ownText();
 			}
-			log.info("sellerName: " + sellerName);
-			sellerRateInfo.setSellerName(sellerName);
 
-			// main sale
-			String mainSale = null;
-			String location = null;
 			if (sellerInfoEl.select("div.bd ul").size() == 0) {
 
 			} else {
 				Element upBoxEl = sellerInfoEl.select("div.bd ul").get(0);
-				mainSale = upBoxEl.select("li").get(0).select("a").text();
+				if (upBoxEl.select("li").size() >= 1) {
+					mainSale = upBoxEl.select("li").get(0).select("a").text();
+				} else if (upBoxEl.select("li").size() >= 2) {
+					// location
+					location = upBoxEl.select("li").get(1).ownText();
+					location = location.substring(location.indexOf("：") + 1)
+							.trim();
+				}
 
-				// location
-				location = upBoxEl.select("li").get(1).ownText();
-				location = location.substring(location.indexOf("：") + 1).trim();
 			}
-			log.info("mainSale: " + mainSale);
-			sellerRateInfo.setMainSale(mainSale);
-			log.info("location: " + location);
-			sellerRateInfo.setLocation(location);
 
 			// create shop date
-			String createShopDate = doc.getElementById("J_showShopStartDate")
-					.val();
-			log.info("createShopDate: " + createShopDate);
-			sellerRateInfo.setCreateShopDate(createShopDate);
+			createShopDate = doc.getElementById("J_showShopStartDate").val();
 
 			// seller rate
 			Element downBoxEl = sellerInfoEl.select("div.bd ul.sep").get(0);
-			String sellerRate = downBoxEl.select("li").get(0).ownText();
-			log.info("sellerRate: " + sellerRate.split("：")[1]);
-			sellerRateInfo.setSellerRate(sellerRate.split("：")[1]);
+			if (downBoxEl.select("li").size() >= 1) {
 
-			// buyer rate
-			String buyerRate = downBoxEl.select("li").get(1).ownText();
-			log.info("buyerRate: " + buyerRate.split("：")[1]);
-			sellerRateInfo.setBuyerRate(buyerRate.split("：")[1]);
+				String tmp = downBoxEl.select("li").get(0).ownText();
+				if (tmp.split("：").length >= 2) {
+					sellerRate = tmp.split("：")[1];
+				}
 
-			boolean isConsumerPromise = false;
-			boolean isSevenDayReturn = false;
+			}
+			if (downBoxEl.select("li").size() >= 2) {
+				// buyer rate
+				String tmp = downBoxEl.select("li").get(1).ownText();
+				if (tmp.split("：").length >= 2) {
+					buyerRate = tmp.split("：")[1];
+				}
+
+			}
+
+		}
+
+		if (doc.select("div.personal-info div.left-box").size() >= 2) {
+			Element sellerServiceEl = doc.select(
+					"div.personal-info div.left-box").get(1);
 
 			if (sellerServiceEl.select("div.bd div.desc ul").size() == 0) {
 
@@ -124,12 +133,7 @@ public class UserRatePageParser extends BasePageParser {
 					isSevenDayReturn = true;
 				}
 			}
-			log.info("isConsumerPromise: " + isConsumerPromise);
-			log.info("isSevenDayReturn: " + isSevenDayReturn);
-			sellerRateInfo.setConsumerPromise(isConsumerPromise);
-			sellerRateInfo.setSevenDayReturn(isSevenDayReturn);
-			// charge num
-			String chargeNum;
+
 			if (sellerServiceEl.select("div.bd div.charge span").size() == 0) {
 				chargeNum = "卖家尚未提交保证金";
 
@@ -137,9 +141,25 @@ public class UserRatePageParser extends BasePageParser {
 				chargeNum = sellerServiceEl.select("div.bd div.charge span")
 						.text();
 			}
-			log.info("chargeNum: " + chargeNum);
-			sellerRateInfo.setChargeNum(chargeNum);
 		}
+		log.info("mainSale: " + mainSale);
+		sellerRateInfo.setMainSale(mainSale);
+		log.info("location: " + location);
+		sellerRateInfo.setLocation(location);
+		log.info("sellerName: " + sellerName);
+		sellerRateInfo.setSellerName(sellerName);
+		log.info("isConsumerPromise: " + isConsumerPromise);
+		log.info("isSevenDayReturn: " + isSevenDayReturn);
+		sellerRateInfo.setConsumerPromise(isConsumerPromise);
+		sellerRateInfo.setSevenDayReturn(isSevenDayReturn);
+		log.info("buyerRate: " + buyerRate);
+		sellerRateInfo.setBuyerRate(buyerRate);
+		log.info("chargeNum: " + chargeNum);
+		sellerRateInfo.setChargeNum(chargeNum);
+		log.info("sellerRate: " + sellerRate);
+		sellerRateInfo.setSellerRate(sellerRate);
+		log.info("createShopDate: " + createShopDate);
+		sellerRateInfo.setCreateShopDate(createShopDate);
 
 		String matchScore;
 		String serviceScore;
@@ -238,28 +258,32 @@ public class UserRatePageParser extends BasePageParser {
 			log.info("Week sum rate normal is: " + weekSumRateNormal);
 			log.info("Week sum rate bad is: " + weekSumRateBad);
 
-			Elements weekMainEl = weekRateEls.get(2).select("td");
-			String weekMainRateOk = weekMainEl.get(1).text();
-			String weekMainRateNormal = weekMainEl.get(2).text();
-			String weekMainRateBad = weekMainEl.get(3).text();
-			sellerRateInfo.setWeekMainRateOk(weekMainRateOk);
-			sellerRateInfo.setWeekMainRateNormal(weekMainRateNormal);
-			sellerRateInfo.setWeekMainRateBad(weekMainRateBad);
-			log.info("Week main rate ok is: " + weekMainRateOk);
-			log.info("Week main rate normal is: " + weekMainRateNormal);
-			log.info("Week main rate bad is: " + weekMainRateBad);
+			if (weekRateEls.size() >= 3) {
+				Elements weekMainEl = weekRateEls.get(2).select("td");
+				String weekMainRateOk = weekMainEl.get(1).text();
+				String weekMainRateNormal = weekMainEl.get(2).text();
+				String weekMainRateBad = weekMainEl.get(3).text();
+				sellerRateInfo.setWeekMainRateOk(weekMainRateOk);
+				sellerRateInfo.setWeekMainRateNormal(weekMainRateNormal);
+				sellerRateInfo.setWeekMainRateBad(weekMainRateBad);
+				log.info("Week main rate ok is: " + weekMainRateOk);
+				log.info("Week main rate normal is: " + weekMainRateNormal);
+				log.info("Week main rate bad is: " + weekMainRateBad);
+			}
 
-			Elements weekNotMainEl = weekRateEls.get(3).select("td");
-			String weekNotMainRateOk = weekNotMainEl.get(1).text();
-			String weekNotMainRateNormal = weekNotMainEl.get(2).text();
-			String weekNotMainRateBad = weekNotMainEl.get(3).text();
-			sellerRateInfo.setWeekNotmainRateOk(weekNotMainRateOk);
-			sellerRateInfo.setWeekNotmainRateNormal(weekNotMainRateNormal);
-			sellerRateInfo.setWeekNotmainRateBad(weekNotMainRateBad);
-			log.info("Week not main rate ok is: " + weekNotMainRateOk);
-			log.info("Week not main rate normal is: " + weekNotMainRateNormal);
-			log.info("Week not main rate bad is: " + weekNotMainRateBad);
-
+			if (weekRateEls.size() >= 4) {
+				Elements weekNotMainEl = weekRateEls.get(3).select("td");
+				String weekNotMainRateOk = weekNotMainEl.get(1).text();
+				String weekNotMainRateNormal = weekNotMainEl.get(2).text();
+				String weekNotMainRateBad = weekNotMainEl.get(3).text();
+				sellerRateInfo.setWeekNotmainRateOk(weekNotMainRateOk);
+				sellerRateInfo.setWeekNotmainRateNormal(weekNotMainRateNormal);
+				sellerRateInfo.setWeekNotmainRateBad(weekNotMainRateBad);
+				log.info("Week not main rate ok is: " + weekNotMainRateOk);
+				log.info("Week not main rate normal is: "
+						+ weekNotMainRateNormal);
+				log.info("Week not main rate bad is: " + weekNotMainRateBad);
+			}
 			Elements monthRateEls = sellerRateList.get(1).select(
 					"table tbody tr");
 
@@ -275,28 +299,33 @@ public class UserRatePageParser extends BasePageParser {
 			log.info("Month sum rate normal is: " + monthSumRateNormal);
 			log.info("Month sum rate bad is: " + monthSumRateBad);
 
-			Elements monthMainEl = monthRateEls.get(2).select("td");
-			String monthMainRateOk = monthMainEl.get(1).text();
-			String monthMainRateNormal = monthMainEl.get(2).text();
-			String monthMainRateBad = monthMainEl.get(3).text();
-			sellerRateInfo.setMonthMainRateBad(monthMainRateBad);
-			sellerRateInfo.setMonthMainRateNormal(monthMainRateNormal);
-			sellerRateInfo.setMonthMainRateOk(monthMainRateOk);
-			log.info("Month main rate ok is: " + monthMainRateOk);
-			log.info("Month main rate normal is: " + monthMainRateNormal);
-			log.info("Month main rate bad is: " + monthMainRateBad);
+			if (monthRateEls.size() >= 3) {
+				Elements monthMainEl = monthRateEls.get(2).select("td");
+				String monthMainRateOk = monthMainEl.get(1).text();
+				String monthMainRateNormal = monthMainEl.get(2).text();
+				String monthMainRateBad = monthMainEl.get(3).text();
+				sellerRateInfo.setMonthMainRateBad(monthMainRateBad);
+				sellerRateInfo.setMonthMainRateNormal(monthMainRateNormal);
+				sellerRateInfo.setMonthMainRateOk(monthMainRateOk);
+				log.info("Month main rate ok is: " + monthMainRateOk);
+				log.info("Month main rate normal is: " + monthMainRateNormal);
+				log.info("Month main rate bad is: " + monthMainRateBad);
+			}
 
-			Elements monthNotMainEl = monthRateEls.get(3).select("td");
-			String monthNotMainRateOk = monthNotMainEl.get(1).text();
-			String monthNotMainRateNormal = monthNotMainEl.get(2).text();
-			String monthNotMainRateBad = monthNotMainEl.get(3).text();
-			sellerRateInfo.setMonthNotmainRateBad(monthNotMainRateBad);
-			sellerRateInfo.setMonthNotmainRateNormal(monthNotMainRateNormal);
-			sellerRateInfo.setMonthNotmainRateOk(monthNotMainRateOk);
-			log.info("Month not main rate ok: " + monthNotMainRateOk);
-			log.info("Month not main rate normal: " + monthNotMainRateNormal);
-			log.info("Month not main rate bad: " + monthNotMainRateBad);
-
+			if (monthRateEls.size() >= 4) {
+				Elements monthNotMainEl = monthRateEls.get(3).select("td");
+				String monthNotMainRateOk = monthNotMainEl.get(1).text();
+				String monthNotMainRateNormal = monthNotMainEl.get(2).text();
+				String monthNotMainRateBad = monthNotMainEl.get(3).text();
+				sellerRateInfo.setMonthNotmainRateBad(monthNotMainRateBad);
+				sellerRateInfo
+						.setMonthNotmainRateNormal(monthNotMainRateNormal);
+				sellerRateInfo.setMonthNotmainRateOk(monthNotMainRateOk);
+				log.info("Month not main rate ok: " + monthNotMainRateOk);
+				log.info("Month not main rate normal: "
+						+ monthNotMainRateNormal);
+				log.info("Month not main rate bad: " + monthNotMainRateBad);
+			}
 			Elements halfYearRateEls = sellerRateList.get(2).select(
 					"table tbody tr");
 
@@ -313,29 +342,39 @@ public class UserRatePageParser extends BasePageParser {
 			log.info("Half year sum rate normal: " + halfYearSumRateNormal);
 			log.info("Half year sum rate bad: " + halfYearSumRateBad);
 
-			Elements halfYearMainEl = halfYearRateEls.get(2).select("td");
-			String halfYearMainRateOk = halfYearMainEl.get(1).text();
-			String halfYearMainRateNormal = halfYearMainEl.get(2).text();
-			String halfYearMainRateBad = halfYearMainEl.get(3).text();
-			sellerRateInfo.setHalfYearMainRateBad(halfYearMainRateBad);
-			sellerRateInfo.setHalfYearMainRateNormal(halfYearMainRateNormal);
-			sellerRateInfo.setHalfYearMainRateOk(halfYearMainRateOk);
-			log.info("Half year main rate ok: " + halfYearMainRateOk);
-			log.info("Half year main rate normal: " + halfYearMainRateNormal);
-			log.info("Half year main rate bad: " + halfYearMainRateBad);
+			if (halfYearRateEls.size() >= 3) {
+				Elements halfYearMainEl = halfYearRateEls.get(2).select("td");
+				String halfYearMainRateOk = halfYearMainEl.get(1).text();
+				String halfYearMainRateNormal = halfYearMainEl.get(2).text();
+				String halfYearMainRateBad = halfYearMainEl.get(3).text();
+				sellerRateInfo.setHalfYearMainRateBad(halfYearMainRateBad);
+				sellerRateInfo
+						.setHalfYearMainRateNormal(halfYearMainRateNormal);
+				sellerRateInfo.setHalfYearMainRateOk(halfYearMainRateOk);
+				log.info("Half year main rate ok: " + halfYearMainRateOk);
+				log.info("Half year main rate normal: "
+						+ halfYearMainRateNormal);
+				log.info("Half year main rate bad: " + halfYearMainRateBad);
+			}
 
-			Elements halfYearNotMainEl = halfYearRateEls.get(3).select("td");
-			String halfYearNotMainRateOk = halfYearNotMainEl.get(1).text();
-			String halfYearNotMainRateNormal = halfYearNotMainEl.get(2).text();
-			String halfYearNotMainRateBad = halfYearNotMainEl.get(3).text();
-			sellerRateInfo.setHalfYearNotmainRateBad(halfYearNotMainRateBad);
-			sellerRateInfo
-					.setHalfYearNotmainRateNormal(halfYearNotMainRateNormal);
-			sellerRateInfo.setHalfYearNotmainRateOk(halfYearNotMainRateOk);
-			log.info("Half year not main rate ok: " + halfYearNotMainRateOk);
-			log.info("Half year not main rate normal: "
-					+ halfYearNotMainRateNormal);
-			log.info("Half year not main rate bad: " + halfYearNotMainRateBad);
+			if (halfYearRateEls.size() >= 4) {
+				Elements halfYearNotMainEl = halfYearRateEls.get(3)
+						.select("td");
+				String halfYearNotMainRateOk = halfYearNotMainEl.get(1).text();
+				String halfYearNotMainRateNormal = halfYearNotMainEl.get(2)
+						.text();
+				String halfYearNotMainRateBad = halfYearNotMainEl.get(3).text();
+				sellerRateInfo
+						.setHalfYearNotmainRateBad(halfYearNotMainRateBad);
+				sellerRateInfo
+						.setHalfYearNotmainRateNormal(halfYearNotMainRateNormal);
+				sellerRateInfo.setHalfYearNotmainRateOk(halfYearNotMainRateOk);
+				log.info("Half year not main rate ok: " + halfYearNotMainRateOk);
+				log.info("Half year not main rate normal: "
+						+ halfYearNotMainRateNormal);
+				log.info("Half year not main rate bad: "
+						+ halfYearNotMainRateBad);
+			}
 
 			Elements beforeHalfYearRateEls = sellerRateList.get(3).select(
 					"table tbody tr");
@@ -360,16 +399,25 @@ public class UserRatePageParser extends BasePageParser {
 
 			Elements sellerHistoryEls = doc
 					.select("div.seller-rate-info div.frame div.list");
-			String mainBusiness = sellerHistoryEls.get(1).ownText();
-			mainBusiness = mainBusiness
-					.substring(mainBusiness.indexOf("：") + 1);
-			String mainBusinessPercentage = sellerHistoryEls.get(2).ownText();
-			mainBusinessPercentage = mainBusinessPercentage
-					.substring(mainBusinessPercentage.indexOf("：") + 1);
+
+			String mainBusiness = "0";
+			String mainBusinessPercentage = "0";
+			if (sellerHistoryEls.size() == 0) {
+
+			} else {
+				mainBusiness = sellerHistoryEls.get(1).ownText();
+				mainBusiness = mainBusiness
+						.substring(mainBusiness.indexOf("：") + 1);
+				mainBusinessPercentage = sellerHistoryEls.get(2).ownText();
+				mainBusinessPercentage = mainBusinessPercentage
+						.substring(mainBusinessPercentage.indexOf("：") + 1);
+
+			}
 			sellerRateInfo.setMainBusiness(mainBusiness);
 			sellerRateInfo.setMainBusinessPercentage(mainBusinessPercentage);
 			log.info("Main biz is: " + mainBusiness);
 			log.info("Main biz percentage is: " + mainBusinessPercentage);
+
 		}
 
 	}
