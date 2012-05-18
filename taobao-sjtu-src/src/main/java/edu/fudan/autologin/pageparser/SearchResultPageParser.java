@@ -3,6 +3,9 @@ package edu.fudan.autologin.pageparser;
 import java.util.ArrayList;
 import java.util.List;
 
+import jxl.Sheet;
+import jxl.write.WritableSheet;
+
 import org.apache.http.client.HttpClient;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Document;
@@ -54,6 +57,11 @@ public class SearchResultPageParser extends BasePageParser {
 		}
 	}
 
+	
+	public void writeExcel(WritableSheet sheet) {
+		ExcelUtil.writeSearchResultSheet(sheet, sellerResultList);
+	}
+	
 	@Override
 	public void writeExcel() {
 		ExcelUtil.writeSearchResultSheet(sellerResultList);
