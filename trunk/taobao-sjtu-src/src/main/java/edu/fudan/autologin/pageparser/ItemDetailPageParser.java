@@ -159,13 +159,13 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setFreightPrice(freightPrice);
 		log.info("freightPrice: " + freightPrice);
 
-//		SaleSumService saleSumService = new SaleSumService();
-//		saleSumService.setHttpClient(this.getHttpClient());
-//		saleSumService.setItemPageUrl(this.getPageUrl());
-//		saleSumService.execute();
-//		int saleNumIn30Days = saleSumService.getSaleSum();
-//		log.info("saleNumIn30Days: " + saleNumIn30Days);
-//		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
+		SaleSumService saleSumService = new SaleSumService();
+		saleSumService.setHttpClient(this.getHttpClient());
+		saleSumService.setItemPageUrl(this.getPageUrl());
+		saleSumService.execute();
+		int saleNumIn30Days = saleSumService.getSaleSum();
+		log.info("saleNumIn30Days: " + saleNumIn30Days);
+		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
 		if (doc.select("div#attributes ul.attributes-list li").size() == 0) {
 
@@ -192,20 +192,20 @@ public class ItemDetailPageParser extends BasePageParser {
 //		log.info("buyerinfo list size is: " + buyerInfos.size());
 
 		// 获得评论总数
-//		ReviewSumService reviewSumService = new ReviewSumService();
-//		reviewSumService.setHttpClient(this.getHttpClient());
-//		reviewSumService.setItemPageUrl(this.getPageUrl());
-//		reviewSumService.execute();
-//		itemInfo.setReviews(reviewSumService.getReviewSum());
+		ReviewSumService reviewSumService = new ReviewSumService();
+		reviewSumService.setHttpClient(this.getHttpClient());
+		reviewSumService.setItemPageUrl(this.getPageUrl());
+		reviewSumService.execute();
+		itemInfo.setReviews(reviewSumService.getReviewSum());
 
 		// 解析評論
-//		ItemReviewService itemReviewService = new ItemReviewService();
-//		itemReviewService.setHttpClient(this.getHttpClient());
-//		itemReviewService.setItemPageUrl(this.getPageUrl());
-//		itemReviewService.setReviewSum(reviewSumService.getReviewSum());
-//		itemReviewService.execute();
-//		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
-//		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
+		ItemReviewService itemReviewService = new ItemReviewService();
+		itemReviewService.setHttpClient(this.getHttpClient());
+		itemReviewService.setItemPageUrl(this.getPageUrl());
+		itemReviewService.setReviewSum(reviewSumService.getReviewSum());
+		itemReviewService.execute();
+		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
+		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
 
 	}
 	@Override
@@ -221,7 +221,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		 * 
 		 * 如何区分不同的页面类型？
 		**/
-		if(doc.toString().contains("增价拍")){
+		if(doc.toString().contains("tbid-container")){
 			log.info("Start to parse 增价拍 page.");
 			bidTypePageParser();
 		}else{
@@ -231,6 +231,7 @@ public class ItemDetailPageParser extends BasePageParser {
 	}
 
 	//增价拍页面处理模块
+	//http://item.taobao.com/item.htm?id=14730950078
 	public void bidTypePageParser() {
 		
 	}
