@@ -213,6 +213,7 @@ public class MainTest {
 				log.info("Item href is: " + sellerInSearchResult.getHref());
 				itemDetailPageParser.parsePage();
 				itemDetailPageParser.writeExcel(sh);
+				tmp.getConnectionManager().shutdown();
 				
 				try {
 					Thread.sleep(100000);
