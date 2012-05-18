@@ -77,7 +77,7 @@ public class MainTest {
 			// httpClient).setCredentialsProvider(credsProvider);
 		}
 
-		initialize();
+		XmlConfUtil.openXml();
 		// PropertyConfigurator.configure("log4j.xml");
 		DOMConfigurator.configure("log4j.xml");
 		// log.setLevel(Level.DEBUG);
@@ -116,17 +116,21 @@ public class MainTest {
 	// open TopTenSheet and get toptenItemInfo
 	
 	@Test
+	public void task(){
+		task1();
+		task2();
+		task3();
+	}
 	public void task3(){
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(
-					"D:\\taobao-sjtu.xls"));
+					XmlConfUtil.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
 
 			List<SellerInSearchResult> sellerInSearchResults = new ArrayList<SellerInSearchResult>();
 			// read data
 			// sheet.getRows()返回该页的总行数
-			for (int i = 1; i < searchResultSheet.getRows(); i++) {
-				int j = 0;
+			for (int i = 1; i <= 50; i++) {
 				SellerInSearchResult sellerInSearchResult = new SellerInSearchResult();
 
 				sellerInSearchResult.setSellerId(searchResultSheet.getCell(0, i)
@@ -138,12 +142,13 @@ public class MainTest {
 			}
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
-					"D:\\taobao-sjtu.xls"), workbook); // 根据book创建一个操作对象
+					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
 			WritableSheet sh = wbook.getSheet("ItemDetailSheet");// 得到一个工作对象
 			
 			for(SellerInSearchResult sellerInSearchResult : sellerInSearchResults){
+				HttpClient tmp = new DefaultHttpClient();
 				ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
-						httpClient, sellerInSearchResult.getHref());
+						tmp, sellerInSearchResult.getHref());
 				itemDetailPageParser.setSellerId(sellerInSearchResult.getSellerId());
 				log.info("--------------------------------------------------------------------------------------------------------------");
 				log.info("Item href is: " + sellerInSearchResult.getHref());
@@ -173,7 +178,7 @@ public class MainTest {
 	public void task2() {
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(
-					"D:\\taobao-sjtu.xls"));
+					XmlConfUtil.getValueByName("excelFilePath")));
 			Sheet topTenSheet = workbook.getSheet("TopTenSheet");
 
 
@@ -197,7 +202,7 @@ public class MainTest {
 			}
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
-					"D:\\taobao-sjtu.xls"), workbook); // 根据book创建一个操作对象
+					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
 			WritableSheet sh = wbook.getSheet("SearchReaultSheet");// 得到一个工作对象
 			
 			// get search result infoe
