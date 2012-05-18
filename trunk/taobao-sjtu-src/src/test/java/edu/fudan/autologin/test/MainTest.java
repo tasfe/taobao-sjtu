@@ -189,7 +189,7 @@ public class MainTest {
 			List<SellerInSearchResult> sellerInSearchResults = new ArrayList<SellerInSearchResult>();
 			// read data
 			// sheet.getRows()返回该页的总行数
-			for (int i = 2; i <= searchResultSheet.getRows(); i++) {
+			for (int i = 2; i < searchResultSheet.getRows(); i++) {
 				SellerInSearchResult sellerInSearchResult = new SellerInSearchResult();
 
 				sellerInSearchResult.setSellerId(searchResultSheet.getCell(0, i)
