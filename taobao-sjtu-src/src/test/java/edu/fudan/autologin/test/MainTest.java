@@ -118,8 +118,8 @@ public class MainTest {
 	// open TopTenSheet and get toptenItemInfo
 
 	// user rate task
-	@Test
-	public void test4() {
+
+	public void task4() {
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
@@ -135,6 +135,10 @@ public class MainTest {
 						.getContents());
 				itemInfo.setUserRateHref(itemDetailSheet.getCell(13, i)
 						.getContents());
+				log.info("Item info seller id is: "+itemInfo.getSellerId());
+				log.info(itemInfo.getUserRateHref());
+				
+				itemInfos.add(itemInfo);
 			}
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
@@ -143,6 +147,7 @@ public class MainTest {
 
 			// get search result info
 			for (ItemInfo itemInfo : itemInfos) {
+				log.info("Start to parser user rate page and seller id is: "+itemInfo.getSellerId());
 				UserRatePageParser userRatePageParser = new UserRatePageParser(httpClient, itemInfo.getUserRateHref());
 				userRatePageParser.setSellerId(itemInfo.getSellerId());
 				userRatePageParser.parsePage();
@@ -168,10 +173,12 @@ public class MainTest {
 		}
 	}
 	
+	@Test
 	public void task(){
-		task1();
-		task2();
+//		task1();
+//		task2();
 		task3();
+//		task4();
 	}
 	public void task3(){
 		try {
@@ -182,7 +189,7 @@ public class MainTest {
 			List<SellerInSearchResult> sellerInSearchResults = new ArrayList<SellerInSearchResult>();
 			// read data
 			// sheet.getRows()返回该页的总行数
-			for (int i = 1; i <= 50; i++) {
+			for (int i = 2; i <= 5; i++) {
 				SellerInSearchResult sellerInSearchResult = new SellerInSearchResult();
 
 				sellerInSearchResult.setSellerId(searchResultSheet.getCell(0, i)
@@ -288,6 +295,7 @@ public class MainTest {
 
 		}
 	}
+
 
 	public void task1() {
 		
