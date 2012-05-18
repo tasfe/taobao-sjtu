@@ -189,7 +189,7 @@ public class MainTest {
 			List<SellerInSearchResult> sellerInSearchResults = new ArrayList<SellerInSearchResult>();
 			// read data
 			// sheet.getRows()返回该页的总行数
-			for (int i = 2; i <= 5; i++) {
+			for (int i = 2; i <= searchResultSheet.getRows(); i++) {
 				SellerInSearchResult sellerInSearchResult = new SellerInSearchResult();
 
 				sellerInSearchResult.setSellerId(searchResultSheet.getCell(0, i)
@@ -213,6 +213,13 @@ public class MainTest {
 				log.info("Item href is: " + sellerInSearchResult.getHref());
 				itemDetailPageParser.parsePage();
 				itemDetailPageParser.writeExcel(sh);
+				
+				try {
+					Thread.sleep(100000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					log.error(e.getMessage());
+				}
 			}
 
 			wbook.write();
