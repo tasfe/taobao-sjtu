@@ -114,7 +114,8 @@ public class ExcelUtil {
 		itemDetailHeaders.add("容量");
 		itemDetailHeaders.add("第一条评价时间");
 		itemDetailHeaders.add("最后一条评价时间");
-		itemDetailHeaders.add("href");
+		itemDetailHeaders.add("页面链接地址");
+		itemDetailHeaders.add("卖家信用页面链接地址");
 		writeHeader(SheetNames.ITEM_DETAIL_SHEET, itemDetailHeaders);
 
 		List<String> sellerRateHeaders = new ArrayList<String>();
@@ -257,7 +258,7 @@ public class ExcelUtil {
 		log.info("Path is: "+path.toString());
 		try {
 			
-			workbook = Workbook.createWorkbook(new File(path.toString()));
+			workbook = Workbook.createWorkbook(new File(XmlConfUtil.getValueByName("excelFilePath")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -528,6 +529,7 @@ public class ExcelUtil {
 		Label l10 = new Label(10, sheet.getRows(), itemInfo.getFirstReviewDate());
 		Label l11 = new Label(11, sheet.getRows(), itemInfo.getLastReviewDate());
 		Label l12 = new Label(12,sheet.getRows(), itemInfo.getItemDetailHref());
+		Label l13 = new Label(13, sheet.getRows(), itemInfo.getUserRateHref());
 
 		try {
 
@@ -544,6 +546,7 @@ public class ExcelUtil {
 			sheet.addCell(saleNumIn30Days);
 			sheet.addCell(reviews);
 			sheet.addCell(l12);
+			sheet.addCell(l13);
 
 		} catch (RowsExceededException e) {
 			e.printStackTrace();

@@ -10,12 +10,12 @@ import org.jsoup.nodes.Document;
 public class XmlConfUtil {
 
 	private static final Logger log = Logger.getLogger(XmlConfUtil.class);
-	private static final String path = "settings.xml";
+	private static final String PATH = "settings.xml";
 	private static Document doc = null;
 	
 	public static void openXml(){
 		try {
-			doc = Jsoup.parse(new File("settings.xml"),"UTF-8");
+			doc = Jsoup.parse(new File(PATH),"UTF-8");
 		} catch (IOException e) {
 			log.error(e.getMessage());
 		}
