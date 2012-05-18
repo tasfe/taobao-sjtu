@@ -32,8 +32,10 @@ import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
+import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
+import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.SellerInSearchResult;
 import edu.fudan.autologin.pojos.TaobaoDataSet;
 import edu.fudan.autologin.pojos.TopTenItemInfo;
@@ -114,8 +116,58 @@ public class MainTest {
 	 */
 
 	// open TopTenSheet and get toptenItemInfo
-	
+
+	// user rate task
 	@Test
+	public void test4() {
+		try {
+			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+			Sheet itemDetailSheet = workbook.getSheet("ItemDetailSheet");
+
+			List<ItemInfo> itemInfos = new ArrayList<ItemInfo>();
+
+			// read data 得到sellerId, userRateHref
+			// sheet.getRows()返回该页的总行数
+			for (int i = 1; i <= 1; i++) {
+				ItemInfo itemInfo = new ItemInfo();
+				itemInfo.setSellerId(itemDetailSheet.getCell(0, i)
+						.getContents());
+				itemInfo.setUserRateHref(itemDetailSheet.getCell(13, i)
+						.getContents());
+			}
+
+			WritableWorkbook wbook = Workbook.createWorkbook(new File(
+					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
+			WritableSheet sh = wbook.getSheet("UserRateSheet");// 得到一个工作对象
+
+			// get search result info
+			for (ItemInfo itemInfo : itemInfos) {
+				UserRatePageParser userRatePageParser = new UserRatePageParser(httpClient, itemInfo.getUserRateHref());
+				userRatePageParser.setSellerId(itemInfo.getSellerId());
+				userRatePageParser.parsePage();
+				userRatePageParser.writeExcel(sh);
+			}
+
+			wbook.write();
+			try {
+				wbook.close();
+			} catch (WriteException e) {
+				e.printStackTrace();
+			}
+			workbook.close();
+
+		} catch (BiffException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} finally {
+
+		}
+	}
+	
 	public void task(){
 		task1();
 		task2();
