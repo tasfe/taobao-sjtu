@@ -233,7 +233,9 @@ public class ItemDetailPageParser extends BasePageParser {
 	//增价拍页面处理模块
 	//http://item.taobao.com/item.htm?id=14730950078
 	public void bidTypePageParser() {
-		
+		// seller id
+				log.info("sellerId: " + sellerId);
+				itemInfo.setSellerId(sellerId);
 	}
 
 	/* 对页面进行预处理，获取动态请求的url */
