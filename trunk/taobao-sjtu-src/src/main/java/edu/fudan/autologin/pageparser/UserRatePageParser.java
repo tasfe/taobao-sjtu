@@ -1,5 +1,7 @@
 package edu.fudan.autologin.pageparser;
 
+import jxl.write.WritableSheet;
+
 import org.apache.http.client.HttpClient;
 import org.apache.log4j.Logger;
 import org.jsoup.nodes.Document;
@@ -37,6 +39,10 @@ public class UserRatePageParser extends BasePageParser {
 	@Override
 	public void writeExcel() {
 		ExcelUtil.writeUserRateSheet(sellerRateInfo);
+	}
+	
+	public void writeExcel(WritableSheet sheet) {
+		ExcelUtil.writeUserRateSheet(sheet, sellerRateInfo);
 	}
 
 	public UserRatePageParser(HttpClient httpClient, String pageUrl) {
