@@ -721,6 +721,170 @@ public class ExcelUtil {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void writeUserRateSheet(WritableSheet sheet, SellerRateInfo sellerRateInfo) {
+
+		Label l0 = new Label(0, sheet.getRows(), sellerRateInfo.getSellerId());
+		Label l1 = new Label(1, sheet.getRows(), sellerRateInfo.getSellerName());
+		Label l2 = new Label(2, sheet.getRows(), sellerRateInfo.getMainSale());
+		Label l3 = new Label(3, sheet.getRows(), sellerRateInfo.getLocation());
+		Label l4 = new Label(4, sheet.getRows(),
+				sellerRateInfo.getCreateShopDate());
+		Label l5 = new Label(5, sheet.getRows(), sellerRateInfo.getSellerRate());
+		Label l6 = new Label(6, sheet.getRows(), sellerRateInfo.getBuyerRate());
+		Label l7 = new Label(7, sheet.getRows(), sellerRateInfo.getChargeNum());
+
+		Label l8 = new Label(8, sheet.getRows(),
+				sellerRateInfo.isConsumerPromise() ? "是" : "否");
+		Label l9 = new Label(9, sheet.getRows(),
+				sellerRateInfo.isSevenDayReturn() ? "是" : "否");
+		Label l10 = new Label(10, sheet.getRows(),
+				sellerRateInfo.getMatchScore());
+		Label l11 = new Label(11, sheet.getRows(),
+				sellerRateInfo.getServiceScore());
+		Label l12 = new Label(12, sheet.getRows(),
+				sellerRateInfo.getConsignmentScore());
+		
+		Label l90 = new Label(13, sheet.getRows(),sellerRateInfo.getRefundmentScore());
+		Label l13 = new Label(13+1, sheet.getRows(),
+				sellerRateInfo.getRefundmentRateScore());
+		Label l14 = new Label(14+1, sheet.getRows(),
+				sellerRateInfo.getComplaintScore());
+		Label l15 = new Label(15+1, sheet.getRows(),
+				sellerRateInfo.getPunishmentScore());
+
+		Label l16 = new Label(16+1, sheet.getRows(),
+				sellerRateInfo.getWeekSumRateOk());
+		Label l17 = new Label(17+1, sheet.getRows(),
+				sellerRateInfo.getWeekMainRateOk());
+		Label l18 = new Label(18+1, sheet.getRows(),
+				sellerRateInfo.getWeekNotmainRateOk());
+		
+		Label l19 = new Label(19+1, sheet.getRows(),
+				sellerRateInfo.getWeekSumRateNormal());
+		Label l20 = new Label(20+1, sheet.getRows(),
+				sellerRateInfo.getWeekMainRateNormal());
+		Label l21 = new Label(21+1, sheet.getRows(),
+				sellerRateInfo.getWeekNotmainRateNormal());
+		
+		Label l22 = new Label(22+1, sheet.getRows(),
+				sellerRateInfo.getWeekSumRateBad());
+		Label l23 = new Label(23+1, sheet.getRows(),
+				sellerRateInfo.getWeekMainRateBad());
+		Label l24 = new Label(24+1, sheet.getRows(),
+				sellerRateInfo.getWeekNotmainRateBad());
+
+		Label l25 = new Label(25+1, sheet.getRows(),
+				sellerRateInfo.getMonthSumRateOk());
+		Label l26 = new Label(26+1, sheet.getRows(),
+				sellerRateInfo.getMonthMainRateOk());
+		Label l27 = new Label(27+1, sheet.getRows(),
+				sellerRateInfo.getMonthNotmainRateOk());
+		Label l28 = new Label(28+1, sheet.getRows(),
+				sellerRateInfo.getMonthSumRateNormal());
+		Label l29 = new Label(29+1, sheet.getRows(),
+				sellerRateInfo.getMonthMainRateNormal());
+		Label l30 = new Label(30+1, sheet.getRows(),
+				sellerRateInfo.getMonthNotmainRateNormal());
+		Label l31 = new Label(31+1, sheet.getRows(),
+				sellerRateInfo.getMonthSumRateBad());
+		Label l32 = new Label(32+1, sheet.getRows(),
+				sellerRateInfo.getMonthMainRateBad());
+		Label l33 = new Label(33+1, sheet.getRows(),
+				sellerRateInfo.getMonthNotmainRateBad());
+
+		Label l34 = new Label(34+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearSumRateOk());
+		Label l35 = new Label(35+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearMainRateOk());
+		Label l36 = new Label(36+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearNotmainRateOk());
+		Label l37 = new Label(37+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearSumRateNormal());
+		Label l38 = new Label(38+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearMainRateNormal());
+		Label l39 = new Label(39+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearNotmainRateNormal());
+		Label l40 = new Label(40+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearSumRateBad());
+		Label l41 = new Label(41+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearMainRateBad());
+		Label l42 = new Label(42+1, sheet.getRows(),
+				sellerRateInfo.getHalfYearNotmainRateBad());
+
+		Label l43 = new Label(43+1, sheet.getRows(),
+				sellerRateInfo.getBeforeHalfYearSumRateOk());
+		Label l44 = new Label(44+1, sheet.getRows(),
+				sellerRateInfo.getBeforeHalfYearSumRateNormal());
+		Label l45 = new Label(45+1, sheet.getRows(),
+				sellerRateInfo.getBeforeHalfYearSumRateBad());
+
+		Label l46 = new Label(46+1, sheet.getRows(),
+				sellerRateInfo.getSellerRate());
+		Label l47 = new Label(47+1, sheet.getRows(),
+				sellerRateInfo.getMainBusiness());
+		Label l48 = new Label(48+1, sheet.getRows(),
+				sellerRateInfo.getMainBusinessPercentage());
+		Label l50 = new Label(50,sheet.getRows(),sellerRateInfo.getSellerRateHref());
+
+		try {
+			sheet.addCell(l0);
+			sheet.addCell(l1);
+			sheet.addCell(l2);
+			sheet.addCell(l3);
+			sheet.addCell(l4);
+			sheet.addCell(l5);
+			sheet.addCell(l6);
+			sheet.addCell(l7);
+			sheet.addCell(l8);
+			sheet.addCell(l9);
+			sheet.addCell(l10);
+			sheet.addCell(l11);
+			sheet.addCell(l12);
+			sheet.addCell(l13);
+			sheet.addCell(l14);
+			sheet.addCell(l15);
+			sheet.addCell(l16);
+			sheet.addCell(l17);
+			sheet.addCell(l18);
+			sheet.addCell(l19);
+			sheet.addCell(l20);
+			sheet.addCell(l21);
+			sheet.addCell(l22);
+			sheet.addCell(l23);
+			sheet.addCell(l24);
+			sheet.addCell(l25);
+			sheet.addCell(l26);
+			sheet.addCell(l27);
+			sheet.addCell(l28);
+			sheet.addCell(l29);
+			sheet.addCell(l30);
+			sheet.addCell(l31);
+			sheet.addCell(l32);
+			sheet.addCell(l33);
+			sheet.addCell(l34);
+			sheet.addCell(l35);
+			sheet.addCell(l36);
+			sheet.addCell(l37);
+			sheet.addCell(l38);
+			sheet.addCell(l39);
+			sheet.addCell(l40);
+			sheet.addCell(l41);
+			sheet.addCell(l42);
+			sheet.addCell(l43);
+			sheet.addCell(l44);
+			sheet.addCell(l45);
+			sheet.addCell(l46);
+			sheet.addCell(l47);
+			sheet.addCell(l48);
+			sheet.addCell(l50);
+			sheet.addCell(l90);
+		} catch (RowsExceededException e) {
+			e.printStackTrace();
+		} catch (WriteException e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * 初始化表格属性
