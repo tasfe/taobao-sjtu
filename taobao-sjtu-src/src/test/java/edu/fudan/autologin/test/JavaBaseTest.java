@@ -10,6 +10,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.fudan.autologin.utils.RandomUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class JavaBaseTest {
@@ -24,6 +25,17 @@ public class JavaBaseTest {
 	 * The substring begins at specified beginIndex and extends to the character at index endIndex - 1
 	 */
 	@Test
+	public void getToken(){
+		String pageStr = "},\"sys\":{\"now\":1337239299737,\"tkn\":\"73e36deede3bb\"}} ;  }";
+		String token = null;
+		
+		int base = pageStr.indexOf("sys\":{\"now\":");
+		int end = pageStr.indexOf(",\"tkn\":", base);
+
+		token = pageStr
+				.substring(base + "sys\":{\"now\":".length(), end);
+		log.info(token.substring(0,6)+RandomUtils.getRandomNum(token.length()-6));
+	}
 	public void testXmlConf(){
 		
 		XmlConfUtil.openXml();

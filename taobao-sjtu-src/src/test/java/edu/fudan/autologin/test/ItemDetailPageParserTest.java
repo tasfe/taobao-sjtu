@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Level;
@@ -22,6 +23,7 @@ import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.main.AutoLogin;
 import edu.fudan.autologin.pageparser.ItaobaoPageParser;
+import edu.fudan.autologin.pageparser.ItemBuyerParser;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.UserRatePageParser;
@@ -34,6 +36,7 @@ import edu.fudan.autologin.service.ReviewSumService;
 import edu.fudan.autologin.service.SaleSumService;
 import edu.fudan.autologin.service.TaobaoDsDataService;
 import edu.fudan.autologin.utils.PostUtils;
+import edu.fudan.autologin.utils.PrintUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
@@ -51,9 +54,7 @@ public class ItemDetailPageParserTest {
 		}
 
 		initialize();
-//		PropertyConfigurator.configure("log4j.xml");
 		DOMConfigurator.configure("log4j.xml");
-//		log.setLevel(Level.DEBUG);
 
 	}
 
@@ -96,9 +97,15 @@ public class ItemDetailPageParserTest {
 	}
 	
 
+	
+
+	
+
+
+	@Test
 	public void testItemDetailPage(){
-		autoLogin();
-		String pageUrl = "http://item.taobao.com/item.htm?id=14912743084";
+//		autoLogin();
+		String pageUrl = "http://item.taobao.com/item.htm?id=14730950078";
 		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, pageUrl);
 		itemDetailPageParser.execute();
 	}
@@ -126,7 +133,24 @@ public class ItemDetailPageParserTest {
 	}
 	
 	
-	@Test
+	
+	public void testItemBuyers(){
+		autoLogin();
+		
+//		
+//		GetMethod get = new GetMethod(httpClient, "http://item.taobao.com/j/vdata.htm?skil=false&cb=i_r");
+//		get.doGet();
+//		get.printResponse();
+//		get.shutDown();
+		
+//		PrintUtils.printCookies(((AbstractHttpClient) httpClient).getCookieStore().getCookies());
+		ItemBuyerParser parser = new ItemBuyerParser();
+		parser.setHttpClient(httpClient);
+		parser.execute();
+////		parser.doNext();
+	}
+	
+	
 	public void testMonthService() {
 		MonthService monthService = new MonthService();
 		monthService.setHttpClient(httpClient);
@@ -152,7 +176,7 @@ public class ItemDetailPageParserTest {
 	}
 	public void testUserRate(){
 		
-		String pageUrl = "http://rate.taobao.com/user-rate-2f3f19c1769caf0be727f0d5d3825bb1.htm?spm=2013.1.1000126.5";
+		String pageUrl = "http://rate.taobao.com/user-rate-88e99355c367380075597ef904df8ff3.htm";
 		UserRatePageParser userRatePageParser = new UserRatePageParser(httpClient, pageUrl);
 		userRatePageParser.setSellerId("55600035");
 		userRatePageParser.execute();
