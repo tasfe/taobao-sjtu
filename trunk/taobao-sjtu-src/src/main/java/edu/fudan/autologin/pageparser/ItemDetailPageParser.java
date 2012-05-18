@@ -3,6 +3,8 @@ package edu.fudan.autologin.pageparser;
 import java.util.ArrayList;
 import java.util.List;
 
+import jxl.write.WritableSheet;
+
 import net.sf.json.JSONObject;
 
 import org.apache.http.NameValuePair;
@@ -72,6 +74,10 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setItemDetailHref(pageUrl);
 	}
 
+	
+	public void writeExcel(WritableSheet sheet) {
+		ExcelUtil.writeItemDetailSheet(sheet, itemInfo);
+	}
 	@Override
 	public void writeExcel() {
 		ExcelUtil.writeItemDetailSheet(itemInfo);
@@ -153,13 +159,13 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setFreightPrice(freightPrice);
 		log.info("freightPrice: " + freightPrice);
 
-		SaleSumService saleSumService = new SaleSumService();
-		saleSumService.setHttpClient(this.getHttpClient());
-		saleSumService.setItemPageUrl(this.getPageUrl());
-		saleSumService.execute();
-		int saleNumIn30Days = saleSumService.getSaleSum();
-		log.info("saleNumIn30Days: " + saleNumIn30Days);
-		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
+//		SaleSumService saleSumService = new SaleSumService();
+//		saleSumService.setHttpClient(this.getHttpClient());
+//		saleSumService.setItemPageUrl(this.getPageUrl());
+//		saleSumService.execute();
+//		int saleNumIn30Days = saleSumService.getSaleSum();
+//		log.info("saleNumIn30Days: " + saleNumIn30Days);
+//		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
 		if (doc.select("div#attributes ul.attributes-list li").size() == 0) {
 
@@ -186,11 +192,11 @@ public class ItemDetailPageParser extends BasePageParser {
 //		log.info("buyerinfo list size is: " + buyerInfos.size());
 
 		// 获得评论总数
-		ReviewSumService reviewSumService = new ReviewSumService();
-		reviewSumService.setHttpClient(this.getHttpClient());
-		reviewSumService.setItemPageUrl(this.getPageUrl());
-		reviewSumService.execute();
-		itemInfo.setReviews(reviewSumService.getReviewSum());
+//		ReviewSumService reviewSumService = new ReviewSumService();
+//		reviewSumService.setHttpClient(this.getHttpClient());
+//		reviewSumService.setItemPageUrl(this.getPageUrl());
+//		reviewSumService.execute();
+//		itemInfo.setReviews(reviewSumService.getReviewSum());
 
 		// 解析評論
 //		ItemReviewService itemReviewService = new ItemReviewService();

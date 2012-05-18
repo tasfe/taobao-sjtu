@@ -90,8 +90,10 @@ public class GetMethod {
 			rtnStr = EntityUtils.toString(this.response.getEntity(), "utf-8");
 		} catch (ParseException e) {
 			e.printStackTrace();
+			log.error(e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
+			log.error(e.getMessage());
 		}
 		return rtnStr;
 	}
