@@ -271,14 +271,14 @@ public class ItemReviewService {
 
 	public String getFirstReviewDate() {
 		if (dateList.size() == 0) {
-			return null;
+			return "0";
 		}
 		return dateList.get(0);
 	}
 
 	public String getLastReviewDate() {
 		if (dateList.size() == 0) {
-			return null;
+			return "0";
 		}
 		return dateList.get(dateList.size() - 1);
 	}

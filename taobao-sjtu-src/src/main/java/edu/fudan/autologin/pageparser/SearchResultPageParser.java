@@ -88,6 +88,8 @@ public class SearchResultPageParser extends BasePageParser {
 						.lastIndexOf("=") + 1);
 				String itemHref = item.select("div.photo > a").get(0)
 						.attr("href");
+				
+				String itemId = itemHref.split("=")[1];
 				String categoryName = topTenItemInfo.getCategoryName();
 				String sellerName = item.select("p.seller > a").get(0).text();
 				Elements globalBuy = item.select("p.seller > a.globalbuy");
@@ -162,7 +164,8 @@ public class SearchResultPageParser extends BasePageParser {
 				int rank = i + 1;
 
 				SellerInSearchResult sellerItemInfo = new SellerInSearchResult();
-				sellerItemInfo.setSellerId(sellerId);
+//				sellerItemInfo.setSellerId(sellerId);
+				sellerItemInfo.setSellerId(itemId);
 				sellerItemInfo.setHref(itemHref);
 				sellerItemInfo.setCategoryName(categoryName);
 				sellerItemInfo.setSellerName(sellerName);

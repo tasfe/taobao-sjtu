@@ -210,7 +210,7 @@ public class ItemDetailPageParser extends BasePageParser {
 	}
 	@Override
 	public void parsePage() {
-		log.info("Start to parse page " + ItemDetailPageParser.class);
+		log.info("Start to parse page: " + pageUrl);
 		this.getPage(this.getPageUrl());
 		Document doc = this.getDoc();
 		

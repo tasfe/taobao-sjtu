@@ -25,9 +25,9 @@ import edu.fudan.autologin.formfields.GetMethod;
  */
 public class BasePageParser implements PageParser {
 	private static final Logger log = Logger.getLogger(BasePageParser.class);
-	private String pageUrl;
-	private Document doc;
-	private HttpClient httpClient;
+	protected String pageUrl;
+	protected Document doc;
+	protected HttpClient httpClient;
 	
 	public static Logger getLog() {
 		return log;
