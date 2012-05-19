@@ -105,7 +105,7 @@ public class ItemDetailPageParserTest {
 	@Test
 	public void testItemDetailPage(){
 //		autoLogin();
-		String pageUrl = "http://item.taobao.com/item.htm?id=14730950078";
+		String pageUrl = "http://item.taobao.com/item.htm?id=2542799797";
 		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, pageUrl);
 		itemDetailPageParser.execute();
 	}
@@ -158,11 +158,11 @@ public class ItemDetailPageParserTest {
 				.setUserRatePageUrl("http://rate.taobao.com/user-rate-47ee874a0427f2bc729bb869d78ff8c6.htm?spm=2013.1.1000126.5");
 		monthService.execute();
 	}
-
+	
 	public void testReviewSum(){
 		ReviewSumService reviewSumService = new ReviewSumService();
 		reviewSumService.setHttpClient(httpClient);
-		reviewSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733");
+		reviewSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=14660281195");
 		reviewSumService.execute();
 	}
 	
@@ -204,7 +204,7 @@ public class ItemDetailPageParserTest {
 	public void testSaleSumService(){
 		SaleSumService saleSumService = new SaleSumService();
 		saleSumService.setHttpClient(httpClient);
-		saleSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=10203414733");
+		saleSumService.setItemPageUrl("http://item.taobao.com/item.htm?id=14660281195");
 		saleSumService.execute();
 		log.info("Sale sum is: "+saleSumService.getSaleSum());	
 	}

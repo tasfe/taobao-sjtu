@@ -135,9 +135,9 @@ public class MainTest {
 						.getContents());
 				itemInfo.setUserRateHref(itemDetailSheet.getCell(13, i)
 						.getContents());
-				log.info("Item info seller id is: "+itemInfo.getSellerId());
+				log.info("Item info seller id is: " + itemInfo.getSellerId());
 				log.info(itemInfo.getUserRateHref());
-				
+
 				itemInfos.add(itemInfo);
 			}
 
@@ -147,8 +147,10 @@ public class MainTest {
 
 			// get search result info
 			for (ItemInfo itemInfo : itemInfos) {
-				log.info("Start to parser user rate page and seller id is: "+itemInfo.getSellerId());
-				UserRatePageParser userRatePageParser = new UserRatePageParser(httpClient, itemInfo.getUserRateHref());
+				log.info("Start to parser user rate page and seller id is: "
+						+ itemInfo.getSellerId());
+				UserRatePageParser userRatePageParser = new UserRatePageParser(
+						httpClient, itemInfo.getUserRateHref());
 				userRatePageParser.setSellerId(itemInfo.getSellerId());
 				userRatePageParser.parsePage();
 				userRatePageParser.writeExcel(sh);
@@ -172,59 +174,42 @@ public class MainTest {
 
 		}
 	}
-	
+
 	@Test
-	public void task(){
-//		task1();
-//		task2();
+	public void task() {
+		// task1();
+		// task2();
 		task3();
-//		task4();
+		// task4();
 	}
-	public void task3(){
+
+	public void task3() {
 		try {
-			Workbook workbook = Workbook.getWorkbook(new File(
-					XmlConfUtil.getValueByName("excelFilePath")));
+			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-
-			List<SellerInSearchResult> sellerInSearchResults = new ArrayList<SellerInSearchResult>();
-			// read data
-			// sheet.getRows()返回该页的总行数
-			for (int i = 3; i <= 3; i++) {
-				SellerInSearchResult sellerInSearchResult = new SellerInSearchResult();
-
-				sellerInSearchResult.setSellerId(searchResultSheet.getCell(0, i)
-						.getContents());
-				sellerInSearchResult.setHref(searchResultSheet.getCell(18, i)
-						.getContents());
-
-				sellerInSearchResults.add(sellerInSearchResult);
-			}
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
 					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
 			WritableSheet sh = wbook.getSheet("ItemDetailSheet");// 得到一个工作对象
-			
-			for(SellerInSearchResult sellerInSearchResult : sellerInSearchResults){
+
+			// sheet.getRows()返回该页的总行数
+			for (int i = 691; i < 991; i++) {
 				HttpClient tmp = new DefaultHttpClient();
 				ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
-						tmp, sellerInSearchResult.getHref());
-				itemDetailPageParser.setSellerId(sellerInSearchResult.getSellerId());
+						tmp, searchResultSheet.getCell(18, i).getContents());
+				itemDetailPageParser.setSellerId(searchResultSheet
+						.getCell(0, i).getContents());
 				log.info("--------------------------------------------------------------------------------------------------------------");
-				log.info("Item href is: " + sellerInSearchResult.getHref());
 				itemDetailPageParser.parsePage();
 				itemDetailPageParser.writeExcel(sh);
-				
 				tmp.getConnectionManager().shutdown();
 				
-				try {
-					Thread.sleep(10000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-					log.error(e.getMessage());
-				}
+				//write to excel
+				wbook.write();//读取一个，解析一个，然后再写入到文件
 			}
 
-			wbook.write();
+			
 			try {
 				wbook.close();
 			} catch (WriteException e) {
@@ -242,13 +227,12 @@ public class MainTest {
 
 		}
 	}
-	
+
 	public void task2() {
 		try {
-			Workbook workbook = Workbook.getWorkbook(new File(
-					XmlConfUtil.getValueByName("excelFilePath")));
+			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
 			Sheet topTenSheet = workbook.getSheet("TopTenSheet");
-
 
 			List<TopTenItemInfo> topTenItemInfos = new ArrayList<TopTenItemInfo>();
 			// read data
@@ -272,7 +256,7 @@ public class MainTest {
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
 					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
 			WritableSheet sh = wbook.getSheet("SearchReaultSheet");// 得到一个工作对象
-			
+
 			// get search result infoe
 			for (TopTenItemInfo ttii : topTenItemInfos) {
 				SearchResultPageParser searchResultPageParser = new SearchResultPageParser(
@@ -305,9 +289,8 @@ public class MainTest {
 		}
 	}
 
-
 	public void task1() {
-		
+
 		ExcelUtil.prepare();
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
 
