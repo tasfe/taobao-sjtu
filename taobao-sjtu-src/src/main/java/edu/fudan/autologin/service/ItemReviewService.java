@@ -269,7 +269,8 @@ public class ItemReviewService {
 		}
 	}
 
-	public String getFirstReviewDate() {
+	public String getFirstReviewDate() { 
+		//when there is no reviews, set first review date to 0
 		if (dateList.size() == 0) {
 			return "0";
 		}
