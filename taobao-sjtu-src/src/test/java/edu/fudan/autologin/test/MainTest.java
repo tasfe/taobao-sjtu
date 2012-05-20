@@ -183,7 +183,7 @@ public class MainTest {
 		// task4();
 	}
 
-	public void task3() {
+	public void itemDetailProcess(int start, int end){
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
@@ -194,26 +194,26 @@ public class MainTest {
 			WritableSheet sh = wbook.getSheet("ItemDetailSheet");// 得到一个工作对象
 
 			// sheet.getRows()返回该页的总行数
-			for (int i = 691; i < 991; i++) {
+			for (int i = start; i < end; i++) {
 				HttpClient tmp = new DefaultHttpClient();
 				ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
 						tmp, searchResultSheet.getCell(18, i).getContents());
 				itemDetailPageParser.setSellerId(searchResultSheet
 						.getCell(0, i).getContents());
 				log.info("--------------------------------------------------------------------------------------------------------------");
+				log.info("This is the item process no: "+i);
 				itemDetailPageParser.parsePage();
 				itemDetailPageParser.writeExcel(sh);
 				tmp.getConnectionManager().shutdown();
-				
-				//write to excel
-				wbook.write();//读取一个，解析一个，然后再写入到文件
 			}
 
-			
+			wbook.write();//读取一个，解析一个，然后再写入到文件
 			try {
+				
 				wbook.close();
 			} catch (WriteException e) {
 				e.printStackTrace();
+				
 			}
 			workbook.close();
 
@@ -226,6 +226,28 @@ public class MainTest {
 		} finally {
 
 		}
+	}
+	public void task3() {
+		int itemSum = 0;
+		try {
+			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
+			itemSum = searchResultSheet.getRows();
+			
+			workbook.close();
+		} catch (BiffException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} finally {
+
+		}
+		
+		itemDetailProcess(693,700);
+		itemDetailProcess(700,1000);
 	}
 
 	public void task2() {
