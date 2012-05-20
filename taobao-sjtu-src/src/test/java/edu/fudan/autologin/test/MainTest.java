@@ -178,9 +178,9 @@ public class MainTest {
 	@Test
 	public void task() {
 //		autoLogin();
-		// task1();
-		// task2();
-		task3();
+//		 task1();
+		 task2();
+//		task3();
 		// task4();
 	}
 
@@ -249,22 +249,31 @@ public class MainTest {
 		}
 		
 //		itemDetailProcess(1051,1200);
-		int cnt = 20;//每次处理的sheet记录条数
-		int tmpSum = 1050;//已经处理完成的记录总数
+		int cnt = 0;//每次处理的sheet记录条数
+		int tmpSum = 0;//已经处理完成的记录总数
 		
-//		itemSum = 1100;
+//		itemSum = 1055;
 		
-		int numOfProccess = (itemSum - tmpSum) % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1; //一共需要处理sheet的次数
+		int numOfProccess = (itemSum - tmpSum) % cnt == 0 ? (itemSum - tmpSum)/cnt : (itemSum - tmpSum)/cnt + 1; //一共需要处理sheet的次数
 		
-		
+		log.info("Num of processes is: "+numOfProccess);
+		int start = 0;
+		int end = 0;
 		for(int i = 1; i <= numOfProccess; ++i){
+			start = tmpSum + 1;
 			if(i == numOfProccess){//最后一次处理时
-				itemDetailProcess(tmpSum + 1, itemSum - (numOfProccess - 1)*cnt);
+				end = start + (itemSum - tmpSum);
+//				itemDetailProcess(tmpSum + 1, tmpSum + 1 + itemSum - (numOfProccess - 1)*cnt);
 			}else{
-				itemDetailProcess(tmpSum + 1,tmpSum + cnt);
+				end = start + cnt;
+//				itemDetailProcess(tmpSum + 1,tmpSum + cnt);
 			}
-			tmpSum += cnt;
+			itemDetailProcess(start, end);
+			tmpSum += end - start;
 		}
+		
+		//已经处理完成的记录总数
+		log.info("There has been processed sum is: "+tmpSum);
 	}
 
 	public void task2() {
