@@ -4,7 +4,7 @@
 		C:\\Users\\JustinChen\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe   
 	</browserPath>
 	<excelFilePath>
-	D:\\
+	/home/gschen/taobao-sjtu.xls
 	</excelFilePath>
 
 <!-- http get请求时间间隔，单位为毫秒 -->
