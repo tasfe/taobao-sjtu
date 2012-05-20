@@ -194,7 +194,7 @@ public class MainTest {
 			WritableSheet sh = wbook.getSheet("ItemDetailSheet");// 得到一个工作对象
 
 			// sheet.getRows()返回该页的总行数
-			for (int i = start; i < end; i++) {
+			for (int i = start; i <= end; i++) {
 				HttpClient tmp = new DefaultHttpClient();
 				ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
 						tmp, searchResultSheet.getCell(18, i).getContents());
@@ -207,13 +207,12 @@ public class MainTest {
 				tmp.getConnectionManager().shutdown();
 			}
 
-			wbook.write();//读取一个，解析一个，然后再写入到文件
+			wbook.write();
 			try {
-				
 				wbook.close();
 			} catch (WriteException e) {
 				e.printStackTrace();
-				
+				log.error("Write excel exception. "+e.getMessage());
 			}
 			workbook.close();
 
@@ -227,13 +226,15 @@ public class MainTest {
 
 		}
 	}
+	
+	//write item detail records
 	public void task3() {
-		int itemSum = 0;
+		int itemSum = 0;//the sum of the items in the search result sheet
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows();
+			itemSum = searchResultSheet.getRows() - 1;//第一行记录为头部标题，所以需要减去
 			
 			workbook.close();
 		} catch (BiffException e) {
@@ -246,8 +247,19 @@ public class MainTest {
 
 		}
 		
-		itemDetailProcess(693,700);
-		itemDetailProcess(700,1000);
+		int cnt = 200;//每次处理的sheet记录条数
+		
+		int numOfProccess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1; //一共需要处理sheet的次数
+		
+		int tmpSum = 0;//已经处理完成的记录总数
+		for(int i = 1; i <= numOfProccess; ++i){
+			if(i == numOfProccess){//最后一次处理时
+				itemDetailProcess(tmpSum + 1, itemSum - (numOfProccess - 1)*cnt);
+			}else{
+				itemDetailProcess(tmpSum + 1,i*cnt);
+			}
+			tmpSum += cnt;
+		}
 	}
 
 	public void task2() {
