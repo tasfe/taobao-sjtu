@@ -252,7 +252,7 @@ public class MainTest {
 		int cnt = 20;//每次处理的sheet记录条数
 		int tmpSum = 0;//已经处理完成的记录总数
 		
-//		itemSum = 1055;
+		itemSum = 5;
 		
 		int numOfProccess = (itemSum - tmpSum) % cnt == 0 ? (itemSum - tmpSum)/cnt : (itemSum - tmpSum)/cnt + 1; //一共需要处理sheet的次数
 		
@@ -262,7 +262,7 @@ public class MainTest {
 		for(int i = 1; i <= numOfProccess; ++i){
 			start = tmpSum + 1;
 			if(i == numOfProccess){//最后一次处理时
-				end = start + (itemSum - tmpSum);
+				end = start + (itemSum - tmpSum) - 1;
 //				itemDetailProcess(tmpSum + 1, tmpSum + 1 + itemSum - (numOfProccess - 1)*cnt);
 			}else{
 				end = start + cnt;
