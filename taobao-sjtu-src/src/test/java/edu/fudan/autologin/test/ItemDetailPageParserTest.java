@@ -102,7 +102,6 @@ public class ItemDetailPageParserTest {
 	
 
 
-	@Test
 	public void testItemDetailPage(){
 //		autoLogin();
 		String pageUrl = "http://item.taobao.com/item.htm?id=2542799797";
