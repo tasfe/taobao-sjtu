@@ -177,6 +177,7 @@ public class MainTest {
 
 	@Test
 	public void task() {
+//		autoLogin();
 		// task1();
 		// task2();
 		task3();
@@ -247,16 +248,18 @@ public class MainTest {
 
 		}
 		
-		int cnt = 200;//每次处理的sheet记录条数
-		
-		int numOfProccess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1; //一共需要处理sheet的次数
-		
+//		itemDetailProcess(1051,1200);
+		int cnt = 20;//每次处理的sheet记录条数
 		int tmpSum = 0;//已经处理完成的记录总数
+		
+		int numOfProccess = (itemSum - tmpSum) % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1; //一共需要处理sheet的次数
+		
+		
 		for(int i = 1; i <= numOfProccess; ++i){
 			if(i == numOfProccess){//最后一次处理时
 				itemDetailProcess(tmpSum + 1, itemSum - (numOfProccess - 1)*cnt);
 			}else{
-				itemDetailProcess(tmpSum + 1,i*cnt);
+				itemDetailProcess(tmpSum + 1,tmpSum + cnt);
 			}
 			tmpSum += cnt;
 		}
