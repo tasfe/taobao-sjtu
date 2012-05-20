@@ -179,8 +179,8 @@ public class MainTest {
 	public void task() {
 //		autoLogin();
 //		 task1();
-		 task2();
-//		task3();
+//		 task2();
+		task3();
 		// task4();
 	}
 
@@ -249,7 +249,7 @@ public class MainTest {
 		}
 		
 //		itemDetailProcess(1051,1200);
-		int cnt = 0;//每次处理的sheet记录条数
+		int cnt = 20;//每次处理的sheet记录条数
 		int tmpSum = 0;//已经处理完成的记录总数
 		
 //		itemSum = 1055;
