@@ -55,10 +55,10 @@ public class UserRatePageParser extends BasePageParser {
 	public void parsePage() {
 		log.info("Start to parse page " + pageUrl);
 
-		if (pageUrl == null) {
+		if (pageUrl == null || pageUrl.equals("")) {
 			log.info("There is no user rate url.");
 		} else {
-			this.getPage(this.getPageUrl());
+			getPage(pageUrl);
 			Document doc = this.getDoc();
 			log.info("sellerId: " + sellerId);
 			sellerRateInfo.setSellerId(sellerId);
