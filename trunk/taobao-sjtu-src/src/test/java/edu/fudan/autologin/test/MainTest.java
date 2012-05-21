@@ -250,9 +250,9 @@ public class MainTest {
 		
 //		itemDetailProcess(1051,1200);
 		int cnt = 20;//每次处理的sheet记录条数
-		int tmpSum = 0;//已经处理完成的记录总数
+		int tmpSum = 1000;//已经处理完成的记录总数
 		
-		itemSum = 5;
+//		itemSum = 1000;
 		
 		int numOfProccess = (itemSum - tmpSum) % cnt == 0 ? (itemSum - tmpSum)/cnt : (itemSum - tmpSum)/cnt + 1; //一共需要处理sheet的次数
 		
