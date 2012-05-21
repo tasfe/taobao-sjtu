@@ -120,50 +120,14 @@ public class MainTest {
 	// user rate task
 
 	public void task4() {
+		int itemSum = 0;// the sum of the items in the search result sheet
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
-			Sheet itemDetailSheet = workbook.getSheet("ItemDetailSheet");
+			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
+			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
 
-			List<ItemInfo> itemInfos = new ArrayList<ItemInfo>();
-
-			// read data 得到sellerId, userRateHref
-			// sheet.getRows()返回该页的总行数
-			for (int i = 1; i <= 1; i++) {
-				ItemInfo itemInfo = new ItemInfo();
-				itemInfo.setSellerId(itemDetailSheet.getCell(0, i)
-						.getContents());
-				itemInfo.setUserRateHref(itemDetailSheet.getCell(13, i)
-						.getContents());
-				log.info("Item info seller id is: " + itemInfo.getSellerId());
-				log.info(itemInfo.getUserRateHref());
-
-				itemInfos.add(itemInfo);
-			}
-
-			WritableWorkbook wbook = Workbook.createWorkbook(new File(
-					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
-			WritableSheet sh = wbook.getSheet("UserRateSheet");// 得到一个工作对象
-
-			// get search result info
-			for (ItemInfo itemInfo : itemInfos) {
-				log.info("Start to parser user rate page and seller id is: "
-						+ itemInfo.getSellerId());
-				UserRatePageParser userRatePageParser = new UserRatePageParser(
-						httpClient, itemInfo.getUserRateHref());
-				userRatePageParser.setSellerId(itemInfo.getSellerId());
-				userRatePageParser.parsePage();
-				userRatePageParser.writeExcel(sh);
-			}
-
-			wbook.write();
-			try {
-				wbook.close();
-			} catch (WriteException e) {
-				e.printStackTrace();
-			}
 			workbook.close();
-
 		} catch (BiffException e) {
 			e.printStackTrace();
 			log.error(e.getMessage());
@@ -173,6 +137,24 @@ public class MainTest {
 		} finally {
 
 		}
+		log.info("Item sum is: " + itemSum);
+		int cnt = 10;// 每次处理的sheet记录条数
+
+		itemSum = 5;
+		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
+				+ 1;
+		log.info("Num of processes is: " + numOfProcess);
+		int start = 0;
+		int end = 0;
+		for (int i = 1; i <= numOfProcess; ++i) {
+			start = (i - 1) * cnt + 1;
+			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
+				end = itemSum;
+			} else {
+				end = start + cnt;
+			}
+			userRateProcess(start, end);
+		}
 	}
 
 	@Test
@@ -180,8 +162,8 @@ public class MainTest {
 //		autoLogin();
 //		 task1();
 //		 task2();
-		task3();
-		// task4();
+//		task3();
+		 task4();
 	}
 
 	public void itemDetailProcess(int start, int end){
@@ -205,6 +187,50 @@ public class MainTest {
 				log.info("This is the item process no: "+i);
 				itemDetailPageParser.parsePage();
 				itemDetailPageParser.writeExcel(sh);
+				tmp.getConnectionManager().shutdown();
+			}
+
+			wbook.write();
+			try {
+				wbook.close();
+			} catch (WriteException e) {
+				e.printStackTrace();
+				log.error("Write excel exception. "+e.getMessage());
+			}
+			workbook.close();
+
+		} catch (BiffException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} finally {
+
+		}
+	}
+	
+	public void userRateProcess(int start, int end){
+		try {
+			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+			Sheet searchResultSheet = workbook.getSheet("ItemDetailSheet");
+
+			WritableWorkbook wbook = Workbook.createWorkbook(new File(
+					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
+			WritableSheet sh = wbook.getSheet("UserRateSheet");// 得到一个工作对象
+
+			// sheet.getRows()返回该页的总行数
+			for (int i = start; i <= end; i++) {
+				HttpClient tmp = new DefaultHttpClient();
+				
+				UserRatePageParser userRatePageParser = new UserRatePageParser(tmp, searchResultSheet.getCell(13, i).getContents());
+				userRatePageParser.setSellerId(searchResultSheet
+						.getCell(0, i).getContents());
+				userRatePageParser.parsePage();
+				userRatePageParser.writeExcel(sh);
+				log.info("--------------------------------------------------------------------------------------------------------------");
+				log.info("This is the item process no: "+i);
 				tmp.getConnectionManager().shutdown();
 			}
 

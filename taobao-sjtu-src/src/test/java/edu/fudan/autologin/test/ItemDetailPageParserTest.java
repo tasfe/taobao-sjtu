@@ -51,7 +51,8 @@ public class ItemDetailPageParserTest {
 	@Test
 	public void execute(){
 //		testItemDetailPage();
-		testWeekSaleNumServie();
+//		testWeekSaleNumServie();
+		testUserRate();
 	
 	}
 	
@@ -194,7 +195,7 @@ public class ItemDetailPageParserTest {
 	}
 	public void testUserRate(){
 		
-		String pageUrl = "http://rate.taobao.com/user-rate-88e99355c367380075597ef904df8ff3.htm";
+		String pageUrl = "http://rate.taobao.com/user-rate-afcef92ff935d1af1241d500b62fa727.htm?spm=2013.1.1000126.5";
 		UserRatePageParser userRatePageParser = new UserRatePageParser(httpClient, pageUrl);
 		userRatePageParser.setSellerId("55600035");
 		userRatePageParser.execute();
