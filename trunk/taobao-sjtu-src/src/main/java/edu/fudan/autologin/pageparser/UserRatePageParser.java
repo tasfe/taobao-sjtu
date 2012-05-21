@@ -87,9 +87,12 @@ public class UserRatePageParser extends BasePageParser {
 
 			} else {
 				Element upBoxEl = sellerInfoEl.select("div.bd ul").get(0);
+				
+				log.info("The size of li is: "+upBoxEl.select("li").size());
 				if (upBoxEl.select("li").size() >= 1) {
 					mainSale = upBoxEl.select("li").get(0).select("a").text();
-				} else if (upBoxEl.select("li").size() >= 2) {
+				} 
+				if (upBoxEl.select("li").size() >= 2) {
 					// location
 					location = upBoxEl.select("li").get(1).ownText();
 					location = location.substring(location.indexOf("：") + 1)
