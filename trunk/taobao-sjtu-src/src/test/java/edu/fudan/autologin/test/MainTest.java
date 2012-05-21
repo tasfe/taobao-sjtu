@@ -140,21 +140,22 @@ public class MainTest {
 		log.info("Item sum is: " + itemSum);
 		int cnt = 10;// 每次处理的sheet记录条数
 
+		userRateProcess(346, 349);
 //		itemSum = 5;
-		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
-				+ 1;
-		log.info("Num of processes is: " + numOfProcess);
-		int start = 0;
-		int end = 0;
-		for (int i = 1; i <= numOfProcess; ++i) {
-			start = (i - 1) * cnt + 1;
-			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
-				end = itemSum;
-			} else {
-				end = start + cnt;
-			}
-			userRateProcess(start, end);
-		}
+//		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
+//				+ 1;
+//		log.info("Num of processes is: " + numOfProcess);
+//		int start = 0;
+//		int end = 0;
+//		for (int i = 1; i <= numOfProcess; ++i) {
+//			start = (i - 1) * cnt + 1;
+//			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
+//				end = itemSum;
+//			} else {
+//				end = start + cnt;
+//			}
+//			userRateProcess(start, end);
+//		}
 	}
 
 	@Test
@@ -210,7 +211,7 @@ public class MainTest {
 		}
 	}
 	
-	public void userRateProcess(int start, int end){
+	public void userRateProcess(int start, int end) {
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
@@ -223,14 +224,21 @@ public class MainTest {
 			// sheet.getRows()返回该页的总行数
 			for (int i = start; i <= end; i++) {
 				HttpClient tmp = new DefaultHttpClient();
+
+				String userRateHref = searchResultSheet.getCell(13, i)
+						.getContents();
+				String sellerId = searchResultSheet.getCell(0, i).getContents();
 				
-				UserRatePageParser userRatePageParser = new UserRatePageParser(tmp, searchResultSheet.getCell(13, i).getContents());
-				userRatePageParser.setSellerId(searchResultSheet
-						.getCell(0, i).getContents());
+				
+				UserRatePageParser userRatePageParser = new UserRatePageParser(
+						tmp, userRateHref);
+				userRatePageParser.setSellerId(sellerId);
 				userRatePageParser.parsePage();
 				userRatePageParser.writeExcel(sh);
 				log.info("--------------------------------------------------------------------------------------------------------------");
-				log.info("This is the item process no: "+i);
+				log.info("This is the item process no: " + i);
+				log.info("Seller id is: "+sellerId);
+				log.info("User rate href is: "+userRateHref);
 				tmp.getConnectionManager().shutdown();
 			}
 
@@ -239,7 +247,7 @@ public class MainTest {
 				wbook.close();
 			} catch (WriteException e) {
 				e.printStackTrace();
-				log.error("Write excel exception. "+e.getMessage());
+				log.error("Write excel exception. " + e.getMessage());
 			}
 			workbook.close();
 
