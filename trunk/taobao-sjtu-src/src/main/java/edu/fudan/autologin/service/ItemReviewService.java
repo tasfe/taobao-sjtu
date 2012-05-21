@@ -255,14 +255,14 @@ public class ItemReviewService {
 
 				JSONObject j = JSONObject.fromObject(o);
 				FeedRateComment cmt = new FeedRateComment();
-				cmt.setDate(j.getString("date"));
-				cmt.setContent(j.getString("content"));
-				log.info("Comment NO is: " + i++);
+//				cmt.setDate(j.getString("date"));
+//				cmt.setContent(j.getString("content"));
+//				log.info("Comment NO is: " + i++);
 				log.info("Date is: " + j.getString("date"));
 				dateList.add(j.getString("date"));
-				log.info("Auction title is: "
-						+ j.getJSONObject("auction").getString("title"));
-				log.info("Content is: " + j.getString("content"));
+//				log.info("Auction title is: "
+//						+ j.getJSONObject("auction").getString("title"));
+//				log.info("Content is: " + j.getString("content"));
 
 			}
 			return true;
