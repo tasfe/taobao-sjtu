@@ -7,7 +7,13 @@ public class ItemInfo {
 	private String freightPrice;
 	private int saleNumIn30Days;
 	private int reviews;
-	private String itemType;
+	private int viewCounter;
+	public int getViewCounter() {
+		return viewCounter;
+	}
+	public void setViewCounter(int viewCounter) {
+		this.viewCounter = viewCounter;
+	}
 	private String payType;
 	public String getItemDetailHref() {
 		return itemDetailHref;
@@ -73,12 +79,6 @@ public class ItemInfo {
 	}
 	public void setReviews(int reviews) {
 		this.reviews = reviews;
-	}
-	public String getItemType() {
-		return itemType;
-	}
-	public void setItemType(String itemType) {
-		this.itemType = itemType;
 	}
 	public String getPayType() {
 		return payType;

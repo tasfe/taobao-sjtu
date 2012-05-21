@@ -248,7 +248,7 @@ public class MainTest {
 
 		}
 		log.info("Item sum is: "+itemSum);
-		int cnt = 20;//每次处理的sheet记录条数
+		int cnt = 10;//每次处理的sheet记录条数
 		
 		int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1;
 		

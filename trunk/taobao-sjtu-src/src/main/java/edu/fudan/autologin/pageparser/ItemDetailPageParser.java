@@ -21,6 +21,7 @@ import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
+import edu.fudan.autologin.service.ItemViewCountService;
 import edu.fudan.autologin.service.PostageService;
 import edu.fudan.autologin.service.ReviewSumService;
 import edu.fudan.autologin.service.SaleSumService;
@@ -116,8 +117,13 @@ public class ItemDetailPageParser extends BasePageParser {
 			Element element = itemPro.select("li.tb-item-type em#J_EmItemViews").get(0);
 			itemType = element.ownText();
 			log.info("itemType: " + itemType);
-			itemInfo.setItemType(itemType);
-
+//			itemInfo.setItemType(itemType);
+			
+			ItemViewCountService itemViewCountService = new ItemViewCountService();
+			itemViewCountService.setItemDetailPage(pageUrl);
+			itemViewCountService.execute();
+			itemInfo.setViewCounter(itemViewCountService.getViewCount());
+			log.info("View counter is: "+itemInfo.getViewCounter());
 			// pay type
 			String payType = "";
 			Elements links = itemPro.select("dl.tb-paymethods a");
