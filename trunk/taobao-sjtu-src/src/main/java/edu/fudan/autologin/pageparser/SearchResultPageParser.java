@@ -23,25 +23,30 @@ public class SearchResultPageParser extends BasePageParser {
 	private static final Logger log = Logger
 			.getLogger(SearchResultPageParser.class);
 
+	private String categoryName;
 	private List<SellerInSearchResult> sellerResultList;
-	private TopTenItemInfo topTenItemInfo;
+//	private TopTenItemInfo topTenItemInfo;
 
-	public void setTopTenItemInfo(TopTenItemInfo topTenItemInfo) {
-		this.topTenItemInfo = topTenItemInfo;
-	}
+//	public void setTopTenItemInfo(TopTenItemInfo topTenItemInfo) {
+//		this.topTenItemInfo = topTenItemInfo;
+//	}
 
 	public SearchResultPageParser(HttpClient httpClient, String pageUrl) {
 		super(httpClient, pageUrl);
 
 		sellerResultList = new ArrayList<SellerInSearchResult>();
-		topTenItemInfo = new TopTenItemInfo();
+//		topTenItemInfo = new TopTenItemInfo();
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 	@Override
 	public void doNext() {
 
-		log.info("Parsing specified search result page complete - "
-				+ topTenItemInfo.getItemName());
+//		log.info("Parsing specified search result page complete - "
+//				+ topTenItemInfo.getItemName());
 		log.info("--------------------------------------------------------------------------------------------------------------");
 		log.info("Start to parse item detail page.");
 
@@ -50,7 +55,7 @@ public class SearchResultPageParser extends BasePageParser {
 					this.getHttpClient(), sellerInSearchResult.getHref());
 			itemDetailPageParser.setSellerId(sellerInSearchResult.getSellerId());
 			log.info("--------------------------------------------------------------------------------------------------------------");
-			log.info("Start to parse the specified item detail page (TopTenRank, ItemName, Page, PageRank): "+"("+topTenItemInfo.getTopRank()+", "+sellerInSearchResult.getSellerName()+", "+sellerInSearchResult.getPage()+", "+sellerInSearchResult.getRank()+")");
+//			log.info("Start to parse the specified item detail page (TopTenRank, ItemName, Page, PageRank): "+"("+topTenItemInfo.getTopRank()+", "+sellerInSearchResult.getSellerName()+", "+sellerInSearchResult.getPage()+", "+sellerInSearchResult.getRank()+")");
 			log.info("Item href is: " + sellerInSearchResult.getHref());
 			itemDetailPageParser.execute();
 			
@@ -90,7 +95,7 @@ public class SearchResultPageParser extends BasePageParser {
 						.attr("href");
 				
 				String itemId = itemHref.split("=")[1];
-				String categoryName = topTenItemInfo.getCategoryName();
+//				String categoryName = categoryName;
 				String sellerName = item.select("p.seller > a").get(0).text();
 				Elements globalBuy = item.select("p.seller > a.globalbuy");
 				boolean isGlobalBuy = false;

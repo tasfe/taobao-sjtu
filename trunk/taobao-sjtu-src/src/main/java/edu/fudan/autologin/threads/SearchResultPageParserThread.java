@@ -21,7 +21,7 @@ public class SearchResultPageParserThread implements Runnable {
 	}
 	public void run() {
 		SearchResultPageParser searchResultPageParser = new SearchResultPageParser(httpClient, ttii.getHref());
-		searchResultPageParser.setTopTenItemInfo(ttii);
+//		searchResultPageParser.setTopTenItemInfo(ttii);
 		log.info("--------------------------------------------------------------------------------------------------------------");
 		log.info("Start to process (TopTenItem, Rank) : " + "("+ttii.getItemName() + ", "+ttii.getTopRank()+")");
 		searchResultPageParser.execute();

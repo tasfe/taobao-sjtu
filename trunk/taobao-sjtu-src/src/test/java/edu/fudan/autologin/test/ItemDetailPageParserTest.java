@@ -36,6 +36,7 @@ import edu.fudan.autologin.service.PostageService;
 import edu.fudan.autologin.service.ReviewSumService;
 import edu.fudan.autologin.service.SaleSumService;
 import edu.fudan.autologin.service.TaobaoDsDataService;
+import edu.fudan.autologin.service.WeekSaleService;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.PrintUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
@@ -49,7 +50,15 @@ public class ItemDetailPageParserTest {
 	
 	@Test
 	public void execute(){
-		testItemDetailPage();
+//		testItemDetailPage();
+		testWeekSaleNumServie();
+	
+	}
+	
+	public void testWeekSaleNumServie(){
+		WeekSaleService weekSaleService = new WeekSaleService();
+		weekSaleService.setPageUrl("http://s.taobao.com/search?source=top_search&q=Canon%2F%BC%D1%C4%DC+PowerShot+A4000+IS&pspuid=142914089&v=product&p=detail&stp=top.toplist.1403.sellhot.image.1.0&ad_id=&am_id=&cm_id=&pm_id=");
+		weekSaleService.execute();
 	}
 
 	@Before
@@ -66,7 +75,7 @@ public class ItemDetailPageParserTest {
 
 	public void initialize(){
 		XmlConfUtil.openXml();
-		ExcelUtil.prepare();
+//		ExcelUtil.prepare();
 		
 	}
 
@@ -74,7 +83,7 @@ public class ItemDetailPageParserTest {
 	public void tearDown() {
 		log.info("--------------------------------------------------------------------------------------------------------------");
 		log.info("COMPLETE ALL TASKS!");
-		ExcelUtil.closeWorkbook();
+//		ExcelUtil.closeWorkbook();
 		httpClient.getConnectionManager().shutdown();
 	}
 

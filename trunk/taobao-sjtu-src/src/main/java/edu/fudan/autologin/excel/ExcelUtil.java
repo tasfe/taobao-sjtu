@@ -65,6 +65,8 @@ public class ExcelUtil {
 		topTenPageHeaders.add("类别");
 		topTenPageHeaders.add("产品名称");
 		topTenPageHeaders.add("页面排名");
+		topTenPageHeaders.add("周销量");
+		topTenPageHeaders.add("周销量卖家");
 		topTenPageHeaders.add("链接地址");
 		writeHeader(SheetNames.TOP_TEN_SHEET, topTenPageHeaders);
 
@@ -322,18 +324,25 @@ public class ExcelUtil {
 		assert (sheet != null);
 		// 将list 中的记录写入sheet中
 		for (int i = 0; i < topTenItemInfos.size(); ++i) {
+			int j = 0;
 			TopTenItemInfo t = topTenItemInfos.get(i);
-			Label l0 = new Label(0, sheet.getRows(), t.getCategoryName());
-			Label l1 = new Label(1, sheet.getRows(), t.getItemName());
-			jxl.write.Number l2 = new jxl.write.Number(2, sheet.getRows(),
+			Label l0 = new Label(j++, sheet.getRows(), t.getCategoryName());
+			Label l1 = new Label(j++, sheet.getRows(), t.getItemName());
+			jxl.write.Number l2 = new jxl.write.Number(j++, sheet.getRows(),
 					t.getTopRank());
-			// Label l2 = new Label(2, sheet.getRows(), t.getTopRank() + "");
-			Label l3 = new Label(3, sheet.getRows(), t.getHref());
+			jxl.write.Number weekSaleNum = new jxl.write.Number(j++, sheet.getRows(),
+					t.getWeekSaleNum());
+			jxl.write.Number weekSellerNum = new jxl.write.Number(j++, sheet.getRows(),
+					t.getWeekSellerNum());
+			
+			Label l3 = new Label(j++, sheet.getRows(), t.getHref());
 			try {
 
 				sheet.addCell(l0);
 				sheet.addCell(l1);
 				sheet.addCell(l2);
+				sheet.addCell(weekSaleNum);
+				sheet.addCell(weekSellerNum);
 				sheet.addCell(l3);
 			} catch (RowsExceededException e) {
 				e.printStackTrace();

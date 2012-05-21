@@ -250,8 +250,9 @@ public class MainTest {
 		log.info("Item sum is: "+itemSum);
 		int cnt = 10;//每次处理的sheet记录条数
 		
+		itemSum = 200;
 		int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1;
-		
+		//普通数码相机专业单反相机数码摄像机
 		log.info("Num of processes is: "+numOfProcess);
 		int start = 0;
 		int end = 0;
@@ -272,38 +273,20 @@ public class MainTest {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet topTenSheet = workbook.getSheet("TopTenSheet");
-
-			List<TopTenItemInfo> topTenItemInfos = new ArrayList<TopTenItemInfo>();
-			// read data
-			// sheet.getRows()返回该页的总行数
-			for (int i = 1; i < topTenSheet.getRows(); i++) {
-				int j = 0;
-				TopTenItemInfo topTenItemInfo = new TopTenItemInfo();
-
-				topTenItemInfo.setCategoryName(topTenSheet.getCell(j++, i)
-						.getContents());
-				topTenItemInfo.setItemName(topTenSheet.getCell(j++, i)
-						.getContents());
-				topTenItemInfo.setTopRank(Integer.parseInt(topTenSheet.getCell(
-						j++, i).getContents()));
-				topTenItemInfo.setHref(topTenSheet.getCell(j++, i)
-						.getContents());
-
-				topTenItemInfos.add(topTenItemInfo);
-			}
-
+			
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
 					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
 			WritableSheet sh = wbook.getSheet("SearchReaultSheet");// 得到一个工作对象
 
-			// get search result infoe
-			for (TopTenItemInfo ttii : topTenItemInfos) {
+
+			// sheet.getRows()返回该页的总行数
+			for (int i = 1; i < topTenSheet.getRows(); i++) {
 				SearchResultPageParser searchResultPageParser = new SearchResultPageParser(
-						httpClient, ttii.getHref());
-				searchResultPageParser.setTopTenItemInfo(ttii);
+						httpClient, topTenSheet.getCell(5, i)
+						.getContents());
+				searchResultPageParser.setCategoryName(topTenSheet.getCell(0, i)
+						.getContents());
 				log.info("--------------------------------------------------------------------------------------------------------------");
-				log.info("Start to process (TopTenItem, Rank) : " + "("
-						+ ttii.getItemName() + ", " + ttii.getTopRank() + ")");
 				searchResultPageParser.parsePage();
 				searchResultPageParser.writeExcel(sh);
 			}
@@ -312,8 +295,8 @@ public class MainTest {
 			try {
 				wbook.close();
 			} catch (WriteException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				log.error(e.getMessage());
 			}
 			workbook.close();
 
@@ -344,8 +327,8 @@ public class MainTest {
 		categoryInfos.add(ci2);
 
 		CategoryInfo ci3 = new CategoryInfo();
-		ci3.setCategoryName("笔记本");
-		ci3.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_DNJXGPJ&level3=1101&up=false");
+		ci3.setCategoryName("普通数码相机");
+		ci3.setCategoryHref("http://top1.search.taobao.com/level3.php?cat=TR_SYQC&level3=1403&up=false");
 		categoryInfos.add(ci3);
 
 		// get top ten item info
