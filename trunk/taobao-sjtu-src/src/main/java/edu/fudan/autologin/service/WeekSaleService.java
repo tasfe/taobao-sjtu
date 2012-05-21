@@ -7,7 +7,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import edu.fudan.autologin.formfields.GetMethod;
-import edu.fudan.autologin.test.ItemDetailPageParserTest;
 
 
 /**
