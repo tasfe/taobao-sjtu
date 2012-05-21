@@ -235,7 +235,7 @@ public class MainTest {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows() - 1;//第一行记录为头部标题，所以需要减去
+			itemSum = searchResultSheet.getRows();//getRows返回的是记录行数
 			
 			workbook.close();
 		} catch (BiffException e) {
@@ -247,33 +247,24 @@ public class MainTest {
 		} finally {
 
 		}
-		
-//		itemDetailProcess(1051,1200);
+		log.info("Item sum is: "+itemSum);
 		int cnt = 20;//每次处理的sheet记录条数
-		int tmpSum = 1000;//已经处理完成的记录总数
 		
-//		itemSum = 1000;
+		int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1;
 		
-		int numOfProccess = (itemSum - tmpSum) % cnt == 0 ? (itemSum - tmpSum)/cnt : (itemSum - tmpSum)/cnt + 1; //一共需要处理sheet的次数
-		
-		log.info("Num of processes is: "+numOfProccess);
+		log.info("Num of processes is: "+numOfProcess);
 		int start = 0;
 		int end = 0;
-		for(int i = 1; i <= numOfProccess; ++i){
-			start = tmpSum + 1;
-			if(i == numOfProccess){//最后一次处理时
-				end = start + (itemSum - tmpSum) - 1;
-//				itemDetailProcess(tmpSum + 1, tmpSum + 1 + itemSum - (numOfProccess - 1)*cnt);
+		for(int i = 1; i <= numOfProcess; ++i){
+			start = (i - 1)*cnt + 1;
+			if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
+				end = itemSum;
 			}else{
 				end = start + cnt;
-//				itemDetailProcess(tmpSum + 1,tmpSum + cnt);
 			}
 			itemDetailProcess(start, end);
-			tmpSum += end - start;
 		}
 		
-		//已经处理完成的记录总数
-		log.info("There has been processed sum is: "+tmpSum);
 	}
 
 	public void task2() {
