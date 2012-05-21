@@ -55,15 +55,8 @@ public class BasePageParser implements PageParser {
 	
 
 	public BasePageParser(HttpClient httpClient, String pageUrl) {
-		if (httpClient == null || pageUrl.equals("")) {
-			log.error("pageUrl or httpClient is null.");
-			log.error("pageUrl is:"+this.pageUrl+".");
-			log.error("httpClient is:"+this.httpClient+".");
-			System.exit(0);
-		} else {
 			this.httpClient = httpClient;
 			this.pageUrl = pageUrl;
-		}
 	}
 
 
