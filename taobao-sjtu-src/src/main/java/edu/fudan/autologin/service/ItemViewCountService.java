@@ -35,6 +35,8 @@ public class ItemViewCountService {
 		String ajaxUrl = getCounterApiUrl();
 		String json = getJsonFromServer(ajaxUrl);
 		parseJson(json);
+		
+		httpClient.getConnectionManager().shutdown();
 	}
 	
 		

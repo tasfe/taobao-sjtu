@@ -7,6 +7,21 @@ public class TopTenItemInfo {
 	private String href;
 	private String categoryName;
 	
+	private int weekSaleNum = 0;
+	private int weekSellerNum = 0;
+	
+	public int getWeekSaleNum() {
+		return weekSaleNum;
+	}
+	public void setWeekSaleNum(int weekSaleNum) {
+		this.weekSaleNum = weekSaleNum;
+	}
+	public int getWeekSellerNum() {
+		return weekSellerNum;
+	}
+	public void setWeekSellerNum(int weekSellerNum) {
+		this.weekSellerNum = weekSellerNum;
+	}
 	public String getCategoryName() {
 		return categoryName;
 	}

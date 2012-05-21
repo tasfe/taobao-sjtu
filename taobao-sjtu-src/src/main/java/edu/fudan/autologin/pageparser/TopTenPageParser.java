@@ -1,8 +1,6 @@
 package edu.fudan.autologin.pageparser;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.http.client.HttpClient;
@@ -11,12 +9,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import edu.fudan.autologin.constants.SheetNames;
 import edu.fudan.autologin.excel.ExcelUtil;
-import edu.fudan.autologin.excel.TopTenPageExcel;
 import edu.fudan.autologin.pojos.CategoryInfo;
 import edu.fudan.autologin.pojos.TaobaoDataSet;
 import edu.fudan.autologin.pojos.TopTenItemInfo;
+import edu.fudan.autologin.service.WeekSaleService;
 
 public class TopTenPageParser extends BasePageParser {
 	
@@ -83,10 +80,16 @@ public class TopTenPageParser extends BasePageParser {
 				this.topTenItemInfos.add(itemInfo);
 				TaobaoDataSet.topTenItemInfos.add(itemInfo);
 				
-				this.getLog().info("Top 10 page - add item:");
-				this.getLog().info("Top 10 page - rank: "+itemInfo.getTopRank());
-				this.getLog().info("Top 10 page - href:" + itemInfo.getHref());
-				this.getLog().info("Top 10 page - itemName:" + itemInfo.getItemName());
+				WeekSaleService weekSaleService = new WeekSaleService();
+				weekSaleService.setPageUrl(itemInfo.getHref());
+				weekSaleService.execute();
+				itemInfo.setWeekSaleNum(weekSaleService.getWeekSaleNum());
+				itemInfo.setWeekSellerNum(weekSaleService.getWeekSellerNum());
+				
+				log.info("Top 10 page - add item:");
+				log.info("Top 10 page - rank: "+itemInfo.getTopRank());
+				log.info("Top 10 page - href:" + itemInfo.getHref());
+				log.info("Top 10 page - itemName:" + itemInfo.getItemName());
 			}
 			
 			//setTopTenItemInfos(topTenItemInfos);
@@ -105,7 +108,7 @@ public class TopTenPageParser extends BasePageParser {
 		log.info("Start to parse search result page.");
 		for(TopTenItemInfo ttii : topTenItemInfos){
 			SearchResultPageParser searchResultPageParser = new SearchResultPageParser(this.getHttpClient(), ttii.getHref());
-			searchResultPageParser.setTopTenItemInfo(ttii);
+//			searchResultPageParser.setTopTenItemInfo(ttii);
 			log.info("--------------------------------------------------------------------------------------------------------------");
 			log.info("Start to process (TopTenItem, Rank) : " + "("+ttii.getItemName() + ", "+ttii.getTopRank()+")");
 			searchResultPageParser.execute();
