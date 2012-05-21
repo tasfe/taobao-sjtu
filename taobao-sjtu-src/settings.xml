@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
 	<browserPath>
-		C:\\Users\\JustinChen\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe   
-	</browserPath>
+		/opt/google/chrome/google-chrome	</browserPath>
 	<excelFilePath>
 	/home/gschen/taobao-sjtu.xls
 	</excelFilePath>

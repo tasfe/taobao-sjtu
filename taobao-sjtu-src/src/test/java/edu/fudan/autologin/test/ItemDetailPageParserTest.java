@@ -101,10 +101,10 @@ public class ItemDetailPageParserTest {
 
 	
 
-
+@Test
 	public void testItemDetailPage(){
 //		autoLogin();
-		String pageUrl = "http://item.taobao.com/item.htm?id=2542799797";
+		String pageUrl = "http://item.taobao.com/item.htm?id=15876676995";
 		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, pageUrl);
 		itemDetailPageParser.execute();
 	}

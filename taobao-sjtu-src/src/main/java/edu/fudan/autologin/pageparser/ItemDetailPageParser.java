@@ -113,7 +113,7 @@ public class ItemDetailPageParser extends BasePageParser {
 
 			// item type
 			String itemType = "";
-			Element element = itemPro.select("li.tb-item-type em").get(0);
+			Element element = itemPro.select("li.tb-item-type em#J_EmItemViews").get(0);
 			itemType = element.ownText();
 			log.info("itemType: " + itemType);
 			itemInfo.setItemType(itemType);
