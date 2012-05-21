@@ -69,7 +69,7 @@ public class ExcelUtil {
 		writeHeader(SheetNames.TOP_TEN_SHEET, topTenPageHeaders);
 
 		List<String> searchResultHeaders = new ArrayList<String>();
-		searchResultHeaders.add("卖家编号");
+		searchResultHeaders.add("宝贝编号");
 		searchResultHeaders.add("类别");
 		searchResultHeaders.add("卖家名称");
 		searchResultHeaders.add("全球购标识");
@@ -91,7 +91,7 @@ public class ExcelUtil {
 		writeHeader(SheetNames.SEARCH_RESULT_SHEET, searchResultHeaders);
 
 		List<String> buyerInfoHeaders = new ArrayList<String>();
-		buyerInfoHeaders.add("卖家编号");
+		buyerInfoHeaders.add("宝贝编号");
 		buyerInfoHeaders.add("拍下价格");
 		buyerInfoHeaders.add("数量");
 		buyerInfoHeaders.add("付款时间");
@@ -102,12 +102,12 @@ public class ExcelUtil {
 		writeHeader(SheetNames.BUYER_INFO_SHEET, buyerInfoHeaders);
 
 		List<String> itemDetailHeaders = new ArrayList<String>();
-		itemDetailHeaders.add("卖家编号");
+		itemDetailHeaders.add("宝贝编号");
 		itemDetailHeaders.add("价格区间");
 		itemDetailHeaders.add("物流运费");
 		itemDetailHeaders.add("30天售出");
 		itemDetailHeaders.add("评价");
-		itemDetailHeaders.add("宝贝类型");
+		itemDetailHeaders.add("浏览次数");
 		itemDetailHeaders.add("支付");
 		itemDetailHeaders.add("服务");
 		itemDetailHeaders.add("规格");
@@ -119,7 +119,7 @@ public class ExcelUtil {
 		writeHeader(SheetNames.ITEM_DETAIL_SHEET, itemDetailHeaders);
 
 		List<String> sellerRateHeaders = new ArrayList<String>();
-		sellerRateHeaders.add("卖家编号");
+		sellerRateHeaders.add("宝贝编号");
 		sellerRateHeaders.add("卖家名称");
 		sellerRateHeaders.add("当前主营");
 		sellerRateHeaders.add("所在地区");
@@ -471,19 +471,17 @@ public class ExcelUtil {
 
 		jxl.write.Number saleNumIn30Days = new Number(3, sheet.getRows(),
 				itemInfo.getSaleNumIn30Days());
-		// Label l3 = new Label(3,sheet.getRows(),
-		// itemInfo.getSaleNumIn30Days());
 		jxl.write.Number reviews = new Number(4, sheet.getRows(),
 				itemInfo.getReviews());
-		// Label l4 = new Label(4,sheet.getRows(), itemInfo.getReviews());
-		Label l5 = new Label(5, sheet.getRows(), itemInfo.getItemType());
+		Label l5 = new Label(5, sheet.getRows(), itemInfo.getViewCounter() + "");
 		Label l6 = new Label(6, sheet.getRows(), itemInfo.getPayType());
 		Label l7 = new Label(7, sheet.getRows(), itemInfo.getServiceType());
 		Label l8 = new Label(8, sheet.getRows(), itemInfo.getSpec());
 		Label l9 = new Label(9, sheet.getRows(), itemInfo.getCapacity());
-		Label l10 = new Label(10, sheet.getRows(), itemInfo.getFirstReviewDate());
+		Label l10 = new Label(10, sheet.getRows(),
+				itemInfo.getFirstReviewDate());
 		Label l11 = new Label(11, sheet.getRows(), itemInfo.getLastReviewDate());
-		Label l12 = new Label(12,sheet.getRows(), itemInfo.getItemDetailHref());
+		Label l12 = new Label(12, sheet.getRows(), itemInfo.getItemDetailHref());
 
 		try {
 
@@ -491,6 +489,7 @@ public class ExcelUtil {
 			sheet.addCell(l1);
 			sheet.addCell(l2);
 			sheet.addCell(l5);
+
 			sheet.addCell(l6);
 			sheet.addCell(l7);
 			sheet.addCell(l8);
@@ -521,7 +520,7 @@ public class ExcelUtil {
 		jxl.write.Number reviews = new Number(4, sheet.getRows(),
 				itemInfo.getReviews());
 		// Label l4 = new Label(4,sheet.getRows(), itemInfo.getReviews());
-		Label l5 = new Label(5, sheet.getRows(), itemInfo.getItemType());
+		Label l5 = new Label(5, sheet.getRows(), itemInfo.getViewCounter()+"");
 		Label l6 = new Label(6, sheet.getRows(), itemInfo.getPayType());
 		Label l7 = new Label(7, sheet.getRows(), itemInfo.getServiceType());
 		Label l8 = new Label(8, sheet.getRows(), itemInfo.getSpec());

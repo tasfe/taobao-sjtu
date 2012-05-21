@@ -30,6 +30,7 @@ import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
+import edu.fudan.autologin.service.ItemViewCountService;
 import edu.fudan.autologin.service.MonthService;
 import edu.fudan.autologin.service.PostageService;
 import edu.fudan.autologin.service.ReviewSumService;
@@ -45,6 +46,11 @@ public class ItemDetailPageParserTest {
 	private static final Logger log = Logger
 			.getLogger(ItemDetailPageParserTest.class);
 	private HttpClient httpClient;
+	
+	@Test
+	public void execute(){
+		testItemDetailPage();
+	}
 
 	@Before
 	public void setUp() {
@@ -98,10 +104,14 @@ public class ItemDetailPageParserTest {
 	
 
 	
-
+	public void testItemCounter(){
+		ItemViewCountService itemViewCountService = new ItemViewCountService();
+		itemViewCountService.setItemDetailPage("http://item.taobao.com/item.htm?id=13738559526");
+		itemViewCountService.execute();
+	}
 	
 
-@Test
+
 	public void testItemDetailPage(){
 //		autoLogin();
 		String pageUrl = "http://item.taobao.com/item.htm?id=15876676995";
