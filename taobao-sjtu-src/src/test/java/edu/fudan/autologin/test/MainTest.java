@@ -140,7 +140,7 @@ public class MainTest {
 		log.info("Item sum is: " + itemSum);
 		int cnt = 10;// 每次处理的sheet记录条数
 
-		itemSum = 5;
+//		itemSum = 5;
 		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
 				+ 1;
 		log.info("Num of processes is: " + numOfProcess);
