@@ -214,6 +214,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
 
 	}
+
 	@Override
 	public void parsePage() {
 		log.info("Start to parse page: " + pageUrl);
@@ -230,7 +231,10 @@ public class ItemDetailPageParser extends BasePageParser {
 		if(doc.toString().contains("tbid-container")){
 			log.info("Start to parse 增价拍 page.");
 			bidTypePageParser();
-		}else{
+		}else if(doc.toString().contains("此宝贝已下架")){
+			log.info("此宝贝已下架");
+		}
+		else{
 			normalPageParser(doc);
 		}
 		
