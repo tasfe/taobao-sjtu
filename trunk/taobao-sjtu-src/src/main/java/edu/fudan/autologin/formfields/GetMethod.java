@@ -60,7 +60,10 @@ public class GetMethod {
 		httpget.setHeader(
 				"User-Agent",
 				"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.83 Safari/535.11");
-
+		httpget.setHeader("Connection","keep-alive");
+		httpget.setHeader("Accept-Language","zh-CN,zh;q=0.8");
+		httpget.setHeader("Accept-Charset","GBK,utf-8;q=0.7,*;q=0.3");
+		httpget.setHeader("Accept","*/*");
 		try {
 			response = httpclient.execute(httpget);
 		} catch (ClientProtocolException e) {
