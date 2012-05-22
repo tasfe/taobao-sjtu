@@ -3,6 +3,9 @@ package edu.fudan.autologin.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
+
+import jxl.write.WritableSheet;
 
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
@@ -18,8 +21,11 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import edu.fudan.autologin.constants.SexEnum;
+import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
+import edu.fudan.autologin.pageparser.ItaobaoPageParser;
 import edu.fudan.autologin.pojos.BuyerInfo;
+import edu.fudan.autologin.utils.DosCmdUtils;
 import edu.fudan.autologin.utils.PrintUtils;
 import edu.fudan.autologin.utils.RandomUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
@@ -27,6 +33,18 @@ import edu.fudan.autologin.utils.XmlConfUtil;
 public class BuyerListService {
 	private static final Logger log = Logger.getLogger(BuyerListService.class);
 	private String itemPageUrl;
+	
+	private String sellerId;
+	public void setSellerId(String sellerId) {
+		this.sellerId = sellerId;
+	}
+
+	private WritableSheet sheet;
+
+	public void setSheet(WritableSheet sheet) {
+		this.sheet = sheet;
+	}
+
 	private HttpClient httpClient;
 	private List<BuyerInfo> buyerInfos;
 	private int buyerSum = 0;
@@ -69,19 +87,39 @@ public class BuyerListService {
 			int pageSum = (buyerSum % pageSize == 0) ? buyerSum / pageSize
 					: (buyerSum / pageSize + 1);
 
+			if(pageSum >= 100){
+				pageSum = 100;
+			}
 			log.info("Total page num is: " + pageSum);
 			for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
 				log.info("-----------------------------------------------------");
 				log.info("This is buyers of Page NO: " + pageNum);
 				String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-						showBuyerListUrl, 4);
-				parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
+						showBuyerListUrl, pageNum);
+				
+				Document doc = getShowBuyerListDoc(constructedShowBuyerListUrl);
+				while( parseBuyerListTable(doc) == false){
+					constructedShowBuyerListUrl = constructShowBuyerListUrl(
+							showBuyerListUrl, pageNum);
+					
+					doc = getShowBuyerListDoc(constructedShowBuyerListUrl+"&&code="+verifyCode);
+				}
+				
+				
 				try {
-					Thread.sleep(10);
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
+				//因为触发了验证码机制，所以无法请求后面的页面
+				//什么样的机制会触发验证码？
+				/*
+				 *1. 请求太频繁；
+				 *2. 一定时间段内请求数的限制？ 
+				 * 
+				 */
+				
 			}
 		}
 
@@ -116,6 +154,8 @@ public class BuyerListService {
 		this.buyerInfos = buyerInfos;
 	}
 
+	
+	private String verifyCode = null;
 	/**
 	 * 没有买家时返回的是这个 <div class="msg msg-attention-shortcut"
 	 * server-num="detailskip185108.cm4">
@@ -125,7 +165,29 @@ public class BuyerListService {
 	 * </div>
 	 */
 	public boolean parseBuyerListTable(Document doc) {
+		/*
+		 * 
+		 * TShop.mods.DealRecord.reload(
+		 * {html:"<div id=\"J_DealCode\" class=\"tb-code\"
+		 *  data-apicode=\"http://detailskip.taobao.com/json/change_code.htm\"> 
+		 *  <em>请输入校验码后继续翻页：</em> <a class=\"tb-code-pic\" href=\"#\"> 
+		 *  <img id=\"J_DealCodePic\" src=\"http://checkcode.taobao.com/auction/checkcode?sessionID=5c071b726c34dbfcb86b9f89ec708a8f&r=1337684398007\" width=\"56\" height=\"20\"/> <span>换一张</span> </a> <span class=\"tb-code-split\">-</span> <input id=\"J_DealCodeInput\" class=\"tb-code-input\" type=\"text\" maxlength=\"4\"/> <button id=\"J_DealCodeBtn\" class=\"tb-code-btn\" type=\"button\">确定</button> <a id=\"J_CloseDealCode\" href=\"#\">取消 </a> </div>",
+		 *  type:"code"})	
+	            
+		 * 
+		 */
 		
+		//先检查是否需要输入验证码
+		//如果请求某页面出现验证码，则加上验证码重新请求该链接
+		
+		if(doc.select("img#J_DealCodePic").size() != 0){
+			String checkcodeUrl = doc.select("img#J_DealCodePic").get(0).attr("src");
+			DosCmdUtils.open(checkcodeUrl);
+			Scanner scanner = new Scanner(System.in);
+			System.out.print("请您输入验证码：");
+			verifyCode = scanner.next();
+			return false;
+		}
 		
 		//选择class=tb-list的table下的tbody下的所有tr标签(除了class=tb-change-info)
 		Elements buyerListEls = doc.select("table.tb-list > tbody > tr");
@@ -169,7 +231,6 @@ public class BuyerListService {
 			
 			//tb-sku
 			String size = buyerEl.select("td.tb-sku").text();
-			String sex = SexEnum.unknown;
 
 			BuyerInfo bi = new BuyerInfo();
 			bi.setPayTime(payTime);
@@ -177,6 +238,14 @@ public class BuyerListService {
 			bi.setPrice(price);
 			bi.setSize(size);
 			bi.setHref(buyerHref);
+			bi.setSellerId(sellerId);
+			
+			if(buyerHref != null){
+				ItaobaoPageParser itaobaoPageParser = new ItaobaoPageParser(
+						httpClient, buyerHref);
+				itaobaoPageParser.setBuyerInfo(bi);
+				itaobaoPageParser.parsePage();
+			}
 
 			buyerInfos.add(bi);
 
@@ -187,6 +256,11 @@ public class BuyerListService {
 			log.info("payTime: " + payTime);
 			log.info("size: " + size);
 			log.info("buyer href is: "+buyerHref);
+			log.info("Gender is: "+bi.getSex());
+			log.info("Buyer location is: "+bi.getBuyerAddress());
+			log.info("Buyer rate scoare is: "+bi.getRateScore());
+			
+			ExcelUtil.writeItemBuyerSheet(sheet, bi);
 		}
 		return true;
 	}
@@ -212,12 +286,19 @@ public class BuyerListService {
 		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
 		NameValuePair nvp1 = new BasicNameValuePair("referer",
 				"http://item.taobao.com/item.htm?id="+getSellerIdFromItemDetailPageUrl());
+		NameValuePair nvp2 = new BasicNameValuePair("Host", "detailskip.taobao.com");
 		headers1.add(nvp1);
+		headers1.add(nvp2);
 		get.doGet(headers1);
-		Document doc = getHtmlDocFromJson(get.getResponseAsString());
+		
+		String page = get.getResponseAsString();
+//		log.info("The response from server is: "+page);
+		Document doc = getHtmlDocFromJson(page);
 		get.shutDown();
 		return doc;
 	}
+	
+	
 
 	//get seller id from item detail page url
 	public String getSellerIdFromItemDetailPageUrl(){
@@ -261,13 +342,11 @@ public class BuyerListService {
 			sb.append(tokens[i] + "&");
 		}
 		sb.append(tokens[13]);
-
 		String token = getToken();
-//		log.info("Token is: "+token);
 		String append = "&bidPage="
 				+ pageNum
-//				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+token.substring(0,6)+RandomUtils.getRandomNum(token.length()-6);
-				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+getToken();
+				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+token.substring(0,6)+RandomUtils.getRandomNum(token.length()-6);
+//				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+getToken();
 
 		sb.append(append);
 

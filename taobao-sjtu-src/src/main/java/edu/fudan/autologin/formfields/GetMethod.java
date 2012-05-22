@@ -63,7 +63,6 @@ public class GetMethod {
 		httpget.setHeader("Connection","keep-alive");
 		httpget.setHeader("Accept-Language","zh-CN,zh;q=0.8");
 		httpget.setHeader("Accept-Charset","GBK,utf-8;q=0.7,*;q=0.3");
-		httpget.setHeader("Accept","*/*");
 		try {
 			response = httpclient.execute(httpget);
 		} catch (ClientProtocolException e) {
