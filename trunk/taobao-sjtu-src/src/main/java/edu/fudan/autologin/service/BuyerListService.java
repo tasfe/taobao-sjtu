@@ -74,22 +74,15 @@ public class BuyerListService {
 				log.info("-----------------------------------------------------");
 				log.info("This is buyers of Page NO: " + pageNum);
 				String constructedShowBuyerListUrl = constructShowBuyerListUrl(
-						showBuyerListUrl, pageNum);
-				log.info("Showbuyer ajax url is: "+constructedShowBuyerListUrl);
+						showBuyerListUrl, 4);
 				parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
-
-//				while (parseBuyerListTable(getShowBuyerListDoc(constructShowBuyerListUrl(
-//						showBuyerListUrl, pageNum))) == false) ;
-				
-//				try {
-//					Thread.sleep(Integer.parseInt(RandomUtils.getRandomNum(3)));
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-
 			}
 		}
+
+	}
+	
+	public void testUrl(String url){
+		parseBuyerListTable(getShowBuyerListDoc(url));
 
 	}
 
@@ -107,7 +100,6 @@ public class BuyerListService {
 
 	public void setHttpClient(HttpClient httpClient) {
 		this.httpClient = httpClient;
-//		httpClient = new DefaultHttpClient();
 	}
 
 	public List<BuyerInfo> getBuyerInfos() {
@@ -127,6 +119,9 @@ public class BuyerListService {
 	 * </div>
 	 */
 	public boolean parseBuyerListTable(Document doc) {
+		
+		
+		//选择class=tb-list的table下的tbody下的所有tr标签(除了class=tb-change-info)
 		Elements buyerListEls = doc.select("table.tb-list > tbody > tr");
 		log.info("Element list size is: "+buyerListEls.size());
 		
@@ -137,6 +132,10 @@ public class BuyerListService {
 			//获得第i行
 			Element buyerEl = buyerListEls.get(i);
 
+			//当tr的class=tb-change-info时，跳过
+			if(buyerEl.attr("class").equals("tb-change-info")){
+				continue;
+			}
 			//tb-buyer 
 			Elements buyerInfo = buyerEl.select("td.tb-buyer");
 			String buyerHref = null;
@@ -175,11 +174,13 @@ public class BuyerListService {
 
 			buyerInfos.add(bi);
 
-			log.info("buyer href is: "+buyerHref);
+			log.info("-----------------------------");
+			
 			log.info("price: " + price);
 			log.info("num: " + num);
 			log.info("payTime: " + payTime);
 			log.info("size: " + size);
+			log.info("buyer href is: "+buyerHref);
 		}
 		return true;
 	}
@@ -244,26 +245,25 @@ public class BuyerListService {
 	public String constructShowBuyerListUrl(String showBuyerListUrl, int pageNum) {
 		String delims = "[?&]+";
 		String[] tokens = showBuyerListUrl.split(delims);
-		// System.out.println(tokens.length);
-		// for (int i = 0; i < tokens.length; i++)
-		// System.out.println(tokens[i]);
+//		 System.out.println(tokens.length);
+//		 for (int i = 0; i < tokens.length; i++)
+//		 System.out.println(tokens[i]);
 
 		StringBuffer sb = new StringBuffer();
 		sb.append(tokens[0] + "?");
 		for (int i = 2; i <= 12; ++i) {
 			sb.append(tokens[i] + "&");
 		}
-		sb.append(tokens[14]);
+		sb.append(tokens[13]);
 
 		String token = getToken();
-		log.info("Token is: "+token);
+//		log.info("Token is: "+token);
 		String append = "&bidPage="
 				+ pageNum
 //				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+token.substring(0,6)+RandomUtils.getRandomNum(token.length()-6);
-				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+token;
+				+ "&callback=TShop.mods.DealRecord.reload&closed=false&t="+getToken();
 
 		sb.append(append);
-		System.out.println(sb);
 
 		return sb.toString();
 	}
@@ -276,7 +276,7 @@ public class BuyerListService {
 
 		token = pageStr
 				.substring(base + "sys\":{\"now\":".length(), end);
-		log.info(token);
+//		log.info(token);
 		return token;
 	}
 
