@@ -5,12 +5,9 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -19,15 +16,14 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 
-import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
-import edu.fudan.autologin.main.AutoLogin;
 import edu.fudan.autologin.pageparser.ItaobaoPageParser;
 import edu.fudan.autologin.pageparser.ItemBuyerParser;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
+import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.ItemViewCountService;
@@ -38,7 +34,6 @@ import edu.fudan.autologin.service.SaleSumService;
 import edu.fudan.autologin.service.TaobaoDsDataService;
 import edu.fudan.autologin.service.WeekSaleService;
 import edu.fudan.autologin.utils.PostUtils;
-import edu.fudan.autologin.utils.PrintUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
@@ -52,7 +47,9 @@ public class ItemDetailPageParserTest {
 	public void execute(){
 //		testItemDetailPage();
 //		testWeekSaleNumServie();
-		testUserRate();
+//		testUserRate();
+		
+		testBuyerListService();
 	
 	}
 	
@@ -237,19 +234,19 @@ public class ItemDetailPageParserTest {
 	
 	public void testBuyerListService() {
 		autoLogin();
-		String itemPageUrl = "http://item.taobao.com/item.htm?id=16016896217";
+		String itemPageUrl = "http://item.taobao.com/item.htm?id=8145925504";
 		BuyerListService buyerListService = new BuyerListService();
 		buyerListService.setHttpClient(httpClient);
-		buyerListService
-				.setItemPageUrl(itemPageUrl);
-		
+		buyerListService.setItemPageUrl(itemPageUrl);
+
+		List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
+		buyerListService.setBuyerInfos(buyerInfos);
 		SaleSumService saleSumService = new SaleSumService();
 		saleSumService.setHttpClient(httpClient);
 		saleSumService.setItemPageUrl(itemPageUrl);
 		saleSumService.execute();
-		log.info("Sale sum is: "+saleSumService.getSaleSum());	
-		
-		
+		log.info("Sale sum is: " + saleSumService.getSaleSum());
+
 		buyerListService.setBuyerSum(saleSumService.getSaleSum());
 		buyerListService.execute();
 	}
