@@ -40,29 +40,18 @@ public class MonthService {
 		this.userRatePageUrl = userRatePageUrl;
 	}
 
-	public HttpClient getHttpClient() {
-		return httpClient;
-	}
 
-	public void setHttpClient(HttpClient httpClient) {
-//		this.httpClient = httpClient;
-		this.httpClient = new DefaultHttpClient();
-	}
-
-	private HttpClient httpClient;
+	private HttpClient httpClient = new DefaultHttpClient();
 
 	private String monthuserid;
 	private String userTag;
 	private String isB2C;
 
 	public void execute() {
-		log.info("User rate page url is: " + this.userRatePageUrl);
 		getFieldsFromPage();
 		String json = getJsonString(getPlainJson());
 		parseJson(json);
-		
-
-		this.httpClient.getConnectionManager().shutdown();
+		httpClient.getConnectionManager().shutdown();
 	}
 
 	public String getPlainJson() {
@@ -94,38 +83,35 @@ public class MonthService {
 	public void getFieldsFromPage() {
 		GetMethod get = new GetMethod(httpClient, userRatePageUrl);
 		get.doGet();
-
 		String tmp = get.getResponseAsString();
 		get.shutDown();
 		
 		Document doc = Jsoup.parse(tmp);
 
-		Element monthuseridEle = doc.select("input#monthuserid").get(0);
-		monthuserid = monthuseridEle.attr("value");
+		if(doc.select("input#monthuserid").size() == 0){
+			log.info("There is no monthuserid in the page.");
+		}else{
+			Element monthuseridEle = doc.select("input#monthuserid").get(0);
+			monthuserid = monthuseridEle.attr("value");
+		}
 		log.info("Monthuserid is: " + monthuserid);
 
-		// Elements monthuseridEles = doc.select("input#monthuserid");
-		//
-		// for(Element e : monthuseridEles){
-		// monthuserid = e.attr("value");
-		// log.info("Monthuserid is: "+monthuserid);
-		// }
-
-		Elements userTagEles = doc.select("input#userTag");
-
-		for (Element e : userTagEles) {
-			userTag = e.attr("value");
-			log.info("UserTag is: " + userTag);
+		if(doc.select("input#userTag").size() == 0){
+			log.info("There is no user tag in the page.");
+		}else{
+			Element userTagEle = doc.select("input#userTag").get(0);
+			userTag = userTagEle.attr("value");
+			
 		}
+		log.info("UserTag is: " + userTag);
 
-		Elements isB2CEles = doc.select("input#isB2C");
-
-		for (Element e : isB2CEles) {
-			isB2C = e.attr("value").toString();
-			log.info("IsB2C is: " + isB2C);
+		if(doc.select("input#isB2C").size() == 0){
+			log.info("There is no B2C in the page.");
+		}else{
+			Element isB2CEle = doc.select("input#isB2C").get(0);
+			isB2C = isB2CEle.attr("value");
 		}
-
-		get.shutDown();
+		log.info("IsB2C is: " + isB2C);
 	}
 
 	public String constructMonthServiceAjaxUrl() {

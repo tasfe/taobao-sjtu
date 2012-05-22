@@ -249,7 +249,6 @@ public class UserRatePageParser extends BasePageParser {
 			// punishmentScoreEls.get(3).ownText();
 			// log.info("punishmentScore: " + punishmentScore);
 			MonthService monthService = new MonthService();
-			monthService.setHttpClient(this.getHttpClient());
 			monthService.setUserRatePageUrl(this.getPageUrl());
 			monthService.execute();
 			sellerRateInfo.setRefundmentScore(monthService
