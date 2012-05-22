@@ -222,7 +222,7 @@ public class MainTest {
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
 					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
-			WritableSheet sh = wbook.getSheet("ItemDetailSheet");// 得到一个工作对象
+			WritableSheet sh = wbook.getSheet("BuyerInfoSheet");// 得到一个工作对象
 
 			// sheet.getRows()返回该页的总行数
 			for (int i = start; i <= end; i++) {
