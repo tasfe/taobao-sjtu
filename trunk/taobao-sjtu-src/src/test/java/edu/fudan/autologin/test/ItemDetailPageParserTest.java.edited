@@ -47,9 +47,14 @@ public class ItemDetailPageParserTest {
 	public void execute(){
 //		testItemDetailPage();
 //		testWeekSaleNumServie();
+<<<<<<< .mine
+//		testUserRate();
+		testMonthService();
+=======
 //		testUserRate();
 		
 		testBuyerListService();
+>>>>>>> .r119
 	
 	}
 	
@@ -170,7 +175,7 @@ public class ItemDetailPageParserTest {
 	public void testMonthService() {
 		MonthService monthService = new MonthService();
 		monthService
-				.setUserRatePageUrl("http://rate.taobao.com/user-rate-47ee874a0427f2bc729bb869d78ff8c6.htm?spm=2013.1.1000126.5");
+				.setUserRatePageUrl("http://rate.taobao.com/user-rate-54e4580bf44cf21f1ca4a355cc4dfc8d.htm?spm=2013.1.1000126.5");
 		monthService.execute();
 	}
 	

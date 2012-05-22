@@ -138,6 +138,7 @@ public class MainTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
+//		userRateProcess(1050, 1500);
 		int cnt = 10;// 每次处理的sheet记录条数
 
 //		itemSum = 5;
@@ -214,7 +215,7 @@ public class MainTest {
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
-			Sheet searchResultSheet = workbook.getSheet("ItemDetailSheet");
+			Sheet itemDetailSheet = workbook.getSheet("ItemDetailSheet");
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
 					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
@@ -223,6 +224,16 @@ public class MainTest {
 			// sheet.getRows()返回该页的总行数
 			for (int i = start; i <= end; i++) {
 				HttpClient tmp = new DefaultHttpClient();
+<<<<<<< .mine
+				log.info("--------------------------------------------------------------------------------------------------------------");
+				log.info("This is the item process no: "+i);
+				log.info("User rate href is: "+itemDetailSheet.getCell(13, i).getContents());
+				log.info("Seller id is: "+itemDetailSheet
+						.getCell(0, i).getContents());
+				UserRatePageParser userRatePageParser = new UserRatePageParser(tmp, itemDetailSheet.getCell(13, i).getContents());
+				userRatePageParser.setSellerId(itemDetailSheet
+						.getCell(0, i).getContents());
+=======
 
 				String userRateHref = searchResultSheet.getCell(13, i)
 						.getContents();
@@ -232,12 +243,17 @@ public class MainTest {
 				UserRatePageParser userRatePageParser = new UserRatePageParser(
 						tmp, userRateHref);
 				userRatePageParser.setSellerId(sellerId);
+>>>>>>> .r119
 				userRatePageParser.parsePage();
 				userRatePageParser.writeExcel(sh);
+<<<<<<< .mine
+				
+=======
 				log.info("--------------------------------------------------------------------------------------------------------------");
 				log.info("This is the item process no: " + i);
 				log.info("Seller id is: "+sellerId);
 				log.info("User rate href is: "+userRateHref);
+>>>>>>> .r119
 				tmp.getConnectionManager().shutdown();
 			}
 
@@ -281,7 +297,27 @@ public class MainTest {
 
 		}
 		log.info("Item sum is: "+itemSum);
-		itemDetailProcess(151, 500);
+<<<<<<< .mine
+		int cnt = 10;//每次处理的sheet记录条数
+		itemDetailProcess(1,500);
+//		itemSum = 200;
+//		int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1;
+//		//普通数码相机专业单反相机数码摄像机
+//		log.info("Num of processes is: "+numOfProcess);
+//		int start = 0;
+//		int end = 0;
+//		for(int i = 1; i <= numOfProcess; ++i){
+//			start = (i - 1)*cnt + 1;
+//			if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
+//				end = itemSum;
+//			}else{
+//				end = start + cnt;
+//			}
+//			itemDetailProcess(start, end);
+//		}
+//		
+=======
+		itemDetailProcess(501, 1000);
 //		int cnt = 10;//每次处理的sheet记录条数
 //		
 //		int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1;
@@ -299,6 +335,7 @@ public class MainTest {
 //			itemDetailProcess(start, end);
 //		}
 		
+>>>>>>> .r119
 	}
 
 	public void task2() {
