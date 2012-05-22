@@ -163,8 +163,10 @@ public class MainTest {
 //		autoLogin();
 //		 task1();
 //		 task2();
-		task3();
+//		task3();
 //		 task4();
+		autoLogin();
+		task5();
 	}
 
 	public void itemDetailProcess(int start, int end) {
@@ -213,7 +215,7 @@ public class MainTest {
 
 	public void itemBuyerProcess(int start, int end) {
 		try {
-			autoLogin();
+		
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
@@ -381,7 +383,7 @@ public class MainTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemDetailProcess(501, 1000);
+		itemBuyerProcess(1, 1);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +
