@@ -139,8 +139,17 @@ public class ItemDetailPageParser extends BasePageParser {
 			// service type
 			String serviceType = "";
 			links = itemPro.select("dl.tb-featured-services a");
+			int i = 0;
 			for (Element link : links) {
-				serviceType += link.ownText();
+				serviceType += link.attr("title");
+				if(i == (links.size()-1)){
+					
+				}else{
+					serviceType +=",";
+				}
+				
+				++i;
+				
 			}
 			log.info("serviceType: " + serviceType);
 			itemInfo.setServiceType(serviceType);
