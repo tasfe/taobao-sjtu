@@ -6,7 +6,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.service.TaobaoDsDataService;
@@ -33,7 +32,7 @@ public class ItaobaoPageParser extends BasePageParser {
 		log.info("Start to parse Itaobao page.");
 		String targetUrl = getAjaxUrl();
 		
-		GetMethod get = new GetMethod(this.getHttpClient(), targetUrl);
+		GetMethod get = new GetMethod(httpClient, targetUrl);
 		get.doGet();
 		String getStr = get.getResponseAsString();
 		get.shutDown();

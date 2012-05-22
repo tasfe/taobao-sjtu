@@ -16,6 +16,7 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 
+import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pageparser.ItaobaoPageParser;
 import edu.fudan.autologin.pageparser.ItemBuyerParser;
@@ -121,9 +122,9 @@ public class ItemDetailPageParserTest {
 
 	public void testItemDetailPage(){
 //		autoLogin();
-		String pageUrl = "http://item.taobao.com/item.htm?id=15876676995";
+		String pageUrl = "http://item.taobao.com/item.htm?id=14730950078";
 		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, pageUrl);
-		itemDetailPageParser.execute();
+		itemDetailPageParser.parsePage();
 	}
 	public void testItaobaoPageParser(){
 	

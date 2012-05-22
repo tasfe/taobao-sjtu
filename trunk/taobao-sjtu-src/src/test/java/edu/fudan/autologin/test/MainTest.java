@@ -34,11 +34,14 @@ import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
 import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
+import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.SellerInSearchResult;
 import edu.fudan.autologin.pojos.TaobaoDataSet;
 import edu.fudan.autologin.pojos.TopTenItemInfo;
+import edu.fudan.autologin.service.BuyerListService;
+import edu.fudan.autologin.service.SaleSumService;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
@@ -116,9 +119,7 @@ public class MainTest {
 	 */
 
 	// open TopTenSheet and get toptenItemInfo
-
 	// user rate task
-
 	public void task4() {
 		int itemSum = 0;// the sum of the items in the search result sheet
 		try {
@@ -166,7 +167,7 @@ public class MainTest {
 //		 task4();
 	}
 
-	public void itemDetailProcess(int start, int end){
+	public void itemDetailProcess(int start, int end) {
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
@@ -184,7 +185,7 @@ public class MainTest {
 				itemDetailPageParser.setSellerId(searchResultSheet
 						.getCell(0, i).getContents());
 				log.info("--------------------------------------------------------------------------------------------------------------");
-				log.info("This is the item process no: "+i);
+				log.info("This is the item process no: " + i);
 				itemDetailPageParser.parsePage();
 				itemDetailPageParser.writeExcel(sh);
 				tmp.getConnectionManager().shutdown();
@@ -195,7 +196,65 @@ public class MainTest {
 				wbook.close();
 			} catch (WriteException e) {
 				e.printStackTrace();
-				log.error("Write excel exception. "+e.getMessage());
+				log.error("Write excel exception. " + e.getMessage());
+			}
+			workbook.close();
+
+		} catch (BiffException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} finally {
+
+		}
+	}
+
+	public void itemBuyerProcess(int start, int end) {
+		try {
+			autoLogin();
+			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
+
+			WritableWorkbook wbook = Workbook.createWorkbook(new File(
+					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
+			WritableSheet sh = wbook.getSheet("ItemDetailSheet");// 得到一个工作对象
+
+			// sheet.getRows()返回该页的总行数
+			for (int i = start; i <= end; i++) {
+				HttpClient tmp = new DefaultHttpClient();
+				String itemDetailHref = searchResultSheet.getCell(18, i)
+						.getContents();
+				String sellerId = searchResultSheet.getCell(0, i).getContents();
+				
+				
+				BuyerListService buyerListService = new BuyerListService();
+				buyerListService.setHttpClient(httpClient);
+				buyerListService.setItemPageUrl(itemDetailHref);
+				List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
+				buyerListService.setBuyerInfos(buyerInfos);
+				buyerListService.setSellerId(sellerId);
+				buyerListService.setSheet(sh);
+				
+				SaleSumService saleSumService = new SaleSumService();
+				saleSumService.setHttpClient(httpClient);
+				saleSumService.setItemPageUrl(itemDetailHref);
+				saleSumService.execute();
+
+				buyerListService.setBuyerSum(saleSumService.getSaleSum());
+				buyerListService.execute();
+				
+				tmp.getConnectionManager().shutdown();
+			}
+
+			wbook.write();
+			try {
+				wbook.close();
+			} catch (WriteException e) {
+				e.printStackTrace();
+				log.error("Write excel exception. " + e.getMessage());
 			}
 			workbook.close();
 
@@ -261,15 +320,15 @@ public class MainTest {
 		}
 	}
 	
-	//write item detail records
+	// write item detail records
 	public void task3() {
-		int itemSum = 0;//the sum of the items in the search result sheet
+		int itemSum = 0;// the sum of the items in the search result sheet
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows();//getRows返回的是记录行数
-			
+			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
+
 			workbook.close();
 		} catch (BiffException e) {
 			e.printStackTrace();
@@ -280,27 +339,70 @@ public class MainTest {
 		} finally {
 
 		}
-		log.info("Item sum is: "+itemSum);
+		log.info("Item sum is: " + itemSum);
 		itemDetailProcess(151, 500);
-//		int cnt = 10;//每次处理的sheet记录条数
-//		
-//		int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1;
-//		//普通数码相机专业单反相机数码摄像机
-//		log.info("Num of processes is: "+numOfProcess);
-//		int start = 0;
-//		int end = 0;
-//		for(int i = 1; i <= numOfProcess; ++i){
-//			start = (i - 1)*cnt + 1;
-//			if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
-//				end = itemSum;
-//			}else{
-//				end = start + cnt;
-//			}
-//			itemDetailProcess(start, end);
-//		}
-		
+		// int cnt = 10;//每次处理的sheet记录条数
+		//
+		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +
+		// 1;
+		// //普通数码相机专业单反相机数码摄像机
+		// log.info("Num of processes is: "+numOfProcess);
+		// int start = 0;
+		// int end = 0;
+		// for(int i = 1; i <= numOfProcess; ++i){
+		// start = (i - 1)*cnt + 1;
+		// if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
+		// end = itemSum;
+		// }else{
+		// end = start + cnt;
+		// }
+		// itemDetailProcess(start, end);
+		// }
+
 	}
 
+	// buyer info task
+	public void task5() {
+		int itemSum = 0;// the sum of the items in the search result sheet
+		try {
+			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
+			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
+
+			workbook.close();
+		} catch (BiffException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} finally {
+
+		}
+		log.info("Item sum is: " + itemSum);
+		itemDetailProcess(501, 1000);
+		// int cnt = 10;//每次处理的sheet记录条数
+		//
+		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +
+		// 1;
+		// //普通数码相机专业单反相机数码摄像机
+		// log.info("Num of processes is: "+numOfProcess);
+		// int start = 0;
+		// int end = 0;
+		// for(int i = 1; i <= numOfProcess; ++i){
+		// start = (i - 1)*cnt + 1;
+		// if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
+		// end = itemSum;
+		// }else{
+		// end = start + cnt;
+		// }
+		// itemDetailProcess(start, end);
+		// }
+
+	}
+
+	//search result process
 	public void task2() {
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
@@ -344,6 +446,8 @@ public class MainTest {
 		}
 	}
 
+	
+	//top ten task
 	public void task1() {
 
 		ExcelUtil.prepare();

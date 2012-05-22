@@ -939,6 +939,32 @@ public class ExcelUtil {
 			}
 //		}
 	}
+	
+	public static void writeItemBuyerSheet(WritableSheet sheet, BuyerInfo buyerInfo) {
+			Label l0 = new Label(0, sheet.getRows(), buyerInfo.getSellerId());
+			Label l1 = new Label(1, sheet.getRows(), buyerInfo.getPrice() + "");
+			Label l2 = new Label(2, sheet.getRows(), buyerInfo.getNum() + "");
+			Label l3 = new Label(3, sheet.getRows(), buyerInfo.getPayTime());
+			Label l4 = new Label(4, sheet.getRows(), buyerInfo.getSize());
+			Label l5 = new Label(5, sheet.getRows(), buyerInfo.getRateScore() + "");
+			Label l6 = new Label(6, sheet.getRows(), buyerInfo.getBuyerAddress() + "");
+			Label l7 = new Label(7, sheet.getRows(), buyerInfo.getSex() + "");
+			try {
+
+				sheet.addCell(l0);
+				sheet.addCell(l1);
+				sheet.addCell(l2);
+				sheet.addCell(l3);
+				sheet.addCell(l4);
+				sheet.addCell(l5);
+				sheet.addCell(l6);
+				sheet.addCell(l7);
+			} catch (RowsExceededException e) {
+				e.printStackTrace();
+			} catch (WriteException e) {
+				e.printStackTrace();
+			}
+	}
 
 	// write records into spreadsheet before close workbook
 	public static void closeWorkbook() {
