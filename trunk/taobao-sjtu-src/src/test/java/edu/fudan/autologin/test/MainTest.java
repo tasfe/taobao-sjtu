@@ -140,22 +140,21 @@ public class MainTest {
 		log.info("Item sum is: " + itemSum);
 		int cnt = 10;// 每次处理的sheet记录条数
 
-		userRateProcess(346, 349);
 //		itemSum = 5;
-//		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
-//				+ 1;
-//		log.info("Num of processes is: " + numOfProcess);
-//		int start = 0;
-//		int end = 0;
-//		for (int i = 1; i <= numOfProcess; ++i) {
-//			start = (i - 1) * cnt + 1;
-//			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
-//				end = itemSum;
-//			} else {
-//				end = start + cnt;
-//			}
-//			userRateProcess(start, end);
-//		}
+		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
+				+ 1;
+		log.info("Num of processes is: " + numOfProcess);
+		int start = 0;
+		int end = 0;
+		for (int i = 1; i <= numOfProcess; ++i) {
+			start = (i - 1) * cnt + 1;
+			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
+				end = itemSum;
+			} else {
+				end = start + cnt;
+			}
+			userRateProcess(start, end);
+		}
 	}
 
 	@Test
@@ -163,8 +162,8 @@ public class MainTest {
 //		autoLogin();
 //		 task1();
 //		 task2();
-//		task3();
-		 task4();
+		task3();
+//		 task4();
 	}
 
 	public void itemDetailProcess(int start, int end){
@@ -282,23 +281,23 @@ public class MainTest {
 
 		}
 		log.info("Item sum is: "+itemSum);
-		int cnt = 10;//每次处理的sheet记录条数
-		
-		itemSum = 200;
-		int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1;
-		//普通数码相机专业单反相机数码摄像机
-		log.info("Num of processes is: "+numOfProcess);
-		int start = 0;
-		int end = 0;
-		for(int i = 1; i <= numOfProcess; ++i){
-			start = (i - 1)*cnt + 1;
-			if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
-				end = itemSum;
-			}else{
-				end = start + cnt;
-			}
-			itemDetailProcess(start, end);
-		}
+		itemDetailProcess(501, 1000);
+//		int cnt = 10;//每次处理的sheet记录条数
+//		
+//		int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt + 1;
+//		//普通数码相机专业单反相机数码摄像机
+//		log.info("Num of processes is: "+numOfProcess);
+//		int start = 0;
+//		int end = 0;
+//		for(int i = 1; i <= numOfProcess; ++i){
+//			start = (i - 1)*cnt + 1;
+//			if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
+//				end = itemSum;
+//			}else{
+//				end = start + cnt;
+//			}
+//			itemDetailProcess(start, end);
+//		}
 		
 	}
 
