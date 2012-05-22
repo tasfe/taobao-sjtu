@@ -10,8 +10,8 @@ public class BuyerInfo {
 	private int num;
 	private String payTime;
 	private String size;
-	private int rateScore;
-	private String buyerAddress;
+	private int rateScore = 0;
+	private String buyerAddress = "0";
 	
 	private String href;//买家个人信息页面地址
 	
@@ -69,5 +69,5 @@ public class BuyerInfo {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	private String sex;
+	private String sex = "0";
 }
