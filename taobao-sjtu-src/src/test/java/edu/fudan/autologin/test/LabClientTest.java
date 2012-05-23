@@ -255,6 +255,12 @@ public class LabClientTest {
 				buyerListService.execute();
 
 				tmp.getConnectionManager().shutdown();
+				
+				try {
+					Thread.sleep(0);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 
 			wbook.write();
@@ -290,21 +296,25 @@ public class LabClientTest {
 			// sheet.getRows()返回该页的总行数
 			for (int i = start; i <= end; i++) {
 				HttpClient tmp = new DefaultHttpClient();
-
 				String userRateHref = searchResultSheet.getCell(13, i)
 						.getContents();
 				String sellerId = searchResultSheet.getCell(0, i).getContents();
-
+				log.info("--------------------------------------------------------------------------------------------------------------");
+				log.info("This is the item process no: " + i);
+				log.info("Seller id is: " + sellerId);
+				log.info("User rate href is: " + userRateHref);
 				UserRatePageParser userRatePageParser = new UserRatePageParser(
 						tmp, userRateHref);
 				userRatePageParser.setSellerId(sellerId);
 				userRatePageParser.parsePage();
 				userRatePageParser.writeExcel(sh);
-				log.info("--------------------------------------------------------------------------------------------------------------");
-				log.info("This is the item process no: " + i);
-				log.info("Seller id is: " + sellerId);
-				log.info("User rate href is: " + userRateHref);
 				tmp.getConnectionManager().shutdown();
+				try {
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
 			wbook.write();
@@ -388,7 +398,7 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemBuyerProcess(1, 1);
+		itemBuyerProcess(1, 500);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +
