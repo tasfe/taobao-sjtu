@@ -40,7 +40,6 @@ public class MonthService {
 		this.userRatePageUrl = userRatePageUrl;
 	}
 
-
 	private HttpClient httpClient = new DefaultHttpClient();
 
 	private String monthuserid;
@@ -55,22 +54,33 @@ public class MonthService {
 	}
 
 	public String getPlainJson() {
-		GetMethod get = new GetMethod(httpClient,
-				constructMonthServiceAjaxUrl());
+
+		String ajaxUrl = constructMonthServiceAjaxUrl();
+		GetMethod get = new GetMethod(httpClient, ajaxUrl);
 		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
-		NameValuePair nvp1 = new BasicNameValuePair("Accept", "application/json");
+		NameValuePair nvp1 = new BasicNameValuePair("Accept",
+				"application/json");
 		headers1.add(nvp1);
 		get.doGet(headers1);
 		String plainJson = get.getResponseAsString().trim();
 		get.shutDown();
-		
-		//当服务器拒绝链接返回错误信息时处理
-		while(plainJson.contains("alldata") == false){
-			 get = new GetMethod(httpClient,
-						constructMonthServiceAjaxUrl());
-			 get.doGet(headers1);
-			 plainJson = get.getResponseAsString().trim();
-			 get.shutDown();
+
+		int base = 10000;
+		int cnt = 1;
+
+		// 当服务器拒绝链接返回错误信息时处理
+		while (plainJson.contains("alldata") == false) {
+			try {
+				log.info("Start to wait for "+base*cnt);
+				Thread.sleep(base * cnt++);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				log.error(e.getMessage());
+			}
+			get = new GetMethod(httpClient, ajaxUrl);
+			get.doGet(headers1);
+			plainJson = get.getResponseAsString().trim();
+			get.shutDown();
 		}
 		log.info("Plain json string of month service from server is: "
 				+ plainJson);
@@ -82,7 +92,7 @@ public class MonthService {
 		int begin = str.indexOf("{");
 		int end = str.lastIndexOf("}");
 
-		log.info("Json string is: "+str);
+		log.info("Json string is: " + str);
 		return str.substring(begin, end + 1);
 	}
 
@@ -91,29 +101,29 @@ public class MonthService {
 		get.doGet();
 		String tmp = get.getResponseAsString();
 		get.shutDown();
-		
+
 		Document doc = Jsoup.parse(tmp);
 
-		if(doc.select("input#monthuserid").size() == 0){
+		if (doc.select("input#monthuserid").size() == 0) {
 			log.info("There is no monthuserid in the page.");
-		}else{
+		} else {
 			Element monthuseridEle = doc.select("input#monthuserid").get(0);
 			monthuserid = monthuseridEle.attr("value");
 		}
 		log.info("Monthuserid is: " + monthuserid);
 
-		if(doc.select("input#userTag").size() == 0){
+		if (doc.select("input#userTag").size() == 0) {
 			log.info("There is no user tag in the page.");
-		}else{
+		} else {
 			Element userTagEle = doc.select("input#userTag").get(0);
 			userTag = userTagEle.attr("value");
-			
+
 		}
 		log.info("UserTag is: " + userTag);
 
-		if(doc.select("input#isB2C").size() == 0){
+		if (doc.select("input#isB2C").size() == 0) {
 			log.info("There is no B2C in the page.");
-		}else{
+		} else {
 			Element isB2CEle = doc.select("input#isB2C").get(0);
 			isB2C = isB2CEle.attr("value");
 		}
@@ -127,7 +137,7 @@ public class MonthService {
 		ajaxUrl = baseUrl + "monthuserid=" + monthuserid + "&userTag="
 				+ userTag + "&isB2C=" + isB2C;
 
-		log.info("Month service ajax url is: "+ajaxUrl);
+		log.info("Month service ajax url is: " + ajaxUrl);
 		return ajaxUrl;
 	}
 
