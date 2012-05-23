@@ -107,7 +107,7 @@ public class BuyerListService {
 				
 				
 				try {
-					Thread.sleep(0);
+					Thread.sleep(10);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
