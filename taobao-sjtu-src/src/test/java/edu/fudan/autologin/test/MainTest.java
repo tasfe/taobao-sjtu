@@ -141,7 +141,7 @@ public class MainTest {
 		log.info("Item sum is: " + itemSum);
 		int cnt = 10;// 每次处理的sheet记录条数
 
-//		itemSum = 5;
+		// itemSum = 5;
 		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
 				+ 1;
 		log.info("Num of processes is: " + numOfProcess);
@@ -160,13 +160,13 @@ public class MainTest {
 
 	@Test
 	public void task() {
-//		autoLogin();
-//		 task1();
-//		 task2();
-//		task3();
-//		 task4();
-		autoLogin();
-		task5();
+		// autoLogin();
+		// task1();
+		// task2();
+		task3();
+		// task4();
+		// autoLogin();
+		// task5();
 	}
 
 	public void itemDetailProcess(int start, int end) {
@@ -191,6 +191,13 @@ public class MainTest {
 				itemDetailPageParser.parsePage();
 				itemDetailPageParser.writeExcel(sh);
 				tmp.getConnectionManager().shutdown();
+
+				try {
+					Thread.sleep(0);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					log.error(e.getMessage());
+				}
 			}
 
 			wbook.write();
@@ -215,7 +222,7 @@ public class MainTest {
 
 	public void itemBuyerProcess(int start, int end) {
 		try {
-		
+
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
@@ -230,8 +237,7 @@ public class MainTest {
 				String itemDetailHref = searchResultSheet.getCell(18, i)
 						.getContents();
 				String sellerId = searchResultSheet.getCell(0, i).getContents();
-				
-				
+
 				BuyerListService buyerListService = new BuyerListService();
 				buyerListService.setHttpClient(httpClient);
 				buyerListService.setItemPageUrl(itemDetailHref);
@@ -239,7 +245,7 @@ public class MainTest {
 				buyerListService.setBuyerInfos(buyerInfos);
 				buyerListService.setSellerId(sellerId);
 				buyerListService.setSheet(sh);
-				
+
 				SaleSumService saleSumService = new SaleSumService();
 				saleSumService.setHttpClient(httpClient);
 				saleSumService.setItemPageUrl(itemDetailHref);
@@ -247,7 +253,7 @@ public class MainTest {
 
 				buyerListService.setBuyerSum(saleSumService.getSaleSum());
 				buyerListService.execute();
-				
+
 				tmp.getConnectionManager().shutdown();
 			}
 
@@ -270,7 +276,7 @@ public class MainTest {
 
 		}
 	}
-	
+
 	public void userRateProcess(int start, int end) {
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
@@ -288,8 +294,7 @@ public class MainTest {
 				String userRateHref = searchResultSheet.getCell(13, i)
 						.getContents();
 				String sellerId = searchResultSheet.getCell(0, i).getContents();
-				
-				
+
 				UserRatePageParser userRatePageParser = new UserRatePageParser(
 						tmp, userRateHref);
 				userRatePageParser.setSellerId(sellerId);
@@ -297,8 +302,8 @@ public class MainTest {
 				userRatePageParser.writeExcel(sh);
 				log.info("--------------------------------------------------------------------------------------------------------------");
 				log.info("This is the item process no: " + i);
-				log.info("Seller id is: "+sellerId);
-				log.info("User rate href is: "+userRateHref);
+				log.info("Seller id is: " + sellerId);
+				log.info("User rate href is: " + userRateHref);
 				tmp.getConnectionManager().shutdown();
 			}
 
@@ -321,7 +326,7 @@ public class MainTest {
 
 		}
 	}
-	
+
 	// write item detail records
 	public void task3() {
 		int itemSum = 0;// the sum of the items in the search result sheet
@@ -342,20 +347,20 @@ public class MainTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemDetailProcess(151, 500);
-		// int cnt = 10;//每次处理的sheet记录条数
+		itemDetailProcess(1001, 1200);
+		// int cnt = 10;// 每次处理的sheet记录条数
 		//
-		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +
-		// 1;
-		// //普通数码相机专业单反相机数码摄像机
-		// log.info("Num of processes is: "+numOfProcess);
+		// int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
+		// + 1;
+		// // 普通数码相机专业单反相机数码摄像机
+		// log.info("Num of processes is: " + numOfProcess);
 		// int start = 0;
 		// int end = 0;
-		// for(int i = 1; i <= numOfProcess; ++i){
-		// start = (i - 1)*cnt + 1;
-		// if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
+		// for (int i = 1; i <= numOfProcess; ++i) {
+		// start = (i - 1) * cnt + 1;
+		// if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
 		// end = itemSum;
-		// }else{
+		// } else {
 		// end = start + cnt;
 		// }
 		// itemDetailProcess(start, end);
@@ -383,7 +388,7 @@ public class MainTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemBuyerProcess(1, 1);
+		itemBuyerProcess(2, 30);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +
@@ -404,25 +409,23 @@ public class MainTest {
 
 	}
 
-	//search result process
+	// search result process
 	public void task2() {
 		try {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet topTenSheet = workbook.getSheet("TopTenSheet");
-			
+
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
 					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
 			WritableSheet sh = wbook.getSheet("SearchReaultSheet");// 得到一个工作对象
 
-
 			// sheet.getRows()返回该页的总行数
 			for (int i = 1; i < topTenSheet.getRows(); i++) {
 				SearchResultPageParser searchResultPageParser = new SearchResultPageParser(
-						httpClient, topTenSheet.getCell(5, i)
-						.getContents());
-				searchResultPageParser.setCategoryName(topTenSheet.getCell(0, i)
-						.getContents());
+						httpClient, topTenSheet.getCell(5, i).getContents());
+				searchResultPageParser.setCategoryName(topTenSheet
+						.getCell(0, i).getContents());
 				log.info("--------------------------------------------------------------------------------------------------------------");
 				searchResultPageParser.parsePage();
 				searchResultPageParser.writeExcel(sh);
@@ -448,8 +451,7 @@ public class MainTest {
 		}
 	}
 
-	
-	//top ten task
+	// top ten task
 	public void task1() {
 
 		ExcelUtil.prepare();
