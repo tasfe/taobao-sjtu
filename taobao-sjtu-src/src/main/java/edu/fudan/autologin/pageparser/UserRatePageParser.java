@@ -56,6 +56,7 @@ public class UserRatePageParser extends BasePageParser {
 		log.info("Start to parse page " + pageUrl);
 
 		if (pageUrl == null || pageUrl.equals("")) {
+			sellerRateInfo.setSellerId(sellerId);
 			log.info("There is no user rate url.");
 		} else {
 			getPage(pageUrl);
