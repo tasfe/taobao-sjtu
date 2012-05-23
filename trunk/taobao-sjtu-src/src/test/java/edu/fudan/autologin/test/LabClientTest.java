@@ -46,7 +46,7 @@ import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
-public class MainTest {
+public class LabClientTest {
 	private static final Logger log = Logger.getLogger(MainTest.class);
 	private HttpClient httpClient;
 

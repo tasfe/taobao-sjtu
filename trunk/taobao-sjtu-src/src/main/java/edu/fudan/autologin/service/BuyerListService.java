@@ -98,18 +98,9 @@ public class BuyerListService {
 						showBuyerListUrl, pageNum);
 				
 				Document doc = getShowBuyerListDoc(constructedShowBuyerListUrl);
+				
 				while( parseBuyerListTable(doc) == false){
-					constructedShowBuyerListUrl = constructShowBuyerListUrl(
-							showBuyerListUrl, pageNum);
-					
 					doc = getShowBuyerListDoc(constructedShowBuyerListUrl+"&&code="+verifyCode);
-				}
-				
-				
-				try {
-					Thread.sleep(10);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
 				}
 				
 				//因为触发了验证码机制，所以无法请求后面的页面
@@ -181,6 +172,8 @@ public class BuyerListService {
 		//如果请求某页面出现验证码，则加上验证码重新请求该链接
 		
 		if(doc.select("img#J_DealCodePic").size() != 0){
+			
+//			当出现验证码的时候，可适当的等待时间再
 			String checkcodeUrl = doc.select("img#J_DealCodePic").get(0).attr("src");
 			DosCmdUtils.open(checkcodeUrl);
 			Scanner scanner = new Scanner(System.in);
