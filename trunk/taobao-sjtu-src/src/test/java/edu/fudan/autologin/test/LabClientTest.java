@@ -163,10 +163,10 @@ public class LabClientTest {
 		// autoLogin();
 		// task1();
 		// task2();
-//		task3();
+		task3();
 		// task4();
-		 autoLogin();
-		 task5();
+//		 autoLogin();
+//		 task5();
 	}
 
 	public void itemDetailProcess(int start, int end) {
@@ -233,6 +233,11 @@ public class LabClientTest {
 
 			// sheet.getRows()返回该页的总行数
 			for (int i = start; i <= end; i++) {
+				
+				log.info("--------------------------------------------------------------------------------------------------------------");
+				log.info("This is the item process no: " + i);
+				
+				
 				HttpClient tmp = new DefaultHttpClient();
 				String itemDetailHref = searchResultSheet.getCell(18, i)
 						.getContents();
@@ -357,7 +362,7 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemDetailProcess(1001, 1200);
+		itemDetailProcess(1001, itemSum);
 		// int cnt = 10;// 每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
@@ -398,7 +403,7 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemBuyerProcess(1, 500);
+		itemBuyerProcess(101, 150);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +

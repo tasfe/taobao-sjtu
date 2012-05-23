@@ -91,8 +91,6 @@ public class BuyerListService {
 				pageSum = 100;
 			}
 			log.info("Total page num is: " + pageSum);
-			int base = 1 * 1000;
-			int cnt = 1;
 			for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
 				log.info("-----------------------------------------------------");
 				log.info("This is buyers of Page NO: " + pageNum);
@@ -101,9 +99,14 @@ public class BuyerListService {
 
 				Document doc = getShowBuyerListDoc(constructedShowBuyerListUrl);
 
+				
+				if(doc == null)
+					continue;
 				while (parseBuyerListTable(doc) == false) {
 					doc = getShowBuyerListDoc(constructedShowBuyerListUrl
 							+ "&&code=" + verifyCode);
+					if(doc == null)
+						break;
 				}
 
 				
@@ -165,6 +168,10 @@ public class BuyerListService {
 	 * 暂时还没有买家购买此宝贝，最近30天成交0件。
 	 * </p>
 	 * </div>
+	 * 
+	 * 1. 如果出现验证码，输入验证码，并重新请求该页；
+	 * 2. 如果返回的数据中buyer list为0，则直接返回；
+	 * 3. 如果是其他情况，则解析并写入到excel文件中；
 	 */
 	public boolean parseBuyerListTable(Document doc) {
 		/*
@@ -198,7 +205,7 @@ public class BuyerListService {
 		log.info("Element list size is: "+buyerListEls.size());
 		
 		if(buyerListEls.size() == 0){
-			return false;
+			return true;
 		}
 		for (int i = 0; i < buyerListEls.size(); i++) {
 			//获得第i行
@@ -370,12 +377,17 @@ public class BuyerListService {
 	}
 
 	public Document getHtmlDocFromJson(String jsonStr) {
-		String tmp = new String((jsonStr.trim()));
-		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tmp.substring(
-				"TShop.mods.DealRecord.reload(".length(), tmp.length() - 1));
-		// System.out.println(jsonObj.getString("html"));
-		Document doc = Jsoup.parse(jsonObj.getString("html"));
-		return doc;
+		
+		if(jsonStr.contains("html") == false){
+			return null;
+		}else{
+			String tmp = new String((jsonStr.trim()));
+			JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tmp.substring(
+					"TShop.mods.DealRecord.reload(".length(), tmp.length() - 1));
+			// System.out.println(jsonObj.getString("html"));
+			Document doc = Jsoup.parse(jsonObj.getString("html"));
+			return doc;
+		}
 	}
 
 	public int getBuyerSum() {

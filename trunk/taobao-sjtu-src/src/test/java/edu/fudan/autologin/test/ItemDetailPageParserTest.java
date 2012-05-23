@@ -234,7 +234,7 @@ public class ItemDetailPageParserTest {
 	
 	public void testBuyerListService() {
 		autoLogin();
-		String itemPageUrl = "http://item.taobao.com/item.htm?id=8145925504";
+		String itemPageUrl = "tp://item.taobao.com/item.htm?id=10793172822";
 		BuyerListService buyerListService = new BuyerListService();
 		buyerListService.setHttpClient(httpClient);
 		buyerListService.setItemPageUrl(itemPageUrl);
