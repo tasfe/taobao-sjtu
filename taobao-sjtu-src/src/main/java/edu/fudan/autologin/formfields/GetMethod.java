@@ -56,20 +56,23 @@ public class GetMethod {
 		httpget.setHeader(
 				"User-Agent",
 				"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.83 Safari/535.11");
-		httpget.setHeader("Connection","keep-alive");
-		httpget.setHeader("Accept-Language","zh-CN,zh;q=0.8");
-		httpget.setHeader("Accept-Charset","GBK,utf-8;q=0.7,*;q=0.3");
+////		httpget.setHeader("Connection","keep-alive");
+//		httpget.setHeader("Accept-Language","zh-CN,zh;q=0.8");
+//		httpget.setHeader("Accept-Charset","GBK,utf-8;q=0.7,*;q=0.3");
 		try {
 			response = httpclient.execute(httpget);
 		} catch (ClientProtocolException e) {
+			doGet();
 			e.printStackTrace();
 			log.error(e.getMessage());
+			log.error(e.getStackTrace());
 		} catch (IOException e) {
+			doGet();
 			e.printStackTrace();
 			log.error(e.getMessage());
+			log.error(e.getStackTrace());
 		}finally{
 			//当get请求出现错误时(一般为超时情况)，处理
-			
 		}
 	}
 

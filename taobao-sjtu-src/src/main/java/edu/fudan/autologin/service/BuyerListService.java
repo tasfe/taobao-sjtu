@@ -87,30 +87,41 @@ public class BuyerListService {
 			int pageSum = (buyerSum % pageSize == 0) ? buyerSum / pageSize
 					: (buyerSum / pageSize + 1);
 
-			if(pageSum >= 100){
+			if (pageSum >= 100) {
 				pageSum = 100;
 			}
 			log.info("Total page num is: " + pageSum);
+			int base = 1 * 1000;
+			int cnt = 1;
 			for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
 				log.info("-----------------------------------------------------");
 				log.info("This is buyers of Page NO: " + pageNum);
 				String constructedShowBuyerListUrl = constructShowBuyerListUrl(
 						showBuyerListUrl, pageNum);
-				
+
 				Document doc = getShowBuyerListDoc(constructedShowBuyerListUrl);
-				
-				while( parseBuyerListTable(doc) == false){
-					doc = getShowBuyerListDoc(constructedShowBuyerListUrl+"&&code="+verifyCode);
+
+				while (parseBuyerListTable(doc) == false) {
+					doc = getShowBuyerListDoc(constructedShowBuyerListUrl
+							+ "&&code=" + verifyCode);
 				}
+
 				
-				//因为触发了验证码机制，所以无法请求后面的页面
-				//什么样的机制会触发验证码？
+				//当page num 大于20时， 设为增量等待时间
+//				if (pageNum > 20) {
+//					try {
+//						Thread.sleep(base * cnt++);
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//				}
+				// 因为触发了验证码机制，所以无法请求后面的页面
+				// 什么样的机制会触发验证码？
 				/*
-				 *1. 请求太频繁；
-				 *2. 一定时间段内请求数的限制？ 
-				 * 
+				 * 1. 请求太频繁；2. 一定时间段内请求数的限制？
 				 */
-				
+
 			}
 		}
 

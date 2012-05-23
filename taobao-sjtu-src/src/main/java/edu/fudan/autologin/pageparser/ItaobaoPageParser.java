@@ -88,7 +88,7 @@ public class ItaobaoPageParser extends BasePageParser {
 			Element e = doc.select("span.J_district").get(0);
 			
 			TaobaoDsDataService taobaoDsDataService  = new TaobaoDsDataService();
-			taobaoDsDataService.setHttpClient(this.getHttpClient());
+			taobaoDsDataService.setHttpClient(httpClient);
 			taobaoDsDataService.execute();
 			
 			String prov = taobaoDsDataService.getData(e.attr("data-prov"));
