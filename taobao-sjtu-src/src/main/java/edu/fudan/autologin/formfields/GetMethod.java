@@ -2,8 +2,6 @@ package edu.fudan.autologin.formfields;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
-import java.util.jar.Attributes.Name;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -13,8 +11,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
 import org.apache.log4j.Logger;
-
-import edu.fudan.autologin.main.impl.TaobaoAutoLogin;
 
 /**
  * 
