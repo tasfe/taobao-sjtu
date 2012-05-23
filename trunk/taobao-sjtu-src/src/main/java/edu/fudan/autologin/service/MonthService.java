@@ -57,17 +57,23 @@ public class MonthService {
 	public String getPlainJson() {
 		GetMethod get = new GetMethod(httpClient,
 				constructMonthServiceAjaxUrl());
-		
 		List<NameValuePair> headers1 = new ArrayList<NameValuePair>();
 		NameValuePair nvp1 = new BasicNameValuePair("Accept", "application/json");
 		headers1.add(nvp1);
 		get.doGet(headers1);
-
-		
 		String plainJson = get.getResponseAsString().trim();
+		get.shutDown();
+		
+		//当服务器拒绝链接返回错误信息时处理
+		while(plainJson.contains("alldata") == false){
+			 get = new GetMethod(httpClient,
+						constructMonthServiceAjaxUrl());
+			 get.doGet(headers1);
+			 plainJson = get.getResponseAsString().trim();
+			 get.shutDown();
+		}
 		log.info("Plain json string of month service from server is: "
 				+ plainJson);
-		get.shutDown();
 
 		return plainJson;
 	}
