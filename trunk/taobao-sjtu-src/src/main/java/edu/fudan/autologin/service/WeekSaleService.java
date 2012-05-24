@@ -7,6 +7,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import edu.fudan.autologin.formfields.GetMethod;
+import edu.fudan.autologin.utils.GetWaitUtil;
 
 
 /**
@@ -42,7 +43,9 @@ public class WeekSaleService {
 	public void execute(){
 		String docStr ;
 		GetMethod get = new GetMethod(httpClient, pageUrl);
-		get.doGet();
+		
+//		get.doGet();
+		GetWaitUtil.get(get);
 		docStr = get.getResponseAsString();
 		get.shutDown();
 		

@@ -1,5 +1,8 @@
 package edu.fudan.autologin.test;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
@@ -27,7 +30,15 @@ public class JavaBaseTest {
 	 */
 	@Test
 	public void testPing(){
-		log.info(PingUtil.pingServer("witsun.cn", 20));
+		
+		URI uri = null;
+		try {
+			uri = new URI("http://item.taobao.com/item.htm?id=14785357817");
+		} catch (URISyntaxException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		log.info(PingUtil.pingServer(uri.getHost(), 100));
 	}
 	public void getToken(){
 		String pageStr = "},\"sys\":{\"now\":1337239299737,\"tkn\":\"73e36deede3bb\"}} ;  }";

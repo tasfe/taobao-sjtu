@@ -13,6 +13,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import edu.fudan.autologin.formfields.GetMethod;
+import edu.fudan.autologin.utils.GetWaitUtil;
 /**
  * Steps to parse page is as following;
  * 1. get the specified page;
@@ -62,7 +63,7 @@ public class BasePageParser implements PageParser {
 
 	public void getPage(String pageUrl) {
 		GetMethod getMethod = new GetMethod(httpClient, this.pageUrl);
-		getMethod.doGet();
+		GetWaitUtil.get(getMethod);
 		try {
 			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
 					.getEntity()));

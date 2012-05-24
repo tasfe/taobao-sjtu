@@ -175,7 +175,6 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("freightPrice: " + freightPrice);
 
 		SaleSumService saleSumService = new SaleSumService();
-		saleSumService.setHttpClient(this.getHttpClient());
 		saleSumService.setItemPageUrl(this.getPageUrl());
 		saleSumService.execute();
 		int saleNumIn30Days = saleSumService.getSaleSum();
@@ -208,7 +207,6 @@ public class ItemDetailPageParser extends BasePageParser {
 
 		// 获得评论总数
 		ReviewSumService reviewSumService = new ReviewSumService();
-		reviewSumService.setHttpClient(this.getHttpClient());
 		reviewSumService.setItemPageUrl(this.getPageUrl());
 		reviewSumService.execute();
 		itemInfo.setReviews(reviewSumService.getReviewSum());

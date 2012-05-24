@@ -13,6 +13,7 @@ import net.sf.json.JSONSerializer;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.FeedRate;
 import edu.fudan.autologin.pojos.FeedRateComment;
+import edu.fudan.autologin.utils.GetWaitUtil;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
 /**
@@ -100,7 +101,8 @@ public class ItemReviewService {
 		public void run() {
 			GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
 					getFeedRateListUrl(), pageNum));
-			get.doGet();
+			GetWaitUtil.get(get);
+//			get.doGet();
 			String jsonStr = getFeedRateListJsonString(get
 					.getResponseAsString().trim());
 			parseFeedRateListJson(jsonStr);
@@ -155,7 +157,8 @@ public class ItemReviewService {
 	public void parseReview(int pageNum){
 		GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
 				reviewUrl, pageNum));
-		get.doGet();
+		GetWaitUtil.get(get);
+//		get.doGet();
 		String jsonStr = getFeedRateListJsonString(get
 				.getResponseAsString().trim());
 		parseFeedRateListJson(jsonStr);
@@ -166,7 +169,8 @@ public class ItemReviewService {
 
 		String tmpStr = "";
 		GetMethod getMethod = new GetMethod(httpClient, itemPageUrl);
-		getMethod.doGet();
+//		getMethod.doGet();
+		GetWaitUtil.get(getMethod);
 		tmpStr = getMethod.getResponseAsString();
 		getMethod.shutDown();
 

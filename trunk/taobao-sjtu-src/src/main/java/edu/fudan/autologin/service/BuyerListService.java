@@ -26,6 +26,7 @@ import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pageparser.ItaobaoPageParser;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.utils.DosCmdUtils;
+import edu.fudan.autologin.utils.GetWaitUtil;
 import edu.fudan.autologin.utils.PrintUtils;
 import edu.fudan.autologin.utils.RandomUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
@@ -300,10 +301,10 @@ public class BuyerListService {
 		NameValuePair nvp2 = new BasicNameValuePair("Host", "detailskip.taobao.com");
 		headers1.add(nvp1);
 		headers1.add(nvp2);
-		get.doGet(headers1);
+//		boolean rtn = get.doGet(headers1);
+		GetWaitUtil.get(get, headers1);
 		
 		String page = get.getResponseAsString();
-//		log.info("The response from server is: "+page);
 		Document doc = getHtmlDocFromJson(page);
 		get.shutDown();
 		return doc;
@@ -320,7 +321,8 @@ public class BuyerListService {
 
 		GetMethod getMethod = new GetMethod(this.getHttpClient(),
 				itemDetailPageUrl);
-		getMethod.doGet();
+//		getMethod.doGet();
+GetWaitUtil.get(getMethod);
 		String tmpStr = getMethod.getResponseAsString();
 		getMethod.shutDown();
 		pageStr = tmpStr;

@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.Postage;
+import edu.fudan.autologin.utils.GetWaitUtil;
 
 public class PostageService {
 	private static final Logger log = Logger.getLogger(PostageService.class);
@@ -65,7 +66,8 @@ public class PostageService {
 
 	public void itemDomainPostageParser() {
 		GetMethod getMethod = new GetMethod(httpClient, itemPageUrl);
-		getMethod.doGet();// 给get请求添加httpheader
+		GetWaitUtil.get(getMethod);
+//		getMethod.doGet();// 给get请求添加httpheader
 		String postageUrl = null;
 		postageUrl = getPostageUrl(getMethod.getResponseAsString());
 		getMethod.shutDown();
@@ -82,7 +84,8 @@ public class PostageService {
 							+ getIdFromPostageUrl(postageUrl));
 			headers.add(nvp1);
 			GetMethod postageGet = new GetMethod(httpClient, postageUrl);
-			postageGet.doGet(headers);
+//			postageGet.doGet(headers);
+			GetWaitUtil.get(postageGet, headers);
 			getPostageFromJson(postageGet.getResponseAsString());
 
 			postageGet.shutDown();

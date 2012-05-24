@@ -247,7 +247,6 @@ public class HomeClientTest {
 				buyerListService.setSheet(sh);
 
 				SaleSumService saleSumService = new SaleSumService();
-				saleSumService.setHttpClient(httpClient);
 				saleSumService.setItemPageUrl(itemDetailHref);
 				saleSumService.execute();
 

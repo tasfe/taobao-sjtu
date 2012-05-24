@@ -7,6 +7,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.Logger;
 
 import edu.fudan.autologin.formfields.GetMethod;
+import edu.fudan.autologin.utils.GetWaitUtil;
 
 public class ItemViewCountService {
 //http://count.tbcdn.cn/counter3?inc=ICVT_7_16952524736&sign=58859bbf4830a08502bf36bee7dbac60c1683&keys=DFX_200_1_16952524736,ICVT_7_16952524736,ICCP_1_16952524736,ICE_3_feedcount-16952524736,ZAN_27_2_16952524736,SCCP_2_66467270&callback=TShop.mods.SKU.CounterCenter.saveCounts
@@ -67,7 +68,8 @@ public class ItemViewCountService {
 		String json = null;
 		int i = 10;
 		GetMethod get = new GetMethod(httpClient, ajaxUrl);
-		get.doGet();
+
+		GetWaitUtil.get(get);
 		json = get.getResponseAsString();
 		get.shutDown();
 		log.info("Json counter from server is: " + json);
@@ -95,7 +97,9 @@ public class ItemViewCountService {
 		String appendStr = "&callback=TShop.mods.SKU.CounterCenter.saveCounts";
 		
 		GetMethod get = new GetMethod(httpClient, itemDetailPage);
-		get.doGet();
+//		get.doGet();
+		
+		GetWaitUtil.get(get);
 		docStr = get.getResponseAsString();
 		get.shutDown();
 		
