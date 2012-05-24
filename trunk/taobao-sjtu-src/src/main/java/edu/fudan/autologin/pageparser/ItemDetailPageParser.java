@@ -19,7 +19,6 @@ import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.ItemInfo;
-import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.ItemViewCountService;
 import edu.fudan.autologin.service.PostageService;
@@ -117,7 +116,7 @@ public class ItemDetailPageParser extends BasePageParser {
 			String itemType = "";
 			Element element = itemPro.select("li.tb-item-type em#J_EmItemViews").get(0);
 			itemType = element.ownText();
-			log.info("itemType: " + itemType);
+//			log.info("itemType: " + itemType);
 //			itemInfo.setItemType(itemType);
 			
 			ItemViewCountService itemViewCountService = new ItemViewCountService();
