@@ -12,23 +12,20 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
 
-import org.apache.http.HttpHost;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.HttpClient;
-import org.apache.http.conn.params.ConnRoutePNames;
-import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import edu.fudan.autologin.excel.ExcelUtil;
+import edu.fudan.autologin.formfields.FormFields;
+import edu.fudan.autologin.formfields.PostMethod;
+import edu.fudan.autologin.formfields.impl.MonthServicePost;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
 import edu.fudan.autologin.pageparser.TopTenPageParser;
@@ -36,17 +33,13 @@ import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
-import edu.fudan.autologin.pojos.ItemInfo;
-import edu.fudan.autologin.pojos.SellerInSearchResult;
-import edu.fudan.autologin.pojos.TaobaoDataSet;
-import edu.fudan.autologin.pojos.TopTenItemInfo;
 import edu.fudan.autologin.service.BuyerListService;
 import edu.fudan.autologin.service.SaleSumService;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
-public class FedoraClientTest {
+public class MainTest {
 	private static final Logger log = Logger.getLogger(MainTest.class);
 	private HttpClient httpClient;
 
@@ -138,7 +131,35 @@ public class FedoraClientTest {
 		} finally {
 
 		}
+		log.info("------------------------------");
 		log.info("Item sum is: " + itemSum);
+<<<<<<< .mine
+		//一次连续请求不要超过400，否则容易出错
+		 userRateProcess(451, 1000);
+//		int cnt = 10;// 每次处理的sheet记录条数
+//
+//		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
+//				+ 1;
+//		log.info("Num of processes is: " + numOfProcess);
+//		int start = 0;
+//		int end = 0;
+//		for (int i = 1; i <= numOfProcess; ++i) {
+//			start = (i - 1) * cnt + 1;
+//			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
+//				end = itemSum;
+//			} else {
+//				end = start + cnt;
+//			}
+//			userRateProcess(start, end);
+//			
+//			try {
+//				Thread.sleep(200);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+=======
 		int cnt = 10;// 每次处理的sheet记录条数
 
 		// itemSum = 5;
@@ -156,17 +177,34 @@ public class FedoraClientTest {
 			}
 			userRateProcess(start, end);
 		}
+>>>>>>> .r131
 	}
 
 	@Test
 	public void task() {
+<<<<<<< .mine
 		// autoLogin();
 		// task1();
 		// task2();
-		task3();
+		 task3();
+//		task4();
+		// autoLogin();
+		// task5();
+//		PostMethod post = new PostMethod(httpClient,"http://ratehis.taobao.com/monthServiceAjax.htm");
+//		FormFields form = new MonthServicePost();
+//		post.setFormFields(form);
+//		post.doPost();
+//		post.printResponse("utf-8");
+//		post.shutDown();
+=======
+		// autoLogin();
+		// task1();
+		// task2();
+//		task3();
 		// task4();
-//		 autoLogin();
-//		 task5();
+		 autoLogin();
+		 task5();
+>>>>>>> .r131
 	}
 
 	public void itemDetailProcess(int start, int end) {
@@ -192,12 +230,12 @@ public class FedoraClientTest {
 				itemDetailPageParser.writeExcel(sh);
 				tmp.getConnectionManager().shutdown();
 
-//				try {
-//					Thread.sleep(1000);
-//				} catch (InterruptedException e) {
-//					e.printStackTrace();
-//					log.error(e.getMessage());
-//				}
+				try {
+					Thread.sleep(0);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					log.error(e.getMessage());
+				}
 			}
 
 			wbook.write();
@@ -289,22 +327,43 @@ public class FedoraClientTest {
 
 			// sheet.getRows()返回该页的总行数
 			for (int i = start; i <= end; i++) {
+				
 				HttpClient tmp = new DefaultHttpClient();
 
 				String userRateHref = searchResultSheet.getCell(13, i)
 						.getContents();
 				String sellerId = searchResultSheet.getCell(0, i).getContents();
+<<<<<<< .mine
 
+				log.info("--------------------------------------------------------------------------------------------------------------");
+				log.info("This is the item process no: " + i);
+				log.info("Seller id is: " + sellerId);
+				log.info("User rate href is: " + userRateHref);
+				
+=======
+
+>>>>>>> .r131
 				UserRatePageParser userRatePageParser = new UserRatePageParser(
 						tmp, userRateHref);
 				userRatePageParser.setSellerId(sellerId);
 				userRatePageParser.parsePage();
 				userRatePageParser.writeExcel(sh);
+<<<<<<< .mine
+				
+=======
 				log.info("--------------------------------------------------------------------------------------------------------------");
 				log.info("This is the item process no: " + i);
 				log.info("Seller id is: " + sellerId);
 				log.info("User rate href is: " + userRateHref);
+>>>>>>> .r131
 				tmp.getConnectionManager().shutdown();
+				
+				try {
+					Thread.sleep(0);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					log.error(e.getMessage());
+				}
 			}
 
 			wbook.write();
@@ -347,8 +406,13 @@ public class FedoraClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemDetailProcess(2901, 3000);
+<<<<<<< .mine
+		itemDetailProcess(1001, 1200);
+		// int cnt = 10;//每次处理的sheet记录条数
+=======
+		itemDetailProcess(1001, 1200);
 		// int cnt = 10;// 每次处理的sheet记录条数
+>>>>>>> .r131
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
 		// + 1;
