@@ -252,7 +252,6 @@ public class LabClientTest {
 				buyerListService.setSheet(sh);
 
 				SaleSumService saleSumService = new SaleSumService();
-				saleSumService.setHttpClient(httpClient);
 				saleSumService.setItemPageUrl(itemDetailHref);
 				saleSumService.execute();
 
@@ -362,7 +361,7 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemDetailProcess(1001, itemSum);
+		itemDetailProcess(2901, 2920);
 		// int cnt = 10;// 每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
@@ -403,7 +402,7 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemBuyerProcess(101, 150);
+		itemBuyerProcess(151, 180);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +

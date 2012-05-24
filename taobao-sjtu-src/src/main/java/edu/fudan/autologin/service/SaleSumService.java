@@ -11,12 +11,13 @@ import org.apache.log4j.Logger;
 
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
+import edu.fudan.autologin.utils.GetWaitUtil;
 import net.sf.json.JSONObject;
 
 public class SaleSumService {
 	private static final Logger log = Logger.getLogger(SaleSumService.class);
 	private String itemPageUrl;
-	private HttpClient httpClient;
+	private HttpClient httpClient = new DefaultHttpClient();
 
 	public String getItemPageUrl() {
 		return itemPageUrl;
@@ -24,15 +25,6 @@ public class SaleSumService {
 
 	public void setItemPageUrl(String itemPageUrl) {
 		this.itemPageUrl = itemPageUrl;
-	}
-
-	public HttpClient getHttpClient() {
-		return httpClient;
-	}
-
-	public void setHttpClient(HttpClient httpClient) {
-//		this.httpClient = httpClient;
-		this.httpClient = new DefaultHttpClient();
 	}
 
 	public int getSaleSum() {
@@ -48,9 +40,8 @@ public class SaleSumService {
 	public void execute() {
 		String referer = itemPageUrl;
 		String requestUrl = getSaleSumUrl();
-
+		
 		if (requestUrl == null) {
-
 			log.info("There is no sale sum url in the page.");
 			saleSum = 0;
 		} else {
@@ -73,7 +64,6 @@ public class SaleSumService {
 				saleSum = saleNumObj.getInt("quanity");
 			}
 		}
-		
 
 		this.httpClient.getConnectionManager().shutdown();
 	}
@@ -99,7 +89,7 @@ public class SaleSumService {
 		String docString;
 
 		GetMethod get = new GetMethod(httpClient, itemPageUrl);
-		get.doGet();
+		GetWaitUtil.get(get);
 		docString = get.getResponseAsString();
 		get.shutDown();
 
@@ -108,9 +98,16 @@ public class SaleSumService {
 		int end = 0;
 		if (docString.contains("getDealQuantity")) {
 			base = docString.indexOf("getDealQuantity");
-			begin = docString.indexOf("\"", base);
-			end = docString.indexOf("\"", begin + 1);
+			begin = docString.indexOf(":", base);
+			end = docString.indexOf(",", begin + 1);
 			String saleNumUrl = docString.substring(begin + 1, end).trim();
+			
+			//
+			if(saleNumUrl.contains("\"") == true){
+				saleNumUrl = saleNumUrl.replaceAll("\"", "");
+			}else{
+				return null;
+			}
 			log.info("saleNumUrl: " + saleNumUrl);
 			return saleNumUrl;
 		} else {

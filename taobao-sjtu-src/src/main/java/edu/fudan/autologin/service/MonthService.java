@@ -20,6 +20,7 @@ import org.jsoup.select.Elements;
 
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.MonthServiceEntity;
+import edu.fudan.autologin.utils.GetWaitUtil;
 
 public class MonthService {
 
@@ -61,7 +62,8 @@ public class MonthService {
 		NameValuePair nvp1 = new BasicNameValuePair("Accept",
 				"application/json");
 		headers1.add(nvp1);
-		get.doGet(headers1);
+//		get.doGet(headers1);
+		GetWaitUtil.get(get, headers1);
 		String plainJson = get.getResponseAsString().trim();
 		get.shutDown();
 
@@ -78,7 +80,9 @@ public class MonthService {
 				log.error(e.getMessage());
 			}
 			get = new GetMethod(httpClient, ajaxUrl);
-			get.doGet(headers1);
+//			get.doGet(headers1);
+			GetWaitUtil.get(get, headers1);
+
 			plainJson = get.getResponseAsString().trim();
 			get.shutDown();
 		}
@@ -98,7 +102,8 @@ public class MonthService {
 
 	public void getFieldsFromPage() {
 		GetMethod get = new GetMethod(httpClient, userRatePageUrl);
-		get.doGet();
+//		get.doGet();
+GetWaitUtil.get(get);
 		String tmp = get.getResponseAsString();
 		get.shutDown();
 

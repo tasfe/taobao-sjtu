@@ -10,11 +10,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import edu.fudan.autologin.formfields.GetMethod;
+import edu.fudan.autologin.utils.GetWaitUtil;
 
 public class ReviewSumService {
 	private static final Logger log = Logger.getLogger(ReviewSumService.class);
 	private String itemPageUrl;
-	private HttpClient httpClient;
+	private HttpClient httpClient = new DefaultHttpClient();
 	
 	private int reviewSum = 0;
 	
@@ -35,7 +36,8 @@ public class ReviewSumService {
 		
 		String ajaxUrl = "";
 		GetMethod get = new GetMethod(httpClient, itemPageUrl);
-		get.doGet();
+		
+		GetWaitUtil.get(get);
 		
 		Document doc = Jsoup.parse(get.getResponseAsString());
 		String baseUrl = "";
@@ -57,7 +59,7 @@ public class ReviewSumService {
 	public String getPlainJson(String ajaxUrl){
 		String plainJson = "";
 		GetMethod get = new GetMethod(httpClient, ajaxUrl);
-		get.doGet();
+		GetWaitUtil.get(get);
 		
 		plainJson = get.getResponseAsString();
 		get.shutDown();
@@ -115,14 +117,6 @@ public class ReviewSumService {
 		this.itemPageUrl = itemPageUrl;
 	}
 
-	public HttpClient getHttpClient() {
-		return httpClient;
-	}
-
-	public void setHttpClient(HttpClient httpClient) {
-//		this.httpClient = httpClient;
-		this.httpClient = new DefaultHttpClient();
-	}
 
 	public int getReviewSum() {
 		return reviewSum;

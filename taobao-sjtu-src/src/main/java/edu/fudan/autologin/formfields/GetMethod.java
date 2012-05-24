@@ -1,16 +1,21 @@
 package edu.fudan.autologin.formfields;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
 import org.apache.log4j.Logger;
+
+import edu.fudan.autologin.utils.PingUtil;
 
 /**
  * 
@@ -39,11 +44,23 @@ public class GetMethod {
 		this.getUrl = getUrl;
 	}
 
-	public void doGet() {
-		doGet(null);
+	public boolean doGet() {
+		return doGet(null);
 	}
 
-	public void doGet(List<NameValuePair> headers) {
+	public boolean doGet(List<NameValuePair> headers) {
+//	//在执行get请求之前， ping 主机，如果能够ping通，再执行下面的工作	
+//		URI uri = null;
+//		try {
+//			uri = new URI(getUrl);
+//		} catch (URISyntaxException e1) {
+//			e1.printStackTrace();
+//			log.error(e1.getStackTrace());
+//		}
+//		
+//		while(PingUtil.pingServer(uri.getHost(), 1000) == false);
+		
+		
 		httpget = new HttpGet(this.getUrl);
 
 		if (headers == null) {
@@ -56,24 +73,27 @@ public class GetMethod {
 		httpget.setHeader(
 				"User-Agent",
 				"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.83 Safari/535.11");
-////		httpget.setHeader("Connection","keep-alive");
-//		httpget.setHeader("Accept-Language","zh-CN,zh;q=0.8");
-//		httpget.setHeader("Accept-Charset","GBK,utf-8;q=0.7,*;q=0.3");
+		// // httpget.setHeader("Connection","keep-alive");
+		// httpget.setHeader("Accept-Language","zh-CN,zh;q=0.8");
+		// httpget.setHeader("Accept-Charset","GBK,utf-8;q=0.7,*;q=0.3");
 		try {
 			response = httpclient.execute(httpget);
 		} catch (ClientProtocolException e) {
-			doGet();
-			e.printStackTrace();
+			log.error("Client protocol exception");
+//			e.printStackTrace();
 			log.error(e.getMessage());
 			log.error(e.getStackTrace());
+			return false;
 		} catch (IOException e) {
-			doGet();
-			e.printStackTrace();
+			log.error("IO exception");
+//			e.printStackTrace();
 			log.error(e.getMessage());
 			log.error(e.getStackTrace());
-		}finally{
-			//当get请求出现错误时(一般为超时情况)，处理
+			return false;
+		} finally {
 		}
+
+		return true;
 	}
 
 	public void write2File() {
@@ -85,10 +105,15 @@ public class GetMethod {
 		printResponse("utf-8");
 	}
 
-	public String getResponseAsString(){
+	public String getResponseAsString() {
+		HttpEntity entity = response.getEntity();
 		String rtnStr = null;
 		try {
-			rtnStr = EntityUtils.toString(this.response.getEntity(), "utf-8");
+			
+			if(entity != null){
+				rtnStr = EntityUtils.toString(entity, "utf-8");
+			}
+			
 		} catch (ParseException e) {
 			e.printStackTrace();
 			log.error(e.getMessage());
@@ -98,6 +123,7 @@ public class GetMethod {
 		}
 		return rtnStr;
 	}
+
 	public void printResponse(String charset) {
 
 		if (this.getResponse().getEntity() == null) {
@@ -116,14 +142,15 @@ public class GetMethod {
 
 	public void shutDown() {
 		try {
-			//Ensures that the entity content is fully consumed and the content  stream, if exists, is closed.
+			// Ensures that the entity content is fully consumed and the content
+			// stream, if exists, is closed.
 			EntityUtils.consume(this.response.getEntity());
-			
-			//release connection
+
+			// release connection
 			httpget.releaseConnection();
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}//RAII resource acquisition is initializasion
+	}
 }

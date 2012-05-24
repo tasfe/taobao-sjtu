@@ -30,7 +30,6 @@ public class ItemBuyerParser {
 		buyerListService.setBuyerInfos(buyerInfos);
 
 		SaleSumService saleSumService = new SaleSumService();
-		saleSumService.setHttpClient(httpClient);
 		saleSumService.setItemPageUrl(itemPageUrl);
 		saleSumService.execute();
 		log.info("Sale sum is: " + saleSumService.getSaleSum());
