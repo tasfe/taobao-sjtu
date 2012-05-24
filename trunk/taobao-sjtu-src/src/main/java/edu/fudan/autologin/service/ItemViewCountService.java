@@ -112,8 +112,8 @@ public class ItemViewCountService {
 		}else{
 			int base = docStr.indexOf("counterApi:\"");
 			int end = docStr.indexOf("toolbar", base);
-			log.info("base is: "+base);
-			log.info("end is: "+end);
+//			log.info("base is: "+base);
+//			log.info("end is: "+end);
 			countApiUrl = docStr.substring(base+"counterApi:\"".length(), end - 2);
 		}
 		sb.append(countApiUrl);

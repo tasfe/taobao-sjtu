@@ -76,7 +76,9 @@ public class SaleSumService {
 		NameValuePair nvp = new BasicNameValuePair("referer", referer);
 		headers.add(nvp);
 		GetMethod getRequest = new GetMethod(httpClient, requestUrl);
-		getRequest.doGet(headers);
+//		getRequest.doGet(headers);
+		
+		GetWaitUtil.get(getRequest, headers);
 		String responseStr = getRequest.getResponseAsString();
 		responseStr = responseStr.substring(responseStr.indexOf("{"),
 				responseStr.lastIndexOf("}") + 1); // get the plain json string

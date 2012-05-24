@@ -25,6 +25,7 @@ import edu.fudan.autologin.service.ItemViewCountService;
 import edu.fudan.autologin.service.PostageService;
 import edu.fudan.autologin.service.ReviewSumService;
 import edu.fudan.autologin.service.SaleSumService;
+import edu.fudan.autologin.utils.GetWaitUtil;
 
 public class ItemDetailPageParser extends BasePageParser {
 	private static final Logger log = Logger
@@ -262,7 +263,9 @@ public class ItemDetailPageParser extends BasePageParser {
 	public void preprocessDoc() {
 		GetMethod getMethod = new GetMethod(this.getHttpClient(),
 				this.getPageUrl());
-		getMethod.doGet();
+		
+//		getMethod.doGet();
+		GetWaitUtil.get(getMethod);
 		String docString = getMethod.getResponseAsString();
 		int base, begin, end;
 		if (docString.contains("getShippingInfo")) {
@@ -347,7 +350,8 @@ public class ItemDetailPageParser extends BasePageParser {
 		NameValuePair nvp = new BasicNameValuePair("referer", referer);
 		headers.add(nvp);
 		GetMethod getRequest = new GetMethod(this.getHttpClient(), requestUrl);
-		getRequest.doGet(headers);
+//		getRequest.doGet(headers);
+		GetWaitUtil.get(getRequest, headers);
 		String responseStr = getRequest.getResponseAsString();
 		responseStr = responseStr.substring(responseStr.indexOf("{"),
 				responseStr.lastIndexOf("}") + 1); // get the plain json string
