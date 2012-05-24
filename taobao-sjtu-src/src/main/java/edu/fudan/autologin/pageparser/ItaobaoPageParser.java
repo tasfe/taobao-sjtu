@@ -9,6 +9,7 @@ import org.jsoup.nodes.Element;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.service.TaobaoDsDataService;
+import edu.fudan.autologin.utils.GetWaitUtil;
 
 /**
  * 买家信息页面解析
@@ -33,7 +34,9 @@ public class ItaobaoPageParser extends BasePageParser {
 		String targetUrl = getAjaxUrl();
 		
 		GetMethod get = new GetMethod(httpClient, targetUrl);
-		get.doGet();
+//		get.doGet();
+		
+		GetWaitUtil.get(get);
 		String getStr = get.getResponseAsString();
 		get.shutDown();
 		

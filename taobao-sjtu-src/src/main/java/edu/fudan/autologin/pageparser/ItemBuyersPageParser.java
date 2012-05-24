@@ -16,6 +16,7 @@ import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
+import edu.fudan.autologin.utils.GetWaitUtil;
 
 /**
  * 
@@ -81,7 +82,9 @@ public class ItemBuyersPageParser extends BasePageParser {
 	public Document getBuyerInfo(String href){
 		Document doc = null;
 		GetMethod getMethod = new GetMethod(getHttpClient(), href);
-		getMethod.doGet();
+//		getMethod.doGet();
+
+		GetWaitUtil.get(getMethod);
 		try {
 			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
 					.getEntity()));
