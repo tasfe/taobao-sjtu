@@ -10,6 +10,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.fudan.autologin.utils.PingUtil;
 import edu.fudan.autologin.utils.RandomUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
@@ -25,6 +26,9 @@ public class JavaBaseTest {
 	 * The substring begins at specified beginIndex and extends to the character at index endIndex - 1
 	 */
 	@Test
+	public void testPing(){
+		log.info(PingUtil.pingServer("witsun.cn", 20));
+	}
 	public void getToken(){
 		String pageStr = "},\"sys\":{\"now\":1337239299737,\"tkn\":\"73e36deede3bb\"}} ;  }";
 		String token = null;
