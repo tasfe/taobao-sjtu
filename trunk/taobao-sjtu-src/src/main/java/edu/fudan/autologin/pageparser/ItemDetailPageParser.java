@@ -175,7 +175,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("freightPrice: " + freightPrice);
 
 		SaleSumService saleSumService = new SaleSumService();
-		saleSumService.setItemPageUrl(this.getPageUrl());
+		saleSumService.setItemPageUrl(pageUrl);
 		saleSumService.execute();
 		int saleNumIn30Days = saleSumService.getSaleSum();
 		log.info("saleNumIn30Days: " + saleNumIn30Days);
@@ -225,8 +225,8 @@ public class ItemDetailPageParser extends BasePageParser {
 	@Override
 	public void parsePage() {
 		log.info("Start to parse page: " + pageUrl);
-		this.getPage(this.getPageUrl());
-		Document doc = this.getDoc();
+		getPage(pageUrl);
+		Document doc = getDoc();
 		
 		/* 针对各种不同的页面进行不同的处理
 		 * 1. 正常页面；
