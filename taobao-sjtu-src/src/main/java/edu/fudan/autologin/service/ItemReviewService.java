@@ -135,14 +135,6 @@ public class ItemReviewService {
 				log.info("The review of Page NO is: " + pageNum);
 				parseReview(pageNum);
 				
-				
-//				try {
-//					//每隔xs请求一次
-//					Thread.sleep(Integer.parseInt(XmlConfUtil.getValueByName("requestInterval")));
-//				} catch (InterruptedException e) {
-//					e.printStackTrace();
-//					log.error(e.getMessage());
-//				}
 			}
 		}
 		

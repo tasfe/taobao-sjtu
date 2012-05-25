@@ -111,15 +111,6 @@ public class BuyerListService {
 				}
 
 				
-				//当page num 大于20时， 设为增量等待时间
-//				if (pageNum > 20) {
-//					try {
-//						Thread.sleep(base * cnt++);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//				}
 				// 因为触发了验证码机制，所以无法请求后面的页面
 				// 什么样的机制会触发验证码？
 				/*

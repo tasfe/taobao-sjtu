@@ -80,15 +80,13 @@ public class GetMethod {
 			response = httpclient.execute(httpget);
 		} catch (ClientProtocolException e) {
 			log.error("Client protocol exception");
-//			e.printStackTrace();
 			log.error(e.getMessage());
-			log.error(e.getStackTrace());
+			httpget.abort();
 			return false;
 		} catch (IOException e) {
 			log.error("IO exception");
-//			e.printStackTrace();
 			log.error(e.getMessage());
-			log.error(e.getStackTrace());
+			httpget.abort();
 			return false;
 		} finally {
 		}
