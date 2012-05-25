@@ -60,27 +60,27 @@ public class BasePageParser implements PageParser {
 	public void getPage(String pageUrl) {
 		GetMethod getMethod = new GetMethod(httpClient, pageUrl);
 		GetWaitUtil.get(getMethod);
-		doc = Jsoup.parse(getMethod.getResponseAsString());
-		getMethod.shutDown();
-		// try {
-		// doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
-		// .getEntity()));
-		// if(null == doc.baseUri() || 0 == doc.baseUri().length()){
-		// String url = getPageUrl();
-		// String baseUri = "";
-		// if(url.startsWith("http://") || url.startsWith("https://")){
-		// int start = url.indexOf("//") + 2;
-		// baseUri = url.substring(0, url.indexOf("/", start) + 1);
-		// }else{
-		// baseUri = url.substring(0, url.indexOf("/") + 1);
-		// }
-		// doc.setBaseUri(baseUri);
-		// }
-		// } catch (ParseException e) {
-		// e.printStackTrace();
-		// } catch (IOException e) {
-		// e.printStackTrace();
-		// }
+		try {
+			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
+					.getEntity()));
+			if (null == doc.baseUri() || 0 == doc.baseUri().length()) {
+				String url = getPageUrl();
+				String baseUri = "";
+				if (url.startsWith("http://") || url.startsWith("https://")) {
+					int start = url.indexOf("//") + 2;
+					baseUri = url.substring(0, url.indexOf("/", start) + 1);
+				} else {
+					baseUri = url.substring(0, url.indexOf("/") + 1);
+				}
+				doc.setBaseUri(baseUri);
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			getMethod.shutDown();
+		}
 	}
 
 	public void shutdown() {
