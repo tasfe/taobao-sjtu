@@ -360,11 +360,11 @@ GetWaitUtil.get(getMethod);
 	public String getToken(){
 		String token = null;
 		
-		int base = pageStr.indexOf("sys\":{\"now\":");
-		int end = pageStr.indexOf(",\"tkn\":", base);
+		int base = pageStr.indexOf("\"now\":");
+		int end = pageStr.indexOf(",\"", base);
 
 		token = pageStr
-				.substring(base + "sys\":{\"now\":".length(), end);
+				.substring(base + "\"now\":".length(), end);
 //		log.info(token);
 		return token;
 	}
