@@ -139,34 +139,33 @@ public class FedoraClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		int cnt = 10;// 每次处理的sheet记录条数
-
-		// itemSum = 5;
-		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
-				+ 1;
-		log.info("Num of processes is: " + numOfProcess);
-		int start = 0;
-		int end = 0;
-		for (int i = 1; i <= numOfProcess; ++i) {
-			start = (i - 1) * cnt + 1;
-			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
-				end = itemSum;
-			} else {
-				end = start + cnt;
-			}
-			userRateProcess(start, end);
-		}
+		userRateProcess(1, itemSum -1);
+//		int cnt = 10;// 每次处理的sheet记录条数
+//
+//		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
+//				+ 1;
+//		log.info("Num of processes is: " + numOfProcess);
+//		int start = 0;
+//		int end = 0;
+//		for (int i = 1; i <= numOfProcess; ++i) {
+//			start = (i - 1) * cnt + 1;
+//			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
+//				end = itemSum;
+//			} else {
+//				end = start + cnt;
+//			}
+//			userRateProcess(start, end);
+//		}
 	}
 
 	@Test
 	public void task() {
-		// autoLogin();
-		// task1();
-		// task2();
+//		task1();
+//		task2();
 		task3();
-		// task4();
-//		 autoLogin();
-//		 task5();
+//		task4();
+		// autoLogin();
+		// task5();
 	}
 
 	public void itemDetailProcess(int start, int end) {
@@ -192,12 +191,6 @@ public class FedoraClientTest {
 				itemDetailPageParser.writeExcel(sh);
 				tmp.getConnectionManager().shutdown();
 
-//				try {
-//					Thread.sleep(1000);
-//				} catch (InterruptedException e) {
-//					e.printStackTrace();
-//					log.error(e.getMessage());
-//				}
 			}
 
 			wbook.write();
@@ -294,15 +287,17 @@ public class FedoraClientTest {
 						.getContents();
 				String sellerId = searchResultSheet.getCell(0, i).getContents();
 
+				log.info("--------------------------------------------------------------------------------------------------------------");
+				log.info("This is the item process no: " + i);
+				log.info("Seller id is: " + sellerId);
+				log.info("User rate href is: " + userRateHref);
+
 				UserRatePageParser userRatePageParser = new UserRatePageParser(
 						tmp, userRateHref);
 				userRatePageParser.setSellerId(sellerId);
 				userRatePageParser.parsePage();
 				userRatePageParser.writeExcel(sh);
-				log.info("--------------------------------------------------------------------------------------------------------------");
-				log.info("This is the item process no: " + i);
-				log.info("Seller id is: " + sellerId);
-				log.info("User rate href is: " + userRateHref);
+
 				tmp.getConnectionManager().shutdown();
 			}
 
@@ -346,25 +341,25 @@ public class FedoraClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemDetailProcess(2901, 3000);
-		// int cnt = 10;// 每次处理的sheet记录条数
-		//
-		// int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
-		// + 1;
-		// // 普通数码相机专业单反相机数码摄像机
-		// log.info("Num of processes is: " + numOfProcess);
-		// int start = 0;
-		// int end = 0;
-		// for (int i = 1; i <= numOfProcess; ++i) {
-		// start = (i - 1) * cnt + 1;
-		// if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
-		// end = itemSum;
-		// } else {
-		// end = start + cnt;
-		// }
-		// itemDetailProcess(start, end);
-		// }
-
+		itemDetailProcess(3501, itemSum);
+//
+//		int cnt = 10;// 每次处理的sheet记录条数
+//
+//		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
+//				+ 1;
+//		// 普通数码相机专业单反相机数码摄像机
+//		log.info("Num of processes is: " + numOfProcess);
+//		int start = 0;
+//		int end = 0;
+//		for (int i = 1; i <= numOfProcess; ++i) {
+//			start = (i - 1) * cnt + 1;
+//			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
+//				end = itemSum;
+//			} else {
+//				end = start + cnt;
+//			}
+//			itemDetailProcess(start, end);
+//		}
 	}
 
 	// buyer info task
