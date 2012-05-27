@@ -126,7 +126,7 @@ public class FedoraClientTest {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
+			itemSum = searchResultSheet.getRows() - 1;// getRows返回的是记录行数
 
 			workbook.close();
 		} catch (BiffException e) {
@@ -151,7 +151,7 @@ public class FedoraClientTest {
 			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
 				end = itemSum;
 			} else {
-				end = start + cnt;
+				end = start + cnt - 1;
 			}
 			userRateProcess(start, end);
 		}
@@ -327,7 +327,7 @@ public class FedoraClientTest {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
+			itemSum = searchResultSheet.getRows() - 1;// getRows返回的是记录行数
 
 			workbook.close();
 		} catch (BiffException e) {
@@ -354,7 +354,7 @@ public class FedoraClientTest {
 			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
 				end = itemSum;
 			} else {
-				end = start + cnt;
+				end = start + cnt - 1;
 			}
 			itemDetailProcess(start, end);
 		}
