@@ -126,7 +126,7 @@ public class LabClientTest {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
+			itemSum = searchResultSheet.getRows() - 1;// getRows返回的是记录行数
 
 			workbook.close();
 		} catch (BiffException e) {
@@ -138,6 +138,7 @@ public class LabClientTest {
 		} finally {
 
 		}
+		//itemSum - 1为总的记录总数
 		log.info("Item sum is: " + itemSum);
 		int cnt = 10;// 每次处理的sheet记录条数
 
@@ -152,7 +153,7 @@ public class LabClientTest {
 			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
 				end = itemSum;
 			} else {
-				end = start + cnt;
+				end = start + cnt - 1;
 			}
 			userRateProcess(start, end);
 		}
@@ -161,12 +162,12 @@ public class LabClientTest {
 	@Test
 	public void task() {
 		// autoLogin();
-		// task1();
-		// task2();
-		task3();
-		// task4();
-//		 autoLogin();
-//		 task5();
+//		 task1();
+//		 task2();
+//		task3();
+//		task4();
+		 autoLogin();
+		 task5();
 	}
 
 	public void itemDetailProcess(int start, int end) {
@@ -348,7 +349,7 @@ public class LabClientTest {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
+			itemSum = searchResultSheet.getRows() - 1;// getRows返回的是记录行数
 
 			workbook.close();
 		} catch (BiffException e) {
@@ -361,25 +362,23 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemDetailProcess(2920, 3900);
-		// int cnt = 10;// 每次处理的sheet记录条数
-		//
-		// int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
-		// + 1;
-		// // 普通数码相机专业单反相机数码摄像机
-		// log.info("Num of processes is: " + numOfProcess);
-		// int start = 0;
-		// int end = 0;
-		// for (int i = 1; i <= numOfProcess; ++i) {
-		// start = (i - 1) * cnt + 1;
-		// if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
-		// end = itemSum;
-		// } else {
-		// end = start + cnt;
-		// }
-		// itemDetailProcess(start, end);
-		// }
+		int cnt = 10;// 每次处理的sheet记录条数
 
+		int numOfProcess = itemSum % cnt == 0 ? itemSum / cnt : itemSum / cnt
+				+ 1;
+		// 普通数码相机专业单反相机数码摄像机
+		log.info("Num of processes is: " + numOfProcess);
+		int start = 0;
+		int end = 0;
+		for (int i = 1; i <= numOfProcess; ++i) {
+			start = (i - 1) * cnt + 1;
+			if (i == numOfProcess) {// 如果是最后一次处理时, end就直接为记录的总数
+				end = itemSum;
+			} else {
+				end = start + cnt - 1;
+			}
+			itemDetailProcess(start, end);
+		}
 	}
 
 	// buyer info task
@@ -389,7 +388,7 @@ public class LabClientTest {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
+			itemSum = searchResultSheet.getRows() - 1;// getRows返回的是记录行数
 
 			workbook.close();
 		} catch (BiffException e) {
@@ -402,7 +401,7 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemBuyerProcess(151, 180);
+		itemBuyerProcess(1, 50);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +
@@ -416,7 +415,7 @@ public class LabClientTest {
 		// if(i == numOfProcess){//如果是最后一次处理时, end就直接为记录的总数
 		// end = itemSum;
 		// }else{
-		// end = start + cnt;
+		// end = start + cnt - 1;
 		// }
 		// itemDetailProcess(start, end);
 		// }

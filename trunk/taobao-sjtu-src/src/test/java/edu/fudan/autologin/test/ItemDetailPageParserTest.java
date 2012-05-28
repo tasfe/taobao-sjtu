@@ -46,14 +46,14 @@ public class ItemDetailPageParserTest {
 	
 	@Test
 	public void execute() {
-		// testItemDetailPage();
+//		 testItemDetailPage();
 //		testItemCounter();
-		 testSaleSumService();
+//		 testSaleSumService();
 		// testReviewSum();
 		// testWeekSaleNumServie();
 		// testUserRate();
 
-		// testBuyerListService();
+		 testBuyerListService();
 
 	}
 	
@@ -125,7 +125,7 @@ public class ItemDetailPageParserTest {
 
 	public void testItemDetailPage(){
 //		autoLogin();
-		String pageUrl = "http://item.taobao.com/item.htm?id=15222471807";
+		String pageUrl = "http://item.taobao.com/item.htm?id=1266491167";
 		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, pageUrl);
 		itemDetailPageParser.parsePage();
 	}
@@ -233,14 +233,15 @@ public class ItemDetailPageParserTest {
 	
 	
 	public void testBuyerListService() {
-		autoLogin();
-		String itemPageUrl = "tp://item.taobao.com/item.htm?id=10793172822";
+//		autoLogin();
+		String itemPageUrl = "http://item.taobao.com/item.htm?id=1266491167";
 		BuyerListService buyerListService = new BuyerListService();
 		buyerListService.setHttpClient(httpClient);
 		buyerListService.setItemPageUrl(itemPageUrl);
 
 		List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
 		buyerListService.setBuyerInfos(buyerInfos);
+		
 		SaleSumService saleSumService = new SaleSumService();
 		saleSumService.setItemPageUrl(itemPageUrl);
 		saleSumService.execute();
