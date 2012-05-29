@@ -4,7 +4,6 @@ http://rate.taobao.com/feedRateList.htm?userNumId=14744854&auctionNumId=13599064
 http://rate.taobao.com/feedRateList.htm?userNumId=14744854&auctionNumId=13599064573&siteID=7
 
 jsonp_reviews_list(
-
 {
 "watershed":100,
 "maxPage":167,

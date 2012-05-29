@@ -35,3 +35,12 @@ ems:0.00
 iw:0
 is:
 callback:TShop.mods.SKU.DefaultShippingInfo.render
+
+
+
+
+http://detailskip.taobao.com/json/show_buyer_list.htm?page_size=15&is_start=false&item_type=b&ends=1337686509000&starts=1337081709000&item_id=16250820776&user_tag=408025088&old_quantity=7574&sold_total_num=16&closed=false&seller_num_id=206967829&zhichong=true&title=Samsung%2F%C8%FD%D0%C7+Galaxy+Note%2FI9220%2FN7000+%CF%D6%C2%F2%CB%CD%B5%E7%B3%D8%2F%C6%A4%CC%D7%2F8G%2F%C0%B6%D1%C0&bidPage=2&callback=TShop.mods.DealRecord.reload&t=1337234645463
+
+http://detailskip.taobao.com/json/show_buyer_list.htm?page_size=15&is_start=false&item_type=b&ends=1337686509000&starts=1337081709000&item_id=16250820776&user_tag=408025088&old_quantity=7574&sold_total_num=16&closed=false&seller_num_id=206967829&zhichong=true&title=Samsung%2F%C8%FD%D0%C7+Galaxy+Note%2FI9220%2FN7000+%CF%D6%C2%F2%CB%CD%B5%E7%B3%D8%2F%C6%A4%CC%D7%2F8G%2F%C0%B6%D1%C0&bidPage=3&callback=TShop.mods.DealRecord.reload&t=1337234675666
+
+
