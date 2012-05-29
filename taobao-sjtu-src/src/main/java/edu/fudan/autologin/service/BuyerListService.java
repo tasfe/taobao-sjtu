@@ -2,7 +2,6 @@ package edu.fudan.autologin.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 import jxl.write.WritableSheet;
@@ -12,7 +11,6 @@ import net.sf.json.JSONSerializer;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.AbstractHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -20,16 +18,13 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import edu.fudan.autologin.constants.SexEnum;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pageparser.ItaobaoPageParser;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.utils.DosCmdUtils;
 import edu.fudan.autologin.utils.GetWaitUtil;
-import edu.fudan.autologin.utils.PrintUtils;
 import edu.fudan.autologin.utils.RandomUtils;
-import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class BuyerListService {
 	private static final Logger log = Logger.getLogger(BuyerListService.class);
@@ -63,7 +58,7 @@ public class BuyerListService {
 		}
 		public void run() {
 			log.info("This is buyers of Page NO: " + pageNum);
-			String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+			String constructedShowBuyerListUrl = buildShowBuyerListUrl(
 					showBuyerListUrl, pageNum);
 			parseBuyerListTable(getShowBuyerListDoc(constructedShowBuyerListUrl));
 		}
@@ -71,10 +66,10 @@ public class BuyerListService {
 
 	/**
 	 * 1.get ItemDetailPage; <br/>
-	 * 2.get showBuyerListUrl from ItemDetailPage; 3.according to taobao rules,
-	 * construct our showBuyerListUrl list; 4.according to construted
-	 * showBuyerListUrl, get json data from server; 5.parsing json data from
-	 * server and get our desired data;
+	 * 2.get showBuyerListUrl from ItemDetailPage; <br/>
+	 * 3.according to taobao rules,construct our showBuyerListUrl list;<br/>
+	 * 4.according to construted showBuyerListUrl, get json data from server;
+	 * 5.parsing json data from server and get our desired data;
 	 * 
 	 */
 	public void execute() {
@@ -89,28 +84,26 @@ public class BuyerListService {
 					: (buyerSum / pageSize + 1);
 
 			if (pageSum >= 100) {
-				pageSum = 100;
+				pageSum = 100;// the page sum of the buyer list is no more than
+								// 100 page, so we should truncate the first 100
+								// page.
 			}
 			log.info("Total page num is: " + pageSum);
 			for (int pageNum = 1; pageNum <= pageSum; ++pageNum) {
 				log.info("-----------------------------------------------------");
 				log.info("This is buyers of Page NO: " + pageNum);
-				String constructedShowBuyerListUrl = constructShowBuyerListUrl(
+				String constructedShowBuyerListUrl = buildShowBuyerListUrl(
 						showBuyerListUrl, pageNum);
 
 				Document doc = getShowBuyerListDoc(constructedShowBuyerListUrl);
-
-				
-				if(doc == null)
+				if (doc == null)
 					continue;
 				while (parseBuyerListTable(doc) == false) {
 					doc = getShowBuyerListDoc(constructedShowBuyerListUrl
 							+ "&&code=" + verifyCode);
-					if(doc == null)
+					if (doc == null)
 						break;
 				}
-
-				
 				// 因为触发了验证码机制，所以无法请求后面的页面
 				// 什么样的机制会触发验证码？
 				/*
@@ -180,9 +173,7 @@ public class BuyerListService {
 		
 		//先检查是否需要输入验证码
 		//如果请求某页面出现验证码，则加上验证码重新请求该链接
-		
 		if(doc.select("img#J_DealCodePic").size() != 0){
-			
 //			当出现验证码的时候，可适当的等待时间再
 			String checkcodeUrl = doc.select("img#J_DealCodePic").get(0).attr("src");
 			DosCmdUtils.open(checkcodeUrl);
@@ -197,6 +188,7 @@ public class BuyerListService {
 		log.info("Element list size is: "+buyerListEls.size());
 		
 		if(buyerListEls.size() == 0){
+			log.info("Buyer info from server is: "+doc.toString());
 			return true;
 		}
 		for (int i = 0; i < buyerListEls.size(); i++) {
@@ -333,7 +325,7 @@ GetWaitUtil.get(getMethod);
 		return showBuyerListUrl;
 	}
 
-	public String constructShowBuyerListUrl(String showBuyerListUrl, int pageNum) {
+	public String buildShowBuyerListUrl(String showBuyerListUrl, int pageNum) {
 		String delims = "[?&]+";
 		String[] tokens = showBuyerListUrl.split(delims);
 //		 System.out.println(tokens.length);

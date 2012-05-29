@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
 	<browserPath>
-		/opt/google/chrome/google-chrome	</browserPath>
+		C:\\Users\\JustinChen\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe		</browserPath>
 	<excelFilePath>
-	/home/gschen/taobao-sjtu.xls
+	d:\\taobao-sjtu.xls
 	</excelFilePath>
 
 <!-- http get请求时间间隔，单位为毫秒 -->
