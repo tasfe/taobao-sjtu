@@ -374,7 +374,7 @@ public class MainTest {
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
-			itemSum = searchResultSheet.getRows();// getRows返回的是记录行数
+			itemSum = searchResultSheet.getRows() - 1;// getRows返回的是记录行数
 
 			workbook.close();
 		} catch (BiffException e) {
@@ -387,7 +387,7 @@ public class MainTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemBuyerProcess(1, 1);
+		itemBuyerProcess(701, 1000);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +

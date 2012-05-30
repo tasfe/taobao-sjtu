@@ -220,7 +220,7 @@ public class LabClientTest {
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
 					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
-			WritableSheet sh = wbook.getSheet("BuyerInfoSheet");// 得到一个工作对象
+			WritableSheet sh = wbook.getSheet("BuyerInfoSheet1");// 得到一个工作对象
 
 			// sheet.getRows()返回该页的总行数
 			for (int i = start; i <= end; i++) {
@@ -391,7 +391,7 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemBuyerProcess(501, 700);
+		itemBuyerProcess(1501, 1800);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +
