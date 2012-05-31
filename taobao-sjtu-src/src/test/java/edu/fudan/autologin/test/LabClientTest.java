@@ -216,23 +216,24 @@ public class LabClientTest {
 
 			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
-			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
+			Sheet itemDetailSheet = workbook.getSheet("ItemDetailSheet");
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
 					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
-			WritableSheet sh = wbook.getSheet("BuyerInfoSheet1");// 得到一个工作对象
+			WritableSheet sh = wbook.getSheet("BuyerInfoSheet2");// 得到一个工作对象
 
 			// sheet.getRows()返回该页的总行数
 			for (int i = start; i <= end; i++) {
-				
+
 				log.info("--------------------------------------------------------------------------------------------------------------");
 				log.info("This is the item process no: " + i);
-				
-				
+
 				HttpClient tmp = new DefaultHttpClient();
-				String itemDetailHref = searchResultSheet.getCell(18, i)
+				String itemDetailHref = itemDetailSheet.getCell(12, i)
 						.getContents();
-				String sellerId = searchResultSheet.getCell(0, i).getContents();
+				String sellerId = itemDetailSheet.getCell(0, i).getContents();
+				int saleSum = Integer.parseInt(itemDetailSheet.getCell(3, i)
+						.getContents());
 
 				BuyerListService buyerListService = new BuyerListService();
 				buyerListService.setHttpClient(httpClient);
@@ -242,15 +243,15 @@ public class LabClientTest {
 				buyerListService.setSellerId(sellerId);
 				buyerListService.setSheet(sh);
 
-				SaleSumService saleSumService = new SaleSumService();
-				saleSumService.setItemPageUrl(itemDetailHref);
-				saleSumService.execute();
+				// SaleSumService saleSumService = new SaleSumService();
+				// saleSumService.setItemPageUrl(itemDetailHref);
+				// saleSumService.execute();
 
-				buyerListService.setBuyerSum(saleSumService.getSaleSum());
+				buyerListService.setBuyerSum(saleSum);
 				buyerListService.execute();
 
 				tmp.getConnectionManager().shutdown();
-				
+
 				try {
 					Thread.sleep(0);
 				} catch (InterruptedException e) {
@@ -391,7 +392,7 @@ public class LabClientTest {
 
 		}
 		log.info("Item sum is: " + itemSum);
-		itemBuyerProcess(1501, 1800);
+		itemBuyerProcess(2251, 2300);
 		// int cnt = 10;//每次处理的sheet记录条数
 		//
 		// int numOfProcess = itemSum % cnt == 0 ? itemSum/cnt : itemSum/cnt +

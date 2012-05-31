@@ -53,9 +53,13 @@ public class ItemDetailPageParserTest {
 		// testWeekSaleNumServie();
 		// testUserRate();
 
-		 testBuyerListService();
+		
+//		 testBuyerListService();
+//		testSaleSumService();
 
 	}
+	
+
 	
 	public void testWeekSaleNumServie(){
 		WeekSaleService weekSaleService = new WeekSaleService();
@@ -247,7 +251,7 @@ public class ItemDetailPageParserTest {
 		saleSumService.execute();
 		log.info("Sale sum is: " + saleSumService.getSaleSum());
 
-		buyerListService.setBuyerSum(saleSumService.getSaleSum());
+		buyerListService.setBuyerSum(100);
 		buyerListService.execute();
 	}
 

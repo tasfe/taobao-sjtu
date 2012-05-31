@@ -10,7 +10,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Logger;
 
 import edu.fudan.autologin.formfields.GetMethod;
-import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.utils.GetWaitUtil;
 import net.sf.json.JSONObject;
 
