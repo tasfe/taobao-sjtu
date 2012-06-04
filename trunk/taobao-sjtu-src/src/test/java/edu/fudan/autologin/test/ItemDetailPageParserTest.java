@@ -26,6 +26,7 @@ import edu.fudan.autologin.pageparser.UserRatePageParser;
 import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.service.BuyerListService;
+import edu.fudan.autologin.service.DetailCommonService;
 import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.ItemViewCountService;
 import edu.fudan.autologin.service.MonthService;
@@ -53,7 +54,7 @@ public class ItemDetailPageParserTest {
 		// testWeekSaleNumServie();
 		// testUserRate();
 
-		
+		testDetailCommon();
 //		 testBuyerListService();
 //		testSaleSumService();
 
@@ -61,6 +62,15 @@ public class ItemDetailPageParserTest {
 	
 
 	
+	private void testDetailCommon() {
+		
+		DetailCommonService service = new DetailCommonService();
+		service.setPageUrl("http://item.taobao.com/item.htm?id=8145925504");
+		service.execute();
+	}
+
+
+
 	public void testWeekSaleNumServie(){
 		WeekSaleService weekSaleService = new WeekSaleService();
 		weekSaleService.setPageUrl("http://s.taobao.com/search?source=top_search&q=Canon%2F%BC%D1%C4%DC+PowerShot+A4000+IS&pspuid=142914089&v=product&p=detail&stp=top.toplist.1403.sellhot.image.1.0&ad_id=&am_id=&cm_id=&pm_id=");
