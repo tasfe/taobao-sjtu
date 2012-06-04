@@ -81,7 +81,7 @@ public class GetMethod {
 		} catch (ClientProtocolException e) {
 			log.error("Client protocol exception");
 			log.error(e.getMessage());
-			httpget.abort();
+			httpget.abort();      
 			return false;
 		} catch (IOException e) {
 			log.error("IO exception");
