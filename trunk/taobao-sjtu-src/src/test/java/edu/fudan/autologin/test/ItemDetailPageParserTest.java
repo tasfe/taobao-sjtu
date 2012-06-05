@@ -53,10 +53,11 @@ public class ItemDetailPageParserTest {
 		// testReviewSum();
 		// testWeekSaleNumServie();
 		// testUserRate();
-
-		testDetailCommon();
+//		testDetailCommon();
 //		 testBuyerListService();
 //		testSaleSumService();
+		
+		testReview();
 
 	}
 	
@@ -65,8 +66,9 @@ public class ItemDetailPageParserTest {
 	private void testDetailCommon() {
 		
 		DetailCommonService service = new DetailCommonService();
-		service.setPageUrl("http://item.taobao.com/item.htm?id=8145925504");
+		service.setPageUrl("http://item.taobao.com/item.htm?id=10333848882");
 		service.execute();
+		log.info(service.getImpress());
 	}
 
 

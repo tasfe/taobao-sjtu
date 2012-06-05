@@ -8,9 +8,11 @@ import java.util.List;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
+import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -31,6 +33,9 @@ import edu.fudan.autologin.pojos.BasePostInfo;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.CategoryInfo;
 import edu.fudan.autologin.service.BuyerListService;
+import edu.fudan.autologin.service.DetailCommonService;
+import edu.fudan.autologin.service.ItemReviewService;
+import edu.fudan.autologin.service.ReviewSumService;
 import edu.fudan.autologin.service.SaleSumService;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
@@ -100,6 +105,105 @@ public class LabClientTest {
 		itemDetailPageParser.execute();
 	}
 
+	public void appendImpress() {
+		Workbook workbook = null;
+		try {
+			workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+		} catch (BiffException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+
+		WritableWorkbook wbook = null;
+		try {
+			wbook = Workbook.createWorkbook(
+					new File(XmlConfUtil.getValueByName("excelFilePath")),
+					workbook);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		} // 根据book创建一个操作对象
+		WritableSheet sh = wbook.getSheet("ItemDetailSheet");// 得到一个工作对象
+
+		int itemSum = sh.getRows() - 1;
+		// sheet.getRows()返回该页的总行数
+		for (int i = 3; i <= itemSum; i++) {
+log.info("This is process no: "+i);
+			String id = sh.getCell(0,i).getContents();
+			String pageUrl = "http://item.taobao.com/item.htm?id="+id;
+			
+			DetailCommonService service = new DetailCommonService();
+			service.setPageUrl(pageUrl);
+			service.execute();
+			
+			String impress = service.getImpress();
+			
+			try {
+				sh.addCell(new Label(14, i, impress));
+			} catch (RowsExceededException e) {
+				e.printStackTrace();
+			} catch (WriteException e) {
+				e.printStackTrace();
+			}
+			
+		}
+
+		try {
+			wbook.write();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			try {
+				wbook.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} catch (WriteException e) {
+			e.printStackTrace();
+			log.error("Write excel exception. " + e.getMessage());
+		}
+		workbook.close();
+
+	}
+
+	public void task6() {
+
+		String prefix = "http://item.taobao.com/item.htm?id=";
+		String itemId = null;
+		int itemSum = 0;
+
+		Workbook workbook = null;
+		try {
+			workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
+
+			itemSum = searchResultSheet.getRows() - 1;
+
+			for (int i = 1; i <= itemSum; ++i) {
+				StringBuilder pageUrl = new StringBuilder();
+				pageUrl.append(prefix);
+				itemId = searchResultSheet.getCell(0, i).getContents();
+				pageUrl.append(itemId);
+
+				DetailCommonService service = new DetailCommonService();
+				service.setPageUrl(pageUrl.toString());
+				service.execute();
+
+				pageUrl = null;
+			}
+		} catch (BiffException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		workbook.close();
+
+	}
+
 	/**
 	 * 1. create work book; 2. fetching top ten page items and write top ten
 	 * items to excel; 3. ;
@@ -128,7 +232,7 @@ public class LabClientTest {
 		} finally {
 
 		}
-		//itemSum - 1为总的记录总数
+		// itemSum - 1为总的记录总数
 		log.info("Item sum is: " + itemSum);
 		int cnt = 10;// 每次处理的sheet记录条数
 
@@ -152,12 +256,15 @@ public class LabClientTest {
 	@Test
 	public void task() {
 		// autoLogin();
-//		 task1();
-//		 task2();
-//		task3();
-//		task4();
-		 autoLogin();
-		 task5();
+		// task1();
+		// task2();
+		// task3();
+		// task4();
+		// autoLogin();
+		// task5();
+//		task6();
+//		appendImpress();
+		itemReviews();
 	}
 
 	public void itemDetailProcess(int start, int end) {
@@ -189,6 +296,66 @@ public class LabClientTest {
 					e.printStackTrace();
 					log.error(e.getMessage());
 				}
+			}
+
+			wbook.write();
+			try {
+				wbook.close();
+			} catch (WriteException e) {
+				e.printStackTrace();
+				log.error("Write excel exception. " + e.getMessage());
+			}
+			workbook.close();
+
+		} catch (BiffException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		} finally {
+
+		}
+	}
+	
+	public void itemReviews() {
+		String prefix = "http://item.taobao.com/item.htm?id=";
+		try {
+			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
+			int itemSum = searchResultSheet.getRows() - 1;
+
+			WritableWorkbook wbook = Workbook.createWorkbook(new File(
+					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
+			WritableSheet sh = wbook.getSheet("ReviewsSheet");// 得到一个工作对象
+
+			// sheet.getRows()返回该页的总行数
+			for (int i = 1; i <= 2; i++) {
+				log.info("--------------------------------------------------------------------------------------------------------------");
+				log.info("This is the item process no: " + i);
+				String id = searchResultSheet
+						.getCell(0, i).getContents();
+				StringBuilder pageUrl = new StringBuilder();
+				pageUrl.append(prefix);
+				pageUrl.append(id);
+				
+				HttpClient tmp = new DefaultHttpClient();
+				
+				ReviewSumService reviewSumService = new ReviewSumService();
+				reviewSumService.setItemPageUrl(pageUrl.toString());
+				reviewSumService.execute();
+				
+				
+				ItemReviewService itemReviewService = new ItemReviewService();
+				itemReviewService
+						.setItemPageUrl(pageUrl.toString());
+				itemReviewService.setHttpClient(httpClient);
+				itemReviewService.setReviewSum(reviewSumService.getReviewSum());
+				itemReviewService.setSheet(sh);
+				itemReviewService.execute();
+				
+				tmp.getConnectionManager().shutdown();
 			}
 
 			wbook.write();
