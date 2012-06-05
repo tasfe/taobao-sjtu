@@ -1,10 +1,23 @@
 package edu.fudan.autologin.pojos;
 
-import edu.fudan.autologin.constants.SexEnum;
 
 public class BuyerInfo {
 
+	private int indicator;
+	private String feedDate;
 	
+	public int getIndicator() {
+		return indicator;
+	}
+	public void setIndicator(int indicator) {
+		this.indicator = indicator;
+	}
+	public String getFeedDate() {
+		return feedDate;
+	}
+	public void setFeedDate(String feedDate) {
+		this.feedDate = feedDate;
+	}
 	private String sellerId;
 	private float price;
 	private int num;

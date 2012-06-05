@@ -3,6 +3,8 @@ package edu.fudan.autologin.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import jxl.write.WritableSheet;
+
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.Logger;
@@ -10,7 +12,11 @@ import org.apache.log4j.Logger;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
+import edu.fudan.autologin.constants.UserType;
+import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
+import edu.fudan.autologin.pageparser.ItaobaoPageParser;
+import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.FeedRate;
 import edu.fudan.autologin.pojos.FeedRateComment;
 import edu.fudan.autologin.utils.GetWaitUtil;
@@ -40,6 +46,16 @@ import edu.fudan.autologin.utils.XmlConfUtil;
 public class ItemReviewService {
 	private static final Logger log = Logger.getLogger(ItemReviewService.class);
 	private String itemPageUrl;
+	
+	private WritableSheet sheet;
+	public WritableSheet getSheet() {
+		return sheet;
+	}
+
+	public void setSheet(WritableSheet sheet) {
+		this.sheet = sheet;
+	}
+
 	private FeedRate feedRate = new FeedRate();
 
 	private int reviewSum = 0;
@@ -251,18 +267,64 @@ public class ItemReviewService {
 
 				JSONObject j = JSONObject.fromObject(o);
 				FeedRateComment cmt = new FeedRateComment();
+				String date = j.getString("date");
 //				cmt.setDate(j.getString("date"));
 //				cmt.setContent(j.getString("content"));
 //				log.info("Comment NO is: " + i++);
-				log.info("Date is: " + j.getString("date"));
-				dateList.add(j.getString("date"));
+				log.info("Date is: " + date);
+				dateList.add(date);
 //				log.info("Auction title is: "
 //						+ j.getJSONObject("auction").getString("title"));
 //				log.info("Content is: " + j.getString("content"));
+				
+				JSONObject user = j.getJSONObject("user");
+				String nick = user.getString("nick");
+				String nickUrl = user.getString("nickUrl");
+				
+				log.info("nick is: "+nick);
+				log.info("nick url is: "+nickUrl);
 
+				
+				if(nickUrl != null && nickUrl != ""){
+					BuyerInfo buyerInfo = new BuyerInfo();
+					buyerInfo.setFeedDate(date);
+					buyerInfo.setIndicator(UserType.ANONYMOUS);
+				
+					ItaobaoPageParser parser = new ItaobaoPageParser(httpClient, buildItaobaoUrl(nickUrl));
+					parser.setBuyerInfo(buyerInfo);
+					parser.parsePage();
+					
+					//write records into sheet
+					ExcelUtil.writeReviewsSheet(sheet, buyerInfo);
+					
+				}else{
+					log.info("nick url is null.");
+				}
+				
+				
+				
+				
 			}
 			return true;
 		}
+	}
+	
+	public String buildItaobaoUrl(String url){
+		StringBuilder targetUrl = new StringBuilder();
+		//http://i.taobao.com/u/OTE4MDUxOTU=/front.htm
+		String prefix = "http://i.taobao.com/u/";
+		String appender = "/front.htm";
+		String id = null;
+		
+		//http://wow.taobao.com/u/NDkwMDQyNTc4/view/ta_taoshare_list.htm?redirect=fa
+		id = url.substring(url.indexOf("/u/") + "/u/".length(),url.indexOf("/view/"));
+		
+		targetUrl.append(prefix);
+		targetUrl.append(id);
+		targetUrl.append(appender);
+		
+		log.info("Target url is: "+targetUrl.toString());
+		return targetUrl.toString();
 	}
 
 	public String getFirstReviewDate() { 
