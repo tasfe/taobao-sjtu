@@ -188,9 +188,17 @@ log.info("This is process no: "+i);
 				itemId = searchResultSheet.getCell(0, i).getContents();
 				pageUrl.append(itemId);
 
-				DetailCommonService service = new DetailCommonService();
-				service.setPageUrl(pageUrl.toString());
-				service.execute();
+				ReviewSumService reviewSumService = new ReviewSumService();
+				reviewSumService.setItemPageUrl(pageUrl.toString());
+				reviewSumService.execute();
+				
+				
+				ItemReviewService itemReviewService = new ItemReviewService();
+				itemReviewService
+						.setItemPageUrl(pageUrl.toString());
+				itemReviewService.setHttpClient(httpClient);
+				itemReviewService.setReviewSum(reviewSumService.getReviewSum());
+				itemReviewService.execute();
 
 				pageUrl = null;
 			}
@@ -264,7 +272,7 @@ log.info("This is process no: "+i);
 		// task5();
 //		task6();
 //		appendImpress();
-		itemReviews();
+//		itemReviews();
 	}
 
 	public void itemDetailProcess(int start, int end) {
@@ -632,7 +640,7 @@ log.info("This is process no: "+i);
 		ci1.setCategoryName("洁面");
 		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
 		categoryInfos.add(ci1);
-		//
+		
 		CategoryInfo ci2 = new CategoryInfo();
 		ci2.setCategoryName("热门手机");
 		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
