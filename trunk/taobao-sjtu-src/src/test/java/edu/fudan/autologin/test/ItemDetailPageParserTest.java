@@ -49,15 +49,15 @@ public class ItemDetailPageParserTest {
 	public void execute() {
 //		 testItemDetailPage();
 //		testItemCounter();
-//		 testSaleSumService();
-		// testReviewSum();
+//		 testReviewSum();
 		// testWeekSaleNumServie();
 		// testUserRate();
 //		testDetailCommon();
+//		testPostageService();
 //		 testBuyerListService();
 //		testSaleSumService();
 		
-		testReview();
+//		testReview();
 
 	}
 	
@@ -272,7 +272,7 @@ public class ItemDetailPageParserTest {
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(httpClient);
 		postageService
-				.setItemPageUrl("http://wt.taobao.com/detail.htm?id=14010379194");
+				.setItemPageUrl("http://item.taobao.com/item.htm?id=5656200607");
 		postageService.execute();
 	}
 	

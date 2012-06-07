@@ -12,6 +12,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import edu.fudan.autologin.constants.SheetNames;
+import edu.fudan.autologin.constants.SystemConstant;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.SellerInSearchResult;
@@ -43,9 +44,41 @@ public class ExcelUtil {
 	private static final Logger log = Logger.getLogger(ExcelUtil.class
 			.getName());
 
+	private static int currentBuyerSheetIndex = 0;
 	private static WritableWorkbook workbook;
-//	private static String path = "D:\\taobao-sjtu.xls";
-	private static Map<String, WritableSheet> sheets;
+	private static Map<String, WritableSheet> sheetMap;
+
+	public static int getCurrentBuyerSheetIndex() {
+		return currentBuyerSheetIndex;
+	}
+
+	public static void setCurrentBuyerSheetIndex(int currentBuyerSheetIndex) {
+		ExcelUtil.currentBuyerSheetIndex = currentBuyerSheetIndex;
+	}
+
+	public static WritableWorkbook getWorkbook() {
+		return workbook;
+	}
+
+	public static void setWorkbook(WritableWorkbook workbook) {
+		ExcelUtil.workbook = workbook;
+	}
+
+	public static Map<String, WritableSheet> getSheetMap() {
+		return sheetMap;
+	}
+
+	public static void setSheetMap(Map<String, WritableSheet> sheetMap) {
+		ExcelUtil.sheetMap = sheetMap;
+	}
+
+	public static int getSheetIndex() {
+		return sheetIndex;
+	}
+
+	public static void setSheetIndex(int sheetIndex) {
+		ExcelUtil.sheetIndex = sheetIndex;
+	}
 
 	public static void prepare() {
 		createWorkbook();
@@ -53,8 +86,7 @@ public class ExcelUtil {
 		createHeaders();
 	}
 
-	public static void createHeaders() {
-
+	public static void createTopTenSheetHeader() {
 		List<String> topTenPageHeaders = new ArrayList<String>();
 		topTenPageHeaders.add("类别");
 		topTenPageHeaders.add("产品名称");
@@ -63,7 +95,9 @@ public class ExcelUtil {
 		topTenPageHeaders.add("周销量卖家");
 		topTenPageHeaders.add("链接地址");
 		writeHeader(SheetNames.TOP_TEN_SHEET, topTenPageHeaders);
+	}
 
+	public static void createSearchResultSheetHeader() {
 		List<String> searchResultHeaders = new ArrayList<String>();
 		searchResultHeaders.add("宝贝编号");
 		searchResultHeaders.add("类别");
@@ -86,17 +120,9 @@ public class ExcelUtil {
 		searchResultHeaders.add("链接地址");
 		writeHeader(SheetNames.SEARCH_RESULT_SHEET, searchResultHeaders);
 
-		List<String> buyerInfoHeaders = new ArrayList<String>();
-		buyerInfoHeaders.add("宝贝编号");
-		buyerInfoHeaders.add("拍下价格");
-		buyerInfoHeaders.add("数量");
-		buyerInfoHeaders.add("付款时间");
-		buyerInfoHeaders.add("款式和型号");
-		buyerInfoHeaders.add("买家信用积分");
-		buyerInfoHeaders.add("买家地址");
-		buyerInfoHeaders.add("买家性别");
-		writeHeader(SheetNames.BUYER_INFO_SHEET, buyerInfoHeaders);
+	}
 
+	public static void createItemDetailSheetHeader() {
 		List<String> itemDetailHeaders = new ArrayList<String>();
 		itemDetailHeaders.add("宝贝编号");
 		itemDetailHeaders.add("价格区间");
@@ -110,9 +136,27 @@ public class ExcelUtil {
 		itemDetailHeaders.add("容量");
 		itemDetailHeaders.add("第一条评价时间");
 		itemDetailHeaders.add("最后一条评价时间");
+		itemDetailHeaders.add("indicator");
 		itemDetailHeaders.add("页面链接地址");
 		itemDetailHeaders.add("卖家信用页面链接地址");
 		writeHeader(SheetNames.ITEM_DETAIL_SHEET, itemDetailHeaders);
+
+	}
+
+	public static void createBuyerInfoSheetHeader() {
+		List<String> buyerInfoHeaders = new ArrayList<String>();
+		buyerInfoHeaders.add("宝贝编号");
+		buyerInfoHeaders.add("买家性别");
+		buyerInfoHeaders.add("买家地址");
+		buyerInfoHeaders.add("买家信用积分");
+		buyerInfoHeaders.add("feed_date");
+		buyerInfoHeaders.add("user_indicator");
+		writeHeader(SheetNames.BUYER_INFO_SHEET + "_" + currentBuyerSheetIndex,
+				buyerInfoHeaders);
+
+	}
+
+	public static void createUserRateSheetHeader() {
 
 		List<String> sellerRateHeaders = new ArrayList<String>();
 		sellerRateHeaders.add("宝贝编号");
@@ -170,14 +214,23 @@ public class ExcelUtil {
 		sellerRateHeaders.add("卖家信用");
 		sellerRateHeaders.add("主营行业");
 		sellerRateHeaders.add("主营占比");
-		
+
 		sellerRateHeaders.add("href");
 
 		writeHeader(SheetNames.USER_RATE_SHEET, sellerRateHeaders);
 	}
 
+	public static void createHeaders() {
+
+		createTopTenSheetHeader();
+		createSearchResultSheetHeader();
+		createItemDetailSheetHeader();
+		createUserRateSheetHeader();
+		createBuyerInfoSheetHeader();
+	}
+
 	public static void writeHeader(String sheetName, List<String> header) {
-		writeHeader(sheets.get(sheetName), header);
+		writeHeader(sheetMap.get(sheetName), header);
 	}
 
 	public static void writeHeader(WritableSheet sheet, List<String> header) {
@@ -235,26 +288,27 @@ public class ExcelUtil {
 	}
 
 	public static void createWorkbook() {
-		
+
 		String excelFilePath = XmlConfUtil.getValueByName("excelFilePath");
-		log.debug("Excel file path from xml file is: "+excelFilePath);
+		log.debug("Excel file path from xml file is: " + excelFilePath);
 		String basePath = excelFilePath;
 		String fileExtendName = ".xls";
-		
-		Date date=new Date();
 
-		SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+		Date date = new Date();
+
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
 
 		StringBuffer path = new StringBuffer();
 		path.append(basePath);
 		path.append("taobao-sjtu");
-//		path.append(df.format(date).toString());
+		// path.append(df.format(date).toString());
 		path.append(fileExtendName);
-		
-		log.info("Path is: "+path.toString());
+
+		log.info("Path is: " + path.toString());
 		try {
-			
-			workbook = Workbook.createWorkbook(new File(XmlConfUtil.getValueByName("excelFilePath")));
+
+			workbook = Workbook.createWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -285,33 +339,36 @@ public class ExcelUtil {
 		return wcf;
 	}
 
+	private static int sheetIndex = 0;
+
 	public static void createSheets() {
-		int sheetNum = 0;
-		sheets = new HashMap<String, WritableSheet>();
+		sheetMap = new HashMap<String, WritableSheet>();
 
 		WritableSheet sheet = workbook.createSheet(SheetNames.TOP_TEN_SHEET,
-				sheetNum++);
-		sheets.put(SheetNames.TOP_TEN_SHEET, sheet);
+				sheetIndex++);
+		sheetMap.put(SheetNames.TOP_TEN_SHEET, sheet);
 
 		WritableSheet sheet1 = workbook.createSheet(
-				SheetNames.SEARCH_RESULT_SHEET, sheetNum++);
-		sheets.put(SheetNames.SEARCH_RESULT_SHEET, sheet1);
+				SheetNames.SEARCH_RESULT_SHEET, sheetIndex++);
+		sheetMap.put(SheetNames.SEARCH_RESULT_SHEET, sheet1);
 
 		WritableSheet sheet2 = workbook.createSheet(
-				SheetNames.ITEM_DETAIL_SHEET, sheetNum++);
-		sheets.put(SheetNames.ITEM_DETAIL_SHEET, sheet2);
+				SheetNames.ITEM_DETAIL_SHEET, sheetIndex++);
+		sheetMap.put(SheetNames.ITEM_DETAIL_SHEET, sheet2);
 
 		WritableSheet sheet3 = workbook.createSheet(SheetNames.USER_RATE_SHEET,
-				sheetNum++);
-		sheets.put(SheetNames.USER_RATE_SHEET, sheet3);
+				sheetIndex++);
+		sheetMap.put(SheetNames.USER_RATE_SHEET, sheet3);
 
-		WritableSheet sheet4 = workbook.createSheet(
-				SheetNames.BUYER_INFO_SHEET, sheetNum++);
-		sheets.put(SheetNames.BUYER_INFO_SHEET, sheet4);
+		WritableSheet sheet4 = workbook.createSheet(SheetNames.BUYER_INFO_SHEET
+				+ "_" + currentBuyerSheetIndex, sheetIndex++);
+		sheetMap.put(
+				SheetNames.BUYER_INFO_SHEET + "_" + currentBuyerSheetIndex,
+				sheet4);
 	}
 
 	public static void writeTopTenSheet(List<TopTenItemInfo> topTenItemInfos) {
-		WritableSheet sheet = sheets.get(SheetNames.TOP_TEN_SHEET);// 根据名称获取具体的sheet对象
+		WritableSheet sheet = sheetMap.get(SheetNames.TOP_TEN_SHEET);// 根据名称获取具体的sheet对象
 		assert (sheet != null);
 		// 将list 中的记录写入sheet中
 		for (int i = 0; i < topTenItemInfos.size(); ++i) {
@@ -321,11 +378,11 @@ public class ExcelUtil {
 			Label l1 = new Label(j++, sheet.getRows(), t.getItemName());
 			jxl.write.Number l2 = new jxl.write.Number(j++, sheet.getRows(),
 					t.getTopRank());
-			jxl.write.Number weekSaleNum = new jxl.write.Number(j++, sheet.getRows(),
-					t.getWeekSaleNum());
-			jxl.write.Number weekSellerNum = new jxl.write.Number(j++, sheet.getRows(),
-					t.getWeekSellerNum());
-			
+			jxl.write.Number weekSaleNum = new jxl.write.Number(j++,
+					sheet.getRows(), t.getWeekSaleNum());
+			jxl.write.Number weekSellerNum = new jxl.write.Number(j++,
+					sheet.getRows(), t.getWeekSellerNum());
+
 			Label l3 = new Label(j++, sheet.getRows(), t.getHref());
 			try {
 
@@ -341,6 +398,13 @@ public class ExcelUtil {
 				e.printStackTrace();
 			}
 		}
+		
+		try {
+			workbook.write();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void writeSearchResultSheet(WritableSheet sheet,
@@ -351,28 +415,32 @@ public class ExcelUtil {
 			Label l1 = new Label(0, sheet.getRows(), s.getSellerId());
 			Label l2 = new Label(1, sheet.getRows(), s.getCategoryName());
 			Label l3 = new Label(2, sheet.getRows(), s.getSellerName());
-			Label l4 = new Label(3, sheet.getRows(), s.isGlobalBuy()?"全球购":"0" + "");
-			Label l5 = new Label(4, sheet.getRows(), s.isGoldSeller()?"金牌卖家":"0" + "");
+			Label l4 = new Label(3, sheet.getRows(), s.isGlobalBuy() ? "全球购"
+					: "0" + "");
+			Label l5 = new Label(4, sheet.getRows(), s.isGoldSeller() ? "金牌卖家"
+					: "0" + "");
 			Label l6 = new Label(5, sheet.getRows(), s.getPrice() + "");
 			Label l7 = new Label(6, sheet.getRows(), s.getFreightPrice() + "");
-			Label l8 = new Label(7, sheet.getRows(), s.isCreditCardPay()?"信用卡支付":"0" + "");
+			Label l8 = new Label(7, sheet.getRows(),
+					s.isCreditCardPay() ? "信用卡支付" : "0" + "");
 			Label l9 = new Label(8, sheet.getRows(), s.getSellerAddress());
 			Label l10 = new Label(9, sheet.getRows(), s.getSaleNum() + "");
 			Label l11 = new Label(10, sheet.getRows(), s.getReviews() + "");
-			Label l12 = new Label(11, sheet.getRows(), s.isConsumerPromise()?"消费者保障":"0"
-					+ "");
+			Label l12 = new Label(11, sheet.getRows(),
+					s.isConsumerPromise() ? "消费者保障" : "0" + "");
 			Label l13 = new Label(12, sheet.getRows(),
-					s.isLeaveACompensableThree ? "假一赔三":"0"+ "");
-			Label l14 = new Label(13, sheet.getRows(), s.isSevenDayReturn()?"七天退换":"0"
-					+ "");
-			Label l15 = new Label(14, sheet.getRows(), s.isQualityItem()?"正品保障":"0" + "");
-			Label l16 = new Label(15, sheet.getRows(), s.is30DaysMaintain()?"30天维修":"0"
-					+ "");
+					s.isLeaveACompensableThree ? "假一赔三" : "0" + "");
+			Label l14 = new Label(13, sheet.getRows(),
+					s.isSevenDayReturn() ? "七天退换" : "0" + "");
+			Label l15 = new Label(14, sheet.getRows(),
+					s.isQualityItem() ? "正品保障" : "0" + "");
+			Label l16 = new Label(15, sheet.getRows(),
+					s.is30DaysMaintain() ? "30天维修" : "0" + "");
 			Label l17 = new Label(16, sheet.getRows(), s.getPage() + "");
 			Label l18 = new Label(17, sheet.getRows(), s.getRank() + "");
-			
+
 			Label l19 = new Label(18, sheet.getRows(), s.getHref());
-			
+
 			try {
 				sheet.addCell(l1);
 				sheet.addCell(l2);
@@ -401,36 +469,38 @@ public class ExcelUtil {
 			}
 		}
 	}
-	
-	
+
 	public static void writeSearchResultSheet(
 			List<SellerInSearchResult> sellerInSearchResults) {
-		WritableSheet sheet = sheets.get(SheetNames.SEARCH_RESULT_SHEET);// 根据名称获取具体的sheet对象
-		assert (sheet != null);
-
+		WritableSheet sheet = sheetMap.get(SheetNames.SEARCH_RESULT_SHEET);// 根据名称获取具体的sheet对象
+		
+		assert(sheet != null);
 		for (int i = 0; i < sellerInSearchResults.size(); ++i) {
 			SellerInSearchResult s = sellerInSearchResults.get(i);
-
 			Label l1 = new Label(0, sheet.getRows(), s.getSellerId());
 			Label l2 = new Label(1, sheet.getRows(), s.getCategoryName());
 			Label l3 = new Label(2, sheet.getRows(), s.getSellerName());
-			Label l4 = new Label(3, sheet.getRows(), s.isGlobalBuy()?"全球购":"0" + "");
-			Label l5 = new Label(4, sheet.getRows(), s.isGoldSeller()?"金牌卖家":"0" + "");
+			Label l4 = new Label(3, sheet.getRows(), s.isGlobalBuy() ? "全球购"
+					: "0" + "");
+			Label l5 = new Label(4, sheet.getRows(), s.isGoldSeller() ? "金牌卖家"
+					: "0" + "");
 			Label l6 = new Label(5, sheet.getRows(), s.getPrice() + "");
 			Label l7 = new Label(6, sheet.getRows(), s.getFreightPrice() + "");
-			Label l8 = new Label(7, sheet.getRows(), s.isCreditCardPay()?"信用卡支付":"0" + "");
+			Label l8 = new Label(7, sheet.getRows(),
+					s.isCreditCardPay() ? "信用卡支付" : "0" + "");
 			Label l9 = new Label(8, sheet.getRows(), s.getSellerAddress());
 			Label l10 = new Label(9, sheet.getRows(), s.getSaleNum() + "");
 			Label l11 = new Label(10, sheet.getRows(), s.getReviews() + "");
-			Label l12 = new Label(11, sheet.getRows(), s.isConsumerPromise()?"消费者保障":"0"
-					+ "");
+			Label l12 = new Label(11, sheet.getRows(),
+					s.isConsumerPromise() ? "消费者保障" : "0" + "");
 			Label l13 = new Label(12, sheet.getRows(),
-					s.isLeaveACompensableThree ? "假一赔三":"0"+ "");
-			Label l14 = new Label(13, sheet.getRows(), s.isSevenDayReturn()?"七天退换":"0"
-					+ "");
-			Label l15 = new Label(14, sheet.getRows(), s.isQualityItem()?"正品保障":"0" + "");
-			Label l16 = new Label(15, sheet.getRows(), s.is30DaysMaintain()?"30天维修":"0"
-					+ "");
+					s.isLeaveACompensableThree ? "假一赔三" : "0" + "");
+			Label l14 = new Label(13, sheet.getRows(),
+					s.isSevenDayReturn() ? "七天退换" : "0" + "");
+			Label l15 = new Label(14, sheet.getRows(),
+					s.isQualityItem() ? "正品保障" : "0" + "");
+			Label l16 = new Label(15, sheet.getRows(),
+					s.is30DaysMaintain() ? "30天维修" : "0" + "");
 			Label l17 = new Label(16, sheet.getRows(), s.getPage() + "");
 			Label l18 = new Label(17, sheet.getRows(), s.getRank() + "");
 			try {
@@ -462,27 +532,39 @@ public class ExcelUtil {
 	}
 
 	public static void writeItemDetailSheet(ItemInfo itemInfo) {
-		WritableSheet sheet = sheets.get(SheetNames.ITEM_DETAIL_SHEET);// 根据名称获取具体的sheet对象
-		assert (sheet != null);
+		WritableSheet sheet = sheetMap.get(SheetNames.ITEM_DETAIL_SHEET);// 根据名称获取具体的sheet对象
 
-		Label l0 = new Label(0, sheet.getRows(), itemInfo.getSellerId());
-		Label l1 = new Label(1, sheet.getRows(), itemInfo.getPriceRange());
-		Label l2 = new Label(2, sheet.getRows(), itemInfo.getFreightPrice());
+		int colIndex = 0;
+		Label l0 = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getSellerId());
+		Label l1 = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getPriceRange());
+		Label l2 = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getFreightPrice());
 
-		jxl.write.Number saleNumIn30Days = new Number(3, sheet.getRows(),
-				itemInfo.getSaleNumIn30Days());
-		jxl.write.Number reviews = new Number(4, sheet.getRows(),
+		jxl.write.Number saleNumIn30Days = new Number(colIndex++,
+				sheet.getRows(), itemInfo.getSaleNumIn30Days());
+		jxl.write.Number reviews = new Number(colIndex++, sheet.getRows(),
 				itemInfo.getReviews());
-		Label l5 = new Label(5, sheet.getRows(), itemInfo.getViewCounter() + "");
-		Label l6 = new Label(6, sheet.getRows(), itemInfo.getPayType());
-		Label l7 = new Label(7, sheet.getRows(), itemInfo.getServiceType());
-		Label l8 = new Label(8, sheet.getRows(), itemInfo.getSpec());
-		Label l9 = new Label(9, sheet.getRows(), itemInfo.getCapacity());
-		Label l10 = new Label(10, sheet.getRows(),
+		Label l5 = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getViewCounter() + "");
+		Label l6 = new Label(colIndex++, sheet.getRows(), itemInfo.getPayType());
+		Label l7 = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getServiceType());
+		Label l8 = new Label(colIndex++, sheet.getRows(), itemInfo.getSpec());
+		Label l9 = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getCapacity());
+		Label l10 = new Label(colIndex++, sheet.getRows(),
 				itemInfo.getFirstReviewDate());
-		Label l11 = new Label(11, sheet.getRows(), itemInfo.getLastReviewDate());
-		Label l12 = new Label(12, sheet.getRows(), itemInfo.getItemDetailHref());
+		Label l11 = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getLastReviewDate());
+		Label indicator = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getIndicator());
+		Label l12 = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getItemDetailHref());
 
+		Label userRateHref = new Label(colIndex++, sheet.getRows(),
+				itemInfo.getUserRateHref());
 		try {
 
 			sheet.addCell(l0);
@@ -499,15 +581,24 @@ public class ExcelUtil {
 			sheet.addCell(saleNumIn30Days);
 			sheet.addCell(reviews);
 			sheet.addCell(l12);
+			sheet.addCell(indicator);
+			sheet.addCell(userRateHref);
 
 		} catch (RowsExceededException e) {
 			e.printStackTrace();
 		} catch (WriteException e) {
 			e.printStackTrace();
 		}
+		try {
+			workbook.write();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
-	public static void writeItemDetailSheet(WritableSheet sheet, ItemInfo itemInfo) {
+	public static void writeItemDetailSheet(WritableSheet sheet,
+			ItemInfo itemInfo) {
 
 		Label l0 = new Label(0, sheet.getRows(), itemInfo.getSellerId());
 		Label l1 = new Label(1, sheet.getRows(), itemInfo.getPriceRange());
@@ -520,14 +611,15 @@ public class ExcelUtil {
 		jxl.write.Number reviews = new Number(4, sheet.getRows(),
 				itemInfo.getReviews());
 		// Label l4 = new Label(4,sheet.getRows(), itemInfo.getReviews());
-		Label l5 = new Label(5, sheet.getRows(), itemInfo.getViewCounter()+"");
+		Label l5 = new Label(5, sheet.getRows(), itemInfo.getViewCounter() + "");
 		Label l6 = new Label(6, sheet.getRows(), itemInfo.getPayType());
 		Label l7 = new Label(7, sheet.getRows(), itemInfo.getServiceType());
 		Label l8 = new Label(8, sheet.getRows(), itemInfo.getSpec());
 		Label l9 = new Label(9, sheet.getRows(), itemInfo.getCapacity());
-		Label l10 = new Label(10, sheet.getRows(), itemInfo.getFirstReviewDate());
+		Label l10 = new Label(10, sheet.getRows(),
+				itemInfo.getFirstReviewDate());
 		Label l11 = new Label(11, sheet.getRows(), itemInfo.getLastReviewDate());
-		Label l12 = new Label(12,sheet.getRows(), itemInfo.getItemDetailHref());
+		Label l12 = new Label(12, sheet.getRows(), itemInfo.getItemDetailHref());
 		Label l13 = new Label(13, sheet.getRows(), itemInfo.getUserRateHref());
 
 		try {
@@ -553,10 +645,9 @@ public class ExcelUtil {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	public static void writeUserRateSheet(SellerRateInfo sellerRateInfo) {
-		WritableSheet sheet = sheets.get(SheetNames.USER_RATE_SHEET);// 根据名称获取具体的sheet对象
+		WritableSheet sheet = sheetMap.get(SheetNames.USER_RATE_SHEET);// 根据名称获取具体的sheet对象
 		assert (sheet != null);
 
 		Label l0 = new Label(0, sheet.getRows(), sellerRateInfo.getSellerId());
@@ -579,88 +670,90 @@ public class ExcelUtil {
 				sellerRateInfo.getServiceScore());
 		Label l12 = new Label(12, sheet.getRows(),
 				sellerRateInfo.getConsignmentScore());
-		
-		Label l90 = new Label(13, sheet.getRows(),sellerRateInfo.getRefundmentScore());
-		Label l13 = new Label(13+1, sheet.getRows(),
+
+		Label l90 = new Label(13, sheet.getRows(),
+				sellerRateInfo.getRefundmentScore());
+		Label l13 = new Label(13 + 1, sheet.getRows(),
 				sellerRateInfo.getRefundmentRateScore());
-		Label l14 = new Label(14+1, sheet.getRows(),
+		Label l14 = new Label(14 + 1, sheet.getRows(),
 				sellerRateInfo.getComplaintScore());
-		Label l15 = new Label(15+1, sheet.getRows(),
+		Label l15 = new Label(15 + 1, sheet.getRows(),
 				sellerRateInfo.getPunishmentScore());
 
-		Label l16 = new Label(16+1, sheet.getRows(),
+		Label l16 = new Label(16 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekSumRateOk());
-		Label l17 = new Label(17+1, sheet.getRows(),
+		Label l17 = new Label(17 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekMainRateOk());
-		Label l18 = new Label(18+1, sheet.getRows(),
+		Label l18 = new Label(18 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekNotmainRateOk());
-		
-		Label l19 = new Label(19+1, sheet.getRows(),
+
+		Label l19 = new Label(19 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekSumRateNormal());
-		Label l20 = new Label(20+1, sheet.getRows(),
+		Label l20 = new Label(20 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekMainRateNormal());
-		Label l21 = new Label(21+1, sheet.getRows(),
+		Label l21 = new Label(21 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekNotmainRateNormal());
-		
-		Label l22 = new Label(22+1, sheet.getRows(),
+
+		Label l22 = new Label(22 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekSumRateBad());
-		Label l23 = new Label(23+1, sheet.getRows(),
+		Label l23 = new Label(23 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekMainRateBad());
-		Label l24 = new Label(24+1, sheet.getRows(),
+		Label l24 = new Label(24 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekNotmainRateBad());
 
-		Label l25 = new Label(25+1, sheet.getRows(),
+		Label l25 = new Label(25 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthSumRateOk());
-		Label l26 = new Label(26+1, sheet.getRows(),
+		Label l26 = new Label(26 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthMainRateOk());
-		Label l27 = new Label(27+1, sheet.getRows(),
+		Label l27 = new Label(27 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthNotmainRateOk());
-		Label l28 = new Label(28+1, sheet.getRows(),
+		Label l28 = new Label(28 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthSumRateNormal());
-		Label l29 = new Label(29+1, sheet.getRows(),
+		Label l29 = new Label(29 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthMainRateNormal());
-		Label l30 = new Label(30+1, sheet.getRows(),
+		Label l30 = new Label(30 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthNotmainRateNormal());
-		Label l31 = new Label(31+1, sheet.getRows(),
+		Label l31 = new Label(31 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthSumRateBad());
-		Label l32 = new Label(32+1, sheet.getRows(),
+		Label l32 = new Label(32 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthMainRateBad());
-		Label l33 = new Label(33+1, sheet.getRows(),
+		Label l33 = new Label(33 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthNotmainRateBad());
 
-		Label l34 = new Label(34+1, sheet.getRows(),
+		Label l34 = new Label(34 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearSumRateOk());
-		Label l35 = new Label(35+1, sheet.getRows(),
+		Label l35 = new Label(35 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearMainRateOk());
-		Label l36 = new Label(36+1, sheet.getRows(),
+		Label l36 = new Label(36 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearNotmainRateOk());
-		Label l37 = new Label(37+1, sheet.getRows(),
+		Label l37 = new Label(37 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearSumRateNormal());
-		Label l38 = new Label(38+1, sheet.getRows(),
+		Label l38 = new Label(38 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearMainRateNormal());
-		Label l39 = new Label(39+1, sheet.getRows(),
+		Label l39 = new Label(39 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearNotmainRateNormal());
-		Label l40 = new Label(40+1, sheet.getRows(),
+		Label l40 = new Label(40 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearSumRateBad());
-		Label l41 = new Label(41+1, sheet.getRows(),
+		Label l41 = new Label(41 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearMainRateBad());
-		Label l42 = new Label(42+1, sheet.getRows(),
+		Label l42 = new Label(42 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearNotmainRateBad());
 
-		Label l43 = new Label(43+1, sheet.getRows(),
+		Label l43 = new Label(43 + 1, sheet.getRows(),
 				sellerRateInfo.getBeforeHalfYearSumRateOk());
-		Label l44 = new Label(44+1, sheet.getRows(),
+		Label l44 = new Label(44 + 1, sheet.getRows(),
 				sellerRateInfo.getBeforeHalfYearSumRateNormal());
-		Label l45 = new Label(45+1, sheet.getRows(),
+		Label l45 = new Label(45 + 1, sheet.getRows(),
 				sellerRateInfo.getBeforeHalfYearSumRateBad());
 
-		Label l46 = new Label(46+1, sheet.getRows(),
+		Label l46 = new Label(46 + 1, sheet.getRows(),
 				sellerRateInfo.getSellerRate());
-		Label l47 = new Label(47+1, sheet.getRows(),
+		Label l47 = new Label(47 + 1, sheet.getRows(),
 				sellerRateInfo.getMainBusiness());
-		Label l48 = new Label(48+1, sheet.getRows(),
+		Label l48 = new Label(48 + 1, sheet.getRows(),
 				sellerRateInfo.getMainBusinessPercentage());
-		Label l50 = new Label(50,sheet.getRows(),sellerRateInfo.getSellerRateHref());
+		Label l50 = new Label(50, sheet.getRows(),
+				sellerRateInfo.getSellerRateHref());
 
 		try {
 			sheet.addCell(l0);
@@ -719,9 +812,17 @@ public class ExcelUtil {
 		} catch (WriteException e) {
 			e.printStackTrace();
 		}
+		
+		try {
+			workbook.write();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
-	
-	public static void writeUserRateSheet(WritableSheet sheet, SellerRateInfo sellerRateInfo) {
+
+	public static void writeUserRateSheet(WritableSheet sheet,
+			SellerRateInfo sellerRateInfo) {
 
 		Label l0 = new Label(0, sheet.getRows(), sellerRateInfo.getSellerId());
 		Label l1 = new Label(1, sheet.getRows(), sellerRateInfo.getSellerName());
@@ -743,88 +844,90 @@ public class ExcelUtil {
 				sellerRateInfo.getServiceScore());
 		Label l12 = new Label(12, sheet.getRows(),
 				sellerRateInfo.getConsignmentScore());
-		
-		Label l90 = new Label(13, sheet.getRows(),sellerRateInfo.getRefundmentScore());
-		Label l13 = new Label(13+1, sheet.getRows(),
+
+		Label l90 = new Label(13, sheet.getRows(),
+				sellerRateInfo.getRefundmentScore());
+		Label l13 = new Label(13 + 1, sheet.getRows(),
 				sellerRateInfo.getRefundmentRateScore());
-		Label l14 = new Label(14+1, sheet.getRows(),
+		Label l14 = new Label(14 + 1, sheet.getRows(),
 				sellerRateInfo.getComplaintScore());
-		Label l15 = new Label(15+1, sheet.getRows(),
+		Label l15 = new Label(15 + 1, sheet.getRows(),
 				sellerRateInfo.getPunishmentScore());
 
-		Label l16 = new Label(16+1, sheet.getRows(),
+		Label l16 = new Label(16 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekSumRateOk());
-		Label l17 = new Label(17+1, sheet.getRows(),
+		Label l17 = new Label(17 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekMainRateOk());
-		Label l18 = new Label(18+1, sheet.getRows(),
+		Label l18 = new Label(18 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekNotmainRateOk());
-		
-		Label l19 = new Label(19+1, sheet.getRows(),
+
+		Label l19 = new Label(19 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekSumRateNormal());
-		Label l20 = new Label(20+1, sheet.getRows(),
+		Label l20 = new Label(20 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekMainRateNormal());
-		Label l21 = new Label(21+1, sheet.getRows(),
+		Label l21 = new Label(21 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekNotmainRateNormal());
-		
-		Label l22 = new Label(22+1, sheet.getRows(),
+
+		Label l22 = new Label(22 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekSumRateBad());
-		Label l23 = new Label(23+1, sheet.getRows(),
+		Label l23 = new Label(23 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekMainRateBad());
-		Label l24 = new Label(24+1, sheet.getRows(),
+		Label l24 = new Label(24 + 1, sheet.getRows(),
 				sellerRateInfo.getWeekNotmainRateBad());
 
-		Label l25 = new Label(25+1, sheet.getRows(),
+		Label l25 = new Label(25 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthSumRateOk());
-		Label l26 = new Label(26+1, sheet.getRows(),
+		Label l26 = new Label(26 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthMainRateOk());
-		Label l27 = new Label(27+1, sheet.getRows(),
+		Label l27 = new Label(27 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthNotmainRateOk());
-		Label l28 = new Label(28+1, sheet.getRows(),
+		Label l28 = new Label(28 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthSumRateNormal());
-		Label l29 = new Label(29+1, sheet.getRows(),
+		Label l29 = new Label(29 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthMainRateNormal());
-		Label l30 = new Label(30+1, sheet.getRows(),
+		Label l30 = new Label(30 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthNotmainRateNormal());
-		Label l31 = new Label(31+1, sheet.getRows(),
+		Label l31 = new Label(31 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthSumRateBad());
-		Label l32 = new Label(32+1, sheet.getRows(),
+		Label l32 = new Label(32 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthMainRateBad());
-		Label l33 = new Label(33+1, sheet.getRows(),
+		Label l33 = new Label(33 + 1, sheet.getRows(),
 				sellerRateInfo.getMonthNotmainRateBad());
 
-		Label l34 = new Label(34+1, sheet.getRows(),
+		Label l34 = new Label(34 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearSumRateOk());
-		Label l35 = new Label(35+1, sheet.getRows(),
+		Label l35 = new Label(35 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearMainRateOk());
-		Label l36 = new Label(36+1, sheet.getRows(),
+		Label l36 = new Label(36 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearNotmainRateOk());
-		Label l37 = new Label(37+1, sheet.getRows(),
+		Label l37 = new Label(37 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearSumRateNormal());
-		Label l38 = new Label(38+1, sheet.getRows(),
+		Label l38 = new Label(38 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearMainRateNormal());
-		Label l39 = new Label(39+1, sheet.getRows(),
+		Label l39 = new Label(39 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearNotmainRateNormal());
-		Label l40 = new Label(40+1, sheet.getRows(),
+		Label l40 = new Label(40 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearSumRateBad());
-		Label l41 = new Label(41+1, sheet.getRows(),
+		Label l41 = new Label(41 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearMainRateBad());
-		Label l42 = new Label(42+1, sheet.getRows(),
+		Label l42 = new Label(42 + 1, sheet.getRows(),
 				sellerRateInfo.getHalfYearNotmainRateBad());
 
-		Label l43 = new Label(43+1, sheet.getRows(),
+		Label l43 = new Label(43 + 1, sheet.getRows(),
 				sellerRateInfo.getBeforeHalfYearSumRateOk());
-		Label l44 = new Label(44+1, sheet.getRows(),
+		Label l44 = new Label(44 + 1, sheet.getRows(),
 				sellerRateInfo.getBeforeHalfYearSumRateNormal());
-		Label l45 = new Label(45+1, sheet.getRows(),
+		Label l45 = new Label(45 + 1, sheet.getRows(),
 				sellerRateInfo.getBeforeHalfYearSumRateBad());
 
-		Label l46 = new Label(46+1, sheet.getRows(),
+		Label l46 = new Label(46 + 1, sheet.getRows(),
 				sellerRateInfo.getSellerRate());
-		Label l47 = new Label(47+1, sheet.getRows(),
+		Label l47 = new Label(47 + 1, sheet.getRows(),
 				sellerRateInfo.getMainBusiness());
-		Label l48 = new Label(48+1, sheet.getRows(),
+		Label l48 = new Label(48 + 1, sheet.getRows(),
 				sellerRateInfo.getMainBusinessPercentage());
-		Label l50 = new Label(50,sheet.getRows(),sellerRateInfo.getSellerRateHref());
+		Label l50 = new Label(50, sheet.getRows(),
+				sellerRateInfo.getSellerRateHref());
 
 		try {
 			sheet.addCell(l0);
@@ -900,37 +1003,38 @@ public class ExcelUtil {
 	}
 
 	public static void writeItemBuyerSheet(BuyerInfo buyerInfo) {
-		WritableSheet sheet = sheets.get(SheetNames.BUYER_INFO_SHEET);// 根据名称获取具体的sheet对象
-		assert (sheet != null);
-		// 将list 中的记录写入sheet中
-//		for (int i = 0; i < buyerInfos.size(); ++i) {
-//			BuyerInfo t = buyerInfos.get(i);
-			Label l0 = new Label(0, sheet.getRows(), buyerInfo.getSellerId());
-			Label l1 = new Label(1, sheet.getRows(), buyerInfo.getPrice() + "");
-			Label l2 = new Label(2, sheet.getRows(), buyerInfo.getNum() + "");
-			Label l3 = new Label(3, sheet.getRows(), buyerInfo.getPayTime());
-			Label l4 = new Label(4, sheet.getRows(), buyerInfo.getSize());
-			Label l5 = new Label(5, sheet.getRows(), buyerInfo.getRateScore() + "");
-			Label l6 = new Label(6, sheet.getRows(), buyerInfo.getBuyerAddress() + "");
-			Label l7 = new Label(7, sheet.getRows(), buyerInfo.getSex() + "");
-			try {
+		WritableSheet sheet = sheetMap.get(SheetNames.BUYER_INFO_SHEET + "_"
+				+ currentBuyerSheetIndex);// 根据名称获取具体的sheet对象
+		int colIndex = 0;
+		Label l0 = new Label(colIndex++, sheet.getRows(),
+				buyerInfo.getSellerId());
+		Label l7 = new Label(colIndex++, sheet.getRows(), buyerInfo.getSex()
+				+ "");
+		Label l6 = new Label(colIndex++, sheet.getRows(),
+				buyerInfo.getBuyerAddress() + "");
+		Label l5 = new Label(colIndex++, sheet.getRows(),
+				buyerInfo.getRateScore() + "");
 
-				sheet.addCell(l0);
-				sheet.addCell(l1);
-				sheet.addCell(l2);
-				sheet.addCell(l3);
-				sheet.addCell(l4);
-				sheet.addCell(l5);
-				sheet.addCell(l6);
-				sheet.addCell(l7);
-			} catch (RowsExceededException e) {
-				e.printStackTrace();
-			} catch (WriteException e) {
-				e.printStackTrace();
-			}
-//		}
+		Label l1 = new Label(colIndex++, sheet.getRows(),
+				buyerInfo.getFeedDate());
+		Label l2 = new Label(colIndex++, sheet.getRows(),
+				buyerInfo.getIndicator() + "");
+
+		try {
+			sheet.addCell(l0);
+			sheet.addCell(l5);
+			sheet.addCell(l6);
+			sheet.addCell(l7);
+			sheet.addCell(l1);
+			sheet.addCell(l2);
+		} catch (RowsExceededException e) {
+			e.printStackTrace();
+		} catch (WriteException e) {
+			e.printStackTrace();
+		}
+		// }
 	}
-	
+
 	public static void writeItemBuyerSheet(WritableSheet sheet,
 			BuyerInfo buyerInfo) {
 		log.info("Start to write to excel.");
@@ -961,9 +1065,7 @@ public class ExcelUtil {
 
 		log.info("Complete to write to excel.");
 	}
-	
-	
-	
+
 	public static void writeReviewsSheet(WritableSheet sheet,
 			BuyerInfo buyerInfo) {
 
@@ -993,11 +1095,20 @@ public class ExcelUtil {
 	}
 
 	public static void writeReviewsSheet(BuyerInfo buyerInfo) {
-		WritableSheet sheet = null;
-		writeReviewsSheet(sheet, buyerInfo);
+		WritableSheet sheet = sheetMap.get(SheetNames.BUYER_INFO_SHEET + "_"
+				+ currentBuyerSheetIndex);
+		if (sheet.getRows() == SystemConstant.MAX_SHEET_ROWS) {
+			++currentBuyerSheetIndex;
+			WritableSheet sh = workbook.createSheet(SheetNames.BUYER_INFO_SHEET
+					+ "_" + currentBuyerSheetIndex, sheetIndex++);
+			sheetMap.put(SheetNames.BUYER_INFO_SHEET + "_"
+					+ currentBuyerSheetIndex, sh);
+			createBuyerInfoSheetHeader();
+			writeReviewsSheet(sh, buyerInfo);
+		} else {
+			writeReviewsSheet(sheet, buyerInfo);
+		}
 	}
-
-	
 
 	// write records into spreadsheet before close workbook
 	public static void closeWorkbook() {

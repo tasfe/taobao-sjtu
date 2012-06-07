@@ -18,6 +18,25 @@ public class ItemInfo {
 	private String lastReviewDate = "0";
 	private String userRateHref;
 	private String itemDetailHref;
+	private String itemType = "0";
+	
+	private String indicator = "0";
+
+	public String getIndicator() {
+		return indicator;
+	}
+
+	public void setIndicator(String indicator) {
+		this.indicator = indicator;
+	}
+
+	public String getItemType() {
+		return itemType;
+	}
+
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
+	}
 
 	public String getUserRateHref() {
 		return userRateHref;
