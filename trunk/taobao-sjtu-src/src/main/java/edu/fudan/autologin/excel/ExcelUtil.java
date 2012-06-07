@@ -2,7 +2,6 @@ package edu.fudan.autologin.excel;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,7 +12,6 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import edu.fudan.autologin.constants.SheetNames;
-import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.ItemInfo;
 import edu.fudan.autologin.pojos.SellerInSearchResult;
@@ -22,18 +20,14 @@ import edu.fudan.autologin.pojos.TopTenItemInfo;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
 import jxl.CellType;
-import jxl.Sheet;
 import jxl.Workbook;
 import jxl.format.Alignment;
 import jxl.format.VerticalAlignment;
-import jxl.read.biff.BiffException;
-import jxl.write.Boolean;
 import jxl.write.Label;
 import jxl.write.Number;
 import jxl.write.NumberFormat;
 import jxl.write.WritableCellFormat;
 import jxl.write.WritableFont;
-import jxl.write.WritableHyperlink;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
