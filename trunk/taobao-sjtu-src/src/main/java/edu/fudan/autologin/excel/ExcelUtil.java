@@ -286,30 +286,27 @@ public class ExcelUtil {
 	}
 
 	public static void createSheets() {
-		assert (workbook != null);
+		int sheetNum = 0;
 		sheets = new HashMap<String, WritableSheet>();
 
-		WritableSheet sheet = workbook.createSheet(SheetNames.TOP_TEN_SHEET, 0);
-//		sheet.setColumnView(0, 20);
-//		sheet.setColumnView(1, 30);
-//		sheet.setColumnView(3, 90);
+		WritableSheet sheet = workbook.createSheet(SheetNames.TOP_TEN_SHEET,
+				sheetNum++);
 		sheets.put(SheetNames.TOP_TEN_SHEET, sheet);
 
 		WritableSheet sheet1 = workbook.createSheet(
-				SheetNames.SEARCH_RESULT_SHEET, 1);
-//		initialSheetSetting(sheet1);
+				SheetNames.SEARCH_RESULT_SHEET, sheetNum++);
 		sheets.put(SheetNames.SEARCH_RESULT_SHEET, sheet1);
 
 		WritableSheet sheet2 = workbook.createSheet(
-				SheetNames.ITEM_DETAIL_SHEET, 2);
+				SheetNames.ITEM_DETAIL_SHEET, sheetNum++);
 		sheets.put(SheetNames.ITEM_DETAIL_SHEET, sheet2);
 
 		WritableSheet sheet3 = workbook.createSheet(SheetNames.USER_RATE_SHEET,
-				3);
+				sheetNum++);
 		sheets.put(SheetNames.USER_RATE_SHEET, sheet3);
 
 		WritableSheet sheet4 = workbook.createSheet(
-				SheetNames.BUYER_INFO_SHEET, 4);
+				SheetNames.BUYER_INFO_SHEET, sheetNum++);
 		sheets.put(SheetNames.BUYER_INFO_SHEET, sheet4);
 	}
 
@@ -969,13 +966,17 @@ public class ExcelUtil {
 	
 	public static void writeReviewsSheet(WritableSheet sheet,
 			BuyerInfo buyerInfo) {
-		Label l0 = new Label(0, sheet.getRows(), buyerInfo.getSellerId());
-		Label l1 = new Label(1, sheet.getRows(), buyerInfo.getFeedDate() + "");
-		Label l2 = new Label(2, sheet.getRows(), buyerInfo.getIndicator() + "");
-		Label l5 = new Label(3, sheet.getRows(), buyerInfo.getRateScore() + "");
-		Label l6 = new Label(4, sheet.getRows(), buyerInfo.getBuyerAddress()
+
+		int j = 0;
+		Label l0 = new Label(j++, sheet.getRows(), buyerInfo.getSellerId());
+		Label l1 = new Label(j++, sheet.getRows(), buyerInfo.getFeedDate() + "");
+		Label l2 = new Label(j++, sheet.getRows(), buyerInfo.getIndicator()
 				+ "");
-		Label l7 = new Label(5, sheet.getRows(), buyerInfo.getSex() + "");
+		Label l5 = new Label(j++, sheet.getRows(), buyerInfo.getRateScore()
+				+ "");
+		Label l6 = new Label(j++, sheet.getRows(), buyerInfo.getBuyerAddress()
+				+ "");
+		Label l7 = new Label(j++, sheet.getRows(), buyerInfo.getSex() + "");
 		try {
 
 			sheet.addCell(l0);
@@ -989,7 +990,11 @@ public class ExcelUtil {
 		} catch (WriteException e) {
 			e.printStackTrace();
 		}
+	}
 
+	public static void writeReviewsSheet(BuyerInfo buyerInfo) {
+		WritableSheet sheet = null;
+		writeReviewsSheet(sheet, buyerInfo);
 	}
 
 	

@@ -53,6 +53,32 @@ public class UserRatePageParser extends BasePageParser {
 
 	@Override
 	public void parsePage() {
+		
+		String mainSale = "0";
+		String location = "0";
+		String sellerName = "0";
+		boolean isConsumerPromise = false;
+		boolean isSevenDayReturn = false;
+		String chargeNum = "0";
+		String buyerRate = "0";
+		String sellerRate = "0";
+		String createShopDate = "0";
+		String matchScore = "0";
+		String serviceScore = "0";
+		String consignmentScore = "0";
+		String mainBusiness = "0";
+		String mainBusinessPercentage = "0";
+		String beforeHalfYearSumRateOk = "0";
+		String beforeHalfYearSumRateNormal = "0";
+		String beforeHalfYearSumRateBad = "0";
+		String monthSumRateOk = "0";
+		String monthSumRateNormal = "0";
+		String monthSumRateBad = "0";
+		String halfYearNotMainRateOk ="0";
+		String halfYearNotMainRateNormal = "0";
+		String halfYearNotMainRateBad = "0"; 
+		
+		
 		log.info("Start to parse page " + pageUrl);
 
 		if (pageUrl == null || pageUrl.equals("")) {
@@ -63,17 +89,6 @@ public class UserRatePageParser extends BasePageParser {
 			Document doc = this.getDoc();
 			log.info("sellerId: " + sellerId);
 			sellerRateInfo.setSellerId(sellerId);
-
-			String mainSale = null;
-			String location = null;
-			String sellerName = null;
-			boolean isConsumerPromise = false;
-			boolean isSevenDayReturn = false;
-			String chargeNum = null;
-			String buyerRate = null;
-			String sellerRate = null;
-			String createShopDate = null;
-
 			log.info("size is: "
 					+ doc.select("div.personal-info div.left-box").size());
 			if (doc.select("div.personal-info div.left-box").size() >= 1) {
@@ -177,9 +192,7 @@ public class UserRatePageParser extends BasePageParser {
 			log.info("createShopDate: " + createShopDate);
 			sellerRateInfo.setCreateShopDate(createShopDate);
 
-			String matchScore;
-			String serviceScore;
-			String consignmentScore;
+			
 			if (doc.select("div#dynamic-rate div#sixmonth ul li").size() == 0) {
 				matchScore = "null";
 				serviceScore = "null";
@@ -312,10 +325,13 @@ public class UserRatePageParser extends BasePageParser {
 						"table tbody tr");
 
 				Element monthSumEl = monthRateEls.get(1);
-				String monthSumRateOk = monthSumEl.select("td.rateok").text();
-				String monthSumRateNormal = monthSumEl.select("td.ratenormal")
+		
+				monthSumRateOk = monthSumEl.select("td.rateok").text();
+				
+				monthSumRateNormal = monthSumEl.select("td.ratenormal")
 						.text();
-				String monthSumRateBad = monthSumEl.select("td.ratebad").text();
+				
+				monthSumRateBad = monthSumEl.select("td.ratebad").text();
 				sellerRateInfo.setMonthSumRateBad(monthSumRateBad);
 				sellerRateInfo.setMonthSumRateNormal(monthSumRateNormal);
 				sellerRateInfo.setMonthSumRateOk(monthSumRateOk);
@@ -389,11 +405,14 @@ public class UserRatePageParser extends BasePageParser {
 				if (halfYearRateEls.size() >= 4) {
 					Elements halfYearNotMainEl = halfYearRateEls.get(3).select(
 							"td");
-					String halfYearNotMainRateOk = halfYearNotMainEl.get(1)
+					
+					halfYearNotMainRateOk = halfYearNotMainEl.get(1)
 							.text();
-					String halfYearNotMainRateNormal = halfYearNotMainEl.get(2)
+					
+					halfYearNotMainRateNormal = halfYearNotMainEl.get(2)
 							.text();
-					String halfYearNotMainRateBad = halfYearNotMainEl.get(3)
+					
+					halfYearNotMainRateBad = halfYearNotMainEl.get(3)
 							.text();
 					sellerRateInfo
 							.setHalfYearNotmainRateBad(halfYearNotMainRateBad);
@@ -413,11 +432,13 @@ public class UserRatePageParser extends BasePageParser {
 						"table tbody tr");
 
 				Element beforeHalfYearSumEl = beforeHalfYearRateEls.get(1);
-				String beforeHalfYearSumRateOk = beforeHalfYearSumEl.select(
+				
+				beforeHalfYearSumRateOk = beforeHalfYearSumEl.select(
 						"td.rateok").text();
-				String beforeHalfYearSumRateNormal = beforeHalfYearSumEl
+				beforeHalfYearSumRateNormal = beforeHalfYearSumEl
 						.select("td.ratenormal").text();
-				String beforeHalfYearSumRateBad = beforeHalfYearSumEl.select(
+				
+				beforeHalfYearSumRateBad = beforeHalfYearSumEl.select(
 						"td.ratebad").text();
 				sellerRateInfo
 						.setBeforeHalfYearSumRateBad(beforeHalfYearSumRateBad);
@@ -435,8 +456,7 @@ public class UserRatePageParser extends BasePageParser {
 				Elements sellerHistoryEls = doc
 						.select("div.seller-rate-info div.frame div.list");
 
-				String mainBusiness = "0";
-				String mainBusinessPercentage = "0";
+				
 				if (sellerHistoryEls.size() == 0) {
 
 				} else {
