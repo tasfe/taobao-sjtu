@@ -978,10 +978,10 @@ public class ExcelUtil {
 		Label l0 = new Label(0, sheet.getRows(), buyerInfo.getSellerId());
 		Label l1 = new Label(1, sheet.getRows(), buyerInfo.getFeedDate() + "");
 		Label l2 = new Label(2, sheet.getRows(), buyerInfo.getIndicator() + "");
-		Label l5 = new Label(5, sheet.getRows(), buyerInfo.getRateScore() + "");
-		Label l6 = new Label(6, sheet.getRows(), buyerInfo.getBuyerAddress()
+		Label l5 = new Label(3, sheet.getRows(), buyerInfo.getRateScore() + "");
+		Label l6 = new Label(4, sheet.getRows(), buyerInfo.getBuyerAddress()
 				+ "");
-		Label l7 = new Label(7, sheet.getRows(), buyerInfo.getSex() + "");
+		Label l7 = new Label(5, sheet.getRows(), buyerInfo.getSex() + "");
 		try {
 
 			sheet.addCell(l0);

@@ -1,6 +1,9 @@
 package edu.fudan.autologin.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import jxl.write.WritableSheet;
@@ -45,9 +48,14 @@ import edu.fudan.autologin.utils.XmlConfUtil;
  */
 public class ItemReviewService {
 	private static final Logger log = Logger.getLogger(ItemReviewService.class);
+	// First of all, fetch all infos;
+	// Secondly, disclose them
+	List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
+
 	private String itemPageUrl;
-	
+
 	private WritableSheet sheet;
+
 	public WritableSheet getSheet() {
 		return sheet;
 	}
@@ -60,8 +68,8 @@ public class ItemReviewService {
 
 	private int reviewSum = 0;
 
-	
 	private String reviewUrl;
+
 	public List<String> getDateList() {
 		return dateList;
 	}
@@ -97,7 +105,7 @@ public class ItemReviewService {
 	}
 
 	public void setHttpClient(HttpClient httpClient) {
-		//this.httpClient = httpClient;
+		// this.httpClient = httpClient;
 		this.httpClient = new DefaultHttpClient();
 	}
 
@@ -110,15 +118,16 @@ public class ItemReviewService {
 	public class ItemReviewThread implements Runnable {
 
 		private int pageNum;
-		
-		public ItemReviewThread(int page){
+
+		public ItemReviewThread(int page) {
 			this.pageNum = page;
 		}
+
 		public void run() {
 			GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
 					getFeedRateListUrl(), pageNum));
 			GetWaitUtil.get(get);
-//			get.doGet();
+			// get.doGet();
 			String jsonStr = getFeedRateListJsonString(get
 					.getResponseAsString().trim());
 			parseFeedRateListJson(jsonStr);
@@ -130,19 +139,17 @@ public class ItemReviewService {
 	/**
 	 * 
 	 * 
-	 * 1. get review url from page;
-	 * 2. construct specified review url;
-	 * 3. get specified review page;
-	 * 4. parse json data;
+	 * 1. get review url from page; 2. construct specified review url; 3. get
+	 * specified review page; 4. parse json data;
 	 */
 	public void execute() {
-		
+
 		reviewUrl = getFeedRateListUrl();
 		int pageSize = 20;
-		
-		if(reviewSum == 0){
-			
-		}else{
+
+		if (reviewSum == 0) {
+
+		} else {
 			int pageSum = (reviewSum % pageSize == 0) ? reviewSum / pageSize
 					: (reviewSum / pageSize + 1);
 			log.info("Total page num is: " + pageSum);
@@ -150,34 +157,35 @@ public class ItemReviewService {
 				log.info("--------------------------------------------------------------------------------------");
 				log.info("The review of Page NO is: " + pageNum);
 				parseReview(pageNum);
-				
+
 			}
 		}
-		
+
 		log.info("---------------------------------------");
 		log.info("The sum of the reviews is: " + reviewSum);
 		log.info("First feed rate date is: " + getFirstReviewDate());
 		log.info("Last feed rate date is: " + getLastReviewDate());
 
 		this.httpClient.getConnectionManager().shutdown();
+		
+		invokeDisclose();
 	}
 
-	public void parseReview(int pageNum){
+	public void parseReview(int pageNum) {
 		GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
 				reviewUrl, pageNum));
 		GetWaitUtil.get(get);
-//		get.doGet();
-		String jsonStr = getFeedRateListJsonString(get
-				.getResponseAsString().trim());
+		String jsonStr = getFeedRateListJsonString(get.getResponseAsString()
+				.trim());
 		parseFeedRateListJson(jsonStr);
 		get.shutDown();
 	}
+
 	public String getFeedRateListUrl() {
 		String baseFeedRateListUrl = "";
 
 		String tmpStr = "";
 		GetMethod getMethod = new GetMethod(httpClient, itemPageUrl);
-//		getMethod.doGet();
 		GetWaitUtil.get(getMethod);
 		tmpStr = getMethod.getResponseAsString();
 		getMethod.shutDown();
@@ -268,67 +276,110 @@ public class ItemReviewService {
 				JSONObject j = JSONObject.fromObject(o);
 				FeedRateComment cmt = new FeedRateComment();
 				String date = j.getString("date");
-//				cmt.setDate(j.getString("date"));
-//				cmt.setContent(j.getString("content"));
-//				log.info("Comment NO is: " + i++);
+				// cmt.setDate(j.getString("date"));
+				// cmt.setContent(j.getString("content"));
+				// log.info("Comment NO is: " + i++);
 				log.info("Date is: " + date);
 				dateList.add(date);
-//				log.info("Auction title is: "
-//						+ j.getJSONObject("auction").getString("title"));
-//				log.info("Content is: " + j.getString("content"));
-				
+				// log.info("Auction title is: "
+				// + j.getJSONObject("auction").getString("title"));
+				// log.info("Content is: " + j.getString("content"));
+
 				JSONObject user = j.getJSONObject("user");
 				String nick = user.getString("nick");
 				String nickUrl = user.getString("nickUrl");
-				
-				log.info("nick is: "+nick);
-				log.info("nick url is: "+nickUrl);
 
-				
-				if(nickUrl != null && nickUrl != ""){
-					BuyerInfo buyerInfo = new BuyerInfo();
-					buyerInfo.setFeedDate(date);
-					buyerInfo.setIndicator(UserType.ANONYMOUS);
-				
-					ItaobaoPageParser parser = new ItaobaoPageParser(httpClient, buildItaobaoUrl(nickUrl));
+				log.info("nick is: " + nick);
+				log.info("nick url is: " + nickUrl);
+
+				BuyerInfo buyerInfo = new BuyerInfo();
+				buyerInfo.setFeedDate(date);
+				buyerInfo.setIndicator(UserType.ANONYMOUS);
+
+				if (nickUrl != null && nickUrl != "") {
+					ItaobaoPageParser parser = new ItaobaoPageParser(
+							httpClient, buildItaobaoUrl(nickUrl));
 					parser.setBuyerInfo(buyerInfo);
 					parser.parsePage();
-					
-					//write records into sheet
-					ExcelUtil.writeReviewsSheet(sheet, buyerInfo);
-					
-				}else{
+
+					// write records into sheet
+					// ExcelUtil.writeReviewsSheet(sheet, buyerInfo);
+
+				} else {
 					log.info("nick url is null.");
 				}
-				
-				
-				
-				
+				buyerInfos.add(buyerInfo);
 			}
 			return true;
 		}
 	}
+
+	public Date string2Date(String dateStr) {
+		Date date = new Date();
+
+		SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd");
+		try {
+			date = df.parse(dateStr);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		}
+		return date;
+
+	}
+
+	// invoke
+	public void invokeDisclose() {
+		Date firstDate = new Date();
+		Date tmpDate = new Date();
+		SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd");
+		for (int i = 0; i < buyerInfos.size(); ++i) {
+			if (i == 0) {
+				firstDate = string2Date(buyerInfos.get(i).getFeedDate());
+			} else {
+				
+				tmpDate = string2Date(buyerInfos.get(i).getFeedDate());
+				
+				
+				if((firstDate.getTime() - tmpDate.getTime())/(24*60*60*1000) >= 29){
+					removeElement(buyerInfos, i+1, buyerInfos.size());
+					
+					break;
+				}
+			}
+		}
+		log.info(buyerInfos.get(0).getFeedDate());
+		log.info("first date is:"+df.format(firstDate));
+		log.info("last date is: "+df.format(tmpDate));
+	}
 	
-	public String buildItaobaoUrl(String url){
+	public void removeElement(List list, int start, int end){
+		for(int i = start; i < end; ++i){
+			list.remove(i);
+		}
+	}
+
+	public String buildItaobaoUrl(String url) {
 		StringBuilder targetUrl = new StringBuilder();
-		//http://i.taobao.com/u/OTE4MDUxOTU=/front.htm
+		// http://i.taobao.com/u/OTE4MDUxOTU=/front.htm
 		String prefix = "http://i.taobao.com/u/";
 		String appender = "/front.htm";
 		String id = null;
-		
-		//http://wow.taobao.com/u/NDkwMDQyNTc4/view/ta_taoshare_list.htm?redirect=fa
-		id = url.substring(url.indexOf("/u/") + "/u/".length(),url.indexOf("/view/"));
-		
+
+		// http://wow.taobao.com/u/NDkwMDQyNTc4/view/ta_taoshare_list.htm?redirect=fa
+		id = url.substring(url.indexOf("/u/") + "/u/".length(),
+				url.indexOf("/view/"));
+
 		targetUrl.append(prefix);
 		targetUrl.append(id);
 		targetUrl.append(appender);
-		
-		log.info("Target url is: "+targetUrl.toString());
+
+		log.info("Target url is: " + targetUrl.toString());
 		return targetUrl.toString();
 	}
 
-	public String getFirstReviewDate() { 
-		//when there is no reviews, set first review date to 0
+	public String getFirstReviewDate() {
+		// when there is no reviews, set first review date to 0
 		if (dateList.size() == 0) {
 			return "0";
 		}

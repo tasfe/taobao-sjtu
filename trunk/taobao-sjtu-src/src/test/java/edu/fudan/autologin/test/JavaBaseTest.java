@@ -2,6 +2,11 @@ package edu.fudan.autologin.test;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
@@ -29,6 +34,40 @@ public class JavaBaseTest {
 	 * The substring begins at specified beginIndex and extends to the character at index endIndex - 1
 	 */
 	@Test
+	public void testListErase(){
+		
+		List<String> myint = new ArrayList<String>();
+		myint.add("123");
+		myint.add("456");
+		
+		myint.remove(0);
+		
+		for(String s:myint){
+			log.info(s);
+		}
+		
+	}
+	public void testString2Date(){
+		Date d = new Date();
+		Date d1 = new Date();
+		 SimpleDateFormat df=new SimpleDateFormat("yyyy.MM.dd");
+		 try {
+			d = df.parse("2012.04.30");
+			d1 = df.parse("2012.05.31");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		    System.out.println("今天的日期："+df.format(d));
+		    
+		    log.info((d1.getTime() - d.getTime())/(24*60*60*1000));
+	}
+	public void testDate(){
+		Date d = new Date();  
+        SimpleDateFormat df=new SimpleDateFormat("yyyy.MM.dd");   
+        System.out.println("今天的日期："+df.format(d));   
+        System.out.println("两天前的日期：" + df.format(new Date(d.getTime() - (long)2 * 24 * 60 * 60 * 1000)));   
+        System.out.println("三天后的日期：" + df.format(new Date(d.getTime() + (long)30 * 24 * 60 * 60 * 1000)));
+	}
 	public void testPing(){
 		
 		URI uri = null;

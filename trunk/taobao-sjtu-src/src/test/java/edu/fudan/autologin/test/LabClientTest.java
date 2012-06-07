@@ -42,7 +42,7 @@ import edu.fudan.autologin.utils.TaobaoUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
 public class LabClientTest {
-	private static final Logger log = Logger.getLogger(MainTest.class);
+	private static final Logger log = Logger.getLogger(LabClientTest.class);
 	private HttpClient httpClient;
 
 	public void initialize() {
@@ -331,7 +331,7 @@ log.info("This is process no: "+i);
 			WritableSheet sh = wbook.getSheet("ReviewsSheet");// 得到一个工作对象
 
 			// sheet.getRows()返回该页的总行数
-			for (int i = 1; i <= 2; i++) {
+			for (int i = 1; i <= 500; i++) {
 				log.info("--------------------------------------------------------------------------------------------------------------");
 				log.info("This is the item process no: " + i);
 				String id = searchResultSheet
