@@ -164,22 +164,26 @@ public class ItemDetailPageParser extends BasePageParser {
 		String freight = "";
 
 		itemInfo.setUserRateHref(getShopRankHref(doc));
+		
+		//postage service
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(this.getHttpClient());
 		postageService.setItemPageUrl(this.getPageUrl());
 		postageService.execute();
+		itemInfo.setSaleNumIn30Days(postageService.getSaleSum());
+		
 		location = postageService.getPostage().getLocation();
 		freight = postageService.getPostage().getCarriage();
 		freightPrice = location + " : " + freight;
 		itemInfo.setFreightPrice(freightPrice);
 		log.info("freightPrice: " + freightPrice);
 
-		SaleSumService saleSumService = new SaleSumService();
-		saleSumService.setItemPageUrl(pageUrl);
-		saleSumService.execute();
-		int saleNumIn30Days = saleSumService.getSaleSum();
-		log.info("saleNumIn30Days: " + saleNumIn30Days);
-		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
+//		SaleSumService saleSumService = new SaleSumService();
+//		saleSumService.setItemPageUrl(pageUrl);
+//		saleSumService.execute();
+//		int saleNumIn30Days = saleSumService.getSaleSum();
+//		log.info("saleNumIn30Days: " + saleNumIn30Days);
+//		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
 		if (doc.select("div#attributes ul.attributes-list li").size() == 0) {
 
@@ -219,6 +223,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemReviewService.execute();
 		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
 		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
+		itemInfo.setIndicator(itemReviewService.getIndicator()+"");
 
 	}
 

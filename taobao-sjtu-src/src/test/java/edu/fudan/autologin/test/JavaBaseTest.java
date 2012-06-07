@@ -36,7 +36,7 @@ public class JavaBaseTest {
 	@Test
 	public void aa(){
 		
-		log.info(cal(0, 3-1));
+//		log.info(cal(0, 3-1));
 	}
 	public int cal(int a, int b){
 		int sum = 0;

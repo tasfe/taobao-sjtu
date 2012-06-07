@@ -69,7 +69,7 @@ public class PostageService {
 		GetWaitUtil.get(getMethod);
 //		getMethod.doGet();// 给get请求添加httpheader
 		String postageUrl = null;
-		postageUrl = getPostageUrl(getMethod.getResponseAsString());
+		postageUrl = getAjaxUrl(getMethod.getResponseAsString());
 		getMethod.shutDown();
 
 		
@@ -77,6 +77,7 @@ public class PostageService {
 		if (postageUrl == null) {
 			postage.setCarriage(null);
 			postage.setLocation(null);
+			log.info("There is no postage url in the page.");
 		} else {
 			List<NameValuePair> headers = new ArrayList<NameValuePair>();
 			NameValuePair nvp1 = new BasicNameValuePair("referer",
@@ -86,11 +87,23 @@ public class PostageService {
 			GetMethod postageGet = new GetMethod(httpClient, postageUrl);
 //			postageGet.doGet(headers);
 			GetWaitUtil.get(postageGet, headers);
-			getPostageFromJson(postageGet.getResponseAsString());
+			parseItemInfoJson(postageGet.getResponseAsString());
 
 			postageGet.shutDown();
 		}
 	}
+
+	
+	private int saleSum = 0;
+	public int getSaleSum() {
+		return saleSum;
+	}
+
+
+	public void setSaleSum(int saleSum) {
+		this.saleSum = saleSum;
+	}
+
 
 	public void wtDomainPostageParser() {
 		this.postage.setCarriage("0");
@@ -112,17 +125,26 @@ public class PostageService {
 
 	}
 
-	public String getPostageUrl(String str) {// 获得邮费get请求的url地址
-
+	public String getAjaxUrl(String str) {// 获得邮费get请求的url地址
+		String ajaxUrl;
 		// 当页面中不包含postage url
-		if (str.contains("getShippingInfo")) {
-			Pattern pattern = Pattern.compile("getShippingInfo:\"(.+?)\"");
-			Matcher matcher = pattern.matcher(str);
-			if (matcher.find()) {
-				return matcher.group(1);
-			} else {
-				log.error("There is no postage url in the item detail page.");
-			}
+		if (str.contains("apiItemInfo")) {
+//			Pattern pattern = Pattern.compile("getShippingInfo:\"(.+?)\"");
+//			Matcher matcher = pattern.matcher(str);
+//			if (matcher.find()) {
+//				return matcher.group(1);
+//			} else {
+//				log.error("There is no postage url in the item detail page.");
+//			}
+			
+//"apiItemInfo":"http://detailskip.taobao.com/json/ifq.htm?id=5656200607&sid=934381&p=1&ic=1&il=%B9%E3%B6%AB%C9%EE%DB%DA&ap=1&ss=0&free=0&tg=0&tid=12699&iv=39.00&up=6.00&exp=6.00&ems=21.00&iw=&is=&q=1&ex=0&exs=0&shid=&at=b&arc=&ct=1" ,
+
+			int base = str.indexOf("apiItemInfo\":\"");
+			int end = str.indexOf("\"", base+"apiItemInfo\":\"".length());
+			ajaxUrl = str.substring(base+"apiItemInfo\":\"".length(), end - 1);
+			return ajaxUrl;
+		}else{
+			log.info("There is no apiItemInfo in the page.");
 		}
 		return null;
 	}
@@ -148,27 +170,41 @@ public class PostageService {
 		return null;
 	}
 
-	public void getPostageFromJson(String json) {
-		// System.out.println(json);
-		// System.out.println(json);
+	public void parseItemInfoJson(String json) {
+/*
+ * 
+$callback({
+			postage:{
+	type:'applyPostage',
+	location:'广东深圳',
+	destination:'上海',
+	carriage:'快递:7.00元 EMS:21.00元 ',
+	dataUrl:'http://delivery.taobao.com/detail/detail.do?itemCount=1&amp;itemId=5656200607&amp;itemValue=39.00&amp;isSellerPay=false&amp;templateId=12699&amp;userId=934381&amp;unifiedPost=6.00&amp;unifiedExpress=6.00&amp;unifiedEms=21.00&amp;weight=0&amp;size=0',
+	cityId:'310000'
+}
+,			quantity:{
+	quanity: 76,
+	interval: 30  }
+	});
+ * 
+ * 
+ */
+//		String delimeters = "[()]+";
+//		String[] tokens = json.split(delimeters);
 
-		String delimeters = "[()]+";
-		String[] tokens = json.split(delimeters);
-
-		// System.out.println(tokens.length);
-		// for (int i = 0; i < tokens.length; i++)
-		// System.out.println(tokens[i]);
-
-		JSONObject jsonObj = (JSONObject) JSONSerializer.toJSON(tokens[1]);
-
+		JSONObject tmp = JSONObject.fromObject(json.substring(json.indexOf("(")+1,json.lastIndexOf(")")));
+		JSONObject jsonObj = tmp.getJSONObject("postage");
 		log.info("Type: " + jsonObj.getString("type"));
 		log.info("Location: " + jsonObj.getString("location"));
 		log.info("Carriage: " + jsonObj.getString("carriage"));
-
 		
 		postage.setCarriage(jsonObj.getString("carriage"));
 		postage.setLocation(jsonObj.getString("location"));
 
+		
+		JSONObject saleObj = tmp.getJSONObject("quantity");
+		saleSum = saleObj.getInt("quanity");
+		log.info("Sale sum is: "+saleSum);
 	}
 
 }

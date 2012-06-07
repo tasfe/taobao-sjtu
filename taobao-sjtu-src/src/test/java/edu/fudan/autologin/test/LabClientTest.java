@@ -24,6 +24,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.fudan.autologin.constants.SheetNames;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
@@ -129,16 +130,16 @@ public class LabClientTest {
 		int itemSum = sh.getRows() - 1;
 		// sheet.getRows()返回该页的总行数
 		for (int i = 3; i <= itemSum; i++) {
-log.info("This is process no: "+i);
-			String id = sh.getCell(0,i).getContents();
-			String pageUrl = "http://item.taobao.com/item.htm?id="+id;
-			
+			log.info("This is process no: " + i);
+			String id = sh.getCell(0, i).getContents();
+			String pageUrl = "http://item.taobao.com/item.htm?id=" + id;
+
 			DetailCommonService service = new DetailCommonService();
 			service.setPageUrl(pageUrl);
 			service.execute();
-			
+
 			String impress = service.getImpress();
-			
+
 			try {
 				sh.addCell(new Label(14, i, impress));
 			} catch (RowsExceededException e) {
@@ -146,7 +147,7 @@ log.info("This is process no: "+i);
 			} catch (WriteException e) {
 				e.printStackTrace();
 			}
-			
+
 		}
 
 		try {
@@ -191,11 +192,9 @@ log.info("This is process no: "+i);
 				ReviewSumService reviewSumService = new ReviewSumService();
 				reviewSumService.setItemPageUrl(pageUrl.toString());
 				reviewSumService.execute();
-				
-				
+
 				ItemReviewService itemReviewService = new ItemReviewService();
-				itemReviewService
-						.setItemPageUrl(pageUrl.toString());
+				itemReviewService.setItemPageUrl(pageUrl.toString());
 				itemReviewService.setHttpClient(httpClient);
 				itemReviewService.setReviewSum(reviewSumService.getReviewSum());
 				itemReviewService.execute();
@@ -257,75 +256,39 @@ log.info("This is process no: "+i);
 			} else {
 				end = start + cnt - 1;
 			}
-			userRateProcess(start, end);
+			// userRateProcess(start, end);
 		}
 	}
 
 	@Test
 	public void task() {
-		// autoLogin();
-		// task1();
-		// task2();
-		// task3();
-		// task4();
-		// autoLogin();
-		// task5();
-//		task6();
-//		appendImpress();
-//		itemReviews();
+		ExcelUtil.prepare();
+		topTenProcess();
+		searchResultProcess();
+//		itemDetailProcess();
+//		userRateProcess();
+		ExcelUtil.closeWorkbook();
 	}
 
-	public void itemDetailProcess(int start, int end) {
-		try {
-			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
-					.getValueByName("excelFilePath")));
-			Sheet searchResultSheet = workbook.getSheet("SearchReaultSheet");
+	public void itemDetailProcess() {
+		Sheet searchResultSheet = ExcelUtil.getSheetMap().get(
+				SheetNames.SEARCH_RESULT_SHEET);
 
-			WritableWorkbook wbook = Workbook.createWorkbook(new File(
-					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
-			WritableSheet sh = wbook.getSheet("ItemDetailSheet");// 得到一个工作对象
-
-			// sheet.getRows()返回该页的总行数
-			for (int i = start; i <= end; i++) {
-				HttpClient tmp = new DefaultHttpClient();
-				ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
-						tmp, searchResultSheet.getCell(18, i).getContents());
-				itemDetailPageParser.setSellerId(searchResultSheet
-						.getCell(0, i).getContents());
-				log.info("--------------------------------------------------------------------------------------------------------------");
-				log.info("This is the item process no: " + i);
-				itemDetailPageParser.parsePage();
-				itemDetailPageParser.writeExcel(sh);
-				tmp.getConnectionManager().shutdown();
-
-				try {
-					Thread.sleep(0);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-					log.error(e.getMessage());
-				}
-			}
-
-			wbook.write();
-			try {
-				wbook.close();
-			} catch (WriteException e) {
-				e.printStackTrace();
-				log.error("Write excel exception. " + e.getMessage());
-			}
-			workbook.close();
-
-		} catch (BiffException e) {
-			e.printStackTrace();
-			log.error(e.getMessage());
-		} catch (IOException e) {
-			e.printStackTrace();
-			log.error(e.getMessage());
-		} finally {
+		for (int i = 1; i < searchResultSheet.getRows(); i++) {
+			HttpClient tmp = new DefaultHttpClient();
+			ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
+					tmp, searchResultSheet.getCell(18, i).getContents());
+			itemDetailPageParser.setSellerId(searchResultSheet.getCell(0, i)
+					.getContents());
+			log.info("--------------------------------------------------------------------------------------------------------------");
+			log.info("This is the item process no: " + i);
+			itemDetailPageParser.parsePage();
+			itemDetailPageParser.writeExcel();
+			tmp.getConnectionManager().shutdown();
 
 		}
 	}
-	
+
 	public void itemReviews() {
 		String prefix = "http://item.taobao.com/item.htm?id=";
 		try {
@@ -342,27 +305,24 @@ log.info("This is process no: "+i);
 			for (int i = 1; i <= 500; i++) {
 				log.info("--------------------------------------------------------------------------------------------------------------");
 				log.info("This is the item process no: " + i);
-				String id = searchResultSheet
-						.getCell(0, i).getContents();
+				String id = searchResultSheet.getCell(0, i).getContents();
 				StringBuilder pageUrl = new StringBuilder();
 				pageUrl.append(prefix);
 				pageUrl.append(id);
-				
+
 				HttpClient tmp = new DefaultHttpClient();
-				
+
 				ReviewSumService reviewSumService = new ReviewSumService();
 				reviewSumService.setItemPageUrl(pageUrl.toString());
 				reviewSumService.execute();
-				
-				
+
 				ItemReviewService itemReviewService = new ItemReviewService();
-				itemReviewService
-						.setItemPageUrl(pageUrl.toString());
+				itemReviewService.setItemPageUrl(pageUrl.toString());
 				itemReviewService.setHttpClient(httpClient);
 				itemReviewService.setReviewSum(reviewSumService.getReviewSum());
 				itemReviewService.setSheet(sh);
 				itemReviewService.execute();
-				
+
 				tmp.getConnectionManager().shutdown();
 			}
 
@@ -454,60 +414,26 @@ log.info("This is process no: "+i);
 		}
 	}
 
-	public void userRateProcess(int start, int end) {
+	public void userRateProcess() {
+		Sheet itemDetailSheet = ExcelUtil.getSheetMap().get(
+				SheetNames.ITEM_DETAIL_SHEET);
 
-		String xmlFilePath = XmlConfUtil.getValueByName("excelFilePath");
-		
-		try {
-			Workbook workbook = Workbook.getWorkbook(new File(xmlFilePath));
-			Sheet searchResultSheet = workbook.getSheet("ItemDetailSheet");
-
-			WritableWorkbook wbook = Workbook.createWorkbook(new File(
-					xmlFilePath), workbook); // 根据book创建一个操作对象
-			WritableSheet sh = wbook.getSheet("UserRateSheet");// 得到一个工作对象
-
-			// sheet.getRows()返回该页的总行数
-			for (int i = start; i <= end; i++) {
-				HttpClient tmp = new DefaultHttpClient();
-				String userRateHref = searchResultSheet.getCell(13, i)
-						.getContents();
-				String sellerId = searchResultSheet.getCell(0, i).getContents();
-				log.info("--------------------------------------------------------------------------------------------------------------");
-				log.info("This is the item process no: " + i);
-				log.info("Seller id is: " + sellerId);
-				log.info("User rate href is: " + userRateHref);
-				UserRatePageParser userRatePageParser = new UserRatePageParser(
-						tmp, userRateHref);
-				userRatePageParser.setSellerId(sellerId);
-				userRatePageParser.parsePage();
-				userRatePageParser.writeExcel(sh);
-				tmp.getConnectionManager().shutdown();
-				try {
-					Thread.sleep(10);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-
-			wbook.write();
-			try {
-				wbook.close();
-			} catch (WriteException e) {
-				e.printStackTrace();
-				log.error("Write excel exception. " + e.getMessage());
-			}
-			workbook.close();
-
-		} catch (BiffException e) {
-			e.printStackTrace();
-			log.error(e.getMessage());
-		} catch (IOException e) {
-			e.printStackTrace();
-			log.error(e.getMessage());
-		} finally {
-
+		for (int i = 1; i < itemDetailSheet.getRows(); i++) {
+			HttpClient tmp = new DefaultHttpClient();
+			String userRateHref = itemDetailSheet.getCell(14, i).getContents();
+			String sellerId = itemDetailSheet.getCell(0, i).getContents();
+			log.info("--------------------------------------------------------------------------------------------------------------");
+			log.info("This is the item process no: " + i);
+			log.info("Seller id is: " + sellerId);
+			log.info("User rate href is: " + userRateHref);
+			UserRatePageParser userRatePageParser = new UserRatePageParser(tmp,
+					userRateHref);
+			userRatePageParser.setSellerId(sellerId);
+			userRatePageParser.parsePage();
+			userRatePageParser.writeExcel();
+			tmp.getConnectionManager().shutdown();
 		}
+
 	}
 
 	// write item detail records
@@ -545,7 +471,7 @@ log.info("This is process no: "+i);
 			} else {
 				end = start + cnt - 1;
 			}
-			itemDetailProcess(start, end);
+//			itemDetailProcess(start, end);
 		}
 	}
 
@@ -591,67 +517,40 @@ log.info("This is process no: "+i);
 	}
 
 	// search result process
-	public void task2() {
-		try {
-			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
-					.getValueByName("excelFilePath")));
-			Sheet topTenSheet = workbook.getSheet("TopTenSheet");
+	public void searchResultProcess() {
+		Sheet topTenSheet = ExcelUtil.getSheetMap().get(
+				SheetNames.TOP_TEN_SHEET);
 
-			WritableWorkbook wbook = Workbook.createWorkbook(new File(
-					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
-			WritableSheet sh = wbook.getSheet("SearchReaultSheet");// 得到一个工作对象
-
-			// sheet.getRows()返回该页的总行数
-			for (int i = 1; i < topTenSheet.getRows(); i++) {
-				SearchResultPageParser searchResultPageParser = new SearchResultPageParser(
-						httpClient, topTenSheet.getCell(5, i).getContents());
-				searchResultPageParser.setCategoryName(topTenSheet
-						.getCell(0, i).getContents());
-				log.info("--------------------------------------------------------------------------------------------------------------");
-				searchResultPageParser.parsePage();
-				searchResultPageParser.writeExcel(sh);
-			}
-
-			wbook.write();
-			try {
-				wbook.close();
-			} catch (WriteException e) {
-				e.printStackTrace();
-				log.error(e.getMessage());
-			}
-			workbook.close();
-
-		} catch (BiffException e) {
-			e.printStackTrace();
-			log.error(e.getMessage());
-		} catch (IOException e) {
-			e.printStackTrace();
-			log.error(e.getMessage());
-		} finally {
-
+		// sheet.getRows()返回该页的总行数
+		for (int i = 1; i < topTenSheet.getRows(); i++) {
+			SearchResultPageParser searchResultPageParser = new SearchResultPageParser(
+					httpClient, topTenSheet.getCell(5, i).getContents());
+			searchResultPageParser.setCategoryName(topTenSheet.getCell(0, i)
+					.getContents());
+			log.info("--------------------------------------------------------------------------------------------------------------");
+			searchResultPageParser.parsePage();
+			searchResultPageParser.writeExcel();
 		}
 	}
 
 	// top ten task
-	public void task1() {
-
-		ExcelUtil.prepare();
+	public void topTenProcess() {
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
 
 		CategoryInfo ci1 = new CategoryInfo();
 		ci1.setCategoryName("洁面");
 		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
 		categoryInfos.add(ci1);
-		
-		CategoryInfo ci2 = new CategoryInfo();
-		ci2.setCategoryName("热门手机");
-		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
-		categoryInfos.add(ci2);
 
-		CategoryInfo ci3 = new CategoryInfo();
-		ci3.setCategoryName("普通数码相机");
-		ci3.setCategoryHref("http://top1.search.taobao.com/level3.php?cat=TR_SYQC&level3=1403&up=false");
-		categoryInfos.add(ci3);
+//		CategoryInfo ci2 = new CategoryInfo();
+//		ci2.setCategoryName("热门手机");
+//		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
+//		categoryInfos.add(ci2);
+//
+//		CategoryInfo ci3 = new CategoryInfo();
+//		ci3.setCategoryName("普通数码相机");
+//		ci3.setCategoryHref("http://top1.search.taobao.com/level3.php?cat=TR_SYQC&level3=1403&up=false");
+//		categoryInfos.add(ci3);
 
 		// get top ten item info
 		for (CategoryInfo c : categoryInfos) {
@@ -661,8 +560,6 @@ log.info("This is process no: "+i);
 			topTenPageParser.parsePage();
 			topTenPageParser.writeExcel();
 		}
-
-		ExcelUtil.closeWorkbook();
 	}
 
 	public void execute() {

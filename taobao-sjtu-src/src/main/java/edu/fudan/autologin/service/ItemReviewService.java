@@ -54,8 +54,15 @@ public class ItemReviewService {
 	// Secondly, disclose them
 	List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
 
-	private int itemType;
-	private int addrCounter = 0;
+	private int indicator;
+
+	public int getIndicator() {
+		return indicator;
+	}
+
+	public void setIndicator(int indicator) {
+		this.indicator = indicator;
+	}
 
 	private int startIndex = 0;
 	private int endIndex = 0;
@@ -188,10 +195,18 @@ public class ItemReviewService {
 
 		
 		parseList();
+		writeBuyerInfo();
 //		invokeDisclose();
 //		printList();
 //		log.info("Address indicator is: " + addrCounter);
 //		calAddrNotNull();
+	}
+
+	private void writeBuyerInfo() {
+
+		for(int i = 0; i <= endIndex; ++i ){
+			ExcelUtil.writeReviewsSheet(buyerInfos.get(i));
+		}
 	}
 
 	public void parseReview(int pageNum) {
@@ -217,13 +232,13 @@ public class ItemReviewService {
 
 	public void parseList() {
 		if(judgeItemTypeLT100() == true){
-			itemType = AddrIndicator.THIRTY_LT_100;
+			indicator = AddrIndicator.THIRTY_LT_100;
 		}else if(judgeItemTypeEQ100() == true){
-			itemType = AddrIndicator.THIRTY_EQ_100;
+			indicator = AddrIndicator.THIRTY_EQ_100;
 		}else{
-			itemType = AddrIndicator.THIRTY_GT_100;
+			indicator = AddrIndicator.THIRTY_GT_100;
 		}
-		log.info("Item type is: "+itemType);
+		log.info("Item type is: "+indicator);
 		log.info("Start index is: "+startIndex);
 		log.info("End index is: "+endIndex);
 		log.info("The sum of addr not null is: "+getAddrCounter(buyerInfos, 0, buyerInfos.size()-1));
@@ -266,7 +281,7 @@ public class ItemReviewService {
 		
 		if(cnt >= SystemConstant.ADDR_THRESHHOLD){
 			
-			itemType = AddrIndicator.THIRTY_GT_100;
+			indicator = AddrIndicator.THIRTY_GT_100;
 			endIndex = last;
 			return true;
 		}
