@@ -15,6 +15,8 @@ import org.apache.log4j.Logger;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
+import edu.fudan.autologin.constants.AddrIndicator;
+import edu.fudan.autologin.constants.SystemConstant;
 import edu.fudan.autologin.constants.UserType;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
@@ -52,6 +54,12 @@ public class ItemReviewService {
 	// Secondly, disclose them
 	List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
 
+	private int itemType;
+	private int addrCounter = 0;
+
+	private int startIndex = 0;
+	private int endIndex = 0;
+	
 	private String itemPageUrl;
 
 	private WritableSheet sheet;
@@ -102,6 +110,16 @@ public class ItemReviewService {
 
 	public HttpClient getHttpClient() {
 		return httpClient;
+	}
+
+	public int getAddrCounter(List<BuyerInfo> list, int start, int end) {
+		int cnt = 0;
+		for (int i = start; i <= end; ++i) {
+			if (list.get(i).getBuyerAddress().equals("0") == false) {
+				++cnt;
+			}
+		}
+		return cnt;
 	}
 
 	public void setHttpClient(HttpClient httpClient) {
@@ -165,10 +183,15 @@ public class ItemReviewService {
 		log.info("The sum of the reviews is: " + reviewSum);
 		log.info("First feed rate date is: " + getFirstReviewDate());
 		log.info("Last feed rate date is: " + getLastReviewDate());
-
+		log.info("Review list size is: " + buyerInfos.size());
 		this.httpClient.getConnectionManager().shutdown();
+
 		
-		invokeDisclose();
+		parseList();
+//		invokeDisclose();
+//		printList();
+//		log.info("Address indicator is: " + addrCounter);
+//		calAddrNotNull();
 	}
 
 	public void parseReview(int pageNum) {
@@ -179,6 +202,75 @@ public class ItemReviewService {
 				.trim());
 		parseFeedRateListJson(jsonStr);
 		get.shutDown();
+	}
+
+	public void calAddrNotNull() {
+		int cnt = 0;
+		for (BuyerInfo bi : buyerInfos) {
+			if (bi.getBuyerAddress().equals("0") != true) {
+				++cnt;
+			}
+		}
+
+		log.info("addr cnt is: " + cnt);
+	}
+
+	public void parseList() {
+		if(judgeItemTypeLT100() == true){
+			itemType = AddrIndicator.THIRTY_LT_100;
+		}else if(judgeItemTypeEQ100() == true){
+			itemType = AddrIndicator.THIRTY_EQ_100;
+		}else{
+			itemType = AddrIndicator.THIRTY_GT_100;
+		}
+		log.info("Item type is: "+itemType);
+		log.info("Start index is: "+startIndex);
+		log.info("End index is: "+endIndex);
+		log.info("The sum of addr not null is: "+getAddrCounter(buyerInfos, 0, buyerInfos.size()-1));
+	}
+	
+	public boolean judgeItemTypeLT100(){
+		int cnt = 0;
+		cnt = getAddrCounter(buyerInfos, 0, buyerInfos.size() - 1);
+		if (cnt < SystemConstant.ADDR_THRESHHOLD) {
+			endIndex = buyerInfos.size() - 1;
+			return true;
+		}		
+		return false;
+	}
+	public boolean judgeItemTypeEQ100(){
+		int cnt = 0;// the counter of address is not null.
+		Date firstDate = new Date();
+		Date tmpDate = new Date();
+		for (int i = 0; i < buyerInfos.size(); ++i) {
+			if (buyerInfos.get(i).getBuyerAddress().equals("0") == false) {
+				++cnt;
+			}
+			if (i == 0) {
+				firstDate = string2Date(buyerInfos.get(i).getFeedDate());
+			} else {
+
+				tmpDate = string2Date(buyerInfos.get(i).getFeedDate());
+				if (cnt >= SystemConstant.ADDR_THRESHHOLD) {
+					endIndex = i;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	public boolean judgeItemTypeGT100(){
+		int cnt = 0;
+		int last = getThirtyLastDateIndex();
+		cnt = getAddrCounter(buyerInfos, 0, last);
+		
+		if(cnt >= SystemConstant.ADDR_THRESHHOLD){
+			
+			itemType = AddrIndicator.THIRTY_GT_100;
+			endIndex = last;
+			return true;
+		}
+		return false;
 	}
 
 	public String getFeedRateListUrl() {
@@ -301,10 +393,6 @@ public class ItemReviewService {
 							httpClient, buildItaobaoUrl(nickUrl));
 					parser.setBuyerInfo(buyerInfo);
 					parser.parsePage();
-
-					// write records into sheet
-					// ExcelUtil.writeReviewsSheet(sheet, buyerInfo);
-
 				} else {
 					log.info("nick url is null.");
 				}
@@ -330,31 +418,86 @@ public class ItemReviewService {
 
 	// invoke
 	public void invokeDisclose() {
+		int cnt = 0;// the counter of address is not null.
 		Date firstDate = new Date();
 		Date tmpDate = new Date();
 		SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd");
 		for (int i = 0; i < buyerInfos.size(); ++i) {
+			if (buyerInfos.get(i).getBuyerAddress().equals("0") == false) {
+				++cnt;
+			}
 			if (i == 0) {
 				firstDate = string2Date(buyerInfos.get(i).getFeedDate());
 			} else {
-				
+
 				tmpDate = string2Date(buyerInfos.get(i).getFeedDate());
-				
-				
-				if((firstDate.getTime() - tmpDate.getTime())/(24*60*60*1000) >= 29){
-					removeElement(buyerInfos, i+1, buyerInfos.size());
-					
+				if ((firstDate.getTime() - tmpDate.getTime())
+						/ (24 * 60 * 60 * 1000) >= 29
+						&& cnt >= SystemConstant.ADDR_THRESHHOLD) {
 					break;
 				}
 			}
 		}
 		log.info(buyerInfos.get(0).getFeedDate());
-		log.info("first date is:"+df.format(firstDate));
-		log.info("last date is: "+df.format(tmpDate));
+		log.info("first date is:" + df.format(firstDate));
+		log.info("last date is: " + df.format(tmpDate));
 	}
-	
-	public void removeElement(List list, int start, int end){
-		for(int i = start; i < end; ++i){
+
+	private List<BuyerInfo> targetList = new ArrayList<BuyerInfo>();
+
+	public int getThirtyLastDateIndex() {
+		int index = 0;
+		Date lastDate = new Date();
+		Date firstDate = getThirtyFirstDate();
+
+		for (int i = 0; i < buyerInfos.size(); ++i) {
+			lastDate = string2Date(buyerInfos.get(i).getFeedDate());
+			if ((firstDate.getTime() - lastDate.getTime())
+					/ (24 * 60 * 60 * 1000) >= 29) {
+				index = i;
+				break;
+			}
+		}
+
+		return index;
+	}
+
+	public Date getThirtyFirstDate() {
+		Date firstDate = new Date();
+		SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd");
+
+		try {
+			firstDate = df.parse(buyerInfos.get(0).getFeedDate());
+		} catch (ParseException e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		}
+
+		return firstDate;
+	}
+
+	public void printList() {
+
+		for (BuyerInfo bi : targetList) {
+			log.info("Feed date is: " + bi.getFeedDate());
+			log.info("Buyer addr is: " + bi.getBuyerAddress());
+		}
+	}
+
+	public void copyElements(List list, int start, int end) {
+
+		for (int i = start; i <= end; ++i) {
+			targetList.add((BuyerInfo) list.get(i));
+		}
+	}
+
+	public void removeElement(List list, int start, int end) {
+		log.info("Start is: " + start);
+		log.info("End is: " + end);
+
+		log.info("List size is: " + list.size());
+		for (int i = start; i < end; ++i) {
+			log.info("Remove element no: " + i);
 			list.remove(i);
 		}
 	}

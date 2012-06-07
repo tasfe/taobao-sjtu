@@ -220,7 +220,7 @@ public class ItemDetailPageParserTest {
 
 	public void testReview() {
 		
-		String url = "http://item.taobao.com/item.htm?id=1034751806";
+		String url = "http://item.taobao.com/item.htm?id=10821226356";
 		ReviewSumService reviewSumService = new ReviewSumService();
 		reviewSumService.setItemPageUrl(url);
 		reviewSumService.execute();
