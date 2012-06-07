@@ -455,13 +455,15 @@ log.info("This is process no: "+i);
 	}
 
 	public void userRateProcess(int start, int end) {
+
+		String xmlFilePath = XmlConfUtil.getValueByName("excelFilePath");
+		
 		try {
-			Workbook workbook = Workbook.getWorkbook(new File(XmlConfUtil
-					.getValueByName("excelFilePath")));
+			Workbook workbook = Workbook.getWorkbook(new File(xmlFilePath));
 			Sheet searchResultSheet = workbook.getSheet("ItemDetailSheet");
 
 			WritableWorkbook wbook = Workbook.createWorkbook(new File(
-					XmlConfUtil.getValueByName("excelFilePath")), workbook); // 根据book创建一个操作对象
+					xmlFilePath), workbook); // 根据book创建一个操作对象
 			WritableSheet sh = wbook.getSheet("UserRateSheet");// 得到一个工作对象
 
 			// sheet.getRows()返回该页的总行数
