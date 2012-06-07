@@ -34,6 +34,18 @@ public class JavaBaseTest {
 	 * The substring begins at specified beginIndex and extends to the character at index endIndex - 1
 	 */
 	@Test
+	public void aa(){
+		
+		log.info(cal(0, 3-1));
+	}
+	public int cal(int a, int b){
+		int sum = 0;
+		for(int i = a; i <= b; ++i){
+			log.info(i);
+			sum += 1;
+		}
+		return a+b;
+	}
 	public void testListErase(){
 		
 		List<String> myint = new ArrayList<String>();
