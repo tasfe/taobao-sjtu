@@ -50,6 +50,16 @@ import edu.fudan.autologin.utils.XmlConfUtil;
  */
 public class ItemReviewService {
 	private static final Logger log = Logger.getLogger(ItemReviewService.class);
+	
+	private String sellerId ;
+	public String getSellerId() {
+		return sellerId;
+	}
+
+	public void setSellerId(String sellerId) {
+		this.sellerId = sellerId;
+	}
+
 	// First of all, fetch all infos;
 	// Secondly, disclose them
 	List<BuyerInfo> buyerInfos = new ArrayList<BuyerInfo>();
@@ -402,6 +412,7 @@ public class ItemReviewService {
 				BuyerInfo buyerInfo = new BuyerInfo();
 				buyerInfo.setFeedDate(date);
 				buyerInfo.setIndicator(UserType.ANONYMOUS);
+				buyerInfo.setSellerId(sellerId);
 
 				if (nickUrl != null && nickUrl != "") {
 					ItaobaoPageParser parser = new ItaobaoPageParser(

@@ -1,6 +1,14 @@
 package edu.fudan.autologin.pojos;
 
 public class ItemInfo {
+private String impress;
+	public String getImpress() {
+	return impress;
+}
+
+public void setImpress(String impress) {
+	this.impress = impress;
+}
 
 	private String sellerId;
 	private String priceRange = "0";
