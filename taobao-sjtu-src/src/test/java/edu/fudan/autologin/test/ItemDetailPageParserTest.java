@@ -51,8 +51,8 @@ public class ItemDetailPageParserTest {
 //		testItemCounter();
 //		 testReviewSum();
 		// testWeekSaleNumServie();
-		 testUserRate();
-//		testDetailCommon();
+//		 testUserRate();
+		testDetailCommon();
 //		testPostageService();
 //		 testBuyerListService();
 //		testSaleSumService();

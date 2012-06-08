@@ -94,13 +94,26 @@ public class DetailCommonService {
 		httpClient.getConnectionManager().shutdown();
 	}
 
+	
+/*			{"watershed":100,
+ * 			 "data":{
+ * 						"correspond":"4.8","correspondCount":38700,"correspondList":["87.34","10.95","1.28","0.14","0.28"],
+ * 						"count":{"additional":2,"bad":0,"correspond":0,"good":88,"goodFull":234,"hascontent":0,"normal":0,"total":88},
+ * 						"impress":[{"attribute":"2324-11","count":12,"title":"温和不刺激","value":1},
+ * 								   {"attribute":"2524-11","count":8,"title":"清洁度强","value":1},
+ * 								   {"attribute":"420-11","count":5,"title":"物流快","value":1},
+ * 								   {"attribute":"824-11","count":5,"title":"保湿滋润","value":1},
+ * 								   {"attribute":"620-11","count":4,"title":"质量不错","value":1}],
+ *  					"links":null,"refundTime":0,"spuRatting":[]}}
+	
+	*/
 	public void parseJson(String json) {
 		JSONObject jsonObj = JSONObject.fromObject(json);
 
 		JSONObject obj = jsonObj.getJSONObject("data");
 		JSONArray array = obj.getJSONArray("impress");
 
-		List<ItemImpress> list = (List<ItemImpress>) JSONSerializer.toJava(array);
+		List list = (List) JSONSerializer.toJava(array);
 
 		if(list.size() == 0){
 			log.info("There is no impressess.");
@@ -108,12 +121,14 @@ public class DetailCommonService {
 			for (Object o : list) {
 
 				JSONObject j = JSONObject.fromObject(o);
-				ItemImpress impress = new ItemImpress();
-				log.info("title is: " + j.getString("title"));
-				log.info("count is: " + j.getInt("count"));
 				
-				impress.setTitle(j.getString("title"));
-				impress.setCount(j.getInt("count"));
+				ItemImpress impress;
+				
+				impress = (ItemImpress) JSONObject.toBean(j, ItemImpress.class);
+//				log.info("title is: " + j.getString("title"));
+//				log.info("count is: " + j.getInt("count"));
+//				impress.setTitle(j.getString("title"));
+//				impress.setCount(j.getInt("count"));
 				
 				impresses.add(impress);
 			}
