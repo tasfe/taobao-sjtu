@@ -329,25 +329,7 @@ public class ExcelUtil {
 	}
 
 	public static void createWorkbook() {
-
-		String excelFilePath = XmlConfUtil.getValueByName("excelFilePath");
-		log.debug("Excel file path from xml file is: " + excelFilePath);
-		String basePath = excelFilePath;
-		String fileExtendName = ".xls";
-
-		Date date = new Date();
-
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
-
-		StringBuffer path = new StringBuffer();
-		path.append(basePath);
-		path.append("taobao-sjtu");
-		// path.append(df.format(date).toString());
-		path.append(fileExtendName);
-
-		log.info("Path is: " + path.toString());
 		try {
-
 			workbook = Workbook.createWorkbook(new File(XmlConfUtil
 					.getValueByName("excelFilePath")));
 		} catch (IOException e) {
