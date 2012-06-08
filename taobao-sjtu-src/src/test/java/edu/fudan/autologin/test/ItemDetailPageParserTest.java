@@ -51,12 +51,12 @@ public class ItemDetailPageParserTest {
 //		testItemCounter();
 //		 testReviewSum();
 		// testWeekSaleNumServie();
-		// testUserRate();
+		 testUserRate();
 //		testDetailCommon();
 //		testPostageService();
 //		 testBuyerListService();
 //		testSaleSumService();
-		
+//		testMonthService();
 //		testReview();
 
 	}
@@ -83,7 +83,6 @@ public class ItemDetailPageParserTest {
 	public void setUp() {
 		if (httpClient == null) {
 			httpClient = new DefaultHttpClient();
-			httpClient.getParams().setIntParameter("http.socket.timeout",300000);//毫秒 
 		}
 
 		initialize();

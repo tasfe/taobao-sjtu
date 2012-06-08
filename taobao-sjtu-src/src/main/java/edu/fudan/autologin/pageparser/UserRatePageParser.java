@@ -262,6 +262,8 @@ public class UserRatePageParser extends BasePageParser {
 			// punishmentScoreEls.get(2).ownText() +
 			// punishmentScoreEls.get(3).ownText();
 			// log.info("punishmentScore: " + punishmentScore);
+			
+			
 			MonthService monthService = new MonthService();
 			monthService.setUserRatePageUrl(this.getPageUrl());
 			monthService.execute();
@@ -273,7 +275,13 @@ public class UserRatePageParser extends BasePageParser {
 					.getMonthServieEntities().get(2).getLineString());
 			sellerRateInfo.setPunishmentScore(monthService
 					.getMonthServieEntities().get(3).getLineString());
+			log.info("Refundment score is: "+sellerRateInfo.getRefundmentScore());
+			log.info("Rate score is: "+sellerRateInfo.getRefundmentRateScore());
+			log.info("Complaint is: "+sellerRateInfo.getComplaintScore());
+			log.info("Punish is: "+sellerRateInfo.getPunishmentScore());
 
+			
+			
 			if (doc.select("div.show-list#J_show_list ul li").size() == 0) {
 
 			} else {

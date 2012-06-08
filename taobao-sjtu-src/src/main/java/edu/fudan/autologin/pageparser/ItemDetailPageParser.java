@@ -19,6 +19,7 @@ import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.formfields.GetMethod;
 import edu.fudan.autologin.pojos.BuyerInfo;
 import edu.fudan.autologin.pojos.ItemInfo;
+import edu.fudan.autologin.service.DetailCommonService;
 import edu.fudan.autologin.service.ItemReviewService;
 import edu.fudan.autologin.service.ItemViewCountService;
 import edu.fudan.autologin.service.PostageService;
@@ -118,6 +119,12 @@ public class ItemDetailPageParser extends BasePageParser {
 			itemType = element.ownText();
 //			log.info("itemType: " + itemType);
 //			itemInfo.setItemType(itemType);
+			
+			DetailCommonService service = new DetailCommonService();
+			service.setPageUrl(pageUrl);
+			service.execute();
+			String impress = service.getImpress();
+			itemInfo.setImpress(impress);
 			
 			ItemViewCountService itemViewCountService = new ItemViewCountService();
 			itemViewCountService.setItemDetailPage(pageUrl);
@@ -220,6 +227,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemReviewService.setHttpClient(this.getHttpClient());
 		itemReviewService.setItemPageUrl(this.getPageUrl());
 		itemReviewService.setReviewSum(reviewSumService.getReviewSum());
+		itemReviewService.setSellerId(sellerId);
 		itemReviewService.execute();
 		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
 		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());

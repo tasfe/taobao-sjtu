@@ -21,9 +21,11 @@ import edu.fudan.autologin.pojos.TopTenItemInfo;
 import edu.fudan.autologin.utils.XmlConfUtil;
 
 import jxl.CellType;
+import jxl.Sheet;
 import jxl.Workbook;
 import jxl.format.Alignment;
 import jxl.format.VerticalAlignment;
+import jxl.read.biff.BiffException;
 import jxl.write.Label;
 import jxl.write.Number;
 import jxl.write.NumberFormat;
@@ -46,7 +48,7 @@ public class ExcelUtil {
 
 	private static int currentBuyerSheetIndex = 0;
 	private static WritableWorkbook workbook;
-	private static Map<String, WritableSheet> sheetMap;
+	private static Map<String, WritableSheet> sheetMap = new HashMap<String, WritableSheet>();
 
 	public static int getCurrentBuyerSheetIndex() {
 		return currentBuyerSheetIndex;
@@ -66,6 +68,44 @@ public class ExcelUtil {
 
 	public static Map<String, WritableSheet> getSheetMap() {
 		return sheetMap;
+	}
+
+	private static WritableWorkbook wbook;
+
+	public static void openWorkbook() {
+		Workbook workbook1 = null;
+		try {
+			workbook1 = Workbook.getWorkbook(new File(XmlConfUtil
+					.getValueByName("excelFilePath")));
+		} catch (BiffException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			wbook = Workbook.createWorkbook(
+					new File(XmlConfUtil.getValueByName("excelFilePath")),
+					workbook1);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} // 根据book创建一个操作对象
+
+		WritableSheet sh = wbook.getSheet(SheetNames.SEARCH_RESULT_SHEET);// 得到一个工作对象
+		sheetMap.put(SheetNames.SEARCH_RESULT_SHEET, sh);
+
+		WritableSheet sh1 = wbook.getSheet(SheetNames.ITEM_DETAIL_SHEET);// 得到一个工作对象
+		sheetMap.put(SheetNames.ITEM_DETAIL_SHEET, sh1);
+
+		WritableSheet sh2 = wbook.getSheet(SheetNames.USER_RATE_SHEET);// 得到一个工作对象
+		sheetMap.put(SheetNames.USER_RATE_SHEET, sh2);
+
+		WritableSheet sh3 = wbook.getSheet(SheetNames.BUYER_INFO_SHEET);// 得到一个工作对象
+		sheetMap.put(SheetNames.BUYER_INFO_SHEET, sh3);
+
+		WritableSheet sh4 = wbook.getSheet(SheetNames.BUYER_INFO_SHEET);// 得到一个工作对象
+		sheetMap.put(
+				SheetNames.BUYER_INFO_SHEET + "_" + currentBuyerSheetIndex, sh4);
+
 	}
 
 	public static void setSheetMap(Map<String, WritableSheet> sheetMap) {
@@ -139,6 +179,7 @@ public class ExcelUtil {
 		itemDetailHeaders.add("indicator");
 		itemDetailHeaders.add("页面链接地址");
 		itemDetailHeaders.add("卖家信用页面链接地址");
+		itemDetailHeaders.add("impresses");
 		writeHeader(SheetNames.ITEM_DETAIL_SHEET, itemDetailHeaders);
 
 	}
@@ -342,7 +383,6 @@ public class ExcelUtil {
 	private static int sheetIndex = 0;
 
 	public static void createSheets() {
-		sheetMap = new HashMap<String, WritableSheet>();
 
 		WritableSheet sheet = workbook.createSheet(SheetNames.TOP_TEN_SHEET,
 				sheetIndex++);
@@ -397,13 +437,6 @@ public class ExcelUtil {
 			} catch (WriteException e) {
 				e.printStackTrace();
 			}
-		}
-		
-		try {
-			workbook.write();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 
@@ -473,8 +506,8 @@ public class ExcelUtil {
 	public static void writeSearchResultSheet(
 			List<SellerInSearchResult> sellerInSearchResults) {
 		WritableSheet sheet = sheetMap.get(SheetNames.SEARCH_RESULT_SHEET);// 根据名称获取具体的sheet对象
-		
-		assert(sheet != null);
+
+		assert (sheet != null);
 		for (int i = 0; i < sellerInSearchResults.size(); ++i) {
 			SellerInSearchResult s = sellerInSearchResults.get(i);
 			Label l1 = new Label(0, sheet.getRows(), s.getSellerId());
@@ -503,6 +536,9 @@ public class ExcelUtil {
 					s.is30DaysMaintain() ? "30天维修" : "0" + "");
 			Label l17 = new Label(16, sheet.getRows(), s.getPage() + "");
 			Label l18 = new Label(17, sheet.getRows(), s.getRank() + "");
+
+			Label itemHref = new Label(18, sheet.getRows(), s.getHref());
+
 			try {
 				sheet.addCell(l1);
 				sheet.addCell(l2);
@@ -522,6 +558,7 @@ public class ExcelUtil {
 				sheet.addCell(l16);
 				sheet.addCell(l17);
 				sheet.addCell(l18);
+				sheet.addCell(itemHref);
 
 			} catch (RowsExceededException e) {
 				e.printStackTrace();
@@ -565,6 +602,8 @@ public class ExcelUtil {
 
 		Label userRateHref = new Label(colIndex++, sheet.getRows(),
 				itemInfo.getUserRateHref());
+		
+		Label impress =  new Label(colIndex++,sheet.getRows(),itemInfo.getImpress());
 		try {
 
 			sheet.addCell(l0);
@@ -583,18 +622,13 @@ public class ExcelUtil {
 			sheet.addCell(l12);
 			sheet.addCell(indicator);
 			sheet.addCell(userRateHref);
+			sheet.addCell(impress);
 
 		} catch (RowsExceededException e) {
 			e.printStackTrace();
 		} catch (WriteException e) {
 			e.printStackTrace();
 		}
-		try {
-			workbook.write();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	public static void writeItemDetailSheet(WritableSheet sheet,
@@ -812,13 +846,6 @@ public class ExcelUtil {
 		} catch (WriteException e) {
 			e.printStackTrace();
 		}
-		
-		try {
-			workbook.write();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	public static void writeUserRateSheet(WritableSheet sheet,
@@ -1071,14 +1098,16 @@ public class ExcelUtil {
 
 		int j = 0;
 		Label l0 = new Label(j++, sheet.getRows(), buyerInfo.getSellerId());
-		Label l1 = new Label(j++, sheet.getRows(), buyerInfo.getFeedDate() + "");
-		Label l2 = new Label(j++, sheet.getRows(), buyerInfo.getIndicator()
+		Label l7 = new Label(j++, sheet.getRows(), buyerInfo.getSex() + "");
+		Label l6 = new Label(j++, sheet.getRows(), buyerInfo.getBuyerAddress()
 				+ "");
 		Label l5 = new Label(j++, sheet.getRows(), buyerInfo.getRateScore()
 				+ "");
-		Label l6 = new Label(j++, sheet.getRows(), buyerInfo.getBuyerAddress()
+
+		
+		Label l1 = new Label(j++, sheet.getRows(), buyerInfo.getFeedDate() + "");
+		Label l2 = new Label(j++, sheet.getRows(), buyerInfo.getIndicator()
 				+ "");
-		Label l7 = new Label(j++, sheet.getRows(), buyerInfo.getSex() + "");
 		try {
 
 			sheet.addCell(l0);
@@ -1095,7 +1124,7 @@ public class ExcelUtil {
 	}
 
 	public static void writeReviewsSheet(BuyerInfo buyerInfo) {
-		WritableSheet sheet = sheetMap.get(SheetNames.BUYER_INFO_SHEET + "_"
+		WritableSheet sheet = wbook.getSheet(SheetNames.BUYER_INFO_SHEET + "_"
 				+ currentBuyerSheetIndex);
 		if (sheet.getRows() == SystemConstant.MAX_SHEET_ROWS) {
 			++currentBuyerSheetIndex;
@@ -1120,6 +1149,23 @@ public class ExcelUtil {
 		}
 		try {
 			workbook.close();
+		} catch (WriteException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// write records into spreadsheet before close workbook
+	public static void closeWBook() {
+		try {
+			wbook.write();
+		} catch (IOException e) {
+			log.error("Write workbook error and error message is:"
+					+ e.getMessage());
+		}
+		try {
+			wbook.close();
 		} catch (WriteException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

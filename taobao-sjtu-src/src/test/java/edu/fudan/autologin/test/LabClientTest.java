@@ -56,33 +56,10 @@ public class LabClientTest {
 	public void setUp() {
 		if (httpClient == null) {
 			httpClient = new DefaultHttpClient();
-			httpClient.getParams().setIntParameter("http.socket.timeout",
-					300000);// 毫秒
-
-			// // 设置代理对象 ip/代理名称,端口
-			// HttpHost proxy = new HttpHost("10.141.251.173", 3128);
-			// // // HttpHost proxy = new HttpHost("proxy.fudan.edu.cn", 8080);
-			// // // // 实例化验证
-			// // CredentialsProvider credsProvider = new
-			// BasicCredentialsProvider();
-			// // // // 设定验证内容
-			// // // UsernamePasswordCredentials creds = new
-			// UsernamePasswordCredentials(
-			// // // "10210240089", "fudan123");
-			// // // // 创建验证
-			// // credsProvider.setCredentials(new AuthScope(AuthScope.ANY_HOST,
-			// // // AuthScope.ANY_PORT), creds);
-			// httpClient.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY,
-			// proxy);
-			// // ((DefaultHttpClient)
-			// httpClient).setCredentialsProvider(credsProvider);
 		}
 
 		XmlConfUtil.openXml();
-		// PropertyConfigurator.configure("log4j.xml");
 		DOMConfigurator.configure("log4j.xml");
-		// log.setLevel(Level.DEBUG);
-
 	}
 
 	@After
@@ -262,17 +239,18 @@ public class LabClientTest {
 
 	@Test
 	public void task() {
-		ExcelUtil.prepare();
 		topTenProcess();
 		searchResultProcess();
-//		itemDetailProcess();
-//		userRateProcess();
-		ExcelUtil.closeWorkbook();
+		itemDetailProcess();
+		userRateProcess();
 	}
 
 	public void itemDetailProcess() {
+		ExcelUtil.openWorkbook();
 		Sheet searchResultSheet = ExcelUtil.getSheetMap().get(
 				SheetNames.SEARCH_RESULT_SHEET);
+		
+		log.info("Total item is: "+(searchResultSheet.getRows() - 1));
 
 		for (int i = 1; i < searchResultSheet.getRows(); i++) {
 			HttpClient tmp = new DefaultHttpClient();
@@ -285,8 +263,8 @@ public class LabClientTest {
 			itemDetailPageParser.parsePage();
 			itemDetailPageParser.writeExcel();
 			tmp.getConnectionManager().shutdown();
-
 		}
+		ExcelUtil.closeWBook();
 	}
 
 	public void itemReviews() {
@@ -415,9 +393,11 @@ public class LabClientTest {
 	}
 
 	public void userRateProcess() {
+		ExcelUtil.openWorkbook();
 		Sheet itemDetailSheet = ExcelUtil.getSheetMap().get(
 				SheetNames.ITEM_DETAIL_SHEET);
 
+		log.info("Start to process user rate.");
 		for (int i = 1; i < itemDetailSheet.getRows(); i++) {
 			HttpClient tmp = new DefaultHttpClient();
 			String userRateHref = itemDetailSheet.getCell(14, i).getContents();
@@ -433,7 +413,7 @@ public class LabClientTest {
 			userRatePageParser.writeExcel();
 			tmp.getConnectionManager().shutdown();
 		}
-
+		ExcelUtil.closeWBook();
 	}
 
 	// write item detail records
@@ -518,6 +498,8 @@ public class LabClientTest {
 
 	// search result process
 	public void searchResultProcess() {
+		
+		ExcelUtil.openWorkbook();
 		Sheet topTenSheet = ExcelUtil.getSheetMap().get(
 				SheetNames.TOP_TEN_SHEET);
 
@@ -531,10 +513,13 @@ public class LabClientTest {
 			searchResultPageParser.parsePage();
 			searchResultPageParser.writeExcel();
 		}
+		
+		ExcelUtil.closeWBook();
 	}
 
 	// top ten task
 	public void topTenProcess() {
+		ExcelUtil.prepare();
 		List<CategoryInfo> categoryInfos = new ArrayList<CategoryInfo>();
 
 		CategoryInfo ci1 = new CategoryInfo();
@@ -542,15 +527,15 @@ public class LabClientTest {
 		ci1.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_MRHF&level3=50011977&up=false");
 		categoryInfos.add(ci1);
 
-//		CategoryInfo ci2 = new CategoryInfo();
-//		ci2.setCategoryName("热门手机");
-//		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
-//		categoryInfos.add(ci2);
-//
-//		CategoryInfo ci3 = new CategoryInfo();
-//		ci3.setCategoryName("普通数码相机");
-//		ci3.setCategoryHref("http://top1.search.taobao.com/level3.php?cat=TR_SYQC&level3=1403&up=false");
-//		categoryInfos.add(ci3);
+		CategoryInfo ci2 = new CategoryInfo();
+		ci2.setCategoryName("热门手机");
+		ci2.setCategoryHref("http://top.taobao.com/level3.php?cat=TR_SJ&level3=TR_RXSJB&up=false");
+		categoryInfos.add(ci2);
+
+		CategoryInfo ci3 = new CategoryInfo();
+		ci3.setCategoryName("普通数码相机");
+		ci3.setCategoryHref("http://top1.search.taobao.com/level3.php?cat=TR_SYQC&level3=1403&up=false");
+		categoryInfos.add(ci3);
 
 		// get top ten item info
 		for (CategoryInfo c : categoryInfos) {
@@ -560,6 +545,7 @@ public class LabClientTest {
 			topTenPageParser.parsePage();
 			topTenPageParser.writeExcel();
 		}
+		ExcelUtil.closeWorkbook();
 	}
 
 	public void execute() {
