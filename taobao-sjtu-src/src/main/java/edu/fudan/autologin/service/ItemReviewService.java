@@ -139,12 +139,8 @@ public class ItemReviewService {
 		return cnt;
 	}
 
-	public void setHttpClient(HttpClient httpClient) {
-		// this.httpClient = httpClient;
-		this.httpClient = new DefaultHttpClient();
-	}
 
-	private HttpClient httpClient;
+	private HttpClient httpClient = new DefaultHttpClient();
 
 	public ItemReviewService() {
 
@@ -469,7 +465,6 @@ public class ItemReviewService {
 		log.info("last date is: " + df.format(tmpDate));
 	}
 
-	private List<BuyerInfo> targetList = new ArrayList<BuyerInfo>();
 
 	public int getThirtyLastDateIndex() {
 		int index = 0;
@@ -500,21 +495,6 @@ public class ItemReviewService {
 		}
 
 		return firstDate;
-	}
-
-	public void printList() {
-
-		for (BuyerInfo bi : targetList) {
-			log.info("Feed date is: " + bi.getFeedDate());
-			log.info("Buyer addr is: " + bi.getBuyerAddress());
-		}
-	}
-
-	public void copyElements(List list, int start, int end) {
-
-		for (int i = start; i <= end; ++i) {
-			targetList.add((BuyerInfo) list.get(i));
-		}
 	}
 
 	public void removeElement(List list, int start, int end) {

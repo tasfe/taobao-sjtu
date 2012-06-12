@@ -172,7 +172,6 @@ public class LabClientTest {
 
 				ItemReviewService itemReviewService = new ItemReviewService();
 				itemReviewService.setItemPageUrl(pageUrl.toString());
-				itemReviewService.setHttpClient(httpClient);
 				itemReviewService.setReviewSum(reviewSumService.getReviewSum());
 				itemReviewService.execute();
 
@@ -239,20 +238,32 @@ public class LabClientTest {
 
 	@Test
 	public void task() {
-		topTenProcess();
-		searchResultProcess();
-		itemDetailProcess();
-		userRateProcess();
+//
+//		ExcelUtil.openWorkbook();
+//		WritableWorkbook wb = ExcelUtil.getWorkbook();
+//
+//		String[] sheets = wb.getSheetNames();
+//
+//		log.info("Sheet name is: ");
+//		for (int i = 0; i < sheets.length; ++i) {
+//			log.info("Name: " + sheets[i]);
+//		}
+//		ExcelUtil.closeWorkbook();
+//		 topTenProcess();
+//		 searchResultProcess();
+		 itemDetailProcess();
+		 userRateProcess();
 	}
 
 	public void itemDetailProcess() {
 		ExcelUtil.openWorkbook();
 		Sheet searchResultSheet = ExcelUtil.getSheetMap().get(
 				SheetNames.SEARCH_RESULT_SHEET);
-		
-		log.info("Total item is: "+(searchResultSheet.getRows() - 1));
 
-		for (int i = 1; i < searchResultSheet.getRows(); i++) {
+		log.info("Total item is: " + (searchResultSheet.getRows() - 1));
+
+//		for (int i = 1; i < searchResultSheet.getRows(); i++) {
+		for (int i = 2; i < 10; i++) {
 			HttpClient tmp = new DefaultHttpClient();
 			ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
 					tmp, searchResultSheet.getCell(18, i).getContents());
@@ -296,7 +307,6 @@ public class LabClientTest {
 
 				ItemReviewService itemReviewService = new ItemReviewService();
 				itemReviewService.setItemPageUrl(pageUrl.toString());
-				itemReviewService.setHttpClient(httpClient);
 				itemReviewService.setReviewSum(reviewSumService.getReviewSum());
 				itemReviewService.setSheet(sh);
 				itemReviewService.execute();
@@ -451,7 +461,7 @@ public class LabClientTest {
 			} else {
 				end = start + cnt - 1;
 			}
-//			itemDetailProcess(start, end);
+			// itemDetailProcess(start, end);
 		}
 	}
 
@@ -498,7 +508,7 @@ public class LabClientTest {
 
 	// search result process
 	public void searchResultProcess() {
-		
+
 		ExcelUtil.openWorkbook();
 		Sheet topTenSheet = ExcelUtil.getSheetMap().get(
 				SheetNames.TOP_TEN_SHEET);
@@ -513,7 +523,7 @@ public class LabClientTest {
 			searchResultPageParser.parsePage();
 			searchResultPageParser.writeExcel();
 		}
-		
+
 		ExcelUtil.closeWBook();
 	}
 

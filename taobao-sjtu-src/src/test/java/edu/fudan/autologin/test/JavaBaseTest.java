@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import jxl.Workbook;
+import jxl.write.WritableWorkbook;
+
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 
@@ -18,6 +21,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.utils.PingUtil;
 import edu.fudan.autologin.utils.RandomUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
@@ -34,6 +38,17 @@ public class JavaBaseTest {
 	 * The substring begins at specified beginIndex and extends to the character at index endIndex - 1
 	 */
 	@Test
+	public void testWorkbook(){
+		XmlConfUtil.openXml();
+		ExcelUtil.openWorkbook();
+		WritableWorkbook wb = ExcelUtil.getWorkbook();
+		String[] sheets = wb.getSheetNames();
+		
+		for(int i = 0; i < sheets.length; ++i){
+			log.info("Name: "+sheets[i]);
+		}
+		ExcelUtil.closeWorkbook();
+	}
 	public void aa(){
 		
 //		log.info(cal(0, 3-1));
