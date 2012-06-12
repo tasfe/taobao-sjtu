@@ -47,12 +47,12 @@ public class ItemDetailPageParserTest {
 	
 	@Test
 	public void execute() {
-//		 testItemDetailPage();
+		 testItemDetailPage();
 //		testItemCounter();
 //		 testReviewSum();
 		// testWeekSaleNumServie();
 //		 testUserRate();
-		testDetailCommon();
+//		testDetailCommon();
 //		testPostageService();
 //		 testBuyerListService();
 //		testSaleSumService();
@@ -140,7 +140,7 @@ public class ItemDetailPageParserTest {
 
 	public void testItemDetailPage(){
 //		autoLogin();
-		String pageUrl = "http://item.taobao.com/item.htm?id=1266491167";
+		String pageUrl = "http://item.taobao.com/item.htm?id=10457388369";
 		ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(httpClient, pageUrl);
 		itemDetailPageParser.parsePage();
 	}
@@ -228,7 +228,6 @@ public class ItemDetailPageParserTest {
 		ItemReviewService itemReviewService = new ItemReviewService();
 		itemReviewService
 				.setItemPageUrl(url);
-		itemReviewService.setHttpClient(httpClient);
 		itemReviewService.setReviewSum(reviewSumService.getReviewSum());
 		itemReviewService.execute();
 	}

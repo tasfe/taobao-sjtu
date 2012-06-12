@@ -55,6 +55,7 @@ public class DetailCommonService {
 		StringBuilder ajaxUrl = new StringBuilder();
 		Document doc = null;
 		String datacommonApi;
+		
 		GetMethod get = new GetMethod(httpClient, pageUrl);
 		GetWaitUtil.get(get);
 		String tmp = get.getResponseAsString();
