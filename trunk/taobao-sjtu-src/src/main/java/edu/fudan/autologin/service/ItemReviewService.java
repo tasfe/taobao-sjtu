@@ -79,16 +79,6 @@ public class ItemReviewService {
 	
 	private String itemPageUrl;
 
-	private WritableSheet sheet;
-
-	public WritableSheet getSheet() {
-		return sheet;
-	}
-
-	public void setSheet(WritableSheet sheet) {
-		this.sheet = sheet;
-	}
-
 	private FeedRate feedRate = new FeedRate();
 
 	private int reviewSum = 0;
