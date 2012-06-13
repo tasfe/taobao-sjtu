@@ -291,7 +291,6 @@ public class Tbfetcher {
 				ItemReviewService itemReviewService = new ItemReviewService();
 				itemReviewService.setItemPageUrl(pageUrl.toString());
 				itemReviewService.setReviewSum(reviewSumService.getReviewSum());
-				itemReviewService.setSheet(sh);
 				itemReviewService.execute();
 
 				tmp.getConnectionManager().shutdown();
