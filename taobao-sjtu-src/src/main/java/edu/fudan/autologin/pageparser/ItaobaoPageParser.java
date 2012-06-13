@@ -30,6 +30,7 @@ public class ItaobaoPageParser extends BasePageParser {
 	@Override
 	public void parsePage() {
 		String targetUrl = getAjaxUrl();
+		
 		GetMethod get = new GetMethod(httpClient, targetUrl);
 		GetWaitUtil.get(get);
 		String getStr = get.getResponseAsString();
@@ -113,7 +114,7 @@ public class ItaobaoPageParser extends BasePageParser {
 	// http://i.taobao.com/u/NjAwNjgzNDQ=/front.htm
 	public String getAjaxUrl() {
 		String appendStr = "/frontInfoGather.htm?viewList=";
-		String baseUrl = this.getPageUrl();
+		String baseUrl = pageUrl;
 		String targetUrl = baseUrl.split(".htm")[0] + appendStr;
 		log.info("Target url is: " + targetUrl);
 		return targetUrl;

@@ -61,8 +61,7 @@ public class BasePageParser implements PageParser {
 		GetMethod getMethod = new GetMethod(httpClient, pageUrl);
 		GetWaitUtil.get(getMethod);
 		try {
-			doc = Jsoup.parse(EntityUtils.toString(getMethod.getResponse()
-					.getEntity()));
+			doc = Jsoup.parse(getMethod.getResponseAsString());
 			if (null == doc.baseUri() || 0 == doc.baseUri().length()) {
 				String url = getPageUrl();
 				String baseUri = "";
@@ -75,8 +74,6 @@ public class BasePageParser implements PageParser {
 				doc.setBaseUri(baseUri);
 			}
 		} catch (ParseException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
 			getMethod.shutDown();

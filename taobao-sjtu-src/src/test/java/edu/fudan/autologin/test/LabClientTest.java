@@ -238,8 +238,8 @@ public class LabClientTest {
 
 	@Test
 	public void task() {
-		 topTenProcess();
-		 searchResultProcess();
+//		 topTenProcess();
+//		 searchResultProcess();
 		 itemDetailProcess();
 		 userRateProcess();
 	}
@@ -252,7 +252,7 @@ public class LabClientTest {
 		log.info("Total item is: " + (searchResultSheet.getRows() - 1));
 
 //		for (int i = 1; i < searchResultSheet.getRows(); i++) {
-		for (int i = 1; i < 1000; i++) {
+		for (int i = 1; i < 2; i++) {
 			HttpClient tmp = new DefaultHttpClient();
 			ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
 					tmp, searchResultSheet.getCell(18, i).getContents());
