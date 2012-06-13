@@ -90,6 +90,12 @@ public class ExcelUtil {
 			e.printStackTrace();
 		} // 根据book创建一个操作对象
 
+		String[] sheetNames = wbook.getSheetNames();
+//		for(int i = 0; i < sheetNames.length; ++i){
+//			log.info(sheetNames[i]);
+//		}
+		currentBuyerSheetIndex = Integer.parseInt(sheetNames[sheetNames.length - 1].split("_")[1]);
+		log.info("Current buyer sheet index is: "+currentBuyerSheetIndex);
 		WritableSheet sh = wbook.getSheet(SheetNames.SEARCH_RESULT_SHEET);// 得到一个工作对象
 		sheetMap.put(SheetNames.SEARCH_RESULT_SHEET, sh);
 
@@ -611,6 +617,7 @@ public class ExcelUtil {
 		} catch (WriteException e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	public static void writeItemDetailSheet(WritableSheet sheet,
@@ -1119,6 +1126,7 @@ public class ExcelUtil {
 		} else {
 			writeReviewsSheet(sheet, buyerInfo);
 		}
+		
 	}
 
 	// write records into spreadsheet before close workbook
