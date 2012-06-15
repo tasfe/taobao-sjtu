@@ -246,7 +246,7 @@ public class Tbfetcher {
 		log.info("Total item is: " + (searchResultSheet.getRows() - 1));
 
 		for (int i = 1; i < searchResultSheet.getRows(); i++) {
-//		for (int i = 2; i < 2000; i++) {
+//		for (int i = 1000; i < 1500; i++) {
 			HttpClient tmp = new DefaultHttpClient();
 			ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
 					tmp, searchResultSheet.getCell(18, i).getContents());
@@ -257,6 +257,7 @@ public class Tbfetcher {
 			itemDetailPageParser.parsePage();
 			itemDetailPageParser.writeExcel();
 			tmp.getConnectionManager().shutdown();
+			tmp = null;
 		}
 		ExcelUtil.closeWBook();
 	}

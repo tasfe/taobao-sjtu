@@ -35,6 +35,7 @@ import edu.fudan.autologin.service.ReviewSumService;
 import edu.fudan.autologin.service.SaleSumService;
 import edu.fudan.autologin.service.TaobaoDsDataService;
 import edu.fudan.autologin.service.WeekSaleService;
+import edu.fudan.autologin.utils.GetWaitUtil;
 import edu.fudan.autologin.utils.PostUtils;
 import edu.fudan.autologin.utils.TaobaoUtils;
 import edu.fudan.autologin.utils.XmlConfUtil;
@@ -47,17 +48,19 @@ public class ItemDetailPageParserTest {
 	
 	@Test
 	public void execute() {
-		 testItemDetailPage();
+
+//		 testItemDetailPage();
 //		testItemCounter();
 //		 testReviewSum();
 		// testWeekSaleNumServie();
 //		 testUserRate();
 //		testDetailCommon();
-//		testPostageService();
+		testPostageService();
 //		 testBuyerListService();
 //		testSaleSumService();
 //		testMonthService();
 //		testReview();
+//		testItaobaoPageParser();
 
 	}
 	
@@ -145,10 +148,12 @@ public class ItemDetailPageParserTest {
 		itemDetailPageParser.parsePage();
 	}
 	public void testItaobaoPageParser(){
-	
-		String pageUrl = "http://i.taobao.com/u/NjAwNjgzNDQ=/front/frontInfoGather.htm?viewList=";
+//		http://i.taobao.com/u/MzgyNjA2OTgw/front/frontInfoGather.htm?viewList=
+		String pageUrl = " http://i.taobao.com/u/NTc3Njc1Mzkz/front.htm";
 		ItaobaoPageParser itaobaoPageParser = new ItaobaoPageParser(httpClient, pageUrl);
-		itaobaoPageParser.execute();
+		BuyerInfo bi = new BuyerInfo();
+		itaobaoPageParser.setBuyerInfo(bi);
+		itaobaoPageParser.parsePage();
 	}
 	public void testTaobaoDsData(){
 		  String url = "http://i.taobao.com/u/NjAwNjgzNDQ=/front/frontInfoGather.htm?viewList="; 
@@ -267,11 +272,12 @@ public class ItemDetailPageParserTest {
 
 	
 	public void testPostageService() {
+		String pageUrl = "http://item.taobao.com/item.htm?id=15876223242";
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(httpClient);
-		postageService
-				.setItemPageUrl("http://item.taobao.com/item.htm?id=5656200607");
+		postageService.setItemPageUrl(pageUrl);
 		postageService.execute();
+		
 	}
 	
 	public void autoLogin() {

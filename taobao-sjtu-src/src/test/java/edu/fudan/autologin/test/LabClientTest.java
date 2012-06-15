@@ -238,21 +238,28 @@ public class LabClientTest {
 
 	@Test
 	public void task() {
-//		 topTenProcess();
-//		 searchResultProcess();
+		 topTenProcess();
+		 searchResultProcess();
 		 itemDetailProcess();
-		 userRateProcess();
+//		 userRateProcess();
 	}
 
 	public void itemDetailProcess() {
 		ExcelUtil.openWorkbook();
-		Sheet searchResultSheet = ExcelUtil.getSheetMap().get(
+		Sheet sheet = ExcelUtil.getSheetMap().get(
 				SheetNames.SEARCH_RESULT_SHEET);
 
-		log.info("Total item is: " + (searchResultSheet.getRows() - 1));
-
-//		for (int i = 1; i < searchResultSheet.getRows(); i++) {
-		for (int i = 1; i < 2; i++) {
+		int rows = sheet.getRows() ;
+		log.info("Total item is: " + (sheet.getRows() - 1));
+		ExcelUtil.closeWBook();
+		
+		
+		for (int i = 1; i < rows; i++) {
+			ExcelUtil.openWorkbook();
+			Sheet searchResultSheet = ExcelUtil.getSheetMap().get(
+					SheetNames.SEARCH_RESULT_SHEET);
+			
+			
 			HttpClient tmp = new DefaultHttpClient();
 			ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(
 					tmp, searchResultSheet.getCell(18, i).getContents());
@@ -263,8 +270,10 @@ public class LabClientTest {
 			itemDetailPageParser.parsePage();
 			itemDetailPageParser.writeExcel();
 			tmp.getConnectionManager().shutdown();
+			
+			ExcelUtil.closeWBook();
 		}
-		ExcelUtil.closeWBook();
+		
 	}
 
 	public void itemReviews() {
@@ -297,7 +306,6 @@ public class LabClientTest {
 				ItemReviewService itemReviewService = new ItemReviewService();
 				itemReviewService.setItemPageUrl(pageUrl.toString());
 				itemReviewService.setReviewSum(reviewSumService.getReviewSum());
-				itemReviewService.setSheet(sh);
 				itemReviewService.execute();
 
 				tmp.getConnectionManager().shutdown();

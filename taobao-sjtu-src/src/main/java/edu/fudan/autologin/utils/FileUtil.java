@@ -51,7 +51,11 @@ public class FileUtil {
 			e.printStackTrace();
 		}
 
-		return text.toString();
+		String target = text.toString();
+		scanner = null;
+		text = null;
+		
+		return target;
 	}
 
 }
