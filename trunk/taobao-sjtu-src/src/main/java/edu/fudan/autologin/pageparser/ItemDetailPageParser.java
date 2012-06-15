@@ -174,8 +174,8 @@ public class ItemDetailPageParser extends BasePageParser {
 		
 		//postage service
 		PostageService postageService = new PostageService();
-		postageService.setHttpClient(this.getHttpClient());
-		postageService.setItemPageUrl(this.getPageUrl());
+		postageService.setHttpClient(httpClient);
+		postageService.setItemPageUrl(pageUrl);
 		postageService.execute();
 		itemInfo.setSaleNumIn30Days(postageService.getSaleSum());
 		

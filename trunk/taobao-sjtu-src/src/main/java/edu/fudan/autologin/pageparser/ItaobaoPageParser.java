@@ -113,7 +113,7 @@ public class ItaobaoPageParser extends BasePageParser {
 	// http://i.taobao.com/u/NjAwNjgzNDQ=/front/frontInfoGather.htm?viewList=
 	// http://i.taobao.com/u/NjAwNjgzNDQ=/front.htm
 	public String getAjaxUrl() {
-		String appendStr = "/frontInfoGather.htm?viewList=";
+		String appendStr = "/frontInfoGather_new.htm?viewList=";
 		String baseUrl = pageUrl;
 		String targetUrl = baseUrl.split(".htm")[0] + appendStr;
 		log.info("Target url is: " + targetUrl);
