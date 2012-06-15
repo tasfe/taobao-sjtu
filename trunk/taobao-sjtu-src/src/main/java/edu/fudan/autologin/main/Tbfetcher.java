@@ -18,6 +18,9 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.junit.After;
@@ -25,6 +28,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import edu.fudan.autologin.constants.SheetNames;
+import edu.fudan.autologin.constants.SystemConstant;
 import edu.fudan.autologin.excel.ExcelUtil;
 import edu.fudan.autologin.pageparser.ItemDetailPageParser;
 import edu.fudan.autologin.pageparser.SearchResultPageParser;
@@ -51,7 +55,9 @@ public class Tbfetcher {
 
 	public void setUp() {
 		if (httpClient == null) {
-			httpClient = new DefaultHttpClient();
+			final HttpParams httpParams = new BasicHttpParams();
+			HttpConnectionParams.setConnectionTimeout(httpParams, SystemConstant.CONNECTION_TIMEOUT);
+			httpClient = new DefaultHttpClient(httpParams);
 		}
 
 		XmlConfUtil.openXml();
@@ -235,7 +241,7 @@ public class Tbfetcher {
 		 topTenProcess();
 		 searchResultProcess();
 		 itemDetailProcess();
-		 userRateProcess();
+//		 userRateProcess();
 	}
 
 	public void itemDetailProcess() {
@@ -245,7 +251,7 @@ public class Tbfetcher {
 
 		log.info("Total item is: " + (searchResultSheet.getRows() - 1));
 
-		for (int i = 1; i < searchResultSheet.getRows(); i++) {
+		for (int i = 3500; i < searchResultSheet.getRows(); i++) {
 //		for (int i = 1000; i < 1500; i++) {
 			HttpClient tmp = new DefaultHttpClient();
 			ItemDetailPageParser itemDetailPageParser = new ItemDetailPageParser(

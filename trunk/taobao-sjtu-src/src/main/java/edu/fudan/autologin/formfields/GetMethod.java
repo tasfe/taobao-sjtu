@@ -38,27 +38,6 @@ public class GetMethod {
 		return response;
 	}
 
-	public void tet() throws ClientProtocolException, IOException{
-		HttpClient httpclient = new DefaultHttpClient();
-        try {
-            HttpGet httpget = new HttpGet("http://www.google.com/");
-
-            System.out.println("executing request " + httpget.getURI());
-
-            // Create a response handler
-            ResponseHandler<String> responseHandler = new BasicResponseHandler();
-            String responseBody = httpclient.execute(httpget, responseHandler);
-            System.out.println("----------------------------------------");
-            System.out.println(responseBody);
-            System.out.println("----------------------------------------");
-
-        } finally {
-            // When HttpClient instance is no longer needed,
-            // shut down the connection manager to ensure
-            // immediate deallocation of all system resources
-            httpclient.getConnectionManager().shutdown();
-        }
-	}
 	public GetMethod(HttpClient httpClient, String getUrl) {
 		if (httpClient == null || getUrl.equals(null)) {
 			System.out.println("ERROR: httpclient is null. - "
