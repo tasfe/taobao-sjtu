@@ -76,10 +76,10 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemInfo.setItemDetailHref(pageUrl);
 	}
 
-	
 	public void writeExcel(WritableSheet sheet) {
 		ExcelUtil.writeItemDetailSheet(sheet, itemInfo);
 	}
+
 	@Override
 	public void writeExcel() {
 		ExcelUtil.writeItemDetailSheet(itemInfo);
@@ -87,22 +87,22 @@ public class ItemDetailPageParser extends BasePageParser {
 
 	public String getShopRankHref(Document doc) {
 		if (doc.select("a#shop-rank").size() == 0) {
-			
-			if(doc.select("div.shop-rate ul li a").size() == 0){
+
+			if (doc.select("div.shop-rate ul li a").size() == 0) {
 				log.info("There is no shop rank href in the page and page url is: "
 						+ this.getPageUrl());
 				return null;
-			}else{
+			} else {
 				return doc.select("div.shop-rate ul li a").get(0).attr("href");
 			}
-			
+
 		} else {
 			Element shopRankEle = doc.select("a#shop-rank").get(0);
 			return shopRankEle.attr("href");
 		}
 	}
 
-	public void normalPageParser(Document doc){
+	public void normalPageParser(Document doc) {
 
 		if (doc.select("div.tb-property").size() == 0) {
 
@@ -115,22 +115,23 @@ public class ItemDetailPageParser extends BasePageParser {
 
 			// item type
 			String itemType = "";
-			Element element = itemPro.select("li.tb-item-type em#J_EmItemViews").get(0);
+			Element element = itemPro
+					.select("li.tb-item-type em#J_EmItemViews").get(0);
 			itemType = element.ownText();
-//			log.info("itemType: " + itemType);
-//			itemInfo.setItemType(itemType);
-			
+			// log.info("itemType: " + itemType);
+			// itemInfo.setItemType(itemType);
+
 			DetailCommonService service = new DetailCommonService();
 			service.setPageUrl(pageUrl);
 			service.execute();
 			String impress = service.getImpress();
 			itemInfo.setImpress(impress);
-			
+
 			ItemViewCountService itemViewCountService = new ItemViewCountService();
 			itemViewCountService.setItemDetailPage(pageUrl);
 			itemViewCountService.execute();
 			itemInfo.setViewCounter(itemViewCountService.getViewCount());
-			log.info("View counter is: "+itemInfo.getViewCounter());
+			log.info("View counter is: " + itemInfo.getViewCounter());
 			// pay type
 			String payType = "";
 			Elements links = itemPro.select("dl.tb-paymethods a");
@@ -149,14 +150,14 @@ public class ItemDetailPageParser extends BasePageParser {
 			int i = 0;
 			for (Element link : links) {
 				serviceType += link.attr("title");
-				if(i == (links.size()-1)){
-					
-				}else{
-					serviceType +=",";
+				if (i == (links.size() - 1)) {
+
+				} else {
+					serviceType += ",";
 				}
-				
+
 				++i;
-				
+
 			}
 			log.info("serviceType: " + serviceType);
 			itemInfo.setServiceType(serviceType);
@@ -171,50 +172,63 @@ public class ItemDetailPageParser extends BasePageParser {
 		String freight = "";
 
 		itemInfo.setUserRateHref(getShopRankHref(doc));
-		
-		//postage service
+
+		// postage service
 		PostageService postageService = new PostageService();
 		postageService.setHttpClient(httpClient);
 		postageService.setItemPageUrl(pageUrl);
 		postageService.execute();
 		itemInfo.setSaleNumIn30Days(postageService.getSaleSum());
-		
+
 		location = postageService.getPostage().getLocation();
 		freight = postageService.getPostage().getCarriage();
 		freightPrice = location + " : " + freight;
 		itemInfo.setFreightPrice(freightPrice);
 		log.info("freightPrice: " + freightPrice);
 
-//		SaleSumService saleSumService = new SaleSumService();
-//		saleSumService.setItemPageUrl(pageUrl);
-//		saleSumService.execute();
-//		int saleNumIn30Days = saleSumService.getSaleSum();
-//		log.info("saleNumIn30Days: " + saleNumIn30Days);
-//		itemInfo.setSaleNumIn30Days(saleNumIn30Days);
+		// SaleSumService saleSumService = new SaleSumService();
+		// saleSumService.setItemPageUrl(pageUrl);
+		// saleSumService.execute();
+		// int saleNumIn30Days = saleSumService.getSaleSum();
+		// log.info("saleNumIn30Days: " + saleNumIn30Days);
+		// itemInfo.setSaleNumIn30Days(saleNumIn30Days);
 
 		if (doc.select("div#attributes ul.attributes-list li").size() == 0) {
 
 		} else {
 			String spec = "";
 			String capacity = "";
-			Elements elements = doc
-					.select("div#attributes ul.attributes-list li");
-			//化妆品规格: 正常规格
-			spec = elements.get(1).ownText().split(":")[1].trim();
-			//化妆品容量: 其它容量
-			capacity = elements.get(2).ownText().split(":")[1].trim();
+
+			if (doc.select("div#attributes ul.attributes-list li").size() == 0) {
+				log.info("There is no capacity.");
+			} else {
+				Elements elements = doc
+						.select("div#attributes ul.attributes-list li");
+
+				log.info("Element size is: " + elements.size());
+				if (elements.size() >= 2) {
+					// 化妆品规格: 正常规格
+					spec = elements.get(1).ownText().split(":")[1].trim();
+				}
+				if (elements.size() >= 3) {
+					// 化妆品容量: 其它容量
+					capacity = elements.get(2).ownText().split(":")[1].trim();
+				}
+
+			}
+
 			itemInfo.setCapacity(capacity);
 			itemInfo.setSpec(spec);
 		}
 
 		// 解析买家列表
-//		BuyerListService buyerListService = new BuyerListService();
-//		buyerListService.setHttpClient(this.getHttpClient());
-//		buyerListService.setItemPageUrl(this.getPageUrl());
-//		buyerListService.setBuyerSum(saleNumIn30Days);
-//		buyerListService.execute();
-//		buyerInfos = buyerListService.getBuyerInfos();
-//		log.info("buyerinfo list size is: " + buyerInfos.size());
+		// BuyerListService buyerListService = new BuyerListService();
+		// buyerListService.setHttpClient(this.getHttpClient());
+		// buyerListService.setItemPageUrl(this.getPageUrl());
+		// buyerListService.setBuyerSum(saleNumIn30Days);
+		// buyerListService.execute();
+		// buyerInfos = buyerListService.getBuyerInfos();
+		// log.info("buyerinfo list size is: " + buyerInfos.size());
 
 		// 获得评论总数
 		ReviewSumService reviewSumService = new ReviewSumService();
@@ -230,7 +244,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		itemReviewService.execute();
 		itemInfo.setFirstReviewDate(itemReviewService.getFirstReviewDate());
 		itemInfo.setLastReviewDate(itemReviewService.getLastReviewDate());
-		itemInfo.setIndicator(itemReviewService.getIndicator()+"");
+		itemInfo.setIndicator(itemReviewService.getIndicator() + "");
 
 	}
 
@@ -239,43 +253,39 @@ public class ItemDetailPageParser extends BasePageParser {
 		log.info("Start to parse page: " + pageUrl);
 		getPage(pageUrl);
 		Document doc = getDoc();
-		
-		/* 针对各种不同的页面进行不同的处理
-		 * 1. 正常页面；
-		 * 2. 宝贝下架页面；
-		 * 3. 增价拍页面如：http://item.taobao.com/item.htm?id=15577727894
+
+		/*
+		 * 针对各种不同的页面进行不同的处理 1. 正常页面； 2. 宝贝下架页面； 3.
+		 * 增价拍页面如：http://item.taobao.com/item.htm?id=15577727894
 		 * 
 		 * 如何区分不同的页面类型？
-		**/
-		if(doc.toString().contains("tbid-container")){
+		 */
+		if (doc.toString().contains("tbid-container")) {
 			log.info("Start to parse 增价拍 page.");
 			bidTypePageParser();
-		}else if(doc.toString().contains("此宝贝已下架")){
+		} else if (doc.toString().contains("此宝贝已下架")) {
 			log.info("此宝贝已下架");
 			itemInfo.setSellerId(sellerId);
-		}
-		else{
+		} else {
 			normalPageParser(doc);
 		}
-		
+
 	}
 
-	//增价拍页面处理模块
-	//http://item.taobao.com/item.htm?id=14730950078
+	// 增价拍页面处理模块
+	// http://item.taobao.com/item.htm?id=14730950078
 	public void bidTypePageParser() {
-				log.info("sellerId: " + sellerId);
-				itemInfo.setSellerId(sellerId);
-				
-				
-				
+		log.info("sellerId: " + sellerId);
+		itemInfo.setSellerId(sellerId);
+
 	}
 
 	/* 对页面进行预处理，获取动态请求的url */
 	public void preprocessDoc() {
 		GetMethod getMethod = new GetMethod(this.getHttpClient(),
 				this.getPageUrl());
-		
-//		getMethod.doGet();
+
+		// getMethod.doGet();
 		GetWaitUtil.get(getMethod);
 		String docString = getMethod.getResponseAsString();
 		int base, begin, end;
@@ -317,16 +327,16 @@ public class ItemDetailPageParser extends BasePageParser {
 	public void doNext() {
 
 		log.info("Start to parse buyer info page.");
-	
-		//when there is no buyers.
-		if(buyerInfos == null){
+
+		// when there is no buyers.
+		if (buyerInfos == null) {
 			log.info("The list of BuyerInfo is null. There is no buyers.");
-		}else{
+		} else {
 			log.info("The size of buyer info list is: " + buyerInfos.size());
 
 			for (BuyerInfo buyerInfo : buyerInfos) {
 				buyerInfo.setSellerId(sellerId);
-				log.info("Buyer href is: "+buyerInfo.getHref());
+				log.info("Buyer href is: " + buyerInfo.getHref());
 				// 当用户匿名购买时
 				if (buyerInfo.getHref() == null) {
 					buyerInfo.setSex("0");
@@ -341,7 +351,6 @@ public class ItemDetailPageParser extends BasePageParser {
 				}
 			}
 		}
-		
 
 		if (itemInfo.getUserRateHref() == null) {
 			// 如果商家頁面沒有信用頁面
@@ -361,7 +370,7 @@ public class ItemDetailPageParser extends BasePageParser {
 		NameValuePair nvp = new BasicNameValuePair("referer", referer);
 		headers.add(nvp);
 		GetMethod getRequest = new GetMethod(this.getHttpClient(), requestUrl);
-//		getRequest.doGet(headers);
+		// getRequest.doGet(headers);
 		GetWaitUtil.get(getRequest, headers);
 		String responseStr = getRequest.getResponseAsString();
 		responseStr = responseStr.substring(responseStr.indexOf("{"),
