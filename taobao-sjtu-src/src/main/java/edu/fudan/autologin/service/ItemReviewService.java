@@ -200,6 +200,9 @@ public class ItemReviewService {
 
 	private void writeBuyerInfo() {
 
+		if(endIndex == 0){
+			return;
+		}
 		for(int i = 0; i <= endIndex; ++i ){
 			ExcelUtil.writeReviewsSheet(buyerInfos.get(i));
 		}
