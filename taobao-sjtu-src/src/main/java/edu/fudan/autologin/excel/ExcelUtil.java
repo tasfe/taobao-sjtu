@@ -1113,6 +1113,11 @@ public class ExcelUtil {
 	}
 
 	public static void writeReviewsSheet(BuyerInfo buyerInfo) {
+		
+		if(buyerInfo == null){
+			return;
+		}
+		
 		WritableSheet sheet = wbook.getSheet(SheetNames.BUYER_INFO_SHEET + "_"
 				+ currentBuyerSheetIndex);
 		if (sheet.getRows() == SystemConstant.MAX_SHEET_ROWS) {
