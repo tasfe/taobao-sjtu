@@ -373,14 +373,11 @@ public class ItemReviewService {
 
 			List list = (List) JSONSerializer.toJava(comments);
 
-			List<FeedRateComment> cmts = new ArrayList<FeedRateComment>();
-			int i = 1;
-
 			for (Object o : list) {
 				// feedRate.getComments().add((FeedRateComment) o);
 
 				JSONObject j = JSONObject.fromObject(o);
-				FeedRateComment cmt = new FeedRateComment();
+//				FeedRateComment cmt = new FeedRateComment();
 				String date = j.getString("date");
 				// cmt.setDate(j.getString("date"));
 				// cmt.setContent(j.getString("content"));
