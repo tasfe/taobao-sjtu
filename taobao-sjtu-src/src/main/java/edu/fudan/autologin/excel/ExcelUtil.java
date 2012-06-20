@@ -72,7 +72,15 @@ public class ExcelUtil {
 
 	private static WritableWorkbook wbook;
 
+	/*
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 	public static void openWorkbook() {
+		
+		
 		Workbook workbook1 = null;
 		try {
 			workbook1 = Workbook.getWorkbook(new File(XmlConfUtil
@@ -91,6 +99,7 @@ public class ExcelUtil {
 		} // 根据book创建一个操作对象
 
 		String[] sheetNames = wbook.getSheetNames();
+		sheetIndex = sheetNames.length;
 //		for(int i = 0; i < sheetNames.length; ++i){
 //			log.info(sheetNames[i]);
 //		}
