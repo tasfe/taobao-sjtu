@@ -1131,8 +1131,10 @@ public class ExcelUtil {
 				+ currentBuyerSheetIndex);
 		if (sheet.getRows() == SystemConstant.MAX_SHEET_ROWS) {
 			++currentBuyerSheetIndex;
-			WritableSheet sh = workbook.createSheet(SheetNames.BUYER_INFO_SHEET
+			log.info("Current buyer sheet index is: "+currentBuyerSheetIndex);
+			WritableSheet sh = wbook.createSheet(SheetNames.BUYER_INFO_SHEET
 					+ "_" + currentBuyerSheetIndex, sheetIndex++);
+			log.info("Current sheet index is: "+sheetIndex);
 			sheetMap.put(SheetNames.BUYER_INFO_SHEET + "_"
 					+ currentBuyerSheetIndex, sh);
 			createBuyerInfoSheetHeader();
