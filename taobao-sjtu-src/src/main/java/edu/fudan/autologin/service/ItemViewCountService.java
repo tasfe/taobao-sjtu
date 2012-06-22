@@ -34,8 +34,14 @@ public class ItemViewCountService {
 
 	public void execute(){
 		String ajaxUrl = getCounterApiUrl();
-		String json = getJsonFromServer(ajaxUrl);
-		parseJson(json);
+		
+		if(ajaxUrl == null){
+			log.info("Ajax url is null.");
+		}else{
+			String json = getJsonFromServer(ajaxUrl);
+			parseJson(json);
+		}
+		
 		
 		httpClient.getConnectionManager().shutdown();
 	}
