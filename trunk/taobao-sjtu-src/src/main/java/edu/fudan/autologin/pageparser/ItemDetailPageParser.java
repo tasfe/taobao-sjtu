@@ -109,29 +109,36 @@ public class ItemDetailPageParser extends BasePageParser {
 		} else {
 			Element itemPro = doc.select("div.tb-property").get(0);
 			// price range
-			String priceRange = itemPro.getElementById("J_StrPrice").ownText();
+			String priceRange = null;
+			if(itemPro.toString().contains("J_StrPrice")){
+				 priceRange = itemPro.getElementById("J_StrPrice").ownText();	
+			}
 			log.info("priceRange: " + priceRange);
 			itemInfo.setPriceRange(priceRange);
 
 			// item type
-			String itemType = "";
-			Element element = itemPro
-					.select("li.tb-item-type em#J_EmItemViews").get(0);
-			itemType = element.ownText();
+//			String itemType = "";
+//			Element element = itemPro
+//					.select("li.tb-item-type em#J_EmItemViews").get(0);
+//			itemType = element.ownText();
 			// log.info("itemType: " + itemType);
 			// itemInfo.setItemType(itemType);
 
+			
+			//impress
 			DetailCommonService service = new DetailCommonService();
 			service.setPageUrl(pageUrl);
 			service.execute();
 			String impress = service.getImpress();
 			itemInfo.setImpress(impress);
 
+			//view count
 			ItemViewCountService itemViewCountService = new ItemViewCountService();
 			itemViewCountService.setItemDetailPage(pageUrl);
 			itemViewCountService.execute();
 			itemInfo.setViewCounter(itemViewCountService.getViewCount());
 			log.info("View counter is: " + itemInfo.getViewCounter());
+			
 			// pay type
 			String payType = "";
 			Elements links = itemPro.select("dl.tb-paymethods a");
