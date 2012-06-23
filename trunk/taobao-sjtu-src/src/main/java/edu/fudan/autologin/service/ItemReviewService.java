@@ -213,10 +213,18 @@ public class ItemReviewService {
 		String ajaxUrl = null;
 		ajaxUrl = buildFeedRateAjaxUrl(reviewUrl, pageNum);
 		
+		if(ajaxUrl == null){
+			return ;
+		}
+		
 		GetMethod get = new GetMethod(httpClient, ajaxUrl);
 		GetWaitUtil.get(get);
 		String jsonStr = getFeedRateListJsonString(get.getResponseAsString()
 				.trim());
+		
+		if(jsonStr == null){
+			return ;
+		}
 		parseFeedRateListJson(jsonStr);
 		get.shutDown();
 	}
@@ -345,6 +353,10 @@ public class ItemReviewService {
 	 */
 	public String getFeedRateListJsonString(String str) {
 		log.info("Plain json string of feed rate review from server is: " + str);
+		if(str.contains("(")==false || str.contains(")")==false){
+			return null;
+		}
+		
 		int begin = str.indexOf("(");
 		int end = str.lastIndexOf(")");
 		log.info("Json string of feed rate review is: "
