@@ -145,7 +145,7 @@ public class ItemReviewService {
 		}
 
 		public void run() {
-			GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
+			GetMethod get = new GetMethod(httpClient, buildFeedRateAjaxUrl(
 					getFeedRateListUrl(), pageNum));
 			GetWaitUtil.get(get);
 			// get.doGet();
@@ -209,8 +209,11 @@ public class ItemReviewService {
 	}
 
 	public void parseReview(int pageNum) {
-		GetMethod get = new GetMethod(httpClient, constructFeedRateListUrl(
-				reviewUrl, pageNum));
+		
+		String ajaxUrl = null;
+		ajaxUrl = buildFeedRateAjaxUrl(reviewUrl, pageNum);
+		
+		GetMethod get = new GetMethod(httpClient, ajaxUrl);
 		GetWaitUtil.get(get);
 		String jsonStr = getFeedRateListJsonString(get.getResponseAsString()
 				.trim());
@@ -306,7 +309,7 @@ public class ItemReviewService {
 
 	}
 
-	public String constructFeedRateListUrl(String baseFeedRateListUrl,
+	public String buildFeedRateAjaxUrl(String baseFeedRateListUrl,
 			int currentPageNum) {
 		String append = "&currentPageNum="
 				+ currentPageNum
