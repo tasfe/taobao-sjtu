@@ -110,9 +110,15 @@ public class ItemDetailPageParser extends BasePageParser {
 			Element itemPro = doc.select("div.tb-property").get(0);
 			// price range
 			String priceRange = null;
+			if(doc.select("strong#J_StrPrice").size() == 0){
+				Element ele = doc.select("strong#J_StrPrice").get(0);
+				priceRange = ele.ownText();
+			}
+			/*
 			if(itemPro.toString().contains("J_StrPrice")){
 				 priceRange = itemPro.getElementById("J_StrPrice").ownText();	
 			}
+			*/
 			log.info("priceRange: " + priceRange);
 			itemInfo.setPriceRange(priceRange);
 
