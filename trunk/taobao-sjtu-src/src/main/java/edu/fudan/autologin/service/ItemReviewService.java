@@ -166,10 +166,14 @@ public class ItemReviewService {
 	public void execute() {
 
 		reviewUrl = getFeedRateListUrl();
+		
+		if(reviewUrl == null){
+			return ;
+		}
 		int pageSize = 20;
 
 		if (reviewSum == 0) {
-
+			return ;
 		} else {
 			int pageSum = (reviewSum % pageSize == 0) ? reviewSum / pageSize
 					: (reviewSum / pageSize + 1);
@@ -307,6 +311,10 @@ public class ItemReviewService {
 		tmpStr = getMethod.getResponseAsString();
 		getMethod.shutDown();
 
+		//if there is no "data-listApi" string in the page source, then return null.
+		if(tmpStr.contains("data-listApi") == false){
+			return null;
+		}
 		int base = tmpStr.indexOf("data-listApi=");
 		int begin = tmpStr.indexOf("\"", base);
 		int end = tmpStr.indexOf("\"", begin + 1);
