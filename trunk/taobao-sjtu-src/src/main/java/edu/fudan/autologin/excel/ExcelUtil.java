@@ -46,7 +46,7 @@ public class ExcelUtil {
 	private static final Logger log = Logger.getLogger(ExcelUtil.class
 			.getName());
 
-	private static int currentBuyerSheetIndex = 0;
+	private static int currentBuyerSheetIndex = 1;
 	private static WritableWorkbook workbook;
 	private static Map<String, WritableSheet> sheetMap = new HashMap<String, WritableSheet>();
 

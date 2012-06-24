@@ -42,8 +42,7 @@ public class MailUtil {
 			message.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse("gongsuochen@163.com"));
 			message.setSubject("Testing Subject");
-			message.setText("Dear Mail Crawler,"
-					+ "\n\n No spam to my email, please!");
+			message.setText("Run done.");
 
 			// create the message part
 			MimeBodyPart messageBodyPart = new MimeBodyPart();
@@ -56,10 +55,10 @@ public class MailUtil {
 
 			// Part two is attachment
 			messageBodyPart = new MimeBodyPart();
-			String fileAttachment = "/home/gschen/taobao-sjtu.xls";
+			String fileAttachment = "/home/gschen/readme";
 			DataSource source = new FileDataSource(fileAttachment );
 			messageBodyPart.setDataHandler(new DataHandler(source));
-			messageBodyPart.setFileName("taobao-sjtu.xls");
+			messageBodyPart.setFileName("readme");
 			multipart.addBodyPart(messageBodyPart);
 
 			// Put parts in message
