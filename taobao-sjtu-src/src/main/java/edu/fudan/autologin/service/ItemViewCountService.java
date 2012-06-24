@@ -82,6 +82,7 @@ public class ItemViewCountService {
 
 		if (json.contains("TShop.mods.SKU.CounterCenter.saveCounts") == false) {
 			log.info("There is no json counter from server.");
+			return null;
 		} else {
 			int begin = json.indexOf("(");
 			int end = json.indexOf(")");
