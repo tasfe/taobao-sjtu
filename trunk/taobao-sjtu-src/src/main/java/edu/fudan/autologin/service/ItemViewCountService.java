@@ -72,7 +72,7 @@ public class ItemViewCountService {
 	
 	public String getJsonFromServer(String ajaxUrl) {
 		String json = null;
-		int i = 10;
+	
 		GetMethod get = new GetMethod(httpClient, ajaxUrl);
 
 		GetWaitUtil.get(get);
@@ -115,6 +115,7 @@ public class ItemViewCountService {
 //		log.info("Doc  from server is: "+docStr);
 		if(docStr.contains("counterApi") == false){
 			log.info("There is no counterApiUrl in the page.");
+			return null;
 		}else{
 			int base = docStr.indexOf("counterApi:\"");
 			int end = docStr.indexOf("toolbar", base);
