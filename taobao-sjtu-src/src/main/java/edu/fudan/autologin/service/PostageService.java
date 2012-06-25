@@ -65,13 +65,14 @@ public class PostageService {
 	}
 
 	public void itemDomainPostageParser() {
+		String pageStr;
 		GetMethod getMethod = new GetMethod(httpClient, itemPageUrl);
 		GetWaitUtil.get(getMethod);
 		// getMethod.doGet();// 给get请求添加httpheader
 		String postageUrl = null;
 		postageUrl = getAjaxUrl(getMethod.getResponseAsString());
 		getMethod.shutDown();
-
+		
 		// 当页面中 没有找到
 		if (postageUrl == null) {
 			postage.setCarriage(null);
@@ -125,6 +126,10 @@ public class PostageService {
 	public String getAjaxUrl(String str) {// 获得邮费get请求的url地址
 		String ajaxUrl;
 		// 当页面中不包含postage url
+		
+		if(str == null){
+			return null;
+		}
 		if (str.contains("apiItemInfo")) {
 			// Pattern pattern = Pattern.compile("getShippingInfo:\"(.+?)\"");
 			// Matcher matcher = pattern.matcher(str);
