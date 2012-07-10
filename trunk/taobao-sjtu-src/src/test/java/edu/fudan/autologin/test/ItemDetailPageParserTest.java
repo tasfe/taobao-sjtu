@@ -55,13 +55,30 @@ public class ItemDetailPageParserTest {
 		// testWeekSaleNumServie();
 //		 testUserRate();
 //		testDetailCommon();
-		testPostageService();
+//		testPostageService();
 //		 testBuyerListService();
 //		testSaleSumService();
 //		testMonthService();
 //		testReview();
 //		testItaobaoPageParser();
-
+//testItemCounter();
+		test11();
+	}
+	
+	public void test11(){
+		String url = "http://item.taobao.com/item.htm?id=3910589751";
+		
+		while(true){
+			GetMethod get = new GetMethod(httpClient, url);
+			GetWaitUtil.get(get);
+			String str = get.getResponseAsString();
+			if(str.contains("counterApi") == false){
+				log.info(str);
+				break;
+			}
+			get.shutDown();
+		}
+		
 	}
 	
 
@@ -135,7 +152,7 @@ public class ItemDetailPageParserTest {
 	
 	public void testItemCounter(){
 		ItemViewCountService itemViewCountService = new ItemViewCountService();
-		itemViewCountService.setItemDetailPage("http://item.taobao.com/item.htm?id=15458715097");
+		itemViewCountService.setItemDetailPage("http://item.taobao.com/item.htm?id=3910589751");
 		itemViewCountService.execute();
 	}
 	
