@@ -31,6 +31,11 @@ public class ItaobaoPageParser extends BasePageParser {
 	public void parsePage() {
 		String targetUrl = getAjaxUrl();
 		
+		
+		if(targetUrl == null){
+			return ;
+		}
+		
 		GetMethod get = new GetMethod(httpClient, targetUrl);
 		GetWaitUtil.get(get);
 		String getStr = get.getResponseAsString();

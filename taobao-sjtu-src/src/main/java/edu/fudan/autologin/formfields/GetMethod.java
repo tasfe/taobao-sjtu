@@ -93,7 +93,6 @@ public class GetMethod {
 			return false;
 		} finally {
 		}
-
 		return true;
 	}
 
@@ -107,6 +106,10 @@ public class GetMethod {
 	}
 
 	public String getResponseAsString() {
+		
+		if(response == null){
+			return null;
+		}
 		HttpEntity entity = response.getEntity();
 		String rtnStr = null;
 		try {
